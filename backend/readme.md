@@ -1,3 +1,4 @@
+```text
 backend/
 ├── main.py                        # FastAPI app entry point
 ├── requirements.txt
@@ -51,3 +52,4 @@ backend/
     ├── test_agent.py
     ├── test_tools.py
     └── test_scoring.py
+```
