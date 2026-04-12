@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ─────────────────────────────────────────────
-#  Trip Planner AI Agent - Backend Scaffold
+#  Squad Planner — backend scaffold (current layout)
 # ─────────────────────────────────────────────
 
 set -e
@@ -12,89 +12,59 @@ echo ""
 echo "  Setting up backend folder structure..."
 echo ""
 
-# ── Root files ──────────────────────────────
-mkdir -p "$ROOT"
+mkdir -p "$ROOT/agent/nodes"
+mkdir -p "$ROOT/agent/subgraphs"
+mkdir -p "$ROOT/tools"
+mkdir -p "$ROOT/db"
+mkdir -p "$ROOT/api"
+mkdir -p "$ROOT/utils"
 
+# ── Root ────────────────────────────────────
 touch "$ROOT/main.py"
+touch "$ROOT/config.py"
 touch "$ROOT/requirements.txt"
-touch "$ROOT/.env"
 
 # ── agent/ ──────────────────────────────────
-mkdir -p "$ROOT/agent/nodes"
-mkdir -p "$ROOT/agent/tools"
-
 touch "$ROOT/agent/__init__.py"
 touch "$ROOT/agent/graph.py"
 touch "$ROOT/agent/state.py"
 
-NODES=(
-  "parse_input.py"
-  "select_destination.py"
-  "search_flights.py"
-  "search_hotel.py"
-  "fetch_activities.py"
-  "build_itinerary.py"
-  "plan_routes.py"
-  "check_weather.py"
-  "compute_fairness.py"
-  "assemble_output.py"
-  "parse_refinement.py"
-)
-
 touch "$ROOT/agent/nodes/__init__.py"
-for f in "${NODES[@]}"; do
-  touch "$ROOT/agent/nodes/$f"
-done
+touch "$ROOT/agent/nodes/input_parser.py"
+touch "$ROOT/agent/nodes/destination_selector.py"
+touch "$ROOT/agent/nodes/tool_selector.py"
+touch "$ROOT/agent/nodes/budget_analyzer.py"
+touch "$ROOT/agent/nodes/hotel_searcher.py"
+touch "$ROOT/agent/nodes/fairness_scorer.py"
+touch "$ROOT/agent/nodes/output_assembler.py"
 
-TOOLS=(
-  "google_places.py"
-  "google_maps.py"
-  "serpapi_flights.py"
-  "serpapi_hotels.py"
-  "weather.py"
-  "llm.py"
-)
+touch "$ROOT/agent/subgraphs/__init__.py"
+touch "$ROOT/agent/subgraphs/itinerary.py"
 
-touch "$ROOT/agent/tools/__init__.py"
-for f in "${TOOLS[@]}"; do
-  touch "$ROOT/agent/tools/$f"
-done
-
-# ── api/ ────────────────────────────────────
-mkdir -p "$ROOT/api/routes"
-mkdir -p "$ROOT/api/middleware"
-
-touch "$ROOT/api/__init__.py"
-touch "$ROOT/api/routes/trip.py"
-touch "$ROOT/api/routes/auth.py"
-touch "$ROOT/api/routes/user.py"
-touch "$ROOT/api/middleware/auth.py"
-
-# ── data/ ───────────────────────────────────
-mkdir -p "$ROOT/data"
-
-touch "$ROOT/data/destinations_db.json"
-touch "$ROOT/data/scoring.py"
+# ── tools/ ─────────────────────────────────
+touch "$ROOT/tools/__init__.py"
+touch "$ROOT/tools/serpapi.py"
+touch "$ROOT/tools/google_places.py"
+touch "$ROOT/tools/google_routes.py"
+touch "$ROOT/tools/open_meteo.py"
 
 # ── db/ ─────────────────────────────────────
-mkdir -p "$ROOT/db"
-
 touch "$ROOT/db/__init__.py"
-touch "$ROOT/db/connection.py"
+touch "$ROOT/db/client.py"
+touch "$ROOT/db/checkpointer.py"
 touch "$ROOT/db/models.py"
 
-# ── tests/ ──────────────────────────────────
-mkdir -p "$ROOT/tests"
+# ── api/ ────────────────────────────────────
+touch "$ROOT/api/__init__.py"
+touch "$ROOT/api/trips.py"
+touch "$ROOT/api/hitl.py"
+touch "$ROOT/api/admin.py"
 
-touch "$ROOT/tests/test_agent.py"
-touch "$ROOT/tests/test_tools.py"
-touch "$ROOT/tests/test_scoring.py"
+# ── utils/ ──────────────────────────────────
+touch "$ROOT/utils/__init__.py"
+touch "$ROOT/utils/preference_vectors.py"
+touch "$ROOT/utils/neighborhood_cluster.py"
+touch "$ROOT/utils/streaming.py"
 
-# ── Done ────────────────────────────────────
 echo "  Done! Folder structure created under ./$ROOT"
-echo ""
-echo "  To get started:"
-echo "    cd $ROOT"
-echo "    python -m venv venv && source venv/bin/activate"
-echo "    pip install -r requirements.txt"
 echo ""

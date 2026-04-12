@@ -1,55 +1,51 @@
 ```text
 backend/
-├── main.py                        # FastAPI app entry point
+├── main.py
+├── config.py
 ├── requirements.txt
-├── .env
 │
 ├── agent/
-│   ├── __init__.py
-│   ├── graph.py                   # LangGraph StateGraph definition
-│   ├── state.py                   # TripState TypedDict + Pydantic models
+│   ├── graph.py                    # Orchestrator StateGraph
+│   ├── state.py                    # TripState + ItineraryState TypedDicts
 │   ├── nodes/
 │   │   ├── __init__.py
-│   │   ├── parse_input.py         # Input validation + date consensus
-│   │   ├── select_destination.py  # Destination scoring + selection
-│   │   ├── search_flights.py      # SerpAPI flight search
-│   │   ├── search_hotel.py        # SerpAPI hotel search
-│   │   ├── fetch_activities.py    # Google Places activities + restaurants
-│   │   ├── build_itinerary.py     # LLM-powered slot assignment
-│   │   ├── plan_routes.py         # Google Maps Directions
-│   │   ├── check_weather.py       # Open-Meteo API
-│   │   ├── compute_fairness.py    # Cost + fairness analysis
-│   │   ├── assemble_output.py     # Final JSON assembly
-│   │   └── parse_refinement.py    # Refinement request classification
-│   └── tools/
+│   │   ├── input_parser.py         # parse_input node
+│   │   ├── destination_selector.py # select_destination node (LLM)
+│   │   ├── tool_selector.py        # dynamic_tool_selection node
+│   │   ├── budget_analyzer.py      # budget_analysis node (deterministic)
+│   │   ├── hotel_searcher.py       # search_hotel node
+│   │   ├── fairness_scorer.py      # compute_fairness + score_compatibility (merged, deterministic)
+│   │   └── output_assembler.py     # assemble_output node (LLM)
+│   └── subgraphs/
 │       ├── __init__.py
-│       ├── google_places.py       # Places API wrapper + caching
-│       ├── google_maps.py         # Directions API wrapper
-│       ├── serpapi_flights.py     # Flight search wrapper
-│       ├── serpapi_hotels.py      # Hotel search wrapper
-│       ├── weather.py             # Open-Meteo wrapper
-│       └── llm.py                 # Gemini LLM wrapper
+│       └── itinerary.py            # Full itinerary agent subgraph
 │
-├── api/
+├── tools/
 │   ├── __init__.py
-│   ├── routes/
-│   │   ├── trip.py                # Trip generation + retrieval + refinement
-│   │   ├── auth.py                # Auth endpoints
-│   │   └── user.py                # User profile endpoints
-│   └── middleware/
-│       └── auth.py                # JWT/session validation
-│
-├── data/
-│   ├── destinations_db.json       # 500 destinations
-│   └── scoring.py                 # Preference matching algorithms
+│   ├── serpapi.py                  # Flights + hotels, budget gate
+│   ├── google_places.py            # Dynamic category fetch
+│   ├── google_routes.py            # Routes API wrapper
+│   └── open_meteo.py               # Weather (no key)
 │
 ├── db/
 │   ├── __init__.py
-│   ├── connection.py              # MongoDB connection
-│   └── models.py                  # DB models (users, trips, cache)
+│   ├── client.py                   # Motor async MongoDB client
+│   ├── checkpointer.py             # MongoDBCheckpointer for LangGraph HITL
+│   └── models.py                   # Pydantic models for DB documents
 │
-└── tests/
-    ├── test_agent.py
-    ├── test_tools.py
-    └── test_scoring.py
+├── api/
+│   ├── __init__.py
+│   ├── trips.py                    # POST /trips, GET /trips/{id}/stream (SSE)
+│   ├── hitl.py                     # POST /trips/{id}/confirm-city
+│   └── admin.py                    # GET /admin/serpapi-usage
+│
+└── utils/
+    ├── __init__.py
+    ├── preference_vectors.py       # 5D vector math, dot product scoring
+    ├── neighborhood_cluster.py     # Proximity-based activity clustering
+    └── streaming.py                # SSE formatting, NODE_PROGRESS_MAP
 ```
+
+Run from this directory:
+
+`uvicorn main:app --reload`
