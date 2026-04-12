@@ -8,43 +8,75 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "oklch(var(--background) / <alpha-value>)",
-        foreground: "oklch(var(--foreground) / <alpha-value>)",
-        border: "var(--border)",
-        input: "var(--input)",
-        ring: "var(--ring)",
+        /* Core */
         primary: {
-          DEFAULT: "var(--primary)",
-          foreground: "var(--primary-foreground)",
+          DEFAULT:   "var(--primary)",
+          dim:       "var(--primary-dim)",
+          container: "var(--primary-container)",
+          on:        "var(--on-primary)",
         },
         secondary: {
-          DEFAULT: "var(--secondary)",
-          foreground: "var(--secondary-foreground)",
+          DEFAULT:   "var(--secondary)",
+          container: "var(--secondary-container)",
+          on:        "var(--on-secondary)",
+          "on-container": "var(--on-secondary-container)",
         },
+        tertiary: {
+          DEFAULT:   "var(--tertiary)",
+          container: "var(--tertiary-container)",
+          on:        "var(--on-tertiary)",
+        },
+        /* Surfaces */
+        background:  "var(--background)",
+        surface: {
+          DEFAULT:  "var(--surface)",
+          bright:   "var(--surface-bright)",
+          dim:      "var(--surface-dim)",
+          low:      "var(--surface-container-low)",
+          container:"var(--surface-container)",
+          high:     "var(--surface-container-high)",
+          highest:  "var(--surface-container-highest)",
+          variant:  "var(--surface-variant)",
+        },
+        /* Text */
+        foreground:  "var(--on-surface)",
+        "on-surface-variant": "var(--on-surface-variant)",
+        /* Functional */
+        border:      "var(--border)",
+        input:       "var(--input)",
+        ring:        "var(--ring)",
         muted: {
-          DEFAULT: "var(--muted)",
-          foreground: "var(--muted-foreground)",
+          DEFAULT:   "var(--muted)",
+          foreground:"var(--muted-foreground)",
         },
         accent: {
-          DEFAULT: "var(--accent)",
-          foreground: "var(--accent-foreground)",
+          DEFAULT:   "var(--accent)",
+          foreground:"var(--accent-foreground)",
         },
-        destructive: {
-          DEFAULT: "var(--destructive)",
+        destructive: "var(--destructive)",
+        error: {
+          DEFAULT:   "var(--error)",
+          container: "var(--error-container)",
         },
-        card: {
-          DEFAULT: "var(--card)",
-          foreground: "var(--card-foreground)",
-        },
-        popover: {
-          DEFAULT: "var(--popover)",
-          foreground: "var(--popover-foreground)",
+        /* Outline */
+        outline: {
+          DEFAULT: "var(--outline)",
+          variant: "var(--outline-variant)",
         },
       },
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        sm:   "var(--radius-sm)",
+        DEFAULT: "var(--radius-md)",
+        md:   "var(--radius-md)",
+        lg:   "var(--radius-lg)",
+        full: "var(--radius-full)",
+      },
+      boxShadow: {
+        volt:  "var(--shadow-volt)",
+        slate: "var(--shadow-slate)",
+      },
+      fontFamily: {
+        sans: ["Inter", "system-ui", "sans-serif"],
       },
     },
   },
