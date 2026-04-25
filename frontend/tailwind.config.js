@@ -13,19 +13,21 @@ export default {
           DEFAULT:   "var(--primary)",
           dim:       "var(--primary-dim)",
           container: "var(--primary-container)",
-          on:        "var(--on-primary)",
         },
         secondary: {
           DEFAULT:   "var(--secondary)",
           container: "var(--secondary-container)",
-          on:        "var(--on-secondary)",
           "on-container": "var(--on-secondary-container)",
         },
         tertiary: {
           DEFAULT:   "var(--tertiary)",
           container: "var(--tertiary-container)",
-          on:        "var(--on-tertiary)",
         },
+        /* On-colors — standalone so text-on-primary etc. work */
+        "on-primary":   "var(--on-primary)",
+        "on-secondary": "var(--on-secondary)",
+        "on-tertiary":  "var(--on-tertiary)",
+        "on-surface":   "var(--on-surface)",
         /* Surfaces */
         background:  "var(--background)",
         surface: {
