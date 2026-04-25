@@ -18,6 +18,15 @@ class SerpAPILimitReached(Exception):
     pass
 
 
+def _log_serpapi_http_error(operation: str, response: httpx.Response) -> None:
+    """Log SerpAPI errors without leaking the api_key query parameter."""
+    try:
+        body = response.json()
+    except ValueError:
+        body = response.text
+    logger.error("%s SerpAPI error: status=%s body=%s", operation, response.status_code, body)
+
+
 async def check_and_increment_serpapi_budget() -> bool:
     """Atomically increment this month's SerpAPI call count.
 
@@ -67,6 +76,23 @@ def _estimated_hotel(destination: str) -> HotelResult:
     )
 
 
+def _price_from_rate(rate: dict | None, fallback: float = 9999.0) -> float:
+    """Extract a numeric nightly price from SerpAPI's hotel rate object."""
+    if not rate:
+        return fallback
+    extracted = rate.get("extracted_lowest")
+    if extracted is not None:
+        return float(extracted)
+    raw = rate.get("lowest")
+    if isinstance(raw, (int, float)):
+        return float(raw)
+    if isinstance(raw, str):
+        digits = "".join(ch for ch in raw if ch.isdigit() or ch == ".")
+        if digits:
+            return float(digits)
+    return fallback
+
+
 async def search_flights(
     origin: str,
     destination: str,
@@ -111,6 +137,8 @@ async def search_flights(
                     "currency": "USD",
                 },
             )
+            if resp.is_error:
+                _log_serpapi_http_error("search_flights", resp)
             resp.raise_for_status()
             data = resp.json()
 
@@ -187,6 +215,8 @@ async def search_hotels(
                     "currency": "USD",
                 },
             )
+            if resp.is_error:
+                _log_serpapi_http_error("search_hotels", resp)
             resp.raise_for_status()
             data = resp.json()
 
@@ -198,15 +228,17 @@ async def search_hotels(
         check_out_dt = datetime.strptime(check_out, "%Y-%m-%d")
         nights = max((check_out_dt - check_in_dt).days, 1)
 
-        under_budget = [p for p in properties if p.get("rate_per_night", {}).get("lowest", 9999) <= budget_ceiling_usd]
+        under_budget = [
+            p for p in properties if _price_from_rate(p.get("rate_per_night")) <= budget_ceiling_usd
+        ]
         over_budget = False
         if under_budget:
-            pick = min(under_budget, key=lambda p: p.get("rate_per_night", {}).get("lowest", 9999))
+            pick = min(under_budget, key=lambda p: _price_from_rate(p.get("rate_per_night")))
         else:
-            pick = min(properties, key=lambda p: p.get("rate_per_night", {}).get("lowest", 9999))
+            pick = min(properties, key=lambda p: _price_from_rate(p.get("rate_per_night")))
             over_budget = True
 
-        price_per_night = float(pick.get("rate_per_night", {}).get("lowest", 120.0))
+        price_per_night = _price_from_rate(pick.get("rate_per_night"), fallback=120.0)
         name = pick.get("name", "Unknown Hotel")
         if over_budget:
             name += " (over budget)"
@@ -236,9 +268,12 @@ if __name__ == "__main__":
     import asyncio
 
     async def _test() -> None:
-        flight = await search_flights("JFK", "LAX", "2025-06-01", "2025-06-07")
+        depart_date = (datetime.now(timezone.utc) + timedelta(days=45)).date().isoformat()
+        return_date = (datetime.now(timezone.utc) + timedelta(days=52)).date().isoformat()
+
+        flight = await search_flights("JFK", "LAX", depart_date, return_date)
         print("Flight:", flight)
-        hotel = await search_hotels("Los Angeles", "2025-06-01", "2025-06-07", 200.0)
+        hotel = await search_hotels("Los Angeles", depart_date, return_date, 200.0)
         print("Hotel:", hotel)
 
     asyncio.run(_test())
