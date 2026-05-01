@@ -14,6 +14,7 @@ env/
 .pytest_cache/
 .coverage
 htmlcov/
+tests/artifacts/
 
 # IDE and OS files
 .vscode/

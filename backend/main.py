@@ -1,12 +1,14 @@
 """FastAPI application entry point."""
 
 import logging
-import os
+from pathlib import Path
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 
-from config import settings
+from api import admin, hitl, trips
+from config import configure_langsmith, settings
 from db.client import close_client, get_database
 
 logging.basicConfig(level=logging.INFO)
@@ -22,11 +24,13 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# TODO: include routers when implemented:
-# from api import trips, hitl, admin
-# app.include_router(trips.router, prefix="/api")
-# app.include_router(hitl.router, prefix="/api")
-# app.include_router(admin.router, prefix="/api")
+app.include_router(trips.router)
+app.include_router(hitl.router)
+app.include_router(admin.router)
+
+debug_ui_dir = Path(__file__).parent / "debug_ui"
+if debug_ui_dir.exists():
+    app.mount("/debug", StaticFiles(directory=debug_ui_dir, html=True), name="debug-ui")
 
 
 @app.on_event("startup")
@@ -34,12 +38,14 @@ async def startup() -> None:
     get_database()
     logger.info("MongoDB connected (database=squadplanner).")
 
+    configure_langsmith()
     if settings.langchain_tracing_v2.lower() == "true":
-        os.environ["LANGCHAIN_TRACING_V2"] = settings.langchain_tracing_v2
-        os.environ["LANGCHAIN_PROJECT"] = settings.langchain_project
-        if settings.langchain_api_key:
-            os.environ["LANGCHAIN_API_KEY"] = settings.langchain_api_key
         logger.info("LangSmith tracing enabled (project=%s).", settings.langchain_project)
+
+    from agent.graph import initialize_graph
+
+    await initialize_graph()
+    logger.info("LangGraph orchestrator initialized.")
 
 
 @app.on_event("shutdown")

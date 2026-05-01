@@ -1,5 +1,6 @@
 """Application settings and LLM factory."""
 
+import os
 from typing import Any, Literal
 
 from pydantic import Field
@@ -37,6 +38,18 @@ class Settings(BaseSettings):
 
 
 settings = Settings()
+
+
+def configure_langsmith() -> None:
+    """Configure LangSmith environment variables when tracing is enabled."""
+    if settings.langchain_tracing_v2.lower() != "true":
+        return
+
+    os.environ["LANGCHAIN_TRACING_V2"] = "true"
+    os.environ["LANGCHAIN_ENDPOINT"] = "https://api.smith.langchain.com"
+    if settings.langchain_api_key:
+        os.environ["LANGCHAIN_API_KEY"] = settings.langchain_api_key
+    os.environ["LANGCHAIN_PROJECT"] = settings.langchain_project
 
 
 def get_llm() -> Any:

@@ -107,7 +107,7 @@ if __name__ == "__main__":
             {
                 "place_id": "B",
                 "name": "MoMA",
-                "category": "culture",
+                "category": "urban",
                 "address": "11 W 53rd St, New York, NY",
                 "lat": 40.7614,
                 "lng": -73.9776,

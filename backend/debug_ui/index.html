@@ -1,0 +1,953 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SquadPlanner Debug Runner</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f6f3ed;
+        --ink: #1f2428;
+        --muted: #656d76;
+        --line: #d8d0c3;
+        --panel: #ffffff;
+        --accent: #1d6f5f;
+        --accent-strong: #145246;
+        --danger: #b42318;
+        --code: #202124;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.45;
+      }
+
+      header {
+        border-bottom: 1px solid var(--line);
+        background: var(--panel);
+      }
+
+      .shell {
+        width: min(1440px, calc(100vw - 32px));
+        margin: 0 auto;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 64px;
+        gap: 16px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      .status {
+        min-width: 220px;
+        color: var(--muted);
+        text-align: right;
+        font-size: 14px;
+      }
+
+      main {
+        display: grid;
+        grid-template-columns: minmax(360px, 0.9fr) minmax(420px, 1.1fr);
+        gap: 16px;
+        padding: 16px 0 24px;
+      }
+
+      section {
+        min-width: 0;
+      }
+
+      .panel {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .panel + .panel {
+        margin-top: 16px;
+      }
+
+      .panel-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 12px 14px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 15px;
+      }
+
+      textarea,
+      pre {
+        width: 100%;
+        margin: 0;
+        border: 0;
+        resize: vertical;
+        font: 13px/1.5 "Cascadia Code", "SFMono-Regular", Consolas, monospace;
+      }
+
+      textarea {
+        min-height: 560px;
+        padding: 14px;
+        outline: none;
+        background: #fffdf9;
+        color: var(--code);
+      }
+
+      pre {
+        min-height: 240px;
+        max-height: 520px;
+        overflow: auto;
+        padding: 14px;
+        white-space: pre-wrap;
+        background: #fbfaf7;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 12px 14px;
+        border-top: 1px solid var(--line);
+      }
+
+      button {
+        min-height: 36px;
+        border: 1px solid var(--accent);
+        border-radius: 6px;
+        background: var(--accent);
+        color: #fff;
+        padding: 0 12px;
+        font: inherit;
+        font-weight: 650;
+        cursor: pointer;
+      }
+
+      button.secondary {
+        background: transparent;
+        color: var(--accent);
+      }
+
+      button:disabled {
+        border-color: #b8b8b8;
+        background: #d7d7d7;
+        color: #777;
+        cursor: not-allowed;
+      }
+
+      button:hover:not(:disabled) {
+        border-color: var(--accent-strong);
+        background: var(--accent-strong);
+      }
+
+      button.secondary:hover:not(:disabled) {
+        color: #fff;
+      }
+
+
+      .candidate-list {
+        display: grid;
+        gap: 8px;
+        padding: 14px;
+      }
+
+      .candidate {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 8px;
+        align-items: center;
+        padding: 10px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fffdf9;
+      }
+
+      .candidate strong {
+        display: block;
+        font-size: 14px;
+      }
+
+      .candidate p {
+        margin: 4px 0 0;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .log {
+        display: grid;
+        gap: 6px;
+        padding: 14px;
+        min-height: 180px;
+        max-height: 360px;
+        overflow: auto;
+      }
+
+      .log-line {
+        padding: 8px 10px;
+        border-left: 3px solid var(--accent);
+        background: #fbfaf7;
+        font-size: 13px;
+      }
+
+      .error {
+        color: var(--danger);
+      }
+
+      .pitch {
+        padding: 14px;
+        white-space: pre-wrap;
+      }
+
+      .itinerary-view {
+        display: grid;
+        gap: 14px;
+        padding: 14px;
+      }
+
+      .summary-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .summary-item {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fffdf9;
+        padding: 10px;
+      }
+
+      .summary-item span {
+        display: block;
+        color: var(--muted);
+        font-size: 12px;
+        margin-bottom: 4px;
+      }
+
+      .summary-item strong {
+        display: block;
+        font-size: 14px;
+      }
+
+      .day-block {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fffdf9;
+        overflow: hidden;
+      }
+
+      .day-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 11px 12px;
+        border-bottom: 1px solid var(--line);
+        background: #fbfaf7;
+      }
+
+      .day-head strong {
+        font-size: 14px;
+      }
+
+      .day-head span {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .day-body {
+        display: grid;
+        gap: 12px;
+        padding: 12px;
+      }
+
+      .itinerary-section h3 {
+        margin: 0 0 6px;
+        font-size: 13px;
+      }
+
+      .plain-list {
+        display: grid;
+        gap: 6px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .plain-list li {
+        border-left: 3px solid var(--accent);
+        padding: 6px 8px;
+        background: #ffffff;
+        font-size: 13px;
+      }
+
+      .explain {
+        display: grid;
+        gap: 6px;
+        border-left: 3px solid var(--accent);
+        padding: 8px 10px;
+        background: #ffffff;
+        font-size: 13px;
+      }
+
+      .explain p {
+        margin: 0;
+      }
+
+      .explain ul {
+        display: grid;
+        gap: 4px;
+        margin: 0;
+        padding-left: 18px;
+      }
+
+      .schedule-grid {
+        display: grid;
+        gap: 6px;
+      }
+
+      .schedule-row {
+        display: grid;
+        grid-template-columns: 58px 84px 1fr;
+        gap: 8px;
+        align-items: baseline;
+        padding: 6px 8px;
+        background: #ffffff;
+        font-size: 13px;
+      }
+
+      .schedule-row span {
+        color: var(--muted);
+      }
+
+      .pill-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      .pill {
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 4px 8px;
+        background: #ffffff;
+        font-size: 12px;
+      }
+
+      .stored-link {
+        padding: 0 14px 14px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .stored-link code {
+        color: var(--code);
+      }
+
+      .stored-link a {
+        color: var(--accent);
+        font-weight: 650;
+      }
+
+      .empty {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      @media (max-width: 980px) {
+        main {
+          grid-template-columns: 1fr;
+        }
+
+        .status {
+          min-width: 0;
+          text-align: left;
+        }
+
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+          padding: 14px 0;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .summary-grid,
+        .schedule-row {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="shell topbar">
+        <h1>SquadPlanner Debug Runner</h1>
+        <div class="status" id="status">Idle</div>
+      </div>
+    </header>
+
+    <main class="shell">
+      <section>
+        <div class="panel">
+          <div class="panel-head">
+            <h2>Trip Input</h2>
+          </div>
+          <textarea id="tripInput" spellcheck="false"></textarea>
+          <div class="actions">
+            <button id="startButton">Run Trip</button>
+            <button class="secondary" id="resetButton">Reset Sample</button>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head">
+            <h2>Destination Choice</h2>
+          </div>
+          <div class="candidate-list" id="candidates">
+            <div class="log-line">Run a trip to load candidate destinations.</div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="panel">
+          <div class="panel-head">
+            <h2>Progress</h2>
+          </div>
+          <div class="log" id="log"></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head">
+            <h2>Trip Pitch</h2>
+          </div>
+          <div class="pitch" id="pitch"></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head">
+            <h2>Readable Itinerary</h2>
+          </div>
+          <div class="itinerary-view" id="itineraryView">
+            <div class="empty">Run a trip to render the itinerary.</div>
+          </div>
+          <div class="stored-link" id="storedTrip"></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head">
+            <h2>Constraint Satisfaction</h2>
+          </div>
+          <pre id="constraintOutput">{}</pre>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head">
+            <h2>Itinerary JSON</h2>
+          </div>
+          <pre id="jsonOutput">{}</pre>
+          <div class="actions">
+            <button class="secondary" id="downloadButton" disabled>Download JSON</button>
+            <button class="secondary" id="copyButton" disabled>Copy JSON</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const sampleTrip = {
+        group_notes: "Keep the trip relaxed, avoid rushed mornings, and make sure the plan respects everyone's must-haves.",
+        members: [
+          {
+            member_id: "alice",
+            name: "Alice",
+            origin_city: "ORD",
+            budget_usd: 1500,
+            food_restrictions: ["vegetarian"],
+            preference_notes: "Hates early mornings, no clubs, wants Italian food at least once.",
+            preference_vector: {
+              outdoor: 0.8,
+              food: 0.7,
+              nightlife: 0.2,
+              urban: 0.6,
+              shopping: 0.1
+            },
+            is_leader: true
+          },
+          {
+            member_id: "bob",
+            name: "Bob",
+            origin_city: "ATL",
+            budget_usd: 1200,
+            food_restrictions: [],
+            preference_notes: "Likes relaxed days with good meals and urban neighborhoods, but does not want an overpacked schedule.",
+            preference_vector: {
+              outdoor: 0.5,
+              food: 0.8,
+              nightlife: 0.6,
+              urban: 0.4,
+              shopping: 0.3
+            },
+            is_leader: false
+          },
+          {
+            member_id: "carol",
+            name: "Carol",
+            origin_city: "LAX",
+            budget_usd: 2000,
+            food_restrictions: [],
+            preference_notes: "Interested in scenic walks and museums, but not late-night clubbing.",
+            preference_vector: {
+              outdoor: 0.6,
+              food: 0.6,
+              nightlife: 0.4,
+              urban: 0.7,
+              shopping: 0.5
+            },
+            is_leader: false
+          }
+        ],
+        start_date: "2026-07-10",
+        end_date: "2026-07-13"
+      };
+
+      const tripInput = document.getElementById("tripInput");
+      const startButton = document.getElementById("startButton");
+      const resetButton = document.getElementById("resetButton");
+      const downloadButton = document.getElementById("downloadButton");
+      const copyButton = document.getElementById("copyButton");
+      const statusEl = document.getElementById("status");
+      const logEl = document.getElementById("log");
+      const candidatesEl = document.getElementById("candidates");
+      const pitchEl = document.getElementById("pitch");
+      const itineraryView = document.getElementById("itineraryView");
+      const storedTrip = document.getElementById("storedTrip");
+      const jsonOutput = document.getElementById("jsonOutput");
+      const constraintOutput = document.getElementById("constraintOutput");
+
+      let eventSource = null;
+      let currentTripId = null;
+      let latestJson = null;
+
+      function setSample() {
+        tripInput.value = JSON.stringify(sampleTrip, null, 2);
+      }
+
+      function setStatus(text) {
+        statusEl.textContent = text;
+      }
+
+      function addLog(text, isError = false) {
+        const line = document.createElement("div");
+        line.className = isError ? "log-line error" : "log-line";
+        line.textContent = text;
+        logEl.appendChild(line);
+        logEl.scrollTop = logEl.scrollHeight;
+      }
+
+      function clearRun() {
+        logEl.innerHTML = "";
+        candidatesEl.innerHTML = '<div class="log-line">Waiting for candidates.</div>';
+        pitchEl.textContent = "";
+        itineraryView.innerHTML = '<div class="empty">Run a trip to render the itinerary.</div>';
+        storedTrip.textContent = "";
+        jsonOutput.textContent = "{}";
+        constraintOutput.textContent = "{}";
+        latestJson = null;
+        downloadButton.disabled = true;
+        copyButton.disabled = true;
+        if (eventSource) {
+          eventSource.close();
+          eventSource = null;
+        }
+      }
+
+      async function createTrip(payload) {
+        const response = await fetch("/trips", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+        if (!response.ok) {
+          throw new Error(await response.text());
+        }
+        return response.json();
+      }
+
+      async function fetchStoredTrip(tripId) {
+        const response = await fetch(`/trips/${encodeURIComponent(tripId)}`);
+        if (!response.ok) {
+          throw new Error(await response.text());
+        }
+        return response.json();
+      }
+
+      function renderCompletedTrip(data, options = {}) {
+        const tripId = options.tripId || data.trip_id || (data.itinerary && data.itinerary.trip_id);
+        currentTripId = tripId || currentTripId;
+        pitchEl.textContent = data.trip_pitch || "";
+        latestJson = data.itinerary || data;
+        constraintOutput.textContent = JSON.stringify(
+          data.constraint_satisfaction || latestJson.constraint_satisfaction || {},
+          null,
+          2
+        );
+        renderReadableItinerary(latestJson);
+        if (currentTripId) {
+          const shareUrl = new URL(window.location.href);
+          shareUrl.pathname = "/debug/";
+          shareUrl.search = "";
+          shareUrl.searchParams.set("trip_id", currentTripId);
+          storedTrip.innerHTML =
+            `Stored in MongoDB as <code>${currentTripId}</code>. ` +
+            `<a href="${shareUrl.pathname + shareUrl.search}" target="_blank" rel="noreferrer">Open share view</a> ` +
+            `<a href="/trips/${currentTripId}" target="_blank" rel="noreferrer">Open stored JSON</a>`;
+        } else {
+          storedTrip.textContent = "";
+        }
+        jsonOutput.textContent = JSON.stringify(latestJson, null, 2);
+        downloadButton.disabled = false;
+        copyButton.disabled = false;
+      }
+
+
+      function streamTrip(streamUrl) {
+        eventSource = new EventSource(streamUrl);
+        eventSource.onmessage = (message) => {
+          const payload = JSON.parse(message.data);
+          const data = payload.data || {};
+
+          if (payload.event_type === "NODE_PROGRESS") {
+            addLog(`${data.node}: ${data.message}`);
+            return;
+          }
+
+          if (payload.event_type === "HITL_REQUIRED") {
+            setStatus("Choose a destination");
+            renderCandidates(data.candidate_destinations || []);
+            return;
+          }
+
+          if (payload.event_type === "TRIP_COMPLETE") {
+            setStatus("Complete");
+            addLog("Trip complete.");
+            renderCompletedTrip(data, { tripId: currentTripId });
+            eventSource.close();
+            eventSource = null;
+            return;
+          }
+
+          if (payload.event_type === "ERROR") {
+            setStatus("Failed");
+            addLog(data.message || "Unknown error", true);
+            eventSource.close();
+            eventSource = null;
+          }
+        };
+
+        eventSource.onerror = () => {
+          addLog("SSE connection interrupted.", true);
+        };
+      }
+
+      function renderCandidates(candidates) {
+        candidatesEl.innerHTML = "";
+        candidates.forEach((candidate) => {
+          const row = document.createElement("div");
+          row.className = "candidate";
+
+          const copy = document.createElement("div");
+          const title = document.createElement("strong");
+          title.textContent = `${candidate.name} (${Number(candidate.score || 0).toFixed(3)})`;
+          const reason = document.createElement("p");
+          reason.textContent = candidate.llm_reasoning || candidate.reason || "";
+          copy.appendChild(title);
+          copy.appendChild(reason);
+
+          const button = document.createElement("button");
+          button.textContent = "Choose";
+          button.addEventListener("click", () => confirmCity(candidate));
+
+          row.appendChild(copy);
+          row.appendChild(button);
+          candidatesEl.appendChild(row);
+        });
+      }
+
+      function valueOrDash(value) {
+        if (value === null || value === undefined || value === "") return "—";
+        return String(value);
+      }
+
+      function makeEl(tag, className, text) {
+        const element = document.createElement(tag);
+        if (className) element.className = className;
+        if (text !== undefined) element.textContent = text;
+        return element;
+      }
+
+      function appendSummary(container, label, value) {
+        const item = makeEl("div", "summary-item");
+        item.appendChild(makeEl("span", "", label));
+        item.appendChild(makeEl("strong", "", valueOrDash(value)));
+        container.appendChild(item);
+      }
+
+      function renderReadableItinerary(itinerary) {
+        itineraryView.innerHTML = "";
+        if (!itinerary || !Array.isArray(itinerary.days) || itinerary.days.length === 0) {
+          itineraryView.appendChild(makeEl("div", "empty", "No itinerary days returned yet."));
+          return;
+        }
+
+        const summary = makeEl("div", "summary-grid");
+        appendSummary(summary, "Destination", itinerary.selected_destination);
+        appendSummary(summary, "Dates", `${valueOrDash(itinerary.start_date)} to ${valueOrDash(itinerary.end_date)}`);
+        appendSummary(summary, "Hotel", itinerary.hotel ? itinerary.hotel.name : null);
+        appendSummary(
+          summary,
+          "Budget / Fairness",
+          `${valueOrDash(itinerary.budget_status)} / ${itinerary.fairness_passed ? "passed" : "not passed"}`
+        );
+        itineraryView.appendChild(summary);
+
+        if (itinerary.hotel) {
+          const hotel = makeEl("div", "summary-item");
+          hotel.appendChild(makeEl("span", "", "Hotel Details"));
+          hotel.appendChild(
+            makeEl(
+              "strong",
+              "",
+              `${itinerary.hotel.name || "Hotel"} · $${Number(itinerary.hotel.price_per_night_usd || 0).toFixed(0)}/night · ${Number(itinerary.hotel.rating || 0).toFixed(1)} rating`
+            )
+          );
+          hotel.appendChild(makeEl("div", "empty", itinerary.hotel.address || ""));
+          itineraryView.appendChild(hotel);
+        }
+
+        const flights = Array.isArray(itinerary.flights) ? itinerary.flights : [];
+        if (flights.length) {
+          const section = makeEl("div", "itinerary-section");
+          section.appendChild(makeEl("h3", "", "Flights"));
+          const pills = makeEl("div", "pill-row");
+          flights.forEach((flight) => {
+            pills.appendChild(
+              makeEl(
+                "span",
+                "pill",
+                `${flight.member_id || "member"}: ${flight.origin || "?"} → ${flight.destination || "?"} · $${Number(flight.price_usd || 0).toFixed(0)}${flight.is_estimated ? " est." : ""}`
+              )
+            );
+          });
+          section.appendChild(pills);
+          itineraryView.appendChild(section);
+        }
+
+        itinerary.days.forEach((day) => {
+          const block = makeEl("div", "day-block");
+          const head = makeEl("div", "day-head");
+          head.appendChild(makeEl("strong", "", `Day ${day.day_number || "?"} · ${day.neighborhood || "Neighborhood TBD"}`));
+          head.appendChild(makeEl("span", "", day.date || ""));
+          block.appendChild(head);
+
+          const body = makeEl("div", "day-body");
+
+          if (day.rationale || (Array.isArray(day.constraint_notes) && day.constraint_notes.length)) {
+            const section = makeEl("div", "itinerary-section");
+            section.appendChild(makeEl("h3", "", "Why this day"));
+            const explanation = makeEl("div", "explain");
+            if (day.rationale) {
+              explanation.appendChild(makeEl("p", "", day.rationale));
+            }
+            const notes = Array.isArray(day.constraint_notes) ? day.constraint_notes : [];
+            if (notes.length) {
+              const list = makeEl("ul", "");
+              notes.forEach((note) => {
+                list.appendChild(makeEl("li", "", note));
+              });
+              explanation.appendChild(list);
+            }
+            section.appendChild(explanation);
+            body.appendChild(section);
+          }
+
+          const schedule = Array.isArray(day.schedule) ? day.schedule : [];
+          if (schedule.length) {
+            const section = makeEl("div", "itinerary-section");
+            section.appendChild(makeEl("h3", "", "Schedule"));
+            const rows = makeEl("div", "schedule-grid");
+            schedule.forEach((entry) => {
+              const row = makeEl("div", "schedule-row");
+              row.appendChild(makeEl("strong", "", entry.time || "—"));
+              row.appendChild(makeEl("span", "", entry.type || "item"));
+              row.appendChild(makeEl("div", "", entry.label || entry.notes || "Scheduled item"));
+              rows.appendChild(row);
+            });
+            section.appendChild(rows);
+            body.appendChild(section);
+          }
+
+          const activities = Array.isArray(day.activities) ? day.activities : [];
+          const activitySection = makeEl("div", "itinerary-section");
+          activitySection.appendChild(makeEl("h3", "", "Activities"));
+          const activityList = makeEl("ul", "plain-list");
+          activities.forEach((activity) => {
+            const label = typeof activity === "string"
+              ? activity
+              : `${activity.name || "Activity"}${activity.category ? ` · ${activity.category}` : ""}${activity.rating ? ` · ${Number(activity.rating).toFixed(1)} rating` : ""}`;
+            activityList.appendChild(makeEl("li", "", label));
+          });
+          if (!activities.length) activityList.appendChild(makeEl("li", "", "No activities returned."));
+          activitySection.appendChild(activityList);
+          body.appendChild(activitySection);
+
+          const mealSection = makeEl("div", "itinerary-section");
+          mealSection.appendChild(makeEl("h3", "", "Meals"));
+          const mealList = makeEl("ul", "plain-list");
+          (Array.isArray(day.meals) ? day.meals : []).forEach((meal) => {
+            mealList.appendChild(makeEl("li", "", meal));
+          });
+          if (!day.meals || !day.meals.length) mealList.appendChild(makeEl("li", "", "No meals returned."));
+          mealSection.appendChild(mealList);
+          body.appendChild(mealSection);
+
+          const routeMinutes = Number(day.total_travel_minutes || 0);
+          const cost = Number(day.estimated_day_cost_usd || 0);
+          const meta = makeEl("div", "pill-row");
+          meta.appendChild(makeEl("span", "pill", `Travel: ${routeMinutes} min`));
+          meta.appendChild(makeEl("span", "pill", `Day cost: $${cost.toFixed(0)}`));
+          body.appendChild(meta);
+
+          block.appendChild(body);
+          itineraryView.appendChild(block);
+        });
+      }
+
+      async function confirmCity(candidate) {
+        if (!currentTripId) return;
+        setStatus(`Confirming ${candidate.name}`);
+        addLog(`Confirmed destination: ${candidate.name}`);
+        const response = await fetch(`/trips/${currentTripId}/confirm-city`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            selected_destination: candidate.name,
+            selected_destination_coords: candidate.coords
+          })
+        });
+
+        if (!response.ok) {
+          addLog(await response.text(), true);
+          setStatus("Confirm failed");
+          return;
+        }
+
+        setStatus("Generating itinerary");
+        candidatesEl.querySelectorAll("button").forEach((button) => {
+          button.disabled = true;
+        });
+      }
+
+      startButton.addEventListener("click", async () => {
+        clearRun();
+        startButton.disabled = true;
+        setStatus("Creating trip");
+
+        try {
+          const payload = JSON.parse(tripInput.value);
+          const trip = await createTrip(payload);
+          currentTripId = trip.trip_id;
+          setStatus(`Streaming ${currentTripId}`);
+          addLog(`Trip created: ${currentTripId}`);
+          streamTrip(trip.stream_url);
+        } catch (error) {
+          setStatus("Failed");
+          addLog(error.message, true);
+        } finally {
+          startButton.disabled = false;
+        }
+      });
+
+      resetButton.addEventListener("click", setSample);
+
+      downloadButton.addEventListener("click", () => {
+        if (!latestJson) return;
+        const blob = new Blob([JSON.stringify(latestJson, null, 2)], {
+          type: "application/json"
+        });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = `${currentTripId || "squadplanner-itinerary"}.json`;
+        link.click();
+        URL.revokeObjectURL(url);
+      });
+
+      copyButton.addEventListener("click", async () => {
+        if (!latestJson) return;
+        await navigator.clipboard.writeText(JSON.stringify(latestJson, null, 2));
+        setStatus("JSON copied");
+      });
+
+      setSample();
+      const storedTripId = new URLSearchParams(window.location.search).get("trip_id");
+      if (storedTripId) {
+        clearRun();
+        setStatus(`Loading ${storedTripId}`);
+        addLog(`Loading stored trip: ${storedTripId}`);
+        fetchStoredTrip(storedTripId)
+          .then((trip) => {
+            const initialState = trip.initial_state;
+            if (initialState) {
+              tripInput.value = JSON.stringify(
+                {
+                  group_notes: initialState.group_notes || "",
+                  members: initialState.members || [],
+                  start_date: initialState.start_date || "",
+                  end_date: initialState.end_date || ""
+                },
+                null,
+                2
+              );
+            }
+            if (Array.isArray(trip.candidate_destinations) && trip.candidate_destinations.length) {
+              renderCandidates(trip.candidate_destinations);
+            }
+            if (trip.status !== "complete" || !trip.itinerary) {
+              setStatus(`Stored trip is ${trip.status || "not complete"}`);
+              addLog("This stored trip does not have a completed itinerary yet.", true);
+              return;
+            }
+            setStatus("Complete");
+            addLog("Stored trip loaded.");
+            renderCompletedTrip(trip, { tripId: storedTripId });
+          })
+          .catch((error) => {
+            setStatus("Failed");
+            addLog(error.message, true);
+          });
+      }
+    </script>
+  </body>
+</html>

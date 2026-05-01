@@ -1,16 +1,15 @@
 """MongoDB-backed checkpointer for LangGraph human-in-the-loop."""
 
-from typing import Any
+from langgraph.checkpoint.mongodb.aio import AsyncMongoDBSaver
+
+from db.client import get_database
 
 
-class MongoDBCheckpointer:
-    """Persist graph state in MongoDB for resume / HITL."""
-
-    def __init__(self, collection_name: str = "langgraph_checkpoints"):
-        self._collection_name = collection_name
-
-    async def get(self, thread_id: str) -> dict[str, Any] | None:
-        return None
-
-    async def put(self, thread_id: str, checkpoint: dict[str, Any]) -> None:
-        return None
+async def get_checkpointer() -> AsyncMongoDBSaver:
+    """Return an async MongoDB checkpointer for LangGraph state persistence."""
+    db = get_database()
+    if db.client.__class__.__module__.startswith("motor."):
+        # langgraph-checkpoint-mongodb 0.2.x expects PyMongo's async client metadata hook.
+        # Motor is otherwise API-compatible for the async collection operations used here.
+        setattr(db.client, "append_metadata", lambda _metadata: None)
+    return AsyncMongoDBSaver(db.client, db.name)

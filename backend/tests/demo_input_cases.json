@@ -1,0 +1,631 @@
+{
+  "usage": "Copy any payload object into the backend /debug Trip Input box, then click Run Trip.",
+  "demo_url": "http://127.0.0.1:8000/debug",
+  "cases": [
+    {
+      "id": "01_basic_smoke_completed",
+      "title": "Basic Smoke Test",
+      "purpose": "Simple balanced trip to confirm the workflow runs from trip creation to HITL to final itinerary.",
+      "watch_for": [
+        "5 destination candidates",
+        "successful city confirmation",
+        "non-empty trip pitch",
+        "3-day itinerary with rationale and constraint_notes"
+      ],
+      "payload": {
+        "group_notes": "Keep the trip relaxed, avoid rushed mornings, and make sure the plan respects everyone's must-haves.",
+        "members": [
+          {
+            "member_id": "alice",
+            "name": "Alice",
+            "origin_city": "ORD",
+            "budget_usd": 1500,
+            "food_restrictions": ["vegetarian"],
+            "preference_notes": "Hates early mornings, no clubs, wants Italian food at least once.",
+            "preference_vector": {
+              "outdoor": 0.8,
+              "food": 0.7,
+              "nightlife": 0.2,
+              "urban": 0.6,
+              "shopping": 0.1
+            },
+            "is_leader": true
+          },
+          {
+            "member_id": "bob",
+            "name": "Bob",
+            "origin_city": "ATL",
+            "budget_usd": 1200,
+            "food_restrictions": [],
+            "preference_notes": "Likes relaxed days with good meals and urban neighborhoods, but does not want an overpacked schedule.",
+            "preference_vector": {
+              "outdoor": 0.5,
+              "food": 0.8,
+              "nightlife": 0.6,
+              "urban": 0.4,
+              "shopping": 0.3
+            },
+            "is_leader": false
+          },
+          {
+            "member_id": "carol",
+            "name": "Carol",
+            "origin_city": "LAX",
+            "budget_usd": 2000,
+            "food_restrictions": [],
+            "preference_notes": "Interested in scenic walks and museums, but not late-night clubbing.",
+            "preference_vector": {
+              "outdoor": 0.6,
+              "food": 0.6,
+              "nightlife": 0.4,
+              "urban": 0.7,
+              "shopping": 0.5
+            },
+            "is_leader": false
+          }
+        ],
+        "start_date": "2026-07-10",
+        "end_date": "2026-07-13"
+      }
+    },
+    {
+      "id": "02_preference_weight_conflict",
+      "title": "Preference Weight Conflict",
+      "purpose": "Tests how the workflow handles numeric preference conflicts without strong natural-language constraints.",
+      "watch_for": [
+        "preference_conflicts should mention spread between members",
+        "destination candidates should balance outdoor, urban, nightlife, and shopping tension",
+        "rationale should explain compromise choices"
+      ],
+      "payload": {
+        "group_notes": "The group is split on what kind of trip this should be. Try to find a fair compromise.",
+        "members": [
+          {
+            "member_id": "dana",
+            "name": "Dana",
+            "origin_city": "SFO",
+            "budget_usd": 1800,
+            "food_restrictions": [],
+            "preference_notes": "Happy with whatever the group picks.",
+            "preference_vector": {
+              "outdoor": 1.0,
+              "food": 0.4,
+              "nightlife": 0.0,
+              "urban": 0.1,
+              "shopping": 0.0
+            },
+            "is_leader": true
+          },
+          {
+            "member_id": "eli",
+            "name": "Eli",
+            "origin_city": "JFK",
+            "budget_usd": 1700,
+            "food_restrictions": [],
+            "preference_notes": "Wants city energy and iconic neighborhoods.",
+            "preference_vector": {
+              "outdoor": 0.1,
+              "food": 0.7,
+              "nightlife": 0.9,
+              "urban": 1.0,
+              "shopping": 0.5
+            },
+            "is_leader": false
+          },
+          {
+            "member_id": "mina",
+            "name": "Mina",
+            "origin_city": "DFW",
+            "budget_usd": 1600,
+            "food_restrictions": [],
+            "preference_notes": "Would love boutiques, markets, and good restaurants.",
+            "preference_vector": {
+              "outdoor": 0.2,
+              "food": 0.9,
+              "nightlife": 0.3,
+              "urban": 0.7,
+              "shopping": 1.0
+            },
+            "is_leader": false
+          },
+          {
+            "member_id": "gabe",
+            "name": "Gabe",
+            "origin_city": "DEN",
+            "budget_usd": 1500,
+            "food_restrictions": [],
+            "preference_notes": "Mostly wants scenic walks and not too much nightlife.",
+            "preference_vector": {
+              "outdoor": 0.9,
+              "food": 0.5,
+              "nightlife": 0.1,
+              "urban": 0.3,
+              "shopping": 0.2
+            },
+            "is_leader": false
+          }
+        ],
+        "start_date": "2026-08-07",
+        "end_date": "2026-08-10"
+      }
+    },
+    {
+      "id": "03_natural_language_conflict",
+      "title": "Natural-Language Preference Conflict",
+      "purpose": "Tests conflicts expressed in preference_notes and group_notes, especially hard constraints versus soft wishes.",
+      "watch_for": [
+        "preference_constraints should extract no clubs, no early mornings, seafood, museums, and packed/relaxed conflict",
+        "dynamic_tool_selection should avoid nightlife if hard-avoided",
+        "constraint_notes should explain which constraints were respected"
+      ],
+      "payload": {
+        "group_notes": "This group has conflicting notes: some want a packed city trip, others want slow mornings and no loud nightlife. Hard constraints should win.",
+        "members": [
+          {
+            "member_id": "nora",
+            "name": "Nora",
+            "origin_city": "BOS",
+            "budget_usd": 1800,
+            "food_restrictions": ["gluten_free"],
+            "preference_notes": "No clubs or bars. I hate early mornings. I need gluten-free meals.",
+            "preference_vector": {
+              "outdoor": 0.4,
+              "food": 0.8,
+              "nightlife": 0.8,
+              "urban": 0.8,
+              "shopping": 0.3
+            },
+            "is_leader": true
+          },
+          {
+            "member_id": "ryan",
+            "name": "Ryan",
+            "origin_city": "MIA",
+            "budget_usd": 1600,
+            "food_restrictions": [],
+            "preference_notes": "I want the schedule packed, with museums, food halls, and late-night energy.",
+            "preference_vector": {
+              "outdoor": 0.2,
+              "food": 0.9,
+              "nightlife": 0.9,
+              "urban": 0.9,
+              "shopping": 0.4
+            },
+            "is_leader": false
+          },
+          {
+            "member_id": "sofia",
+            "name": "Sofia",
+            "origin_city": "SEA",
+            "budget_usd": 1900,
+            "food_restrictions": ["shellfish"],
+            "preference_notes": "I want seafood restaurants avoided because of my shellfish allergy. I prefer art museums and scenic neighborhoods.",
+            "preference_vector": {
+              "outdoor": 0.6,
+              "food": 0.7,
+              "nightlife": 0.2,
+              "urban": 0.8,
+              "shopping": 0.5
+            },
+            "is_leader": false
+          }
+        ],
+        "start_date": "2026-09-11",
+        "end_date": "2026-09-14"
+      }
+    },
+    {
+      "id": "04_budget_limit_crossing",
+      "title": "Budget Limit Crossing",
+      "purpose": "Tests severe or moderate budget pressure, destination retries, hotel ceiling behavior, and whether the output explains budget compromise.",
+      "watch_for": [
+        "budget_status should be moderate or severe",
+        "decision_log should show budget analysis and possible destination retry",
+        "hotel choice should respect ceiling when possible",
+        "rationale should mention lower-cost choices when relevant"
+      ],
+      "payload": {
+        "group_notes": "This must be as cheap as possible. Avoid expensive hotels, paid tours, and high-cost dining.",
+        "members": [
+          {
+            "member_id": "sam",
+            "name": "Sam",
+            "origin_city": "LAX",
+            "budget_usd": 450,
+            "food_restrictions": [],
+            "preference_notes": "Free outdoor activities are best. I cannot go over budget.",
+            "preference_vector": {
+              "outdoor": 0.9,
+              "food": 0.3,
+              "nightlife": 0.0,
+              "urban": 0.2,
+              "shopping": 0.0
+            },
+            "is_leader": true
+          },
+          {
+            "member_id": "maya",
+            "name": "Maya",
+            "origin_city": "SEA",
+            "budget_usd": 500,
+            "food_restrictions": [],
+            "preference_notes": "Simple food, walkable neighborhoods, and no costly attractions.",
+            "preference_vector": {
+              "outdoor": 0.8,
+              "food": 0.5,
+              "nightlife": 0.1,
+              "urban": 0.5,
+              "shopping": 0.1
+            },
+            "is_leader": false
+          },
+          {
+            "member_id": "leo",
+            "name": "Leo",
+            "origin_city": "JFK",
+            "budget_usd": 550,
+            "food_restrictions": [],
+            "preference_notes": "I want nature but the budget matters more than the destination.",
+            "preference_vector": {
+              "outdoor": 0.7,
+              "food": 0.4,
+              "nightlife": 0.0,
+              "urban": 0.3,
+              "shopping": 0.0
+            },
+            "is_leader": false
+          }
+        ],
+        "start_date": "2026-08-14",
+        "end_date": "2026-08-17"
+      }
+    },
+    {
+      "id": "05_food_and_schedule_constraints",
+      "title": "Food Restrictions and Schedule Feasibility",
+      "purpose": "Tests vegan, halal, gluten-free validation, late-start constraints, relaxed pace, and day-level constraint notes.",
+      "watch_for": [
+        "meals should avoid restricted keywords",
+        "schedule should avoid non-breakfast items before 10:00",
+        "constraint_satisfaction should pass or explain unmet constraints",
+        "constraint_notes should mention food restrictions"
+      ],
+      "payload": {
+        "group_notes": "Food restrictions are mandatory. Keep mornings slow and avoid long travel between activities.",
+        "members": [
+          {
+            "member_id": "nina",
+            "name": "Nina",
+            "origin_city": "BOS",
+            "budget_usd": 1800,
+            "food_restrictions": ["vegan", "gluten_free"],
+            "preference_notes": "No dairy, eggs, meat, wheat, pasta, or bread. I want relaxed mornings.",
+            "preference_vector": {
+              "outdoor": 0.7,
+              "food": 0.8,
+              "nightlife": 0.1,
+              "urban": 0.6,
+              "shopping": 0.2
+            },
+            "is_leader": true
+          },
+          {
+            "member_id": "omar",
+            "name": "Omar",
+            "origin_city": "DFW",
+            "budget_usd": 1600,
+            "food_restrictions": ["halal"],
+            "preference_notes": "No pork or alcohol-centered places. Museums and scenic walks are ideal.",
+            "preference_vector": {
+              "outdoor": 0.6,
+              "food": 0.7,
+              "nightlife": 0.1,
+              "urban": 0.8,
+              "shopping": 0.2
+            },
+            "is_leader": false
+          },
+          {
+            "member_id": "priya",
+            "name": "Priya",
+            "origin_city": "ORD",
+            "budget_usd": 1700,
+            "food_restrictions": ["vegetarian"],
+            "preference_notes": "Vegetarian meals only. I like parks, cafes, and calm evenings.",
+            "preference_vector": {
+              "outdoor": 0.5,
+              "food": 0.9,
+              "nightlife": 0.1,
+              "urban": 0.7,
+              "shopping": 0.3
+            },
+            "is_leader": false
+          }
+        ],
+        "start_date": "2026-09-04",
+        "end_date": "2026-09-07"
+      }
+    },
+    {
+      "id": "06_travel_origin_spread",
+      "title": "Many Origins and Flight Fairness",
+      "purpose": "Tests flight fetch/fallback across far-apart origins, budget fairness, and whether the itinerary remains reasonable after flight-time alignment.",
+      "watch_for": [
+        "one flight per member",
+        "align_flight_times should trim day 1 or final day if needed",
+        "fairness_scores and compatibility_scores should be populated",
+        "decision_log should include fairness outcome"
+      ],
+      "payload": {
+        "group_notes": "People are flying from far apart. Keep the first day light and avoid assuming everyone arrives early.",
+        "members": [
+          {
+            "member_id": "ava",
+            "name": "Ava",
+            "origin_city": "SEA",
+            "budget_usd": 1900,
+            "food_restrictions": [],
+            "preference_notes": "I like parks and markets, but first day should be easy.",
+            "preference_vector": {
+              "outdoor": 0.8,
+              "food": 0.6,
+              "nightlife": 0.2,
+              "urban": 0.5,
+              "shopping": 0.4
+            },
+            "is_leader": true
+          },
+          {
+            "member_id": "ben",
+            "name": "Ben",
+            "origin_city": "MIA",
+            "budget_usd": 1600,
+            "food_restrictions": [],
+            "preference_notes": "Urban neighborhoods and good food are the priority.",
+            "preference_vector": {
+              "outdoor": 0.3,
+              "food": 0.9,
+              "nightlife": 0.4,
+              "urban": 0.9,
+              "shopping": 0.3
+            },
+            "is_leader": false
+          },
+          {
+            "member_id": "chloe",
+            "name": "Chloe",
+            "origin_city": "BOS",
+            "budget_usd": 2000,
+            "food_restrictions": [],
+            "preference_notes": "Museums, walking, and no exhausting travel days.",
+            "preference_vector": {
+              "outdoor": 0.5,
+              "food": 0.7,
+              "nightlife": 0.2,
+              "urban": 0.8,
+              "shopping": 0.5
+            },
+            "is_leader": false
+          },
+          {
+            "member_id": "diego",
+            "name": "Diego",
+            "origin_city": "PHX",
+            "budget_usd": 1500,
+            "food_restrictions": [],
+            "preference_notes": "Keep costs fair across the group.",
+            "preference_vector": {
+              "outdoor": 0.7,
+              "food": 0.5,
+              "nightlife": 0.2,
+              "urban": 0.4,
+              "shopping": 0.2
+            },
+            "is_leader": false
+          }
+        ],
+        "start_date": "2026-10-09",
+        "end_date": "2026-10-12"
+      }
+    },
+    {
+      "id": "07_long_six_member_high_conflict_trip",
+      "title": "Long Six-Member High-Conflict Trip",
+      "purpose": "Stress test: six travelers, five nights, conflicting weights, conflicting natural language, dietary restrictions, budget spread, and explainability.",
+      "watch_for": [
+        "preference_conflicts should be non-empty",
+        "natural-language constraints should extract hard avoids and soft wishes",
+        "dynamic tools should include/exclude categories based on both weights and hard constraints",
+        "itinerary should cover the full date range",
+        "rationale should explain compromises day by day",
+        "constraint_notes should show which hard constraints were honored",
+        "fairness may pass or fail, but the decision_log should explain why"
+      ],
+      "payload": {
+        "group_notes": "This is a reunion trip with conflicting styles. Hard constraints: no clubs, no alcohol-focused venues, no pork, respect vegan and gluten-free meals, no activity before 10:00 unless it is breakfast. Soft goals: one scenic outdoor day, one museum/culture day, one food-focused day, one shopping or market stop, and enough downtime that the trip does not feel rushed.",
+        "members": [
+          {
+            "member_id": "alex",
+            "name": "Alex",
+            "origin_city": "SFO",
+            "budget_usd": 2200,
+            "food_restrictions": ["vegan"],
+            "preference_notes": "I want hiking, viewpoints, and nature. I am vegan. I hate clubs and do not want alcohol-centered venues.",
+            "preference_vector": {
+              "outdoor": 1.0,
+              "food": 0.6,
+              "nightlife": 0.0,
+              "urban": 0.2,
+              "shopping": 0.1
+            },
+            "is_leader": true
+          },
+          {
+            "member_id": "brooke",
+            "name": "Brooke",
+            "origin_city": "JFK",
+            "budget_usd": 2600,
+            "food_restrictions": [],
+            "preference_notes": "I want museums, architecture, cafes, and iconic city neighborhoods. I do not care about hiking.",
+            "preference_vector": {
+              "outdoor": 0.1,
+              "food": 0.8,
+              "nightlife": 0.3,
+              "urban": 1.0,
+              "shopping": 0.6
+            },
+            "is_leader": false
+          },
+          {
+            "member_id": "cam",
+            "name": "Cam",
+            "origin_city": "ATL",
+            "budget_usd": 1300,
+            "food_restrictions": ["gluten_free"],
+            "preference_notes": "I am budget sensitive and gluten-free. No packed schedule. I need downtime every day.",
+            "preference_vector": {
+              "outdoor": 0.5,
+              "food": 0.7,
+              "nightlife": 0.1,
+              "urban": 0.5,
+              "shopping": 0.2
+            },
+            "is_leader": false
+          },
+          {
+            "member_id": "dev",
+            "name": "Dev",
+            "origin_city": "ORD",
+            "budget_usd": 1800,
+            "food_restrictions": ["halal"],
+            "preference_notes": "No pork or bacon. I like late dinners, markets, and food halls, but not clubs.",
+            "preference_vector": {
+              "outdoor": 0.3,
+              "food": 1.0,
+              "nightlife": 0.6,
+              "urban": 0.7,
+              "shopping": 0.5
+            },
+            "is_leader": false
+          },
+          {
+            "member_id": "ella",
+            "name": "Ella",
+            "origin_city": "SEA",
+            "budget_usd": 2100,
+            "food_restrictions": [],
+            "preference_notes": "I want boutiques, local markets, photogenic streets, and at least one nicer dinner.",
+            "preference_vector": {
+              "outdoor": 0.2,
+              "food": 0.8,
+              "nightlife": 0.2,
+              "urban": 0.7,
+              "shopping": 1.0
+            },
+            "is_leader": false
+          },
+          {
+            "member_id": "finn",
+            "name": "Finn",
+            "origin_city": "MIA",
+            "budget_usd": 1500,
+            "food_restrictions": [],
+            "preference_notes": "I want beaches or water if possible, but I cannot handle early mornings. Keep travel between stops low.",
+            "preference_vector": {
+              "outdoor": 0.8,
+              "food": 0.5,
+              "nightlife": 0.1,
+              "urban": 0.3,
+              "shopping": 0.2
+            },
+            "is_leader": false
+          }
+        ],
+        "start_date": "2026-11-06",
+        "end_date": "2026-11-11"
+      }
+    },
+    {
+      "id": "08_big_city_skyscraper_intent",
+      "title": "Big City Skyscraper Intent",
+      "purpose": "Regression test for urban/skyscraper language so popular major cities are included instead of only niche destinations.",
+      "watch_for": [
+        "destination_intent should include big_city, skyscrapers, skyline, museums, or nightlife_city",
+        "candidate destinations should include at least two major cities",
+        "candidate list should include at least one iconic city like Chicago, New York City, San Francisco, Boston, Los Angeles, Seattle, or Miami",
+        "candidate reasoning should mention skyline, skyscrapers, museums, nightlife, food, or dense urban exploration"
+      ],
+      "payload": {
+        "group_notes": "People are flying from far apart. Keep the first day light and avoid assuming everyone arrives early.",
+        "members": [
+          {
+            "member_id": "ava",
+            "name": "Ava",
+            "origin_city": "SEA",
+            "budget_usd": 1900,
+            "food_restrictions": [],
+            "preference_notes": "I like big cities and urban exploration and want great nightclubs, but first day should be easy.",
+            "preference_vector": {
+              "outdoor": 0.1,
+              "food": 0.7,
+              "nightlife": 0.9,
+              "urban": 0.9,
+              "shopping": 0.7
+            },
+            "is_leader": true
+          },
+          {
+            "member_id": "ben",
+            "name": "Ben",
+            "origin_city": "MIA",
+            "budget_usd": 1600,
+            "food_restrictions": [],
+            "preference_notes": "Urban neighborhoods with dense skyscrapers and good food are the priority.",
+            "preference_vector": {
+              "outdoor": 0.3,
+              "food": 0.9,
+              "nightlife": 0.4,
+              "urban": 0.9,
+              "shopping": 0.3
+            },
+            "is_leader": false
+          },
+          {
+            "member_id": "chloe",
+            "name": "Chloe",
+            "origin_city": "BOS",
+            "budget_usd": 2000,
+            "food_restrictions": [],
+            "preference_notes": "Museums, walking, and no exhausting travel days. Also prefer a city with tall skyscrapers.",
+            "preference_vector": {
+              "outdoor": 0.5,
+              "food": 0.7,
+              "nightlife": 0.2,
+              "urban": 0.8,
+              "shopping": 0.5
+            },
+            "is_leader": false
+          },
+          {
+            "member_id": "diego",
+            "name": "Diego",
+            "origin_city": "PHX",
+            "budget_usd": 1500,
+            "food_restrictions": [],
+            "preference_notes": "Keep costs fair across the group.",
+            "preference_vector": {
+              "outdoor": 0.1,
+              "food": 0.5,
+              "nightlife": 0.8,
+              "urban": 0.9,
+              "shopping": 0.7
+            },
+            "is_leader": false
+          }
+        ],
+        "start_date": "2026-10-09",
+        "end_date": "2026-10-12"
+      }
+    }
+  ]
+}

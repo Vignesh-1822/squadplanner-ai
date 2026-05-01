@@ -17,7 +17,7 @@ CATEGORY_TYPE_MAP: dict[str, str] = {
     "outdoor": "park",
     "food": "restaurant",
     "nightlife": "bar",
-    "culture": "museum",
+    "urban": "tourist_attraction",
     "shopping": "shopping_mall",
 }
 
@@ -134,7 +134,7 @@ if __name__ == "__main__":
         results = await fetch_activities_by_category(
             destination="New York City",
             coords={"lat": 40.7128, "lng": -74.006},
-            categories=["culture", "food"],
+            categories=["urban", "food"],
             max_per_category=5,
         )
         for r in results:

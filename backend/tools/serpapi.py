@@ -199,11 +199,17 @@ async def search_hotels(
 
         try:
             await check_and_increment_serpapi_budget()
-        except SerpAPILimitReached:
+        except SerpAPILimitReached as limit_exc:
+            print(f"search_hotels falling back to estimated hotel: {limit_exc}")
             logger.warning("SerpAPI limit reached — returning estimated hotel for %s", destination)
             return _estimated_hotel(destination)
 
         async with httpx.AsyncClient(timeout=20) as client:
+            print(
+                "search_hotels reaching SerpAPI request: "
+                f"destination={destination}, check_in={check_in}, check_out={check_out}, "
+                f"budget_ceiling_usd={budget_ceiling_usd:.0f}"
+            )
             resp = await client.get(
                 "https://serpapi.com/search",
                 params={
@@ -222,6 +228,7 @@ async def search_hotels(
 
         properties = data.get("properties", [])
         if not properties:
+            print("search_hotels falling back to estimated hotel: SerpAPI returned no properties.")
             return _estimated_hotel(destination)
 
         check_in_dt = datetime.strptime(check_in, "%Y-%m-%d")
@@ -261,6 +268,7 @@ async def search_hotels(
 
     except Exception as exc:  # noqa: BLE001
         logger.error("search_hotels error: %s", exc)
+        print(f"search_hotels falling back to estimated hotel after exception: {exc!r}")
         return _estimated_hotel(destination)
 
 

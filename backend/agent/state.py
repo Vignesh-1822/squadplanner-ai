@@ -1,7 +1,7 @@
 """State TypedDicts for the LangGraph orchestrator and itinerary subgraph."""
 
 import operator
-from typing import Annotated, Optional, TypedDict
+from typing import Annotated, NotRequired, Optional, TypedDict
 
 
 class MemberInput(TypedDict):
@@ -11,6 +11,7 @@ class MemberInput(TypedDict):
     budget_usd: float
     food_restrictions: list[str]
     preference_vector: dict[str, float]
+    preference_notes: NotRequired[str]
     is_leader: bool
 
 
@@ -62,6 +63,9 @@ class DayPlan(TypedDict):
     meals: list[str]
     routes: list[dict]
     estimated_day_cost_usd: float
+    schedule: NotRequired[list[dict]]
+    rationale: NotRequired[str]
+    constraint_notes: NotRequired[list[str]]
 
 
 class DecisionLogEntry(TypedDict):
@@ -74,11 +78,15 @@ class DecisionLogEntry(TypedDict):
 class TripState(TypedDict):
     trip_id: str
     members: list[MemberInput]
+    group_notes: NotRequired[str]
     start_date: str
     end_date: str
     trip_duration_days: int
     preference_conflicts: list[str]
+    preference_constraints: NotRequired[dict]
+    constraint_satisfaction: NotRequired[dict]
     group_preference_vector: dict[str, float]
+    destination_preference_vector: NotRequired[dict[str, float]]
     active_tool_categories: list[str]
     candidate_destinations: list[dict]
     selected_destination: Optional[str]
@@ -108,6 +116,9 @@ class ItineraryState(TypedDict):
     end_date: str
     trip_duration_days: int
     members: list[MemberInput]
+    group_notes: NotRequired[str]
+    preference_constraints: NotRequired[dict]
+    constraint_satisfaction: NotRequired[dict]
     activities: list[ActivityResult]
     hotel: HotelResult
     flights: list[FlightResult]

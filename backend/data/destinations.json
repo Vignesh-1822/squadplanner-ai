@@ -38,7 +38,17 @@
       "food": 0.12,
       "urban": 0.24,
       "outdoor": 0.5
-    }
+    },
+    "popularity_tier": 5,
+    "iconic_score": 1.0,
+    "prominence_tags": [
+      "first_time",
+      "iconic",
+      "iconic_nature",
+      "mountains",
+      "national_park",
+      "scenic_drives"
+    ]
   },
   {
     "id": "adirondacks_ny",
@@ -79,7 +89,12 @@
       "food": 0.1,
       "urban": 0.19,
       "outdoor": 0.62
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "albuquerque_nm",
@@ -110,7 +125,15 @@
       "food": 0.167,
       "urban": 0.237,
       "outdoor": 0.31
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "big_city",
+      "first_time",
+      "food_city",
+      "museums"
+    ]
   },
   {
     "id": "alexandria_va",
@@ -151,7 +174,12 @@
       "food": 0.271,
       "urban": 0.291,
       "outdoor": 0.104
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "alta_ut",
@@ -192,7 +220,12 @@
       "food": 0.17,
       "urban": 0.22,
       "outdoor": 0.36
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "amelia_island_fl",
@@ -233,7 +266,12 @@
       "food": 0.22,
       "urban": 0.3,
       "outdoor": 0.2
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "amherst_ma",
@@ -274,7 +312,12 @@
       "food": 0.235,
       "urban": 0.265,
       "outdoor": 0.147
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "anaheim_resort_ca",
@@ -315,7 +358,14 @@
       "food": 0.19,
       "urban": 0.33,
       "outdoor": 0.18
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "shopping",
+      "small_town",
+      "theme_parks"
+    ]
   },
   {
     "id": "anchorage_ak",
@@ -346,7 +396,14 @@
       "food": 0.163,
       "urban": 0.232,
       "outdoor": 0.349
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "big_city",
+      "first_time",
+      "museums"
+    ]
   },
   {
     "id": "ann_arbor_mi",
@@ -387,7 +444,12 @@
       "food": 0.235,
       "urban": 0.265,
       "outdoor": 0.147
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "anna_maria_island_fl",
@@ -428,7 +490,12 @@
       "food": 0.18,
       "urban": 0.26,
       "outdoor": 0.38
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "annapolis_md",
@@ -464,7 +531,12 @@
       "food": 0.273,
       "urban": 0.25,
       "outdoor": 0.159
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "antelope_canyon_az",
@@ -505,7 +577,10 @@
       "food": 0.12,
       "urban": 0.24,
       "outdoor": 0.5
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": []
   },
   {
     "id": "apostle_islands_wi",
@@ -546,7 +621,10 @@
       "food": 0.1,
       "urban": 0.19,
       "outdoor": 0.62
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": []
   },
   {
     "id": "appomattox_va",
@@ -587,7 +665,13 @@
       "food": 0.18,
       "urban": 0.47,
       "outdoor": 0.1
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "museums",
+      "small_town"
+    ]
   },
   {
     "id": "arches_ut",
@@ -628,7 +712,14 @@
       "food": 0.08,
       "urban": 0.14,
       "outdoor": 0.72
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "first_time",
+      "iconic_nature",
+      "national_park"
+    ]
   },
   {
     "id": "asbury_park_nj",
@@ -669,7 +760,13 @@
       "food": 0.18,
       "urban": 0.22,
       "outdoor": 0.22
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "food_city",
+      "small_town"
+    ]
   },
   {
     "id": "asheville_nc",
@@ -705,7 +802,13 @@
       "food": 0.268,
       "urban": 0.196,
       "outdoor": 0.25
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "food_city",
+      "small_town"
+    ]
   },
   {
     "id": "ashland_or",
@@ -746,7 +849,14 @@
       "food": 0.17,
       "urban": 0.23,
       "outdoor": 0.39
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "food_city",
+      "mountains",
+      "small_town"
+    ]
   },
   {
     "id": "aspen_co",
@@ -787,7 +897,13 @@
       "food": 0.17,
       "urban": 0.22,
       "outdoor": 0.36
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "first_time",
+      "mountains"
+    ]
   },
   {
     "id": "assateague_island_md",
@@ -828,7 +944,12 @@
       "food": 0.16,
       "urban": 0.28,
       "outdoor": 0.36
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "astoria_or",
@@ -869,7 +990,14 @@
       "food": 0.22,
       "urban": 0.3,
       "outdoor": 0.2
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "food_city",
+      "museums",
+      "small_town"
+    ]
   },
   {
     "id": "athens_ga",
@@ -910,7 +1038,13 @@
       "food": 0.235,
       "urban": 0.265,
       "outdoor": 0.147
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "food_city",
+      "small_town"
+    ]
   },
   {
     "id": "athens_oh",
@@ -951,7 +1085,12 @@
       "food": 0.235,
       "urban": 0.265,
       "outdoor": 0.147
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "atlanta_ga",
@@ -982,7 +1121,18 @@
       "food": 0.246,
       "urban": 0.28,
       "outdoor": 0.088
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "big_city",
+      "first_time",
+      "food_city",
+      "museums",
+      "nightlife_city",
+      "skyline",
+      "skyscrapers"
+    ]
   },
   {
     "id": "atlantic_city_nj",
@@ -1023,7 +1173,13 @@
       "food": 0.18,
       "urban": 0.37,
       "outdoor": 0.06
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "nightlife_city",
+      "small_town"
+    ]
   },
   {
     "id": "austin_tx",
@@ -1054,7 +1210,18 @@
       "food": 0.254,
       "urban": 0.22,
       "outdoor": 0.136
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "big_city",
+      "first_time",
+      "food_city",
+      "museums",
+      "nightlife_city",
+      "skyline",
+      "skyscrapers"
+    ]
   },
   {
     "id": "avila_beach_ca",
@@ -1095,7 +1262,12 @@
       "food": 0.22,
       "urban": 0.3,
       "outdoor": 0.2
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "badlands_sd",
@@ -1136,7 +1308,14 @@
       "food": 0.08,
       "urban": 0.14,
       "outdoor": 0.72
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "national_park",
+      "nature",
+      "scenic_drives"
+    ]
   },
   {
     "id": "baltimore_md",
@@ -1172,7 +1351,14 @@
       "food": 0.239,
       "urban": 0.283,
       "outdoor": 0.13
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "big_city",
+      "first_time",
+      "museums"
+    ]
   },
   {
     "id": "bar_harbor_me",
@@ -1208,7 +1394,12 @@
       "food": 0.205,
       "urban": 0.128,
       "outdoor": 0.41
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "beatty_nv",
@@ -1249,7 +1440,12 @@
       "food": 0.167,
       "urban": 0.292,
       "outdoor": 0.291
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "beaufort_sc",
@@ -1290,7 +1486,13 @@
       "food": 0.289,
       "urban": 0.264,
       "outdoor": 0.184
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "museums",
+      "small_town"
+    ]
   },
   {
     "id": "beaver_creek_co",
@@ -1331,7 +1533,12 @@
       "food": 0.17,
       "urban": 0.22,
       "outdoor": 0.36
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "bend_or",
@@ -1372,7 +1579,13 @@
       "food": 0.17,
       "urban": 0.23,
       "outdoor": 0.39
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains",
+      "small_town"
+    ]
   },
   {
     "id": "bentonville_ar",
@@ -1413,7 +1626,13 @@
       "food": 0.212,
       "urban": 0.212,
       "outdoor": 0.273
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "food_city",
+      "small_town"
+    ]
   },
   {
     "id": "berkeley_ca",
@@ -1454,7 +1673,13 @@
       "food": 0.315,
       "urban": 0.237,
       "outdoor": 0.079
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "food_city",
+      "small_town"
+    ]
   },
   {
     "id": "bethany_beach_de",
@@ -1495,7 +1720,12 @@
       "food": 0.2,
       "urban": 0.28,
       "outdoor": 0.28
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "bethel_me",
@@ -1536,7 +1766,13 @@
       "food": 0.17,
       "urban": 0.23,
       "outdoor": 0.39
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "mountains",
+      "small_town"
+    ]
   },
   {
     "id": "big_bear_lake_ca",
@@ -1577,7 +1813,12 @@
       "food": 0.17,
       "urban": 0.23,
       "outdoor": 0.39
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "big_bend_tx",
@@ -1618,7 +1859,15 @@
       "food": 0.08,
       "urban": 0.14,
       "outdoor": 0.72
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "first_time",
+      "iconic_nature",
+      "national_park",
+      "scenic_drives"
+    ]
   },
   {
     "id": "big_island_hi",
@@ -1659,7 +1908,13 @@
       "food": 0.18,
       "urban": 0.2,
       "outdoor": 0.42
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "beach",
+      "first_time"
+    ]
   },
   {
     "id": "big_sky_mt",
@@ -1700,7 +1955,12 @@
       "food": 0.17,
       "urban": 0.22,
       "outdoor": 0.36
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "biloxi_ms",
@@ -1741,7 +2001,13 @@
       "food": 0.22,
       "urban": 0.3,
       "outdoor": 0.2
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach",
+      "small_town"
+    ]
   },
   {
     "id": "birmingham_al",
@@ -1782,7 +2048,14 @@
       "food": 0.315,
       "urban": 0.237,
       "outdoor": 0.079
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "food_city",
+      "museums",
+      "small_town"
+    ]
   },
   {
     "id": "bisbee_az",
@@ -1823,7 +2096,12 @@
       "food": 0.179,
       "urban": 0.356,
       "outdoor": 0.179
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "biscayne_fl",
@@ -1864,7 +2142,13 @@
       "food": 0.12,
       "urban": 0.24,
       "outdoor": 0.5
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "national_park",
+      "nature"
+    ]
   },
   {
     "id": "bisti_badlands_nm",
@@ -1905,7 +2189,10 @@
       "food": 0.1,
       "urban": 0.19,
       "outdoor": 0.62
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": []
   },
   {
     "id": "black_canyon_of_the_gunnison_co",
@@ -1946,7 +2233,15 @@
       "food": 0.08,
       "urban": 0.14,
       "outdoor": 0.72
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains",
+      "national_park",
+      "nature",
+      "scenic_drives"
+    ]
   },
   {
     "id": "black_hawk_co",
@@ -1987,7 +2282,12 @@
       "food": 0.18,
       "urban": 0.37,
       "outdoor": 0.06
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "block_island_ri",
@@ -2028,7 +2328,12 @@
       "food": 0.16,
       "urban": 0.28,
       "outdoor": 0.36
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "bloomington_in",
@@ -2069,7 +2374,13 @@
       "food": 0.235,
       "urban": 0.265,
       "outdoor": 0.147
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "food_city",
+      "small_town"
+    ]
   },
   {
     "id": "blowing_rock_nc",
@@ -2110,7 +2421,13 @@
       "food": 0.17,
       "urban": 0.23,
       "outdoor": 0.39
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains",
+      "shopping"
+    ]
   },
   {
     "id": "boise_id",
@@ -2151,7 +2468,12 @@
       "food": 0.212,
       "urban": 0.212,
       "outdoor": 0.273
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "bonneville_salt_flats_ut",
@@ -2192,7 +2514,10 @@
       "food": 0.1,
       "urban": 0.19,
       "outdoor": 0.62
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": []
   },
   {
     "id": "boone_nc",
@@ -2233,7 +2558,12 @@
       "food": 0.17,
       "urban": 0.23,
       "outdoor": 0.39
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "boston_ma",
@@ -2269,7 +2599,19 @@
       "food": 0.259,
       "urban": 0.31,
       "outdoor": 0.069
-    }
+    },
+    "popularity_tier": 5,
+    "iconic_score": 1.0,
+    "prominence_tags": [
+      "big_city",
+      "first_time",
+      "food_city",
+      "iconic",
+      "museums",
+      "shopping",
+      "skyline",
+      "skyscrapers"
+    ]
   },
   {
     "id": "branson_mo",
@@ -2310,7 +2652,13 @@
       "food": 0.19,
       "urban": 0.33,
       "outdoor": 0.18
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "small_town",
+      "theme_parks"
+    ]
   },
   {
     "id": "breckenridge_co",
@@ -2346,7 +2694,12 @@
       "food": 0.178,
       "urban": 0.11,
       "outdoor": 0.378
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "brian_head_ut",
@@ -2387,7 +2740,12 @@
       "food": 0.17,
       "urban": 0.22,
       "outdoor": 0.36
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "brookings_or",
@@ -2428,7 +2786,13 @@
       "food": 0.18,
       "urban": 0.26,
       "outdoor": 0.38
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach",
+      "small_town"
+    ]
   },
   {
     "id": "bryce_canyon_ut",
@@ -2469,7 +2833,15 @@
       "food": 0.08,
       "urban": 0.14,
       "outdoor": 0.72
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "first_time",
+      "iconic_nature",
+      "mountains",
+      "national_park"
+    ]
   },
   {
     "id": "buena_park_ca",
@@ -2510,7 +2882,14 @@
       "food": 0.19,
       "urban": 0.33,
       "outdoor": 0.18
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "shopping",
+      "small_town",
+      "theme_parks"
+    ]
   },
   {
     "id": "buena_vista_co",
@@ -2551,7 +2930,12 @@
       "food": 0.15,
       "urban": 0.24,
       "outdoor": 0.45
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "buffalo_ny",
@@ -2592,7 +2976,16 @@
       "food": 0.25,
       "urban": 0.25,
       "outdoor": 0.1
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "architecture",
+      "big_city",
+      "first_time",
+      "food_city",
+      "museums"
+    ]
   },
   {
     "id": "cambria_ca",
@@ -2633,7 +3026,12 @@
       "food": 0.18,
       "urban": 0.26,
       "outdoor": 0.38
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "camden_me",
@@ -2674,7 +3072,12 @@
       "food": 0.25,
       "urban": 0.195,
       "outdoor": 0.25
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "cannon_beach_or",
@@ -2705,7 +3108,12 @@
       "food": 0.25,
       "urban": 0.139,
       "outdoor": 0.306
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "canyonlands_ut",
@@ -2746,7 +3154,14 @@
       "food": 0.08,
       "urban": 0.14,
       "outdoor": 0.72
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains",
+      "national_park",
+      "nature"
+    ]
   },
   {
     "id": "cape_cod_ma",
@@ -2787,7 +3202,13 @@
       "food": 0.16,
       "urban": 0.28,
       "outdoor": 0.36
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "beach",
+      "first_time"
+    ]
   },
   {
     "id": "cape_hatteras_nc",
@@ -2828,7 +3249,12 @@
       "food": 0.1,
       "urban": 0.19,
       "outdoor": 0.62
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "cape_may_nj",
@@ -2869,7 +3295,14 @@
       "food": 0.22,
       "urban": 0.3,
       "outdoor": 0.2
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach",
+      "food_city",
+      "small_town"
+    ]
   },
   {
     "id": "capitol_reef_ut",
@@ -2910,7 +3343,15 @@
       "food": 0.08,
       "urban": 0.14,
       "outdoor": 0.72
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains",
+      "national_park",
+      "nature",
+      "scenic_drives"
+    ]
   },
   {
     "id": "captiva_island_fl",
@@ -2951,7 +3392,12 @@
       "food": 0.18,
       "urban": 0.26,
       "outdoor": 0.38
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "carlsbad_caverns_nm",
@@ -2992,7 +3438,13 @@
       "food": 0.08,
       "urban": 0.14,
       "outdoor": 0.72
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "national_park",
+      "nature"
+    ]
   },
   {
     "id": "carmel_by_the_sea_ca",
@@ -3033,7 +3485,13 @@
       "food": 0.271,
       "urban": 0.146,
       "outdoor": 0.229
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach",
+      "shopping"
+    ]
   },
   {
     "id": "carolina_beach_nc",
@@ -3074,7 +3532,12 @@
       "food": 0.2,
       "urban": 0.28,
       "outdoor": 0.28
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "catalina_island_ca",
@@ -3115,7 +3578,12 @@
       "food": 0.16,
       "urban": 0.28,
       "outdoor": 0.36
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "channel_islands_ca",
@@ -3156,7 +3624,14 @@
       "food": 0.12,
       "urban": 0.24,
       "outdoor": 0.5
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains",
+      "national_park",
+      "nature"
+    ]
   },
   {
     "id": "chapel_hill_nc",
@@ -3197,7 +3672,13 @@
       "food": 0.235,
       "urban": 0.265,
       "outdoor": 0.147
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "food_city",
+      "small_town"
+    ]
   },
   {
     "id": "charleston_sc",
@@ -3228,7 +3709,16 @@
       "food": 0.29,
       "urban": 0.258,
       "outdoor": 0.113
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "architecture",
+      "first_time",
+      "food_city",
+      "museums",
+      "shopping"
+    ]
   },
   {
     "id": "charlottesville_va",
@@ -3269,7 +3759,14 @@
       "food": 0.235,
       "urban": 0.265,
       "outdoor": 0.147
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "food_city",
+      "museums",
+      "small_town"
+    ]
   },
   {
     "id": "chatham_ma",
@@ -3310,7 +3807,14 @@
       "food": 0.22,
       "urban": 0.3,
       "outdoor": 0.2
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "beach",
+      "shopping",
+      "small_town"
+    ]
   },
   {
     "id": "chattanooga_tn",
@@ -3351,7 +3855,13 @@
       "food": 0.212,
       "urban": 0.212,
       "outdoor": 0.273
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "food_city",
+      "small_town"
+    ]
   },
   {
     "id": "chautauqua_lake_ny",
@@ -3392,7 +3902,12 @@
       "food": 0.169,
       "urban": 0.231,
       "outdoor": 0.308
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "cherokee_nc",
@@ -3433,7 +3948,13 @@
       "food": 0.15,
       "urban": 0.24,
       "outdoor": 0.45
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "scenic_drives",
+      "small_town"
+    ]
   },
   {
     "id": "chicago_il",
@@ -3469,7 +3990,21 @@
       "food": 0.239,
       "urban": 0.283,
       "outdoor": 0.045
-    }
+    },
+    "popularity_tier": 5,
+    "iconic_score": 1.0,
+    "prominence_tags": [
+      "architecture",
+      "big_city",
+      "first_time",
+      "food_city",
+      "iconic",
+      "museums",
+      "nightlife_city",
+      "shopping",
+      "skyline",
+      "skyscrapers"
+    ]
   },
   {
     "id": "chimney_rock_co",
@@ -3510,7 +4045,10 @@
       "food": 0.12,
       "urban": 0.24,
       "outdoor": 0.5
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": []
   },
   {
     "id": "chincoteague_island_va",
@@ -3551,7 +4089,12 @@
       "food": 0.18,
       "urban": 0.26,
       "outdoor": 0.38
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "cincinnati_oh",
@@ -3592,7 +4135,14 @@
       "food": 0.25,
       "urban": 0.25,
       "outdoor": 0.1
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "big_city",
+      "first_time",
+      "museums"
+    ]
   },
   {
     "id": "clearwater_beach_fl",
@@ -3633,7 +4183,13 @@
       "food": 0.2,
       "urban": 0.28,
       "outdoor": 0.28
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "beach",
+      "first_time"
+    ]
   },
   {
     "id": "cleveland_oh",
@@ -3664,7 +4220,14 @@
       "food": 0.216,
       "urban": 0.298,
       "outdoor": 0.135
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "big_city",
+      "first_time",
+      "museums"
+    ]
   },
   {
     "id": "cocoa_beach_fl",
@@ -3705,7 +4268,12 @@
       "food": 0.18,
       "urban": 0.26,
       "outdoor": 0.32
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "cody_wy",
@@ -3746,7 +4314,13 @@
       "food": 0.15,
       "urban": 0.24,
       "outdoor": 0.45
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "scenic_drives",
+      "small_town"
+    ]
   },
   {
     "id": "cody_wy_east",
@@ -3787,7 +4361,13 @@
       "food": 0.167,
       "urban": 0.292,
       "outdoor": 0.291
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "scenic_drives",
+      "small_town"
+    ]
   },
   {
     "id": "coeur_dalene_id",
@@ -3828,7 +4408,12 @@
       "food": 0.18,
       "urban": 0.36,
       "outdoor": 0.24
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "college_station_tx",
@@ -3869,7 +4454,13 @@
       "food": 0.235,
       "urban": 0.265,
       "outdoor": 0.147
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "museums",
+      "small_town"
+    ]
   },
   {
     "id": "columbia_mo",
@@ -3910,7 +4501,13 @@
       "food": 0.235,
       "urban": 0.265,
       "outdoor": 0.147
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "food_city",
+      "small_town"
+    ]
   },
   {
     "id": "columbia_river_gorge_or",
@@ -3951,7 +4548,13 @@
       "food": 0.12,
       "urban": 0.24,
       "outdoor": 0.5
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "mountains",
+      "scenic_drives"
+    ]
   },
   {
     "id": "congaree_sc",
@@ -3992,7 +4595,13 @@
       "food": 0.08,
       "urban": 0.14,
       "outdoor": 0.72
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "national_park",
+      "nature"
+    ]
   },
   {
     "id": "cooperstown_ny",
@@ -4033,7 +4642,13 @@
       "food": 0.18,
       "urban": 0.47,
       "outdoor": 0.1
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "museums",
+      "small_town"
+    ]
   },
   {
     "id": "corvallis_or",
@@ -4074,7 +4689,13 @@
       "food": 0.235,
       "urban": 0.265,
       "outdoor": 0.147
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "food_city",
+      "small_town"
+    ]
   },
   {
     "id": "crater_lake_or",
@@ -4115,7 +4736,16 @@
       "food": 0.08,
       "urban": 0.14,
       "outdoor": 0.72
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "first_time",
+      "iconic_nature",
+      "mountains",
+      "national_park",
+      "scenic_drives"
+    ]
   },
   {
     "id": "crested_butte_co",
@@ -4156,7 +4786,12 @@
       "food": 0.17,
       "urban": 0.22,
       "outdoor": 0.36
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "crystal_beach_tx",
@@ -4197,7 +4832,12 @@
       "food": 0.2,
       "urban": 0.28,
       "outdoor": 0.28
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "culebra_pr",
@@ -4207,17 +4847,17 @@
     "nearest_airports": [
       {
         "code": "CPX",
-        "name": "Benjam\u00edn Rivera Noriega Airport",
+        "name": "Benjamín Rivera Noriega Airport",
         "drive_min": 10
       },
       {
         "code": "SJU",
-        "name": "Luis Mu\u00f1oz Mar\u00edn International Airport",
+        "name": "Luis Muñoz Marín International Airport",
         "drive_min": 90
       },
       {
         "code": "VQS",
-        "name": "Antonio Rivera Rodr\u00edguez Airport",
+        "name": "Antonio Rivera Rodríguez Airport",
         "drive_min": 75
       }
     ],
@@ -4238,7 +4878,12 @@
       "food": 0.18,
       "urban": 0.26,
       "outdoor": 0.38
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "cumberland_island_ga",
@@ -4279,7 +4924,12 @@
       "food": 0.16,
       "urban": 0.28,
       "outdoor": 0.36
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "custer_state_park_sd",
@@ -4320,7 +4970,13 @@
       "food": 0.12,
       "urban": 0.24,
       "outdoor": 0.5
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "mountains",
+      "scenic_drives"
+    ]
   },
   {
     "id": "cuyahoga_valley_oh",
@@ -4361,7 +5017,13 @@
       "food": 0.12,
       "urban": 0.24,
       "outdoor": 0.5
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "national_park",
+      "nature"
+    ]
   },
   {
     "id": "dallas_tx",
@@ -4397,7 +5059,16 @@
       "food": 0.222,
       "urban": 0.278,
       "outdoor": 0.093
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "big_city",
+      "first_time",
+      "museums",
+      "nightlife_city",
+      "shopping"
+    ]
   },
   {
     "id": "dana_point_ca",
@@ -4438,7 +5109,12 @@
       "food": 0.22,
       "urban": 0.3,
       "outdoor": 0.2
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "davis_ca",
@@ -4479,7 +5155,12 @@
       "food": 0.235,
       "urban": 0.265,
       "outdoor": 0.147
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "dead_horse_point_ut",
@@ -4520,7 +5201,12 @@
       "food": 0.1,
       "urban": 0.19,
       "outdoor": 0.62
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "deadwood_sd",
@@ -4551,7 +5237,12 @@
       "food": 0.189,
       "urban": 0.217,
       "outdoor": 0.243
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "death_valley_ca",
@@ -4592,7 +5283,15 @@
       "food": 0.08,
       "urban": 0.14,
       "outdoor": 0.72
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "first_time",
+      "iconic_nature",
+      "national_park",
+      "scenic_drives"
+    ]
   },
   {
     "id": "denali_ak",
@@ -4633,7 +5332,13 @@
       "food": 0.08,
       "urban": 0.14,
       "outdoor": 0.72
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "national_park",
+      "nature"
+    ]
   },
   {
     "id": "denver_co",
@@ -4664,7 +5369,16 @@
       "food": 0.2,
       "urban": 0.2,
       "outdoor": 0.255
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "big_city",
+      "first_time",
+      "museums",
+      "skyline",
+      "skyscrapers"
+    ]
   },
   {
     "id": "depoe_bay_or",
@@ -4705,7 +5419,13 @@
       "food": 0.22,
       "urban": 0.3,
       "outdoor": 0.2
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "food_city",
+      "small_town"
+    ]
   },
   {
     "id": "des_moines_ia",
@@ -4746,7 +5466,12 @@
       "food": 0.25,
       "urban": 0.25,
       "outdoor": 0.1
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "destin_fl",
@@ -4787,7 +5512,13 @@
       "food": 0.2,
       "urban": 0.28,
       "outdoor": 0.28
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "beach",
+      "first_time"
+    ]
   },
   {
     "id": "detroit_mi",
@@ -4818,7 +5549,15 @@
       "food": 0.225,
       "urban": 0.35,
       "outdoor": 0.1
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "architecture",
+      "big_city",
+      "first_time",
+      "museums"
+    ]
   },
   {
     "id": "devils_lake_wi",
@@ -4859,7 +5598,12 @@
       "food": 0.12,
       "urban": 0.24,
       "outdoor": 0.5
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "devils_tower_wy",
@@ -4900,7 +5644,13 @@
       "food": 0.1,
       "urban": 0.19,
       "outdoor": 0.62
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "mountains",
+      "scenic_drives"
+    ]
   },
   {
     "id": "dodge_city_ks",
@@ -4941,7 +5691,13 @@
       "food": 0.167,
       "urban": 0.467,
       "outdoor": 0.1
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "museums",
+      "small_town"
+    ]
   },
   {
     "id": "door_county_wi",
@@ -4982,7 +5738,10 @@
       "food": 0.18,
       "urban": 0.36,
       "outdoor": 0.24
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": []
   },
   {
     "id": "dover_de",
@@ -5023,7 +5782,12 @@
       "food": 0.167,
       "urban": 0.467,
       "outdoor": 0.1
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "driggs_id",
@@ -5064,7 +5828,13 @@
       "food": 0.15,
       "urban": 0.24,
       "outdoor": 0.45
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "mountains",
+      "small_town"
+    ]
   },
   {
     "id": "dry_tortugas_fl",
@@ -5105,7 +5875,13 @@
       "food": 0.12,
       "urban": 0.24,
       "outdoor": 0.5
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "national_park",
+      "nature"
+    ]
   },
   {
     "id": "duck_creek_village_ut",
@@ -5146,7 +5922,12 @@
       "food": 0.15,
       "urban": 0.24,
       "outdoor": 0.45
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "durango_co",
@@ -5187,7 +5968,12 @@
       "food": 0.15,
       "urban": 0.24,
       "outdoor": 0.45
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "durango_silverton_co",
@@ -5228,7 +6014,12 @@
       "food": 0.167,
       "urban": 0.292,
       "outdoor": 0.291
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "encinitas_ca",
@@ -5269,7 +6060,12 @@
       "food": 0.18,
       "urban": 0.26,
       "outdoor": 0.32
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "estes_park_co",
@@ -5310,7 +6106,13 @@
       "food": 0.15,
       "urban": 0.24,
       "outdoor": 0.45
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains",
+      "scenic_drives"
+    ]
   },
   {
     "id": "eugene_or",
@@ -5351,7 +6153,12 @@
       "food": 0.235,
       "urban": 0.265,
       "outdoor": 0.147
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "eureka_springs_ar",
@@ -5387,7 +6194,13 @@
       "food": 0.243,
       "urban": 0.217,
       "outdoor": 0.216
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "shopping",
+      "small_town"
+    ]
   },
   {
     "id": "evanston_il",
@@ -5428,7 +6241,13 @@
       "food": 0.235,
       "urban": 0.265,
       "outdoor": 0.147
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "food_city",
+      "small_town"
+    ]
   },
   {
     "id": "everglades_fl",
@@ -5469,7 +6288,14 @@
       "food": 0.12,
       "urban": 0.24,
       "outdoor": 0.5
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "first_time",
+      "iconic_nature",
+      "national_park"
+    ]
   },
   {
     "id": "fajardo_pr",
@@ -5479,7 +6305,7 @@
     "nearest_airports": [
       {
         "code": "SJU",
-        "name": "Luis Mu\u00f1oz Mar\u00edn International Airport",
+        "name": "Luis Muñoz Marín International Airport",
         "drive_min": 55
       },
       {
@@ -5510,7 +6336,12 @@
       "food": 0.2,
       "urban": 0.24,
       "outdoor": 0.3
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "falmouth_ma",
@@ -5551,7 +6382,12 @@
       "food": 0.2,
       "urban": 0.28,
       "outdoor": 0.28
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "fargo_nd",
@@ -5592,7 +6428,12 @@
       "food": 0.25,
       "urban": 0.25,
       "outdoor": 0.1
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "fayetteville_ar",
@@ -5633,7 +6474,13 @@
       "food": 0.212,
       "urban": 0.212,
       "outdoor": 0.273
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "food_city",
+      "small_town"
+    ]
   },
   {
     "id": "finger_lakes_ny",
@@ -5674,7 +6521,12 @@
       "food": 0.26,
       "urban": 0.27,
       "outdoor": 0.28
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "scenic_drives"
+    ]
   },
   {
     "id": "fire_island_ny",
@@ -5715,7 +6567,13 @@
       "food": 0.18,
       "urban": 0.22,
       "outdoor": 0.22
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach",
+      "nightlife_city"
+    ]
   },
   {
     "id": "flaming_gorge_ut",
@@ -5756,7 +6614,12 @@
       "food": 0.1,
       "urban": 0.19,
       "outdoor": 0.62
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "scenic_drives"
+    ]
   },
   {
     "id": "folly_beach_sc",
@@ -5797,7 +6660,12 @@
       "food": 0.18,
       "urban": 0.26,
       "outdoor": 0.32
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "fort_collins_co",
@@ -5838,7 +6706,12 @@
       "food": 0.212,
       "urban": 0.212,
       "outdoor": 0.273
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "fort_lauderdale_fl",
@@ -5874,7 +6747,17 @@
       "food": 0.192,
       "urban": 0.173,
       "outdoor": 0.173
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "beach",
+      "big_city",
+      "first_time",
+      "museums",
+      "nightlife_city",
+      "shopping"
+    ]
   },
   {
     "id": "franconia_nh",
@@ -5915,7 +6798,13 @@
       "food": 0.167,
       "urban": 0.292,
       "outdoor": 0.291
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "scenic_drives",
+      "small_town"
+    ]
   },
   {
     "id": "frederick_md",
@@ -5956,7 +6845,13 @@
       "food": 0.167,
       "urban": 0.467,
       "outdoor": 0.1
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "food_city",
+      "small_town"
+    ]
   },
   {
     "id": "fredericksburg_tx",
@@ -5992,7 +6887,12 @@
       "food": 0.297,
       "urban": 0.19,
       "outdoor": 0.189
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "frisco_co",
@@ -6033,7 +6933,13 @@
       "food": 0.17,
       "urban": 0.23,
       "outdoor": 0.39
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains",
+      "shopping"
+    ]
   },
   {
     "id": "furnace_creek_ca",
@@ -6074,7 +6980,12 @@
       "food": 0.16,
       "urban": 0.2,
       "outdoor": 0.36
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "galena_il",
@@ -6115,7 +7026,13 @@
       "food": 0.167,
       "urban": 0.467,
       "outdoor": 0.1
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "shopping",
+      "small_town"
+    ]
   },
   {
     "id": "galveston_tx",
@@ -6156,7 +7073,12 @@
       "food": 0.22,
       "urban": 0.3,
       "outdoor": 0.2
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "garden_of_the_gods_co",
@@ -6197,7 +7119,10 @@
       "food": 0.12,
       "urban": 0.24,
       "outdoor": 0.5
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": []
   },
   {
     "id": "gardiner_mt",
@@ -6238,7 +7163,13 @@
       "food": 0.15,
       "urban": 0.24,
       "outdoor": 0.45
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "scenic_drives",
+      "small_town"
+    ]
   },
   {
     "id": "gates_of_the_arctic_ak",
@@ -6279,7 +7210,13 @@
       "food": 0.08,
       "urban": 0.14,
       "outdoor": 0.72
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "national_park",
+      "nature"
+    ]
   },
   {
     "id": "gatlinburg_tn",
@@ -6320,7 +7257,13 @@
       "food": 0.17,
       "urban": 0.23,
       "outdoor": 0.39
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains",
+      "scenic_drives"
+    ]
   },
   {
     "id": "geneseo_ny",
@@ -6361,7 +7304,13 @@
       "food": 0.235,
       "urban": 0.265,
       "outdoor": 0.147
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "food_city",
+      "small_town"
+    ]
   },
   {
     "id": "gettysburg_pa",
@@ -6402,7 +7351,13 @@
       "food": 0.18,
       "urban": 0.47,
       "outdoor": 0.1
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "museums",
+      "small_town"
+    ]
   },
   {
     "id": "glacier_mt",
@@ -6443,7 +7398,16 @@
       "food": 0.08,
       "urban": 0.14,
       "outdoor": 0.72
-    }
+    },
+    "popularity_tier": 5,
+    "iconic_score": 1.0,
+    "prominence_tags": [
+      "first_time",
+      "iconic",
+      "iconic_nature",
+      "mountains",
+      "national_park"
+    ]
   },
   {
     "id": "glenwood_springs_co",
@@ -6484,7 +7448,12 @@
       "food": 0.211,
       "urban": 0.13,
       "outdoor": 0.395
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "gloucester_ma",
@@ -6525,7 +7494,13 @@
       "food": 0.22,
       "urban": 0.3,
       "outdoor": 0.2
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach",
+      "small_town"
+    ]
   },
   {
     "id": "goblin_valley_ut",
@@ -6566,7 +7541,10 @@
       "food": 0.1,
       "urban": 0.19,
       "outdoor": 0.62
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": []
   },
   {
     "id": "government_camp_or",
@@ -6607,7 +7585,12 @@
       "food": 0.17,
       "urban": 0.22,
       "outdoor": 0.36
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "grand_canyon_az",
@@ -6648,7 +7631,17 @@
       "food": 0.08,
       "urban": 0.14,
       "outdoor": 0.72
-    }
+    },
+    "popularity_tier": 5,
+    "iconic_score": 1.0,
+    "prominence_tags": [
+      "first_time",
+      "iconic",
+      "iconic_nature",
+      "mountains",
+      "national_park",
+      "scenic_drives"
+    ]
   },
   {
     "id": "grand_teton_wy",
@@ -6689,7 +7682,14 @@
       "food": 0.12,
       "urban": 0.24,
       "outdoor": 0.5
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains",
+      "national_park",
+      "nature"
+    ]
   },
   {
     "id": "great_sand_dunes_co",
@@ -6730,7 +7730,14 @@
       "food": 0.08,
       "urban": 0.14,
       "outdoor": 0.72
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains",
+      "national_park",
+      "nature"
+    ]
   },
   {
     "id": "great_smoky_mountains_tn",
@@ -6771,7 +7778,16 @@
       "food": 0.12,
       "urban": 0.24,
       "outdoor": 0.5
-    }
+    },
+    "popularity_tier": 5,
+    "iconic_score": 1.0,
+    "prominence_tags": [
+      "first_time",
+      "iconic",
+      "iconic_nature",
+      "national_park",
+      "scenic_drives"
+    ]
   },
   {
     "id": "greenville_sc",
@@ -6812,7 +7828,13 @@
       "food": 0.315,
       "urban": 0.237,
       "outdoor": 0.079
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "food_city",
+      "small_town"
+    ]
   },
   {
     "id": "guadalupe_mountains_tx",
@@ -6853,7 +7875,13 @@
       "food": 0.08,
       "urban": 0.14,
       "outdoor": 0.72
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "national_park",
+      "nature"
+    ]
   },
   {
     "id": "gulf_shores_al",
@@ -6894,7 +7922,12 @@
       "food": 0.2,
       "urban": 0.28,
       "outdoor": 0.28
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "haleakala_hi",
@@ -6935,7 +7968,14 @@
       "food": 0.12,
       "urban": 0.24,
       "outdoor": 0.5
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains",
+      "national_park",
+      "nature"
+    ]
   },
   {
     "id": "half_moon_bay_ca",
@@ -6976,7 +8016,12 @@
       "food": 0.22,
       "urban": 0.3,
       "outdoor": 0.2
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "hana_hi",
@@ -7017,7 +8062,12 @@
       "food": 0.18,
       "urban": 0.26,
       "outdoor": 0.38
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "hanalei_hi",
@@ -7053,7 +8103,13 @@
       "food": 0.18,
       "urban": 0.26,
       "outdoor": 0.32
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "food_city",
+      "small_town"
+    ]
   },
   {
     "id": "hanksville_ut",
@@ -7094,7 +8150,12 @@
       "food": 0.167,
       "urban": 0.292,
       "outdoor": 0.291
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "hanover_nh",
@@ -7135,7 +8196,12 @@
       "food": 0.235,
       "urban": 0.265,
       "outdoor": 0.147
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "harpers_ferry_wv",
@@ -7176,7 +8242,13 @@
       "food": 0.18,
       "urban": 0.47,
       "outdoor": 0.1
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "mountains",
+      "small_town"
+    ]
   },
   {
     "id": "hawaii_volcanoes_hi",
@@ -7217,7 +8289,15 @@
       "food": 0.12,
       "urban": 0.24,
       "outdoor": 0.5
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains",
+      "national_park",
+      "nature",
+      "scenic_drives"
+    ]
   },
   {
     "id": "healdsburg_ca",
@@ -7258,7 +8338,13 @@
       "food": 0.315,
       "urban": 0.237,
       "outdoor": 0.079
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "food_city",
+      "small_town"
+    ]
   },
   {
     "id": "helen_ga",
@@ -7294,7 +8380,12 @@
       "food": 0.225,
       "urban": 0.125,
       "outdoor": 0.275
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "hershey_pa",
@@ -7335,7 +8426,13 @@
       "food": 0.19,
       "urban": 0.33,
       "outdoor": 0.18
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town",
+      "theme_parks"
+    ]
   },
   {
     "id": "hilton_head_island_sc",
@@ -7376,7 +8473,13 @@
       "food": 0.2,
       "urban": 0.24,
       "outdoor": 0.22
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "beach",
+      "first_time"
+    ]
   },
   {
     "id": "hocking_hills_oh",
@@ -7417,7 +8520,10 @@
       "food": 0.1,
       "urban": 0.19,
       "outdoor": 0.62
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": []
   },
   {
     "id": "holbrook_az",
@@ -7458,7 +8564,12 @@
       "food": 0.167,
       "urban": 0.292,
       "outdoor": 0.291
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "homer_ak",
@@ -7499,7 +8610,12 @@
       "food": 0.16,
       "urban": 0.26,
       "outdoor": 0.4
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "honolulu_hi",
@@ -7530,7 +8646,16 @@
       "food": 0.183,
       "urban": 0.15,
       "outdoor": 0.267
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "beach",
+      "big_city",
+      "first_time",
+      "museums",
+      "shopping"
+    ]
   },
   {
     "id": "hood_river_or",
@@ -7561,7 +8686,13 @@
       "food": 0.205,
       "urban": 0.128,
       "outdoor": 0.385
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains",
+      "scenic_drives"
+    ]
   },
   {
     "id": "horseshoe_bend_az",
@@ -7602,7 +8733,10 @@
       "food": 0.12,
       "urban": 0.24,
       "outdoor": 0.5
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": []
   },
   {
     "id": "hot_springs_ar",
@@ -7643,7 +8777,13 @@
       "food": 0.2,
       "urban": 0.36,
       "outdoor": 0.26
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "national_park",
+      "nature"
+    ]
   },
   {
     "id": "houston_tx",
@@ -7679,7 +8819,15 @@
       "food": 0.245,
       "urban": 0.283,
       "outdoor": 0.094
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "big_city",
+      "first_time",
+      "food_city",
+      "museums"
+    ]
   },
   {
     "id": "huntington_beach_ca",
@@ -7720,7 +8868,13 @@
       "food": 0.18,
       "urban": 0.26,
       "outdoor": 0.32
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "nightlife_city",
+      "small_town"
+    ]
   },
   {
     "id": "huntsville_al",
@@ -7761,7 +8915,13 @@
       "food": 0.25,
       "urban": 0.25,
       "outdoor": 0.1
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "food_city",
+      "small_town"
+    ]
   },
   {
     "id": "idyllwild_ca",
@@ -7802,7 +8962,12 @@
       "food": 0.17,
       "urban": 0.23,
       "outdoor": 0.39
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "indiana_dunes_in",
@@ -7843,7 +9008,14 @@
       "food": 0.12,
       "urban": 0.24,
       "outdoor": 0.5
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach",
+      "national_park",
+      "nature"
+    ]
   },
   {
     "id": "indianapolis_in",
@@ -7874,7 +9046,14 @@
       "food": 0.237,
       "urban": 0.29,
       "outdoor": 0.105
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "big_city",
+      "first_time",
+      "museums"
+    ]
   },
   {
     "id": "isabela_pr",
@@ -7884,12 +9063,12 @@
     "nearest_airports": [
       {
         "code": "BQN",
-        "name": "Rafael Hern\u00e1ndez Airport",
+        "name": "Rafael Hernández Airport",
         "drive_min": 20
       },
       {
         "code": "SJU",
-        "name": "Luis Mu\u00f1oz Mar\u00edn International Airport",
+        "name": "Luis Muñoz Marín International Airport",
         "drive_min": 115
       },
       {
@@ -7915,7 +9094,12 @@
       "food": 0.18,
       "urban": 0.26,
       "outdoor": 0.32
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "islamorada_fl",
@@ -7956,7 +9140,12 @@
       "food": 0.2,
       "urban": 0.24,
       "outdoor": 0.3
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "isle_royale_mi",
@@ -7997,7 +9186,13 @@
       "food": 0.08,
       "urban": 0.14,
       "outdoor": 0.72
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "national_park",
+      "nature"
+    ]
   },
   {
     "id": "jackson_wy",
@@ -8033,7 +9228,12 @@
       "food": 0.182,
       "urban": 0.114,
       "outdoor": 0.409
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "jay_vt",
@@ -8053,7 +9253,7 @@
       },
       {
         "code": "YUL",
-        "name": "Montr\u00e9al\u2013Trudeau International Airport",
+        "name": "Montréal–Trudeau International Airport",
         "drive_min": 105
       }
     ],
@@ -8074,7 +9274,12 @@
       "food": 0.17,
       "urban": 0.22,
       "outdoor": 0.36
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "jekyll_island_ga",
@@ -8115,7 +9320,12 @@
       "food": 0.16,
       "urban": 0.28,
       "outdoor": 0.36
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "jerome_az",
@@ -8156,7 +9366,12 @@
       "food": 0.179,
       "urban": 0.356,
       "outdoor": 0.179
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "jim_thorpe_pa",
@@ -8197,7 +9412,12 @@
       "food": 0.2,
       "urban": 0.45,
       "outdoor": 0.1
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "joseph_or",
@@ -8238,7 +9458,13 @@
       "food": 0.15,
       "urban": 0.24,
       "outdoor": 0.45
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "mountains",
+      "small_town"
+    ]
   },
   {
     "id": "joshua_tree_ca",
@@ -8279,7 +9505,14 @@
       "food": 0.08,
       "urban": 0.14,
       "outdoor": 0.72
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "first_time",
+      "iconic_nature",
+      "national_park"
+    ]
   },
   {
     "id": "june_lake_ca",
@@ -8320,7 +9553,12 @@
       "food": 0.17,
       "urban": 0.23,
       "outdoor": 0.39
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "juneau_ak",
@@ -8361,7 +9599,13 @@
       "food": 0.16,
       "urban": 0.26,
       "outdoor": 0.4
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "food_city",
+      "small_town"
+    ]
   },
   {
     "id": "kanab_scenic_ut",
@@ -8402,7 +9646,12 @@
       "food": 0.16,
       "urban": 0.2,
       "outdoor": 0.36
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "kanab_ut",
@@ -8443,7 +9692,12 @@
       "food": 0.15,
       "urban": 0.24,
       "outdoor": 0.45
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "kansas_city_mo",
@@ -8484,7 +9738,14 @@
       "food": 0.315,
       "urban": 0.237,
       "outdoor": 0.079
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "big_city",
+      "first_time",
+      "museums"
+    ]
   },
   {
     "id": "kauai_hi",
@@ -8525,7 +9786,15 @@
       "food": 0.18,
       "urban": 0.2,
       "outdoor": 0.42
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "beach",
+      "first_time",
+      "mountains",
+      "scenic_drives"
+    ]
   },
   {
     "id": "kenai_fjords_ak",
@@ -8566,7 +9835,13 @@
       "food": 0.12,
       "urban": 0.24,
       "outdoor": 0.5
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "national_park",
+      "nature"
+    ]
   },
   {
     "id": "kennebunkport_me",
@@ -8607,7 +9882,13 @@
       "food": 0.282,
       "urban": 0.18,
       "outdoor": 0.179
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "shopping",
+      "small_town"
+    ]
   },
   {
     "id": "ketchikan_ak",
@@ -8648,7 +9929,12 @@
       "food": 0.16,
       "urban": 0.26,
       "outdoor": 0.4
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "ketchum_id",
@@ -8689,7 +9975,13 @@
       "food": 0.17,
       "urban": 0.23,
       "outdoor": 0.39
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains",
+      "shopping"
+    ]
   },
   {
     "id": "key_largo_fl",
@@ -8730,7 +10022,12 @@
       "food": 0.2,
       "urban": 0.24,
       "outdoor": 0.3
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "key_west_fl",
@@ -8766,7 +10063,15 @@
       "food": 0.224,
       "urban": 0.103,
       "outdoor": 0.224
-    }
+    },
+    "popularity_tier": 5,
+    "iconic_score": 1.0,
+    "prominence_tags": [
+      "beach",
+      "first_time",
+      "iconic",
+      "nightlife_city"
+    ]
   },
   {
     "id": "kiawah_island_sc",
@@ -8807,7 +10112,12 @@
       "food": 0.2,
       "urban": 0.24,
       "outdoor": 0.22
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "killington_vt",
@@ -8848,7 +10158,12 @@
       "food": 0.17,
       "urban": 0.22,
       "outdoor": 0.36
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "kings_canyon_ca",
@@ -8889,7 +10204,15 @@
       "food": 0.08,
       "urban": 0.14,
       "outdoor": 0.72
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains",
+      "national_park",
+      "nature",
+      "scenic_drives"
+    ]
   },
   {
     "id": "kissimmee_fl",
@@ -8930,7 +10253,13 @@
       "food": 0.19,
       "urban": 0.33,
       "outdoor": 0.18
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "small_town",
+      "theme_parks"
+    ]
   },
   {
     "id": "kodiak_ak",
@@ -8971,7 +10300,12 @@
       "food": 0.16,
       "urban": 0.26,
       "outdoor": 0.4
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "la_jolla_ca",
@@ -9012,7 +10346,12 @@
       "food": 0.22,
       "urban": 0.3,
       "outdoor": 0.2
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "la_quinta_ca",
@@ -9053,7 +10392,10 @@
       "food": 0.179,
       "urban": 0.249,
       "outdoor": 0.214
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": []
   },
   {
     "id": "laguna_beach_ca",
@@ -9094,7 +10436,13 @@
       "food": 0.239,
       "urban": 0.153,
       "outdoor": 0.217
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach",
+      "shopping"
+    ]
   },
   {
     "id": "lake_chelan_wa",
@@ -9135,7 +10483,13 @@
       "food": 0.18,
       "urban": 0.36,
       "outdoor": 0.24
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "scenic_drives",
+      "small_town"
+    ]
   },
   {
     "id": "lake_geneva_wi",
@@ -9176,7 +10530,12 @@
       "food": 0.169,
       "urban": 0.231,
       "outdoor": 0.308
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "shopping"
+    ]
   },
   {
     "id": "lake_george_ny",
@@ -9217,7 +10576,12 @@
       "food": 0.18,
       "urban": 0.36,
       "outdoor": 0.24
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "lake_mead_nv",
@@ -9258,7 +10622,10 @@
       "food": 0.12,
       "urban": 0.24,
       "outdoor": 0.5
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": []
   },
   {
     "id": "lake_placid_ny",
@@ -9299,7 +10666,12 @@
       "food": 0.179,
       "urban": 0.155,
       "outdoor": 0.41
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "lake_powell_az",
@@ -9340,7 +10712,10 @@
       "food": 0.1,
       "urban": 0.19,
       "outdoor": 0.62
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": []
   },
   {
     "id": "lake_tahoe_ca",
@@ -9381,7 +10756,15 @@
       "food": 0.13,
       "urban": 0.23,
       "outdoor": 0.45
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "beach",
+      "first_time",
+      "mountains",
+      "scenic_drives"
+    ]
   },
   {
     "id": "las_cruces_nm",
@@ -9422,7 +10805,12 @@
       "food": 0.16,
       "urban": 0.2,
       "outdoor": 0.36
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "las_vegas_nv",
@@ -9453,7 +10841,20 @@
       "food": 0.196,
       "urban": 0.197,
       "outdoor": 0.036
-    }
+    },
+    "popularity_tier": 5,
+    "iconic_score": 1.0,
+    "prominence_tags": [
+      "big_city",
+      "first_time",
+      "iconic",
+      "museums",
+      "nightlife_city",
+      "shopping",
+      "skyline",
+      "skyscrapers",
+      "theme_parks"
+    ]
   },
   {
     "id": "lassen_volcanic_ca",
@@ -9494,7 +10895,14 @@
       "food": 0.08,
       "urban": 0.14,
       "outdoor": 0.72
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains",
+      "national_park",
+      "nature"
+    ]
   },
   {
     "id": "laughlin_nv",
@@ -9535,7 +10943,13 @@
       "food": 0.18,
       "urban": 0.37,
       "outdoor": 0.06
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "nightlife_city",
+      "small_town"
+    ]
   },
   {
     "id": "lawrence_ks",
@@ -9576,7 +10990,12 @@
       "food": 0.235,
       "urban": 0.265,
       "outdoor": 0.147
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "leavenworth_wa",
@@ -9612,7 +11031,12 @@
       "food": 0.22,
       "urban": 0.121,
       "outdoor": 0.317
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "letchworth_ny",
@@ -9653,7 +11077,10 @@
       "food": 0.12,
       "urban": 0.24,
       "outdoor": 0.5
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": []
   },
   {
     "id": "lexington_ky",
@@ -9694,7 +11121,12 @@
       "food": 0.315,
       "urban": 0.237,
       "outdoor": 0.079
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "lincoln_city_or",
@@ -9735,7 +11167,12 @@
       "food": 0.2,
       "urban": 0.28,
       "outdoor": 0.28
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "lincoln_nh",
@@ -9776,7 +11213,12 @@
       "food": 0.17,
       "urban": 0.23,
       "outdoor": 0.39
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "little_rock_ar",
@@ -9817,7 +11259,14 @@
       "food": 0.25,
       "urban": 0.25,
       "outdoor": 0.1
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "food_city",
+      "museums",
+      "small_town"
+    ]
   },
   {
     "id": "livermore_valley_ca",
@@ -9858,7 +11307,12 @@
       "food": 0.28,
       "urban": 0.35,
       "outdoor": 0.12
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "food_city"
+    ]
   },
   {
     "id": "long_beach_island_nj",
@@ -9899,7 +11353,12 @@
       "food": 0.2,
       "urban": 0.28,
       "outdoor": 0.28
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "long_beach_wa",
@@ -9940,7 +11399,12 @@
       "food": 0.2,
       "urban": 0.28,
       "outdoor": 0.28
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "long_island_wine_country_ny",
@@ -9981,7 +11445,10 @@
       "food": 0.28,
       "urban": 0.35,
       "outdoor": 0.12
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": []
   },
   {
     "id": "los_angeles_ca",
@@ -10022,7 +11489,21 @@
       "food": 0.214,
       "urban": 0.201,
       "outdoor": 0.1
-    }
+    },
+    "popularity_tier": 5,
+    "iconic_score": 1.0,
+    "prominence_tags": [
+      "beach",
+      "big_city",
+      "first_time",
+      "food_city",
+      "iconic",
+      "museums",
+      "nightlife_city",
+      "shopping",
+      "skyline",
+      "skyscrapers"
+    ]
   },
   {
     "id": "louisville_ky",
@@ -10063,7 +11544,14 @@
       "food": 0.315,
       "urban": 0.237,
       "outdoor": 0.079
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "food_city",
+      "museums",
+      "small_town"
+    ]
   },
   {
     "id": "mackinac_island_mi",
@@ -10104,7 +11592,12 @@
       "food": 0.16,
       "urban": 0.28,
       "outdoor": 0.36
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "madison_wi",
@@ -10145,7 +11638,13 @@
       "food": 0.212,
       "urban": 0.212,
       "outdoor": 0.273
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "food_city",
+      "small_town"
+    ]
   },
   {
     "id": "malibu_ca",
@@ -10186,7 +11685,12 @@
       "food": 0.2,
       "urban": 0.24,
       "outdoor": 0.22
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "mammoth_cave_ky",
@@ -10227,7 +11731,14 @@
       "food": 0.12,
       "urban": 0.24,
       "outdoor": 0.5
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains",
+      "national_park",
+      "nature"
+    ]
   },
   {
     "id": "mammoth_lakes_ca",
@@ -10268,7 +11779,12 @@
       "food": 0.17,
       "urban": 0.22,
       "outdoor": 0.36
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "manchester_nh",
@@ -10309,7 +11825,13 @@
       "food": 0.25,
       "urban": 0.25,
       "outdoor": 0.1
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "museums",
+      "small_town"
+    ]
   },
   {
     "id": "manzanita_or",
@@ -10350,7 +11872,12 @@
       "food": 0.22,
       "urban": 0.3,
       "outdoor": 0.2
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "marble_co",
@@ -10391,7 +11918,12 @@
       "food": 0.167,
       "urban": 0.292,
       "outdoor": 0.291
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "marco_island_fl",
@@ -10432,7 +11964,12 @@
       "food": 0.2,
       "urban": 0.24,
       "outdoor": 0.3
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "marfa_tx",
@@ -10473,7 +12010,12 @@
       "food": 0.179,
       "urban": 0.356,
       "outdoor": 0.179
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "marthas_vineyard_ma",
@@ -10514,7 +12056,12 @@
       "food": 0.2,
       "urban": 0.24,
       "outdoor": 0.3
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "mashantucket_ct",
@@ -10555,7 +12102,12 @@
       "food": 0.18,
       "urban": 0.37,
       "outdoor": 0.06
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "matagorda_tx",
@@ -10596,7 +12148,12 @@
       "food": 0.18,
       "urban": 0.26,
       "outdoor": 0.38
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "maui_hi",
@@ -10637,7 +12194,15 @@
       "food": 0.18,
       "urban": 0.2,
       "outdoor": 0.42
-    }
+    },
+    "popularity_tier": 5,
+    "iconic_score": 1.0,
+    "prominence_tags": [
+      "beach",
+      "first_time",
+      "iconic",
+      "scenic_drives"
+    ]
   },
   {
     "id": "mccall_id",
@@ -10678,7 +12243,12 @@
       "food": 0.169,
       "urban": 0.231,
       "outdoor": 0.308
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "medora_nd",
@@ -10719,7 +12289,13 @@
       "food": 0.2,
       "urban": 0.45,
       "outdoor": 0.1
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "scenic_drives",
+      "small_town"
+    ]
   },
   {
     "id": "memphis_tn",
@@ -10750,7 +12326,15 @@
       "food": 0.244,
       "urban": 0.268,
       "outdoor": 0.111
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "big_city",
+      "first_time",
+      "museums",
+      "nightlife_city"
+    ]
   },
   {
     "id": "mesa_verde_co",
@@ -10791,7 +12375,14 @@
       "food": 0.12,
       "urban": 0.24,
       "outdoor": 0.5
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "museums",
+      "national_park",
+      "nature"
+    ]
   },
   {
     "id": "mesquite_nv",
@@ -10832,7 +12423,10 @@
       "food": 0.179,
       "urban": 0.249,
       "outdoor": 0.214
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": []
   },
   {
     "id": "miami_fl",
@@ -10868,7 +12462,21 @@
       "food": 0.186,
       "urban": 0.2,
       "outdoor": 0.129
-    }
+    },
+    "popularity_tier": 5,
+    "iconic_score": 1.0,
+    "prominence_tags": [
+      "beach",
+      "big_city",
+      "first_time",
+      "food_city",
+      "iconic",
+      "museums",
+      "nightlife_city",
+      "shopping",
+      "skyline",
+      "skyscrapers"
+    ]
   },
   {
     "id": "midway_ut",
@@ -10909,7 +12517,12 @@
       "food": 0.17,
       "urban": 0.23,
       "outdoor": 0.39
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "milwaukee_wi",
@@ -10945,7 +12558,14 @@
       "food": 0.214,
       "urban": 0.262,
       "outdoor": 0.143
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "big_city",
+      "first_time",
+      "museums"
+    ]
   },
   {
     "id": "minneapolis_mn",
@@ -10976,7 +12596,15 @@
       "food": 0.235,
       "urban": 0.295,
       "outdoor": 0.137
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "big_city",
+      "first_time",
+      "food_city",
+      "museums"
+    ]
   },
   {
     "id": "minocqua_wi",
@@ -11017,7 +12645,12 @@
       "food": 0.169,
       "urban": 0.231,
       "outdoor": 0.308
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "moab_to_monticello_ut",
@@ -11058,7 +12691,12 @@
       "food": 0.167,
       "urban": 0.292,
       "outdoor": 0.291
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "moab_ut",
@@ -11099,7 +12737,13 @@
       "food": 0.143,
       "urban": 0.086,
       "outdoor": 0.543
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "first_time",
+      "mountains"
+    ]
   },
   {
     "id": "mono_lake_ca",
@@ -11140,7 +12784,10 @@
       "food": 0.1,
       "urban": 0.19,
       "outdoor": 0.62
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": []
   },
   {
     "id": "montauk_ny",
@@ -11181,7 +12828,13 @@
       "food": 0.18,
       "urban": 0.22,
       "outdoor": 0.22
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "beach",
+      "small_town"
+    ]
   },
   {
     "id": "monterey_ca",
@@ -11222,7 +12875,13 @@
       "food": 0.234,
       "urban": 0.213,
       "outdoor": 0.234
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "museums",
+      "small_town"
+    ]
   },
   {
     "id": "monument_valley_az",
@@ -11263,7 +12922,12 @@
       "food": 0.1,
       "urban": 0.19,
       "outdoor": 0.62
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "scenic_drives"
+    ]
   },
   {
     "id": "morro_bay_ca",
@@ -11304,7 +12968,12 @@
       "food": 0.22,
       "urban": 0.3,
       "outdoor": 0.2
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "mount_rainier_wa",
@@ -11345,7 +13014,15 @@
       "food": 0.08,
       "urban": 0.14,
       "outdoor": 0.72
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains",
+      "national_park",
+      "nature",
+      "scenic_drives"
+    ]
   },
   {
     "id": "mount_shasta_ca",
@@ -11386,7 +13063,12 @@
       "food": 0.15,
       "urban": 0.24,
       "outdoor": 0.45
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "multnomah_falls_or",
@@ -11427,7 +13109,10 @@
       "food": 0.12,
       "urban": 0.24,
       "outdoor": 0.5
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": []
   },
   {
     "id": "mustang_island_tx",
@@ -11468,7 +13153,12 @@
       "food": 0.2,
       "urban": 0.28,
       "outdoor": 0.28
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "myrtle_beach_sc",
@@ -11509,7 +13199,14 @@
       "food": 0.18,
       "urban": 0.22,
       "outdoor": 0.22
-    }
+    },
+    "popularity_tier": 5,
+    "iconic_score": 1.0,
+    "prominence_tags": [
+      "first_time",
+      "iconic",
+      "nightlife_city"
+    ]
   },
   {
     "id": "mystic_ct",
@@ -11545,7 +13242,13 @@
       "food": 0.286,
       "urban": 0.214,
       "outdoor": 0.167
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "shopping",
+      "small_town"
+    ]
   },
   {
     "id": "nantucket_ma",
@@ -11581,7 +13284,13 @@
       "food": 0.25,
       "urban": 0.125,
       "outdoor": 0.225
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach",
+      "shopping"
+    ]
   },
   {
     "id": "napa_ca",
@@ -11591,7 +13300,7 @@
     "nearest_airports": [
       {
         "code": "STS",
-        "name": "Charles M. Schulz\u2013Sonoma County Airport",
+        "name": "Charles M. Schulz–Sonoma County Airport",
         "drive_min": 35
       },
       {
@@ -11622,7 +13331,13 @@
       "food": 0.362,
       "urban": 0.149,
       "outdoor": 0.17
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "food_city",
+      "small_town"
+    ]
   },
   {
     "id": "naples_fl",
@@ -11663,7 +13378,14 @@
       "food": 0.2,
       "urban": 0.24,
       "outdoor": 0.22
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "beach",
+      "first_time",
+      "shopping"
+    ]
   },
   {
     "id": "narragansett_ri",
@@ -11704,7 +13426,12 @@
       "food": 0.18,
       "urban": 0.26,
       "outdoor": 0.32
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "nashville_tn",
@@ -11735,7 +13462,18 @@
       "food": 0.227,
       "urban": 0.212,
       "outdoor": 0.106
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "big_city",
+      "first_time",
+      "food_city",
+      "museums",
+      "nightlife_city",
+      "skyline",
+      "skyscrapers"
+    ]
   },
   {
     "id": "natchez_ms",
@@ -11776,7 +13514,13 @@
       "food": 0.167,
       "urban": 0.467,
       "outdoor": 0.1
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "food_city",
+      "small_town"
+    ]
   },
   {
     "id": "natural_bridge_ky",
@@ -11817,7 +13561,10 @@
       "food": 0.1,
       "urban": 0.19,
       "outdoor": 0.62
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": []
   },
   {
     "id": "new_braunfels_tx",
@@ -11858,7 +13605,12 @@
       "food": 0.2,
       "urban": 0.45,
       "outdoor": 0.1
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "new_brunswick_nj",
@@ -11899,7 +13651,13 @@
       "food": 0.235,
       "urban": 0.265,
       "outdoor": 0.147
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "food_city",
+      "small_town"
+    ]
   },
   {
     "id": "new_haven_ct",
@@ -11940,7 +13698,12 @@
       "food": 0.315,
       "urban": 0.237,
       "outdoor": 0.079
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "new_orleans_la",
@@ -11971,7 +13734,19 @@
       "food": 0.288,
       "urban": 0.242,
       "outdoor": 0.061
-    }
+    },
+    "popularity_tier": 5,
+    "iconic_score": 1.0,
+    "prominence_tags": [
+      "big_city",
+      "first_time",
+      "food_city",
+      "iconic",
+      "museums",
+      "nightlife_city",
+      "skyline",
+      "skyscrapers"
+    ]
   },
   {
     "id": "new_smyrna_beach_fl",
@@ -12012,7 +13787,12 @@
       "food": 0.18,
       "urban": 0.26,
       "outdoor": 0.32
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "new_york_city_ny",
@@ -12053,7 +13833,20 @@
       "food": 0.24,
       "urban": 0.267,
       "outdoor": 0.027
-    }
+    },
+    "popularity_tier": 5,
+    "iconic_score": 1.0,
+    "prominence_tags": [
+      "big_city",
+      "first_time",
+      "food_city",
+      "iconic",
+      "museums",
+      "nightlife_city",
+      "shopping",
+      "skyline",
+      "skyscrapers"
+    ]
   },
   {
     "id": "newport_beach_ca",
@@ -12094,7 +13887,14 @@
       "food": 0.2,
       "urban": 0.24,
       "outdoor": 0.22
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach",
+      "shopping",
+      "small_town"
+    ]
   },
   {
     "id": "newport_or",
@@ -12135,7 +13935,12 @@
       "food": 0.22,
       "urban": 0.3,
       "outdoor": 0.2
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "newport_ri",
@@ -12171,7 +13976,12 @@
       "food": 0.217,
       "urban": 0.174,
       "outdoor": 0.196
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "niagara_falls_ny",
@@ -12212,7 +14022,12 @@
       "food": 0.18,
       "urban": 0.29,
       "outdoor": 0.25
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "first_time"
+    ]
   },
   {
     "id": "north_adams_ma",
@@ -12253,7 +14068,12 @@
       "food": 0.179,
       "urban": 0.356,
       "outdoor": 0.179
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "north_cascades_wa",
@@ -12294,7 +14114,14 @@
       "food": 0.08,
       "urban": 0.14,
       "outdoor": 0.72
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "national_park",
+      "nature",
+      "scenic_drives"
+    ]
   },
   {
     "id": "north_conway_nh",
@@ -12335,7 +14162,12 @@
       "food": 0.17,
       "urban": 0.23,
       "outdoor": 0.39
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "oahu_hi",
@@ -12371,7 +14203,16 @@
       "food": 0.18,
       "urban": 0.22,
       "outdoor": 0.22
-    }
+    },
+    "popularity_tier": 5,
+    "iconic_score": 1.0,
+    "prominence_tags": [
+      "beach",
+      "first_time",
+      "iconic",
+      "museums",
+      "nightlife_city"
+    ]
   },
   {
     "id": "ocean_city_md",
@@ -12412,7 +14253,13 @@
       "food": 0.18,
       "urban": 0.22,
       "outdoor": 0.22
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach",
+      "nightlife_city"
+    ]
   },
   {
     "id": "ogunquit_me",
@@ -12453,7 +14300,12 @@
       "food": 0.275,
       "urban": 0.15,
       "outdoor": 0.2
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "ojai_ca",
@@ -12494,7 +14346,14 @@
       "food": 0.179,
       "urban": 0.249,
       "outdoor": 0.214
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "food_city",
+      "mountains",
+      "small_town"
+    ]
   },
   {
     "id": "oklahoma_city_ok",
@@ -12535,7 +14394,14 @@
       "food": 0.25,
       "urban": 0.25,
       "outdoor": 0.1
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "big_city",
+      "first_time",
+      "museums"
+    ]
   },
   {
     "id": "old_orchard_beach_me",
@@ -12576,7 +14442,12 @@
       "food": 0.18,
       "urban": 0.22,
       "outdoor": 0.22
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "olympic_wa",
@@ -12617,7 +14488,15 @@
       "food": 0.08,
       "urban": 0.14,
       "outdoor": 0.72
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "first_time",
+      "iconic_nature",
+      "mountains",
+      "national_park"
+    ]
   },
   {
     "id": "omaha_ne",
@@ -12658,7 +14537,14 @@
       "food": 0.25,
       "urban": 0.25,
       "outdoor": 0.1
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "big_city",
+      "first_time",
+      "museums"
+    ]
   },
   {
     "id": "orange_beach_al",
@@ -12699,7 +14585,12 @@
       "food": 0.2,
       "urban": 0.28,
       "outdoor": 0.28
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "oregon_dunes_or",
@@ -12740,7 +14631,12 @@
       "food": 0.1,
       "urban": 0.19,
       "outdoor": 0.62
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "orlando_fl",
@@ -12776,7 +14672,17 @@
       "food": 0.167,
       "urban": 0.222,
       "outdoor": 0.204
-    }
+    },
+    "popularity_tier": 5,
+    "iconic_score": 1.0,
+    "prominence_tags": [
+      "big_city",
+      "first_time",
+      "iconic",
+      "museums",
+      "shopping",
+      "theme_parks"
+    ]
   },
   {
     "id": "ouray_co",
@@ -12817,7 +14723,12 @@
       "food": 0.15,
       "urban": 0.24,
       "outdoor": 0.45
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "outer_banks_nc",
@@ -12858,7 +14769,13 @@
       "food": 0.16,
       "urban": 0.28,
       "outdoor": 0.36
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "beach",
+      "first_time"
+    ]
   },
   {
     "id": "oxford_ms",
@@ -12899,7 +14816,13 @@
       "food": 0.235,
       "urban": 0.265,
       "outdoor": 0.147
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "food_city",
+      "small_town"
+    ]
   },
   {
     "id": "ozark_national_scenic_riverways_mo",
@@ -12940,7 +14863,10 @@
       "food": 0.1,
       "urban": 0.19,
       "outdoor": 0.62
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": []
   },
   {
     "id": "pacific_city_or",
@@ -12981,7 +14907,12 @@
       "food": 0.18,
       "urban": 0.26,
       "outdoor": 0.32
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "packwood_wa",
@@ -13022,7 +14953,13 @@
       "food": 0.15,
       "urban": 0.24,
       "outdoor": 0.45
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "mountains",
+      "small_town"
+    ]
   },
   {
     "id": "padre_island_tx",
@@ -13063,7 +15000,12 @@
       "food": 0.1,
       "urban": 0.19,
       "outdoor": 0.62
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "page_az",
@@ -13104,7 +15046,12 @@
       "food": 0.16,
       "urban": 0.2,
       "outdoor": 0.36
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "pagosa_springs_co",
@@ -13145,7 +15092,12 @@
       "food": 0.15,
       "urban": 0.24,
       "outdoor": 0.45
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "palm_desert_ca",
@@ -13186,7 +15138,12 @@
       "food": 0.179,
       "urban": 0.249,
       "outdoor": 0.214
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "shopping"
+    ]
   },
   {
     "id": "palm_springs_ca",
@@ -13222,7 +15179,10 @@
       "food": 0.184,
       "urban": 0.144,
       "outdoor": 0.224
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": []
   },
   {
     "id": "panama_city_beach_fl",
@@ -13263,7 +15223,13 @@
       "food": 0.18,
       "urban": 0.22,
       "outdoor": 0.22
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach",
+      "nightlife_city"
+    ]
   },
   {
     "id": "park_city_ut",
@@ -13294,7 +15260,13 @@
       "food": 0.184,
       "urban": 0.121,
       "outdoor": 0.327
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "first_time",
+      "mountains"
+    ]
   },
   {
     "id": "paso_robles_ca",
@@ -13335,7 +15307,13 @@
       "food": 0.315,
       "urban": 0.237,
       "outdoor": 0.079
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "food_city",
+      "small_town"
+    ]
   },
   {
     "id": "pella_ia",
@@ -13376,7 +15354,12 @@
       "food": 0.179,
       "urban": 0.356,
       "outdoor": 0.179
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "pensacola_beach_fl",
@@ -13417,7 +15400,12 @@
       "food": 0.2,
       "urban": 0.28,
       "outdoor": 0.28
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "petrified_forest_az",
@@ -13458,7 +15446,14 @@
       "food": 0.08,
       "urban": 0.14,
       "outdoor": 0.72
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "national_park",
+      "nature",
+      "scenic_drives"
+    ]
   },
   {
     "id": "philadelphia_pa",
@@ -13494,7 +15489,17 @@
       "food": 0.281,
       "urban": 0.298,
       "outdoor": 0.053
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "big_city",
+      "first_time",
+      "food_city",
+      "museums",
+      "skyline",
+      "skyscrapers"
+    ]
   },
   {
     "id": "phoenix_az",
@@ -13530,7 +15535,16 @@
       "food": 0.216,
       "urban": 0.236,
       "outdoor": 0.176
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "big_city",
+      "first_time",
+      "mountains",
+      "museums",
+      "shopping"
+    ]
   },
   {
     "id": "pictured_rocks_mi",
@@ -13571,7 +15585,10 @@
       "food": 0.1,
       "urban": 0.19,
       "outdoor": 0.62
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": []
   },
   {
     "id": "pigeon_forge_tn",
@@ -13612,7 +15629,12 @@
       "food": 0.19,
       "urban": 0.33,
       "outdoor": 0.18
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "pinnacles_ca",
@@ -13653,7 +15675,14 @@
       "food": 0.12,
       "urban": 0.24,
       "outdoor": 0.5
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains",
+      "national_park",
+      "nature"
+    ]
   },
   {
     "id": "pismo_beach_ca",
@@ -13694,7 +15723,12 @@
       "food": 0.2,
       "urban": 0.28,
       "outdoor": 0.28
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "pittsburgh_pa",
@@ -13725,7 +15759,16 @@
       "food": 0.214,
       "urban": 0.286,
       "outdoor": 0.167
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "big_city",
+      "first_time",
+      "museums",
+      "skyline",
+      "skyscrapers"
+    ]
   },
   {
     "id": "plymouth_ma",
@@ -13766,7 +15809,13 @@
       "food": 0.18,
       "urban": 0.47,
       "outdoor": 0.1
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "museums",
+      "small_town"
+    ]
   },
   {
     "id": "point_reyes_ca",
@@ -13807,7 +15856,12 @@
       "food": 0.12,
       "urban": 0.24,
       "outdoor": 0.5
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "poipu_hi",
@@ -13843,7 +15897,10 @@
       "food": 0.2,
       "urban": 0.24,
       "outdoor": 0.3
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": []
   },
   {
     "id": "port_aransas_tx",
@@ -13884,7 +15941,12 @@
       "food": 0.2,
       "urban": 0.28,
       "outdoor": 0.28
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "portland_me",
@@ -13920,7 +15982,13 @@
       "food": 0.273,
       "urban": 0.235,
       "outdoor": 0.164
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "first_time",
+      "food_city"
+    ]
   },
   {
     "id": "portland_or",
@@ -13951,7 +16019,15 @@
       "food": 0.281,
       "urban": 0.228,
       "outdoor": 0.158
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "big_city",
+      "first_time",
+      "food_city",
+      "museums"
+    ]
   },
   {
     "id": "providence_ri",
@@ -13992,7 +16068,12 @@
       "food": 0.315,
       "urban": 0.237,
       "outdoor": 0.079
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "provincetown_ma",
@@ -14028,7 +16109,13 @@
       "food": 0.229,
       "urban": 0.124,
       "outdoor": 0.188
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach",
+      "nightlife_city"
+    ]
   },
   {
     "id": "put_in_bay_oh",
@@ -14069,7 +16156,12 @@
       "food": 0.18,
       "urban": 0.36,
       "outdoor": 0.24
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "red_lodge_mt",
@@ -14110,7 +16202,12 @@
       "food": 0.15,
       "urban": 0.24,
       "outdoor": 0.45
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "red_river_nm",
@@ -14151,7 +16248,12 @@
       "food": 0.179,
       "urban": 0.249,
       "outdoor": 0.214
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "redwood_ca",
@@ -14192,7 +16294,14 @@
       "food": 0.08,
       "urban": 0.14,
       "outdoor": 0.72
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains",
+      "national_park",
+      "nature"
+    ]
   },
   {
     "id": "rehoboth_beach_de",
@@ -14233,7 +16342,14 @@
       "food": 0.2,
       "urban": 0.28,
       "outdoor": 0.28
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach",
+      "food_city",
+      "shopping"
+    ]
   },
   {
     "id": "reno_nv",
@@ -14264,7 +16380,15 @@
       "food": 0.191,
       "urban": 0.171,
       "outdoor": 0.234
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "big_city",
+      "first_time",
+      "museums",
+      "nightlife_city"
+    ]
   },
   {
     "id": "richmond_va",
@@ -14295,17 +16419,25 @@
       "food": 0.239,
       "urban": 0.283,
       "outdoor": 0.152
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "big_city",
+      "first_time",
+      "food_city",
+      "museums"
+    ]
   },
   {
     "id": "rincon_pr",
-    "name": "Rinc\u00f3n",
+    "name": "Rincón",
     "type": "beach_town",
     "state": "PR",
     "nearest_airports": [
       {
         "code": "BQN",
-        "name": "Rafael Hern\u00e1ndez Airport",
+        "name": "Rafael Hernández Airport",
         "drive_min": 35
       },
       {
@@ -14315,7 +16447,7 @@
       },
       {
         "code": "SJU",
-        "name": "Luis Mu\u00f1oz Mar\u00edn International Airport",
+        "name": "Luis Muñoz Marín International Airport",
         "drive_min": 150
       }
     ],
@@ -14336,7 +16468,12 @@
       "food": 0.18,
       "urban": 0.26,
       "outdoor": 0.32
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "rockport_ma",
@@ -14377,7 +16514,12 @@
       "food": 0.22,
       "urban": 0.3,
       "outdoor": 0.2
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "rockport_tx",
@@ -14418,7 +16560,12 @@
       "food": 0.22,
       "urban": 0.3,
       "outdoor": 0.2
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "rocky_mountain_co",
@@ -14459,7 +16606,16 @@
       "food": 0.08,
       "urban": 0.14,
       "outdoor": 0.72
-    }
+    },
+    "popularity_tier": 5,
+    "iconic_score": 1.0,
+    "prominence_tags": [
+      "first_time",
+      "iconic",
+      "iconic_nature",
+      "mountains",
+      "national_park"
+    ]
   },
   {
     "id": "rosemary_beach_fl",
@@ -14500,7 +16656,12 @@
       "food": 0.2,
       "urban": 0.24,
       "outdoor": 0.22
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "roswell_nm",
@@ -14541,7 +16702,13 @@
       "food": 0.179,
       "urban": 0.356,
       "outdoor": 0.179
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "museums",
+      "small_town"
+    ]
   },
   {
     "id": "sacramento_ca",
@@ -14582,7 +16749,14 @@
       "food": 0.315,
       "urban": 0.237,
       "outdoor": 0.079
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "big_city",
+      "first_time",
+      "museums"
+    ]
   },
   {
     "id": "saguaro_az",
@@ -14623,7 +16797,14 @@
       "food": 0.12,
       "urban": 0.24,
       "outdoor": 0.5
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "national_park",
+      "nature",
+      "scenic_drives"
+    ]
   },
   {
     "id": "salem_ma",
@@ -14654,7 +16835,13 @@
       "food": 0.238,
       "urban": 0.31,
       "outdoor": 0.095
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "museums",
+      "small_town"
+    ]
   },
   {
     "id": "salida_co",
@@ -14695,7 +16882,12 @@
       "food": 0.17,
       "urban": 0.23,
       "outdoor": 0.39
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "salt_lake_city_ut",
@@ -14726,7 +16918,14 @@
       "food": 0.184,
       "urban": 0.204,
       "outdoor": 0.306
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "big_city",
+      "first_time",
+      "museums"
+    ]
   },
   {
     "id": "san_antonio_tx",
@@ -14757,7 +16956,15 @@
       "food": 0.229,
       "urban": 0.291,
       "outdoor": 0.125
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "big_city",
+      "first_time",
+      "food_city",
+      "museums"
+    ]
   },
   {
     "id": "san_diego_ca",
@@ -14788,7 +16995,19 @@
       "food": 0.211,
       "urban": 0.193,
       "outdoor": 0.228
-    }
+    },
+    "popularity_tier": 5,
+    "iconic_score": 1.0,
+    "prominence_tags": [
+      "beach",
+      "big_city",
+      "first_time",
+      "food_city",
+      "iconic",
+      "museums",
+      "skyline",
+      "skyscrapers"
+    ]
   },
   {
     "id": "san_francisco_ca",
@@ -14829,7 +17048,19 @@
       "food": 0.269,
       "urban": 0.283,
       "outdoor": 0.09
-    }
+    },
+    "popularity_tier": 5,
+    "iconic_score": 1.0,
+    "prominence_tags": [
+      "big_city",
+      "first_time",
+      "food_city",
+      "iconic",
+      "museums",
+      "shopping",
+      "skyline",
+      "skyscrapers"
+    ]
   },
   {
     "id": "san_juan_islands_wa",
@@ -14870,7 +17101,12 @@
       "food": 0.16,
       "urban": 0.28,
       "outdoor": 0.36
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "san_juan_pr",
@@ -14880,7 +17116,7 @@
     "nearest_airports": [
       {
         "code": "SJU",
-        "name": "Luis Mu\u00f1oz Mar\u00edn International Airport",
+        "name": "Luis Muñoz Marín International Airport",
         "drive_min": 15
       },
       {
@@ -14890,7 +17126,7 @@
       },
       {
         "code": "BQN",
-        "name": "Rafael Hern\u00e1ndez Airport",
+        "name": "Rafael Hernández Airport",
         "drive_min": 110
       }
     ],
@@ -14911,7 +17147,17 @@
       "food": 0.18,
       "urban": 0.22,
       "outdoor": 0.22
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "beach",
+      "big_city",
+      "first_time",
+      "food_city",
+      "museums",
+      "nightlife_city"
+    ]
   },
   {
     "id": "sandpoint_id",
@@ -14952,7 +17198,12 @@
       "food": 0.169,
       "urban": 0.231,
       "outdoor": 0.308
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "sandusky_oh",
@@ -14993,7 +17244,12 @@
       "food": 0.19,
       "urban": 0.33,
       "outdoor": 0.18
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "sanibel_island_fl",
@@ -15034,7 +17290,12 @@
       "food": 0.18,
       "urban": 0.26,
       "outdoor": 0.38
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "santa_barbara_ca",
@@ -15070,7 +17331,15 @@
       "food": 0.22,
       "urban": 0.171,
       "outdoor": 0.22
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "beach",
+      "first_time",
+      "food_city",
+      "shopping"
+    ]
   },
   {
     "id": "santa_cruz_ca",
@@ -15111,7 +17380,12 @@
       "food": 0.18,
       "urban": 0.26,
       "outdoor": 0.32
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "santa_fe_nm",
@@ -15147,7 +17421,14 @@
       "food": 0.25,
       "urban": 0.232,
       "outdoor": 0.179
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "food_city",
+      "museums",
+      "small_town"
+    ]
   },
   {
     "id": "santa_ynez_valley_ca",
@@ -15188,7 +17469,13 @@
       "food": 0.28,
       "urban": 0.35,
       "outdoor": 0.12
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "food_city",
+      "scenic_drives"
+    ]
   },
   {
     "id": "saratoga_springs_ny",
@@ -15229,7 +17516,13 @@
       "food": 0.179,
       "urban": 0.249,
       "outdoor": 0.214
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "food_city",
+      "small_town"
+    ]
   },
   {
     "id": "saugatuck_mi",
@@ -15270,7 +17563,13 @@
       "food": 0.25,
       "urban": 0.2,
       "outdoor": 0.175
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach",
+      "shopping"
+    ]
   },
   {
     "id": "savannah_ga",
@@ -15301,7 +17600,14 @@
       "food": 0.291,
       "urban": 0.272,
       "outdoor": 0.109
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "first_time",
+      "food_city",
+      "museums"
+    ]
   },
   {
     "id": "scottsdale_az",
@@ -15337,7 +17643,14 @@
       "food": 0.19,
       "urban": 0.138,
       "outdoor": 0.207
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "first_time",
+      "nightlife_city",
+      "shopping"
+    ]
   },
   {
     "id": "seaside_or",
@@ -15378,7 +17691,12 @@
       "food": 0.2,
       "urban": 0.28,
       "outdoor": 0.28
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "seattle_wa",
@@ -15414,7 +17732,18 @@
       "food": 0.241,
       "urban": 0.277,
       "outdoor": 0.155
-    }
+    },
+    "popularity_tier": 5,
+    "iconic_score": 1.0,
+    "prominence_tags": [
+      "big_city",
+      "first_time",
+      "food_city",
+      "iconic",
+      "museums",
+      "skyline",
+      "skyscrapers"
+    ]
   },
   {
     "id": "sedona_az",
@@ -15450,7 +17779,14 @@
       "food": 0.179,
       "urban": 0.102,
       "outdoor": 0.462
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "first_time",
+      "mountains",
+      "scenic_drives"
+    ]
   },
   {
     "id": "sedona_gateway_village_az",
@@ -15491,7 +17827,14 @@
       "food": 0.16,
       "urban": 0.2,
       "outdoor": 0.36
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "mountains",
+      "scenic_drives",
+      "small_town"
+    ]
   },
   {
     "id": "seligman_az",
@@ -15532,7 +17875,12 @@
       "food": 0.167,
       "urban": 0.292,
       "outdoor": 0.291
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "sequoia_ca",
@@ -15573,7 +17921,15 @@
       "food": 0.08,
       "urban": 0.14,
       "outdoor": 0.72
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "first_time",
+      "iconic_nature",
+      "mountains",
+      "national_park"
+    ]
   },
   {
     "id": "seward_ak",
@@ -15614,7 +17970,12 @@
       "food": 0.16,
       "urban": 0.26,
       "outdoor": 0.4
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "shenandoah_va",
@@ -15655,7 +18016,15 @@
       "food": 0.12,
       "urban": 0.24,
       "outdoor": 0.5
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "first_time",
+      "iconic_nature",
+      "mountains",
+      "national_park"
+    ]
   },
   {
     "id": "siesta_key_fl",
@@ -15696,7 +18065,12 @@
       "food": 0.2,
       "urban": 0.28,
       "outdoor": 0.28
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "silver_falls_or",
@@ -15737,7 +18111,10 @@
       "food": 0.12,
       "urban": 0.24,
       "outdoor": 0.5
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": []
   },
   {
     "id": "silverton_co",
@@ -15778,7 +18155,12 @@
       "food": 0.15,
       "urban": 0.24,
       "outdoor": 0.45
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "sioux_falls_sd",
@@ -15819,7 +18201,12 @@
       "food": 0.25,
       "urban": 0.25,
       "outdoor": 0.1
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "sisters_or",
@@ -15860,7 +18247,13 @@
       "food": 0.15,
       "urban": 0.24,
       "outdoor": 0.45
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "mountains",
+      "small_town"
+    ]
   },
   {
     "id": "sitka_ak",
@@ -15901,7 +18294,13 @@
       "food": 0.16,
       "urban": 0.26,
       "outdoor": 0.4
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "museums",
+      "small_town"
+    ]
   },
   {
     "id": "skaneateles_ny",
@@ -15942,7 +18341,14 @@
       "food": 0.169,
       "urban": 0.231,
       "outdoor": 0.308
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "food_city",
+      "shopping",
+      "small_town"
+    ]
   },
   {
     "id": "sleeping_bear_dunes_mi",
@@ -15983,7 +18389,12 @@
       "food": 0.1,
       "urban": 0.19,
       "outdoor": 0.62
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "smith_rock_or",
@@ -16024,7 +18435,10 @@
       "food": 0.1,
       "urban": 0.19,
       "outdoor": 0.62
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": []
   },
   {
     "id": "snowbird_ut",
@@ -16065,7 +18479,12 @@
       "food": 0.17,
       "urban": 0.22,
       "outdoor": 0.36
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "snowmass_village_co",
@@ -16106,7 +18525,12 @@
       "food": 0.17,
       "urban": 0.22,
       "outdoor": 0.36
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "solvang_ca",
@@ -16147,7 +18571,13 @@
       "food": 0.256,
       "urban": 0.231,
       "outdoor": 0.179
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "shopping",
+      "small_town"
+    ]
   },
   {
     "id": "sonoma_ca",
@@ -16157,7 +18587,7 @@
     "nearest_airports": [
       {
         "code": "STS",
-        "name": "Charles M. Schulz\u2013Sonoma County Airport",
+        "name": "Charles M. Schulz–Sonoma County Airport",
         "drive_min": 45
       },
       {
@@ -16188,7 +18618,13 @@
       "food": 0.356,
       "urban": 0.177,
       "outdoor": 0.156
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "food_city",
+      "small_town"
+    ]
   },
   {
     "id": "south_padre_island_tx",
@@ -16229,7 +18665,12 @@
       "food": 0.18,
       "urban": 0.22,
       "outdoor": 0.22
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "spokane_wa",
@@ -16270,7 +18711,12 @@
       "food": 0.212,
       "urban": 0.212,
       "outdoor": 0.273
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "springdale_ut",
@@ -16311,7 +18757,12 @@
       "food": 0.15,
       "urban": 0.24,
       "outdoor": 0.45
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "st_augustine_fl",
@@ -16342,7 +18793,14 @@
       "food": 0.238,
       "urban": 0.309,
       "outdoor": 0.167
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "beach",
+      "museums",
+      "small_town"
+    ]
   },
   {
     "id": "st_croix_vi",
@@ -16357,7 +18815,7 @@
       },
       {
         "code": "SJU",
-        "name": "Luis Mu\u00f1oz Mar\u00edn International Airport",
+        "name": "Luis Muñoz Marín International Airport",
         "drive_min": 95
       },
       {
@@ -16383,7 +18841,13 @@
       "food": 0.2,
       "urban": 0.24,
       "outdoor": 0.3
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach",
+      "food_city"
+    ]
   },
   {
     "id": "st_john_vi",
@@ -16403,7 +18867,7 @@
       },
       {
         "code": "SJU",
-        "name": "Luis Mu\u00f1oz Mar\u00edn International Airport",
+        "name": "Luis Muñoz Marín International Airport",
         "drive_min": 100
       }
     ],
@@ -16424,7 +18888,13 @@
       "food": 0.18,
       "urban": 0.26,
       "outdoor": 0.38
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach",
+      "mountains"
+    ]
   },
   {
     "id": "st_johnsbury_vt",
@@ -16465,7 +18935,12 @@
       "food": 0.167,
       "urban": 0.292,
       "outdoor": 0.291
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "st_louis_mo",
@@ -16496,7 +18971,14 @@
       "food": 0.214,
       "urban": 0.31,
       "outdoor": 0.119
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "big_city",
+      "first_time",
+      "museums"
+    ]
   },
   {
     "id": "st_pete_beach_fl",
@@ -16537,7 +19019,12 @@
       "food": 0.18,
       "urban": 0.22,
       "outdoor": 0.22
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "st_thomas_vi",
@@ -16552,7 +19039,7 @@
       },
       {
         "code": "SJU",
-        "name": "Luis Mu\u00f1oz Mar\u00edn International Airport",
+        "name": "Luis Muñoz Marín International Airport",
         "drive_min": 90
       },
       {
@@ -16578,7 +19065,13 @@
       "food": 0.2,
       "urban": 0.24,
       "outdoor": 0.3
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach",
+      "shopping"
+    ]
   },
   {
     "id": "starved_rock_il",
@@ -16619,7 +19112,10 @@
       "food": 0.12,
       "urban": 0.24,
       "outdoor": 0.5
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": []
   },
   {
     "id": "state_college_pa",
@@ -16660,7 +19156,13 @@
       "food": 0.235,
       "urban": 0.265,
       "outdoor": 0.147
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "mountains",
+      "small_town"
+    ]
   },
   {
     "id": "steamboat_springs_co",
@@ -16701,7 +19203,12 @@
       "food": 0.17,
       "urban": 0.22,
       "outdoor": 0.36
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "stowe_vt",
@@ -16732,7 +19239,12 @@
       "food": 0.2,
       "urban": 0.125,
       "outdoor": 0.4
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "sun_valley_id",
@@ -16773,7 +19285,12 @@
       "food": 0.17,
       "urban": 0.22,
       "outdoor": 0.36
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "sunriver_or",
@@ -16814,7 +19331,10 @@
       "food": 0.179,
       "urban": 0.249,
       "outdoor": 0.214
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": []
   },
   {
     "id": "surfside_beach_tx",
@@ -16855,7 +19375,12 @@
       "food": 0.2,
       "urban": 0.28,
       "outdoor": 0.28
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "tampa_fl",
@@ -16891,7 +19416,14 @@
       "food": 0.196,
       "urban": 0.195,
       "outdoor": 0.196
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "big_city",
+      "first_time",
+      "museums"
+    ]
   },
   {
     "id": "taos_nm",
@@ -16927,7 +19459,12 @@
       "food": 0.195,
       "urban": 0.17,
       "outdoor": 0.415
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "telluride_co",
@@ -16963,7 +19500,12 @@
       "food": 0.196,
       "urban": 0.109,
       "outdoor": 0.391
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "temecula_ca",
@@ -17004,7 +19546,12 @@
       "food": 0.28,
       "urban": 0.35,
       "outdoor": 0.12
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "terlingua_tx",
@@ -17045,7 +19592,12 @@
       "food": 0.16,
       "urban": 0.2,
       "outdoor": 0.36
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "texas_hill_country_tx",
@@ -17086,7 +19638,12 @@
       "food": 0.28,
       "urban": 0.35,
       "outdoor": 0.12
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "scenic_drives"
+    ]
   },
   {
     "id": "theodore_roosevelt_nd",
@@ -17127,7 +19684,15 @@
       "food": 0.08,
       "urban": 0.14,
       "outdoor": 0.72
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains",
+      "national_park",
+      "nature",
+      "scenic_drives"
+    ]
   },
   {
     "id": "tombstone_az",
@@ -17168,7 +19733,12 @@
       "food": 0.167,
       "urban": 0.467,
       "outdoor": 0.1
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "torrey_ut",
@@ -17209,7 +19779,12 @@
       "food": 0.167,
       "urban": 0.292,
       "outdoor": 0.291
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "traverse_city_mi",
@@ -17245,7 +19820,13 @@
       "food": 0.279,
       "urban": 0.162,
       "outdoor": 0.256
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "food_city",
+      "small_town"
+    ]
   },
   {
     "id": "tri_cities_wa",
@@ -17286,7 +19867,13 @@
       "food": 0.315,
       "urban": 0.237,
       "outdoor": 0.079
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "food_city",
+      "small_town"
+    ]
   },
   {
     "id": "truckee_ca",
@@ -17327,7 +19914,12 @@
       "food": 0.17,
       "urban": 0.23,
       "outdoor": 0.39
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "truth_or_consequences_lake_nm",
@@ -17368,7 +19960,12 @@
       "food": 0.169,
       "urban": 0.231,
       "outdoor": 0.308
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "truth_or_consequences_nm",
@@ -17409,7 +20006,12 @@
       "food": 0.179,
       "urban": 0.356,
       "outdoor": 0.179
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "tucson_az",
@@ -17440,7 +20042,14 @@
       "food": 0.209,
       "urban": 0.209,
       "outdoor": 0.279
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "big_city",
+      "first_time",
+      "museums"
+    ]
   },
   {
     "id": "tucson_foothills_az",
@@ -17481,7 +20090,13 @@
       "food": 0.16,
       "urban": 0.2,
       "outdoor": 0.36
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "food_city",
+      "mountains"
+    ]
   },
   {
     "id": "tulsa_ok",
@@ -17522,7 +20137,13 @@
       "food": 0.25,
       "urban": 0.25,
       "outdoor": 0.1
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "museums",
+      "small_town"
+    ]
   },
   {
     "id": "tunica_ms",
@@ -17563,7 +20184,12 @@
       "food": 0.18,
       "urban": 0.37,
       "outdoor": 0.06
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "twentynine_palms_ca",
@@ -17604,7 +20230,12 @@
       "food": 0.16,
       "urban": 0.2,
       "outdoor": 0.36
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "tybee_island_ga",
@@ -17645,7 +20276,12 @@
       "food": 0.22,
       "urban": 0.3,
       "outdoor": 0.2
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "uncasville_ct",
@@ -17686,7 +20322,12 @@
       "food": 0.18,
       "urban": 0.37,
       "outdoor": 0.06
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "vail_co",
@@ -17727,7 +20368,13 @@
       "food": 0.17,
       "urban": 0.22,
       "outdoor": 0.36
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "first_time",
+      "mountains"
+    ]
   },
   {
     "id": "valley_of_fire_nv",
@@ -17768,7 +20415,12 @@
       "food": 0.1,
       "urban": 0.19,
       "outdoor": 0.62
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "scenic_drives"
+    ]
   },
   {
     "id": "victor_id",
@@ -17809,7 +20461,13 @@
       "food": 0.15,
       "urban": 0.24,
       "outdoor": 0.45
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "mountains",
+      "small_town"
+    ]
   },
   {
     "id": "vieques_pr",
@@ -17819,17 +20477,17 @@
     "nearest_airports": [
       {
         "code": "VQS",
-        "name": "Antonio Rivera Rodr\u00edguez Airport",
+        "name": "Antonio Rivera Rodríguez Airport",
         "drive_min": 10
       },
       {
         "code": "SJU",
-        "name": "Luis Mu\u00f1oz Mar\u00edn International Airport",
+        "name": "Luis Muñoz Marín International Airport",
         "drive_min": 90
       },
       {
         "code": "CPX",
-        "name": "Benjam\u00edn Rivera Noriega Airport",
+        "name": "Benjamín Rivera Noriega Airport",
         "drive_min": 75
       }
     ],
@@ -17850,7 +20508,12 @@
       "food": 0.18,
       "urban": 0.26,
       "outdoor": 0.38
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "virginia_beach_va",
@@ -17891,7 +20554,13 @@
       "food": 0.18,
       "urban": 0.22,
       "outdoor": 0.22
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "nightlife_city",
+      "small_town"
+    ]
   },
   {
     "id": "voyageurs_mn",
@@ -17932,7 +20601,13 @@
       "food": 0.08,
       "urban": 0.14,
       "outdoor": 0.72
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "national_park",
+      "nature"
+    ]
   },
   {
     "id": "waikiki_hi",
@@ -17968,7 +20643,13 @@
       "food": 0.18,
       "urban": 0.22,
       "outdoor": 0.22
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "nightlife_city",
+      "shopping"
+    ]
   },
   {
     "id": "walla_walla_wa",
@@ -18009,7 +20690,13 @@
       "food": 0.28,
       "urban": 0.35,
       "outdoor": 0.12
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "food_city",
+      "small_town"
+    ]
   },
   {
     "id": "wallace_id",
@@ -18050,7 +20737,12 @@
       "food": 0.167,
       "urban": 0.292,
       "outdoor": 0.291
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "washington_dc",
@@ -18091,7 +20783,17 @@
       "food": 0.226,
       "urban": 0.377,
       "outdoor": 0.057
-    }
+    },
+    "popularity_tier": 5,
+    "iconic_score": 1.0,
+    "prominence_tags": [
+      "big_city",
+      "first_time",
+      "iconic",
+      "museums",
+      "skyline",
+      "skyscrapers"
+    ]
   },
   {
     "id": "watch_hill_ri",
@@ -18132,7 +20834,13 @@
       "food": 0.2,
       "urban": 0.24,
       "outdoor": 0.22
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach",
+      "shopping"
+    ]
   },
   {
     "id": "watkins_glen_ny",
@@ -18173,7 +20881,10 @@
       "food": 0.12,
       "urban": 0.24,
       "outdoor": 0.5
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": []
   },
   {
     "id": "west_yellowstone_mt",
@@ -18214,7 +20925,12 @@
       "food": 0.15,
       "urban": 0.24,
       "outdoor": 0.45
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "whidbey_island_wa",
@@ -18255,7 +20971,12 @@
       "food": 0.22,
       "urban": 0.3,
       "outdoor": 0.2
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "white_mountains_nh",
@@ -18296,7 +21017,13 @@
       "food": 0.15,
       "urban": 0.24,
       "outdoor": 0.45
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "mountains",
+      "scenic_drives"
+    ]
   },
   {
     "id": "white_sands_area_nm",
@@ -18337,7 +21064,12 @@
       "food": 0.16,
       "urban": 0.2,
       "outdoor": 0.36
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "white_sands_nm",
@@ -18378,7 +21110,14 @@
       "food": 0.12,
       "urban": 0.24,
       "outdoor": 0.5
-    }
+    },
+    "popularity_tier": 4,
+    "iconic_score": 0.75,
+    "prominence_tags": [
+      "first_time",
+      "iconic_nature",
+      "national_park"
+    ]
   },
   {
     "id": "whitefish_mt",
@@ -18419,7 +21158,12 @@
       "food": 0.17,
       "urban": 0.22,
       "outdoor": 0.36
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "willamette_valley_or",
@@ -18460,7 +21204,13 @@
       "food": 0.28,
       "urban": 0.35,
       "outdoor": 0.12
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "food_city",
+      "scenic_drives"
+    ]
   },
   {
     "id": "williams_az",
@@ -18501,7 +21251,12 @@
       "food": 0.167,
       "urban": 0.292,
       "outdoor": 0.291
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "williamsburg_va",
@@ -18542,7 +21297,14 @@
       "food": 0.225,
       "urban": 0.3,
       "outdoor": 0.175
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "museums",
+      "small_town",
+      "theme_parks"
+    ]
   },
   {
     "id": "wilmington_de",
@@ -18583,7 +21345,13 @@
       "food": 0.167,
       "urban": 0.467,
       "outdoor": 0.1
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "museums",
+      "small_town"
+    ]
   },
   {
     "id": "winslow_az",
@@ -18624,7 +21392,12 @@
       "food": 0.167,
       "urban": 0.292,
       "outdoor": 0.291
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "winter_park_co",
@@ -18665,7 +21438,12 @@
       "food": 0.17,
       "urban": 0.22,
       "outdoor": 0.36
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "mountains"
+    ]
   },
   {
     "id": "winthrop_wa",
@@ -18706,7 +21484,12 @@
       "food": 0.17,
       "urban": 0.23,
       "outdoor": 0.39
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "wisconsin_dells_wi",
@@ -18747,7 +21530,13 @@
       "food": 0.19,
       "urban": 0.33,
       "outdoor": 0.18
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "small_town",
+      "theme_parks"
+    ]
   },
   {
     "id": "woodinville_wa",
@@ -18788,7 +21577,13 @@
       "food": 0.28,
       "urban": 0.35,
       "outdoor": 0.12
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "food_city",
+      "small_town"
+    ]
   },
   {
     "id": "woodstock_vt",
@@ -18829,7 +21624,12 @@
       "food": 0.25,
       "urban": 0.223,
       "outdoor": 0.25
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "wrangell_st_elias_ak",
@@ -18870,7 +21670,13 @@
       "food": 0.08,
       "urban": 0.14,
       "outdoor": 0.72
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "national_park",
+      "nature"
+    ]
   },
   {
     "id": "wrightsville_beach_nc",
@@ -18911,7 +21717,12 @@
       "food": 0.18,
       "urban": 0.26,
       "outdoor": 0.32
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "yachats_or",
@@ -18952,7 +21763,12 @@
       "food": 0.18,
       "urban": 0.26,
       "outdoor": 0.38
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "small_town"
+    ]
   },
   {
     "id": "yakima_valley_wa",
@@ -18993,7 +21809,12 @@
       "food": 0.28,
       "urban": 0.35,
       "outdoor": 0.12
-    }
+    },
+    "popularity_tier": 2,
+    "iconic_score": 0.25,
+    "prominence_tags": [
+      "scenic_drives"
+    ]
   },
   {
     "id": "yellowstone_wy",
@@ -19034,7 +21855,17 @@
       "food": 0.08,
       "urban": 0.14,
       "outdoor": 0.72
-    }
+    },
+    "popularity_tier": 5,
+    "iconic_score": 1.0,
+    "prominence_tags": [
+      "first_time",
+      "iconic",
+      "iconic_nature",
+      "mountains",
+      "national_park",
+      "scenic_drives"
+    ]
   },
   {
     "id": "york_beach_me",
@@ -19075,7 +21906,12 @@
       "food": 0.2,
       "urban": 0.28,
       "outdoor": 0.28
-    }
+    },
+    "popularity_tier": 3,
+    "iconic_score": 0.5,
+    "prominence_tags": [
+      "beach"
+    ]
   },
   {
     "id": "yosemite_ca",
@@ -19116,7 +21952,16 @@
       "food": 0.08,
       "urban": 0.14,
       "outdoor": 0.72
-    }
+    },
+    "popularity_tier": 5,
+    "iconic_score": 1.0,
+    "prominence_tags": [
+      "first_time",
+      "iconic",
+      "iconic_nature",
+      "mountains",
+      "national_park"
+    ]
   },
   {
     "id": "zion_ut",
@@ -19157,6 +22002,15 @@
       "food": 0.08,
       "urban": 0.14,
       "outdoor": 0.72
-    }
+    },
+    "popularity_tier": 5,
+    "iconic_score": 1.0,
+    "prominence_tags": [
+      "first_time",
+      "iconic",
+      "iconic_nature",
+      "mountains",
+      "national_park"
+    ]
   }
 ]

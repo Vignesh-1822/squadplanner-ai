@@ -1,0 +1,252 @@
+{
+  "version": "2026-04-30-reconstruction",
+  "source_context": [
+    "backend/docs/squadplanner.md",
+    "backend/docs/SQUADPLANNER_MODULES_5_8.md",
+    "Codex session rollout-2026-04-29T03-55-05-019dd872-f289-7f71-8371-b7e5d63303ac.jsonl",
+    "backend/tests/test_integration.py",
+    "backend/tests/test_preference_constraints.py",
+    "backend/debug_ui/index.html"
+  ],
+  "api_cases": [
+    {
+      "id": "happy_path_relaxed_mixed_group",
+      "title": "Happy path three-person trip with HITL city choice",
+      "purpose": "Exercises parse_input, preference constraints, destination selection, HITL resume, dynamic tools, data fetch, budget, hotel, itinerary, fairness, and output assembly.",
+      "payload": {
+        "group_notes": "Keep the trip relaxed, avoid rushed mornings, and make sure the plan respects everyone's must-haves.",
+        "members": [
+          {
+            "member_id": "alice",
+            "name": "Alice",
+            "origin_city": "ORD",
+            "budget_usd": 1500,
+            "food_restrictions": ["vegetarian"],
+            "preference_notes": "Hates early mornings, no clubs, wants Italian food at least once.",
+            "preference_vector": {
+              "outdoor": 0.8,
+              "food": 0.7,
+              "nightlife": 0.2,
+              "urban": 0.6,
+              "shopping": 0.1
+            },
+            "is_leader": true
+          },
+          {
+            "member_id": "bob",
+            "name": "Bob",
+            "origin_city": "ATL",
+            "budget_usd": 1200,
+            "food_restrictions": [],
+            "preference_notes": "Likes relaxed days with good meals and urban neighborhoods, but does not want an overpacked schedule.",
+            "preference_vector": {
+              "outdoor": 0.5,
+              "food": 0.8,
+              "nightlife": 0.6,
+              "urban": 0.4,
+              "shopping": 0.3
+            },
+            "is_leader": false
+          },
+          {
+            "member_id": "carol",
+            "name": "Carol",
+            "origin_city": "LAX",
+            "budget_usd": 2000,
+            "food_restrictions": [],
+            "preference_notes": "Interested in scenic walks and museums, but not late-night clubbing.",
+            "preference_vector": {
+              "outdoor": 0.6,
+              "food": 0.6,
+              "nightlife": 0.4,
+              "urban": 0.7,
+              "shopping": 0.5
+            },
+            "is_leader": false
+          }
+        ],
+        "start_date": "2026-07-10",
+        "end_date": "2026-07-13"
+      },
+      "expected": [
+        "POST /trips returns trip_id and stream_url",
+        "SSE emits NODE_PROGRESS for parse_input and select_destination",
+        "SSE pauses at HITL_REQUIRED with 5 candidate destinations",
+        "confirm-city resumes the graph",
+        "TRIP_COMPLETE contains trip_pitch, days, hotel, flights, fairness_passed, decision_log",
+        "Each day includes rationale and constraint_notes explaining itinerary decisions",
+        "Constraint satisfaction should mention no clubs, relaxed pace, late mornings, and Italian meal requirement"
+      ]
+    },
+    {
+      "id": "budget_pressure_group",
+      "title": "Tight budget should trigger budget analysis pressure",
+      "purpose": "Checks budget_status routing and severe/moderate behavior without changing the graph wiring.",
+      "payload": {
+        "group_notes": "Cheapest realistic weekend possible. Avoid expensive hotels.",
+        "members": [
+          {
+            "member_id": "sam",
+            "name": "Sam",
+            "origin_city": "LAX",
+            "budget_usd": 450,
+            "food_restrictions": [],
+            "preference_notes": "Okay with simple food and free outdoor activities.",
+            "preference_vector": {
+              "outdoor": 0.9,
+              "food": 0.4,
+              "nightlife": 0.1,
+              "urban": 0.3,
+              "shopping": 0.1
+            },
+            "is_leader": true
+          },
+          {
+            "member_id": "maya",
+            "name": "Maya",
+            "origin_city": "SEA",
+            "budget_usd": 500,
+            "food_restrictions": [],
+            "preference_notes": "Prefers walkable low-cost activities.",
+            "preference_vector": {
+              "outdoor": 0.8,
+              "food": 0.5,
+              "nightlife": 0.1,
+              "urban": 0.5,
+              "shopping": 0.1
+            },
+            "is_leader": false
+          }
+        ],
+        "start_date": "2026-08-14",
+        "end_date": "2026-08-16"
+      },
+      "expected": [
+        "budget_analysis produces budget_status",
+        "If status is severe, destination retry count increments and select_destination may run again",
+        "If accepted, output should clearly flag estimated or constrained budget choices"
+      ]
+    },
+    {
+      "id": "food_restriction_validation",
+      "title": "Vegan and gluten-free meal validation",
+      "purpose": "Exercises deterministic meal validation and LLM instruction following.",
+      "payload": {
+        "group_notes": "Food restrictions are mandatory. Prefer scenic neighborhoods and calm evenings.",
+        "members": [
+          {
+            "member_id": "nina",
+            "name": "Nina",
+            "origin_city": "BOS",
+            "budget_usd": 1800,
+            "food_restrictions": ["vegan", "gluten_free"],
+            "preference_notes": "No dairy, no eggs, no wheat. Wants relaxed mornings.",
+            "preference_vector": {
+              "outdoor": 0.7,
+              "food": 0.8,
+              "nightlife": 0.1,
+              "urban": 0.6,
+              "shopping": 0.2
+            },
+            "is_leader": true
+          },
+          {
+            "member_id": "omar",
+            "name": "Omar",
+            "origin_city": "DFW",
+            "budget_usd": 1600,
+            "food_restrictions": ["halal"],
+            "preference_notes": "Museums and scenic walks, no bars.",
+            "preference_vector": {
+              "outdoor": 0.6,
+              "food": 0.7,
+              "nightlife": 0.1,
+              "urban": 0.8,
+              "shopping": 0.2
+            },
+            "is_leader": false
+          }
+        ],
+        "start_date": "2026-09-04",
+        "end_date": "2026-09-07"
+      },
+      "expected": [
+        "No meal contains meat, pork, bacon, ham, dairy, milk, egg, pasta, bread, flour, or wheat",
+        "validation_gate returns no food restriction errors",
+        "Day constraint_notes explain food-restriction handling",
+        "constraint_satisfaction.passed is true or clearly lists unmet restrictions"
+      ]
+    },
+    {
+      "id": "nightlife_hard_avoid",
+      "title": "High nightlife score but explicit no clubs",
+      "purpose": "Proves natural-language hard constraints override preference vector scores.",
+      "payload": {
+        "group_notes": "No clubs, no nightclubs, no bar hopping. Keep evenings quiet.",
+        "members": [
+          {
+            "member_id": "ivy",
+            "name": "Ivy",
+            "origin_city": "JFK",
+            "budget_usd": 1700,
+            "food_restrictions": [],
+            "preference_notes": "Normally likes nightlife but this trip should have no clubs.",
+            "preference_vector": {
+              "outdoor": 0.4,
+              "food": 0.7,
+              "nightlife": 0.95,
+              "urban": 0.8,
+              "shopping": 0.4
+            },
+            "is_leader": true
+          }
+        ],
+        "start_date": "2026-10-02",
+        "end_date": "2026-10-05"
+      },
+      "expected": [
+        "dynamic_tool_selection excludes nightlife",
+        "parallel_data_fetch filters avoided club/nightlife activities",
+        "Day rationale explains why quiet evening activities were chosen",
+        "final itinerary contains no nightclub or club activity"
+      ]
+    }
+  ],
+  "deterministic_cases": [
+    {
+      "id": "malformed_llm_preference_constraints",
+      "covered_by": "backend/tests/test_preference_constraints.py::test_extract_preference_constraints_fallback",
+      "expected": "Fallback extractor still captures no clubs, relaxed pace, late mornings, and Italian cuisine."
+    },
+    {
+      "id": "hard_avoided_nightlife_tool_selection",
+      "covered_by": "backend/tests/test_preference_constraints.py::test_dynamic_tool_selection_excludes_hard_avoided_nightlife",
+      "expected": "food is included and nightlife is excluded even when nightlife score is high."
+    },
+    {
+      "id": "activity_filter_removes_clubs",
+      "covered_by": "backend/tests/test_preference_constraints.py::test_activity_filter_removes_avoided_clubs",
+      "expected": "Club activity is removed, museum remains."
+    },
+    {
+      "id": "itinerary_validation_unmet_constraints",
+      "covered_by": "backend/tests/test_preference_constraints.py::test_itinerary_validation_catches_unmet_constraints",
+      "expected": "Nightclub, missing Italian meal, and too-early schedule are reported."
+    },
+    {
+      "id": "itinerary_validation_satisfied_constraints",
+      "covered_by": "backend/tests/test_preference_constraints.py::test_itinerary_validation_passes_satisfied_constraints",
+      "expected": "Satisfied constraints pass with an empty validation_errors list."
+    },
+    {
+      "id": "graph_wiring",
+      "covered_by": "backend/tests/test_graph_wiring.py",
+      "expected": "Graph builds, expected nodes are present, and compiled orchestrator initializes."
+    },
+    {
+      "id": "live_full_graph",
+      "covered_by": "backend/tests/test_integration.py::test_full_trip_integration_live",
+      "expected": "Live-gated end-to-end run reaches HITL, resumes with Command(resume=...), completes, and writes artifacts."
+    }
+  ]
+}
