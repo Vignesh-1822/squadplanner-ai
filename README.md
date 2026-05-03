@@ -7,6 +7,8 @@ destinations, pauses for leader destination approval, fetches live travel contex
 a day-by-day itinerary, checks constraints and fairness, then streams progress and the
 final plan over Server-Sent Events.
 
+Temporary live demo: https://ai-squad-planner-v2-0.vercel.app/
+
 The project is currently backend-heavy. The React/Vite frontend contains the visual shell
 and early trip-preference screens, while the backend contains the working agent workflow,
 debug UI, API routes, live-gated integration tests, and demo payloads.
