@@ -16,6 +16,7 @@ async def search_hotel(state: TripState) -> dict:
         check_in=state["start_date"],
         check_out=state["end_date"],
         budget_ceiling_usd=ceiling,
+        coords=state.get("selected_destination_coords"),
     )
 
     return {

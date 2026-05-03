@@ -8,6 +8,7 @@ import httpx
 from agent.state import FlightResult, HotelResult
 from config import settings
 from db.client import get_collection
+from tools.google_places import find_place_by_text
 
 logger = logging.getLogger(__name__)
 
@@ -65,8 +66,38 @@ def _estimated_flight(origin: str, destination: str, depart_date: str, return_da
     )
 
 
-def _estimated_hotel(destination: str) -> HotelResult:
-    return HotelResult(
+async def _enrich_hotel_with_place(
+    hotel: HotelResult,
+    destination: str,
+    coords: dict | None = None,
+) -> HotelResult:
+    if hotel.get("lat") is not None and hotel.get("lng") is not None:
+        return hotel
+
+    query = f"{hotel.get('name', '')} {hotel.get('address', '')}".strip() or f"hotel in {destination}"
+    place = await find_place_by_text(
+        query=query,
+        destination=destination,
+        coords=coords,
+        included_type="lodging",
+    )
+    if not place:
+        return hotel
+
+    enriched = dict(hotel)
+    enriched.update(
+        {
+            "place_id": place.get("place_id"),
+            "address": place.get("address") or hotel.get("address", destination),
+            "lat": float(place["lat"]),
+            "lng": float(place["lng"]),
+        }
+    )
+    return HotelResult(**enriched)
+
+
+async def _estimated_hotel(destination: str, coords: dict | None = None) -> HotelResult:
+    hotel = HotelResult(
         name="Estimated Hotel",
         address=destination,
         price_per_night_usd=120.0,
@@ -74,6 +105,10 @@ def _estimated_hotel(destination: str) -> HotelResult:
         rating=0.0,
         is_estimated=True,
     )
+    if coords and coords.get("lat") is not None and coords.get("lng") is not None:
+        hotel["lat"] = float(coords["lat"])
+        hotel["lng"] = float(coords["lng"])
+    return await _enrich_hotel_with_place(hotel, destination, coords)
 
 
 def _price_from_rate(rate: dict | None, fallback: float = 9999.0) -> float:
@@ -179,6 +214,7 @@ async def search_hotels(
     check_in: str,
     check_out: str,
     budget_ceiling_usd: float,
+    coords: dict | None = None,
 ) -> HotelResult:
     """Return the best hotel under budget; fall back to estimate on errors or quota."""
     cache_key = f"hotels:{destination}:{check_in}:{check_out}:{int(budget_ceiling_usd)}"
@@ -193,7 +229,7 @@ async def search_hotels(
                 cached.pop("_id", None)
                 cached.pop("key", None)
                 cached.pop("cached_at", None)
-                return HotelResult(**cached)
+                return await _enrich_hotel_with_place(HotelResult(**cached), destination, coords)
         except Exception as cache_exc:  # noqa: BLE001
             logger.warning("Hotel cache read failed (continuing without cache): %s", cache_exc)
 
@@ -202,7 +238,7 @@ async def search_hotels(
         except SerpAPILimitReached as limit_exc:
             print(f"search_hotels falling back to estimated hotel: {limit_exc}")
             logger.warning("SerpAPI limit reached — returning estimated hotel for %s", destination)
-            return _estimated_hotel(destination)
+            return await _estimated_hotel(destination, coords)
 
         async with httpx.AsyncClient(timeout=20) as client:
             print(
@@ -229,7 +265,7 @@ async def search_hotels(
         properties = data.get("properties", [])
         if not properties:
             print("search_hotels falling back to estimated hotel: SerpAPI returned no properties.")
-            return _estimated_hotel(destination)
+            return await _estimated_hotel(destination, coords)
 
         check_in_dt = datetime.strptime(check_in, "%Y-%m-%d")
         check_out_dt = datetime.strptime(check_out, "%Y-%m-%d")
@@ -258,6 +294,7 @@ async def search_hotels(
             rating=float(pick.get("overall_rating", 0.0)),
             is_estimated=False,
         )
+        result = await _enrich_hotel_with_place(result, destination, coords)
 
         try:
             doc = {**result, "key": cache_key, "cached_at": datetime.now(timezone.utc)}
@@ -269,7 +306,7 @@ async def search_hotels(
     except Exception as exc:  # noqa: BLE001
         logger.error("search_hotels error: %s", exc)
         print(f"search_hotels falling back to estimated hotel after exception: {exc!r}")
-        return _estimated_hotel(destination)
+        return await _estimated_hotel(destination, coords)
 
 
 if __name__ == "__main__":

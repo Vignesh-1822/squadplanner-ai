@@ -45,6 +45,9 @@ class HotelResult(TypedDict):
     total_price_usd: float
     rating: float
     is_estimated: bool
+    place_id: NotRequired[str]
+    lat: NotRequired[float]
+    lng: NotRequired[float]
 
 
 class WeatherResult(TypedDict):
@@ -64,6 +67,7 @@ class DayPlan(TypedDict):
     routes: list[dict]
     estimated_day_cost_usd: float
     schedule: NotRequired[list[dict]]
+    route_stops: NotRequired[list[dict]]
     rationale: NotRequired[str]
     constraint_notes: NotRequired[list[str]]
 

@@ -85,6 +85,41 @@ async def plan_day_routes(activities: list[ActivityResult]) -> dict:
     }
 
 
+async def plan_stop_routes(stops: list[dict]) -> dict:
+    """Compute consecutive routes for ordered stops with lat/lng coordinates."""
+    routable_stops = [
+        stop for stop in stops if stop.get("lat") is not None and stop.get("lng") is not None
+    ]
+    if len(routable_stops) < 2:
+        return {"routes": [], "total_travel_minutes": 0}
+
+    routes: list[dict] = []
+    total_seconds = 0
+
+    for origin, destination in zip(routable_stops, routable_stops[1:]):
+        route = await get_route(
+            float(origin["lat"]),
+            float(origin["lng"]),
+            float(destination["lat"]),
+            float(destination["lng"]),
+        )
+        routes.append(
+            {
+                **route,
+                "from_order": origin.get("order"),
+                "to_order": destination.get("order"),
+                "from_label": origin.get("label"),
+                "to_label": destination.get("label"),
+            }
+        )
+        total_seconds += int(route.get("duration_seconds", 0))
+
+    return {
+        "routes": routes,
+        "total_travel_minutes": int(total_seconds / 60),
+    }
+
+
 if __name__ == "__main__":
     import asyncio
 

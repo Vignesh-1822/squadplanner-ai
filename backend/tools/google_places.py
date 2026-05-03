@@ -127,6 +127,98 @@ async def fetch_activities_by_category(
     return all_results
 
 
+async def find_place_by_text(
+    query: str,
+    destination: str,
+    coords: dict | None = None,
+    included_type: str | None = None,
+) -> ActivityResult | None:
+    """Find one place by text and return coordinates in the ActivityResult shape."""
+    clean_query = " ".join(str(query or "").split())
+    if not clean_query:
+        return None
+
+    collection = get_collection("api_cache")
+    type_part = included_type or "any"
+    cache_key = f"places_text:{destination}:{type_part}:{clean_query}".lower()
+
+    try:
+        cutoff = datetime.now(timezone.utc) - timedelta(hours=_CACHE_TTL_HOURS)
+        cached = await collection.find_one({"key": cache_key, "cached_at": {"$gte": cutoff}})
+        if cached and cached.get("place"):
+            place = dict(cached["place"])
+            return ActivityResult(**place)
+    except Exception as cache_exc:  # noqa: BLE001
+        logger.warning("Place text cache read failed for '%s': %s", clean_query, cache_exc)
+
+    request_body: dict = {
+        "textQuery": f"{clean_query}, {destination}",
+        "maxResultCount": 1,
+    }
+    if included_type:
+        request_body["includedType"] = included_type
+    if coords and coords.get("lat") is not None and coords.get("lng") is not None:
+        request_body["locationBias"] = {
+            "circle": {
+                "center": {
+                    "latitude": float(coords["lat"]),
+                    "longitude": float(coords["lng"]),
+                },
+                "radius": 30000.0,
+            }
+        }
+
+    try:
+        async with httpx.AsyncClient(timeout=20) as client:
+            resp = await client.post(
+                "https://places.googleapis.com/v1/places:searchText",
+                headers={
+                    "X-Goog-Api-Key": settings.google_places_api_key,
+                    "X-Goog-FieldMask": (
+                        "places.id,places.displayName,places.formattedAddress,"
+                        "places.location,places.priceLevel,places.rating,places.types"
+                    ),
+                },
+                json=request_body,
+            )
+            resp.raise_for_status()
+            data = resp.json()
+
+        places = data.get("places", [])
+        if not places:
+            return None
+
+        place = places[0]
+        raw_price = place.get("priceLevel", "FREE")
+        price_level = _PRICE_LEVEL_MAP.get(raw_price, 0) if isinstance(raw_price, str) else int(raw_price)
+        parsed = ActivityResult(
+            place_id=place["id"],
+            name=place["displayName"]["text"],
+            category="food" if included_type == "restaurant" else "place",
+            address=place.get("formattedAddress", ""),
+            lat=place["location"]["latitude"],
+            lng=place["location"]["longitude"],
+            price_level=price_level,
+            rating=float(place.get("rating", 0.0)),
+            tags=place.get("types", []),
+        )
+
+        try:
+            doc = {
+                "key": cache_key,
+                "place": dict(parsed),
+                "cached_at": datetime.now(timezone.utc),
+            }
+            await collection.update_one({"key": cache_key}, {"$set": doc}, upsert=True)
+        except Exception as write_exc:  # noqa: BLE001
+            logger.warning("Place text cache write failed for '%s': %s", clean_query, write_exc)
+
+        return parsed
+    except Exception as exc:  # noqa: BLE001
+        logger.error("find_place_by_text API error for '%s': %s", clean_query, exc)
+        return None
+
+
 if __name__ == "__main__":
     import asyncio
 

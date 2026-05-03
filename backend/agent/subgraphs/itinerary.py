@@ -12,7 +12,8 @@ from langgraph.graph import END, StateGraph
 
 from agent.state import ActivityResult, DayPlan, DecisionLogEntry, ItineraryState, MemberInput
 from config import get_llm
-from tools.google_routes import plan_day_routes
+from tools.google_places import find_place_by_text
+from tools.google_routes import plan_day_routes, plan_stop_routes
 
 logger = logging.getLogger(__name__)
 
@@ -348,6 +349,151 @@ def _match_activity_by_name(name: str, activities: list[ActivityResult], lookup:
     return None
 
 
+def _schedule_sort_key(entry: dict) -> int:
+    parsed = _parse_schedule_time(entry.get("time"))
+    if not parsed:
+        return 24 * 60
+    return parsed.hour * 60 + parsed.minute
+
+
+def _is_meal_entry(entry: dict) -> bool:
+    entry_type = str(entry.get("type", "")).lower()
+    label = str(entry.get("label", "")).lower()
+    return entry_type == "meal" or any(meal in label for meal in ("breakfast", "lunch", "dinner", "brunch"))
+
+
+def _hotel_route_stop(hotel: dict, order: int) -> dict | None:
+    if hotel.get("lat") is None or hotel.get("lng") is None:
+        return None
+    return {
+        "order": order,
+        "time": None,
+        "type": "hotel",
+        "label": hotel.get("name", "Hotel"),
+        "address": hotel.get("address", ""),
+        "place_id": hotel.get("place_id"),
+        "lat": float(hotel["lat"]),
+        "lng": float(hotel["lng"]),
+        "source": "hotel",
+    }
+
+
+def _activity_route_stop(activity: ActivityResult, entry: dict, order: int) -> dict:
+    return {
+        "order": order,
+        "time": entry.get("time"),
+        "type": "activity",
+        "label": activity.get("name"),
+        "address": activity.get("address", ""),
+        "place_id": activity.get("place_id"),
+        "lat": float(activity["lat"]),
+        "lng": float(activity["lng"]),
+        "source": "activity_match",
+        "notes": entry.get("notes", ""),
+    }
+
+
+def _meal_route_stop(place: ActivityResult, entry: dict, order: int) -> dict:
+    return {
+        "order": order,
+        "time": entry.get("time"),
+        "type": "restaurant",
+        "label": place.get("name") or entry.get("label"),
+        "address": place.get("address", ""),
+        "place_id": place.get("place_id"),
+        "lat": float(place["lat"]),
+        "lng": float(place["lng"]),
+        "source": "restaurant_lookup",
+        "notes": entry.get("notes", ""),
+    }
+
+
+def _fallback_meal_at_hotel_stop(hotel: dict, entry: dict, order: int) -> dict | None:
+    if hotel.get("lat") is None or hotel.get("lng") is None:
+        return None
+    return {
+        "order": order,
+        "time": entry.get("time"),
+        "type": "restaurant",
+        "label": entry.get("label") or "Meal at hotel",
+        "address": hotel.get("address", ""),
+        "place_id": hotel.get("place_id"),
+        "lat": float(hotel["lat"]),
+        "lng": float(hotel["lng"]),
+        "source": "hotel_meal_fallback",
+        "notes": entry.get("notes", ""),
+    }
+
+
+async def _meal_place_for_entry(
+    entry: dict,
+    state: ItineraryState,
+    food_activities: list[ActivityResult],
+    food_lookup: dict[str, ActivityResult],
+) -> ActivityResult | None:
+    label = str(entry.get("label") or "")
+    matched = _match_activity_by_name(label, food_activities, food_lookup)
+    if matched:
+        return matched
+
+    query = label
+    if not query:
+        return None
+    return await find_place_by_text(
+        query=query,
+        destination=state["destination"],
+        coords=state.get("destination_coords"),
+        included_type="restaurant",
+    )
+
+
+async def _build_route_stops_for_day(
+    day: DayPlan,
+    state: ItineraryState,
+    activity_lookup: dict[str, ActivityResult],
+) -> tuple[list[dict], int]:
+    hotel = state.get("hotel") or {}
+    stops: list[dict] = []
+    missing = 0
+
+    hotel_stop = _hotel_route_stop(hotel, 1)
+    if hotel_stop:
+        stops.append(hotel_stop)
+    elif hotel:
+        missing += 1
+
+    food_activities = [
+        activity for activity in state.get("activities", []) if str(activity.get("category")) == "food"
+    ]
+    food_lookup = _activity_lookup(food_activities)
+    activity_rows = list(day.get("activities", []))
+
+    for entry in sorted(day.get("schedule", []), key=_schedule_sort_key):
+        order = len(stops) + 1
+        label = str(entry.get("label") or "")
+
+        if _is_meal_entry(entry):
+            place = await _meal_place_for_entry(entry, state, food_activities, food_lookup)
+            if place:
+                stops.append(_meal_route_stop(place, entry, order))
+                continue
+
+            hotel_meal = _fallback_meal_at_hotel_stop(hotel, entry, order)
+            if hotel_meal:
+                stops.append(hotel_meal)
+            else:
+                missing += 1
+            continue
+
+        matched = _match_activity_by_name(label, activity_rows, activity_lookup)
+        if matched:
+            stops.append(_activity_route_stop(matched, entry, order))
+        else:
+            missing += 1
+
+    return stops, missing
+
+
 def _coerce_activity_names(raw_activities: Any) -> list[str]:
     if not isinstance(raw_activities, list):
         return []
@@ -631,6 +777,7 @@ async def plan_routes(state: ItineraryState) -> dict:
     activities = state.get("activities", [])
     lookup = _activity_lookup(activities)
     skipped_names = 0
+    missing_stops = 0
     total_travel_minutes = 0
 
     for day in days:
@@ -649,7 +796,16 @@ async def plan_routes(state: ItineraryState) -> dict:
             else:
                 skipped_names += 1
 
-        if len(matched_activities) >= 2:
+        day["activities"] = matched_activities
+        route_stops, missing_for_day = await _build_route_stops_for_day(day, state, lookup)
+        missing_stops += missing_for_day
+        day["route_stops"] = route_stops
+
+        if len(route_stops) >= 2:
+            route_result = await plan_stop_routes(route_stops)
+            day["routes"] = route_result.get("routes", [])
+            day["total_travel_minutes"] = int(route_result.get("total_travel_minutes", 0))
+        elif len(matched_activities) >= 2:
             route_result = await plan_day_routes(matched_activities)
             day["routes"] = route_result.get("routes", [])
             day["total_travel_minutes"] = int(route_result.get("total_travel_minutes", 0))
@@ -657,7 +813,6 @@ async def plan_routes(state: ItineraryState) -> dict:
             day["routes"] = []
             day["total_travel_minutes"] = 0
 
-        day["activities"] = matched_activities
         total_travel_minutes += int(day.get("total_travel_minutes", 0))
 
     return {
@@ -666,7 +821,11 @@ async def plan_routes(state: ItineraryState) -> dict:
             _decision(
                 "plan_routes",
                 f"Planned routes for {len(days)} days",
-                f"{total_travel_minutes} total travel minutes; skipped {skipped_names} unmatched activities",
+                (
+                    f"{total_travel_minutes} total travel minutes; "
+                    f"skipped {skipped_names} unmatched activities; "
+                    f"{missing_stops} schedule stops missing coordinates"
+                ),
             )
         ],
     }
