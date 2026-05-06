@@ -5,7 +5,10 @@ origin airports, budgets, dietary restrictions, numeric travel preferences, and 
 natural-language notes. The backend runs a LangGraph planning workflow that scores US
 destinations, pauses for leader destination approval, fetches live travel context, builds
 a day-by-day itinerary, checks constraints and fairness, then streams progress and the
-final plan over Server-Sent Events.
+final plan over Server-Sent Events. After generation, the leader can also ask for
+natural-language refinements such as "Make Day 2 cheaper" or "Swap the museum for something
+outdoors"; the backend parses the edit, re-enters the LangGraph checkpoint at the affected
+node, reruns only the downstream subgraph, and streams the updated itinerary back to the UI.
 
 Temporary live demo: https://ai-squad-planner-v2-0.vercel.app/
 
@@ -24,7 +27,7 @@ The project now has three major pieces:
 
 ### Backend agent workflow
 
-- FastAPI app with CORS, `/health`, `/debug`, trip routes, HITL routes, and admin routes.
+- FastAPI app with CORS, `/health`, `/debug`, trip routes, HITL routes, refinement routes, and admin routes.
 - LangGraph orchestrator in `backend/agent/graph.py`.
 - MongoDB-backed checkpointing for Human-in-the-Loop graph pause/resume.
 - Optional LangSmith tracing through `LANGCHAIN_TRACING_V2`, `LANGCHAIN_API_KEY`, and
@@ -42,7 +45,11 @@ The project now has three major pieces:
   feasibility checks, deterministic validation, and rebuild loops.
 - Fairness and compatibility scoring.
 - Final trip pitch generation.
-- SSE event streaming for node progress, city-selection pause, completion, and errors.
+- Stateful post-generation refinement. Natural-language edits are normalized, stored in graph
+  state, routed to the correct completed node via LangGraph checkpoint state, and streamed as an
+  incremental rerun.
+- SSE event streaming for node progress, city-selection pause, refinement updates, completion,
+  and errors.
 
 ### External tool wrappers
 
@@ -69,6 +76,9 @@ The project now has three major pieces:
 - `GET /trips/{trip_id}` returns the stored trip document.
 - `GET /trips/{trip_id}/stream` streams graph progress and final output.
 - `POST /trips/{trip_id}/confirm-city` resumes the graph after destination selection.
+- `POST /trips/{trip_id}/refine` queues a post-generation natural-language refinement.
+- `GET /trips/{trip_id}/refinements/{refinement_id}/stream` streams refinement progress and
+  the updated itinerary.
 - `GET /admin/serpapi-usage` returns current SerpAPI monthly usage.
 - `GET /health` returns a simple liveness response.
 - `/debug` serves a local manual testing UI.
@@ -94,6 +104,8 @@ The project now has three major pieces:
 - `POST /trips/{trip_id}/confirm-city` integration for destination approval.
 - Completed itinerary page that loads stored/final trip output, displays trip pitch, travelers,
   flights, hotel, day tabs, agenda, fairness/compatibility scores, and constraint notes.
+- Completed itinerary page includes a refinement form that opens an SSE stream and replaces the
+  itinerary with the updated graph result.
 - Interactive Leaflet/OpenStreetMap itinerary map with markers and route polylines.
 - LocalStorage caching of completed trip payloads for smoother reloads.
 - Vercel-ready SPA config in `showcase/vercel.json`.
@@ -110,15 +122,16 @@ The project now has three major pieces:
 backend/
   main.py                         FastAPI app, startup, router registration
   config.py                       settings, LLM factory, LangSmith setup
-  api/                            trips, HITL, admin routes
+  api/                            trips, HITL, refinement, admin routes
   agent/
     graph.py                      parent LangGraph orchestrator
     state.py                      TripState and ItineraryState schemas
-    nodes/                        parse, constraints, destination, tools, budget, hotel, fairness, output
+    nodes/                        parse, constraints, refinement, destination, tools, budget, hotel, fairness, output
     subgraphs/itinerary.py        itinerary-planning subgraph
   tools/                          SerpAPI, Google Places, Google Routes, Open-Meteo wrappers
   db/                             MongoDB client, checkpointer, persisted models
   utils/streaming.py              SSE formatting and graph event streaming
+  utils/refinement_streaming.py   SSE graph re-entry for post-generation edits
   data/destinations.json          US destination dataset
   tests/                          deterministic and live-gated tests
 
@@ -129,7 +142,7 @@ frontend/
   src/services/                   early API helpers
 
 showcase/
-  src/pages/                      trip input, live planning, completed itinerary
+  src/pages/                      trip input, live planning, completed/refinable itinerary
   src/ui/ItineraryMap.jsx         Leaflet/OpenStreetMap route and stop map
   src/api.js                      backend API client and SSE URL helper
   src/storage.js                  local completed-trip cache
@@ -208,7 +221,7 @@ backend-connected UI until the original app is reconciled.
 Run deterministic backend tests from `backend/`:
 
 ```powershell
-python -m pytest tests/test_destination_selector.py tests/test_preference_constraints.py tests/test_graph_wiring.py -v
+python -m pytest tests/test_destination_selector.py tests/test_preference_constraints.py tests/test_graph_wiring.py tests/test_refinement.py -v
 ```
 
 Run live full-graph integration only when you intend to spend LLM and API quota:
@@ -235,6 +248,60 @@ python -m pytest tests/test_integration.py -v -s
 5. Start the stream.
 6. Choose a candidate destination when `HITL_REQUIRED` appears.
 7. Wait for `TRIP_COMPLETE`.
+8. In the showcase itinerary page, enter a refinement such as `Make Day 2 cheaper` or
+   `Swap the museum for something outdoors`.
+9. Watch the refinement SSE events and confirm the itinerary updates in place.
+
+## Deployment
+
+The current hosted demo uses `showcase/` on Vercel and `backend/` on Render. If both services are
+connected to this GitHub repository and branch, committing and pushing replaces the old deployed
+version automatically.
+
+Commit and push from the repo root:
+
+```powershell
+git add backend showcase README.md
+git commit -m "Add stateful itinerary refinement endpoint"
+git push origin main
+```
+
+Vercel frontend settings:
+
+- Root directory: `showcase`
+- Build command: `npm run build`
+- Output directory: `dist`
+- Environment variable: `VITE_API_BASE_URL=https://your-render-service.onrender.com`
+
+Render backend settings:
+
+- Root directory: `backend`
+- Build command: `pip install -r requirements.txt`
+- Start command: `uvicorn main:app --host 0.0.0.0 --port $PORT`
+
+Required Render environment variables:
+
+```env
+MONGODB_URI=
+ANTHROPIC_API_KEY=
+SERPAPI_KEY=
+GOOGLE_PLACES_API_KEY=
+GOOGLE_ROUTES_API_KEY=
+LLM_PROVIDER=anthropic
+SERPAPI_MONTHLY_HARD_LIMIT=200
+LANGCHAIN_TRACING_V2=false
+LANGCHAIN_API_KEY=
+LANGCHAIN_PROJECT=squadplanner
+```
+
+After deploy:
+
+1. Confirm Render health: `https://your-render-service.onrender.com/health`.
+2. Confirm Vercel has `VITE_API_BASE_URL` pointed at the Render backend.
+3. Open the Vercel showcase app, complete a trip, then test the refinement box on the itinerary page.
+
+If auto-deploy is not enabled, push the commit and then click "Redeploy latest commit" in Vercel
+and Render.
 
 ## What Is Pending
 
@@ -244,7 +311,6 @@ python -m pytest tests/test_integration.py -v -s
 - Join-by-invite flow around `invite_code`.
 - Member preference submission/update endpoint.
 - Trip status endpoint for dashboard polling.
-- Refinement endpoint for natural-language edits after a trip is generated.
 - Past-trip listing endpoint.
 - Stronger error recovery and user-facing failure messages.
 - DB indexes/TTL setup script or migration checklist for production environments.
