@@ -7,7 +7,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
-from api import admin, hitl, trips
+from api import admin, hitl, refinements, trips
 from config import configure_langsmith, settings
 from db.client import close_client, get_database
 
@@ -26,6 +26,7 @@ app.add_middleware(
 
 app.include_router(trips.router)
 app.include_router(hitl.router)
+app.include_router(refinements.router)
 app.include_router(admin.router)
 
 debug_ui_dir = Path(__file__).parent / "debug_ui"

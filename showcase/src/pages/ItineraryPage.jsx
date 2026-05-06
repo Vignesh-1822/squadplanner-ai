@@ -1,17 +1,22 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { BedDouble, CheckCircle2, Clock, DollarSign, MapPin, Plane, Utensils, Users } from "lucide-react";
-import { getTrip } from "../api.js";
+import { BedDouble, CheckCircle2, Clock, DollarSign, Loader2, MapPin, Plane, Send, Utensils, Users } from "lucide-react";
+import { getTrip, refineTrip, refinementStreamUrl } from "../api.js";
 import { ItineraryMap } from "../ui/ItineraryMap.jsx";
 import { loadTripPayload, saveTripPayload } from "../storage.js";
 import { currency, percent, shortDate, titleize } from "../utils/format.js";
 
 export function ItineraryPage() {
   const { tripId } = useParams();
+  const refinementSourceRef = useRef(null);
   const [payload, setPayload] = useState(() => loadTripPayload(tripId));
   const [selectedDay, setSelectedDay] = useState(0);
   const [loading, setLoading] = useState(!payload);
   const [error, setError] = useState("");
+  const [refinementText, setRefinementText] = useState("");
+  const [refinementStatus, setRefinementStatus] = useState("idle");
+  const [refinementError, setRefinementError] = useState("");
+  const [refinementEvents, setRefinementEvents] = useState([]);
 
   useEffect(() => {
     let active = true;
@@ -38,6 +43,10 @@ export function ItineraryPage() {
     };
   }, [payload, tripId]);
 
+  useEffect(() => {
+    return () => refinementSourceRef.current?.close();
+  }, []);
+
   const itinerary = payload?.itinerary || {};
   const days = itinerary.days || [];
   const day = days[selectedDay] || days[0];
@@ -49,6 +58,70 @@ export function ItineraryPage() {
     const travelMinutes = days.reduce((sum, item) => sum + Number(item.total_travel_minutes || 0), 0);
     return { dayCosts, travelMinutes };
   }, [days]);
+
+  async function submitRefinement(event) {
+    event.preventDefault();
+    const message = refinementText.trim();
+    if (!message || refinementStatus === "streaming" || refinementStatus === "queued") return;
+
+    refinementSourceRef.current?.close();
+    setRefinementStatus("queued");
+    setRefinementError("");
+    setRefinementEvents([]);
+
+    try {
+      const queued = await refineTrip(tripId, message);
+      setRefinementStatus("streaming");
+      const source = new EventSource(refinementStreamUrl(tripId, queued.refinement_id));
+      refinementSourceRef.current = source;
+
+      source.onerror = () => {
+        setRefinementStatus("error");
+        setRefinementError("The refinement stream disconnected.");
+        source.close();
+      };
+
+      source.onmessage = (streamMessage) => {
+        const eventPayload = JSON.parse(streamMessage.data);
+        const eventType = eventPayload.event_type;
+        const data = eventPayload.data || {};
+
+        if (eventType === "REFINEMENT_STARTED") {
+          setRefinementStatus("streaming");
+        }
+
+        if (eventType === "REFINEMENT_PARSED") {
+          setRefinementEvents((current) => [
+            ...current,
+            { node: "parse_refinement", message: data.parsed?.message || message },
+          ]);
+        }
+
+        if (eventType === "NODE_PROGRESS") {
+          setRefinementEvents((current) => [...current, data]);
+        }
+
+        if (eventType === "REFINEMENT_COMPLETE") {
+          setRefinementStatus("complete");
+          setPayload(data);
+          saveTripPayload(tripId, data);
+          setRefinementText("");
+          setSelectedDay((current) => Math.min(current, Math.max((data.itinerary?.days || []).length - 1, 0)));
+          source.close();
+        }
+
+        if (eventType === "ERROR") {
+          setRefinementStatus("error");
+          setRefinementError(data.message || "The refinement failed.");
+          source.close();
+        }
+      };
+    } catch (err) {
+      setRefinementStatus("error");
+      const detail = err.message || "Unable to start refinement.";
+      setRefinementError(detail);
+    }
+  }
 
   if (loading) {
     return <div className="panel loading-panel">Loading itinerary...</div>;
@@ -121,6 +194,45 @@ export function ItineraryPage() {
             <p>No hotel returned.</p>
           )}
         </InfoCard>
+      </section>
+
+      <section className="panel refinement-panel">
+        <div className="section-heading">
+          <div>
+            <p className="eyebrow">Refinement</p>
+            <h2>Ask for a change</h2>
+          </div>
+          {refinementStatus === "streaming" || refinementStatus === "queued" ? <Loader2 className="spin" size={18} /> : null}
+        </div>
+        <form className="refinement-form" onSubmit={submitRefinement}>
+          <textarea
+            aria-label="Refinement request"
+            rows={2}
+            value={refinementText}
+            onChange={(event) => setRefinementText(event.target.value)}
+            placeholder="Make Day 2 cheaper, or swap the museum for something outdoors"
+            disabled={refinementStatus === "streaming" || refinementStatus === "queued"}
+          />
+          <button
+            className="primary-button compact"
+            type="submit"
+            disabled={!refinementText.trim() || refinementStatus === "streaming" || refinementStatus === "queued"}
+          >
+            {refinementStatus === "streaming" || refinementStatus === "queued" ? <Loader2 className="spin" size={16} /> : <Send size={16} />}
+            Refine
+          </button>
+        </form>
+        {refinementError ? <div className="error-banner refinement-error">{refinementError}</div> : null}
+        {refinementEvents.length ? (
+          <div className="refinement-events">
+            {refinementEvents.slice(-5).map((item, index) => (
+              <span key={`${item.node}-${index}`}>
+                <CheckCircle2 size={14} />
+                {item.message || item.node}
+              </span>
+            ))}
+          </div>
+        ) : null}
       </section>
 
       <section className="panel constraints-panel">
@@ -258,6 +370,7 @@ function normalizeTripDocument(trip) {
       preference_constraints: trip.preference_constraints || {},
       constraint_satisfaction: trip.constraint_satisfaction || {},
       decision_log: trip.decision_log || [],
+      refinement_history: trip.refinement_history || [],
     };
   }
 
@@ -287,6 +400,7 @@ function normalizeTripDocument(trip) {
       preference_constraints: state.preference_constraints || {},
       constraint_satisfaction: state.constraint_satisfaction || {},
       decision_log: state.decision_log || [],
+      refinement_history: state.refinement_history || [],
     };
   }
 

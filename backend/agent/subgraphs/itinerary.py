@@ -329,6 +329,40 @@ def _activities_prompt_summary(clusters: list[dict]) -> str:
     return "\n\n".join(lines)
 
 
+def _previous_days_summary(days: list[dict]) -> list[dict]:
+    return [
+        {
+            "day_number": day.get("day_number"),
+            "date": day.get("date"),
+            "neighborhood": day.get("neighborhood"),
+            "activities": [
+                activity.get("name") if isinstance(activity, dict) else str(activity)
+                for activity in day.get("activities", [])
+            ],
+            "meals": day.get("meals", []),
+            "estimated_day_cost_usd": day.get("estimated_day_cost_usd"),
+            "rationale": day.get("rationale", ""),
+        }
+        for day in days
+        if isinstance(day, dict)
+    ]
+
+
+def _refinement_prompt_summary(state: ItineraryState) -> str:
+    current = state.get("current_refinement") or {}
+    directives = state.get("refinement_directives") or {}
+    if not current and not directives:
+        return "No active refinement."
+    return json.dumps(
+        {
+            "current_refinement": current,
+            "directives": directives,
+            "previous_days": _previous_days_summary(state.get("days", [])),
+        },
+        default=str,
+    )
+
+
 def _normalize_name(value: Any) -> str:
     return re.sub(r"[^a-z0-9]+", " ", str(value).lower()).strip()
 
@@ -668,6 +702,12 @@ async def build_itinerary(state: ItineraryState) -> dict:
         "- constraint_notes names the concrete constraints this day respects, such as no clubs, late starts, pace, cuisine, or food restrictions.\n"
         "- estimated_day_cost_usd is a realistic estimate per person multiplied by number of members.\n"
         "- Use the provided ISO dates in order.\n\n"
+        "Refinement behavior:\n"
+        "- If an active refinement is present, make the smallest itinerary changes needed to satisfy it.\n"
+        "- Preserve unaffected days, meals, routes, and rationale unless they conflict with the refinement or validation errors.\n"
+        "- If target_day is set, focus changes on that day and keep other days as stable as possible.\n\n"
+        "- If cost_sensitivity is lower_cost, prefer free or lower-price activities and meals, and lower estimated_day_cost_usd where realistic.\n"
+        "- If preferred_categories or avoid_terms are present, reflect those activity choices directly in the affected day.\n\n"
         f"Destination: {state['destination']}\n"
         f"Trip dates: {state['start_date']} to {state['end_date']}\n"
         f"Trip duration days: {state['trip_duration_days']}\n"
@@ -679,6 +719,7 @@ async def build_itinerary(state: ItineraryState) -> dict:
         f"Preference constraints: {json.dumps(preference_constraints)}\n"
         f"Group size: {len(state.get('members', []))}\n"
         f"Previous validation errors to fix: {json.dumps(validation_errors)}\n\n"
+        f"Active refinement context: {_refinement_prompt_summary(state)}\n\n"
         f"Activity clusters by day:\n{_activities_prompt_summary(state.get('clustered_activities', []))}"
     )
 
@@ -1044,10 +1085,13 @@ async def run_itinerary_subgraph(trip_state: dict) -> dict:
         "flights": trip_state["flights"],
         "weather": trip_state.get("weather"),
         "clustered_activities": [],
-        "days": [],
+        "days": trip_state.get("days", []),
         "feasibility_swap_count": 0,
         "validation_rebuild_count": 0,
         "validation_errors": [],
+        "current_refinement": trip_state.get("current_refinement", {}),
+        "refinement_directives": trip_state.get("refinement_directives", {}),
+        "refinement_history": trip_state.get("refinement_history", []),
         "decision_log": [],
         "error": None,
     }

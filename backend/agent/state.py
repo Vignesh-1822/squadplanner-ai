@@ -106,6 +106,9 @@ class TripState(TypedDict):
     compatibility_scores: dict[str, float]
     fairness_passed: bool
     trip_pitch: Optional[str]
+    current_refinement: NotRequired[dict]
+    refinement_directives: NotRequired[dict]
+    refinement_history: NotRequired[list[dict]]
     decision_log: Annotated[list[DecisionLogEntry], operator.add]
     destination_retry_count: int
     hotel_retry_count: int
@@ -132,5 +135,8 @@ class ItineraryState(TypedDict):
     feasibility_swap_count: int
     validation_rebuild_count: int
     validation_errors: list[str]
+    current_refinement: NotRequired[dict]
+    refinement_directives: NotRequired[dict]
+    refinement_history: NotRequired[list[dict]]
     decision_log: Annotated[list[DecisionLogEntry], operator.add]
     error: Optional[str]

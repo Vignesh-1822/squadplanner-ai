@@ -78,6 +78,7 @@ def _complete_payload(trip_id: str, final_state: dict) -> dict:
         "preference_constraints": final_state.get("preference_constraints", {}),
         "constraint_satisfaction": final_state.get("constraint_satisfaction", {}),
         "decision_log": final_state.get("decision_log", []),
+        "refinement_history": final_state.get("refinement_history", []),
     }
 
 
@@ -164,6 +165,7 @@ async def _emit_completion_if_done(graph: Any, trip_id: str, config: dict) -> As
                 "preference_constraints": complete_payload["preference_constraints"],
                 "constraint_satisfaction": complete_payload["constraint_satisfaction"],
                 "decision_log": final_state.get("decision_log", []),
+                "refinement_history": final_state.get("refinement_history", []),
                 "completed_at": datetime.now(timezone.utc).isoformat(),
                 "updated_at": datetime.now(timezone.utc).isoformat(),
             }
@@ -193,6 +195,7 @@ async def stream_graph_events(
                     "preference_constraints": trip.get("preference_constraints", {}),
                     "constraint_satisfaction": trip.get("constraint_satisfaction", {}),
                     "decision_log": trip.get("decision_log", []),
+                    "refinement_history": trip.get("refinement_history", []),
                 },
             )
             return

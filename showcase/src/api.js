@@ -7,7 +7,8 @@ async function readJson(response) {
   const text = await response.text();
   const payload = text ? JSON.parse(text) : {};
   if (!response.ok) {
-    const message = payload?.detail || payload?.message || response.statusText;
+    const detail = payload?.detail;
+    const message = typeof detail === "string" ? detail : detail?.message || payload?.message || response.statusText;
     throw new Error(message);
   }
   return payload;
@@ -59,8 +60,26 @@ export async function getTrip(tripId) {
   }
 }
 
+export async function refineTrip(tripId, message) {
+  try {
+    const response = await fetch(`${API_BASE_URL}/trips/${tripId}/refine`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message }),
+    });
+    return readJson(response);
+  } catch (error) {
+    if (error instanceof TypeError) throw new Error(networkErrorMessage("Trip refinement"));
+    throw error;
+  }
+}
+
 export function streamUrl(tripId) {
   return `${API_BASE_URL}/trips/${tripId}/stream`;
+}
+
+export function refinementStreamUrl(tripId, refinementId) {
+  return `${API_BASE_URL}/trips/${tripId}/refinements/${refinementId}/stream`;
 }
 
 export function getCandidateCoords(candidate) {

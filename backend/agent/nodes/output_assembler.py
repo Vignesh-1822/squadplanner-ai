@@ -68,6 +68,8 @@ async def assemble_output(state: TripState) -> dict:
     day_plan_summary = _readable_days_summary(days)
     preference_constraints = state.get("preference_constraints", {})
     constraint_satisfaction = state.get("constraint_satisfaction", {})
+    current_refinement = state.get("current_refinement", {})
+    refinement_directives = state.get("refinement_directives", {})
 
     if days:
         prompt = (
@@ -87,7 +89,10 @@ async def assemble_output(state: TripState) -> dict:
             f"Group size: {len(state['members'])}\n"
             f"Preference conflicts: {json.dumps(state.get('preference_conflicts', []))}\n"
             f"Natural-language preference constraints: {json.dumps(preference_constraints)}\n"
-            f"Constraint satisfaction: {json.dumps(constraint_satisfaction)}"
+            f"Constraint satisfaction: {json.dumps(constraint_satisfaction)}\n"
+            f"Current refinement: {json.dumps(current_refinement)}\n"
+            f"Refinement directives: {json.dumps(refinement_directives)}\n"
+            "If this is a refinement, reflect the updated itinerary while keeping unchanged facts stable."
         )
     else:
         prompt = (
@@ -102,7 +107,10 @@ async def assemble_output(state: TripState) -> dict:
             f"Group size: {len(state['members'])}\n"
             f"Preference conflicts: {json.dumps(state.get('preference_conflicts', []))}\n"
             f"Natural-language preference constraints: {json.dumps(preference_constraints)}\n"
-            f"Constraint satisfaction: {json.dumps(constraint_satisfaction)}"
+            f"Constraint satisfaction: {json.dumps(constraint_satisfaction)}\n"
+            f"Current refinement: {json.dumps(current_refinement)}\n"
+            f"Refinement directives: {json.dumps(refinement_directives)}\n"
+            "If this is a refinement, reflect the updated itinerary while keeping unchanged facts stable."
         )
 
     response = await get_llm().ainvoke(prompt)

@@ -546,6 +546,48 @@ button:disabled {
   background: rgba(11, 18, 32, 0.66);
 }
 
+.refinement-panel {
+  display: grid;
+  gap: 14px;
+}
+
+.refinement-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: stretch;
+}
+
+.refinement-form textarea {
+  min-height: 72px;
+}
+
+.refinement-form .primary-button {
+  min-width: 118px;
+}
+
+.refinement-error {
+  margin-top: 0;
+}
+
+.refinement-events {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.refinement-events span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 10px;
+  border: 1px solid rgba(52, 211, 153, 0.26);
+  border-radius: 8px;
+  color: #bbf7d0;
+  background: rgba(19, 138, 85, 0.14);
+  font-size: 0.9rem;
+}
+
 .day-panel {
   overflow: hidden;
 }
@@ -815,6 +857,10 @@ button:disabled {
   .traveler-header {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .refinement-form {
+    grid-template-columns: 1fr;
   }
 
   .submit-bar {
