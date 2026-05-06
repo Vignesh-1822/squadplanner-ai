@@ -9,9 +9,16 @@ final plan over Server-Sent Events.
 
 Temporary live demo: https://ai-squad-planner-v2-0.vercel.app/
 
-The project is currently backend-heavy. The React/Vite frontend contains the visual shell
-and early trip-preference screens, while the backend contains the working agent workflow,
-debug UI, API routes, live-gated integration tests, and demo payloads.
+The project now has three major pieces:
+
+- `backend/`: the working FastAPI + LangGraph planning API, debug UI, HITL flow, persistence,
+  streaming, integrations, tests, and LangSmith wiring.
+- `showcase/`: the deployable product app used by the hosted demo. It creates trips against the
+  live backend, streams graph progress, handles destination approval, and renders completed
+  itineraries with maps.
+- `frontend/`: the original design-system shell and product direction work. It has polished
+  dashboard/new-trip/preference screens, but the showcase app is the frontend that is currently
+  aligned to the backend API.
 
 ## What Has Been Built
 
@@ -20,6 +27,9 @@ debug UI, API routes, live-gated integration tests, and demo payloads.
 - FastAPI app with CORS, `/health`, `/debug`, trip routes, HITL routes, and admin routes.
 - LangGraph orchestrator in `backend/agent/graph.py`.
 - MongoDB-backed checkpointing for Human-in-the-Loop graph pause/resume.
+- Optional LangSmith tracing through `LANGCHAIN_TRACING_V2`, `LANGCHAIN_API_KEY`, and
+  `LANGCHAIN_PROJECT`.
+- LLM provider switch for Anthropic or Groq through `LLM_PROVIDER`.
 - Natural-language preference extraction for group/member notes.
 - Destination scoring against `backend/data/destinations.json`.
 - Destination shortlist generation with five candidate destinations and LLM reasoning.
@@ -75,11 +85,24 @@ debug UI, API routes, live-gated integration tests, and demo payloads.
 
 ### Frontend
 
-- React 18 + Vite app scaffold.
+- `showcase/` React 18 + Vite product app connected to the backend.
+- Trip input form with editable dates, group notes, travelers, leader selection, origin airports,
+  budgets, dietary restrictions, preference notes, and five preference sliders.
+- Demo payload defaults in `showcase/src/demoTrip.js` for a polished end-to-end demo.
+- Live planning page using `EventSource` against `GET /trips/{trip_id}/stream`.
+- Candidate destination cards for the HITL city-selection pause.
+- `POST /trips/{trip_id}/confirm-city` integration for destination approval.
+- Completed itinerary page that loads stored/final trip output, displays trip pitch, travelers,
+  flights, hotel, day tabs, agenda, fairness/compatibility scores, and constraint notes.
+- Interactive Leaflet/OpenStreetMap itinerary map with markers and route polylines.
+- LocalStorage caching of completed trip payloads for smoother reloads.
+- Vercel-ready SPA config in `showcase/vercel.json`.
+- Original `frontend/` React 18 + Vite app scaffold.
 - Tailwind/shadcn-style component structure with atoms, molecules, organisms, templates, and layouts.
 - Home dashboard-style page, new-trip screen, trip-preferences screen, and placeholder dashboard route.
 - React Router and TanStack Query providers are wired.
-- Basic API helper exists in `frontend/src/services`, but it is not fully aligned with the backend yet.
+- Basic API helper exists in `frontend/src/services`, but that original app is not fully aligned
+  with the backend yet.
 
 ## Current Architecture
 
@@ -104,6 +127,13 @@ frontend/
   src/components/                 UI building blocks
   src/routes/                     React Router setup
   src/services/                   early API helpers
+
+showcase/
+  src/pages/                      trip input, live planning, completed itinerary
+  src/ui/ItineraryMap.jsx         Leaflet/OpenStreetMap route and stop map
+  src/api.js                      backend API client and SSE URL helper
+  src/storage.js                  local completed-trip cache
+  vercel.json                     SPA rewrites for Vercel hosting
 ```
 
 ## Backend Setup
@@ -146,15 +176,32 @@ Useful URLs:
 
 ## Frontend Setup
 
+Run the current backend-aligned product app:
+
+```powershell
+cd showcase
+npm install
+npm run dev
+```
+
+By default, `showcase/` calls `http://127.0.0.1:8000`. To point it at a hosted backend, create
+`showcase/.env.local`:
+
+```env
+VITE_API_BASE_URL=https://your-backend.example.com
+```
+
+Run the original design-system frontend:
+
 ```powershell
 cd frontend
 npm install
 npm run dev
 ```
 
-The frontend currently defaults API calls to `http://localhost:8000/api`, while the backend routes
-are mounted at the root, for example `/trips`. This needs to be reconciled before the frontend can
-drive the backend without adapter changes.
+The original `frontend/` app currently defaults API calls to `http://localhost:8000/api`, while the
+backend routes are mounted at the root, for example `/trips`. Use `showcase/` for the working
+backend-connected UI until the original app is reconciled.
 
 ## Tests
 
@@ -205,14 +252,14 @@ python -m pytest tests/test_integration.py -v -s
 
 ### Frontend integration
 
-- Connect the React forms to the real backend trip API.
-- Align frontend preference keys with backend keys. The backend uses `outdoor`, while the current
-  frontend preference page still includes `adventure` and `nature`.
-- Fix the API base URL mismatch (`/api` prefix in frontend helper vs root-mounted backend routes).
-- Build screens for stream progress, candidate destination selection, final itinerary, fairness,
-  flights, hotel, and constraint satisfaction.
-- Replace placeholder/sample data in home and dashboard views with backend data.
+- Decide whether `showcase/` becomes the main frontend or gets merged back into `frontend/`.
+- Reconcile the original `frontend/` API base URL mismatch (`/api` prefix in frontend helper vs
+  root-mounted backend routes).
+- Align the original `frontend/` preference keys with backend keys. The backend uses `outdoor`,
+  while the current original preference page still includes `adventure` and `nature`.
+- Replace placeholder/sample data in the original home and dashboard views with backend data.
 - Add invite/join UX and member readiness states.
+- Add persistent trip retrieval/listing UI beyond the localStorage cache used by `showcase/`.
 - Add loading, error, empty, and completion states.
 
 ### Testing and quality
@@ -230,7 +277,8 @@ python -m pytest tests/test_integration.py -v -s
 - Add production environment variable documentation.
 - Configure CORS for real frontend origins instead of `*`.
 - Decide whether graph execution should remain request/stream-driven or move to a worker queue.
-- Enable LangSmith tracing in hosted/demo environments when useful.
+- Enable LangSmith tracing in hosted/demo environments by setting `LANGCHAIN_TRACING_V2=true`,
+  `LANGCHAIN_API_KEY`, and `LANGCHAIN_PROJECT`.
 
 ## Notes for Future Work
 
