@@ -33,11 +33,13 @@ async def send_email(to: str, subject: str, body: str) -> None:
 
 
 async def send_trip_invite(to: str, trip_name: str, invite_code: str) -> None:
+    join_url = f"{settings.frontend_url.rstrip('/')}/join/{invite_code}"
     subject = f"You've been invited to join a trip: {trip_name}"
     body = (
         f"Hey there!\n\n"
         f"You've been invited to join a squad trip: {trip_name}\n\n"
-        f"Use this invite code to join: {invite_code}\n\n"
+        f"Click here to join:\n{join_url}\n\n"
+        f"Or open SquadPlanner and use this invite code: {invite_code}\n\n"
         f"See you on the trip!\n"
         f"— The SquadPlanner Team"
     )

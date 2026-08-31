@@ -39,6 +39,7 @@ class Settings(BaseSettings):
     google_client_id: str = Field(default="", validation_alias="GOOGLE_CLIENT_ID")
     smtp_user: str = Field(default="", validation_alias="SMTP_USER")
     smtp_password: str = Field(default="", validation_alias="SMTP_PASSWORD")
+    frontend_url: str = Field(default="http://localhost:5173", validation_alias="FRONTEND_URL")
 
 
 settings = Settings()

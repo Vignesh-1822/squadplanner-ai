@@ -7,7 +7,8 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
-from api import admin, hitl, refinements, trips
+from api import admin, hitl, refinements, squad, trips
+from api.routes import auth
 from config import configure_langsmith, settings
 from db.client import close_client, get_database
 
@@ -24,11 +25,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-from api import trips, hitl, admin
-from api.routes import auth
 app.include_router(auth.router, prefix="/api")
 app.include_router(trips.router, prefix="/api")
+app.include_router(squad.router, prefix="/api")
 app.include_router(hitl.router, prefix="/api")
+app.include_router(refinements.router, prefix="/api")
 app.include_router(admin.router, prefix="/api")
 
 

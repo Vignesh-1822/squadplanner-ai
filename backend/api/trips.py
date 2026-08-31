@@ -39,18 +39,25 @@ class CreateTripRequest(BaseModel):
 
 class InvitedMember(BaseModel):
     email: str
-    status: Literal["pending", "accepted", "declined"] = "pending"
+    status: Literal["pending", "joined", "ready", "accepted", "declined"] = "pending"
     name: str | None = None
     avatar_url: str | None = None
+    is_leader: bool = False
+    has_preferences: bool = False
 
 
 class TripDetailsResponse(BaseModel):
     trip_id: str
     trip_name: str
     invite_code: str
+    status: str
     created_at: str
     expires_at: str
     invited_members: list[InvitedMember]
+    ready_count: int
+    total_count: int
+    all_ready: bool
+    can_generate: bool
 
 
 def _initial_trip_state(trip_id: str, trip_name: str) -> dict:
@@ -104,20 +111,22 @@ def _isoformat(value: datetime | str) -> str:
     return value
 
 
-def _invited_members_from_trip(trip: dict) -> list[dict[str, str]]:
+def _invited_members_from_trip(trip: dict) -> list[dict]:
     invited_members = trip.get("invited_members")
     if isinstance(invited_members, list):
         return [
             {
                 "email": member.get("email", ""),
                 "status": member.get("status", "pending"),
+                "is_leader": bool(member.get("is_leader", False)),
+                "has_preferences": bool(member.get("preferences")),
             }
             for member in invited_members
             if isinstance(member, dict) and member.get("email")
         ]
 
     return [
-        {"email": email, "status": "pending"}
+        {"email": email, "status": "pending", "is_leader": False, "has_preferences": False}
         for email in trip.get("invited_emails", [])
     ]
 
@@ -129,6 +138,15 @@ async def create_trip(body: CreateTripRequest):
     initial_state = _initial_trip_state(trip_id, body.trip_name)
     now = datetime.now(timezone.utc).isoformat()
 
+    # The creator is a first-class squad member and the trip leader. Guests invited by email
+    # start as "pending" until they join and submit preferences.
+    invited_members = [
+        {"email": body.created_by, "status": "joined", "is_leader": True}
+    ]
+    for email in body.invited_emails:
+        if email and email != body.created_by:
+            invited_members.append({"email": email, "status": "pending", "is_leader": False})
+
     trips = get_collection("trips")
     await trips.insert_one(
         {
@@ -137,10 +155,7 @@ async def create_trip(body: CreateTripRequest):
             "trip_name": body.trip_name,
             "created_by": body.created_by,
             "invited_emails": body.invited_emails,
-            "invited_members": [
-                {"email": email, "status": "pending"}
-                for email in body.invited_emails
-            ],
+            "invited_members": invited_members,
             "invite_code": invite_code,
             "status": "pending",
             "created_at": now,
@@ -229,8 +244,17 @@ async def get_trip(trip_id: str):
             "email": email,
             "status": status,
             "name": name,
-            "avatar_url": avatar_url
+            "avatar_url": avatar_url,
+            "is_leader": bool(member.get("is_leader", False)),
+            "has_preferences": bool(member.get("has_preferences", False)),
         })
+
+    ready_count = sum(1 for m in enriched_members if m["status"] == "ready")
+    total_count = len(enriched_members)
+    all_ready = total_count > 0 and ready_count == total_count
+    leader_ready = any(m["is_leader"] and m["status"] == "ready" for m in enriched_members)
+    # The leader can kick off generation once at least one member (the leader) is ready.
+    can_generate = leader_ready and trip.get("status") in (None, "pending", "collecting")
 
     created_at = trip["created_at"]
     expires_at = _parse_datetime(created_at) + timedelta(hours=24)
@@ -238,9 +262,40 @@ async def get_trip(trip_id: str):
         "trip_id": trip["trip_id"],
         "trip_name": trip["trip_name"],
         "invite_code": trip["invite_code"],
+        "status": trip.get("status", "pending"),
         "created_at": _isoformat(created_at),
         "expires_at": expires_at.isoformat(),
         "invited_members": enriched_members,
+        "ready_count": ready_count,
+        "total_count": total_count,
+        "all_ready": all_ready,
+        "can_generate": can_generate,
+    }
+
+
+@router.get("/{trip_id}/result")
+async def get_trip_result(trip_id: str):
+    """Return the completed itinerary payload persisted by the streaming pipeline.
+
+    Lets the itinerary page load (and refinements re-load) a finished trip on a fresh page
+    visit, independent of client-side storage.
+    """
+    trips = get_collection("trips")
+    trip = await trips.find_one({"trip_id": trip_id}, {"_id": 0})
+    if not trip:
+        raise HTTPException(status_code=404, detail="Trip not found")
+    if not trip.get("itinerary") and not (trip.get("final_state") or {}).get("trip_pitch"):
+        raise HTTPException(status_code=409, detail="Trip has not completed yet")
+
+    final_state = trip.get("final_state") or {}
+    return {
+        "trip_id": trip_id,
+        "trip_pitch": trip.get("trip_pitch") or final_state.get("trip_pitch", ""),
+        "itinerary": trip.get("itinerary", {}),
+        "preference_constraints": trip.get("preference_constraints", {}),
+        "constraint_satisfaction": trip.get("constraint_satisfaction", {}),
+        "decision_log": trip.get("decision_log", []),
+        "refinement_history": trip.get("refinement_history", []),
     }
 
 
