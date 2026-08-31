@@ -413,6 +413,68 @@ def test_build_agentic_patch_compound_request():
 
 
 @pytest.mark.asyncio
+async def test_agentic_plan_revises_after_critic_rejection(monkeypatch):
+    """A critic rejection sends the planner back for one bounded revision, then accepts."""
+    state = _state()
+    turns = [
+        [
+            {
+                "name": "SubmitRefinementPlan",
+                "args": {"in_scope": True, "summary": "first pass", "rerun_from": "search_hotel"},
+                "id": "t1",
+            }
+        ],
+        [
+            {
+                "name": "SubmitRefinementPlan",
+                "args": {"in_scope": True, "summary": "revised pass", "rerun_from": "search_hotel"},
+                "id": "t2",
+            }
+        ],
+    ]
+    verdicts = iter([(False, "Missing a food-restriction check"), (True, "Looks good")])
+
+    async def _fake_critique(_plan, _message, _state):
+        return next(verdicts)
+
+    monkeypatch.setattr(refine_agent, "get_llm", lambda: _FakeLLM(turns))
+    monkeypatch.setattr(refine_agent, "_critique_plan", _fake_critique)
+
+    plan, _resolved = await refine_agent.plan_refinement_agentic("tweak the plan", state)
+
+    assert plan["summary"] == "revised pass"
+    assert plan["critic_verdict"] == {"approved": True, "reason": "Looks good"}
+
+
+@pytest.mark.asyncio
+async def test_agentic_plan_stops_revising_after_cap(monkeypatch):
+    """Even if the critic keeps rejecting, the loop stops after MAX_CRITIC_REVISIONS."""
+    state = _state()
+    turns = [
+        [
+            {
+                "name": "SubmitRefinementPlan",
+                "args": {"in_scope": True, "summary": f"pass {i}", "rerun_from": "search_hotel"},
+                "id": f"t{i}",
+            }
+        ]
+        for i in range(refine_agent.MAX_AGENT_TURNS)
+    ]
+
+    async def _always_reject(_plan, _message, _state):
+        return False, "Still not good enough"
+
+    monkeypatch.setattr(refine_agent, "get_llm", lambda: _FakeLLM(turns))
+    monkeypatch.setattr(refine_agent, "_critique_plan", _always_reject)
+
+    plan, _resolved = await refine_agent.plan_refinement_agentic("tweak the plan", state)
+
+    # Accepted after MAX_CRITIC_REVISIONS extra attempts despite never being approved.
+    assert plan["summary"] == f"pass {refine_agent.MAX_CRITIC_REVISIONS}"
+    assert plan["critic_verdict"]["approved"] is False
+
+
+@pytest.mark.asyncio
 async def test_agentic_loop_falls_back_when_no_plan(monkeypatch):
     """If the model never submits a plan, the loop raises so callers can fall back."""
     state = _state()

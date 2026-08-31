@@ -5,9 +5,15 @@ tool-calling loop. The model can look up real places (Google Places) and browse 
 candidate activities before committing to a structured plan, so every concrete venue it
 proposes is grounded in real data rather than hallucinated.
 
-The model "proposes" (which edits, which places); deterministic code "disposes" (fetches
-real places, builds the LangGraph state patch, picks the graph re-entry node). If the agent
-loop fails for any reason, callers fall back to the deterministic regex parser.
+A second, independent model call (the critic) reviews the planner's proposed plan against
+the group's hard constraints before it is applied. If the critic flags a problem, the
+planner gets one bounded chance to revise and resubmit. The critic fails open (approves)
+on any error so it can never block a refinement from completing.
+
+The planner "proposes" (which edits, which places); the critic "reviews" (does the plan
+hold up against hard constraints); deterministic code "disposes" (fetches real places,
+builds the LangGraph state patch, picks the graph re-entry node). If the agent loop fails
+for any reason, callers fall back to the deterministic regex parser.
 """
 
 from __future__ import annotations
@@ -31,6 +37,7 @@ from tools.google_places import fetch_activities_by_category, find_place_by_text
 logger = logging.getLogger(__name__)
 
 MAX_AGENT_TURNS = 6
+MAX_CRITIC_REVISIONS = 1
 RERUN_NODES = ("search_hotel", "budget_analysis", "compute_fairness")
 
 
@@ -103,6 +110,17 @@ class SubmitRefinementPlan(BaseModel):
     )
     pitch_instruction: Optional[str] = Field(
         default=None, description="Set if the user only wants the written pitch/wording changed."
+    )
+
+
+class SubmitCriticVerdict(BaseModel):
+    """Approve a proposed refinement plan, or flag exactly what must change."""
+
+    approved: bool = Field(
+        description="True if the plan satisfies the user's request and respects the group's hard constraints."
+    )
+    reason: str = Field(
+        description="One sentence: why it's approved, or exactly what must change if not."
     )
 
 
@@ -184,16 +202,56 @@ def _build_messages(message: str, state: dict):
     return [SystemMessage(content=system), HumanMessage(content=human)]
 
 
+# --- The critic pass ------------------------------------------------------------------
+
+
+async def _critique_plan(plan: dict, message: str, state: dict) -> tuple[bool, str]:
+    """Second-opinion pass: an independent model call checks the planner's proposed plan
+    against the group's hard constraints before it is applied.
+
+    Fails open (approves) on any error - tool-binding failure, malformed response, timeout -
+    so a critic bug can never block a refinement from completing.
+    """
+    try:
+        llm = get_llm().bind_tools([SubmitCriticVerdict])
+    except Exception as exc:  # noqa: BLE001
+        logger.warning("Could not bind critic tool (%s); approving by default", exc)
+        return True, "Critic unavailable; approved by default."
+
+    prompt = (
+        "Review this trip-refinement plan before it is applied. Approve it unless it clearly "
+        "contradicts the user's request or violates one of the group's hard constraints. "
+        "You MUST call SubmitCriticVerdict exactly once.\n\n"
+        f"User request: {message}\n"
+        f"Group hard constraints: {json.dumps(state.get('preference_constraints', {}).get('hard_constraints', []), default=str)}\n"
+        f"Proposed plan: {json.dumps(plan, default=str)}"
+    )
+
+    try:
+        ai_message = await llm.ainvoke(prompt)
+    except Exception as exc:  # noqa: BLE001
+        logger.warning("Critic invocation failed (%s); approving by default", exc)
+        return True, "Critic unavailable; approved by default."
+
+    for call in getattr(ai_message, "tool_calls", None) or []:
+        if call.get("name") == "SubmitCriticVerdict":
+            args = call.get("args", {}) or {}
+            return bool(args.get("approved", True)), str(args.get("reason", ""))
+
+    return True, "Critic did not return a verdict; approved by default."
+
+
 # --- The agentic loop ----------------------------------------------------------------
 
 
 async def plan_refinement_agentic(message: str, state: dict) -> tuple[dict, list[dict]]:
-    """Run the Haiku tool-calling loop. Returns (plan, resolved_activities).
+    """Run the Haiku tool-calling loop, then have an independent critic review the plan.
 
-    Raises UnsupportedRefinement when the agent judges the request out of scope, and
-    AgentPlanningError on any loop failure so the caller can fall back to the regex parser.
+    Returns (plan, resolved_activities). Raises UnsupportedRefinement when the agent judges
+    the request out of scope, and AgentPlanningError on any loop failure so the caller can
+    fall back to the regex parser.
     """
-    from langchain_core.messages import ToolMessage
+    from langchain_core.messages import HumanMessage, ToolMessage
 
     destination = state.get("selected_destination") or ""
     coords = state.get("selected_destination_coords") or {"lat": 0.0, "lng": 0.0}
@@ -205,6 +263,7 @@ async def plan_refinement_agentic(message: str, state: dict) -> tuple[dict, list
 
     messages = _build_messages(message, state)
     resolved: list[dict] = []
+    critic_revisions = 0
 
     for _turn in range(MAX_AGENT_TURNS):
         try:
@@ -280,7 +339,22 @@ async def plan_refinement_agentic(message: str, state: dict) -> tuple[dict, list
 
         if plan is not None:
             finalized = await _finalize_plan(plan, message, state, resolved, destination, coords)
-            return finalized, resolved
+            approved, critic_reason = await _critique_plan(finalized, message, state)
+            finalized["critic_verdict"] = {"approved": approved, "reason": critic_reason}
+
+            if approved or critic_revisions >= MAX_CRITIC_REVISIONS:
+                return finalized, resolved
+
+            critic_revisions += 1
+            messages.append(
+                HumanMessage(
+                    content=(
+                        f"A review pass flagged this plan: {critic_reason} "
+                        "Please revise and call SubmitRefinementPlan again."
+                    )
+                )
+            )
+            continue
 
     raise AgentPlanningError("Agent did not submit a plan within the turn budget.")
 
