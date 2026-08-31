@@ -25,6 +25,11 @@ class FakeTripsCollection:
         self.updated = {"query": query, "update": update}
 
 
+class FakeUsersCollection:
+    async def find_one(self, query):
+        return None
+
+
 @pytest.mark.asyncio
 async def test_get_trip_returns_invites_sent_shape(monkeypatch):
     created_at = datetime(2026, 6, 16, 12, 0, tzinfo=timezone.utc)
@@ -41,20 +46,42 @@ async def test_get_trip_returns_invites_sent_shape(monkeypatch):
             "initial_state": {"internal": True},
         }
     )
-    monkeypatch.setattr(trips_api, "get_collection", lambda name: collection)
-
-    response = await trips_api.get_trip("trip-1")
+    response = await trips_api.get_trip(
+        "trip-1",
+        trip=collection.trip,
+        trips=collection,
+        users=FakeUsersCollection(),
+    )
 
     assert response == {
         "trip_id": "trip-1",
         "trip_name": "Chicago Weekend",
         "invite_code": "abc123",
+        "status": "pending",
         "created_at": "2026-06-16T12:00:00+00:00",
         "expires_at": "2026-06-17T12:00:00+00:00",
         "invited_members": [
-            {"email": "a@example.com", "status": "pending"},
-            {"email": "b@example.com", "status": "accepted"},
+            {
+                "email": "a@example.com",
+                "status": "pending",
+                "name": "A",
+                "avatar_url": "",
+                "is_leader": False,
+                "has_preferences": False,
+            },
+            {
+                "email": "b@example.com",
+                "status": "accepted",
+                "name": "B",
+                "avatar_url": "",
+                "is_leader": False,
+                "has_preferences": False,
+            },
         ],
+        "ready_count": 0,
+        "total_count": 2,
+        "all_ready": False,
+        "can_generate": False,
     }
 
 
@@ -69,21 +96,48 @@ async def test_get_trip_backfills_invited_members_from_legacy_emails(monkeypatch
             "invited_emails": ["a@example.com", "b@example.com"],
         }
     )
-    monkeypatch.setattr(trips_api, "get_collection", lambda name: collection)
-
-    response = await trips_api.get_trip("trip-2")
+    response = await trips_api.get_trip(
+        "trip-2",
+        trip=collection.trip,
+        trips=collection,
+        users=FakeUsersCollection(),
+    )
 
     assert response["invited_members"] == [
-        {"email": "a@example.com", "status": "pending"},
-        {"email": "b@example.com", "status": "pending"},
+        {
+            "email": "a@example.com",
+            "status": "pending",
+            "name": "A",
+            "avatar_url": "",
+            "is_leader": False,
+            "has_preferences": False,
+        },
+        {
+            "email": "b@example.com",
+            "status": "pending",
+            "name": "B",
+            "avatar_url": "",
+            "is_leader": False,
+            "has_preferences": False,
+        },
     ]
     assert collection.updated == {
         "query": {"trip_id": "trip-2"},
         "update": {
             "$set": {
                 "invited_members": [
-                    {"email": "a@example.com", "status": "pending"},
-                    {"email": "b@example.com", "status": "pending"},
+                    {
+                        "email": "a@example.com",
+                        "status": "pending",
+                        "is_leader": False,
+                        "has_preferences": False,
+                    },
+                    {
+                        "email": "b@example.com",
+                        "status": "pending",
+                        "is_leader": False,
+                        "has_preferences": False,
+                    },
                 ]
             }
         },
@@ -93,22 +147,24 @@ async def test_get_trip_backfills_invited_members_from_legacy_emails(monkeypatch
 @pytest.mark.asyncio
 async def test_create_trip_persists_invited_members_with_pending_status(monkeypatch):
     collection = FakeTripsCollection({"trip_id": "unused"})
-    monkeypatch.setattr(trips_api, "get_collection", lambda name: collection)
 
     async def send_trip_invite(*args, **kwargs):
         return None
 
     monkeypatch.setattr(trips_api, "send_trip_invite", send_trip_invite)
 
-    await trips_api.create_trip(
-        trips_api.CreateTripRequest(
+    await trips_api.create_trip.__wrapped__(
+        request=None,
+        body=trips_api.CreateTripRequest(
             trip_name="Denver Weekend",
-            created_by="leader@example.com",
             invited_emails=["a@example.com", "b@example.com"],
-        )
+        ),
+        current_user={"email": "leader@example.com"},
+        trips=collection,
     )
 
     assert collection.inserted["invited_members"] == [
-        {"email": "a@example.com", "status": "pending"},
-        {"email": "b@example.com", "status": "pending"},
+        {"email": "leader@example.com", "status": "joined", "is_leader": True},
+        {"email": "a@example.com", "status": "pending", "is_leader": False},
+        {"email": "b@example.com", "status": "pending", "is_leader": False},
     ]

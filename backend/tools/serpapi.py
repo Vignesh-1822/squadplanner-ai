@@ -35,7 +35,7 @@ async def check_and_increment_serpapi_budget() -> bool:
     Raises SerpAPILimitReached if the monthly hard limit has been hit.
     """
     current_month = datetime.now(timezone.utc).strftime("%Y-%m")
-    collection = get_collection("api_cache")
+    collection = get_collection("api_usage")
     doc = await collection.find_one_and_update(
         {
             "type": "serpapi_usage",

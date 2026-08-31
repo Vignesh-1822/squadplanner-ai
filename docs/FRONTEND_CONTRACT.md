@@ -1,19 +1,9 @@
 # Frontend ↔ Backend Contract
 
-> ⚠️ **Changing in Phase 0 (in progress).** The backend is being secured. Three things will change
-> and this document will be updated when they land:
-> 1. **Every trip route will require authentication.** Only `GET /trips/by-invite/{code}` and the
->    `/auth/*` entry points stay public.
-> 2. **`POST /trips` will no longer accept `created_by`** — the server takes it from the session.
->    `GET /trips` will lose its `?email=` parameter entirely and return only your own trips.
-> 3. **`joinTrip(id)` becomes `joinTrip(id, inviteCode)`** — a trip ID alone will no longer be
->    enough to join.
->
-> Also note now: **`EventSource` must be constructed as
-> `new EventSource(url, { withCredentials: true })`**, or both SSE streams will 401 once auth lands.
-> `apiFetch` already sends `credentials: "include"`, so plain fetches are fine.
->
-> `frontend/` itself is untouched by backend work — nothing to merge or resolve there.
+> **Phase 0 security contract.** Every private request uses the httpOnly session cookie.
+> `apiFetch` must send `credentials: "include"`, and both SSE clients must use
+> `new EventSource(url, { withCredentials: true })`. The backend derives identity from that cookie;
+> clients never submit their own identity.
 
 **For Vignesh.** The backend implements a full async "squad" flow. `frontend/` currently
 implements only part of it. This document is the complete contract so the UI can be built
@@ -25,6 +15,24 @@ All routes are mounted under `/api` (see `backend/main.py`). Base URL comes from
 The JS client for every endpoint below already exists in
 [`frontend/src/services/ApiList.js`](../frontend/src/services/ApiList.js) — import from there,
 don't re-declare fetches.
+
+## Authorization matrix
+
+| Route | Access |
+|---|---|
+| `POST /auth/register`, `POST /auth/login`, `POST /auth/google` | Public |
+| `POST /auth/logout`, `GET /auth/me` | Authenticated |
+| `POST /trips`, `GET /trips` | Authenticated |
+| `GET /trips/by-invite/{code}` | Public |
+| `POST /trips/{id}/join` | Authenticated with matching invite code |
+| `POST /trips/{id}/preferences` | Member |
+| `GET /trips/{id}`, `/result`, `/stream` | Member |
+| `POST /trips/{id}/generate`, `/confirm-city`, `/refine` | Leader |
+| `GET /trips/{id}/refinements/{rid}/stream` | Member |
+| `GET /admin/serpapi-usage` | Admin |
+
+`POST /auth/logout` increments the user's session version and revokes every outstanding token for
+that account. Tokens otherwise expire after 24 hours.
 
 ## The flow
 
@@ -52,17 +60,29 @@ POST /trips/{id}/refine  →  GET /trips/{id}/refinements/{rid}/stream  (SSE)
 
 ## Endpoints
 
+### `POST /trips` — authenticated
+```json
+{ "trip_name": "Chicago Weekend", "invited_emails": ["guest@example.com"] }
+```
+Do not send `created_by`; ownership always comes from the session. The returned `stream_url` is
+relative to the `/api` base.
+
+### `GET /trips?skip=0&limit=50` — authenticated
+Returns only trips where the caller is a member. The `email` query parameter no longer exists.
+`skip` must be non-negative; `limit` is 1–100.
+
 ### `GET /trips/by-invite/{invite_code}` — public, no auth
-What a guest sees before logging in.
+What a guest sees before logging in. This intentionally excludes member email addresses.
 ```json
 { "trip_id": "...", "trip_name": "...", "invite_code": "...",
-  "created_by": "leader@x.com",
-  "invited_members": [{ "email": "...", "status": "pending",
-                        "is_leader": false, "has_preferences": false }] }
+  "member_count": 4, "leader_name": "Alice" }
 ```
 
-### `POST /trips/{trip_id}/join` — auth required, no body
-Flips the caller from `pending` → `joined`. Anyone holding the link may join (see Known gaps).
+### `POST /trips/{trip_id}/join` — auth required
+```json
+{ "invite_code": "the-code-from-the-invite-link" }
+```
+Flips the caller from `pending` → `joined`. A trip ID without the matching code is rejected.
 
 ### `POST /trips/{trip_id}/preferences` — auth required
 Each member submits their own. Marks them `ready`. Rejected with **409** once the trip has
@@ -108,16 +128,16 @@ stream_url }`. Errors: **422** if nobody is ready, >8 members, the leader hasn't
 preferences, or no overlapping availability. Surface `detail` verbatim — the messages are
 written for users.
 
-### `GET /trips/{trip_id}/stream` — SSE, consume with `EventSource`
+### `GET /trips/{trip_id}/stream` — member-only SSE
 Emits node-progress events, then one of:
 - `HITL_REQUIRED` — payload carries `candidate_destinations` (5 cards). Render them and wait.
 - `TRIP_COMPLETE` — planning finished; fetch `/result`.
 - error events.
 
-`EventSource` cannot send an `Authorization` header. Use `streamUrl(id)` from `ApiList.js` and
-make sure auth rides on the cookie, or the stream 401s.
+`EventSource` cannot send an `Authorization` header. Construct both trip and refinement streams
+with `{ withCredentials: true }`, or the stream returns 401.
 
-### `POST /trips/{trip_id}/confirm-city`
+### `POST /trips/{trip_id}/confirm-city` — leader only
 `{ "selected_destination": "...", "selected_destination_coords": { "lat": 0, "lng": 0 } }`
 Resumes the paused graph. The same SSE stream continues.
 
@@ -130,7 +150,7 @@ The completed itinerary, server-side — so a page refresh or a new device still
   "decision_log": [], "refinement_history": [] }
 ```
 
-### `POST /trips/{trip_id}/refine` → `GET /trips/{id}/refinements/{rid}/stream`
+### `POST /trips/{trip_id}/refine` (leader) → refinement stream (member)
 Natural-language edits ("Make Day 2 cheaper"). Second call is SSE and streams the updated
 itinerary, which replaces the current one in place.
 
@@ -159,8 +179,8 @@ git show wip/solo-frontend-attempt:frontend/src/pages/Planning.jsx
 
 ## Known gaps
 
-- `POST /join` is permissive — any authenticated user with the link joins. No allow-list check
-  against `invited_emails`.
+- Anyone with the valid invite code may join. There is no allow-list check against
+  `invited_emails`.
 - The planner hard-caps at **8 members** and **5 days**.
 - `can_generate` only requires the *leader* to be ready, not everyone. `all_ready` is reported
   separately if you want a stricter gate in the UI.
