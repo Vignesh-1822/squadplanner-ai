@@ -5,22 +5,26 @@ import PreferenceSlider from "@/molecules/PreferenceSlider"
 import AirportSelect from "@/atoms/AirportSelect"
 import { DatePicker, ConfigProvider } from "antd"
 import dayjs from "dayjs"
+import { useAuth } from "@/store/authStore"
+import { buildMemberPayload, DIETARY_OPTIONS } from "@/lib/tripPayload"
 
+// Keys must match backend/data/destinations.json -> vibe_tags. Labels are ours.
 const DEFAULT_VIBES = [
-  { key: "nightlife", label: "Nightlife", value: 50 },
-  { key: "adventure", label: "Adventure", value: 75 },
-  { key: "shopping", label: "Shopping", value: 25 },
+  { key: "outdoor", label: "Nature & Outdoors", value: 50 },
   { key: "food", label: "Food & Dining", value: 100 },
+  { key: "nightlife", label: "Nightlife", value: 50 },
   { key: "urban", label: "Urban Exploration", value: 50 },
-  { key: "nature", label: "Nature & Outdoors", value: 50 },
+  { key: "shopping", label: "Shopping", value: 25 },
 ]
 
 const TripPreferences = () => {
   const navigate = useNavigate()
+  const { user } = useAuth()
   const [vibes, setVibes] = useState(DEFAULT_VIBES)
   const [airport, setAirport] = useState("")
   const [budget, setBudget] = useState("")
   const [carryOn, setCarryOn] = useState(false)
+  const [dietary, setDietary] = useState([])
   const [notes, setNotes] = useState("")
 
   // Date windows list state
@@ -31,6 +35,9 @@ const TripPreferences = () => {
 
   const updateVibe = (key, value) =>
     setVibes((prev) => prev.map((v) => (v.key === key ? { ...v, value } : v)))
+
+  const toggleDietary = (key) =>
+    setDietary((prev) => (prev.includes(key) ? prev.filter((d) => d !== key) : [...prev, key]))
 
   const addDateWindow = () => {
     setDateWindows((prev) => [...prev, { start_date: "", end_date: "" }])
@@ -51,6 +58,22 @@ const TripPreferences = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     const tripId = sessionStorage.getItem("currentTripId")
+
+    // TODO(F1): POST this to /api/trips/{id}/preferences instead of logging it.
+    // isLeader needs the trip's created_by, which arrives with the same fetch.
+    const payload = buildMemberPayload({
+      user,
+      isLeader: false,
+      vibes,
+      airport,
+      budget,
+      carryOn,
+      dietary,
+      notes,
+      dateWindows,
+    })
+    console.debug("[F1 pending] member preference payload", payload)
+
     if (tripId) {
       navigate(`/trips/${tripId}/lobby`)
     } else {
@@ -221,6 +244,33 @@ const TripPreferences = () => {
 
               <section className="bg-white/40 backdrop-blur-md rounded-2xl border border-white/60 p-6 flex flex-col gap-4 shadow-sm">
                 <h2 className="text-lg font-black text-gray-800 italic">Personal Notes</h2>
+
+                <div>
+                  <label className="block text-[11px] font-bold uppercase tracking-widest text-gray-400 mb-2">
+                    Dietary Restrictions
+                  </label>
+                  <div className="flex flex-wrap gap-2">
+                    {DIETARY_OPTIONS.map(({ key, label }) => {
+                      const active = dietary.includes(key)
+                      return (
+                        <button
+                          key={key}
+                          type="button"
+                          onClick={() => toggleDietary(key)}
+                          aria-pressed={active}
+                          className={`px-3 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-wider border transition-all active:scale-95 ${
+                            active
+                              ? "bg-primary text-black border-primary shadow-sm"
+                              : "bg-white/60 text-slate-500 border-gray-200 hover:border-primary/50"
+                          }`}
+                        >
+                          {label}
+                        </button>
+                      )
+                    })}
+                  </div>
+                </div>
+
                 <div className="flex flex-col flex-1">
                   <label className="block text-[11px] font-bold uppercase tracking-widest text-gray-400 mb-2">
                     Special Requirements
@@ -229,7 +279,7 @@ const TripPreferences = () => {
                     value={notes}
                     onChange={(e) => setNotes(e.target.value)}
                     placeholder="Any allergies, mobility needs, or must-see spots?"
-                    rows={6}
+                    rows={4}
                     className="flex-1 w-full border border-gray-200 rounded-xl px-3 py-2.5 bg-white/60 focus:border-primary focus:ring-2 focus:ring-primary/20 text-sm text-gray-700 placeholder:text-gray-400 outline-none resize-none transition-all"
                   />
                 </div>
