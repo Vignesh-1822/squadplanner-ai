@@ -23,4 +23,10 @@ async def get_current_user(access_token: str | None = Cookie(default=None)) -> d
     if not user:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="User not found")
 
+    if payload.get("token_version", 0) != user.get("token_version", 0):
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Session has been revoked")
+
+    # Legacy user documents predate both fields; preserve their existing sessions safely.
+    user.setdefault("token_version", 0)
+    user.setdefault("is_admin", False)
     return user

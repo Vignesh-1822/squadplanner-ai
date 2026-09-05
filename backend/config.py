@@ -40,6 +40,16 @@ class Settings(BaseSettings):
     smtp_user: str = Field(default="", validation_alias="SMTP_USER")
     smtp_password: str = Field(default="", validation_alias="SMTP_PASSWORD")
     frontend_url: str = Field(default="http://localhost:5173", validation_alias="FRONTEND_URL")
+    cookie_secure: bool = Field(default=False, validation_alias="COOKIE_SECURE")
+    cors_origins: str = Field(
+        default="http://localhost:5173,http://localhost:5174",
+        validation_alias="CORS_ORIGINS",
+    )
+
+    @property
+    def cors_origin_list(self) -> list[str]:
+        """Return the explicit origins allowed to send credentialed requests."""
+        return [origin.strip() for origin in self.cors_origins.split(",") if origin.strip()]
 
 
 settings = Settings()

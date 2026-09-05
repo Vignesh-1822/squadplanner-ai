@@ -132,6 +132,21 @@
         border-top: 1px solid var(--line);
       }
 
+      .form-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        padding: 14px;
+      }
+
+      input {
+        min-height: 38px;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        padding: 8px 10px;
+        font: inherit;
+      }
+
       button {
         min-height: 36px;
         border: 1px solid var(--accent);
@@ -411,6 +426,28 @@
       <section>
         <div class="panel">
           <div class="panel-head">
+            <h2>Session</h2>
+            <span id="sessionStatus">Not logged in</span>
+          </div>
+          <div class="form-grid">
+            <input id="emailInput" type="email" placeholder="Email" autocomplete="username" />
+            <input id="passwordInput" type="password" placeholder="Password" autocomplete="current-password" />
+          </div>
+          <div class="actions">
+            <button id="loginButton">Log in</button>
+            <button class="secondary" id="logoutButton" disabled>Log out</button>
+          </div>
+          <div class="form-grid">
+            <input id="joinTripId" placeholder="Trip ID for guest join" />
+            <input id="joinInviteCode" placeholder="Invite code" />
+          </div>
+          <div class="actions">
+            <button class="secondary" id="joinButton" disabled>Join Existing Trip</button>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head">
             <h2>Trip Input</h2>
           </div>
           <textarea id="tripInput" spellcheck="false"></textarea>
@@ -426,6 +463,18 @@
           </div>
           <div class="candidate-list" id="candidates">
             <div class="log-line">Run a trip to load candidate destinations.</div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head">
+            <h2>Refine Completed Trip</h2>
+          </div>
+          <div class="form-grid">
+            <input id="refinementInput" placeholder="Make Day 2 cheaper" />
+          </div>
+          <div class="actions">
+            <button class="secondary" id="refineButton" disabled>Run Refinement</button>
           </div>
         </div>
       </section>
@@ -476,7 +525,10 @@
     </main>
 
     <script>
+      const API = "/api";
       const sampleTrip = {
+        trip_name: "Debug Squad Trip",
+        invited_emails: [],
         group_notes: "Keep the trip relaxed, avoid rushed mornings, and make sure the plan respects everyone's must-haves.",
         members: [
           {
@@ -545,10 +597,22 @@
       const storedTrip = document.getElementById("storedTrip");
       const jsonOutput = document.getElementById("jsonOutput");
       const constraintOutput = document.getElementById("constraintOutput");
+      const emailInput = document.getElementById("emailInput");
+      const passwordInput = document.getElementById("passwordInput");
+      const loginButton = document.getElementById("loginButton");
+      const logoutButton = document.getElementById("logoutButton");
+      const sessionStatus = document.getElementById("sessionStatus");
+      const joinTripId = document.getElementById("joinTripId");
+      const joinInviteCode = document.getElementById("joinInviteCode");
+      const joinButton = document.getElementById("joinButton");
+      const refinementInput = document.getElementById("refinementInput");
+      const refineButton = document.getElementById("refineButton");
 
       let eventSource = null;
       let currentTripId = null;
       let latestJson = null;
+      let loggedIn = false;
+      const storedTripId = new URLSearchParams(window.location.search).get("trip_id");
 
       function setSample() {
         tripInput.value = JSON.stringify(sampleTrip, null, 2);
@@ -583,23 +647,51 @@
         }
       }
 
-      async function createTrip(payload) {
-        const response = await fetch("/trips", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload)
+      function apiUrl(path) {
+        if (path.startsWith(API)) return path;
+        return `${API}${path.startsWith("/") ? path : `/${path}`}`;
+      }
+
+      async function apiFetch(path, options = {}) {
+        const response = await fetch(apiUrl(path), {
+          credentials: "include",
+          ...options,
+          headers: {
+            ...(options.body ? { "Content-Type": "application/json" } : {}),
+            ...(options.headers || {})
+          }
         });
         if (!response.ok) {
           throw new Error(await response.text());
         }
+        return response;
+      }
+
+      async function createTrip(payload) {
+        const response = await apiFetch("/trips", {
+          method: "POST",
+          body: JSON.stringify({
+            trip_name: payload.trip_name || "Debug Squad Trip",
+            invited_emails: payload.invited_emails || []
+          })
+        });
         return response.json();
       }
 
+      function preferencesPayload(payload) {
+        const member = payload.members.find((item) => item.is_leader) || payload.members[0];
+        return {
+          origin_city: member.origin_city,
+          budget_usd: member.budget_usd,
+          food_restrictions: member.food_restrictions || [],
+          preference_vector: member.preference_vector || {},
+          preference_notes: member.preference_notes || "",
+          date_windows: [{ start_date: payload.start_date, end_date: payload.end_date }]
+        };
+      }
+
       async function fetchStoredTrip(tripId) {
-        const response = await fetch(`/trips/${encodeURIComponent(tripId)}`);
-        if (!response.ok) {
-          throw new Error(await response.text());
-        }
+        const response = await apiFetch(`/trips/${encodeURIComponent(tripId)}/result`);
         return response.json();
       }
 
@@ -622,7 +714,7 @@
           storedTrip.innerHTML =
             `Stored in MongoDB as <code>${currentTripId}</code>. ` +
             `<a href="${shareUrl.pathname + shareUrl.search}" target="_blank" rel="noreferrer">Open share view</a> ` +
-            `<a href="/trips/${currentTripId}" target="_blank" rel="noreferrer">Open stored JSON</a>`;
+            `<a href="/api/trips/${currentTripId}/result" target="_blank" rel="noreferrer">Open stored JSON</a>`;
         } else {
           storedTrip.textContent = "";
         }
@@ -633,7 +725,7 @@
 
 
       function streamTrip(streamUrl) {
-        eventSource = new EventSource(streamUrl);
+        eventSource = new EventSource(apiUrl(streamUrl), { withCredentials: true });
         eventSource.onmessage = (message) => {
           const payload = JSON.parse(message.data);
           const data = payload.data || {};
@@ -653,6 +745,7 @@
             setStatus("Complete");
             addLog("Trip complete.");
             renderCompletedTrip(data, { tripId: currentTripId });
+            refineButton.disabled = false;
             eventSource.close();
             eventSource = null;
             return;
@@ -848,20 +941,13 @@
         if (!currentTripId) return;
         setStatus(`Confirming ${candidate.name}`);
         addLog(`Confirmed destination: ${candidate.name}`);
-        const response = await fetch(`/trips/${currentTripId}/confirm-city`, {
+        const response = await apiFetch(`/trips/${currentTripId}/confirm-city`, {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             selected_destination: candidate.name,
             selected_destination_coords: candidate.coords
           })
         });
-
-        if (!response.ok) {
-          addLog(await response.text(), true);
-          setStatus("Confirm failed");
-          return;
-        }
 
         setStatus("Generating itinerary");
         candidatesEl.querySelectorAll("button").forEach((button) => {
@@ -878,9 +964,21 @@
           const payload = JSON.parse(tripInput.value);
           const trip = await createTrip(payload);
           currentTripId = trip.trip_id;
+          await apiFetch(`/trips/${currentTripId}/preferences`, {
+            method: "POST",
+            body: JSON.stringify(preferencesPayload(payload))
+          });
+          const generation = await apiFetch(`/trips/${currentTripId}/generate`, {
+            method: "POST",
+            body: JSON.stringify({
+              start_date: payload.start_date,
+              end_date: payload.end_date,
+              group_notes: payload.group_notes || ""
+            })
+          }).then((response) => response.json());
           setStatus(`Streaming ${currentTripId}`);
           addLog(`Trip created: ${currentTripId}`);
-          streamTrip(trip.stream_url);
+          streamTrip(generation.stream_url);
         } catch (error) {
           setStatus("Failed");
           addLog(error.message, true);
@@ -890,6 +988,93 @@
       });
 
       resetButton.addEventListener("click", setSample);
+
+      loginButton.addEventListener("click", async () => {
+        try {
+          const user = await apiFetch("/auth/login", {
+            method: "POST",
+            body: JSON.stringify({ email: emailInput.value, password: passwordInput.value })
+          }).then((response) => response.json());
+          loggedIn = true;
+          sessionStatus.textContent = `Logged in as ${user.email}`;
+          startButton.disabled = false;
+          joinButton.disabled = false;
+          logoutButton.disabled = false;
+          setStatus("Authenticated");
+          if (storedTripId) await loadStoredTrip(storedTripId);
+        } catch (error) {
+          setStatus("Login failed");
+          addLog(error.message, true);
+        }
+      });
+
+      logoutButton.addEventListener("click", async () => {
+        try {
+          await apiFetch("/auth/logout", { method: "POST" });
+        } finally {
+          loggedIn = false;
+          sessionStatus.textContent = "Not logged in";
+          startButton.disabled = true;
+          joinButton.disabled = true;
+          logoutButton.disabled = true;
+          refineButton.disabled = true;
+          setStatus("Logged out");
+        }
+      });
+
+      joinButton.addEventListener("click", async () => {
+        try {
+          const joined = await apiFetch(`/trips/${encodeURIComponent(joinTripId.value)}/join`, {
+            method: "POST",
+            body: JSON.stringify({ invite_code: joinInviteCode.value })
+          }).then((response) => response.json());
+          currentTripId = joined.trip_id;
+          const payload = JSON.parse(tripInput.value);
+          await apiFetch(`/trips/${currentTripId}/preferences`, {
+            method: "POST",
+            body: JSON.stringify(preferencesPayload(payload))
+          });
+          addLog(`Joined trip ${currentTripId} and submitted preferences.`);
+          setStatus("Ready");
+        } catch (error) {
+          addLog(error.message, true);
+        }
+      });
+
+      refineButton.addEventListener("click", async () => {
+        if (!currentTripId || !refinementInput.value.trim()) return;
+        try {
+          const refinement = await apiFetch(`/trips/${currentTripId}/refine`, {
+            method: "POST",
+            body: JSON.stringify({ message: refinementInput.value.trim() })
+          }).then((response) => response.json());
+          setStatus("Refining itinerary");
+          streamRefinement(refinement.stream_url);
+        } catch (error) {
+          addLog(error.message, true);
+        }
+      });
+
+      function streamRefinement(streamUrl) {
+        if (eventSource) eventSource.close();
+        eventSource = new EventSource(apiUrl(streamUrl), { withCredentials: true });
+        eventSource.onmessage = (message) => {
+          const payload = JSON.parse(message.data);
+          const data = payload.data || {};
+          addLog(`${payload.event_type}: ${data.message || ""}`);
+          if (payload.event_type === "REFINEMENT_COMPLETE") {
+            renderCompletedTrip(data, { tripId: currentTripId });
+            setStatus("Refinement complete");
+            eventSource.close();
+            eventSource = null;
+          } else if (payload.event_type === "ERROR") {
+            setStatus("Refinement failed");
+            eventSource.close();
+            eventSource = null;
+          }
+        };
+        eventSource.onerror = () => addLog("Refinement SSE connection interrupted.", true);
+      }
 
       downloadButton.addEventListener("click", () => {
         if (!latestJson) return;
@@ -910,44 +1095,25 @@
         setStatus("JSON copied");
       });
 
-      setSample();
-      const storedTripId = new URLSearchParams(window.location.search).get("trip_id");
-      if (storedTripId) {
+      async function loadStoredTrip(tripId) {
         clearRun();
-        setStatus(`Loading ${storedTripId}`);
-        addLog(`Loading stored trip: ${storedTripId}`);
-        fetchStoredTrip(storedTripId)
-          .then((trip) => {
-            const initialState = trip.initial_state;
-            if (initialState) {
-              tripInput.value = JSON.stringify(
-                {
-                  group_notes: initialState.group_notes || "",
-                  members: initialState.members || [],
-                  start_date: initialState.start_date || "",
-                  end_date: initialState.end_date || ""
-                },
-                null,
-                2
-              );
-            }
-            if (Array.isArray(trip.candidate_destinations) && trip.candidate_destinations.length) {
-              renderCandidates(trip.candidate_destinations);
-            }
-            if (trip.status !== "complete" || !trip.itinerary) {
-              setStatus(`Stored trip is ${trip.status || "not complete"}`);
-              addLog("This stored trip does not have a completed itinerary yet.", true);
-              return;
-            }
-            setStatus("Complete");
-            addLog("Stored trip loaded.");
-            renderCompletedTrip(trip, { tripId: storedTripId });
-          })
-          .catch((error) => {
-            setStatus("Failed");
-            addLog(error.message, true);
-          });
+        setStatus(`Loading ${tripId}`);
+        addLog(`Loading stored trip: ${tripId}`);
+        try {
+          const trip = await fetchStoredTrip(tripId);
+          setStatus("Complete");
+          addLog("Stored trip loaded.");
+          renderCompletedTrip(trip, { tripId });
+          refineButton.disabled = false;
+        } catch (error) {
+          setStatus("Failed");
+          addLog(error.message, true);
+        }
       }
+
+      setSample();
+      startButton.disabled = true;
+      if (storedTripId) addLog("Log in to load the stored trip.");
     </script>
   </body>
 </html>

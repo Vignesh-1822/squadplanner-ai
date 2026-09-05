@@ -29,5 +29,7 @@ class UserDocument(BaseModel):
     auth_provider: Literal["local", "google"] = "local"
     hashed_password: str | None = None
     created_at: str = ""
+    token_version: int = 0
+    is_admin: bool = False
 
     model_config = {"populate_by_name": True}

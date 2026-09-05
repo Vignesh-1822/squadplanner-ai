@@ -19,7 +19,10 @@ rationalises its own choices; a different model family genuinely doesn't.
 1. **Explain** — orchestrator walks the phase intuitively. No code yet.
 2. **Negotiate** — Manoj accepts / rejects / modifies. Rejections get logged in `docs/DECISIONS.md`.
 3. **Commit the spec** — orchestrator writes `docs/phases/PHASE_N.md`: objectives, out-of-scope,
-   success criteria (executable), and sub-phase split. **This file is committed to the repo.**
+   and executable success criteria. **This file is committed to the repo.**
+   The orchestrator does **not** pre-split the phase into sub-phases. The kickoff prompt instructs
+   the implementing agent to judge for itself, before planning, whether the phase is large or
+   complex enough to warrant splitting — and to say so with its reasoning. Most phases will not be.
 4. **Hostile read** — reviewer agent reads `PHASE_N.md` and tries to break the *spec* before any
    code exists. Cheap; catches spec bugs while they're still free.
 5. **Implement** — `git checkout -b phase-N-<slug>`. Implementer works sub-phase by sub-phase,
@@ -27,6 +30,8 @@ rationalises its own choices; a different model family genuinely doesn't.
 6. **Verify** — run the phase's success-criteria command. It passes or it doesn't.
 7. **Review** — reviewer agent reviews the PR diff against `PHASE_N.md`.
 8. **Report back** — tell the orchestrator the **branch name**. It reads the branch itself.
+
+Steps 4 and 7 both use the reviewer prompt template in `docs/prompts/REVIEWER.md`.
 
 ## Rules for every agent
 

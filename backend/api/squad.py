@@ -9,12 +9,19 @@ existing SSE stream (``/trips/{trip_id}/stream``) can run the orchestrator uncha
 import logging
 import re
 from datetime import date, datetime, timedelta, timezone
+from typing import Any
 
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Request
 from pydantic import BaseModel, Field
 
 from api.middleware.auth import get_current_user
-from db.client import get_collection
+from api.middleware.authz import (
+    get_trips_collection,
+    get_users_collection,
+    require_leader,
+    require_member,
+)
+from api.middleware.rate_limit import get_user_key, limiter
 
 logger = logging.getLogger(__name__)
 
@@ -46,6 +53,10 @@ class GenerateRequest(BaseModel):
     start_date: str | None = None
     end_date: str | None = None
     group_notes: str | None = None
+
+
+class JoinTripRequest(BaseModel):
+    invite_code: str = Field(min_length=1)
 
 
 def _now() -> str:
@@ -88,8 +99,7 @@ def _display_name(email: str, user_doc: dict | None) -> str:
     return email.split("@")[0].capitalize()
 
 
-async def _get_trip_or_404(trip_id: str) -> dict:
-    trips = get_collection("trips")
+async def _get_trip_or_404(trip_id: str, trips: Any) -> dict:
     trip = await trips.find_one({"trip_id": trip_id})
     if not trip:
         raise HTTPException(status_code=404, detail="Trip not found")
@@ -110,26 +120,48 @@ def _summarize_members(invited_members: list[dict]) -> list[dict]:
 
 
 @router.get("/by-invite/{invite_code}")
-async def get_trip_by_invite(invite_code: str):
+async def get_trip_by_invite(
+    invite_code: str,
+    trips: Any = Depends(get_trips_collection),
+    users: Any = Depends(get_users_collection),
+):
     """Public lookup so a guest opening an invite link can see what they're joining."""
-    trips = get_collection("trips")
     trip = await trips.find_one({"invite_code": invite_code})
     if not trip:
         raise HTTPException(status_code=404, detail="Invite not found")
+
+    leader_email = trip.get("created_by", "")
+    leader = await users.find_one({"email": leader_email}) if leader_email else None
+    members = trip.get("invited_members") or []
+    member_count = len([member for member in members if isinstance(member, dict)])
+    if not member_count:
+        legacy_emails = set(trip.get("invited_emails") or [])
+        if leader_email:
+            legacy_emails.add(leader_email)
+        member_count = len(legacy_emails)
+
     return {
         "trip_id": trip["trip_id"],
         "trip_name": trip["trip_name"],
         "invite_code": invite_code,
-        "created_by": trip.get("created_by", ""),
-        "invited_members": _summarize_members(trip.get("invited_members", [])),
+        "member_count": member_count,
+        "leader_name": _display_name(leader_email, leader),
     }
 
 
 @router.post("/{trip_id}/join")
-async def join_trip(trip_id: str, current_user: dict = Depends(get_current_user)):
+async def join_trip(
+    trip_id: str,
+    body: JoinTripRequest,
+    current_user: dict = Depends(get_current_user),
+    trips: Any = Depends(get_trips_collection),
+):
     """Authenticated user joins the squad. Invited guests flip pending -> joined; anyone else
     who has the invite link is added as a new joined member."""
-    trip = await _get_trip_or_404(trip_id)
+    trip = await _get_trip_or_404(trip_id, trips)
+    if body.invite_code != trip.get("invite_code"):
+        raise HTTPException(status_code=403, detail="Invalid invite code")
+
     email = current_user["email"]
     members = trip.get("invited_members", [])
 
@@ -140,7 +172,6 @@ async def join_trip(trip_id: str, current_user: dict = Depends(get_current_user)
     else:
         members.append({"email": email, "status": "joined", "is_leader": False})
 
-    trips = get_collection("trips")
     await trips.update_one(
         {"trip_id": trip_id},
         {"$set": {"invited_members": members, "updated_at": _now()}},
@@ -153,9 +184,10 @@ async def submit_preferences(
     trip_id: str,
     body: PreferencesRequest,
     current_user: dict = Depends(get_current_user),
+    trip: dict = Depends(require_member),
+    trips: Any = Depends(get_trips_collection),
 ):
     """A member submits their own preferences and becomes 'ready'."""
-    trip = await _get_trip_or_404(trip_id)
     if trip.get("status") not in (None, "pending", "collecting"):
         raise HTTPException(status_code=409, detail="Trip has already started planning")
 
@@ -184,7 +216,6 @@ async def submit_preferences(
             "preferences": preferences,
         })
 
-    trips = get_collection("trips")
     await trips.update_one(
         {"trip_id": trip_id},
         {"$set": {"invited_members": members, "status": "collecting", "updated_at": _now()}},
@@ -238,15 +269,16 @@ def _compute_group_window(members: list[dict]) -> tuple[str, str]:
 
 
 @router.post("/{trip_id}/generate")
+@limiter.limit("3/hour", key_func=get_user_key)
 async def generate_trip(
+    request: Request,
     trip_id: str,
     body: GenerateRequest,
-    current_user: dict = Depends(get_current_user),
+    trip: dict = Depends(require_leader),
+    trips: Any = Depends(get_trips_collection),
+    users: Any = Depends(get_users_collection),
 ):
     """Leader-only: assemble ready members into the graph's initial_state and unlock streaming."""
-    trip = await _get_trip_or_404(trip_id)
-    if current_user["email"] != trip.get("created_by"):
-        raise HTTPException(status_code=403, detail="Only the trip leader can start planning")
     if trip.get("status") not in (None, "pending", "collecting"):
         raise HTTPException(status_code=409, detail="Trip has already started planning")
 
@@ -262,7 +294,6 @@ async def generate_trip(
     if not leaders:
         raise HTTPException(status_code=422, detail="The trip leader must submit preferences before generating")
 
-    users = get_collection("users")
     taken_ids: set[str] = set()
     graph_members: list[dict] = []
     all_notes: list[str] = []
@@ -309,7 +340,6 @@ async def generate_trip(
         "trip_duration_days": duration,
     })
 
-    trips = get_collection("trips")
     await trips.update_one(
         {"trip_id": trip_id},
         {

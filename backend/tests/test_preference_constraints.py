@@ -10,7 +10,8 @@ from agent.nodes.tool_selector import dynamic_tool_selection
 from agent.subgraphs import itinerary as itinerary_module
 from agent.subgraphs.itinerary import build_itinerary
 from agent.subgraphs.itinerary import validation_gate
-from api.trips import CreateTripRequest, _initial_trip_state
+from api.squad import GenerateRequest, PreferencesRequest
+from api.trips import _initial_trip_state
 from main import app
 
 
@@ -299,28 +300,19 @@ async def test_build_itinerary_preserves_day_rationale_and_constraint_notes(monk
 
 
 def test_trip_request_preserves_natural_language_notes():
-    request = CreateTripRequest(
-        members=[
-            {
-                "member_id": "alice",
-                "name": "Alice",
-                "origin_city": "ORD",
-                "budget_usd": 1500,
-                "food_restrictions": [],
-                "preference_vector": {"food": 0.8},
-                "preference_notes": "No clubs.",
-                "is_leader": True,
-            }
-        ],
-        group_notes="Relaxed mornings.",
-        start_date="2026-07-10",
-        end_date="2026-07-12",
+    preferences = PreferencesRequest(
+        origin_city="ORD",
+        budget_usd=1500,
+        preference_vector={"food": 0.8},
+        preference_notes="No clubs.",
     )
+    generation = GenerateRequest(group_notes="Relaxed mornings.")
 
-    state = _initial_trip_state("trip-1", request)
+    state = _initial_trip_state("trip-1", "Chicago Weekend")
 
-    assert state["group_notes"] == "Relaxed mornings."
-    assert state["members"][0]["preference_notes"] == "No clubs."
+    assert generation.group_notes == "Relaxed mornings."
+    assert preferences.preference_notes == "No clubs."
+    assert state["group_notes"] == ""
     assert state["preference_constraints"] == {}
 
 
