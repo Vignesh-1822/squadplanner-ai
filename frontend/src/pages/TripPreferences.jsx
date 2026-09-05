@@ -1,12 +1,14 @@
 import { useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
+import { useMutation } from "@tanstack/react-query"
+import { toast } from "sonner"
 import { Wallet, Luggage, Lock, Users, CalendarRange, PlusCircle, Trash2 } from "lucide-react"
 import PreferenceSlider from "@/molecules/PreferenceSlider"
 import AirportSelect from "@/atoms/AirportSelect"
 import { DatePicker, ConfigProvider } from "antd"
 import dayjs from "dayjs"
-import { useAuth } from "@/store/authStore"
-import { buildMemberPayload, DIETARY_OPTIONS } from "@/lib/tripPayload"
+import { submitPreferences } from "@/services/ApiList"
+import { buildPreferencesPayload, DIETARY_OPTIONS } from "@/lib/tripPayload"
 
 // Keys must match backend/data/destinations.json -> vibe_tags. Labels are ours.
 const DEFAULT_VIBES = [
@@ -19,7 +21,7 @@ const DEFAULT_VIBES = [
 
 const TripPreferences = () => {
   const navigate = useNavigate()
-  const { user } = useAuth()
+  const { tripId } = useParams()
   const [vibes, setVibes] = useState(DEFAULT_VIBES)
   const [airport, setAirport] = useState("")
   const [budget, setBudget] = useState("")
@@ -55,30 +57,27 @@ const TripPreferences = () => {
     )
   }
 
+  const { mutate: savePreferences, isPending } = useMutation({
+    mutationFn: (payload) => submitPreferences(tripId, payload),
+    onSuccess: () => {
+      toast.success("Preferences saved. You're ready to roll.")
+      navigate(`/trips/${tripId}/lobby`)
+    },
+    // The backend writes these messages for users — 409 once planning has started,
+    // 422 for a bad payload — so show them as-is rather than inventing our own.
+    onError: (error) => toast.error(error.message),
+  })
+
   const handleSubmit = (e) => {
     e.preventDefault()
-    const tripId = sessionStorage.getItem("currentTripId")
-
-    // TODO(F1): POST this to /api/trips/{id}/preferences instead of logging it.
-    // isLeader needs the trip's created_by, which arrives with the same fetch.
-    const payload = buildMemberPayload({
-      user,
-      isLeader: false,
-      vibes,
-      airport,
-      budget,
-      carryOn,
-      dietary,
-      notes,
-      dateWindows,
-    })
-    console.debug("[F1 pending] member preference payload", payload)
-
-    if (tripId) {
-      navigate(`/trips/${tripId}/lobby`)
-    } else {
-      navigate("/dashboard")
+    if (!tripId) {
+      toast.error("No trip selected. Start by creating one.")
+      navigate("/trips/new")
+      return
     }
+    savePreferences(
+      buildPreferencesPayload({ vibes, airport, budget, carryOn, dietary, notes, dateWindows })
+    )
   }
 
   // Validate form required fields (Personal Notes is optional)
@@ -291,10 +290,10 @@ const TripPreferences = () => {
           <div className="flex justify-end mt-2 shrink-0">
             <button
               type="submit"
-              disabled={!isFormValid}
+              disabled={!isFormValid || isPending}
               className="px-8 py-3 rounded-xl bg-primary text-black font-bold text-sm hover:bg-primary-dim transition-colors volt-glow disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-primary"
             >
-              Save Preferences
+              {isPending ? "Saving..." : "Save Preferences"}
             </button>
           </div>
 

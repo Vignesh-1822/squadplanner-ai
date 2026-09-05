@@ -229,11 +229,18 @@ async def get_trip(trip_id: str):
         )
 
     users = get_collection("users")
+    # One query for the whole squad rather than one per member — the lobby polls this route.
+    emails = [m.get("email", "") for m in invited_members if m.get("email")]
+    users_by_email = {
+        doc["email"]: doc
+        async for doc in users.find({"email": {"$in": emails}})
+    }
+
     enriched_members = []
     for member in invited_members:
         email = member.get("email", "")
         status = member.get("status", "pending")
-        user_doc = await users.find_one({"email": email})
+        user_doc = users_by_email.get(email)
         if user_doc:
             name = user_doc.get("name", email.split("@")[0].capitalize())
             avatar_url = user_doc.get("avatar_url", "")
@@ -252,9 +259,9 @@ async def get_trip(trip_id: str):
     ready_count = sum(1 for m in enriched_members if m["status"] == "ready")
     total_count = len(enriched_members)
     all_ready = total_count > 0 and ready_count == total_count
-    leader_ready = any(m["is_leader"] and m["status"] == "ready" for m in enriched_members)
-    # The leader can kick off generation once at least one member (the leader) is ready.
-    can_generate = leader_ready and trip.get("status") in (None, "pending", "collecting")
+    # Strict gate: every invited member must submit before planning can start. all_ready
+    # already implies the leader is ready, so no separate leader check is needed.
+    can_generate = all_ready and trip.get("status") in (None, "pending", "collecting")
 
     created_at = trip["created_at"]
     expires_at = _parse_datetime(created_at) + timedelta(hours=24)

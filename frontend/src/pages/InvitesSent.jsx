@@ -123,7 +123,7 @@ const InvitesSent = () => {
 
         {/* CTA Button */}
         <button
-          onClick={() => navigate("/trips/preferences")}
+          onClick={() => navigate(`/trips/${trip.trip_id}/preferences`)}
           className="group relative flex items-center gap-3 bg-[#1e230f] hover:bg-[#2d3417] text-[#d1f94d] px-8 py-3.5 rounded-xl text-base font-black transition-all hover:shadow-lg hover:shadow-[#d1f94d]/10 hover:-translate-y-0.5 active:scale-95 duration-200"
         >
           ENTER MY PREFERENCES

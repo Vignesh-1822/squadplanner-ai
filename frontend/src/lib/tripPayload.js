@@ -44,9 +44,13 @@ export function usableDateWindows(dateWindows) {
     .map(({ start_date, end_date }) => ({ start_date, end_date }))
 }
 
-export function buildMemberPayload({
-  user,
-  isLeader = false,
+/**
+ * The request body for POST /trips/{id}/preferences.
+ *
+ * Deliberately carries no identity — the server derives member_id, name and is_leader from
+ * the session cookie, so the client is never trusted on who it is.
+ */
+export function buildPreferencesPayload({
   vibes,
   airport,
   budget,
@@ -56,16 +60,13 @@ export function buildMemberPayload({
   dateWindows,
 }) {
   return {
-    member_id: user?.id ?? "",
-    name: user?.name ?? "",
     origin_city: airport,
     budget_usd: Number(budget),
     food_restrictions: dietary,
     preference_vector: normalizePreferenceVector(vibes),
     preference_notes: buildPreferenceNotes(notes, { carryOnOnly: carryOn }),
-    // The agent plans one date range for the whole trip; the squad's windows are
-    // reconciled at start-planning time, so every window is carried through here.
-    availability: usableDateWindows(dateWindows),
-    is_leader: isLeader,
+    // The agent plans one date range for the whole trip; the backend intersects every
+    // member's windows at generate time, so all of them are carried through here.
+    date_windows: usableDateWindows(dateWindows),
   }
 }

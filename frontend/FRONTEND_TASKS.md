@@ -1,10 +1,15 @@
 # Frontend Tasks — SquadPlanner AI
 
-Working backlog for `frontend/`. The backend agent (LangGraph) is mature; this app is the
-product shell being built around it. **Right now no path in this app can plan a trip** — the
-funnel stops at the lobby. This doc tracks closing that gap, in order.
+Working backlog for `frontend/`. Scope is `frontend/` only; `showcase/` is a temporary demo and
+out of scope.
 
-Scope: `frontend/` only. The `showcase/` folder is a temporary demo and is out of scope.
+**The situation as of 2026-09-04:** the backend now implements the full async squad flow —
+join, per-member preferences, leader-gated generation, streaming, HITL, result, refinement.
+`frontend/` calls **none of it**. Every remaining task here is frontend wiring against endpoints
+that already exist and work.
+
+Authoritative API reference: [`docs/FRONTEND_CONTRACT.md`](../docs/FRONTEND_CONTRACT.md).
+When this doc and the contract disagree, the contract wins.
 
 **Status:** `TODO` · `IN PROGRESS` · `DONE` · `BLOCKED` · `DROPPED`
 **Last updated:** 2026-09-04
@@ -15,220 +20,270 @@ Scope: `frontend/` only. The `showcase/` folder is a temporary demo and is out o
 
 | Phase | Goal | Tasks | Status |
 |---|---|---|---|
-| **1** | Get the payload shape right before building the submit path | F5, F6, F8, F7 | **DONE** |
-| **2** | Wire the funnel into the agent | F1, F2, F3 | TODO |
-| **3** | Make invites actually work | F4 | TODO |
-| **4** | Architecture debt (carried along with phases 2–3, not after) | F9, F10, F11, F12 | TODO |
-| **5** | Placeholders and papercuts | F13–F18 | TODO |
+| **1** | Correct the preference payload shape | F5, F6, F8, F7 | **DONE** |
+| **2** | Wire preferences to the backend | F19, F1 | **F1 DONE** · F19 pending |
+| **3** | Lobby: readiness + leader-gated generation | F19, F20, F2 | TODO ← **next** |
+| **4** | Planning, HITL and itinerary screens | F21, F3 | TODO |
+| **5** | Guest invite flow | F4 | TODO |
+| **6** | Architecture debt (carried along, not deferred) | F9, F10, F11, F12 | TODO |
+| **7** | Placeholders and papercuts | F13–F18 | TODO |
 
-Rationale for this order: Phase 1 is cheap, self-contained, and defines the request body that
-Phase 2 has to send — doing it second would mean writing the submit call twice. Phase 3 is
-independent and can run in parallel. Phase 4 items are picked up inside the phases that touch
-those files rather than as a separate cleanup pass.
+Phases 2→5 follow the user's path through the app, so each one is demoable on its own.
+Phase 6 items are picked up inside whichever phase touches those files.
+
+---
+
+## Backend status — what already exists
+
+Committed in `d553490` / `6a713ae`. All under `/api`, all in `backend/api/squad.py` unless noted.
+
+| Endpoint | Notes |
+|---|---|
+| `GET /trips/by-invite/{code}` | **Public.** What a guest sees before logging in. |
+| `POST /trips/{id}/join` | Auth. Flips caller `pending` → `joined`. |
+| `POST /trips/{id}/preferences` | Auth. Upserts, marks member `ready`. **409** once planning started. |
+| `POST /trips/{id}/generate` | **Leader only (403).** Assembles `initial_state.members`, unlocks the stream. |
+| `GET /trips/{id}` | Lobby poll. Returns `status`, `ready_count`, `total_count`, `all_ready`, `can_generate`. |
+| `GET /trips/{id}/result` | Completed itinerary, server-side. **409** if not finished. |
+| `GET /trips/{id}/stream` | SSE. Also `/refinements/{rid}/stream`. |
+
+**Where preferences are stored:** nested per member inside `trips.invited_members[]` as a
+`preferences` object — *not* in `initial_state.members`. `initial_state.members` stays empty until
+`POST /generate` assembles it from every member who has submitted. One array, no second structure
+to keep in sync.
 
 ---
 
 ## Decisions
 
-Recorded so they don't get re-litigated. Each names the task that implements it.
+### D1 · `created_by` — *superseded by Phase 0*
+Recorded here as storing the user `_id`. The backend instead keeps the email and is removing
+client-supplied `created_by` entirely — the server will take it from the session. The stability
+concern stands but is now the backend's call; nothing for the frontend to do beyond dropping the
+field from `createTrip` when Phase 0 lands (see F21).
 
-### D1 · `created_by` holds the user `_id`, with `created_by_email` alongside — *implement in F2*
-It currently holds the **email** (`NewTrip.jsx:31`). Email is mutable — change it, or sign up local
-then sign in with Google under a different address, and every trip you created orphans. `_id` is the
-`users` primary key and the JWT `sub`, so it is the only stable handle.
+### D2 · The server decides who the leader is — **satisfied, differently**
+Rather than a `viewer_is_leader` field, `GET /trips/{id}` returns `is_leader` per member plus
+`can_generate`, and `POST /generate` enforces leader-only with a 403. The frontend must never gate
+on its own identity math — drive the button off `can_generate` and let the 403 be the real
+boundary.
 
-`created_by_email` is denormalized next to it because the invite model is email-keyed by necessity
-(you invite people who have no account yet), so the leader↔member join stays a string compare
-instead of a users lookup on every read.
+### D3 · `is_leader` derived server-side — **done**
+`squad.py::generate_trip` normalizes to exactly one leader (first wins) before building
+`initial_state.members`, satisfying `input_parser.py:57`.
 
-Migration: `list_trips` queries `{"created_by": email}` and `MyTrips.jsx` passes `user.email` —
-both change with it. Existing trip docs need a backfill or a wipe.
+### D4 · **Strict gate — every invited member must submit** — decided 2026-09-04
+The backend ships a loose gate (`can_generate` = leader ready only). Vignesh chose strict.
+Implemented in three parts, not one:
 
-### D2 · The server decides who the leader is, not the client — *implement in F2*
-`GET /api/trips/{id}` returns a computed `viewer_is_leader`, not raw `created_by`. The server
-already knows who is asking via the JWT cookie; a gate the client derives is a gate the client can
-flip; and it avoids handing the creator's email to every invitee.
+1. **`trips.py:257`** — `can_generate = all_ready and trip.get("status") in (None, "pending",
+   "collecting")`. `all_ready` (line 254) already implies the leader is ready, so `leader_ready`
+   drops out. Changing the meaning here keeps the policy in one place; the UI keeps reading
+   `can_generate` and stays ignorant of the rule.
+2. **`squad.py`, after line 262** — enforce it server-side, or the gate is decoration:
+   `not_ready = [m["email"] for m in invited_members if not m.get("preferences")]` → **422**
+   `"Waiting on preferences from: ..."`. Per the contract that `detail` is surfaced verbatim.
+3. **`DELETE /trips/{id}/members/{email}`** (leader-only, `collecting` or earlier, cannot remove
+   the leader) — the escape hatch. Without it one person who ignores their invite blocks the trip
+   permanently, since `total_count` includes invitees who never signed up. Counting only *joined*
+   members instead has the same hole one step later.
 
-Requires `Depends(get_current_user)` on the trip endpoints. **`get_trip` is unauthenticated today** —
-anyone holding a trip ID can read the full squad roster.
+Frontend renders the button only when `me.is_leader`, enables on `can_generate`, and **must show
+why it is disabled** — "Waiting on 2 of 4 — friend@x.com". A greyed button with no reason is worse
+than no button.
 
-### D3 · `is_leader` is derived server-side when assembling `members` — *implement in F2*
-`agent/nodes/input_parser.py:57` requires exactly one `is_leader=True` or the graph raises at the
-first node. Deriving it from `created_by` and ignoring the client's value closes both failure modes:
-zero leaders (the leader never submitted) and two leaders (client bug or tampering). The field stays
-in the payload because `MemberInput` requires it — the client just isn't trusted on it.
-
-For reference, that validation is the *only* functional use of `is_leader` in the backend. Every
-other occurrence is a docstring example or test fixture; no node branches on it. Note also that
-`POST /trips/{id}/confirm-city` has no auth check at all, so `is_leader` is not a security boundary.
-
-### D4 · Readiness counts only `accepted` members — *implement in F2*
-Otherwise one unresponsive invitee blocks the trip forever. The leader can remove a pending member.
-
----
-
-## Phase 1 — Payload correctness
-
-### F5 · Preference keys don't match the backend — `DONE`
-`TripPreferences.jsx:10` defines six vibes: `nightlife, adventure, shopping, food, urban, nature`.
-The backend uses exactly five (`backend/data/destinations.json` → `vibe_tags`):
-**`nightlife, shopping, food, urban, outdoor`**.
-
-- `adventure` and `nature` do not exist backend-side and are silently ignored.
-- `outdoor` is never collected — the key that drives national-park scoring across 480 destinations.
-
-**Done when:** the slider set emits exactly the five backend keys.
-
-**Done:** `TripPreferences.jsx:12` now lists the five backend keys; `adventure` + `nature` collapsed
-into `outdoor`, keeping the "Nature & Outdoors" label. Six sliders became five.
-
-### F6 · Slider scale is off by 100× — `DONE`
-Sliders emit `0–100`; `preference_vector` values are `0.0–1.0`
-(see `backend/tests/demo_input_cases.json`). Normalize on submit, keep 0–100 in the UI.
-
-**Done when:** the built payload contains floats in `0.0–1.0`.
-
-**Done:** `normalizePreferenceVector()` in `src/lib/tripPayload.js`. The slider is `step={25}`, so
-values land on exactly 0.0 / 0.25 / 0.5 / 0.75 / 1.0.
-
-### F8 · `food_restrictions` has no input — `DONE`
-The itinerary validator checks vegan / gluten-free / halal / vegetarian, but the UI offers only a
-free-text Notes box. Notes maps correctly to `preference_notes`; `food_restrictions` is uncollected.
-
-**Done when:** a multi-select emits `food_restrictions: string[]`.
-
-**Done:** toggle chips in the Personal Notes card, limited to the four the itinerary validator
-actually checks (`DIETARY_OPTIONS`). Anything else would be dead weight downstream.
-
-### F7 · Multiple date windows vs. a single trip date — `DONE` (deferred by design)
-`TripPreferences.jsx` collects a *list* of ranges per member. `TripState` has one `start_date` /
-`end_date`, and nothing anywhere intersects windows into a single range.
-
-**Decision:** don't resolve it here. The member payload carries the full
-`availability: [{start_date, end_date}, ...]` array, which is strictly more information than a
-single range. Reconciling N members into one range can only happen once everyone has submitted —
-i.e. at start-planning time — so the strategy (backend computes the overlap vs. leader confirms in
-the lobby) is decided as part of **F2**, not here. No longer blocks F1.
-
-> **Not a bug — do not "fix":** `AirportSelect` returns the IATA code (`"ORD"`), which is exactly
-> what the backend's `origin_city` expects.
+### D5 · Member status vocabulary is `pending → joined → ready`
+`accepted` is never emitted by the backend. See F19.
 
 ---
 
-## Phase 2 — Wire the funnel into the agent
+## Phase 2 — Wire preferences
 
-### F1 · Preferences are collected and thrown away — `TODO` · **next**
-`TripPreferences.jsx:58` — `handleSubmit` now builds the correct payload via `buildMemberPayload()`
-but only `console.debug`s it (marked `TODO(F1)`). Still needs the backend endpoint
-(`POST /api/trips/{id}/preferences`), which does not exist.
+### F19 · The UI checks for a status the backend never sends — `TODO`
+`TripLobby.jsx:67` and `MyTrips.jsx` test `member.status === "accepted"`. The backend emits only
+`pending`, `joined`, `ready` (D5), so **every member renders as "Invitation Sent" forever** and the
+readiness count is permanently 0. Cheap fix, but it invalidates the lobby until done.
 
-Two things land with this task:
-- `is_leader` is hardcoded `false`. The honest check is `user.email === trip.created_by`, which
-  needs the trip fetch this task adds anyway.
-- The F7 date-window resolution strategy (see above).
+**Done when:** member status rendering uses `pending` / `joined` / `ready`.
 
-**Done when:** preferences persist and survive a reload.
+### F1 · Preferences are collected and thrown away — `DONE`
+`TripPreferences.jsx:58` builds the correct payload via `buildMemberPayload()` and only
+`console.debug`s it.
+
+Backend is ready — `POST /trips/{id}/preferences`. Remaining work is all frontend:
+
+- **`ApiList.js` is missing the clients.** The contract claims every endpoint already has a JS
+  client there; it does not — only `getMe/register/login/googleAuth/logout` and
+  `getTrips/getTripById/createTrip` exist. Add `submitPreferences`, `generateTrip`, `joinTrip`,
+  `getTripByInvite`, `getTripResult`, `confirmCity`, `refineTrip`, `streamUrl`.
+- Rename `availability` → `date_windows` in the request body to match the contract.
+- Drop `member_id` / `name` / `is_leader` from `buildMemberPayload` — the server derives all three
+  from the session. Phase 1 targeted the graph's shape; the API's shape is narrower.
+- Replace `console.debug` with a React Query `useMutation` (starts F10); disable the button while
+  in flight, toast the error `detail` verbatim.
+- Prefill from `has_preferences` so editing works — the endpoint upserts.
+- Surface the **409** ("Trip has already started planning") as a real message.
+
+**Done when:** submitting marks the member `ready` and the lobby reflects it.
+
+**Done.** `ApiList.js` now carries the full API surface (10 new clients + `BASE_URL` exported from
+`services/index.js` so `streamUrl` can build SSE endpoints). `buildMemberPayload` became
+`buildPreferencesPayload` — identity fields dropped, `availability` renamed `date_windows`.
+`TripPreferences` submits via a React Query `useMutation`, disables while in flight, surfaces the
+backend `detail` verbatim, and routes to the lobby on success.
+
+**Deferred: prefill.** Editing your own preferences needs the stored values back, and no endpoint
+returns them — `GET /trips/{id}` exposes only the `has_preferences` boolean. It also cannot know
+who is asking, because that route is still unauthenticated. So prefill is blocked on Phase 0
+adding auth there; the endpoint already upserts, so re-submitting works today.
+
+---
+
+## Phase 3 — Lobby
+
+### F20 · `EventSource` needs `withCredentials` — `TODO`
+`new EventSource(url, { withCredentials: true })`, or both SSE streams 401 once Phase 0 auth lands.
+`EventSource` cannot send an `Authorization` header, so the cookie is the only mechanism.
+Do this before any streaming code is written.
 
 ### F2 · The lobby is a terminal dead end — `TODO`
-`TripLobby.jsx` has no "Start planning" action. Nothing in the app ever calls
-`GET /api/trips/{id}/stream`, so the agent is never invoked.
+No "Scout Destinations" action; nothing ever calls `POST /generate`.
 
-**Requirement:** the *Scout Destinations* button is visible only to the leader, and only once every
-member has submitted preferences.
+- Button visible only to the leader, enabled on `can_generate` (strict per D4), with the
+  blocking members named beside it.
+- Leader-only remove (✕) on pending members — the D4 escape hatch.
+- Poll `GET /trips/{id}`; on `status` → `generating` / `city_selection`, route everyone to planning;
+  on `complete`, to the itinerary.
+- Real readiness bar from `ready_count / total_count` — closes **F15**.
+- Surface generate's **422** messages verbatim: nobody ready, >8 members, leader hasn't submitted,
+  no overlapping availability. They are written for users.
 
-Implements D1–D4. Two gaps block the readiness check:
+**Done when:** the leader can start planning and non-leaders cannot see the button.
 
-- **The creator is not in the member list.** `create_trip` builds `invited_members` from
-  `invited_emails` only, so "all invited members submitted" can pass while the leader has not —
-  and then the graph dies with zero leaders. Fix: insert the creator at creation with
-  `status: "accepted"`.
-- **There is no per-member submitted flag** — that arrives with F1. The check is then
-  `invited_members.every(m => m.preferences_submitted)` over accepted members (D4).
+---
 
-Also settles the F7 date-window resolution strategy, and computing readiness server-side closes F15.
+## Phase 4 — Planning, HITL, itinerary
 
-**Done when:** the leader can start a run from the lobby once the squad is ready, and nobody else
-can see the button.
+### F21 · Phase 0 breaking changes — `TODO`
+Backend security work in flight. When it lands: `POST /trips` stops accepting `created_by`
+(remove it from `NewTrip.jsx`), `GET /trips` loses `?email=` and returns only your own trips
+(update `getTrips` and `MyTrips.jsx`), and `joinTrip(id)` becomes `joinTrip(id, inviteCode)`.
 
 ### F3 · Three screens don't exist — `TODO`
-No SSE/streaming progress page, no HITL city-selection screen, no itinerary view — the entire
-second half of the product. `TripPreferences.jsx:57` also falls back to `navigate("/dashboard")`,
-a route not in the router (`Dashboard.jsx` is a one-line stub) → blank screen.
+No streaming page, no HITL city-selection, no itinerary view.
 
-**Done when:** a trip runs end to end: stream → pick a city → see the itinerary.
+- `/trips/:tripId/planning` — SSE progress; on `HITL_REQUIRED` render the 5 candidate cards and
+  POST `/confirm-city`; on `TRIP_COMPLETE` go to the itinerary.
+- `/trips/:tripId/itinerary` — load `GET /result` (409 = not finished), render days/hotel/flights,
+  plus the refinement box.
+- `TripPreferences.jsx:57` also falls back to `navigate("/dashboard")`, a route that doesn't exist
+  → blank screen.
+
+A rough but correct reference implementation of all three (plus a Leaflet `ItineraryMap`) exists on
+branch `wip/solo-frontend-attempt` — deliberately kept off `main` so the design is ours, but useful
+for the SSE handling: `git show wip/solo-frontend-attempt:frontend/src/pages/Planning.jsx`.
+
+**Done when:** a trip runs end to end: submit → generate → stream → pick a city → itinerary.
 
 ---
 
-## Phase 3 — Invites
+## Phase 5 — Guest invite flow
 
 ### F4 · `/join/:code` doesn't exist — `TODO`
-`TripLobby.jsx:41` and `:186` copy `${origin}/join/${invite_code}` to the clipboard. There is no
-route, no page, and no backend handler. Every invited member who clicks the emailed link gets a
-blank page — which kills the multi-user premise the app is built on.
+`TripLobby.jsx:43` and `:179` copy `${origin}/join/${invite_code}`. No route, no page — every
+invitee lands on a blank screen.
 
-**Done when:** an invitee can open the link, sign in, and land in the lobby as an accepted member.
+Backend is ready (`GET /trips/by-invite/{code}` public, `POST /trips/{id}/join` auth'd). Needed:
+the route, and a post-auth redirect in `Auth.jsx` — unauthenticated guests stash the code in
+`sessionStorage.pendingInvite`, sign in, and resume.
+
+**Done when:** an invitee opens the emailed link, signs in, and lands in the lobby as `joined`.
 
 ---
 
-## Phase 4 — Architecture debt
+## Phase 6 — Architecture debt
 
-### F9 · `sessionStorage` carries trip identity — `TODO`
-Used across `NewTrip.jsx:35`, `InvitesSent.jsx:13`, `TripPreferences.jsx:53`, `TripLobby.jsx:17`.
-Dies in a new tab and makes every URL unshareable — fatal for an invite-based app.
-`/trips/:tripId/lobby` already exists in the router.
+### F9 · `sessionStorage` carries trip identity — `TODO` · *partly done*
+Preferences now live at `/trips/:tripId/preferences` and read the id from the route;
+`InvitesSent` navigates with it. `NewTrip` → `InvitesSent` and the lobby still use sessionStorage.
+`NewTrip.jsx:35`, `InvitesSent.jsx:13`, `TripPreferences.jsx:53`, `TripLobby.jsx:17`. Dies in a new
+tab and makes URLs unshareable — fatal for an invite-based app. `/trips/:tripId/lobby` already
+exists; `/trips/preferences` needs a `:tripId` too. Note `pendingInvite` (F4) is a legitimate use.
 
-### F10 · React Query is installed, provided, and never used — `TODO`
-Every page is hand-rolled `useEffect` + `useState` + manual loading flags, and `TripLobby.jsx:36`
-polls with a raw 5s `setInterval`. The lobby is exactly the refetch case React Query exists for.
+### F10 · React Query installed, provided, never used — `TODO`
+Hand-rolled `useEffect` + loading flags everywhere; `TripLobby.jsx:36` polls with a raw
+`setInterval`. Starts in F1 with the preferences mutation; the lobby poll is the natural second.
 
 ### F11 · Two competing user stores — `TODO`
-`UserProvider` is mounted in `main.jsx` and never consumed; `authStore` is the real one.
-Delete `UserProvider`, plus empty `store/index.js` and `components/templates/index.js`.
+`UserProvider` is mounted in `main.jsx` and never consumed; `authStore` is real. Delete it, plus
+empty `store/index.js` and `components/templates/index.js`.
 
 ### F12 · `RootLayout` and `SideMenu` are orphaned — `TODO`
-No route mounts them (the router uses `HomeLayout` and `TripFlowLayout`). `SideMenu` also hardcodes
-`"Vignesh"` / `"@vignesh"`. Adopt or delete — currently a trap for anyone editing nav.
+No route mounts them. `SideMenu` hardcodes `"Vignesh"` / `"@vignesh"`. Adopt or delete.
 
 ---
 
-## Phase 5 — Placeholders and papercuts
+## Phase 7 — Placeholders and papercuts
 
 ### F13 · `Home.jsx` is 100% fake — `TODO`
 Hardcoded "Vignesh", "140 Miles Traveled", "PARIS, FRANCE", "$864", and a `EuropeMap` for a
 **US-only** dataset. It is the post-login landing page.
 
 ### F14 · Five dead nav links — `TODO`
-`HomeHeader`: Explore / Shared Trips / Stats. `SideMenu`: Help. Plus `/settings`. None are routed.
-No 404 route and no error boundary either.
+`HomeHeader`: Explore / Shared Trips / Stats. `SideMenu`: Help. Plus `/settings`. No 404 route,
+no error boundary.
 
 ### F15 · Hardcoded readiness — `TODO` · *closed by F2*
-`TripLobby.jsx:68` sets `readiness = 60` while `readyMembers` / `totalMembers` are computed two
-lines above and never used.
+`TripLobby.jsx:68` sets `readiness = 60` while the real counts sit unused two lines above.
 
 ### F16 · Registration errors always show the wrong message — `TODO`
-`Auth.jsx:33` checks `err.message?.includes("409")`, but `apiFetch` throws `body.detail`
-("Email already registered") and never the status code — so duplicate signups read
-"Invalid email or password."
+`Auth.jsx:33` checks `err.message?.includes("409")`, but `apiFetch` throws `body.detail` and never
+the status code — duplicate signups read "Invalid email or password."
 
 ### F17 · Two design systems for one component — `TODO`
-antd + a full `ConfigProvider` theme override for a single `RangePicker`, while unused shadcn
-`date-picker` / `calendar` sit in `components/ui/`. `dayjs` is imported in `TripPreferences` but
-is not in `package.json` — it resolves only transitively through antd.
+antd + a full `ConfigProvider` override for a single `RangePicker`, while unused shadcn
+`date-picker` / `calendar` sit in `components/ui/`. `dayjs` is imported but not in `package.json` —
+it resolves only transitively through antd. (Note: the contract requires a *range* picker, so
+antd may be worth keeping — decide rather than drift.)
 
 ### F18 · Minor — `TODO`
-`alert()` at `NewTrip.jsx:41` while `sonner` toasts are used everywhere else. Hardcoded
-`googleusercontent.com` testimonial avatar and inline `dangerouslySetInnerHTML` CSS in `Auth.jsx`.
+`alert()` at `NewTrip.jsx:41` while `sonner` is used everywhere else. Hardcoded
+`googleusercontent.com` avatar and inline `dangerouslySetInnerHTML` CSS in `Auth.jsx`.
+
+---
+
+## Watch list
+
+- **Single-day overlap.** `_compute_group_window` can return `start == end`; `input_parser` then
+  computes duration `0` and raises "duration must be 2–14 days". Surfaces as a confusing error.
+  Backend issue, but the UI is where it will be seen.
+- **`POST /join` is permissive** — any authenticated user with the link joins; no check against
+  `invited_emails`.
+- Planner hard caps: **8 members**, **5 days**.
 
 ---
 
 ## Changelog
 
-- **2026-09-04** — Recorded decisions D1–D4 (`created_by` → `_id`, server-computed
-  `viewer_is_leader`, server-derived `is_leader`, readiness counts accepted members only) and
-  folded the leader-only *Scout Destinations* gate into F2.
+- **2026-09-04** — **F1 done, plus the backend it needed.** Backend: strict `can_generate`
+  (`all_ready` + status), 422 enforcement on `POST /generate` naming who is missing,
+  new leader-only `DELETE /trips/{id}/members/{email}`, and member enrichment batched into one
+  user query instead of one per member. Rewrote `tests/test_trips_api.py` — it had been failing
+  since the squad refactor against the old response shape — now 9 tests covering the gate, the
+  single-query guarantee, and remove-member permissions. Frontend: full `ApiList`,
+  `buildPreferencesPayload`, `TripPreferences` wired via `useMutation`, preferences route now
+  carries `:tripId`. Backend 41 passed / 2 pre-existing failures (both showcase-era). Frontend
+  lint and build clean.
+- **2026-09-04** — **D4 decided: strict gate.** Every invited member must submit before the leader
+  can generate. Needs a backend change in two places plus a new remove-member endpoint — recorded
+  under D4; not frontend-only.
+- **2026-09-04** — Doc reconciled against the backend's committed squad flow (`d553490`, `6a713ae`).
+  F1/F2/F4/F7 backend halves are done; every remaining task is frontend wiring. Added F19 (status
+  vocabulary bug), F20 (`EventSource` credentials), F21 (Phase 0 breaking changes), D5, and a watch
+  list. Re-ordered into user-journey phases.
+- **2026-09-04** — Recorded D1–D4 and folded the leader-only Scout Destinations gate into F2.
 - **2026-09-04** — **Phase 1 complete (F5, F6, F8, F7).** Added `src/lib/tripPayload.js` with a pure
   `buildMemberPayload()`; fixed the preference keys and 0–100 → 0.0–1.0 scale; added dietary
-  toggle chips; folded the orphaned "Carry-on Only" toggle into `preference_notes` (the backend
-  has no field for it, and the constraint extractor reads free text). `handleSubmit` builds the
-  payload but does not yet send it — that's F1. Lint clean, build passes.
+  toggle chips; folded the orphaned "Carry-on Only" toggle into `preference_notes`. Lint clean,
+  build passes.
 - **2026-09-04** — Backlog created from a full frontend review.
