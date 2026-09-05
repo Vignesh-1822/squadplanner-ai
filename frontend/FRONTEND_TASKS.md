@@ -21,9 +21,9 @@ When this doc and the contract disagree, the contract wins.
 | Phase | Goal | Tasks | Status |
 |---|---|---|---|
 | **1** | Correct the preference payload shape | F5, F6, F8, F7 | **DONE** |
-| **2** | Wire preferences to the backend | F19, F1 | **F1 DONE** · F19 pending |
-| **3** | Lobby: readiness + leader-gated generation | F19, F20, F2 | TODO ← **next** |
-| **4** | Planning, HITL and itinerary screens | F21, F3 | TODO |
+| **2** | Wire preferences to the backend | F1 | **DONE** |
+| **3** | Lobby: readiness + leader-gated generation | F19, F2, F15 | **DONE** |
+| **4** | Planning, HITL and itinerary screens | F20, F21, F3 | TODO ← **next** |
 | **5** | Guest invite flow | F4 | TODO |
 | **6** | Architecture debt (carried along, not deferred) | F9, F10, F11, F12 | TODO |
 | **7** | Placeholders and papercuts | F13–F18 | TODO |
@@ -99,12 +99,16 @@ than no button.
 
 ## Phase 2 — Wire preferences
 
-### F19 · The UI checks for a status the backend never sends — `TODO`
+### F19 · The UI checks for a status the backend never sends — `DONE`
 `TripLobby.jsx:67` and `MyTrips.jsx` test `member.status === "accepted"`. The backend emits only
 `pending`, `joined`, `ready` (D5), so **every member renders as "Invitation Sent" forever** and the
 readiness count is permanently 0. Cheap fix, but it invalidates the lobby until done.
 
 **Done when:** member status rendering uses `pending` / `joined` / `ready`.
+
+**Done.** New `src/lib/tripStatus.js` holds the vocabulary for both trip and member status so it
+cannot drift again. `MyTrips` was checking trip statuses (`"ready"`, `"synced"`) the backend never
+emits either — now mapped onto `complete` / `generating`+`city_selection` / everything else.
 
 ### F1 · Preferences are collected and thrown away — `DONE`
 `TripPreferences.jsx:58` builds the correct payload via `buildMemberPayload()` and only
@@ -146,7 +150,7 @@ adding auth there; the endpoint already upserts, so re-submitting works today.
 `EventSource` cannot send an `Authorization` header, so the cookie is the only mechanism.
 Do this before any streaming code is written.
 
-### F2 · The lobby is a terminal dead end — `TODO`
+### F2 · The lobby is a terminal dead end — `DONE`
 No "Scout Destinations" action; nothing ever calls `POST /generate`.
 
 - Button visible only to the leader, enabled on `can_generate` (strict per D4), with the
@@ -159,6 +163,17 @@ No "Scout Destinations" action; nothing ever calls `POST /generate`.
   no overlapping availability. They are written for users.
 
 **Done when:** the leader can start planning and non-leaders cannot see the button.
+
+**Done.** `TripLobby` rewritten on React Query. Leader found via `invited_members` + the session
+email; Scout Destinations renders for the leader only, enabled on `can_generate`, and when disabled
+names who is missing. Non-leaders see the same count without the button. Remove ✕ wired to
+`removeMember`. Readiness bar driven by `ready_count / total_count` (**F15 closed**). Polling is now
+30s while collecting, 5s once `all_ready`, and stopped at terminal states — plus refetch-on-focus
+and automatic pause while the tab is hidden.
+
+**Interim:** pressing the button starts a real run, but F3's screens don't exist yet, so the lobby
+detects `generating` / `complete` and reports it in place rather than routing to a blank page.
+Marked `TODO(F3)`.
 
 ---
 
@@ -203,16 +218,17 @@ the route, and a post-auth redirect in `Auth.jsx` — unauthenticated guests sta
 
 ## Phase 6 — Architecture debt
 
-### F9 · `sessionStorage` carries trip identity — `TODO` · *partly done*
-Preferences now live at `/trips/:tripId/preferences` and read the id from the route;
-`InvitesSent` navigates with it. `NewTrip` → `InvitesSent` and the lobby still use sessionStorage.
+### F9 · `sessionStorage` carries trip identity — `TODO` · *mostly done*
+Preferences and the lobby now read `:tripId` from the route; the bare `/trips/lobby` route is gone
+since every caller passes an id. Only `NewTrip` → `InvitesSent` still hands off via sessionStorage.
 `NewTrip.jsx:35`, `InvitesSent.jsx:13`, `TripPreferences.jsx:53`, `TripLobby.jsx:17`. Dies in a new
 tab and makes URLs unshareable — fatal for an invite-based app. `/trips/:tripId/lobby` already
 exists; `/trips/preferences` needs a `:tripId` too. Note `pendingInvite` (F4) is a legitimate use.
 
-### F10 · React Query installed, provided, never used — `TODO`
-Hand-rolled `useEffect` + loading flags everywhere; `TripLobby.jsx:36` polls with a raw
-`setInterval`. Starts in F1 with the preferences mutation; the lobby poll is the natural second.
+### F10 · React Query installed, provided, never used — `TODO` · *mostly done*
+`TripPreferences` (mutation) and `TripLobby` (query + two mutations) are converted, including the
+state-keyed `refetchInterval`. `MyTrips`, `InvitesSent` and `authStore` still hand-roll
+`useEffect` + loading flags.
 
 ### F11 · Two competing user stores — `TODO`
 `UserProvider` is mounted in `main.jsx` and never consumed; `authStore` is real. Delete it, plus
@@ -233,7 +249,7 @@ Hardcoded "Vignesh", "140 Miles Traveled", "PARIS, FRANCE", "$864", and a `Europ
 `HomeHeader`: Explore / Shared Trips / Stats. `SideMenu`: Help. Plus `/settings`. No 404 route,
 no error boundary.
 
-### F15 · Hardcoded readiness — `TODO` · *closed by F2*
+### F15 · Hardcoded readiness — `DONE` · *closed by F2*
 `TripLobby.jsx:68` sets `readiness = 60` while the real counts sit unused two lines above.
 
 ### F16 · Registration errors always show the wrong message — `TODO`
@@ -265,6 +281,20 @@ antd may be worth keeping — decide rather than drift.)
 
 ## Changelog
 
+- **2026-09-04** — **Lobby fixes from testing.** The creator was missing from the squad on trips
+  created before the creator-as-member change, which also undercounted `total_count` and would have
+  blocked generation (the planner needs exactly one leader) — `GET /trips/{id}` now heals that on
+  read and persists it, alongside the existing `invited_emails` backfill. Added a `Leader` badge and
+  a `(You)` marker on member rows, and a "Your turn" card linking to the preferences form when you
+  have not submitted. The waiting-on list says "you" instead of repeating your own name.
+  *Note: "1 of undefined" was a stale backend process — the count fields arrived with the squad
+  commit, so uvicorn needs a restart after pulling.*
+- **2026-09-04** — **Phase 3 done (F19, F2, F15).** Added `src/lib/tripStatus.js` as the single home
+  for the status vocabulary. `TripLobby` rewritten on React Query with the leader-gated Scout
+  Destinations button, a named waiting-on list, remove-member ✕, a real readiness bar, and polling
+  keyed to state (30s → 5s when all ready → stopped at terminal). `MyTrips` remapped onto real trip
+  statuses. Removed the bare `/trips/lobby` route. Frontend lint errors 15 → 6, all remaining ones
+  pre-existing in untouched files; build clean.
 - **2026-09-04** — **F1 done, plus the backend it needed.** Backend: strict `can_generate`
   (`all_ready` + status), 422 enforcement on `POST /generate` naming who is missing,
   new leader-only `DELETE /trips/{id}/members/{email}`, and member enrichment batched into one

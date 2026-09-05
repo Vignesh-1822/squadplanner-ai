@@ -28,7 +28,6 @@ const router = createBrowserRouter([
       { path: "/trips/new",          element: <ProtectedRoute><NewTrip /></ProtectedRoute> },
       { path: "/trips/invites-sent", element: <ProtectedRoute><InvitesSent /></ProtectedRoute> },
       { path: "/trips/:tripId/preferences", element: <ProtectedRoute><TripPreferences /></ProtectedRoute> },
-      { path: "/trips/lobby",         element: <ProtectedRoute><TripLobby /></ProtectedRoute> },
       { path: "/trips/:tripId/lobby", element: <ProtectedRoute><TripLobby /></ProtectedRoute> },
     ],
   },

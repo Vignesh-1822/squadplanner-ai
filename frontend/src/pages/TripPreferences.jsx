@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
-import { useMutation } from "@tanstack/react-query"
+import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { toast } from "sonner"
 import { Wallet, Luggage, Lock, Users, CalendarRange, PlusCircle, Trash2 } from "lucide-react"
 import PreferenceSlider from "@/molecules/PreferenceSlider"
@@ -22,6 +22,7 @@ const DEFAULT_VIBES = [
 const TripPreferences = () => {
   const navigate = useNavigate()
   const { tripId } = useParams()
+  const queryClient = useQueryClient()
   const [vibes, setVibes] = useState(DEFAULT_VIBES)
   const [airport, setAirport] = useState("")
   const [budget, setBudget] = useState("")
@@ -61,6 +62,9 @@ const TripPreferences = () => {
     mutationFn: (payload) => submitPreferences(tripId, payload),
     onSuccess: () => {
       toast.success("Preferences saved. You're ready to roll.")
+      // Start the refetch before navigating, so the lobby doesn't paint a cached copy of
+      // itself still asking for the preferences we just submitted.
+      queryClient.invalidateQueries({ queryKey: ["trip", tripId] })
       navigate(`/trips/${tripId}/lobby`)
     },
     // The backend writes these messages for users — 409 once planning has started,

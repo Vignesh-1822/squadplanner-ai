@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react"
-import { useNavigate, Link } from "react-router-dom"
-import { Plane, Umbrella, Ship, Calendar, CheckCircle2, Clock, Sparkles, Plus, Filter, Grid, Bell, Check } from "lucide-react"
+import { useNavigate } from "react-router-dom"
+import { Plane, Umbrella, Ship, Calendar, CheckCircle2, Clock, Sparkles, Plus, Filter, Check } from "lucide-react"
 import { getTrips } from "@/services/ApiList"
+import { isPlanning, isComplete } from "@/lib/tripStatus"
 import { useAuth } from "@/store/authStore"
 import { toast } from "sonner"
 
@@ -201,9 +202,8 @@ const MyTrips = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {trips.filter((trip) => {
             if (selectedStatus.length === 0) return true
-            const hasSelectedDestination = !!trip.selected_destination
-            const isReady = trip.status === "ready" || hasSelectedDestination
-            const isSynced = trip.status === "synced"
+            const isReady = isComplete(trip.status)
+            const isSynced = isPlanning(trip.status)
             const isAssembling = !isReady && !isSynced
 
             if (selectedStatus.includes("assembling") && isAssembling) return true
@@ -212,9 +212,9 @@ const MyTrips = () => {
             if (selectedStatus.includes("cancelled") && trip.status === "cancelled") return true
             return false
           }).map((trip) => {
-            const hasSelectedDestination = !!trip.selected_destination
-            const isReady = trip.status === "ready" || hasSelectedDestination
-            const isSynced = trip.status === "synced"
+            // Backend trip status: pending -> collecting -> generating -> city_selection -> complete
+            const isReady = isComplete(trip.status)
+            const isSynced = isPlanning(trip.status)
             const isAssembling = !isReady && !isSynced
 
             // Custom styling for card header icons and badges mapping Stitch colors
@@ -230,7 +230,7 @@ const MyTrips = () => {
               tripIcon = <Plane className="text-slate-400" size={24} />
             } else if (isSynced) {
               badgeBg = "bg-teal-50 text-teal-600"
-              badgeText = "Vibes Synced"
+              badgeText = "Planning"
               badgeIcon = <Sparkles size={14} />
               tripIcon = <Ship className="text-slate-400" size={24} />
             }

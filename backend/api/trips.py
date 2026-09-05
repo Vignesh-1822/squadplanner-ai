@@ -111,23 +111,41 @@ def _isoformat(value: datetime | str) -> str:
     return value
 
 
-def _invited_members_from_trip(trip: dict) -> list[dict]:
-    invited_members = trip.get("invited_members")
-    if isinstance(invited_members, list):
-        return [
-            {
-                "email": member.get("email", ""),
-                "status": member.get("status", "pending"),
-                "is_leader": bool(member.get("is_leader", False)),
-                "has_preferences": bool(member.get("preferences")),
-            }
-            for member in invited_members
-            if isinstance(member, dict) and member.get("email")
-        ]
+def _raw_members(trip: dict) -> tuple[list[dict], bool]:
+    """Resolve the stored member list, healing two legacy shapes.
 
+    Older trips stored only ``invited_emails``. Trips created before the creator became a
+    first-class squad member have no leader entry at all, which leaves the owner invisible in
+    the lobby, undercounts the squad, and blocks generation — the planner requires exactly one
+    leader. Returns the members and whether anything had to be repaired.
+    """
+    stored = trip.get("invited_members")
+    healed = not isinstance(stored, list)
+    if healed:
+        members = [
+            {"email": email, "status": "pending", "is_leader": False}
+            for email in trip.get("invited_emails", [])
+        ]
+    else:
+        members = [m for m in stored if isinstance(m, dict) and m.get("email")]
+
+    created_by = trip.get("created_by")
+    if created_by and not any(m.get("email") == created_by for m in members):
+        members.insert(0, {"email": created_by, "status": "joined", "is_leader": True})
+        healed = True
+
+    return members, healed
+
+
+def _summarize_members(members: list[dict]) -> list[dict]:
     return [
-        {"email": email, "status": "pending", "is_leader": False, "has_preferences": False}
-        for email in trip.get("invited_emails", [])
+        {
+            "email": member.get("email", ""),
+            "status": member.get("status", "pending"),
+            "is_leader": bool(member.get("is_leader", False)),
+            "has_preferences": bool(member.get("preferences")),
+        }
+        for member in members
     ]
 
 
@@ -221,12 +239,13 @@ async def get_trip(trip_id: str):
     if not trip:
         raise HTTPException(status_code=404, detail="Trip not found")
 
-    invited_members = _invited_members_from_trip(trip)
-    if "invited_members" not in trip:
+    raw_members, healed = _raw_members(trip)
+    if healed:
         await trips.update_one(
             {"trip_id": trip_id},
-            {"$set": {"invited_members": invited_members}},
+            {"$set": {"invited_members": raw_members}},
         )
+    invited_members = _summarize_members(raw_members)
 
     users = get_collection("users")
     # One query for the whole squad rather than one per member — the lobby polls this route.

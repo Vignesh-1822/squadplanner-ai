@@ -169,6 +169,28 @@ async def test_get_trip_backfills_invited_members_from_legacy_emails(monkeypatch
 
 
 @pytest.mark.asyncio
+async def test_get_trip_heals_a_legacy_trip_missing_its_leader(monkeypatch):
+    """Trips created before the creator became a squad member have no leader entry."""
+    trip = _trip(invited_members=[{"email": "guest@example.com", "status": "pending"}])
+    collection = FakeCollection(trip)
+    monkeypatch.setattr(trips_api, "get_collection", lambda name: collection)
+
+    response = await trips_api.get_trip("trip-1")
+
+    assert [(m["email"], m["is_leader"]) for m in response["invited_members"]] == [
+        ("leader@example.com", True),
+        ("guest@example.com", False),
+    ]
+    assert response["total_count"] == 2
+    # The repair is persisted, or generation would still fail for want of a leader.
+    assert collection.updated["update"]["$set"]["invited_members"][0] == {
+        "email": "leader@example.com",
+        "status": "joined",
+        "is_leader": True,
+    }
+
+
+@pytest.mark.asyncio
 async def test_create_trip_makes_the_creator_the_leader(monkeypatch):
     collection = FakeCollection({"trip_id": "unused"})
     monkeypatch.setattr(trips_api, "get_collection", lambda name: collection)
