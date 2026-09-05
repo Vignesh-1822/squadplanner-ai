@@ -23,7 +23,7 @@ When this doc and the contract disagree, the contract wins.
 | **1** | Correct the preference payload shape | F5, F6, F8, F7 | **DONE** |
 | **2** | Wire preferences to the backend | F1 | **DONE** |
 | **3** | Lobby: readiness + leader-gated generation | F19, F2, F15 | **DONE** |
-| **4** | Planning, HITL and itinerary screens | F20, F21, F3 | TODO ← **next** |
+| **4** | Planning, HITL and itinerary screens | F20 ✓, F21, F3 | **F20 DONE** |
 | **5** | Guest invite flow | F4 | TODO |
 | **6** | Architecture debt (carried along, not deferred) | F9, F10, F11, F12 | TODO |
 | **7** | Placeholders and papercuts | F13–F18 | TODO |
@@ -145,10 +145,14 @@ adding auth there; the endpoint already upserts, so re-submitting works today.
 
 ## Phase 3 — Lobby
 
-### F20 · `EventSource` needs `withCredentials` — `TODO`
-`new EventSource(url, { withCredentials: true })`, or both SSE streams 401 once Phase 0 auth lands.
-`EventSource` cannot send an `Authorization` header, so the cookie is the only mechanism.
-Do this before any streaming code is written.
+### F20 · `EventSource` needs `withCredentials` — `DONE`
+`EventSource` cannot send an `Authorization` header, so the cookie is the only mechanism — and
+cookies are withheld cross-origin (5173 vs 8000) without `withCredentials`.
+
+**Done.** `src/hooks/useEventStream.js` wraps it so F3 cannot get it wrong. It also handles the
+second EventSource trap: the browser reconnects automatically whenever a stream ends, *including*
+the clean end after a run completes — left alone it reopens and replays the run. Terminal events
+close it explicitly via `closeOn`.
 
 ### F2 · The lobby is a terminal dead end — `DONE`
 No "Scout Destinations" action; nothing ever calls `POST /generate`.
@@ -281,6 +285,8 @@ antd may be worth keeping — decide rather than drift.)
 
 ## Changelog
 
+- **2026-09-05** — **F20 done.** `useEventStream` hook: `withCredentials` for cookie auth, plus
+  `closeOn` so a finished run doesn't get replayed by EventSource's automatic reconnect.
 - **2026-09-04** — **Lobby fixes from testing.** The creator was missing from the squad on trips
   created before the creator-as-member change, which also undercounted `total_count` and would have
   blocked generation (the planner needs exactly one leader) — `GET /trips/{id}` now heals that on
