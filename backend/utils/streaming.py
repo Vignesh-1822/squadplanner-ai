@@ -133,6 +133,7 @@ async def _emit_and_wait_for_city_confirmation(
                 {
                     "$set": {
                         "status": "generating",
+                        "error": None,
                         "city_resume_consumed_at": datetime.now(timezone.utc).isoformat(),
                         "updated_at": datetime.now(timezone.utc).isoformat(),
                     }
@@ -220,6 +221,8 @@ async def stream_graph_events(
                 {
                     "$set": {
                         "status": "generating",
+                        # A failure from an earlier attempt must not outlive it.
+                        "error": None,
                         "updated_at": datetime.now(timezone.utc).isoformat(),
                     }
                 },

@@ -23,7 +23,7 @@ When this doc and the contract disagree, the contract wins.
 | **1** | Correct the preference payload shape | F5, F6, F8, F7 | **DONE** |
 | **2** | Wire preferences to the backend | F1 | **DONE** |
 | **3** | Lobby: readiness + leader-gated generation | F19, F2, F15 | **DONE** |
-| **4** | Planning, HITL and itinerary screens | F20 ✓, F21, F3 | **F20 DONE** |
+| **4** | Planning, HITL and itinerary screens | F20 ✓, F3a ✓, F21, F3b | **F3b next** |
 | **5** | Guest invite flow | F4 | TODO |
 | **6** | Architecture debt (carried along, not deferred) | F9, F10, F11, F12 | TODO |
 | **7** | Placeholders and papercuts | F13–F18 | TODO |
@@ -204,6 +204,24 @@ for the SSE handling: `git show wip/solo-frontend-attempt:frontend/src/pages/Pla
 
 **Done when:** a trip runs end to end: submit → generate → stream → pick a city → itinerary.
 
+**F3a done — `/trips/:tripId/planning`.** Built to the Stitch "Generating Your Trip Pitch" screen:
+volt icon, progress bar, and a fixed-height 4-row feed where older steps dissolve into a top mask
+rather than the list growing. `lib/planningSteps.js` mirrors the backend's `NODE_PROGRESS_MAP`;
+progress is **monotonic** because the graph loops back on budget pressure and fairness failure, and
+a bar that runs backwards reads as a bug. On `HITL_REQUIRED` the card is replaced by the Stitch
+"Curated Destinations" grid — no sidebar, no refresh, per Vignesh. Cards carry a match % normalised
+against the top candidate, `llm_reasoning` as the description, cost level, and nearest airport; the
+dataset has no imagery so each destination type gets its own gradient. Selecting posts
+`/confirm-city` and the *same* stream carries on. `TRIP_COMPLETE` shows the pitch; `ERROR` shows the
+backend message with a route back to the lobby. The lobby now redirects everyone into planning when
+the trip status moves, so non-leaders follow the run too.
+
+**F3b still open:** `/trips/:tripId/itinerary` — days, hotel, flights, fairness, and the refinement
+box off `GET /result`. Marked `TODO(F3b)` on the completion state.
+
+**Dropped by decision:** the mock's three footer tiles (Best Price / Squad Match / Dates) — two of
+the three cannot be known until the run is nearly over.
+
 ---
 
 ## Phase 5 — Guest invite flow
@@ -285,6 +303,39 @@ antd may be worth keeping — decide rather than drift.)
 
 ## Changelog
 
+- **2026-09-06** — **Destination photography.** Real photos of each destination, resolved on demand
+  and cached in Mongo's existing `api_cache` so one lookup serves every later squad — the 480
+  destinations are a fixed shared set, so the cache warms fast.
+  **Not Google Places**, despite its coverage: under the Maps Platform terms photos have no caching
+  exception at all (neither bytes nor photo name may be stored, and the name expires), so every
+  render would be billable and the shared-cache design is disallowed. Wikipedia is keyed to the
+  *named place*, so it returns the actual location rather than something that merely matches a
+  search term, and Commons content is CC-licensed for reuse — so it may be cached. Unsplash sits
+  behind it as a fallback (URL cached only, never the file, per their hotlinking rule).
+  **Measured coverage: 466/480 = 97%**, 100% for major cities, national parks, mountain towns and
+  state parks. The 14 misses are mostly invented region names in the dataset ("Long Island Wine
+  Country", "Tucson Foothills") and fall back to the type gradients. Two traps found while
+  measuring: Wikimedia 403s any User-Agent without a contactable identifier, and throttling reads
+  as "no image exists" unless you back off — an early run reported a false 51%.
+- **2026-09-05** — **Fixed "Called get_config outside of a runnable context".** Root cause was
+  **Python 3.10**: LangGraph needs 3.11+ to set the runnable-config contextvar in async code
+  (`_runnable.py` falls back to a bare `await` when `asyncio.create_task(..., context=)` is
+  unavailable), so `interrupt()` could not read its config. `langgraph/config.py` tries to raise a
+  clear "Python 3.11 or later required" and then catches its own error, which is why the message was
+  so opaque. The mandated `backend/venv` did not exist, so the server was running Anaconda's 3.10 —
+  created it on **Python 3.12.6**. Also stopped a failed run's `error` sticking to the trip document.
+- **2026-09-05** — **Trip deletion + destination details.** Leader-only
+  `DELETE /trips/{id}` which also clears the LangGraph checkpoints for that thread (otherwise a
+  paused graph outlives its trip); two-step delete confirm on the My Trips cards; `MyTrips` moved
+  onto React Query. `View Details` opens a destination panel — reasoning, best-for tags, vibe
+  breakdown and every nearby airport with drive times, using `best_for` / `vibe_tags` / `notes` now
+  carried through in the candidate payload. **Not an itinerary:** the graph pauses before flights,
+  hotels and activities are fetched, so building one per candidate would mean five full pipeline
+  runs per trip.
+- **2026-09-05** — **F3a done: the planning + HITL screen.** `pages/Planning.jsx`,
+  `molecules/PlanningFeed`, `molecules/DestinationCard`, `lib/planningSteps.js`, and the
+  `/trips/:tripId/planning` route; the lobby redirects into it once a run starts. Built from the
+  Stitch project's "Generating Your Trip Pitch" and "Curated Destinations" screens.
 - **2026-09-05** — **F20 done.** `useEventStream` hook: `withCredentials` for cookie auth, plus
   `closeOn` so a finished run doesn't get replayed by EventSource's automatic reconnect.
 - **2026-09-04** — **Lobby fixes from testing.** The creator was missing from the squad on trips

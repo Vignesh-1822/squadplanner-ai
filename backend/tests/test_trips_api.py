@@ -45,6 +45,12 @@ class FakeCollection:
     async def update_one(self, query, update):
         self.updated = {"query": query, "update": update}
 
+    async def delete_one(self, query):
+        self.deleted = query
+
+    async def delete_many(self, query):
+        self.deleted_many = query
+
 
 def _trip(**overrides):
     trip = {
@@ -253,3 +259,35 @@ async def test_remove_member_refuses_to_remove_the_leader(monkeypatch):
         )
 
     assert exc.value.status_code == 422
+
+
+@pytest.mark.asyncio
+async def test_delete_trip_is_leader_only(monkeypatch):
+    collection = FakeCollection(_trip())
+    monkeypatch.setattr(squad_api, "get_collection", lambda name: collection)
+
+    with pytest.raises(HTTPException) as exc:
+        await squad_api.delete_trip("trip-1", current_user={"email": "guest@example.com"})
+
+    assert exc.value.status_code == 403
+
+
+@pytest.mark.asyncio
+async def test_delete_trip_also_clears_graph_checkpoints(monkeypatch):
+    """A deleted trip must not leave a paused graph parked in the checkpointer forever."""
+    collection = FakeCollection(_trip())
+    touched = []
+
+    class FakeDb:
+        def __getitem__(self, name):
+            touched.append(name)
+            return collection
+
+    monkeypatch.setattr(squad_api, "get_collection", lambda name: collection)
+    monkeypatch.setattr(squad_api, "get_database", lambda: FakeDb())
+
+    result = await squad_api.delete_trip("trip-1", current_user={"email": "leader@example.com"})
+
+    assert result == {"trip_id": "trip-1", "deleted": True}
+    assert touched == ["trips", "checkpoints_aio", "checkpoint_writes_aio"]
+    assert collection.deleted_many == {"thread_id": "trip-1"}

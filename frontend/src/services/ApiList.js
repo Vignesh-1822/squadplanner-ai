@@ -19,6 +19,7 @@ export const submitPreferences = (id, data) =>
   apiFetch(`/trips/${id}/preferences`, { method: "POST", body: JSON.stringify(data) })
 export const generateTrip     = (id, data = {}) =>
   apiFetch(`/trips/${id}/generate`, { method: "POST", body: JSON.stringify(data) })
+export const deleteTrip       = (id)       => apiFetch(`/trips/${id}`, { method: "DELETE" })
 // The email sits in the path, so it must be encoded — "+" and friends are legal in addresses.
 export const removeMember     = (id, email) =>
   apiFetch(`/trips/${id}/members/${encodeURIComponent(email)}`, { method: "DELETE" })

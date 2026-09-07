@@ -14,7 +14,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel, Field
 
 from api.middleware.auth import get_current_user
-from db.client import get_collection
+from db.client import get_collection, get_database
 
 logger = logging.getLogger(__name__)
 
@@ -146,6 +146,27 @@ async def join_trip(trip_id: str, current_user: dict = Depends(get_current_user)
         {"$set": {"invited_members": members, "updated_at": _now()}},
     )
     return {"trip_id": trip_id, "status": "joined", "invited_members": _summarize_members(members)}
+
+
+@router.delete("/{trip_id}")
+async def delete_trip(trip_id: str, current_user: dict = Depends(get_current_user)):
+    """Leader-only: delete a trip outright.
+
+    Also drops the LangGraph checkpoints for this thread. They key on ``thread_id`` (the trip id)
+    in their own collections, so deleting only the trip document would leave a paused graph
+    parked in Mongo forever.
+    """
+    trip = await _get_trip_or_404(trip_id)
+    if current_user["email"] != trip.get("created_by"):
+        raise HTTPException(status_code=403, detail="Only the trip leader can delete this trip")
+
+    db = get_database()
+    await db["trips"].delete_one({"trip_id": trip_id})
+    for collection in ("checkpoints_aio", "checkpoint_writes_aio"):
+        await db[collection].delete_many({"thread_id": trip_id})
+
+    logger.info("Trip %s deleted by %s", trip_id, current_user["email"])
+    return {"trip_id": trip_id, "deleted": True}
 
 
 @router.delete("/{trip_id}/members/{email}")

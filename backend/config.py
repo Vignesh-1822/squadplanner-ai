@@ -39,6 +39,13 @@ class Settings(BaseSettings):
     google_client_id: str = Field(default="", validation_alias="GOOGLE_CLIENT_ID")
     smtp_user: str = Field(default="", validation_alias="SMTP_USER")
     smtp_password: str = Field(default="", validation_alias="SMTP_PASSWORD")
+    # Optional: only used as a fallback when Wikipedia has no image for a destination.
+    unsplash_access_key: str = Field(default="", validation_alias="UNSPLASH_ACCESS_KEY")
+    # Wikimedia rejects requests without a contactable User-Agent; a project URL satisfies it.
+    wikimedia_contact: str = Field(
+        default="https://github.com/Vignesh-1822/squadplanner-ai",
+        validation_alias="WIKIMEDIA_CONTACT",
+    )
     frontend_url: str = Field(default="http://localhost:5173", validation_alias="FRONTEND_URL")
 
 
