@@ -41,6 +41,12 @@ class Settings(BaseSettings):
     smtp_password: str = Field(default="", validation_alias="SMTP_PASSWORD")
     # Optional: only used as a fallback when Wikipedia has no image for a destination.
     unsplash_access_key: str = Field(default="", validation_alias="UNSPLASH_ACCESS_KEY")
+    # Absolute base for files this API serves itself (manually added destination photos).
+    # Must be the backend's public origin — the frontend embeds these URLs directly.
+    public_base_url: str = Field(
+        default="http://localhost:8000",
+        validation_alias="PUBLIC_BASE_URL",
+    )
     # Wikimedia rejects requests without a contactable User-Agent; a project URL satisfies it.
     wikimedia_contact: str = Field(
         default="https://github.com/Vignesh-1822/squadplanner-ai",

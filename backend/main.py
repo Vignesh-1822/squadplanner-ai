@@ -17,6 +17,16 @@ logger = logging.getLogger(__name__)
 
 app = FastAPI(title="SquadPlanner API", version="0.1.0")
 
+# Manually added destination photography, for the handful of places Wikipedia has no image
+# for. See data/destination_images/README.md.
+_DESTINATION_IMAGES = Path(__file__).parent / "data" / "destination_images"
+_DESTINATION_IMAGES.mkdir(parents=True, exist_ok=True)
+app.mount(
+    "/static/destination-images",
+    StaticFiles(directory=_DESTINATION_IMAGES),
+    name="destination-images",
+)
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:5173", "http://localhost:5174"],

@@ -15,8 +15,10 @@ once and every later squad that sees it gets the cached answer.
 """
 
 import asyncio
+import json
 import logging
 from datetime import datetime, timezone
+from pathlib import Path
 from typing import Any
 from urllib.parse import quote
 
@@ -56,8 +58,45 @@ _STATES = {
 _MISS_RECHECK_DAYS = 30
 
 
+# Manually sourced photos, for the handful of places Wikipedia has no image for.
+# See data/destination_images/README.md.
+_MANUAL_DIR = Path(__file__).resolve().parent.parent / "data" / "destination_images"
+_MANUAL_EXTENSIONS = (".jpg", ".jpeg", ".png", ".webp")
+_CREDITS_FILE = "_credits.json"
+
+
 def _cache_key(destination_id: str) -> str:
     return f"destination_image:{destination_id}"
+
+
+def _manual_credits() -> dict[str, Any]:
+    path = _MANUAL_DIR / _CREDITS_FILE
+    if not path.exists():
+        return {}
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except Exception as exc:  # noqa: BLE001
+        logger.warning("Could not read %s: %s", path, exc)
+        return {}
+
+
+def _manual_image(destination_id: str) -> dict[str, Any] | None:
+    """A photo dropped into data/destination_images/ wins over anything we could look up.
+
+    Named ``<destination id><ext>``, so adding one is a file copy with no config to edit.
+    """
+    for extension in _MANUAL_EXTENSIONS:
+        path = _MANUAL_DIR / f"{destination_id}{extension}"
+        if not path.exists():
+            continue
+        credit = _manual_credits().get(destination_id, {})
+        return {
+            "image_url": f"{settings.public_base_url.rstrip('/')}/static/destination-images/{path.name}",
+            "image_source": credit.get("source", "manual"),
+            "image_credit": credit.get("credit", ""),
+            "image_link": credit.get("link", ""),
+        }
+    return None
 
 
 def _wiki_titles(name: str, state: str) -> list[str]:
@@ -161,6 +200,12 @@ async def resolve_destination_image(
     use_cache: bool = True,
 ) -> dict[str, Any] | None:
     """Return image metadata for one destination, or None when nothing resolves."""
+    # Checked before the cache: a photo added by hand is an explicit override, and must win
+    # even when an automatic lookup already cached something for this destination.
+    manual = _manual_image(destination_id)
+    if manual:
+        return manual
+
     collection = get_collection("api_cache")
     key = _cache_key(destination_id)
 

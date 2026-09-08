@@ -303,6 +303,18 @@ antd may be worth keeping — decide rather than drift.)
 
 ## Changelog
 
+- **2026-09-07** — **Manual photo overrides for the 13 Wikipedia can't cover.** Drop a file named
+  `<destination id>.jpg` into `backend/data/destination_images/` and it wins over any automatic
+  lookup — no code or config to edit. Served statically by the backend; optional attribution via
+  `_credits.json`. `backend/data/destination_images/README.md` documents the process and carries
+  the generated list of what is still needed.
+  Verified coverage is **467/480 (97.3%)** after re-checking the misses individually — the earlier
+  count included one throttling false-negative (Skaneateles). Of the 13 remaining, none are
+  imaginary: 5 are real regions Wikipedia files under another title (Long Island AVA, Catalina
+  Foothills…), 4 have articles with no lead photo, and 4 have ambiguous titles. A search-based
+  fallback was tried and **rejected** — it returned *Pope John VI* for "St. John" and a
+  UFO-abduction article for "White Mountains". Confidently wrong beats nothing, so those keep
+  their gradients.
 - **2026-09-06** — **Destination photography.** Real photos of each destination, resolved on demand
   and cached in Mongo's existing `api_cache` so one lookup serves every later squad — the 480
   destinations are a fixed shared set, so the cache warms fast.
