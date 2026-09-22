@@ -34,6 +34,15 @@ const MyTrips = () => {
     onError: (error) => toast.error(error.message),
   })
 
+  // Send each card where the trip actually is. Routing everything through the lobby meant a
+  // trip already waiting on its city choice loaded the lobby, redirected, then showed a
+  // progress screen — three steps to reach a shortlist that already exists.
+  const routeFor = (trip) => {
+    if (isComplete(trip.status)) return `/trips/${trip.trip_id}/hub/overview`
+    if (isPlanning(trip.status)) return `/trips/${trip.trip_id}/planning`
+    return `/trips/${trip.trip_id}/lobby`
+  }
+
   const formatDateRange = (start, end) => {
     if (!start || !end) return "Dates TBD"
     const startDate = new Date(start)
@@ -322,14 +331,14 @@ const MyTrips = () => {
                     </div>
                   ) : (
                     <button
-                      onClick={() => navigate(`/trips/${trip.trip_id}/lobby`)}
+                      onClick={() => navigate(routeFor(trip))}
                       className={`${
                         isAssembling
                           ? "bg-primary text-slate-900 volt-glow hover:scale-105"
                           : "bg-slate-900 text-primary hover:scale-105"
                       } px-6 py-3 rounded-full font-black text-[10px] uppercase tracking-widest active:scale-95 transition-all cursor-pointer`}
                     >
-                      {isReady ? "Details" : isAssembling ? "Join Plan" : "Manage"}
+                      {isReady ? "Details" : isAssembling ? "Join Plan" : "Pick Destination"}
                     </button>
                   )}
                 </div>

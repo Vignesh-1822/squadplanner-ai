@@ -1,5 +1,8 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
+/* tailwind.config.js declares Inter as the sans stack and every mockup is drawn in it,
+   but only Geist was ever imported — so font-sans silently fell back to system-ui. */
+@import "@fontsource-variable/inter";
 @import "@fontsource-variable/geist";
 @tailwind base;
 @tailwind components;

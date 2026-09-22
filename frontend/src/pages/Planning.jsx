@@ -1,9 +1,9 @@
 import { useMemo, useState } from "react"
 import { useParams, useNavigate } from "react-router-dom"
-import { useMutation } from "@tanstack/react-query"
+import { useMutation, useQuery } from "@tanstack/react-query"
 import { Sparkles, AlertTriangle } from "lucide-react"
 import { toast } from "sonner"
-import { streamUrl, confirmCity } from "@/services/ApiList"
+import { streamUrl, confirmCity, getTripById } from "@/services/ApiList"
 import { useEventStream } from "@/hooks"
 import { planningProgress } from "@/lib/planningSteps"
 import PlanningFeed from "@/molecules/PlanningFeed"
@@ -24,6 +24,14 @@ const Planning = () => {
   const [detail, setDetail] = useState(null)
   const [completed, setCompleted] = useState(null)
   const [failure, setFailure] = useState(null)
+
+  // A trip already parked on the city choice has its shortlist stored, so it renders straight
+  // away instead of showing a progress screen while SSE replays what we could already read.
+  const { data: trip } = useQuery({
+    queryKey: ["trip", tripId],
+    queryFn: () => getTripById(tripId),
+    enabled: !!tripId,
+  })
 
   const url = useMemo(() => (tripId ? streamUrl(tripId) : null), [tripId])
 
@@ -54,6 +62,9 @@ const Planning = () => {
 
   const nodeEvents = events.filter((event) => event.event_type === "NODE_PROGRESS")
   const { furthest, percent } = planningProgress(nodeEvents)
+
+  // The stream's HITL_REQUIRED wins once it lands; until then the stored shortlist stands in.
+  const shortlist = candidates ?? (trip?.candidate_destinations?.length ? trip.candidate_destinations : null)
 
   if (failure) {
     return (
@@ -86,15 +97,21 @@ const Planning = () => {
           </div>
           <p className="text-[11px] font-black uppercase tracking-[0.3em] text-slate-400 mb-3">Your trip is ready</p>
           <h1 className="text-4xl font-black text-slate-900 tracking-tight mb-5">{destination}</h1>
-          <p className="text-slate-600 font-medium leading-relaxed">{completed.trip_pitch}</p>
-          {/* TODO(F3b): route to /trips/:tripId/itinerary for days, hotel, flights and refinements. */}
+          <p className="text-slate-600 font-medium leading-relaxed mb-7">{completed.trip_pitch}</p>
+          <button
+            type="button"
+            onClick={() => navigate(`/trips/${tripId}/hub/overview`)}
+            className="bg-slate-900 text-primary font-black text-xs uppercase tracking-widest px-7 py-3.5 rounded-xl hover:scale-[1.02] active:scale-95 transition-all cursor-pointer"
+          >
+            View the full trip
+          </button>
         </div>
       </main>
     )
   }
 
-  if (candidates) {
-    const percents = matchPercents(candidates)
+  if (shortlist) {
+    const percents = matchPercents(shortlist)
     return (
       <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-10 lg:px-12">
         <div className="mb-8">
@@ -106,7 +123,7 @@ const Planning = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {candidates.map((destination, index) => (
+          {shortlist.map((destination, index) => (
             <DestinationCard
               key={destination.id || index}
               destination={destination}
@@ -121,7 +138,7 @@ const Planning = () => {
         {detail && (
           <DestinationDetail
             destination={detail}
-            matchPercent={percents[candidates.indexOf(detail)]}
+            matchPercent={percents[shortlist.indexOf(detail)]}
             onSelect={pickCity}
             onClose={() => setDetail(null)}
             disabled={isConfirming}

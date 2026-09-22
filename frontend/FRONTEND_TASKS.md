@@ -23,8 +23,8 @@ When this doc and the contract disagree, the contract wins.
 | **1** | Correct the preference payload shape | F5, F6, F8, F7 | **DONE** |
 | **2** | Wire preferences to the backend | F1 | **DONE** |
 | **3** | Lobby: readiness + leader-gated generation | F19, F2, F15 | **DONE** |
-| **4** | Planning, HITL and itinerary screens | F20 ✓, F3a ✓, F21, F3b | **F3b next** |
-| **5** | Guest invite flow | F4 | TODO |
+| **4** | Planning, HITL and itinerary screens | F20 ✓, F3a ✓, F3b ✓, F21 | **DONE** (F21 pending Phase 0) |
+| **5** | Guest invite flow | F4 | TODO ← **next** |
 | **6** | Architecture debt (carried along, not deferred) | F9, F10, F11, F12 | TODO |
 | **7** | Placeholders and papercuts | F13–F18 | TODO |
 
@@ -216,8 +216,25 @@ dataset has no imagery so each destination type gets its own gradient. Selecting
 backend message with a route back to the lobby. The lobby now redirects everyone into planning when
 the trip status moves, so non-leaders follow the run too.
 
-**F3b still open:** `/trips/:tripId/itinerary` — days, hotel, flights, fairness, and the refinement
-box off `GET /result`. Marked `TODO(F3b)` on the completion state.
+**F3b done — the trip hub.** Built from the Stitch "Trip Hub Overview" and "Itinerary View
+(Integrated Bento Timeline)" screens. `TripHubLayout` fetches `GET /result` once and shares it with
+every tab through the router outlet, so tab switches re-render rather than refetch. Overview: trip
+pitch, squad with per-member flights, hotel, quick stats, Trip Vibe, and the real
+`constraint_satisfaction` sentences. Itinerary: day pills, day banner, the schedule woven with the
+route legs, a stylised route map, day summary, and the refinement box.
+
+**Deliberate departures from the mock**, all forced by what the payload actually holds:
+- *No per-activity prose or "Why SquadPicked" quotes* — the payload has neither; cards show
+  rating, address and tags instead of invented copy.
+- *`$`/`$$`/`$$$` rather than amounts* — activities carry `price_level` (0–4), not a price.
+- *Ranked bars, not a radar, for Trip Vibe* — the reader's job is comparing magnitudes, which a
+  radar does poorly (misleading area, shape depends on axis order). On a dark card because the
+  brand volt measures **1.21** contrast on white and **14.77** on slate-900; every bar is
+  direct-labelled so the value never depends on reading the fill.
+- *A stylised route sketch, not a real map* — the mock itself draws pins and a dashed connector
+  rather than tiles, so this keeps a mapping library out of the bundle.
+- *Flights / Lodging / Budget tabs are drawn but inert* — hiding them would misrepresent the page.
+- *Squad Upvotes, Est. Steps, Savings Goal and Next Up are omitted* — features that don't exist.
 
 **Dropped by decision:** the mock's three footer tiles (Best Price / Squad Match / Dates) — two of
 the three cannot be known until the run is nearly over.
@@ -303,6 +320,58 @@ antd may be worth keeping — decide rather than drift.)
 
 ## Changelog
 
+- **2026-09-11** — **Quick Stats rebuilt around the individual.** Every figure on the card was a
+  group aggregate — "Avg / Person" is a number nobody pays, and the combined-budget bar mixes a
+  $5,000 budget with a $1,355 one into a meaningless denominator. It now leads with *your* cost
+  against *your* budget (matched by `member_id`, derived from the email local part the same way
+  `squad.py` does it), falling back to the group view for anyone not on the trip.
+  **Removed a misleading metric:** the pink tile rendered `mean(fairness_scores) * 100` as
+  "Cost Fairness 17%". Those scores are budget *utilisation* per member, where lower is better —
+  so the label inverted the polarity, and averaging destroyed the only thing fairness measures
+  (the gap between members: three people at 60% is fair, one at 10% and one at 90% averages the
+  same and is not). Replaced with the squad **range** (`8–29% of budget`) plus the backend's own
+  `fairness_passed` verdict. `averageScore()` deleted so nothing reaches for it again.
+  *Latent, not visible — every current trip lands under budget, so that branch never rendered.*
+- **2026-09-08** — **Hub revisions to match the mockups.** Trip Vibe is now the design's radar
+  *plus* ranked bars — the radar carries the shape, the bars carry the numbers, since radar area
+  cannot be read accurately; both are labelled, which is what the brand volt's 1.21 contrast on a
+  white card requires. Squad panel rebuilt to the design (rounded-square avatar, confirmation
+  badge, name + role, right-hand pill — carrying flight cost, since every member of a completed
+  trip is confirmed by definition). Overview is now the design's bento grid and the long pitch
+  paragraph is gone.
+  **Font bug found:** `tailwind.config.js` declares `sans: ["Inter", ...]` and every mockup is
+  drawn in Inter, but only Geist was ever imported — so `font-sans` silently fell back to
+  `system-ui`. Inter is now imported, which is why the app suddenly matches the designs.
+- **2026-09-08** — **F3b done: the trip hub.** New `TripHubLayout` template + `pages/hub/{Overview,
+  Itinerary}`, organisms (`TripHero`, `TripTabs`, `DayTimeline`, `DayRouteMap`, `DaySummary`,
+  `SquadPanel`, `TripStats`, `TripVibe`, `RefinementBox`), molecules (`DayPills`, `TimelineItem`,
+  `TransitConnector`, `StatTile`), `lib/itinerary.js` for the derived numbers and `useTripResult`.
+  Backend: `GET /result` now returns `trip_name` and a `destination_image` resolved by name, so
+  trips completed before photography existed still get a hero banner.
+  Two bugs caught by checking the helpers against a real completed trip rather than assuming:
+  route legs connect consecutive *activities*, not schedule rows (indexing by row attributed a
+  20-minute walk to breakfast), and `constraint_satisfaction` is
+  `{passed, satisfied[], unmet[], warnings[]}`, not a map of booleans.
+- **2026-09-08** — **Image cache TTL bug + the image-finder script.** The destination image cache
+  was in the shared `api_cache`, which carries a collection-wide TTL index (`cached_at`, 86400s)
+  for the Places/SerpAPI caches — so every resolved photo was silently deleted after 24 hours and
+  all 480 were re-resolved daily. Moved to a dedicated `destination_images` collection with no
+  TTL; re-warmed to 467/480. Added `scripts/find_missing_destination_images.py` for the remaining
+  13: Claude with server-side web search, `allowed_domains` limited to reuse-permitting sources,
+  every URL verified as a real image before it is kept, then downloaded (Unsplash excepted — their
+  guidelines require hotlinking, so those are stored as URLs, which the manual override now
+  supports). **Blocked on Anthropic API quota until 2026-10-01** — the pipeline is verified except
+  the model call itself.
+- **2026-09-08** — **Photos on existing trips, and no more loading screen for a shortlist that
+  already exists.** Candidates are frozen into the LangGraph checkpoint at scoring time, so trips
+  scored before photography existed had none — and backfilling the stored copy does not stick,
+  because the checkpoint is rewritten on each resume. Fixed by enriching on the way *out*
+  (`utils/candidates.py`): dataset fields are refilled from `destinations.json` by id and images
+  attached from the Mongo cache, so old and new trips take the same path at no real cost.
+  `GET /trips/{id}` now also returns `candidate_destinations` while a trip is parked on the city
+  choice, so the planning page renders the shortlist immediately rather than showing progress while
+  SSE replays it, and My Trips routes cards straight to `/planning` instead of bouncing through
+  the lobby.
 - **2026-09-07** — **Manual photo overrides for the 13 Wikipedia can't cover.** Drop a file named
   `<destination id>.jpg` into `backend/data/destination_images/` and it wins over any automatic
   lookup — no code or config to edit. Served statically by the backend; optional attribution via
