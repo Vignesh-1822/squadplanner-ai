@@ -24,8 +24,8 @@ When this doc and the contract disagree, the contract wins.
 | **2** | Wire preferences to the backend | F1 | **DONE** |
 | **3** | Lobby: readiness + leader-gated generation | F19, F2, F15 | **DONE** |
 | **4** | Planning, HITL and itinerary screens | F20 ✓, F3a ✓, F3b ✓, F21 | **DONE** (F21 pending Phase 0) |
-| **5** | Guest invite flow | F4 | TODO ← **next** |
-| **6** | Architecture debt (carried along, not deferred) | F9, F10, F11, F12 | TODO |
+| **5** | Guest invite flow | F4 | **DONE** |
+| **6** | Architecture debt (carried along, not deferred) | F9, F10, F11, F12 | TODO ← **next** |
 | **7** | Placeholders and papercuts | F13–F18 | TODO |
 
 Phases 2→5 follow the user's path through the app, so each one is demoable on its own.
@@ -243,7 +243,7 @@ the three cannot be known until the run is nearly over.
 
 ## Phase 5 — Guest invite flow
 
-### F4 · `/join/:code` doesn't exist — `TODO`
+### F4 · `/join/:code` doesn't exist — `DONE`
 `TripLobby.jsx:43` and `:179` copy `${origin}/join/${invite_code}`. No route, no page — every
 invitee lands on a blank screen.
 
@@ -252,6 +252,15 @@ the route, and a post-auth redirect in `Auth.jsx` — unauthenticated guests sta
 `sessionStorage.pendingInvite`, sign in, and resume.
 
 **Done when:** an invitee opens the emailed link, signs in, and lands in the lobby as `joined`.
+
+**Done.** `pages/JoinTrip.jsx` at `/join/:inviteCode`, deliberately outside `ProtectedRoute` since
+invitees arrive signed out. Four branches: bad code, signed out (sign-in CTA), signed in and not a
+member (join → preferences), already a member (→ lobby). The code is stashed in `sessionStorage`
+on arrival and consumed by `Auth.jsx` after **both** the email and Google paths — both previously
+hardcoded `navigate("/")`, which would have dropped the invite.
+
+**Known gap (backend):** `POST /join` is permissive — any authenticated user holding the link
+joins, with no check against `invited_emails`. An invite link is effectively a bearer token.
 
 ---
 
@@ -320,6 +329,9 @@ antd may be worth keeping — decide rather than drift.)
 
 ## Changelog
 
+- **2026-09-21** — **F4 done: the guest invite flow.** `/join/:inviteCode` is public, previews the
+  trip before you commit to it, and survives the round trip through login. Phase 5 complete — the
+  multi-user premise now works end to end.
 - **2026-09-11** — **Quick Stats rebuilt around the individual.** Every figure on the card was a
   group aggregate — "Avg / Person" is a number nobody pays, and the combined-budget bar mixes a
   $5,000 budget with a $1,355 one into a meaningless denominator. It now leads with *your* cost

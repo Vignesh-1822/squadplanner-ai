@@ -12,6 +12,7 @@ import TripHubLayout from "@/templates/TripHubLayout"
 import HubOverview from "@/pages/hub/Overview"
 import HubItinerary from "@/pages/hub/Itinerary"
 import MyTrips from "@/pages/MyTrips"
+import JoinTrip from "@/pages/JoinTrip"
 import ProtectedRoute from "@/atoms/ProtectedRoute"
 
 const router = createBrowserRouter([
@@ -29,6 +30,7 @@ const router = createBrowserRouter([
   {
     element: <TripFlowLayout />,
     children: [
+      { path: "/join/:inviteCode",   element: <JoinTrip /> },
       { path: "/trips/new",          element: <ProtectedRoute><NewTrip /></ProtectedRoute> },
       { path: "/trips/invites-sent", element: <ProtectedRoute><InvitesSent /></ProtectedRoute> },
       { path: "/trips/:tripId/preferences", element: <ProtectedRoute><TripPreferences /></ProtectedRoute> },
