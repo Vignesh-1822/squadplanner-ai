@@ -32,7 +32,7 @@ const router = createBrowserRouter([
     children: [
       { path: "/join/:inviteCode",   element: <JoinTrip /> },
       { path: "/trips/new",          element: <ProtectedRoute><NewTrip /></ProtectedRoute> },
-      { path: "/trips/invites-sent", element: <ProtectedRoute><InvitesSent /></ProtectedRoute> },
+      { path: "/trips/:tripId/invites-sent", element: <ProtectedRoute><InvitesSent /></ProtectedRoute> },
       { path: "/trips/:tripId/preferences", element: <ProtectedRoute><TripPreferences /></ProtectedRoute> },
       { path: "/trips/:tripId/lobby", element: <ProtectedRoute><TripLobby /></ProtectedRoute> },
       { path: "/trips/:tripId/planning", element: <ProtectedRoute><Planning /></ProtectedRoute> },

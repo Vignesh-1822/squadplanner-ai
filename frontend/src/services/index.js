@@ -15,7 +15,9 @@ export async function apiFetch(endpoint, options = {}) {
     try {
       const body = await res.json()
       if (body.detail) detail = body.detail
-    } catch {}
+    } catch {
+      // Body was not JSON — keep the status line we already built.
+    }
     throw new Error(detail)
   }
 

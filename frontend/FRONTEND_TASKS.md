@@ -25,8 +25,8 @@ When this doc and the contract disagree, the contract wins.
 | **3** | Lobby: readiness + leader-gated generation | F19, F2, F15 | **DONE** |
 | **4** | Planning, HITL and itinerary screens | F20 ✓, F3a ✓, F3b ✓, F21 | **DONE** (F21 pending Phase 0) |
 | **5** | Guest invite flow | F4 | **DONE** |
-| **6** | Architecture debt (carried along, not deferred) | F9, F10, F11, F12 | TODO ← **next** |
-| **7** | Placeholders and papercuts | F13–F18 | TODO |
+| **6** | Architecture debt (carried along, not deferred) | F9, F10, F11, F12 | **DONE** |
+| **7** | Placeholders and papercuts | F13–F18 | TODO ← **next** |
 
 Phases 2→5 follow the user's path through the app, so each one is demoable on its own.
 Phase 6 items are picked up inside whichever phase touches those files.
@@ -266,23 +266,23 @@ joins, with no check against `invited_emails`. An invite link is effectively a b
 
 ## Phase 6 — Architecture debt
 
-### F9 · `sessionStorage` carries trip identity — `TODO` · *mostly done*
+### F9 · `sessionStorage` carries trip identity — `DONE`
 Preferences and the lobby now read `:tripId` from the route; the bare `/trips/lobby` route is gone
 since every caller passes an id. Only `NewTrip` → `InvitesSent` still hands off via sessionStorage.
 `NewTrip.jsx:35`, `InvitesSent.jsx:13`, `TripPreferences.jsx:53`, `TripLobby.jsx:17`. Dies in a new
 tab and makes URLs unshareable — fatal for an invite-based app. `/trips/:tripId/lobby` already
 exists; `/trips/preferences` needs a `:tripId` too. Note `pendingInvite` (F4) is a legitimate use.
 
-### F10 · React Query installed, provided, never used — `TODO` · *mostly done*
+### F10 · React Query installed, provided, never used — `DONE`
 `TripPreferences` (mutation) and `TripLobby` (query + two mutations) are converted, including the
 state-keyed `refetchInterval`. `MyTrips`, `InvitesSent` and `authStore` still hand-roll
 `useEffect` + loading flags.
 
-### F11 · Two competing user stores — `TODO`
+### F11 · Two competing user stores — `DONE`
 `UserProvider` is mounted in `main.jsx` and never consumed; `authStore` is real. Delete it, plus
 empty `store/index.js` and `components/templates/index.js`.
 
-### F12 · `RootLayout` and `SideMenu` are orphaned — `TODO`
+### F12 · `RootLayout` and `SideMenu` are orphaned — `DONE`
 No route mounts them. `SideMenu` hardcodes `"Vignesh"` / `"@vignesh"`. Adopt or delete.
 
 ---
@@ -329,6 +329,21 @@ antd may be worth keeping — decide rather than drift.)
 
 ## Changelog
 
+- **2026-09-21** — **Phase 6 done: architecture debt cleared.**
+  **F9** — the last sessionStorage handoff is gone; `NewTrip` navigates to
+  `/trips/:tripId/invites-sent` and the id travels in the URL. The only remaining use is
+  `pendingInvite` in the join flow, which is a legitimate one (it must survive a redirect
+  through login).
+  **F10** — `InvitesSent` converted to React Query, with the countdown extracted into a
+  `useCountdown` hook. No hand-rolled fetching left in the app.
+  **F11** — deleted `UserProvider` (mounted in `main.jsx`, never consumed) and the two empty
+  index files.
+  **F12** — deleted `RootLayout`, `PageLayout`, `SideMenu` and `components/ui/sidebar.jsx`. No
+  route mounted any of them and the chain was entirely self-contained; `sidebar.jsx` is
+  shadcn-generated and can be re-added with `npx shadcn add sidebar` if a sidebar is ever wanted.
+  Also cleared every remaining lint error — unused `React` namespace imports in four shadcn `ui`
+  files (unnecessary under the new JSX transform), an unused icon import, and an empty catch.
+  **Lint is now fully green (0 errors)**, so a new error is visible rather than lost in noise.
 - **2026-09-21** — **F4 done: the guest invite flow.** `/join/:inviteCode` is public, previews the
   trip before you commit to it, and survives the round trip through login. Phase 5 complete — the
   multi-user premise now works end to end.
