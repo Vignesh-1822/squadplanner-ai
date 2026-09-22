@@ -8,6 +8,7 @@ from typing import Any, AsyncGenerator
 from langgraph.types import Command
 
 from db.client import get_collection
+from utils.candidates import enrich_candidates
 
 NODE_PROGRESS_MAP = {
     "parse_input": "Validating trip details...",
@@ -105,6 +106,9 @@ async def _emit_and_wait_for_city_confirmation(
     trips = get_collection("trips")
     snapshot = await graph.aget_state(config)
     candidates = snapshot.values.get("candidate_destinations", []) if snapshot else []
+    # Trips scored before photography existed still get pictures — the shortlist is enriched on
+    # the way out rather than at generation time, so old checkpoints are covered too.
+    await enrich_candidates(candidates)
 
     await trips.update_one(
         {"trip_id": trip_id},

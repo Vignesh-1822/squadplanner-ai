@@ -95,6 +95,7 @@ async def test_get_trip_returns_lobby_shape(monkeypatch):
         "total_count": 2,
         "all_ready": False,
         "can_generate": False,
+        "candidate_destinations": [],
     }
 
 

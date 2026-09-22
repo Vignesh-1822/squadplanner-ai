@@ -13,6 +13,7 @@ from pydantic import BaseModel, Field
 
 from db.client import get_collection
 from services.email_service import send_trip_invite
+from utils.candidates import destination_hero, enrich_candidates
 from utils.streaming import stream_graph_events
 
 logger = logging.getLogger(__name__)
@@ -58,6 +59,9 @@ class TripDetailsResponse(BaseModel):
     total_count: int
     all_ready: bool
     can_generate: bool
+    # Populated only while the graph is paused for the city choice, so the UI can render the
+    # shortlist immediately instead of showing a progress screen while SSE replays it.
+    candidate_destinations: list[dict] = Field(default_factory=list)
 
 
 def _initial_trip_state(trip_id: str, trip_name: str) -> dict:
@@ -282,6 +286,10 @@ async def get_trip(trip_id: str):
     # already implies the leader is ready, so no separate leader check is needed.
     can_generate = all_ready and trip.get("status") in (None, "pending", "collecting")
 
+    candidates: list[dict] = []
+    if trip.get("status") == "city_selection":
+        candidates = await enrich_candidates(trip.get("candidate_destinations") or [])
+
     created_at = trip["created_at"]
     expires_at = _parse_datetime(created_at) + timedelta(hours=24)
     return {
@@ -296,6 +304,7 @@ async def get_trip(trip_id: str):
         "total_count": total_count,
         "all_ready": all_ready,
         "can_generate": can_generate,
+        "candidate_destinations": candidates,
     }
 
 
@@ -314,10 +323,14 @@ async def get_trip_result(trip_id: str):
         raise HTTPException(status_code=409, detail="Trip has not completed yet")
 
     final_state = trip.get("final_state") or {}
+    itinerary = trip.get("itinerary", {})
     return {
         "trip_id": trip_id,
+        "trip_name": trip.get("trip_name", ""),
+        # The hub banner needs a photo of where the squad is going; trips store only the name.
+        "destination_image": await destination_hero(itinerary.get("selected_destination")),
         "trip_pitch": trip.get("trip_pitch") or final_state.get("trip_pitch", ""),
-        "itinerary": trip.get("itinerary", {}),
+        "itinerary": itinerary,
         "preference_constraints": trip.get("preference_constraints", {}),
         "constraint_satisfaction": trip.get("constraint_satisfaction", {}),
         "decision_log": trip.get("decision_log", []),

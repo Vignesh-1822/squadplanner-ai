@@ -29,6 +29,12 @@ from db.client import get_collection
 
 logger = logging.getLogger(__name__)
 
+# Deliberately NOT the shared ``api_cache`` collection: that carries a collection-wide TTL
+# index (cached_at, 86400s) for the Places and SerpAPI caches, which must expire. A resolved
+# destination photo is stable derived data — expiring it daily would re-resolve all 480 every
+# day, for nothing, and get us rate-limited by Wikimedia.
+_COLLECTION = "destination_images"
+
 _WIKI_SUMMARY = "https://en.wikipedia.org/api/rest_v1/page/summary/{title}"
 _UNSPLASH_SEARCH = "https://api.unsplash.com/search/photos"
 
@@ -81,17 +87,28 @@ def _manual_credits() -> dict[str, Any]:
 
 
 def _manual_image(destination_id: str) -> dict[str, Any] | None:
-    """A photo dropped into data/destination_images/ wins over anything we could look up.
+    """A photo added by hand wins over anything we could look up.
 
-    Named ``<destination id><ext>``, so adding one is a file copy with no config to edit.
+    Two forms. A file dropped in as ``<destination id><ext>`` is served by this API — a copy
+    with no config to edit, and the normal case. A ``url`` in ``_credits.json`` is honoured
+    instead for sources that forbid rehosting: Unsplash's guidelines require their CDN to be
+    hotlinked, so those images stay remote.
     """
+    credit = _manual_credits().get(destination_id, {})
+
     for extension in _MANUAL_EXTENSIONS:
         path = _MANUAL_DIR / f"{destination_id}{extension}"
-        if not path.exists():
-            continue
-        credit = _manual_credits().get(destination_id, {})
+        if path.exists():
+            return {
+                "image_url": f"{settings.public_base_url.rstrip('/')}/static/destination-images/{path.name}",
+                "image_source": credit.get("source", "manual"),
+                "image_credit": credit.get("credit", ""),
+                "image_link": credit.get("link", ""),
+            }
+
+    if credit.get("url"):
         return {
-            "image_url": f"{settings.public_base_url.rstrip('/')}/static/destination-images/{path.name}",
+            "image_url": credit["url"],
             "image_source": credit.get("source", "manual"),
             "image_credit": credit.get("credit", ""),
             "image_link": credit.get("link", ""),
@@ -206,7 +223,7 @@ async def resolve_destination_image(
     if manual:
         return manual
 
-    collection = get_collection("api_cache")
+    collection = get_collection(_COLLECTION)
     key = _cache_key(destination_id)
 
     if use_cache:

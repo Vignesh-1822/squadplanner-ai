@@ -23,6 +23,25 @@ That is the whole process — no code or config to edit. The backend serves the 
 `/static/destination-images/` and a file here **overrides** any automatic lookup, so you can
 also use it to replace a Wikipedia photo you dislike.
 
+## Or let the script find them
+
+`scripts/find_missing_destination_images.py` asks Claude, with web search restricted to sources
+that permit reuse, to find a photo for each place below — then verifies every URL actually
+serves an image before keeping it, downloads it here, and records the credit.
+
+```bash
+./venv/bin/python scripts/find_missing_destination_images.py --dry-run   # look, write nothing
+./venv/bin/python scripts/find_missing_destination_images.py             # download + record
+```
+
+Review what it saved and delete anything wrong before committing — it is a lookup, not an
+oracle. Requires Anthropic API credit.
+
+Two things it handles that a plain search cannot: a bare search for these names is confidently
+wrong ("St. John" returns Pope John VI), and Wikimedia URLs embed an MD5-derived `/x/xx/` path
+the model cannot know, so its guesses 404 — every Wikimedia answer is rewritten through
+`Special:FilePath`, which resolves from the filename alone.
+
 ## Crediting (optional)
 
 If a source requires attribution, add an entry to `_credits.json` in this folder:
