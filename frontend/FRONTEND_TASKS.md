@@ -300,9 +300,17 @@ no error boundary.
 ### F15 · Hardcoded readiness — `DONE` · *closed by F2*
 `TripLobby.jsx:68` sets `readiness = 60` while the real counts sit unused two lines above.
 
-### F16 · Registration errors always show the wrong message — `TODO`
+### F16 · Registration errors always show the wrong message — `DONE`
 `Auth.jsx:33` checks `err.message?.includes("409")`, but `apiFetch` throws `body.detail` and never
 the status code — duplicate signups read "Invalid email or password."
+
+**Done.** `apiFetch` now attaches the HTTP status to the thrown error, so callers can branch on it
+without string-matching a message written for humans, and `Auth.jsx` surfaces the backend's
+`detail` verbatim instead of flattening every failure to one guess. Verified live: register returns
+`409 {"detail":"Email already registered"}` and login `401 {"detail":"Invalid email or password"}`.
+
+Also fixed in passing: `apiFetch` assumed `detail` is always a string, but the refinements endpoint
+returns `{message, code}`, which would have rendered as "[object Object]".
 
 ### F17 · Two design systems for one component — `TODO`
 antd + a full `ConfigProvider` override for a single `RangePicker`, while unused shadcn
@@ -329,6 +337,9 @@ antd may be worth keeping — decide rather than drift.)
 
 ## Changelog
 
+- **2026-09-21** — **F16 done: auth errors tell the truth.** Registering with an existing email
+  said "Invalid email or password", sending users to reset a password for an account they were
+  trying to create.
 - **2026-09-21** — **Phase 6 done: architecture debt cleared.**
   **F9** — the last sessionStorage handoff is gone; `NewTrip` navigates to
   `/trips/:tripId/invites-sent` and the id travels in the URL. The only remaining use is

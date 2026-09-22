@@ -37,7 +37,9 @@ export default function Auth() {
       setUser(data)
       afterAuth()
     } catch (err) {
-      setError(err.message?.includes("409") ? "Email already registered." : "Invalid email or password.")
+      // The backend writes these for users — "Email already registered", "Invalid email or
+      // password" — so they are shown as-is rather than flattened to one guess.
+      setError(err.message || "Something went wrong. Please try again.")
     } finally {
       setIsLoading(false)
     }
