@@ -196,8 +196,50 @@ async def resolve_activity_image(
     return found
 
 
+async def attach_item_images(days: list[dict], destination: str = "") -> list[dict]:
+    """Resolve photography for every stop across a trip's days.
+
+    Works off the unified `items` list, so meals and activities take the same path — a meal stop
+    carries a real `place_id` from the restaurant lookup, which is a far better cache key than
+    the venue name it used to be matched on. The same venue repeats across days (one hotel
+    breakfast every morning), so lookups are deduplicated before anything is fetched.
+    """
+    wanted: dict[str, tuple[str, str]] = {}
+    for day in days or []:
+        for item in day.get("items") or []:
+            place = item.get("place") or {}
+            name = place.get("name") or item.get("label")
+            if not name:
+                continue
+            key = str(place.get("place_id") or "") or f"name:{name.lower()}"
+            wanted.setdefault(key, (str(place.get("place_id") or ""), name))
+
+    if not wanted:
+        return days
+
+    keys = list(wanted)
+    results = await asyncio.gather(
+        *(resolve_activity_image(wanted[k][0], wanted[k][1], destination) for k in keys),
+        return_exceptions=True,
+    )
+    by_key = {k: r for k, r in zip(keys, results) if isinstance(r, dict)}
+
+    for day in days or []:
+        for item in day.get("items") or []:
+            place = item.get("place") or {}
+            name = place.get("name") or item.get("label")
+            if not name:
+                continue
+            key = str(place.get("place_id") or "") or f"name:{name.lower()}"
+            found = by_key.get(key)
+            if found:
+                item["image"] = found
+
+    return days
+
+
 async def attach_activity_images(days: list[dict], destination: str = "") -> list[dict]:
-    """Resolve photography for every activity across a trip's days, concurrently."""
+    """Legacy path for trips with no `items` (generated before route_stops existed)."""
     activities = [
         activity
         for day in days or []
@@ -221,12 +263,7 @@ async def attach_activity_images(days: list[dict], destination: str = "") -> lis
 
 
 async def attach_meal_images(days: list[dict], destination: str = "") -> list[dict]:
-    """Resolve photography for the meal venues named in each day's `meals` strings.
-
-    Meals are stored as prose ("Dinner at Tartine Manufactory") rather than as activities, so
-    there is no place_id to key on. Venues repeat heavily across a trip — the same hotel
-    breakfast every morning — so the set is deduplicated before anything is looked up.
-    """
+    """Legacy path: meals as prose, with no place_id to key on."""
     wanted: dict[str, str] = {}
     for day in days or []:
         for meal in day.get("meals") or []:
@@ -242,11 +279,7 @@ async def attach_meal_images(days: list[dict], destination: str = "") -> list[di
         *(resolve_activity_image("", venue, destination) for venue in venues),
         return_exceptions=True,
     )
-    by_venue = {
-        venue: result
-        for venue, result in zip(venues, results)
-        if isinstance(result, dict)
-    }
+    by_venue = {v: r for v, r in zip(venues, results) if isinstance(r, dict)}
 
     for day in days or []:
         images = {}

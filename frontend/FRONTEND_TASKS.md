@@ -337,6 +337,21 @@ antd may be worth keeping — decide rather than drift.)
 
 ## Changelog
 
+- **2026-09-23** — **One `items` array per day; name matching gone.** A day was three parallel
+  lists — `schedule` (the clock), `activities` (place records), `meals` (prose) — with no key
+  joining them, so the UI re-joined them by matching names. That is what let a meal note reading
+  "Lunch at California Academy of Sciences" claim the museum.
+  `route_stops` was already the resolved ordered join, carrying `place_id`, coordinates and
+  address for activities, meals and the hotel alike — including places resolved by text lookup
+  that never reached `activities`. `utils/itinerary_items.py` merges the richer fields
+  (category, rating, tags) onto it and attaches each route leg to the stop it departs from.
+  Derived on read, so nothing needs migrating.
+  **Every item carries place data — 233/233 across 35 days.** Meals are now real named
+  restaurants with coordinates ("Doppio Coffee & Brunch") rather than the word "Breakfast", so
+  they get map pins, photos and directions like anything else. Photography moved onto items, so
+  meals key on a real `place_id` instead of a venue name.
+  Trips generated before `route_stops` existed (23 of 58 days) have no `items` and fall through
+  to the old matcher unchanged.
 - **2026-09-21** — **F16 done: auth errors tell the truth.** Registering with an existing email
   said "Invalid email or password", sending users to reset a password for an account they were
   trying to create.

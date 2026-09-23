@@ -13,8 +13,13 @@ from pydantic import BaseModel, Field
 
 from db.client import get_collection
 from services.email_service import send_trip_invite
-from tools.activity_images import attach_activity_images, attach_meal_images
+from tools.activity_images import (
+    attach_activity_images,
+    attach_item_images,
+    attach_meal_images,
+)
 from utils.candidates import destination_hero, enrich_candidates
+from utils.itinerary_items import attach_day_items
 from utils.streaming import stream_graph_events
 
 logger = logging.getLogger(__name__)
@@ -326,14 +331,23 @@ async def get_trip_result(trip_id: str):
     final_state = trip.get("final_state") or {}
     itinerary = trip.get("itinerary", {})
 
+    days = itinerary.get("days") or []
+    destination = itinerary.get("selected_destination", "")
+
+    # Collapse each day's three parallel lists into one ordered list with place data inlined,
+    # so nothing downstream has to re-join them by matching names.
+    attach_day_items(days)
+
     # Venue photography, resolved once per place_id and cached — so a busy destination costs
     # nothing after the first trip that visits it. Best-effort: cards fall back to their
     # category wash rather than failing the page.
     try:
-        days = itinerary.get("days") or []
-        destination = itinerary.get("selected_destination", "")
-        await attach_activity_images(days, destination)
-        await attach_meal_images(days, destination)
+        if any(day.get("items") for day in days):
+            await attach_item_images(days, destination)
+        else:
+            # Trips generated before route_stops existed have no items to hang photos on.
+            await attach_activity_images(days, destination)
+            await attach_meal_images(days, destination)
     except Exception as exc:  # noqa: BLE001
         logger.warning("Activity image lookup failed for %s: %s", trip_id, exc)
 

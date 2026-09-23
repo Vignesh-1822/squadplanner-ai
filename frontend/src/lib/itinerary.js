@@ -117,6 +117,29 @@ function matchActivity(entry, activities, used) {
  * matched by name where possible and the rest is passed through in schedule order.
  */
 export function dayTimeline(day) {
+  // The backend now joins each day into one ordered `items` list with place data inlined, so
+  // there is nothing to match. Trips generated before that existed still carry the three
+  // parallel lists and fall through to the matcher below.
+  if (day?.items?.length) {
+    return day.items
+      .filter((item) => item.type !== "hotel") // the hotel is a map pin, not an agenda stop
+      .map((item) => ({
+        key: `${item.order}-${item.label}`,
+        time: item.time,
+        type: item.type,
+        label: item.label,
+        notes: item.notes,
+        activity: item.place ? { ...item.place, image_url: item.image?.image_url } : null,
+        image: item.image || null,
+        leg: item.leg_to_next || null,
+      }))
+  }
+
+  return legacyTimeline(day)
+}
+
+/** Pre-`items` trips: re-join `schedule` and `activities` by name. */
+function legacyTimeline(day) {
   const activities = day?.activities || []
   const routes = day?.routes || []
   const meals = day?.meals || []
@@ -178,6 +201,20 @@ export function dayTimeline(day) {
 
 /** Every mapped point for a day, in visit order. */
 export function dayStops(day) {
+  if (day?.items?.length) {
+    return day.items
+      .filter((item) => item.place?.lat && item.place?.lng)
+      .map((item, index) => ({
+        order: index + 1,
+        name: item.place.name || item.label,
+        lat: item.place.lat,
+        lng: item.place.lng,
+        placeId: item.place.place_id,
+        address: item.place.address,
+        type: item.type,
+      }))
+  }
+
   return (day?.activities || [])
     .filter((activity) => activity.lat && activity.lng)
     .map((activity, index) => ({
@@ -198,6 +235,28 @@ export function dayStops(day) {
  */
 export function dayLegs(day) {
   const stops = dayStops(day)
+
+  if (day?.items?.length) {
+    const mapped = day.items.filter((item) => item.place?.lat && item.place?.lng)
+    return mapped
+      .map((item, index) => {
+        const leg = item.leg_to_next
+        const from = stops[index]
+        const to = stops[index + 1]
+        if (!leg || !from || !to) return null
+        return {
+          key: `${from.order}-${to.order}`,
+          from,
+          to,
+          polyline: leg.polyline,
+          mode: leg.mode,
+          distanceKm: leg.distance_meters ? (leg.distance_meters / 1000).toFixed(1) : null,
+          minutes: leg.duration_seconds ? Math.round(leg.duration_seconds / 60) : null,
+        }
+      })
+      .filter(Boolean)
+  }
+
   return (day?.routes || [])
     .slice(0, Math.max(stops.length - 1, 0))
     .map((leg, index) => ({
