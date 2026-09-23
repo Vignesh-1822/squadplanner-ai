@@ -1,3 +1,4 @@
+import { useState } from "react"
 import { Star, MapPin, UtensilsCrossed, Mountain, Building2, Martini, ShoppingBag, Landmark, Camera } from "lucide-react"
 import { priceLabel } from "@/lib/itinerary"
 
@@ -11,32 +12,62 @@ const CATEGORY_ICON = {
   culture: Landmark,
 }
 
+// Venue photography is not in the payload — see the note on the thumbnail below — so each
+// category gets its own wash, which reads as deliberate rather than as a broken image.
+const CATEGORY_WASH = {
+  food: "from-amber-200 via-orange-200 to-rose-200",
+  outdoor: "from-emerald-200 via-teal-200 to-green-300",
+  urban: "from-slate-300 via-slate-200 to-zinc-300",
+  nightlife: "from-purple-300 via-fuchsia-200 to-indigo-300",
+  shopping: "from-pink-200 via-rose-200 to-orange-200",
+  culture: "from-amber-200 via-yellow-200 to-lime-200",
+}
+
 const TimelineItem = ({ item }) => {
   const { time, label, notes, type, activity } = item
   const Icon = type === "meal" ? UtensilsCrossed : CATEGORY_ICON[activity?.category] || Camera
   const tags = (activity?.tags || []).slice(0, 3)
+  const wash = CATEGORY_WASH[type === "meal" ? "food" : activity?.category] || CATEGORY_WASH.urban
+  const [imageFailed, setImageFailed] = useState(false)
+  // Meals carry their photo on the day rather than on an activity — they have no place_id.
+  const imageUrl = activity?.image_url || item.image?.image_url
+  const showImage = !!imageUrl && !imageFailed
 
   return (
     <article className="flex gap-4">
       {/* Clock rail */}
       <div className="shrink-0 w-14 pt-4 text-right">
-        <span className="text-xs font-black text-slate-900 tabular-nums">{time || "—"}</span>
+        <span className="text-xs font-black text-slate-900 tabular-nums">{time || ""}</span>
       </div>
 
-      <div className="flex-1 bg-white/60 backdrop-blur-md rounded-2xl border border-white/70 shadow-sm p-5 hover:shadow-md transition-shadow">
+      <div className="flex-1 bg-white/60 backdrop-blur-md rounded-2xl border border-white/70 shadow-sm p-4 hover:shadow-md transition-shadow flex gap-4">
+        {/* Thumbnail. `activity.image_url` is rendered when present; nothing populates it yet —
+            venue photos need a Google Places proxy, since their terms forbid caching. Until
+            then the category wash stands in. */}
+        <div
+          className={`relative shrink-0 w-32 h-28 md:w-56 md:h-44 rounded-xl overflow-hidden bg-gradient-to-br ${wash} flex items-center justify-center`}
+        >
+          {showImage ? (
+            <img
+              src={imageUrl}
+              alt=""
+              loading="lazy"
+              // A dead hotlink must fall back to the wash, not leave a broken-image icon.
+              onError={() => setImageFailed(true)}
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          ) : (
+            <Icon size={26} className="text-slate-700/60" />
+          )}
+        </div>
+
+        <div className="min-w-0 flex-1">
         <div className="flex items-start justify-between gap-3 mb-2">
-          <div className="flex items-center gap-2 min-w-0">
-            <span className="size-8 rounded-lg bg-primary/20 flex items-center justify-center shrink-0">
-              <Icon size={15} className="text-slate-800" />
-            </span>
-            <div className="min-w-0">
-              <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 leading-none mb-1">
-                {type === "meal" ? "Meal" : activity?.category || "Stop"}
-              </p>
-              <h3 className="font-black text-slate-900 leading-tight truncate">
-                {activity?.name || label}
-              </h3>
-            </div>
+          <div className="min-w-0">
+            <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 leading-none mb-1">
+              {type === "meal" ? "Meal" : activity?.category || "Stop"}
+            </p>
+            <h3 className="font-black text-slate-900 leading-tight">{activity?.name || label}</h3>
           </div>
 
           {activity && (
@@ -81,6 +112,7 @@ const TimelineItem = ({ item }) => {
             )}
           </div>
         )}
+        </div>
       </div>
     </article>
   )

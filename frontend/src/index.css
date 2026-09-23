@@ -175,3 +175,18 @@
     border: 1px solid rgba(255, 255, 255, 0.8);
   }
 }
+
+
+/* Place name shown while hovering a map pin. */
+.leaflet-tooltip.stop-name-label {
+  background: rgba(15, 23, 42, 0.92);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 9px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  white-space: nowrap;
+}
+.leaflet-tooltip.stop-name-label::before { border-top-color: rgba(15, 23, 42, 0.92); }

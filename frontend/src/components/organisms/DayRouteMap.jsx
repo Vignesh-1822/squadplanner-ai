@@ -1,68 +1,103 @@
-import { Map as MapIcon } from "lucide-react"
+import { useEffect, useState } from "react"
+import { Map as MapIcon, Maximize2, X, Navigation } from "lucide-react"
+import RouteMap from "@/molecules/RouteMap"
+import { googleMapsDirections, appleMapsDirections, prefersAppleMaps } from "@/lib/mapLinks"
 
 /**
- * A stylised route sketch for the day, matching the design's map preview.
+ * The day's stops on a real map, with the walk between them drawn from the routing polylines.
  *
- * Deliberately not a real map: the mock draws pins and a dashed connector rather than tiles,
- * and this keeps a mapping library and its tile requests out of the bundle. Stops are placed by
- * normalising their coordinates into the panel, so the shape reflects the actual geography.
+ * The inline map is deliberately non-interactive so it never swallows page scroll; expanding
+ * opens a full-screen view where panning and zooming are the point.
  */
-const DayRouteMap = ({ stops }) => {
+const DayRouteMap = ({ stops, legs }) => {
+  const [expanded, setExpanded] = useState(false)
+  const appleFirst = prefersAppleMaps()
+
+  // Escape closes the overlay, and the page behind it must not scroll while it is open.
+  useEffect(() => {
+    if (!expanded) return undefined
+    const onKey = (event) => event.key === "Escape" && setExpanded(false)
+    window.addEventListener("keydown", onKey)
+    document.body.style.overflow = "hidden"
+    return () => {
+      window.removeEventListener("keydown", onKey)
+      document.body.style.overflow = ""
+    }
+  }, [expanded])
+
   if (!stops.length) return null
 
-  const lats = stops.map((s) => s.lat)
-  const lngs = stops.map((s) => s.lng)
-  const spanLat = Math.max(...lats) - Math.min(...lats) || 1
-  const spanLng = Math.max(...lngs) - Math.min(...lngs) || 1
-
-  // 12% inset so pins never touch the edges of the panel.
-  const placed = stops.map((stop) => ({
-    ...stop,
-    x: 12 + ((stop.lng - Math.min(...lngs)) / spanLng) * 76,
-    y: 88 - ((stop.lat - Math.min(...lats)) / spanLat) * 76,
-  }))
-
   return (
-    <section className="bg-white/60 backdrop-blur-md rounded-2xl border border-white/70 shadow-sm overflow-hidden">
-      <header className="flex items-center gap-2 px-5 pt-5 pb-3">
-        <MapIcon size={16} className="text-primary" />
-        <h2 className="text-sm font-black text-slate-900 uppercase tracking-wider">Day route</h2>
-      </header>
-
-      <div className="relative mx-5 h-44 rounded-xl bg-gradient-to-br from-slate-100 via-emerald-50 to-slate-200 overflow-hidden">
-        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <polyline
-            points={placed.map((p) => `${p.x},${p.y}`).join(" ")}
-            fill="none"
-            stroke="var(--primary-dim)"
-            strokeWidth="0.8"
-            strokeDasharray="2 2"
-            vectorEffect="non-scaling-stroke"
-          />
-        </svg>
-        {placed.map((stop) => (
-          <span
-            key={`${stop.order}-${stop.name}`}
-            title={stop.name}
-            style={{ left: `${stop.x}%`, top: `${stop.y}%` }}
-            className="absolute -translate-x-1/2 -translate-y-1/2 size-6 rounded-full bg-slate-900 text-primary text-[10px] font-black flex items-center justify-center shadow-md ring-2 ring-white"
+    <>
+      <section className="bg-white/60 backdrop-blur-md rounded-2xl border border-white/70 shadow-sm overflow-hidden">
+        <header className="flex items-center justify-between gap-2 px-5 pt-5 pb-3">
+          <h2 className="flex items-center gap-2 text-sm font-black text-slate-900 uppercase tracking-wider">
+            <MapIcon size={16} className="text-primary" />
+            Day route
+          </h2>
+          <button
+            type="button"
+            onClick={() => setExpanded(true)}
+            className="flex items-center gap-1.5 text-[10px] font-black uppercase tracking-widest text-slate-400 hover:text-slate-900 transition-colors cursor-pointer"
           >
-            {stop.order}
-          </span>
-        ))}
-      </div>
+            Expand
+            <Maximize2 size={12} />
+          </button>
+        </header>
 
-      <ol className="p-5 space-y-2.5">
-        {stops.map((stop) => (
-          <li key={`${stop.order}-${stop.name}`} className="flex items-center gap-3">
-            <span className="size-5 shrink-0 rounded-full bg-primary/25 text-slate-800 text-[10px] font-black flex items-center justify-center">
-              {stop.order}
-            </span>
-            <span className="text-xs font-bold text-slate-600 truncate">{stop.name}</span>
-          </li>
-        ))}
-      </ol>
-    </section>
+        <button
+          type="button"
+          onClick={() => setExpanded(true)}
+          className="block w-full mx-5 rounded-xl overflow-hidden cursor-pointer"
+          style={{ width: "calc(100% - 2.5rem)" }}
+          aria-label="Expand the day route map"
+        >
+          <RouteMap stops={stops} legs={legs} height="11rem" />
+        </button>
+
+        <ol className="p-5 space-y-2.5">
+          {stops.map((stop) => (
+            <li key={`${stop.order}-${stop.name}`} className="flex items-center gap-3">
+              <span className="size-5 shrink-0 rounded-full bg-primary/25 text-slate-800 text-[10px] font-black flex items-center justify-center">
+                {stop.order}
+              </span>
+              <span className="text-xs font-bold text-slate-600 truncate flex-1">{stop.name}</span>
+              <a
+                href={appleFirst ? appleMapsDirections(stop) : googleMapsDirections(stop)}
+                target="_blank"
+                rel="noreferrer noopener"
+                title="Get directions"
+                className="shrink-0 text-slate-300 hover:text-primary-dim transition-colors"
+              >
+                <Navigation size={13} />
+              </a>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      {expanded && (
+        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex flex-col p-4 md:p-8">
+          <div className="flex items-center justify-between gap-3 mb-3">
+            <h2 className="text-white font-black text-lg tracking-tight">Day route</h2>
+            <button
+              type="button"
+              onClick={() => setExpanded(false)}
+              className="p-2 rounded-full bg-white/15 text-white hover:bg-white/25 transition-colors cursor-pointer"
+              aria-label="Close the map"
+            >
+              <X size={18} />
+            </button>
+          </div>
+          <div className="flex-1 rounded-2xl overflow-hidden shadow-xl">
+            <RouteMap stops={stops} legs={legs} height="100%" interactive />
+          </div>
+          <p className="text-white/50 text-[11px] font-medium text-center mt-3">
+            Tap a pin for directions · Esc to close
+          </p>
+        </div>
+      )}
+    </>
   )
 }
 

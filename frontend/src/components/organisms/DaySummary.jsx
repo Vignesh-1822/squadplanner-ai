@@ -8,18 +8,17 @@ const DaySummary = ({ day, weather }) => {
   const travelMinutes = day?.total_travel_minutes
 
   return (
-    <section className="bg-slate-900 rounded-2xl p-5 text-white volt-glow space-y-4">
-      <h2 className="text-sm font-black text-primary uppercase tracking-wider">Day summary</h2>
+    <section className="bg-white/60 backdrop-blur-md rounded-2xl border border-white/70 shadow-sm p-5 space-y-4">
+      <h2 className="text-sm font-black text-slate-900 uppercase tracking-wider">Day summary</h2>
 
       <div className="grid grid-cols-2 gap-2.5">
-        <StatTile tone="dark" icon={Wallet} label="Day cost" value={formatMoney(day?.estimated_day_cost_usd)} />
-        <StatTile tone="dark" icon={Footprints} label="Distance" value={distance ? `${distance} km` : "—"} />
+        <StatTile icon={Wallet} label="Day cost" value={formatMoney(day?.estimated_day_cost_usd)} />
+        <StatTile icon={Footprints} label="Distance" value={distance ? `${distance} km` : "—"} />
         {travelMinutes ? (
-          <StatTile tone="dark" icon={Clock} label="Travel time" value={`${Math.round(travelMinutes)} min`} />
+          <StatTile icon={Clock} label="Travel time" value={`${Math.round(travelMinutes)} min`} />
         ) : null}
         {weather?.summary && weather.summary !== "Weather data unavailable" ? (
           <StatTile
-            tone="dark"
             icon={CloudSun}
             label="Forecast"
             value={`${Math.round(weather.avg_temp_c)}°C`}
@@ -28,11 +27,11 @@ const DaySummary = ({ day, weather }) => {
       </div>
 
       {day?.meals?.length > 0 && (
-        <div className="pt-1">
-          <p className="text-[10px] font-black uppercase tracking-widest text-white/40 mb-2">Meals</p>
+        <div className="pt-1 border-t border-slate-100">
+          <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Meals</p>
           <ul className="space-y-1.5">
             {day.meals.map((meal) => (
-              <li key={meal} className="text-xs font-medium text-white/70 leading-snug">
+              <li key={meal} className="text-xs font-medium text-slate-500 leading-snug">
                 {meal}
               </li>
             ))}

@@ -68,6 +68,47 @@ export function dayTitle(day) {
   return where ? `Day ${day.day_number}: ${where}` : `Day ${day?.day_number ?? ""}`
 }
 
+/** Lowercase, strip punctuation and collapse whitespace, so only the words are compared. */
+function normalize(text) {
+  return String(text || "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim()
+}
+
+/**
+ * Pair a schedule row with the activity it describes.
+ *
+ * The backend emits the day as two parallel lists — `schedule` carries the clock, `activities`
+ * carries the place detail — with no id linking them, so they can only be joined on the name.
+ * That join has to tolerate the two ways the agent's wording drifts between the lists:
+ * punctuation ("…South Unit" vs "…South Unit.") and one side being a longer form of the other.
+ *
+ * Exact matches are taken first across the whole day, so a row naming a place precisely is never
+ * beaten to it by a longer name that merely contains those words.
+ */
+function matchActivity(entry, activities, used) {
+  const available = activities.filter((activity) => !used.has(activity.place_id))
+  if (!available.length) return null
+
+  const label = normalize(entry.label)
+  const notes = normalize(entry.notes)
+
+  const exact = available.find((activity) => normalize(activity.name) === label)
+  if (exact) return exact
+
+  const overlapping = available.find((activity) => {
+    const name = normalize(activity.name)
+    return name && label && (label.includes(name) || name.includes(label))
+  })
+  if (overlapping) return overlapping
+
+  return available.find((activity) => {
+    const name = normalize(activity.name)
+    return name && notes.includes(name)
+  })
+}
+
 /**
  * Weave the schedule and the activities into one ordered feed.
  *
@@ -82,12 +123,11 @@ export function dayTimeline(day) {
   const used = new Set()
   let activitiesSeen = 0
 
-  return (day?.schedule || []).map((entry, index) => {
-    const match = activities.find(
-      (activity) =>
-        !used.has(activity.place_id) &&
-        (entry.label?.includes(activity.name) || entry.notes?.includes(activity.name)),
-    )
+  const scheduled = (day?.schedule || []).map((entry, index) => {
+    // Only activity rows may claim an activity. A meal's notes often name the venue it happens
+    // at ("Lunch at California Academy of Sciences"), and matching on that let the meal consume
+    // the museum — leaving the real visit later that day with no photo and no detail.
+    const match = entry.type === "activity" ? matchActivity(entry, activities, used) : null
 
     // Route legs connect consecutive *activities*, not consecutive schedule rows — a day can
     // hold six schedule entries and only two legs. Indexing by row would attribute a walk to
@@ -110,9 +150,30 @@ export function dayTimeline(day) {
       label: mealLabel || entry.label,
       notes: entry.notes,
       activity: match || null,
+      // Meal venues have no place_id, so their photo is resolved separately and keyed by the
+      // meal string the backend wrote.
+      image: (day?.meal_images || {})[mealLabel || entry.label] || null,
       leg,
     }
   })
+
+  // The schedule does not always name every activity the agent picked — a day can hold two
+  // stops and mention only one. Anything left over is appended rather than dropped, or the
+  // itinerary silently loses places it actually planned.
+  const unscheduled = activities
+    .filter((activity) => !used.has(activity.place_id))
+    .map((activity) => ({
+      key: `extra-${activity.place_id}`,
+      time: null,
+      type: "activity",
+      label: activity.name,
+      notes: null,
+      activity,
+      image: null,
+      leg: null,
+    }))
+
+  return [...scheduled, ...unscheduled]
 }
 
 /** Every mapped point for a day, in visit order. */
@@ -124,7 +185,31 @@ export function dayStops(day) {
       name: activity.name,
       lat: activity.lat,
       lng: activity.lng,
+      // Carried through so directions can name the exact venue rather than a coordinate.
+      placeId: activity.place_id,
+      address: activity.address,
     }))
+}
+
+/**
+ * The legs between a day's stops, paired with the stops they connect.
+ *
+ * `routes[i]` joins activity i to activity i+1, so a day with three stops has two legs.
+ */
+export function dayLegs(day) {
+  const stops = dayStops(day)
+  return (day?.routes || [])
+    .slice(0, Math.max(stops.length - 1, 0))
+    .map((leg, index) => ({
+      key: `${index}-${leg.mode || "leg"}`,
+      from: stops[index],
+      to: stops[index + 1],
+      polyline: leg.polyline,
+      mode: leg.mode,
+      distanceKm: leg.distance_meters ? (leg.distance_meters / 1000).toFixed(1) : null,
+      minutes: leg.duration_seconds ? Math.round(leg.duration_seconds / 60) : null,
+    }))
+    .filter((leg) => leg.from && leg.to)
 }
 
 /** The five dimensions the agent scores, in the order the dataset defines them. */

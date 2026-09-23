@@ -6,7 +6,7 @@ import DayTimeline from "@/organisms/DayTimeline"
 import DayRouteMap from "@/organisms/DayRouteMap"
 import DaySummary from "@/organisms/DaySummary"
 import RefinementBox from "@/organisms/RefinementBox"
-import { dayTitle, formatDayDate, formatMoney, dayDistanceKm, dayStops } from "@/lib/itinerary"
+import { dayTitle, formatDayDate, formatMoney, dayDistanceKm, dayStops, dayLegs } from "@/lib/itinerary"
 
 const ItineraryTab = () => {
   const { tripId } = useParams()
@@ -63,7 +63,7 @@ const ItineraryTab = () => {
         </div>
 
         <aside className="space-y-4 lg:sticky lg:top-4">
-          <DayRouteMap stops={dayStops(day)} />
+          <DayRouteMap stops={dayStops(day)} legs={dayLegs(day)} />
           <DaySummary day={day} weather={result?.itinerary?.weather} />
           <RefinementBox tripId={tripId} />
         </aside>
