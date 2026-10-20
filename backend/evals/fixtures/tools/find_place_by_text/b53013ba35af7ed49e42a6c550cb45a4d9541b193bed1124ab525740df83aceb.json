@@ -1,0 +1,30 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 44.636,
+      "lng": -124.053
+    },
+    "destination": "Newport",
+    "included_type": "lodging",
+    "query": "Harbor Base Pineapple Inn Traditional rooms in a casual, low-slung hotel offering free premium cable channels & Wi-Fi."
+  },
+  "request_sha256": "b53013ba35af7ed49e42a6c550cb45a4d9541b193bed1124ab525740df83aceb",
+  "response": {
+    "address": "372 Coddington Hwy, Newport, RI 02840, USA",
+    "category": "place",
+    "lat": 41.5186476,
+    "lng": -71.311301,
+    "name": "Harbor Base Pineapple Inn",
+    "place_id": "ChIJs9BpVeeu5YkRmngENkgRYP4",
+    "price_level": 0,
+    "rating": 3.1,
+    "tags": [
+      "motel",
+      "hotel",
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

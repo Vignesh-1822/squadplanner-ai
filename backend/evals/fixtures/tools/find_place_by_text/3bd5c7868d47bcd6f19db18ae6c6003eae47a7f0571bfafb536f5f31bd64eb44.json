@@ -1,0 +1,38 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 38.04,
+      "lng": -84.503
+    },
+    "destination": "Lexington",
+    "included_type": null,
+    "query": "Continued neighborhood exploration"
+  },
+  "request_sha256": "3bd5c7868d47bcd6f19db18ae6c6003eae47a7f0571bfafb536f5f31bd64eb44",
+  "response": {
+    "address": "301 S Broadway, Lexington, KY 40508, USA",
+    "category": "place",
+    "lat": 38.0476074,
+    "lng": -84.5023956,
+    "name": "LexLive",
+    "place_id": "ChIJF37FXehFQogR-K2YPBc7NTA",
+    "price_level": 0,
+    "rating": 4.0,
+    "tags": [
+      "amusement_center",
+      "sports_bar",
+      "video_arcade",
+      "bowling_alley",
+      "sports_complex",
+      "bar",
+      "sports_activity_location",
+      "american_restaurant",
+      "event_venue",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

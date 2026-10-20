@@ -4,8 +4,10 @@ import logging
 from datetime import date
 
 import httpx
+from langsmith import traceable
 
 from agent.state import WeatherResult
+from evals.replay.tools import NO_REPLAY, ReplayRecordingError, record_tool, replay_tool
 
 logger = logging.getLogger(__name__)
 
@@ -52,6 +54,7 @@ def _zeroed_result(destination_name: str, start_date: str, end_date: str) -> Wea
     )
 
 
+@traceable(name="fetch_weather", run_type="tool")
 async def fetch_weather(
     lat: float,
     lng: float,
@@ -60,6 +63,17 @@ async def fetch_weather(
     destination_name: str,
 ) -> WeatherResult:
     """Fetch daily weather for a date range and return a WeatherResult."""
+    replay_request = {
+        "lat": lat,
+        "lng": lng,
+        "start_date": start_date,
+        "end_date": end_date,
+        "destination_name": destination_name,
+    }
+    replayed = replay_tool("fetch_weather", replay_request)
+    if replayed is not NO_REPLAY:
+        return WeatherResult(**replayed)
+
     try:
         url = _pick_url(start_date)
         async with httpx.AsyncClient(timeout=15) as client:
@@ -88,17 +102,23 @@ async def fetch_weather(
 
         summary = f"{_temp_label(avg_temp)} ({avg_temp}°C avg), {_precip_label(total_precip)}"
 
-        return WeatherResult(
+        result = WeatherResult(
             destination=destination_name,
             date_range=f"{start_date} to {end_date}",
             avg_temp_c=avg_temp,
             precipitation_mm=total_precip,
             summary=summary,
         )
+        record_tool("fetch_weather", replay_request, dict(result))
+        return result
 
+    except ReplayRecordingError:
+        raise
     except Exception as exc:  # noqa: BLE001
         logger.error("fetch_weather error: %s", exc)
-        return _zeroed_result(destination_name, start_date, end_date)
+        result = _zeroed_result(destination_name, start_date, end_date)
+        record_tool("fetch_weather", replay_request, dict(result))
+        return result
 
 
 if __name__ == "__main__":

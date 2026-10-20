@@ -1,0 +1,29 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 36.4012,
+      "lng": -93.7374
+    },
+    "destination": "Eureka Springs",
+    "included_type": "lodging",
+    "query": "Osage Creek Lodge Eureka Springs"
+  },
+  "request_sha256": "bedcd5c74f8abccb079061bc967752a78c0c566166590bbb60d1ee89d1516d66",
+  "response": {
+    "address": "101 E Van Buren, Eureka Springs, AR 72632, USA",
+    "category": "place",
+    "lat": 36.3940078,
+    "lng": -93.7412676,
+    "name": "Osage Creek Lodge",
+    "place_id": "ChIJRcc6uqXTzocRQ9jtUR99Zmo",
+    "price_level": 0,
+    "rating": 4.4,
+    "tags": [
+      "hotel",
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 33.494,
+      "lng": -117.148
+    },
+    "destination": "Temecula",
+    "included_type": "restaurant",
+    "query": "Dinner"
+  },
+  "request_sha256": "d8d4e1e808c3152b5943dce254e8318fddeb50793ad6e96679349c3fc9df5660",
+  "response": {
+    "address": "28656 Old Town Front St, Temecula, CA 92590, USA",
+    "category": "food",
+    "lat": 33.4933467,
+    "lng": -117.1484981,
+    "name": "1909 Temecula",
+    "place_id": "ChIJ7boUNb9_24AReqXS_K3Ddko",
+    "price_level": 0,
+    "rating": 4.5,
+    "tags": [
+      "gastropub",
+      "cocktail_bar",
+      "brunch_restaurant",
+      "bar",
+      "american_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

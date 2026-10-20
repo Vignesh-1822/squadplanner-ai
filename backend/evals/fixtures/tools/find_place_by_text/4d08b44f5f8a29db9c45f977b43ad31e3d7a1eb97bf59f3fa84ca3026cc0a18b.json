@@ -1,0 +1,29 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 28.69,
+      "lng": -95.967
+    },
+    "destination": "Matagorda",
+    "included_type": null,
+    "query": "Shopping and exploration"
+  },
+  "request_sha256": "4d08b44f5f8a29db9c45f977b43ad31e3d7a1eb97bf59f3fa84ca3026cc0a18b",
+  "response": {
+    "address": "354 Fisher St, Matagorda, TX 77457, USA",
+    "category": "place",
+    "lat": 28.692657699999998,
+    "lng": -95.96568359999999,
+    "name": "The Sands Boutique & Hat Bar",
+    "place_id": "ChIJJ_eieF_bQYYRErmhE6D2ZIw",
+    "price_level": 0,
+    "rating": 5.0,
+    "tags": [
+      "clothing_store",
+      "store",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

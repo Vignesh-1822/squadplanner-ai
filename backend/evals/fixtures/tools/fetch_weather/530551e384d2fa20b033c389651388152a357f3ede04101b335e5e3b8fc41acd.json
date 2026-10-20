@@ -1,0 +1,18 @@
+{
+  "operation": "fetch_weather",
+  "request": {
+    "destination_name": "Newport",
+    "end_date": "2026-09-11",
+    "lat": 44.636,
+    "lng": -124.053,
+    "start_date": "2026-09-08"
+  },
+  "request_sha256": "530551e384d2fa20b033c389651388152a357f3ede04101b335e5e3b8fc41acd",
+  "response": {
+    "avg_temp_c": 16.1,
+    "date_range": "2026-09-08 to 2026-09-11",
+    "destination": "Newport",
+    "precipitation_mm": 0.0,
+    "summary": "Mild (16.1\u00b0C avg), dry conditions"
+  }
+}

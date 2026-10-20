@@ -1,0 +1,240 @@
+{
+  "operation": "fetch_activities_by_category",
+  "request": {
+    "categories": [
+      "food",
+      "outdoor"
+    ],
+    "coords": {
+      "lat": 48.696,
+      "lng": -113.718
+    },
+    "destination": "Glacier National Park",
+    "max_per_category": 10
+  },
+  "request_sha256": "d1965cb4e6dd6789972d76b161a9330bfab7f583cacbda38bd9f28d581668c7e",
+  "response": [
+    {
+      "address": "Browning, MT 59417, USA",
+      "category": "food",
+      "lat": 48.6946303,
+      "lng": -113.51807489999999,
+      "name": "Two Dog Flats Restaurant",
+      "place_id": "ChIJwfmKyVO6aFMRO-rdrKkgPkc",
+      "price_level": 0,
+      "rating": 4.1,
+      "tags": [
+        "american_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "288 Lake McDonald Ldg Lp, West Glacier, MT 59936, USA",
+      "category": "food",
+      "lat": 48.6172648,
+      "lng": -113.8794447,
+      "name": "Russell's Fireside Dining Room",
+      "place_id": "ChIJ30BCy_AcZlMRhxIToP4TpXU",
+      "price_level": 0,
+      "rating": 3.7,
+      "tags": [
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "West Glacier, MT 59936, USA",
+      "category": "food",
+      "lat": 48.6176593,
+      "lng": -113.87650049999999,
+      "name": "Jammer Joe's Grill & Pizzeria",
+      "place_id": "ChIJtYaq-fkcZlMRFBurBSk_5XQ",
+      "price_level": 0,
+      "rating": 3.7,
+      "tags": [
+        "pizza_restaurant",
+        "fast_food_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "1147 Rte 3, Browning, MT 59417, USA",
+      "category": "food",
+      "lat": 48.797241299999996,
+      "lng": -113.65759179999999,
+      "name": "Ptarmigan Dining Hall",
+      "place_id": "ChIJn0sHWbmzaFMRfVy1mA2LbQs",
+      "price_level": 0,
+      "rating": 3.5,
+      "tags": [
+        "american_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "Browning, MT 59417, USA",
+      "category": "food",
+      "lat": 48.7977211,
+      "lng": -113.67732939999999,
+      "name": "Nell's",
+      "place_id": "ChIJV_m-ww6yaFMRelm-NzzuwdU",
+      "price_level": 0,
+      "rating": 4.1,
+      "tags": [
+        "american_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "Montana, USA",
+      "category": "outdoor",
+      "lat": 48.756063,
+      "lng": -113.77973159999999,
+      "name": "Glacier National Park",
+      "place_id": "ChIJVVVVVRWQaFMR7F3FFSK8Fq8",
+      "price_level": 0,
+      "rating": 4.8,
+      "tags": [
+        "national_park",
+        "tourist_attraction",
+        "park",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "Browning, MT 59417, USA",
+      "category": "outdoor",
+      "lat": 48.6758251,
+      "lng": -113.58035489999999,
+      "name": "Sun Point Nature Trail",
+      "place_id": "ChIJ7YDxSdWkaFMReriRX3sc1-Q",
+      "price_level": 0,
+      "rating": 4.9,
+      "tags": [
+        "park",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "West Glacier, MT 59936, USA",
+      "category": "outdoor",
+      "lat": 48.6957872,
+      "lng": -113.7279401,
+      "name": "Logan Pass",
+      "place_id": "ChIJ______8cZlMRbPLy0H6JnRI",
+      "price_level": 0,
+      "rating": 4.9,
+      "tags": [
+        "park",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "McDonald Lake Trail, West Glacier, MT 59936, USA",
+      "category": "outdoor",
+      "lat": 48.6238246,
+      "lng": -113.9083096,
+      "name": "Kelly Camp Trailhead",
+      "place_id": "ChIJeajKi6IdZlMRZgLfumluRxs",
+      "price_level": 0,
+      "rating": 0.0,
+      "tags": [
+        "park",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "M8HW+8C, St Mary, MT 59417, USA",
+      "category": "outdoor",
+      "lat": 48.6782867,
+      "lng": -113.65396799999999,
+      "name": "Jackson Glacier Retreat",
+      "place_id": "ChIJj28dfAClaFMRMO4V_T6hTqI",
+      "price_level": 0,
+      "rating": 0.0,
+      "tags": [
+        "park",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "M65Q+9R, West Glacier, MT 59936, USA",
+      "category": "outdoor",
+      "lat": 48.65838,
+      "lng": -113.76042699999999,
+      "name": "Sperry Glacier Retreat",
+      "place_id": "ChIJDxYBNwCnaFMRkEj3v1e1v4Q",
+      "price_level": 0,
+      "rating": 0.0,
+      "tags": [
+        "park",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "Q785+8J, St Mary, MT 59417, USA",
+      "category": "outdoor",
+      "lat": 48.765777799999995,
+      "lng": -113.7408889,
+      "name": "Grinnell Glacier Retreat",
+      "place_id": "ChIJ0xWtBACvaFMRWuy04Kh1_os",
+      "price_level": 0,
+      "rating": 0.0,
+      "tags": [
+        "park",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "MCGC+F2, Rising Sun, MT 59417, USA",
+      "category": "outdoor",
+      "lat": 48.676182,
+      "lng": -113.57997100000001,
+      "name": "Sun Point Parking",
+      "place_id": "ChIJnzuZYQC7aFMRhbb16Kd_Mbc",
+      "price_level": 0,
+      "rating": 0.0,
+      "tags": [
+        "park",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "Q6PM+76, St Mary, MT 59417, USA",
+      "category": "outdoor",
+      "lat": 48.785638899999995,
+      "lng": -113.7669444,
+      "name": "Swiftcurrent Glacier Retreat",
+      "place_id": "ChIJm_bnCQCtaFMRpDIN3sS39qE",
+      "price_level": 0,
+      "rating": 0.0,
+      "tags": [
+        "park",
+        "point_of_interest",
+        "establishment"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 28.949,
+      "lng": -95.293
+    },
+    "destination": "Surfside Beach",
+    "included_type": null,
+    "query": "Wildlife viewing and nature walk"
+  },
+  "request_sha256": "92e4ec4022bda88e18dcf5bc230d77a74d13ba762f5db41af9acd64b54857802",
+  "response": {
+    "address": "12083-12135 Bluewater Hwy, Freeport, TX 77541, USA",
+    "category": "place",
+    "lat": 29.067249899999997,
+    "lng": -95.1319862,
+    "name": "Kelly Hamby Nature Trail Park",
+    "place_id": "ChIJ73cDzcd2QIYRgN3EWgZbjiI",
+    "price_level": 0,
+    "rating": 4.5,
+    "tags": [
+      "park",
+      "tourist_attraction",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 28.949,
+      "lng": -95.293
+    },
+    "destination": "Surfside Beach",
+    "included_type": "restaurant",
+    "query": "Dinner - Local vegetarian option"
+  },
+  "request_sha256": "381e299f982bbdf8e9f8b1ad5f347ec64379e160c805fc02f3a2b936583df1d0",
+  "response": {
+    "address": "3751 Robert M Grissom Pkwy Ste 101, Myrtle Beach, SC 29577, USA",
+    "category": "food",
+    "lat": 33.7242696,
+    "lng": -78.86709379999999,
+    "name": "Lekker Eats",
+    "place_id": "ChIJq-36HzdpAIkRst-PjjBmS38",
+    "price_level": 0,
+    "rating": 4.7,
+    "tags": [
+      "cafe",
+      "cocktail_bar",
+      "vegetarian_restaurant",
+      "brunch_restaurant",
+      "breakfast_restaurant",
+      "coffee_shop",
+      "bar",
+      "food_store",
+      "restaurant",
+      "food",
+      "store",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

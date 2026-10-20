@@ -1,0 +1,29 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 36.4012,
+      "lng": -93.7374
+    },
+    "destination": "Eureka Springs",
+    "included_type": "restaurant",
+    "query": "Lunch"
+  },
+  "request_sha256": "cc61bc2ffe76d162fd3494c9f049297e75dff1a990a821fa7186c66c8919d7ad",
+  "response": {
+    "address": "64 Center St, Eureka Springs, AR 72632, USA",
+    "category": "food",
+    "lat": 36.4045507,
+    "lng": -93.7370883,
+    "name": "Catered Creations",
+    "place_id": "ChIJaQ8FB4_TzocRDZA3q5Nsnnk",
+    "price_level": 0,
+    "rating": 4.9,
+    "tags": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

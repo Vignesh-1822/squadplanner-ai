@@ -1,0 +1,21 @@
+{
+  "operation": "search_flights",
+  "request": {
+    "adults": 1,
+    "depart_date": "2026-09-08",
+    "destination": "Matagorda",
+    "origin": "ORD",
+    "return_date": "2026-09-11"
+  },
+  "request_sha256": "a6922fe87c1786c6fbaa03088eccf65ad26f27945a18db6a36b9eb1b86fbe070",
+  "response": {
+    "airline": "Estimated",
+    "depart_time": "2026-09-08T08:00:00",
+    "destination": "Matagorda",
+    "is_estimated": true,
+    "member_id": "",
+    "origin": "ORD",
+    "price_usd": 300.0,
+    "return_time": "2026-09-11T18:00:00"
+  }
+}

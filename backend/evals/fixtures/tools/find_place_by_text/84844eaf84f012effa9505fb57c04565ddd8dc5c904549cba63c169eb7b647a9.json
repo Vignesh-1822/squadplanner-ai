@@ -1,0 +1,29 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 48.696,
+      "lng": -113.718
+    },
+    "destination": "Glacier National Park",
+    "included_type": "lodging",
+    "query": "Many Glacier Hotel (over budget) Sprawling, scenic hideaway offering no-frills rooms plus an upscale restaurant & a lounge."
+  },
+  "request_sha256": "84844eaf84f012effa9505fb57c04565ddd8dc5c904549cba63c169eb7b647a9",
+  "response": {
+    "address": "1147 Rte 3, Browning, MT 59417, USA",
+    "category": "place",
+    "lat": 48.7967004,
+    "lng": -113.65777469999999,
+    "name": "Many Glacier Hotel",
+    "place_id": "ChIJ93d8QhKmaFMRb7vjfpE3hQ0",
+    "price_level": 0,
+    "rating": 4.6,
+    "tags": [
+      "hotel",
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

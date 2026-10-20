@@ -1,0 +1,29 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 28.949,
+      "lng": -95.293
+    },
+    "destination": "Surfside Beach",
+    "included_type": "restaurant",
+    "query": "Lunch - Stahlman Park area"
+  },
+  "request_sha256": "310202c55b71622eeac61e47d7db1af0667a720fcac67e8ea6813ffb1544bc1a",
+  "response": {
+    "address": "403 TX-332, Surfside Beach, TX 77541, USA",
+    "category": "food",
+    "lat": 28.9515919,
+    "lng": -95.2878874,
+    "name": "Salty Pelican Surfside Beach",
+    "place_id": "ChIJMSK_lOJtQIYRMwpyWtNSXdo",
+    "price_level": 0,
+    "rating": 3.9,
+    "tags": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

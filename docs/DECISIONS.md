@@ -123,3 +123,93 @@ History is left as-is.
 `git-filter-repo` plus a force-push to two public repos and a re-clone by Vignesh, for no additional
 security benefit. Revisit only if the repo is ever used as a portfolio showcase where a reviewer
 running `git log` would matter.
+
+---
+
+### D-011 · LangSmith, not Langfuse
+**Phase:** 1 · **2026-09-05**
+
+Enable the existing LangSmith wiring rather than integrating Langfuse.
+
+**Why:** `langsmith>=0.2.0` and `config.py::configure_langsmith()` are already in place — enabling
+is an environment variable, where Langfuse would be a new integration plus (if self-hosted) six
+containers. Langfuse has the better free tier and stronger eval tooling, but the effort is better
+spent on the eval harness itself than on swapping observability vendors. Revisit if the 5k-trace
+free tier or the seat-based pricing becomes a real constraint.
+
+---
+
+### D-012 · Two eval tiers; live runs are manual, not nightly
+**Phase:** 1 · **2026-09-05**
+
+~30 offline cases (replayed tools and LLM, $0) run on every commit. 5 live cases (real tools and
+LLM) run manually or on PR only.
+
+**Why:** SerpAPI's 200-search monthly ceiling — not token cost — is the binding constraint. Five
+live trips cost roughly 20 searches per run, giving about ten full runs a month. A nightly job
+would exhaust the quota in a week. Revisit when SerpAPI is no longer the ceiling.
+
+---
+
+### D-013 · `claude-sonnet-5` as the judge, not Opus
+**Phase:** 1 · **2026-09-05**
+
+**Why:** Sonnet 5 ($2/$10 per MTok) is already well above the `claude-haiku-4-5` planner
+($1/$5), which is the only property the judge needs. Opus 5 at $5/$25 is not worth 2.5× the cost
+for this task.
+
+---
+
+### D-014 · Calibrate the judge against human labels
+**Phase:** 1 · **2026-09-05**
+
+Twenty itineraries generated on replayed tool data, hand-labelled by Manoj, with Cohen's kappa
+between judge and human reported per rubric in the README.
+
+**Why:** Planner and judge are both Claude models, and same-family judging carries documented
+self-preference bias — one published case reached only 0.31 kappa against domain experts while
+appearing to work. Using replayed tool data means the twenty itineraries cost Anthropic tokens but
+**zero** SerpAPI searches. Validating the measurement instrument before trusting it is the point of
+the exercise.
+
+---
+
+### D-015 · No Batch API
+**Phase:** 1 · **2026-09-05**
+
+Judge calls run synchronously.
+
+**Why:** The 50% Batch discount applies to a handful of judge calls across five live trips. The
+saving is cents; the cost is async job-polling code. Revisit if the live tier ever grows large.
+
+---
+
+### D-016 · Judge scores are not a standalone quality metric
+**Phase:** 1 · **2026-09-07**
+
+The calibration ran and the judge failed it. Against 20 hand-labelled itineraries,
+quadratic-weighted kappa was 0.449 (moderate) for fairness, −0.071 (worse than chance) for
+itinerary coherence, and undefined for trip-pitch quality. No phase may report a judge score as
+evidence of quality without the accompanying kappa and bias figures from `evals/README.md`.
+
+**Why:** D-014 predicted same-family self-preference and the data shows it directly: the judge
+scored the planner's own prose 4 or 5 on every one of the 20 items the human scored 3, a +1.55
+mean gap with zero exact agreement. Coherence agreement is no better than chance because the
+judge will not reproduce the rater's harshest scores. Only fairness carries usable signal, and it
+is bounded by the rater's own 5-of-9 intra-rater consistency. Recalibration is required after
+rubric v2 and after the K-006 logistics repair, because both change what is being measured.
+
+---
+
+### D-017 · Rubric v1 is frozen; revisions become new versions
+**Phase:** 1 · **2026-09-07**
+
+The three rubrics that the committed labels were made against are immutable. `labels.json` pins
+`rubric_version` (a hash of the rubric text) and `evals.calibrate` refuses to compare across a
+change. A revised rubric ships as a new version alongside, with its own labelling pass.
+
+**Why:** Editing a rubric in place would silently invalidate three hours of human labelling —
+judging a new rubric against old labels measures rubric drift, not judge accuracy. The labelling
+also showed v1 measures a narrower thing than the rater actually graded (coherence missed whether
+the trip is interesting, fairness missed budget under-utilization, pitch missed presentation), so
+a v2 is expected. See `docs/PRODUCT_FEEDBACK.md` F-29.

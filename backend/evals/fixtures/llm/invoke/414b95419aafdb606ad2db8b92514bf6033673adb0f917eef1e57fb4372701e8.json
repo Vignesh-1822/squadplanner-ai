@@ -1,0 +1,37 @@
+{
+  "operation": "invoke",
+  "request": {
+    "invoke_kwargs": {},
+    "node": "extract_preference_constraints",
+    "prompt": "Extract group trip planning constraints from natural-language preference notes.\nReturn ONLY raw JSON, no markdown, no backticks. Use this exact top-level shape:\n{raw_member_notes: list, raw_group_notes: string, hard_constraints: list, soft_preferences: list, schedule: object, activity_filters: object, meal_requirements: object, destination_intent: object}.\nClassify explicit must/avoid/timing requirements as hard_constraints. Classify general likes, vibes, and pacing as soft_preferences unless they are phrased as must/avoid.\nUse schedule.earliest_start_time as HH:MM when users avoid early mornings. Use activity_filters.avoid_tags for avoided activity categories. Use meal_requirements.must_include for cuisine or meal requirements. Use destination_intent.styles for destination-level intent like big_city, skyscrapers, skyline, architecture, museums, food_city, nightlife_city, beach, national_park, theme_parks, mountains, small_town, scenic_drives, shopping, quiet_escape. Use destination_intent.preferred_types for preferred destination types, and set destination_intent.iconic_preference true when users ask for iconic, famous, big-city, skyline, national-park, beach, or theme-park destinations.\n\nPreference notes JSON:\n{\"raw_member_notes\": [{\"member_id\": \"ava\", \"name\": \"Ava\", \"notes\": \"I like big cities and urban exploration and want great nightclubs, but first day should be easy.\"}, {\"member_id\": \"ben\", \"name\": \"Ben\", \"notes\": \"Urban neighborhoods with dense skyscrapers and good food are the priority.\"}, {\"member_id\": \"chloe\", \"name\": \"Chloe\", \"notes\": \"Museums, walking, and no exhausting travel days. Also prefer a city with tall skyscrapers.\"}, {\"member_id\": \"diego\", \"name\": \"Diego\", \"notes\": \"Keep costs fair across the group.\"}], \"raw_group_notes\": \"People are flying from far apart. Keep the first day light and avoid assuming everyone arrives early.\", \"hard_constraints\": [], \"soft_preferences\": [], \"schedule\": {\"avoid_early_mornings\": false, \"earliest_start_time\": null, \"pace\": \"balanced\"}, \"activity_filters\": {\"avoid_tags\": [], \"prefer_tags\": [], \"required_tags\": []}, \"meal_requirements\": {\"must_include\": [], \"avoid_terms\": []}, \"destination_intent\": {\"styles\": [], \"landmarks\": [], \"preferred_types\": [], \"iconic_preference\": false}}",
+    "tools": []
+  },
+  "request_sha256": "414b95419aafdb606ad2db8b92514bf6033673adb0f917eef1e57fb4372701e8",
+  "response": {
+    "data": {
+      "additional_kwargs": {},
+      "content": "```json\n{\n  \"raw_member_notes\": [\n    {\n      \"member_id\": \"ava\",\n      \"name\": \"Ava\",\n      \"notes\": \"I like big cities and urban exploration and want great nightclubs, but first day should be easy.\"\n    },\n    {\n      \"member_id\": \"ben\",\n      \"name\": \"Ben\",\n      \"notes\": \"Urban neighborhoods with dense skyscrapers and good food are the priority.\"\n    },\n    {\n      \"member_id\": \"chloe\",\n      \"name\": \"Chloe\",\n      \"notes\": \"Museums, walking, and no exhausting travel days. Also prefer a city with tall skyscrapers.\"\n    },\n    {\n      \"member_id\": \"diego\",\n      \"name\": \"Diego\",\n      \"notes\": \"Keep costs fair across the group.\"\n    }\n  ],\n  \"raw_group_notes\": \"People are flying from far apart. Keep the first day light and avoid assuming everyone arrives early.\",\n  \"hard_constraints\": [\n    \"First day must be light/easy pacing\",\n    \"Avoid exhausting travel days\",\n    \"No early morning activities on first day due to staggered arrivals\"\n  ],\n  \"soft_preferences\": [\n    \"Urban exploration and walkable neighborhoods\",\n    \"Vibrant nightlife scene\",\n    \"Dense skyscrapers and vertical cityscape\",\n    \"Balanced pacing overall\",\n    \"Group cost fairness\"\n  ],\n  \"schedule\": {\n    \"avoid_early_mornings\": true,\n    \"earliest_start_time\": \"10:00\",\n    \"pace\": \"balanced\",\n    \"first_day_intensity\": \"light\"\n  },\n  \"activity_filters\": {\n    \"avoid_tags\": [],\n    \"prefer_tags\": [\n      \"walking\",\n      \"museums\",\n      \"nightclubs\",\n      \"urban_exploration\",\n      \"neighborhood_exploration\"\n    ],\n    \"required_tags\": [\n      \"museums\",\n      \"walkable\"\n    ]\n  },\n  \"meal_requirements\": {\n    \"must_include\": [\n      \"good food scene\"\n    ],\n    \"avoid_terms\": []\n  },\n  \"destination_intent\": {\n    \"styles\": [\n      \"big_city\",\n      \"skyscrapers\",\n      \"skyline\",\n      \"urban_neighborhoods\",\n      \"food_city\",\n      \"nightlife_city\",\n      \"museums\"\n    ],\n    \"landmarks\": [],\n    \"preferred_types\": [\n      \"major_urban_center\"\n    ],\n    \"iconic_preference\": true\n  }\n}\n```",
+      "id": "lc_run--01a0756c-725d-70e3-94f1-a7e2e78cf9ec",
+      "invalid_tool_calls": [],
+      "name": null,
+      "response_metadata": {
+        "model_name": "claude-haiku-4-5-20251001",
+        "model_provider": "anthropic",
+        "stop_reason": "end_turn",
+        "stop_sequence": null
+      },
+      "tool_calls": [],
+      "type": "ai",
+      "usage_metadata": {
+        "input_token_details": {
+          "cache_creation": 0,
+          "cache_read": 0
+        },
+        "input_tokens": 597,
+        "output_tokens": 636,
+        "total_tokens": 1233
+      }
+    },
+    "type": "ai"
+  }
+}

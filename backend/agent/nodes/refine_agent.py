@@ -205,7 +205,24 @@ def _build_messages(message: str, state: dict):
 # --- The critic pass ------------------------------------------------------------------
 
 
-async def _critique_plan(plan: dict, message: str, state: dict) -> tuple[bool, str]:
+def _config_for_llm(config: dict | None, node: str) -> dict | None:
+    if config is None:
+        return None
+    return {
+        **config,
+        "metadata": {
+            **(config.get("metadata") or {}),
+            "langgraph_node": node,
+        },
+    }
+
+
+async def _critique_plan(
+    plan: dict,
+    message: str,
+    state: dict,
+    config: dict | None = None,
+) -> tuple[bool, str]:
     """Second-opinion pass: an independent model call checks the planner's proposed plan
     against the group's hard constraints before it is applied.
 
@@ -228,7 +245,17 @@ async def _critique_plan(plan: dict, message: str, state: dict) -> tuple[bool, s
     )
 
     try:
-        ai_message = await llm.ainvoke(prompt)
+        from evals.replay.llm import llm_call_label
+
+        with llm_call_label("refine_agent_critic"):
+            ai_message = (
+                await llm.ainvoke(
+                    prompt,
+                    config=_config_for_llm(config, "refine_agent_critic"),
+                )
+                if config is not None
+                else await llm.ainvoke(prompt)
+            )
     except Exception as exc:  # noqa: BLE001
         logger.warning("Critic invocation failed (%s); approving by default", exc)
         return True, "Critic unavailable; approved by default."
@@ -244,7 +271,11 @@ async def _critique_plan(plan: dict, message: str, state: dict) -> tuple[bool, s
 # --- The agentic loop ----------------------------------------------------------------
 
 
-async def plan_refinement_agentic(message: str, state: dict) -> tuple[dict, list[dict]]:
+async def plan_refinement_agentic(
+    message: str,
+    state: dict,
+    config: dict | None = None,
+) -> tuple[dict, list[dict]]:
     """Run the Haiku tool-calling loop, then have an independent critic review the plan.
 
     Returns (plan, resolved_activities). Raises UnsupportedRefinement when the agent judges
@@ -267,7 +298,17 @@ async def plan_refinement_agentic(message: str, state: dict) -> tuple[dict, list
 
     for _turn in range(MAX_AGENT_TURNS):
         try:
-            ai_message = await llm.ainvoke(messages)
+            from evals.replay.llm import llm_call_label
+
+            with llm_call_label("refine_agent_planner"):
+                ai_message = (
+                    await llm.ainvoke(
+                        messages,
+                        config=_config_for_llm(config, "refine_agent_planner"),
+                    )
+                    if config is not None
+                    else await llm.ainvoke(messages)
+                )
         except Exception as exc:  # noqa: BLE001
             raise AgentPlanningError(f"LLM invocation failed: {exc}") from exc
 
@@ -339,7 +380,15 @@ async def plan_refinement_agentic(message: str, state: dict) -> tuple[dict, list
 
         if plan is not None:
             finalized = await _finalize_plan(plan, message, state, resolved, destination, coords)
-            approved, critic_reason = await _critique_plan(finalized, message, state)
+            if config is None:
+                approved, critic_reason = await _critique_plan(finalized, message, state)
+            else:
+                approved, critic_reason = await _critique_plan(
+                    finalized,
+                    message,
+                    state,
+                    config=config,
+                )
             finalized["critic_verdict"] = {"approved": approved, "reason": critic_reason}
 
             if approved or critic_revisions >= MAX_CRITIC_REVISIONS:

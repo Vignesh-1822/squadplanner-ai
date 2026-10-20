@@ -1,0 +1,29 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 33.494,
+      "lng": -117.148
+    },
+    "destination": "Temecula",
+    "included_type": "restaurant",
+    "query": "Breakfast"
+  },
+  "request_sha256": "22779b3da2591c30fd3fd9f11fff1b4d9e53788801ecadec0d00d2ea5d639f99",
+  "response": {
+    "address": "30520 Rancho California Rd #101, Temecula, CA 92591, USA",
+    "category": "food",
+    "lat": 33.5094433,
+    "lng": -117.12785350000001,
+    "name": "Breakfast Club of Temecula",
+    "place_id": "ChIJ7xrH5Xd_24ARLEuChORn_K8",
+    "price_level": 0,
+    "rating": 4.2,
+    "tags": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

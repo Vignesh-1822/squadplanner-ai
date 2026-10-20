@@ -1,0 +1,18 @@
+{
+  "operation": "fetch_weather",
+  "request": {
+    "destination_name": "Glacier National Park",
+    "end_date": "2026-09-11",
+    "lat": 48.696,
+    "lng": -113.718,
+    "start_date": "2026-09-08"
+  },
+  "request_sha256": "156ff7a8420455e31acbbdf6b92ce51955a68fba2f80ea8c8a5aa87911ee2198",
+  "response": {
+    "avg_temp_c": 6.3,
+    "date_range": "2026-09-08 to 2026-09-11",
+    "destination": "Glacier National Park",
+    "precipitation_mm": 34.9,
+    "summary": "Cool (6.3\u00b0C avg), significant rain expected"
+  }
+}

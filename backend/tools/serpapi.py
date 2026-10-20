@@ -1,13 +1,16 @@
 """SerpAPI: flights + hotels with monthly budget gating."""
 
 import logging
+import os
 from datetime import datetime, timedelta, timezone
 
 import httpx
+from langsmith import traceable
 
 from agent.state import FlightResult, HotelResult
 from config import settings
 from db.client import get_collection
+from evals.replay.tools import NO_REPLAY, ReplayRecordingError, record_tool, replay_tool
 from tools.google_places import find_place_by_text
 
 logger = logging.getLogger(__name__)
@@ -35,7 +38,7 @@ async def check_and_increment_serpapi_budget() -> bool:
     Raises SerpAPILimitReached if the monthly hard limit has been hit.
     """
     current_month = datetime.now(timezone.utc).strftime("%Y-%m")
-    collection = get_collection("api_cache")
+    collection = get_collection("api_usage")
     doc = await collection.find_one_and_update(
         {
             "type": "serpapi_usage",
@@ -64,6 +67,18 @@ def _estimated_flight(origin: str, destination: str, depart_date: str, return_da
         return_time=f"{return_date}T18:00:00",
         is_estimated=True,
     )
+
+
+def _recorded_estimated_flight(
+    request: dict,
+    origin: str,
+    destination: str,
+    depart_date: str,
+    return_date: str,
+) -> FlightResult:
+    result = _estimated_flight(origin, destination, depart_date, return_date)
+    record_tool("search_flights", request, dict(result))
+    return result
 
 
 async def _enrich_hotel_with_place(
@@ -111,6 +126,16 @@ async def _estimated_hotel(destination: str, coords: dict | None = None) -> Hote
     return await _enrich_hotel_with_place(hotel, destination, coords)
 
 
+async def _recorded_estimated_hotel(
+    request: dict,
+    destination: str,
+    coords: dict | None = None,
+) -> HotelResult:
+    result = await _estimated_hotel(destination, coords)
+    record_tool("search_hotels", request, dict(result))
+    return result
+
+
 def _price_from_rate(rate: dict | None, fallback: float = 9999.0) -> float:
     """Extract a numeric nightly price from SerpAPI's hotel rate object."""
     if not rate:
@@ -128,6 +153,7 @@ def _price_from_rate(rate: dict | None, fallback: float = 9999.0) -> float:
     return fallback
 
 
+@traceable(name="search_flights", run_type="tool")
 async def search_flights(
     origin: str,
     destination: str,
@@ -136,6 +162,27 @@ async def search_flights(
     adults: int = 1,
 ) -> FlightResult:
     """Return the cheapest available flight; fall back to estimate on errors or quota."""
+    replay_request = {
+        "origin": origin,
+        "destination": destination,
+        "depart_date": depart_date,
+        "return_date": return_date,
+        "adults": adults,
+    }
+    replayed = replay_tool("search_flights", replay_request)
+    if replayed is not NO_REPLAY:
+        return FlightResult(**replayed)
+    if (
+        (settings.evals_tool_mode == "record" or os.getenv("EVALS_TOOL_MODE") == "record")
+        and not (len(destination) == 3 and destination.isalpha() and destination.isupper())
+        and not destination.startswith(("/m", "/g"))
+    ):
+        # K-002 is deterministic: SerpAPI rejects city names before searching.
+        # Preserve the current production fallback without wasting paid quota.
+        return _recorded_estimated_flight(
+            replay_request, origin, destination, depart_date, return_date
+        )
+
     cache_key = f"flights:{origin}:{destination}:{depart_date}:{return_date}:{adults}"
     collection = get_collection("api_cache")
 
@@ -148,15 +195,23 @@ async def search_flights(
                 cached.pop("_id", None)
                 cached.pop("key", None)
                 cached.pop("cached_at", None)
-                return FlightResult(**cached)
+                result = FlightResult(**cached)
+                record_tool("search_flights", replay_request, dict(result))
+                return result
         except Exception as cache_exc:  # noqa: BLE001
             logger.warning("Flight cache read failed (continuing without cache): %s", cache_exc)
 
+        if settings.evals_tool_mode == "record" or os.getenv("EVALS_TOOL_MODE") == "record":
+            from evals.record import consume_serpapi_search
+
+            consume_serpapi_search()
         try:
             await check_and_increment_serpapi_budget()
         except SerpAPILimitReached:
             logger.warning("SerpAPI limit reached — returning estimated flight for %s→%s", origin, destination)
-            return _estimated_flight(origin, destination, depart_date, return_date)
+            return _recorded_estimated_flight(
+                replay_request, origin, destination, depart_date, return_date
+            )
 
         async with httpx.AsyncClient(timeout=20) as client:
             resp = await client.get(
@@ -179,7 +234,9 @@ async def search_flights(
 
         flights = data.get("best_flights") or data.get("other_flights") or []
         if not flights:
-            return _estimated_flight(origin, destination, depart_date, return_date)
+            return _recorded_estimated_flight(
+                replay_request, origin, destination, depart_date, return_date
+            )
 
         best = flights[0]
         legs = best.get("flights", [{}])
@@ -196,6 +253,7 @@ async def search_flights(
             return_time=last_leg.get("arrival_airport", {}).get("time", f"{return_date}T18:00:00"),
             is_estimated=False,
         )
+        record_tool("search_flights", replay_request, dict(result))
 
         try:
             doc = {**result, "key": cache_key, "cached_at": datetime.now(timezone.utc)}
@@ -204,11 +262,22 @@ async def search_flights(
             logger.warning("Flight cache write failed: %s", write_exc)
         return result
 
+    except ReplayRecordingError:
+        raise
     except Exception as exc:  # noqa: BLE001
-        logger.error("search_flights error: %s", exc)
-        return _estimated_flight(origin, destination, depart_date, return_date)
+        if isinstance(exc, httpx.HTTPStatusError):
+            logger.error(
+                "search_flights HTTP error: status=%s",
+                exc.response.status_code,
+            )
+        else:
+            logger.error("search_flights error: %s", exc)
+        return _recorded_estimated_flight(
+            replay_request, origin, destination, depart_date, return_date
+        )
 
 
+@traceable(name="search_hotels", run_type="tool")
 async def search_hotels(
     destination: str,
     check_in: str,
@@ -217,6 +286,17 @@ async def search_hotels(
     coords: dict | None = None,
 ) -> HotelResult:
     """Return the best hotel under budget; fall back to estimate on errors or quota."""
+    replay_request = {
+        "destination": destination,
+        "check_in": check_in,
+        "check_out": check_out,
+        "budget_ceiling_usd": budget_ceiling_usd,
+        "coords": coords,
+    }
+    replayed = replay_tool("search_hotels", replay_request)
+    if replayed is not NO_REPLAY:
+        return HotelResult(**replayed)
+
     cache_key = f"hotels:{destination}:{check_in}:{check_out}:{int(budget_ceiling_usd)}"
     collection = get_collection("api_cache")
 
@@ -229,16 +309,22 @@ async def search_hotels(
                 cached.pop("_id", None)
                 cached.pop("key", None)
                 cached.pop("cached_at", None)
-                return await _enrich_hotel_with_place(HotelResult(**cached), destination, coords)
+                result = await _enrich_hotel_with_place(HotelResult(**cached), destination, coords)
+                record_tool("search_hotels", replay_request, dict(result))
+                return result
         except Exception as cache_exc:  # noqa: BLE001
             logger.warning("Hotel cache read failed (continuing without cache): %s", cache_exc)
 
+        if settings.evals_tool_mode == "record" or os.getenv("EVALS_TOOL_MODE") == "record":
+            from evals.record import consume_serpapi_search
+
+            consume_serpapi_search()
         try:
             await check_and_increment_serpapi_budget()
         except SerpAPILimitReached as limit_exc:
             print(f"search_hotels falling back to estimated hotel: {limit_exc}")
             logger.warning("SerpAPI limit reached — returning estimated hotel for %s", destination)
-            return await _estimated_hotel(destination, coords)
+            return await _recorded_estimated_hotel(replay_request, destination, coords)
 
         async with httpx.AsyncClient(timeout=20) as client:
             print(
@@ -265,7 +351,7 @@ async def search_hotels(
         properties = data.get("properties", [])
         if not properties:
             print("search_hotels falling back to estimated hotel: SerpAPI returned no properties.")
-            return await _estimated_hotel(destination, coords)
+            return await _recorded_estimated_hotel(replay_request, destination, coords)
 
         check_in_dt = datetime.strptime(check_in, "%Y-%m-%d")
         check_out_dt = datetime.strptime(check_out, "%Y-%m-%d")
@@ -295,6 +381,7 @@ async def search_hotels(
             is_estimated=False,
         )
         result = await _enrich_hotel_with_place(result, destination, coords)
+        record_tool("search_hotels", replay_request, dict(result))
 
         try:
             doc = {**result, "key": cache_key, "cached_at": datetime.now(timezone.utc)}
@@ -303,10 +390,12 @@ async def search_hotels(
             logger.warning("Hotel cache write failed: %s", write_exc)
         return result
 
+    except ReplayRecordingError:
+        raise
     except Exception as exc:  # noqa: BLE001
         logger.error("search_hotels error: %s", exc)
         print(f"search_hotels falling back to estimated hotel after exception: {exc!r}")
-        return await _estimated_hotel(destination, coords)
+        return await _recorded_estimated_hotel(replay_request, destination, coords)
 
 
 if __name__ == "__main__":

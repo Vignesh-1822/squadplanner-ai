@@ -1,0 +1,29 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 44.636,
+      "lng": -124.053
+    },
+    "destination": "Newport",
+    "included_type": null,
+    "query": "Rest at hotel or beachside"
+  },
+  "request_sha256": "9ef619e6c424a102e9213d0bb25b0607297befb98656320cffb4cb7aa35075ad",
+  "response": {
+    "address": "536 SW Elizabeth St, Newport, OR 97365, USA",
+    "category": "place",
+    "lat": 44.6324259,
+    "lng": -124.0635622,
+    "name": "Seagrass Oceanfront Inn",
+    "place_id": "ChIJe-Q1DcjXwVQRQgU8_IBoa1A",
+    "price_level": 0,
+    "rating": 3.2,
+    "tags": [
+      "hotel",
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

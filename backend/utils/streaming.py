@@ -8,6 +8,8 @@ from typing import Any, AsyncGenerator
 from langgraph.types import Command
 
 from db.client import get_collection
+from evals.telemetry.usage import UsageTracker, telemetry_inc_fields
+from evals.tracing import build_callbacks, member_emails_from_trip
 from utils.candidates import enrich_candidates
 
 NODE_PROGRESS_MAP = {
@@ -102,6 +104,7 @@ async def _emit_and_wait_for_city_confirmation(
     graph: Any,
     trip_id: str,
     config: dict,
+    usage_tracker: UsageTracker | None = None,
 ) -> AsyncGenerator[str, None]:
     trips = get_collection("trips")
     snapshot = await graph.aget_state(config)
@@ -110,16 +113,18 @@ async def _emit_and_wait_for_city_confirmation(
     # the way out rather than at generation time, so old checkpoints are covered too.
     await enrich_candidates(candidates)
 
-    await trips.update_one(
-        {"trip_id": trip_id},
-        {
-            "$set": {
-                "status": "city_selection",
-                "candidate_destinations": candidates,
-                "updated_at": datetime.now(timezone.utc).isoformat(),
-            }
-        },
-    )
+    update: dict[str, Any] = {
+        "$set": {
+            "status": "city_selection",
+            "candidate_destinations": candidates,
+            "updated_at": datetime.now(timezone.utc).isoformat(),
+        }
+    }
+    if usage_tracker:
+        increments = telemetry_inc_fields(usage_tracker.drain())
+        if increments:
+            update["$inc"] = increments
+    await trips.update_one({"trip_id": trip_id}, update)
     yield format_sse_event(
         "HITL_REQUIRED",
         {
@@ -151,7 +156,12 @@ async def _emit_and_wait_for_city_confirmation(
         await asyncio.sleep(1)
 
 
-async def _emit_completion_if_done(graph: Any, trip_id: str, config: dict) -> AsyncGenerator[str, None]:
+async def _emit_completion_if_done(
+    graph: Any,
+    trip_id: str,
+    config: dict,
+    usage_tracker: UsageTracker | None = None,
+) -> AsyncGenerator[str, None]:
     snapshot = await graph.aget_state(config)
     if not snapshot or snapshot.next:
         return
@@ -159,22 +169,27 @@ async def _emit_completion_if_done(graph: Any, trip_id: str, config: dict) -> As
     final_state = dict(snapshot.values)
     complete_payload = _complete_payload(trip_id, final_state)
     trips = get_collection("trips")
+    update: dict[str, Any] = {
+        "$set": {
+            "status": "complete",
+            "trip_pitch": final_state.get("trip_pitch"),
+            "itinerary": complete_payload["itinerary"],
+            "final_state": final_state,
+            "preference_constraints": complete_payload["preference_constraints"],
+            "constraint_satisfaction": complete_payload["constraint_satisfaction"],
+            "decision_log": final_state.get("decision_log", []),
+            "refinement_history": final_state.get("refinement_history", []),
+            "completed_at": datetime.now(timezone.utc).isoformat(),
+            "updated_at": datetime.now(timezone.utc).isoformat(),
+        }
+    }
+    if usage_tracker:
+        increments = telemetry_inc_fields(usage_tracker.drain())
+        if increments:
+            update["$inc"] = increments
     await trips.update_one(
         {"trip_id": trip_id},
-        {
-            "$set": {
-                "status": "complete",
-                "trip_pitch": final_state.get("trip_pitch"),
-                "itinerary": complete_payload["itinerary"],
-                "final_state": final_state,
-                "preference_constraints": complete_payload["preference_constraints"],
-                "constraint_satisfaction": complete_payload["constraint_satisfaction"],
-                "decision_log": final_state.get("decision_log", []),
-                "refinement_history": final_state.get("refinement_history", []),
-                "completed_at": datetime.now(timezone.utc).isoformat(),
-                "updated_at": datetime.now(timezone.utc).isoformat(),
-            }
-        },
+        update,
     )
     yield format_sse_event("TRIP_COMPLETE", complete_payload)
 
@@ -185,11 +200,18 @@ async def stream_graph_events(
 ) -> AsyncGenerator[str, None]:
     """Stream orchestrator graph progress and completion events for a trip."""
     graph = await _get_orchestrator_graph()
-    config = {"configurable": {"thread_id": trip_id}}
     trips = get_collection("trips")
+    usage_tracker: UsageTracker | None = None
 
     try:
         trip = await trips.find_one({"trip_id": trip_id})
+        emails = member_emails_from_trip(trip)
+        callbacks, usage_tracker = build_callbacks(trip_id, emails)
+        config = {
+            "configurable": {"thread_id": trip_id},
+            "callbacks": callbacks,
+            "metadata": {"trip_id": trip_id},
+        }
         if trip and trip.get("status") == "complete":
             yield format_sse_event(
                 "TRIP_COMPLETE",
@@ -207,7 +229,12 @@ async def stream_graph_events(
 
         snapshot = await graph.aget_state(config)
         if _is_waiting_for_city(snapshot):
-            async for frame in _emit_and_wait_for_city_confirmation(graph, trip_id, config):
+            async for frame in _emit_and_wait_for_city_confirmation(
+                graph,
+                trip_id,
+                config,
+                usage_tracker,
+            ):
                 yield frame
         elif (
             snapshot
@@ -215,7 +242,7 @@ async def stream_graph_events(
             and snapshot.values.get("trip_id") == trip_id
             and snapshot.values.get("trip_pitch")
         ):
-            async for frame in _emit_completion_if_done(graph, trip_id, config):
+            async for frame in _emit_completion_if_done(graph, trip_id, config, usage_tracker):
                 yield frame
             return
         else:
@@ -236,22 +263,32 @@ async def stream_graph_events(
 
             snapshot = await graph.aget_state(config)
             if _is_waiting_for_city(snapshot):
-                async for frame in _emit_and_wait_for_city_confirmation(graph, trip_id, config):
+                async for frame in _emit_and_wait_for_city_confirmation(
+                    graph,
+                    trip_id,
+                    config,
+                    usage_tracker,
+                ):
                     yield frame
 
-        async for frame in _emit_completion_if_done(graph, trip_id, config):
+        async for frame in _emit_completion_if_done(graph, trip_id, config, usage_tracker):
             yield frame
 
     except Exception as exc:  # noqa: BLE001
+        update: dict[str, Any] = {
+            "$set": {
+                "status": "failed",
+                "error": str(exc),
+                "updated_at": datetime.now(timezone.utc).isoformat(),
+            }
+        }
+        if usage_tracker:
+            increments = telemetry_inc_fields(usage_tracker.drain())
+            if increments:
+                update["$inc"] = increments
         await trips.update_one(
             {"trip_id": trip_id},
-            {
-                "$set": {
-                    "status": "failed",
-                    "error": str(exc),
-                    "updated_at": datetime.now(timezone.utc).isoformat(),
-                }
-            },
+            update,
         )
         yield format_sse_event(
             "ERROR",

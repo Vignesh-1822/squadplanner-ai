@@ -1,0 +1,37 @@
+{
+  "operation": "invoke",
+  "request": {
+    "invoke_kwargs": {},
+    "node": "extract_preference_constraints",
+    "prompt": "Extract group trip planning constraints from natural-language preference notes.\nReturn ONLY raw JSON, no markdown, no backticks. Use this exact top-level shape:\n{raw_member_notes: list, raw_group_notes: string, hard_constraints: list, soft_preferences: list, schedule: object, activity_filters: object, meal_requirements: object, destination_intent: object}.\nClassify explicit must/avoid/timing requirements as hard_constraints. Classify general likes, vibes, and pacing as soft_preferences unless they are phrased as must/avoid.\nUse schedule.earliest_start_time as HH:MM when users avoid early mornings. Use activity_filters.avoid_tags for avoided activity categories. Use meal_requirements.must_include for cuisine or meal requirements. Use destination_intent.styles for destination-level intent like big_city, skyscrapers, skyline, architecture, museums, food_city, nightlife_city, beach, national_park, theme_parks, mountains, small_town, scenic_drives, shopping, quiet_escape. Use destination_intent.preferred_types for preferred destination types, and set destination_intent.iconic_preference true when users ask for iconic, famous, big-city, skyline, national-park, beach, or theme-park destinations.\n\nPreference notes JSON:\n{\"raw_member_notes\": [{\"member_id\": \"alice\", \"name\": \"Alice\", \"notes\": \"Hates early mornings, no clubs, wants Italian food at least once.\"}], \"raw_group_notes\": \"Keep the trip relaxed, avoid rushed mornings, and make sure the plan respects everyone's must-haves.\", \"hard_constraints\": [], \"soft_preferences\": [], \"schedule\": {\"avoid_early_mornings\": false, \"earliest_start_time\": null, \"pace\": \"balanced\"}, \"activity_filters\": {\"avoid_tags\": [], \"prefer_tags\": [], \"required_tags\": []}, \"meal_requirements\": {\"must_include\": [], \"avoid_terms\": []}, \"destination_intent\": {\"styles\": [], \"landmarks\": [], \"preferred_types\": [], \"iconic_preference\": false}}",
+    "tools": []
+  },
+  "request_sha256": "9df5879a007445b733ecd9f3c9eb6ee12182995a82ddbebbe8afc9613463425c",
+  "response": {
+    "data": {
+      "additional_kwargs": {},
+      "content": "```json\n{\"raw_member_notes\": [{\"member_id\": \"alice\", \"name\": \"Alice\", \"notes\": \"Hates early mornings, no clubs, wants Italian food at least once.\"}], \"raw_group_notes\": \"Keep the trip relaxed, avoid rushed mornings, and make sure the plan respects everyone's must-haves.\", \"hard_constraints\": [\"avoid_nightclubs\", \"must_have_italian_meal\", \"no_early_mornings\"], \"soft_preferences\": [\"relaxed_pace\", \"unrushed_mornings\"], \"schedule\": {\"avoid_early_mornings\": true, \"earliest_start_time\": \"09:00\", \"pace\": \"relaxed\"}, \"activity_filters\": {\"avoid_tags\": [\"nightclubs\"], \"prefer_tags\": [], \"required_tags\": []}, \"meal_requirements\": {\"must_include\": [\"Italian\"], \"avoid_terms\": []}, \"destination_intent\": {\"styles\": [], \"landmarks\": [], \"preferred_types\": [], \"iconic_preference\": false}}\n```",
+      "id": "lc_run--01a07576-d02d-7623-b377-f09512ccc2eb",
+      "invalid_tool_calls": [],
+      "name": null,
+      "response_metadata": {
+        "model_name": "claude-haiku-4-5-20251001",
+        "model_provider": "anthropic",
+        "stop_reason": "end_turn",
+        "stop_sequence": null
+      },
+      "tool_calls": [],
+      "type": "ai",
+      "usage_metadata": {
+        "input_token_details": {
+          "cache_creation": 0,
+          "cache_read": 0
+        },
+        "input_tokens": 490,
+        "output_tokens": 241,
+        "total_tokens": 731
+      }
+    },
+    "type": "ai"
+  }
+}

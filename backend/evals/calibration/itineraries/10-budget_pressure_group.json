@@ -1,0 +1,645 @@
+{
+  "id": "10-budget_pressure_group",
+  "group_notes": "Cheapest realistic weekend possible. Avoid expensive hotels.",
+  "members": [
+    {
+      "member_id": "sam",
+      "name": "Sam",
+      "origin_city": "LAX",
+      "budget_usd": 450,
+      "food_restrictions": [],
+      "preference_notes": "Okay with simple food and free outdoor activities.",
+      "preference_vector": {
+        "outdoor": 0.9,
+        "food": 0.4,
+        "nightlife": 0.1,
+        "urban": 0.3,
+        "shopping": 0.1
+      },
+      "is_leader": true
+    },
+    {
+      "member_id": "maya",
+      "name": "Maya",
+      "origin_city": "SEA",
+      "budget_usd": 500,
+      "food_restrictions": [],
+      "preference_notes": "Prefers walkable low-cost activities.",
+      "preference_vector": {
+        "outdoor": 0.8,
+        "food": 0.5,
+        "nightlife": 0.1,
+        "urban": 0.5,
+        "shopping": 0.1
+      },
+      "is_leader": false
+    }
+  ],
+  "start_date": "2026-09-08",
+  "end_date": "2026-09-11",
+  "trip_duration_days": 3,
+  "destination": {
+    "name": "Matagorda",
+    "coords": {
+      "lat": 28.69,
+      "lng": -95.967
+    }
+  },
+  "hotel": {
+    "name": "Westwood Inn Matagorda",
+    "address": "23082 TX-60 S, Matagorda, TX 77457, USA",
+    "price_per_night_usd": 137.0,
+    "total_price_usd": 411.0,
+    "rating": 3.9,
+    "is_estimated": false
+  },
+  "weather": {
+    "destination": "Matagorda",
+    "date_range": "2026-09-08 to 2026-09-11",
+    "avg_temp_c": 30.5,
+    "precipitation_mm": 0.1,
+    "summary": "Warm (30.5\u00b0C avg), dry conditions"
+  },
+  "days": [
+    {
+      "day_number": 1,
+      "date": "2026-09-08",
+      "neighborhood": "190 County Rd 255",
+      "meals": [
+        "Breakfast at Westwood Inn Matagorda",
+        "Lunch at Charlie Ro's BBQ, Matagorda",
+        "Dinner at Coastal Que BBQ & More"
+      ],
+      "estimated_day_cost_usd": 110.0,
+      "schedule": [
+        {
+          "time": "07:00",
+          "type": "meal",
+          "label": "Breakfast at Westwood Inn Matagorda",
+          "notes": "Hotel breakfast before day activities"
+        },
+        {
+          "time": "08:30",
+          "type": "activity",
+          "label": "Bill Whitworth Memorial Park",
+          "notes": "Free outdoor park, walking trails, waterfront access"
+        },
+        {
+          "time": "10:30",
+          "type": "activity",
+          "label": "Mad Island WMA",
+          "notes": "Free outdoor wildlife management area, nature exploration"
+        },
+        {
+          "time": "12:30",
+          "type": "meal",
+          "label": "Lunch at Charlie Ro's BBQ, Matagorda",
+          "notes": "Budget-friendly BBQ, simple local food"
+        },
+        {
+          "time": "14:00",
+          "type": "activity",
+          "label": "FM 521 River Park",
+          "notes": "Free outdoor park, river views, walking area"
+        },
+        {
+          "time": "16:00",
+          "type": "activity",
+          "label": "Matagorda Wharf",
+          "notes": "Free waterfront access, scenic views, walkable"
+        },
+        {
+          "time": "18:30",
+          "type": "meal",
+          "label": "Dinner at Coastal Que BBQ & More",
+          "notes": "Simple BBQ, local favorite, affordable"
+        }
+      ],
+      "rationale": "Day 1 introduces the group to Matagorda's natural attractions and waterfront character through exclusively free or low-cost outdoor activities. Bill Whitworth Memorial Park, Mad Island WMA, FM 521 River Park, and Matagorda Wharf deliver walkable, accessible experiences with no entry fees, perfectly aligning with both members' preferences for simple, free outdoor recreation. Meals at Gorda Grill and two BBQ stops keep dining casual and budget-friendly.",
+      "constraint_notes": [
+        "All activities (parks, wildlife area, wharf) are free outdoor venues",
+        "No expensive paid attractions scheduled",
+        "Walkable and accessible outdoor focus throughout",
+        "Simple, casual meal stops (BBQ and grill)"
+      ],
+      "total_travel_minutes": 5103,
+      "activities": [
+        {
+          "name": "Bill Whitworth Memorial Park",
+          "category": "outdoor",
+          "address": "861 Wightman St, Matagorda, TX 77457, USA",
+          "lat": 28.6933455,
+          "lng": -95.96909090000001,
+          "price_level": 0,
+          "rating": 0.0,
+          "tags": [
+            "park",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Mad Island WMA",
+          "category": "urban",
+          "address": "Collegeport, TX 77428, USA",
+          "lat": 28.6762528,
+          "lng": -96.0403728,
+          "price_level": 0,
+          "rating": 4.6,
+          "tags": [
+            "wildlife_refuge",
+            "park",
+            "tourist_attraction",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "FM 521 River Park",
+          "category": "outdoor",
+          "address": "FM521, Bay City, TX 77414, USA",
+          "lat": 28.788225999999998,
+          "lng": -95.9987922,
+          "price_level": 0,
+          "rating": 4.2,
+          "tags": [
+            "park",
+            "campground",
+            "lodging",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Matagorda Wharf",
+          "category": "food",
+          "address": "1428 FM Rd 2031, Matagorda, TX 77457, USA",
+          "lat": 28.6694189,
+          "lng": -95.9646607,
+          "price_level": 0,
+          "rating": 5.0,
+          "tags": [
+            "american_restaurant",
+            "coffee_stand",
+            "fishing_charter",
+            "travel_agency",
+            "real_estate_agency",
+            "restaurant",
+            "food",
+            "point_of_interest",
+            "service",
+            "establishment"
+          ]
+        }
+      ],
+      "routes": [
+        {
+          "distance_meters": 1337,
+          "duration_seconds": 1091,
+          "mode": "WALK",
+          "from_order": 1,
+          "to_order": 2,
+          "from_label": "Westwood Inn Matagorda",
+          "to_label": "Gorda Grill"
+        },
+        {
+          "distance_meters": 358,
+          "duration_seconds": 293,
+          "mode": "WALK",
+          "from_order": 2,
+          "to_order": 3,
+          "from_label": "Gorda Grill",
+          "to_label": "Bill Whitworth Memorial Park"
+        },
+        {
+          "distance_meters": 167329,
+          "duration_seconds": 134714,
+          "mode": "WALK",
+          "from_order": 3,
+          "to_order": 4,
+          "from_label": "Bill Whitworth Memorial Park",
+          "to_label": "Mad Island WMA"
+        },
+        {
+          "distance_meters": 166617,
+          "duration_seconds": 134104,
+          "mode": "WALK",
+          "from_order": 4,
+          "to_order": 5,
+          "from_label": "Mad Island WMA",
+          "to_label": "Charlie Ro's BBQ, Matagorda"
+        },
+        {
+          "distance_meters": 19117,
+          "duration_seconds": 15380,
+          "mode": "WALK",
+          "from_order": 5,
+          "to_order": 6,
+          "from_label": "Charlie Ro's BBQ, Matagorda",
+          "to_label": "FM 521 River Park"
+        },
+        {
+          "distance_meters": 22614,
+          "duration_seconds": 18186,
+          "mode": "WALK",
+          "from_order": 6,
+          "to_order": 7,
+          "from_label": "FM 521 River Park",
+          "to_label": "Matagorda Wharf"
+        },
+        {
+          "distance_meters": 2986,
+          "duration_seconds": 2431,
+          "mode": "WALK",
+          "from_order": 7,
+          "to_order": 8,
+          "from_label": "Matagorda Wharf",
+          "to_label": "Coastal Que BBQ & More"
+        }
+      ]
+    },
+    {
+      "day_number": 2,
+      "date": "2026-09-09",
+      "neighborhood": "6420 FM Rd 2031",
+      "meals": [
+        "Breakfast at Westwood Inn Matagorda",
+        "Lunch at HUNT BROTHERS PIZZA",
+        "Dinner at Lighthouse BBQ Cafe"
+      ],
+      "estimated_day_cost_usd": 95.0,
+      "schedule": [
+        {
+          "time": "07:00",
+          "type": "meal",
+          "label": "Breakfast at Westwood Inn Matagorda",
+          "notes": "Hotel breakfast"
+        },
+        {
+          "time": "08:45",
+          "type": "activity",
+          "label": "Jetty Park",
+          "notes": "Free outdoor jetty access, fishing, waterfront walking"
+        },
+        {
+          "time": "10:30",
+          "type": "activity",
+          "label": "Matagorda Bay Nature Park",
+          "notes": "Free nature exploration, bird watching, outdoor trails"
+        },
+        {
+          "time": "12:45",
+          "type": "meal",
+          "label": "Lunch at HUNT BROTHERS PIZZA",
+          "notes": "Casual, budget-friendly pizza"
+        },
+        {
+          "time": "14:15",
+          "type": "activity",
+          "label": "Parker's Cut",
+          "notes": "Free outdoor waterway access, scenic boat views"
+        },
+        {
+          "time": "16:00",
+          "type": "activity",
+          "label": "Matagorda fishing hole",
+          "notes": "Free outdoor fishing access, community spot"
+        },
+        {
+          "time": "18:30",
+          "type": "meal",
+          "label": "Dinner at Lighthouse BBQ Cafe",
+          "notes": "Local BBQ, affordable, casual dining"
+        }
+      ],
+      "rationale": "Day 2 deepens coastal exploration with another full slate of free outdoor activities centered on Matagorda Bay's ecosystems and fishing opportunities. Jetty Park, Matagorda Bay Nature Park, Parker's Cut, and the Matagorda fishing hole are all low-cost or free venues that reward leisurely walking and observation. This pace suits the group's preference for walkable activities and simple experiences without premium pricing.",
+      "constraint_notes": [
+        "All activities are free outdoor/nature-based venues",
+        "No paid attractions included",
+        "Walkable bay-side and waterfront exploration",
+        "Casual meals (pizza, BBQ cafe) maintain budget focus"
+      ],
+      "total_travel_minutes": 751,
+      "activities": [
+        {
+          "name": "Jetty Park",
+          "category": "urban",
+          "address": "6420 FM Rd 2031, Matagorda, TX 77457, USA",
+          "lat": 28.5970178,
+          "lng": -95.9777692,
+          "price_level": 0,
+          "rating": 4.5,
+          "tags": [
+            "park",
+            "tourist_attraction",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Matagorda Bay Nature Park",
+          "category": "outdoor",
+          "address": "6420 FM Rd 2031, Matagorda, TX 77457, USA",
+          "lat": 28.5978718,
+          "lng": -95.9776639,
+          "price_level": 0,
+          "rating": 4.7,
+          "tags": [
+            "state_park",
+            "park",
+            "point_of_interest",
+            "service",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Parker\u2019s Cut",
+          "category": "outdoor",
+          "address": "J29G+7Q, Matagorda, TX 77457, USA",
+          "lat": 28.618209999999998,
+          "lng": -95.97308,
+          "price_level": 0,
+          "rating": 5.0,
+          "tags": [
+            "nature_preserve",
+            "park",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Matagorda fishing hole",
+          "category": "outdoor",
+          "address": "H2R9+G2, Texas, USA",
+          "lat": 28.591333,
+          "lng": -95.9824982,
+          "price_level": 0,
+          "rating": 0.0,
+          "tags": [
+            "park",
+            "point_of_interest",
+            "establishment"
+          ]
+        }
+      ],
+      "routes": [
+        {
+          "distance_meters": 1337,
+          "duration_seconds": 1091,
+          "mode": "WALK",
+          "from_order": 1,
+          "to_order": 2,
+          "from_label": "Westwood Inn Matagorda",
+          "to_label": "Gorda Grill"
+        },
+        {
+          "distance_meters": 11026,
+          "duration_seconds": 8870,
+          "mode": "WALK",
+          "from_order": 2,
+          "to_order": 3,
+          "from_label": "Gorda Grill",
+          "to_label": "Jetty Park"
+        },
+        {
+          "distance_meters": 364,
+          "duration_seconds": 301,
+          "mode": "WALK",
+          "from_order": 3,
+          "to_order": 4,
+          "from_label": "Jetty Park",
+          "to_label": "Matagorda Bay Nature Park"
+        },
+        {
+          "distance_meters": 11324,
+          "duration_seconds": 9125,
+          "mode": "WALK",
+          "from_order": 4,
+          "to_order": 5,
+          "from_label": "Matagorda Bay Nature Park",
+          "to_label": "HUNT BROTHERS PIZZA"
+        },
+        {
+          "distance_meters": 8959,
+          "duration_seconds": 7221,
+          "mode": "WALK",
+          "from_order": 5,
+          "to_order": 6,
+          "from_label": "HUNT BROTHERS PIZZA",
+          "to_label": "Parker\u2019s Cut"
+        },
+        {
+          "distance_meters": 2861,
+          "duration_seconds": 2301,
+          "mode": "WALK",
+          "from_order": 6,
+          "to_order": 7,
+          "from_label": "Parker\u2019s Cut",
+          "to_label": "Matagorda fishing hole"
+        },
+        {
+          "distance_meters": 20081,
+          "duration_seconds": 16174,
+          "mode": "WALK",
+          "from_order": 7,
+          "to_order": 8,
+          "from_label": "Matagorda fishing hole",
+          "to_label": "Lighthouse BBQ Cafe"
+        }
+      ]
+    },
+    {
+      "day_number": 3,
+      "date": "2026-09-10",
+      "neighborhood": "M4H5+47",
+      "meals": [
+        "Breakfast at Westwood Inn Matagorda",
+        "Lunch at Snappers Bar & Grill",
+        "Dinner at Waterfront Restaurant"
+      ],
+      "estimated_day_cost_usd": 125.0,
+      "schedule": [
+        {
+          "time": "07:30",
+          "type": "meal",
+          "label": "Breakfast at Westwood Inn Matagorda",
+          "notes": "Hotel breakfast"
+        },
+        {
+          "time": "09:00",
+          "type": "activity",
+          "label": "Big Boggy National Wildlife Refuge",
+          "notes": "Free outdoor refuge, nature trails, wildlife viewing"
+        },
+        {
+          "time": "11:30",
+          "type": "activity",
+          "label": "Matagorda Beach",
+          "notes": "Free beach access, swimming, coastal walking"
+        },
+        {
+          "time": "13:00",
+          "type": "meal",
+          "label": "Lunch at Snappers Bar & Grill",
+          "notes": "Local casual dining, seafood option"
+        },
+        {
+          "time": "14:30",
+          "type": "activity",
+          "label": "Cau cua",
+          "notes": "Urban waterfront area, casual exploration"
+        },
+        {
+          "time": "18:00",
+          "type": "meal",
+          "label": "Dinner at Waterfront Restaurant",
+          "notes": "Local waterfront dining, modest prices"
+        }
+      ],
+      "rationale": "Day 3 completes the journey with Big Boggy National Wildlife Refuge and Matagorda beach\u2014both free, accessible outdoor spaces perfect for low-cost exploration. The Cau cua area rounds out the coastal experience with walkable outdoor scenery. This final day honors the group's commitment to free outdoor activities and simple travel, ending the trip as it began: immersed in natural Matagorda.",
+      "constraint_notes": [
+        "Wildlife refuge and beach are free public outdoor spaces",
+        "No paid attractions or expensive venues scheduled",
+        "Walkable natural areas throughout",
+        "Simple casual dining maintains budget-friendly approach"
+      ],
+      "total_travel_minutes": 1555,
+      "activities": [
+        {
+          "name": "Big Boggy National Wildlife Refuge",
+          "category": "outdoor",
+          "address": "Wadsworth, TX 77483, USA",
+          "lat": 28.757134199999996,
+          "lng": -95.81381999999999,
+          "price_level": 0,
+          "rating": 3.2,
+          "tags": [
+            "wildlife_refuge",
+            "park",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Matagorda beach",
+          "category": "urban",
+          "address": "Matagorda, TX, USA",
+          "lat": 28.6114182,
+          "lng": -95.9407382,
+          "price_level": 0,
+          "rating": 5.0,
+          "tags": [
+            "tourist_attraction",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Cau cua",
+          "category": "urban",
+          "address": "6420 FM Rd 2031, Matagorda, TX 77457, USA",
+          "lat": 28.597928999999997,
+          "lng": -95.97873059999999,
+          "price_level": 0,
+          "rating": 0.0,
+          "tags": [
+            "tourist_attraction",
+            "point_of_interest",
+            "establishment"
+          ]
+        }
+      ],
+      "routes": [
+        {
+          "distance_meters": 1337,
+          "duration_seconds": 1091,
+          "mode": "WALK",
+          "from_order": 1,
+          "to_order": 2,
+          "from_label": "Westwood Inn Matagorda",
+          "to_label": "Gorda Grill"
+        },
+        {
+          "distance_meters": 33582,
+          "duration_seconds": 26990,
+          "mode": "WALK",
+          "from_order": 2,
+          "to_order": 3,
+          "from_label": "Gorda Grill",
+          "to_label": "Big Boggy National Wildlife Refuge"
+        },
+        {
+          "distance_meters": 45904,
+          "duration_seconds": 36876,
+          "mode": "WALK",
+          "from_order": 3,
+          "to_order": 4,
+          "from_label": "Big Boggy National Wildlife Refuge",
+          "to_label": "Matagorda beach"
+        },
+        {
+          "distance_meters": 12427,
+          "duration_seconds": 9997,
+          "mode": "WALK",
+          "from_order": 4,
+          "to_order": 5,
+          "from_label": "Matagorda beach",
+          "to_label": "Snappers Bar & Grill"
+        },
+        {
+          "distance_meters": 10815,
+          "duration_seconds": 8699,
+          "mode": "WALK",
+          "from_order": 5,
+          "to_order": 6,
+          "from_label": "Snappers Bar & Grill",
+          "to_label": "Cau cua"
+        },
+        {
+          "distance_meters": 11990,
+          "duration_seconds": 9658,
+          "mode": "WALK",
+          "from_order": 6,
+          "to_order": 7,
+          "from_label": "Cau cua",
+          "to_label": "Waterfront Restaurant"
+        }
+      ]
+    }
+  ],
+  "trip_pitch": "Matagorda, Texas offers the perfect coastal escape for a budget-conscious getaway seeking authentic Gulf Coast experiences without the premium price tag. This charming seaside community delivers natural beauty, outdoor recreation, and genuine local culture\u2014all centered around the pristine waters and wildlife habitats that make the Texas coast special. With affordable lodging at the Westwood Inn and a rhythm built around free and low-cost outdoor activities, Matagorda invites you to explore marshlands, beaches, and parks at your own pace. It's an ideal destination for travelers who value authentic experiences, simple pleasures, and keeping their wallets happy.\n\nYour three-day itinerary balances exploration with relaxation. Day 1 immerses you in coastal recreation: start at Bill Whitworth Memorial Park, venture into Mad Island WMA for wildlife viewing, paddle or walk through FM 521 River Park, and cap the day at the historic Matagorda Wharf with stunning waterfront views. Day 2 focuses on bay-side discovery: explore the pristine ecosystems of Jetty Park and Matagorda Bay Nature Park, enjoy the unique vistas at Parker's Cut, and try your hand at fishing at the Matagorda fishing hole. Day 3 transitions to broader natural wonders: walk the trails and boardwalks of Big Boggy National Wildlife Refuge, relax on Matagorda beach, and explore the scenic Cau cua area. Each day weaves together free outdoor activities that let you connect with the landscape and each other.\n\nYou'll stay at the Westwood Inn Matagorda, a practical and affordable base priced at $137 per night, keeping total accommodation costs to just $411 for the full trip. Expect warm, dry weather averaging 30.5\u00b0C (around 86\u00b0F), perfect for outdoor exploration in early September. The itinerary is designed with a balanced pace\u2014mornings start with breakfast at Gorda Grill, followed by outdoor activities, then simple, casual meals at local favorites like Charlie Ro's BBQ, Hunt Brothers Pizza, and Snappers Bar & Grill. Pack light layers, sunscreen, and water; most activities are walkable or short drives through this compact coastal region.\n\nThis is your chance to experience the Gulf Coast on your terms: unhurried, affordable, and authentic. Matagorda rewards curious explorers who seek out natural beauty over polished attractions\u2014think wildlife refuges, working waterfronts, and genuine local food rather than tourist traps. With three days of free parks, accessible beaches, and low-cost meals, you'll leave with memories of pristine marshes, friendly waterfront vibes, and the satisfaction of a trip that respected both your budget and your love of the outdoors. Welcome to real Texas coastal living.",
+  "per_member_costs": [
+    {
+      "member_id": "sam",
+      "name": "Sam",
+      "budget_usd": 450.0,
+      "flight_usd": 300.0,
+      "flight_is_estimated": true,
+      "hotel_share_usd": 205.5,
+      "activity_share_usd": 165.0,
+      "total_usd": 670.5,
+      "headroom_usd": -220.5,
+      "utilization": 1.49,
+      "fairness_utilization": 1.1233333333333333
+    },
+    {
+      "member_id": "maya",
+      "name": "Maya",
+      "budget_usd": 500.0,
+      "flight_usd": 300.0,
+      "flight_is_estimated": true,
+      "hotel_share_usd": 205.5,
+      "activity_share_usd": 165.0,
+      "total_usd": 670.5,
+      "headroom_usd": -170.5,
+      "utilization": 1.341,
+      "fairness_utilization": 1.011
+    }
+  ],
+  "provenance": {
+    "source_case_id": "10-budget_pressure_group",
+    "source_tier": "offline",
+    "planner_output": "Recorded live model output replayed without network access.",
+    "flight_data": "K-002 baseline: fixed $300 estimated flight per member."
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 44.636,
+      "lng": -124.053
+    },
+    "destination": "Newport",
+    "included_type": "restaurant",
+    "query": "Breakfast"
+  },
+  "request_sha256": "d049d2fbba53980f119bc526c2a716b838d6b772da49426a36356ee6748c5bf5",
+  "response": {
+    "address": "411 NW Coast St, Newport, OR 97365, USA",
+    "category": "food",
+    "lat": 44.639015699999995,
+    "lng": -124.06083229999999,
+    "name": "Cafe Stephanie",
+    "place_id": "ChIJrbk9Q8zXwVQRlaOKqJT25ss",
+    "price_level": 0,
+    "rating": 4.6,
+    "tags": [
+      "cafe",
+      "breakfast_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

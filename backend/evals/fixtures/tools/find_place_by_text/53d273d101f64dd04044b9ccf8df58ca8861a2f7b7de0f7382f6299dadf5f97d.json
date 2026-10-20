@@ -1,0 +1,29 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 38.04,
+      "lng": -84.503
+    },
+    "destination": "Lexington",
+    "included_type": null,
+    "query": "Casual neighborhood walk or shopping"
+  },
+  "request_sha256": "53d273d101f64dd04044b9ccf8df58ca8861a2f7b7de0f7382f6299dadf5f97d",
+  "response": {
+    "address": "867 E High St #120, Lexington, KY 40502, USA",
+    "category": "place",
+    "lat": 38.0284632,
+    "lng": -84.48982010000002,
+    "name": "AJ's Casuals",
+    "place_id": "ChIJ4eKgG9xEQogRvVV6J92KDFo",
+    "price_level": 0,
+    "rating": 4.8,
+    "tags": [
+      "clothing_store",
+      "store",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

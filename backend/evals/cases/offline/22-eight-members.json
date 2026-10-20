@@ -1,0 +1,160 @@
+{
+  "id": "22-eight-members",
+  "title": "Eight members",
+  "purpose": "Maximum supported squad size",
+  "tier": "offline",
+  "tags": [
+    "boundary"
+  ],
+  "payload": {
+    "group_notes": "Keep the trip relaxed, avoid rushed mornings, and make sure the plan respects everyone's must-haves.",
+    "members": [
+      {
+        "member_id": "member-1",
+        "name": "Member 1",
+        "origin_city": "ORD",
+        "budget_usd": 1500,
+        "food_restrictions": [
+          "vegetarian"
+        ],
+        "preference_notes": "Hates early mornings, no clubs, wants Italian food at least once.",
+        "preference_vector": {
+          "outdoor": 0.8,
+          "food": 0.7,
+          "nightlife": 0.2,
+          "urban": 0.6,
+          "shopping": 0.1
+        },
+        "is_leader": true
+      },
+      {
+        "member_id": "member-2",
+        "name": "Member 2",
+        "origin_city": "ATL",
+        "budget_usd": 1200,
+        "food_restrictions": [],
+        "preference_notes": "Likes relaxed days with good meals and urban neighborhoods, but does not want an overpacked schedule.",
+        "preference_vector": {
+          "outdoor": 0.5,
+          "food": 0.8,
+          "nightlife": 0.6,
+          "urban": 0.4,
+          "shopping": 0.3
+        },
+        "is_leader": false
+      },
+      {
+        "member_id": "member-3",
+        "name": "Member 3",
+        "origin_city": "LAX",
+        "budget_usd": 2000,
+        "food_restrictions": [],
+        "preference_notes": "Interested in scenic walks and museums, but not late-night clubbing.",
+        "preference_vector": {
+          "outdoor": 0.6,
+          "food": 0.6,
+          "nightlife": 0.4,
+          "urban": 0.7,
+          "shopping": 0.5
+        },
+        "is_leader": false
+      },
+      {
+        "member_id": "member-4",
+        "name": "Member 4",
+        "origin_city": "JFK",
+        "budget_usd": 1500,
+        "food_restrictions": [
+          "vegetarian"
+        ],
+        "preference_notes": "Hates early mornings, no clubs, wants Italian food at least once.",
+        "preference_vector": {
+          "outdoor": 0.8,
+          "food": 0.7,
+          "nightlife": 0.2,
+          "urban": 0.6,
+          "shopping": 0.1
+        },
+        "is_leader": false
+      },
+      {
+        "member_id": "member-5",
+        "name": "Member 5",
+        "origin_city": "ORD",
+        "budget_usd": 1200,
+        "food_restrictions": [],
+        "preference_notes": "Likes relaxed days with good meals and urban neighborhoods, but does not want an overpacked schedule.",
+        "preference_vector": {
+          "outdoor": 0.5,
+          "food": 0.8,
+          "nightlife": 0.6,
+          "urban": 0.4,
+          "shopping": 0.3
+        },
+        "is_leader": false
+      },
+      {
+        "member_id": "member-6",
+        "name": "Member 6",
+        "origin_city": "ATL",
+        "budget_usd": 2000,
+        "food_restrictions": [],
+        "preference_notes": "Interested in scenic walks and museums, but not late-night clubbing.",
+        "preference_vector": {
+          "outdoor": 0.6,
+          "food": 0.6,
+          "nightlife": 0.4,
+          "urban": 0.7,
+          "shopping": 0.5
+        },
+        "is_leader": false
+      },
+      {
+        "member_id": "member-7",
+        "name": "Member 7",
+        "origin_city": "LAX",
+        "budget_usd": 1500,
+        "food_restrictions": [
+          "vegetarian"
+        ],
+        "preference_notes": "Hates early mornings, no clubs, wants Italian food at least once.",
+        "preference_vector": {
+          "outdoor": 0.8,
+          "food": 0.7,
+          "nightlife": 0.2,
+          "urban": 0.6,
+          "shopping": 0.1
+        },
+        "is_leader": false
+      },
+      {
+        "member_id": "member-8",
+        "name": "Member 8",
+        "origin_city": "JFK",
+        "budget_usd": 1200,
+        "food_restrictions": [],
+        "preference_notes": "Likes relaxed days with good meals and urban neighborhoods, but does not want an overpacked schedule.",
+        "preference_vector": {
+          "outdoor": 0.5,
+          "food": 0.8,
+          "nightlife": 0.6,
+          "urban": 0.4,
+          "shopping": 0.3
+        },
+        "is_leader": false
+      }
+    ],
+    "start_date": "2026-09-08",
+    "end_date": "2026-09-11"
+  },
+  "hitl_choices": [
+    0,
+    0,
+    0
+  ],
+  "expect_budget_retry": false,
+  "expect_fairness_retry": false,
+  "expect_validation_rebuild": null,
+  "graph_only": false,
+  "expected_known_issues": []
+}

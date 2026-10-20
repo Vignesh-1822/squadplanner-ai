@@ -1,0 +1,21 @@
+{
+  "operation": "search_flights",
+  "request": {
+    "adults": 1,
+    "depart_date": "2026-09-08",
+    "destination": "Surfside Beach",
+    "origin": "JFK",
+    "return_date": "2026-09-11"
+  },
+  "request_sha256": "e56a4f2a2087b52a5966f159c3ad64b9c173525994f598a9067966574913f176",
+  "response": {
+    "airline": "Estimated",
+    "depart_time": "2026-09-08T08:00:00",
+    "destination": "Surfside Beach",
+    "is_estimated": true,
+    "member_id": "",
+    "origin": "JFK",
+    "price_usd": 300.0,
+    "return_time": "2026-09-11T18:00:00"
+  }
+}

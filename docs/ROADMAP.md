@@ -30,15 +30,27 @@ Eight endpoints have no authentication. All are live on the deployed demo.
 
 ## Phase 1 — Make it measurable
 
-- [ ] Langfuse (Docker self-host or free cloud) — trace every node, tool call, LLM call
-- [ ] Golden set ~40 cases from `tests/demo_input_cases.json` + `manual_cases.json`
-- [ ] Deterministic scorers: budget, dietary, avoided categories, day count, geo sanity, flight alignment
-- [ ] LLM-as-judge (stronger model than the planner) for coherence, fairness, pitch quality
-- [ ] **Trajectory evals** — nodes run, retry loops fired, tool args valid
-- [ ] Token + cost per node, persisted on the trip, shown in the UI
-- [ ] Nightly run via the Batches API (50% cost)
-- [ ] Fix the 2 failing tests in `test_preference_constraints.py` (stale `CreateTripRequest` shape)
-- [ ] Delete or fill the 3 empty test files: `test_agent.py`, `test_scoring.py`, `test_tools.py`
+**Complete.** Spec: `docs/phases/PHASE_1.md`. Baseline: `backend/evals/baseline.json`.
+
+- [x] Tracing — LangSmith rather than Langfuse (D-011), with member-email redaction
+- [x] Offline replay layer so the graph runs for $0 with no network (not in the original list;
+      every item below depends on it)
+- [x] Golden set — 30 offline cases and 5 live cases, seeded from the demo and manual fixtures
+- [x] Deterministic scorers: budget, fairness, dietary, hard avoids, dates, radius, geo sanity,
+      flight alignment, schema completeness
+- [x] LLM-as-judge for coherence, fairness and pitch quality — **and calibrated against human
+      labels, which it failed** (D-016). Judge scores are not usable as a standalone metric.
+- [x] **Trajectory evals** — nodes run, retry loops fired, rebuild bounds, tool args valid
+- [x] Token + cost + latency per node, persisted on the trip, exposed at
+      `GET /api/trips/{trip_id}/telemetry` and rendered in the debug UI
+- [x] Fix the 2 failing tests in `test_preference_constraints.py`
+- [x] Delete the 3 empty test files
+- [~] Nightly run via the Batches API — **dropped** (D-015): the saving is cents against the cost
+      of async job-polling code
+
+Findings from the phase: `docs/KNOWN_ISSUES.md` K-001 to K-011 and `docs/PRODUCT_FEEDBACK.md`.
+Nineteen of the twenty-nine product findings have no home in Phases 2-8 as currently written; that
+gap is the next planning task.
 
 ## Phase 2 — Harden the model boundary
 

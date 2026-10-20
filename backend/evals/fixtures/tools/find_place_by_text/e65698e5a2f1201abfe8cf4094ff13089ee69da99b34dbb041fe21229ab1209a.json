@@ -1,0 +1,28 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 28.949,
+      "lng": -95.293
+    },
+    "destination": "Surfside Beach",
+    "included_type": null,
+    "query": "Brazoria County Beach continued"
+  },
+  "request_sha256": "e65698e5a2f1201abfe8cf4094ff13089ee69da99b34dbb041fe21229ab1209a",
+  "response": {
+    "address": "XQR6+4V, Surfside Beach, TX 77541, USA",
+    "category": "place",
+    "lat": 28.9893863,
+    "lng": -95.2378986,
+    "name": "Brazoria Beach",
+    "place_id": "ChIJ3_n98mVtQIYRVNc6qj_ZgZE",
+    "price_level": 0,
+    "rating": 4.7,
+    "tags": [
+      "tourist_attraction",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

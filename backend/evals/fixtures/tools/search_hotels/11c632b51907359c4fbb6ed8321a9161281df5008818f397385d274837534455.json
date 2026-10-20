@@ -1,0 +1,25 @@
+{
+  "operation": "search_hotels",
+  "request": {
+    "budget_ceiling_usd": 1410.0,
+    "check_in": "2026-09-08",
+    "check_out": "2026-09-11",
+    "coords": {
+      "lat": 38.04,
+      "lng": -84.503
+    },
+    "destination": "Lexington"
+  },
+  "request_sha256": "11c632b51907359c4fbb6ed8321a9161281df5008818f397385d274837534455",
+  "response": {
+    "address": "1950 Newtown Pike, Lexington, KY 40511, USA",
+    "is_estimated": false,
+    "lat": 38.0971116,
+    "lng": -84.4848512,
+    "name": "Clarion Hotel Conference Center Lexington North",
+    "place_id": "ChIJNRZaBCxEQogRmwA84J74Cfo",
+    "price_per_night_usd": 68.0,
+    "rating": 3.8,
+    "total_price_usd": 204.0
+  }
+}

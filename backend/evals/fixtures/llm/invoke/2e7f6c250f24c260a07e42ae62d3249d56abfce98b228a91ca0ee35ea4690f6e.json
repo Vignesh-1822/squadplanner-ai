@@ -1,0 +1,49 @@
+{
+  "operation": "invoke",
+  "request": {
+    "invoke_kwargs": {},
+    "node": "select_destination",
+    "prompt": [
+      {
+        "data": {
+          "additional_kwargs": {},
+          "content": "Given these top 5 destinations as a JSON list, the group's preference vector, trip dates, preference conflicts, and natural-language constraints, write a 1-2 sentence 'why this fits your group' explanation for each destination. Take hard constraints seriously. Return ONLY a raw JSON array of exactly 5 strings, no markdown, no backticks, no explanation. Example format: [\"reason1\", \"reason2\", \"reason3\", \"reason4\", \"reason5\"]\n\ndestinations: [{\"id\": \"matagorda_tx\", \"name\": \"Matagorda\", \"state\": \"TX\", \"type\": \"beach_town\", \"cost_level\": \"low\", \"vibe_tags\": {\"nightlife\": 0.08, \"shopping\": 0.1, \"food\": 0.18, \"urban\": 0.26, \"outdoor\": 0.38}, \"popularity_tier\": 3, \"iconic_score\": 0.5, \"prominence_tags\": [\"beach\"], \"score\": 0.8916}, {\"id\": \"bisti_badlands_nm\", \"name\": \"Bisti/De-Na-Zin Wilderness\", \"state\": \"NM\", \"type\": \"natural_area\", \"cost_level\": \"low\", \"vibe_tags\": {\"nightlife\": 0.03, \"shopping\": 0.06, \"food\": 0.1, \"urban\": 0.19, \"outdoor\": 0.62}, \"popularity_tier\": 2, \"iconic_score\": 0.25, \"prominence_tags\": [], \"score\": 0.8739}, {\"id\": \"bonneville_salt_flats_ut\", \"name\": \"Bonneville Salt Flats\", \"state\": \"UT\", \"type\": \"natural_area\", \"cost_level\": \"low\", \"vibe_tags\": {\"nightlife\": 0.03, \"shopping\": 0.06, \"food\": 0.1, \"urban\": 0.19, \"outdoor\": 0.62}, \"popularity_tier\": 2, \"iconic_score\": 0.25, \"prominence_tags\": [], \"score\": 0.8739}, {\"id\": \"devils_tower_wy\", \"name\": \"Devils Tower National Monument\", \"state\": \"WY\", \"type\": \"natural_area\", \"cost_level\": \"low\", \"vibe_tags\": {\"nightlife\": 0.03, \"shopping\": 0.06, \"food\": 0.1, \"urban\": 0.19, \"outdoor\": 0.62}, \"popularity_tier\": 2, \"iconic_score\": 0.25, \"prominence_tags\": [\"mountains\", \"scenic_drives\"], \"score\": 0.8739}, {\"id\": \"albuquerque_nm\", \"name\": \"Albuquerque\", \"state\": \"NM\", \"type\": \"major_city\", \"cost_level\": \"low\", \"vibe_tags\": {\"nightlife\": 0.167, \"shopping\": 0.119, \"food\": 0.167, \"urban\": 0.237, \"outdoor\": 0.31}, \"popularity_tier\": 4, \"iconic_score\": 0.75, \"prominence_tags\": [\"big_city\", \"first_time\", \"food_city\", \"museums\"], \"score\": 0.869}]\ngroup_preference_vector: {\"outdoor\": 0.8000000000000002, \"food\": 0.4000000000000001, \"nightlife\": 0.03333333333333333, \"urban\": 0.3333333333333333, \"shopping\": 0.03333333333333333}\ndestination_preference_vector: {\"outdoor\": 0.5142857142857142, \"food\": 0.24999999999999994, \"nightlife\": 0.016666666666666663, \"urban\": 0.20238095238095236, \"shopping\": 0.016666666666666663}\nstart_date: 2026-09-08\nend_date: 2026-09-11\ngroup_notes: \"This must be as cheap as possible. Avoid expensive hotels, paid tours, and high-cost dining.\"\npreference_conflicts: []\npreference_constraints: {\"raw_member_notes\": [{\"member_id\": \"sam\", \"name\": \"Sam\", \"notes\": \"Free outdoor activities are best. I cannot go over budget.\"}, {\"member_id\": \"maya\", \"name\": \"Maya\", \"notes\": \"Simple food, walkable neighborhoods, and no costly attractions.\"}, {\"member_id\": \"leo\", \"name\": \"Leo\", \"notes\": \"I want nature but the budget matters more than the destination.\"}], \"raw_group_notes\": \"This must be as cheap as possible. Avoid expensive hotels, paid tours, and high-cost dining.\", \"hard_constraints\": [], \"soft_preferences\": [\"outdoor activities\", \"nature-focused\", \"simple food options\", \"walkable neighborhoods\", \"balanced pace\"], \"schedule\": {\"avoid_early_mornings\": false, \"earliest_start_time\": null, \"pace\": \"balanced\"}, \"activity_filters\": {\"avoid_tags\": [\"paid tours\", \"high-cost attractions\", \"expensive experiences\"], \"prefer_tags\": [\"free outdoor activities\", \"nature\", \"walking\"], \"required_tags\": [\"free or low-cost\"]}, \"meal_requirements\": {\"must_include\": [], \"avoid_terms\": [\"high-cost dining\", \"expensive restaurants\"]}, \"destination_intent\": {\"styles\": [\"nature\", \"walkable\", \"budget-friendly\"], \"landmarks\": [], \"preferred_types\": [\"natural areas\", \"parks\", \"accessible neighborhoods\"], \"iconic_preference\": false}}",
+          "id": null,
+          "name": null,
+          "response_metadata": {},
+          "type": "human"
+        },
+        "type": "human"
+      }
+    ],
+    "tools": []
+  },
+  "request_sha256": "2e7f6c250f24c260a07e42ae62d3249d56abfce98b228a91ca0ee35ea4690f6e",
+  "response": {
+    "data": {
+      "additional_kwargs": {},
+      "content": "[\"Matagorda offers free beach walks and low-cost accommodations perfect for your tight budget, with excellent outdoor recreation that matches your group's nature-first priorities.\", \"Bisti/De-Na-Zin Wilderness delivers exceptional free outdoor exploration with minimal costs and stunning natural landscapes that align perfectly with your budget-conscious, nature-focused trip.\", \"Bonneville Salt Flats provides one of the most unique free outdoor experiences in the region with virtually no entrance fees or required paid attractions, ideal for budget-maximizing nature lovers.\", \"Devils Tower National Monument combines iconic free outdoor access, scenic nature activities, and minimal costs, making it the perfect budget-friendly destination for your group's outdoor priorities.\", \"Albuquerque offers walkable neighborhoods with affordable food options and free outdoor activities like Old Town exploration and nature trails, providing the best balance of budget-conscious dining and urban nature access.\"]",
+      "id": "lc_run--01a07567-380a-7cb0-b0ef-cad336b64157",
+      "invalid_tool_calls": [],
+      "name": null,
+      "response_metadata": {
+        "model_name": "claude-haiku-4-5-20251001",
+        "model_provider": "anthropic",
+        "stop_reason": "end_turn",
+        "stop_sequence": null
+      },
+      "tool_calls": [],
+      "type": "ai",
+      "usage_metadata": {
+        "input_token_details": {
+          "cache_creation": 0,
+          "cache_read": 0
+        },
+        "input_tokens": 1302,
+        "output_tokens": 192,
+        "total_tokens": 1494
+      }
+    },
+    "type": "ai"
+  }
+}

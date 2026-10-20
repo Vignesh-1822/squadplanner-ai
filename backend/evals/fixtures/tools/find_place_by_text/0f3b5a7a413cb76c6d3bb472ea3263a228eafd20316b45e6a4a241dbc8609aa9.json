@@ -1,0 +1,39 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 41.8781,
+      "lng": -87.6298
+    },
+    "destination": "Chicago",
+    "included_type": "restaurant",
+    "query": "Dinner"
+  },
+  "request_sha256": "0f3b5a7a413cb76c6d3bb472ea3263a228eafd20316b45e6a4a241dbc8609aa9",
+  "response": {
+    "address": "145 N Dearborn St, Chicago, IL 60602, USA",
+    "category": "food",
+    "lat": 41.8843373,
+    "lng": -87.6292766,
+    "name": "The Dearborn",
+    "place_id": "ChIJ-XdXNKUsDogRW-m5g5Siao8",
+    "price_level": 0,
+    "rating": 4.7,
+    "tags": [
+      "american_restaurant",
+      "cocktail_bar",
+      "irish_restaurant",
+      "fish_and_chips_restaurant",
+      "brunch_restaurant",
+      "seafood_restaurant",
+      "british_restaurant",
+      "bar",
+      "event_venue",
+      "european_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

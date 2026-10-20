@@ -1,0 +1,34 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 33.494,
+      "lng": -117.148
+    },
+    "destination": "Temecula",
+    "included_type": "restaurant",
+    "query": "Dinner - Redhawk Towne Center restaurant (gluten-free)"
+  },
+  "request_sha256": "aaf718b2467b6e63f6b8088d247b636a78b5f29e700d7836b469eef6af411033",
+  "response": {
+    "address": "28656 Old Town Front St, Temecula, CA 92590, USA",
+    "category": "food",
+    "lat": 33.4933467,
+    "lng": -117.1484981,
+    "name": "1909 Temecula",
+    "place_id": "ChIJ7boUNb9_24AReqXS_K3Ddko",
+    "price_level": 0,
+    "rating": 4.5,
+    "tags": [
+      "gastropub",
+      "cocktail_bar",
+      "brunch_restaurant",
+      "bar",
+      "american_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

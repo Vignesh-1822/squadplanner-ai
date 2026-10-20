@@ -1,0 +1,29 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 28.949,
+      "lng": -95.293
+    },
+    "destination": "Surfside Beach",
+    "included_type": "restaurant",
+    "query": "Dinner at local vegetarian-friendly venue"
+  },
+  "request_sha256": "3f9d89e8834e8efbccca4a6d63e593b6b14fec7d87d524c1cf153bd166e9f1d7",
+  "response": {
+    "address": "403 TX-332, Surfside Beach, TX 77541, USA",
+    "category": "food",
+    "lat": 28.9515919,
+    "lng": -95.2878874,
+    "name": "Salty Pelican Surfside Beach",
+    "place_id": "ChIJMSK_lOJtQIYRMwpyWtNSXdo",
+    "price_level": 0,
+    "rating": 3.9,
+    "tags": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

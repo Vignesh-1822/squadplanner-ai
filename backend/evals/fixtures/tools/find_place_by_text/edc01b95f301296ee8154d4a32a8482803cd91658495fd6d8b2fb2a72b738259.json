@@ -1,0 +1,30 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 38.04,
+      "lng": -84.503
+    },
+    "destination": "Lexington",
+    "included_type": "restaurant",
+    "query": "Lunch"
+  },
+  "request_sha256": "edc01b95f301296ee8154d4a32a8482803cd91658495fd6d8b2fb2a72b738259",
+  "response": {
+    "address": "685 S Limestone Ste 150, Lexington, KY 40508, USA",
+    "category": "food",
+    "lat": 38.035266199999995,
+    "lng": -84.5084937,
+    "name": "Naz's Halal Food - Lexington",
+    "place_id": "ChIJY7XaFO1FQogRJlkjbCDKmIE",
+    "price_level": 0,
+    "rating": 4.8,
+    "tags": [
+      "halal_restaurant",
+      "restaurant",
+      "point_of_interest",
+      "food",
+      "establishment"
+    ]
+  }
+}

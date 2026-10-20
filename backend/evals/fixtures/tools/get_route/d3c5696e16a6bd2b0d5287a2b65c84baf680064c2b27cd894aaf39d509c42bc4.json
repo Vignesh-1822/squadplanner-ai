@@ -1,0 +1,17 @@
+{
+  "operation": "get_route",
+  "request": {
+    "dest_lat": 48.797241299999996,
+    "dest_lng": -113.65759179999999,
+    "mode": "WALK",
+    "origin_lat": 48.765777799999995,
+    "origin_lng": -113.7408889
+  },
+  "request_sha256": "d3c5696e16a6bd2b0d5287a2b65c84baf680064c2b27cd894aaf39d509c42bc4",
+  "response": {
+    "distance_meters": 16752,
+    "duration_seconds": 15316,
+    "mode": "WALK",
+    "polyline": "{cshH~pfuTu@vBk@lCgAhEUp@aA~EgArLEhB@xAEfBHnAErBMlBYxAk@r@u@fBQb@w@lAW\\i@jCw@vBG^Uj@a@~A]|@c@tBi@`Ae@~ASb@?\\i@tAi@jAm@x@WPi@r@g@bAWb@Ur@Sf@ORw@vCI`ASv@W~AGxA[xBOnBSfB?t@GVMTY~@WTILGd@Dn@En@ETg@`AUx@s@hAWdAQbA?NHv@?t@b@nBf@pAB^L\\Dn@]JAx@DVGNOFqAwAkAm@u@Ik@?cA^i@GUBs@SgBAg@H@MVo@Xe@N[\\mAHm@CCm@d@u@b@o@No@p@a@VKJSZ[RW@_@OQWYk@OQM_@Oy@[aEAm@FmBS_Cs@{Bo@]e@[YMw@gA[w@c@c@IO[gAEm@sA_D[_AUg@Ko@c@{@Si@QW]uAQyAAu@?[A[K]G]IiBE}@MUYkA]i@MOw@sBQw@Sa@Go@CaAKg@Si@UY]KGOM]SO}@KS?OPS^UfAILYFaAGSFc@Cc@We@e@}ByDe@i@SMu@aAw@cBa@aAc@sAg@w@k@oAe@eBe@Yc@S_@a@[aAPBv@b@r@Zf@ZCMk@gABKrAl@LJt@TLDbBV`@DXLL?RHRAH@LAHBFEFQNcB@kAA_ACa@XaBJ_@VIT[ZGVFNXHLNPHRV\\HLPHn@~@DD|BrDR`@RTFJXFPCJHVp@Xb@DVZCZA`@PPKj@LJGV]^YVH^RTBNLBAQY_@[i@}@i@KQHIEMMi@WSAGCQy@KI_@aAg@gAc@cAoAiCqC_GYmAo@qAUs@w@sDI}@a@oBQ]BKhAEL@^XT^hAtAdBtBf@b@lAfBbAz@PTBGSy@a@eCe@sA]aB{@sE[gCOu@a@gAIWa@g@DEj@Jj@D`Bd@LRRj@l@`A?Mq@qEKs@IUGKFERD^RT\\v@hBBKBy@?u@D{@CUCOOOkAU_BEMC_@a@_A]M@q@XYDmAFqAPUISO_@AYFa@@q@@]S]@]U[{@KMg@@m@_@Qg@UiAe@kAKUSQYKsAMe@U][o@wA[{A]e@Qe@Wo@EUe@aAe@iBWi@Y]Ou@Cq@Ce@@s@Ik@Ia@?c@DO]oAIm@CqAIOKA{@FQK[a@c@WYAo@@OE]{@Gc@KQIa@s@cAWo@Qw@IuAAg@q@wCs@_B_AwAcA_ACUIaBKk@_@y@k@kCk@cDOo@Sy@Kq@MYO{@S_@y@uCGc@M_@i@m@Oi@[q@SUGS[YUu@Mq@Wc@kAqA[[ASFi@BUAiAGi@Bu@Ps@Ti@f@mBRm@D{AAa@]k@_@WECSa@DSOQMq@_AcBi@oACc@WoAEa@Wu@KQMmAIc@Ao@QwAIy@Fm@Je@D{AV}ATm@z@[LUT{@LmBBuAF]COy@eAOYYw@KKSAi@P_@?w@YSOW?QLWX]D]WSS_@u@U_BC[KeAC]CsBQwA_@oBEoAm@_CGWOYe@kBUq@SSEKSWKa@SWMg@]_ACYFaBRcADg@Jg@Ay@Cq@?s@[k@I]AkAI_@OSUUUuAIu@Oc@OiAI{@ImAIW]q@Gg@Aw@My@Ue@QeACa@QUI_@Go@i@u@[o@e@_BU}@i@{Aa@yAm@oAe@_AWy@Ca@DwB\\kBpBuId@wAJwAb@sBPs@@o@EiADUFMVSlAsDRkA`AaCNgANs@b@yCLiAx@wCTiAT{AX}@H{@u@{COu@IGc@Ti@BK@a@KUQEQ?_@Nc@NkA?c@Ss@Am@B]Ea@[oAWu@GAUP]k@IWEeCBa@Jm@@}@Hi@p@qB\\{@T[`Aq@TWJ[EgAWi@WeAGo@?mBG_A?u@TeA`@sAZ}ATk@Zc@RUF?NYA{@IcAGe@U}@M_@kC}D}AmFY{GQkAK]E[c@gA\\{@OqC_@{CWkDQqH?}@Ay@CWMe@Qg@GmABoANcAb@}AH[FKPS^i@ZY?]Gq@BwA@ON[@SvBg@tCe@lA@f@RVd@F@RO|@f@zAZ"
+  }
+}

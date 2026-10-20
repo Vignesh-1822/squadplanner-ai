@@ -1,0 +1,3857 @@
+{
+  "case_id": "18-diet-gluten_free",
+  "events": [
+    {
+      "event": "on_chain_start",
+      "name": "LangGraph",
+      "timestamp": "2026-09-06T18:33:06.941422+00:00",
+      "run_id": "01a077fe-de7c-7b90-869a-4762def45dd3",
+      "parent_ids": [],
+      "tags": [],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "parse_input",
+      "timestamp": "2026-09-06T18:33:06.944309+00:00",
+      "run_id": "01a077fe-de7f-7a31-a507-e1344bcf06d6",
+      "parent_ids": [
+        "01a077fe-de7c-7b90-869a-4762def45dd3"
+      ],
+      "tags": [
+        "graph:step:1"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 1,
+        "langgraph_node": "parse_input",
+        "langgraph_triggers": [
+          "branch:to:parse_input"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "parse_input"
+        ],
+        "langgraph_checkpoint_ns": "parse_input:621f1511-51fd-1392-7074-3e518f166990"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "parse_input",
+      "timestamp": "2026-09-06T18:33:06.949151+00:00",
+      "run_id": "01a077fe-de7f-7a31-a507-e1344bcf06d6",
+      "parent_ids": [
+        "01a077fe-de7c-7b90-869a-4762def45dd3"
+      ],
+      "tags": [
+        "graph:step:1"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 1,
+        "langgraph_node": "parse_input",
+        "langgraph_triggers": [
+          "branch:to:parse_input"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "parse_input"
+        ],
+        "langgraph_checkpoint_ns": "parse_input:621f1511-51fd-1392-7074-3e518f166990"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "extract_preference_constraints",
+      "timestamp": "2026-09-06T18:33:06.952130+00:00",
+      "run_id": "01a077fe-de87-7781-afcc-f5dacc37b709",
+      "parent_ids": [
+        "01a077fe-de7c-7b90-869a-4762def45dd3"
+      ],
+      "tags": [
+        "graph:step:2"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 2,
+        "langgraph_node": "extract_preference_constraints",
+        "langgraph_triggers": [
+          "branch:to:extract_preference_constraints"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "extract_preference_constraints"
+        ],
+        "langgraph_checkpoint_ns": "extract_preference_constraints:47394d0c-6450-8520-929c-0df990ff7394"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "extract_preference_constraints",
+      "timestamp": "2026-09-06T18:33:06.955315+00:00",
+      "run_id": "01a077fe-de87-7781-afcc-f5dacc37b709",
+      "parent_ids": [
+        "01a077fe-de7c-7b90-869a-4762def45dd3"
+      ],
+      "tags": [
+        "graph:step:2"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 2,
+        "langgraph_node": "extract_preference_constraints",
+        "langgraph_triggers": [
+          "branch:to:extract_preference_constraints"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "extract_preference_constraints"
+        ],
+        "langgraph_checkpoint_ns": "extract_preference_constraints:47394d0c-6450-8520-929c-0df990ff7394"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "select_destination",
+      "timestamp": "2026-09-06T18:33:06.957661+00:00",
+      "run_id": "01a077fe-de8d-7782-9d5a-9956917a7094",
+      "parent_ids": [
+        "01a077fe-de7c-7b90-869a-4762def45dd3"
+      ],
+      "tags": [
+        "graph:step:3"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 3,
+        "langgraph_node": "select_destination",
+        "langgraph_triggers": [
+          "branch:to:select_destination"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "select_destination"
+        ],
+        "langgraph_checkpoint_ns": "select_destination:5698e48b-c666-b865-6d4c-641e233f8b01"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "select_destination",
+      "timestamp": "2026-09-06T18:33:07.090673+00:00",
+      "run_id": "01a077fe-de8d-7782-9d5a-9956917a7094",
+      "parent_ids": [
+        "01a077fe-de7c-7b90-869a-4762def45dd3"
+      ],
+      "tags": [
+        "graph:step:3"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 3,
+        "langgraph_node": "select_destination",
+        "langgraph_triggers": [
+          "branch:to:select_destination"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "select_destination"
+        ],
+        "langgraph_checkpoint_ns": "select_destination:5698e48b-c666-b865-6d4c-641e233f8b01"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "city_selection_hitl",
+      "timestamp": "2026-09-06T18:33:07.092985+00:00",
+      "run_id": "01a077fe-df14-79a2-bf08-07694c1b4c16",
+      "parent_ids": [
+        "01a077fe-de7c-7b90-869a-4762def45dd3"
+      ],
+      "tags": [
+        "graph:step:4"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 4,
+        "langgraph_node": "city_selection_hitl",
+        "langgraph_triggers": [
+          "branch:to:city_selection_hitl"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "city_selection_hitl"
+        ],
+        "langgraph_checkpoint_ns": "city_selection_hitl:9222d1f7-6e17-062c-63d3-6cc8db68f9a9"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "LangGraph",
+      "timestamp": "2026-09-06T18:33:07.096208+00:00",
+      "run_id": "01a077fe-de7c-7b90-869a-4762def45dd3",
+      "parent_ids": [],
+      "tags": [],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "LangGraph",
+      "timestamp": "2026-09-06T18:33:07.100401+00:00",
+      "run_id": "01a077fe-df1b-7a73-aaa1-76365491bb67",
+      "parent_ids": [],
+      "tags": [],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "city_selection_hitl",
+      "timestamp": "2026-09-06T18:33:07.102397+00:00",
+      "run_id": "01a077fe-df1d-7703-9034-8de32e25b24f",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67"
+      ],
+      "tags": [
+        "graph:step:4"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 4,
+        "langgraph_node": "city_selection_hitl",
+        "langgraph_triggers": [
+          "branch:to:city_selection_hitl"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "city_selection_hitl"
+        ],
+        "langgraph_checkpoint_ns": "city_selection_hitl:9222d1f7-6e17-062c-63d3-6cc8db68f9a9"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "city_selection_hitl",
+      "timestamp": "2026-09-06T18:33:07.103443+00:00",
+      "run_id": "01a077fe-df1d-7703-9034-8de32e25b24f",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67"
+      ],
+      "tags": [
+        "graph:step:4"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 4,
+        "langgraph_node": "city_selection_hitl",
+        "langgraph_triggers": [
+          "branch:to:city_selection_hitl"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "city_selection_hitl"
+        ],
+        "langgraph_checkpoint_ns": "city_selection_hitl:9222d1f7-6e17-062c-63d3-6cc8db68f9a9"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "dynamic_tool_selection",
+      "timestamp": "2026-09-06T18:33:07.105782+00:00",
+      "run_id": "01a077fe-df21-7731-b7a0-970e6f4a1567",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67"
+      ],
+      "tags": [
+        "graph:step:5"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 5,
+        "langgraph_node": "dynamic_tool_selection",
+        "langgraph_triggers": [
+          "branch:to:dynamic_tool_selection"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "dynamic_tool_selection"
+        ],
+        "langgraph_checkpoint_ns": "dynamic_tool_selection:9e9d645b-621c-ed9a-0da5-3851846314c7"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "dynamic_tool_selection",
+      "timestamp": "2026-09-06T18:33:07.107492+00:00",
+      "run_id": "01a077fe-df21-7731-b7a0-970e6f4a1567",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67"
+      ],
+      "tags": [
+        "graph:step:5"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 5,
+        "langgraph_node": "dynamic_tool_selection",
+        "langgraph_triggers": [
+          "branch:to:dynamic_tool_selection"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "dynamic_tool_selection"
+        ],
+        "langgraph_checkpoint_ns": "dynamic_tool_selection:9e9d645b-621c-ed9a-0da5-3851846314c7"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "parallel_data_fetch",
+      "timestamp": "2026-09-06T18:33:07.109300+00:00",
+      "run_id": "01a077fe-df24-75f1-b729-43e5d7c7c2f2",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67"
+      ],
+      "tags": [
+        "graph:step:6"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 6,
+        "langgraph_node": "parallel_data_fetch",
+        "langgraph_triggers": [
+          "branch:to:parallel_data_fetch"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "parallel_data_fetch"
+        ],
+        "langgraph_checkpoint_ns": "parallel_data_fetch:636cdfe8-5bed-0671-a001-fc78ff48f518"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "parallel_data_fetch",
+      "timestamp": "2026-09-06T18:33:07.119450+00:00",
+      "run_id": "01a077fe-df24-75f1-b729-43e5d7c7c2f2",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67"
+      ],
+      "tags": [
+        "graph:step:6"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 6,
+        "langgraph_node": "parallel_data_fetch",
+        "langgraph_triggers": [
+          "branch:to:parallel_data_fetch"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "parallel_data_fetch"
+        ],
+        "langgraph_checkpoint_ns": "parallel_data_fetch:636cdfe8-5bed-0671-a001-fc78ff48f518"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "budget_analysis",
+      "timestamp": "2026-09-06T18:33:07.122156+00:00",
+      "run_id": "01a077fe-df30-74a2-8c61-efb8a6860fd9",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67"
+      ],
+      "tags": [
+        "graph:step:7"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 7,
+        "langgraph_node": "budget_analysis",
+        "langgraph_triggers": [
+          "branch:to:budget_analysis"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "budget_analysis"
+        ],
+        "langgraph_checkpoint_ns": "budget_analysis:cd15c72f-5c30-682a-f050-bb5018799d57"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "route_after_budget",
+      "timestamp": "2026-09-06T18:33:07.123765+00:00",
+      "run_id": "01a077fe-df33-7db2-9f6c-5a70ad2e6e1a",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df30-74a2-8c61-efb8a6860fd9"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 7,
+        "langgraph_node": "budget_analysis",
+        "langgraph_triggers": [
+          "branch:to:budget_analysis"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "budget_analysis"
+        ],
+        "langgraph_checkpoint_ns": "budget_analysis:cd15c72f-5c30-682a-f050-bb5018799d57"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "route_after_budget",
+      "timestamp": "2026-09-06T18:33:07.125382+00:00",
+      "run_id": "01a077fe-df33-7db2-9f6c-5a70ad2e6e1a",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df30-74a2-8c61-efb8a6860fd9"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 7,
+        "langgraph_node": "budget_analysis",
+        "langgraph_triggers": [
+          "branch:to:budget_analysis"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "budget_analysis"
+        ],
+        "langgraph_checkpoint_ns": "budget_analysis:cd15c72f-5c30-682a-f050-bb5018799d57"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "budget_analysis",
+      "timestamp": "2026-09-06T18:33:07.127375+00:00",
+      "run_id": "01a077fe-df30-74a2-8c61-efb8a6860fd9",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67"
+      ],
+      "tags": [
+        "graph:step:7"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 7,
+        "langgraph_node": "budget_analysis",
+        "langgraph_triggers": [
+          "branch:to:budget_analysis"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "budget_analysis"
+        ],
+        "langgraph_checkpoint_ns": "budget_analysis:cd15c72f-5c30-682a-f050-bb5018799d57"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "search_hotel",
+      "timestamp": "2026-09-06T18:33:07.133794+00:00",
+      "run_id": "01a077fe-df3c-7541-9db9-49b26a588e2b",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67"
+      ],
+      "tags": [
+        "graph:step:8"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 8,
+        "langgraph_node": "search_hotel",
+        "langgraph_triggers": [
+          "branch:to:search_hotel"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "search_hotel"
+        ],
+        "langgraph_checkpoint_ns": "search_hotel:327b6fb7-2755-073a-9688-dab8068b8e78"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "search_hotel",
+      "timestamp": "2026-09-06T18:33:07.136677+00:00",
+      "run_id": "01a077fe-df3c-7541-9db9-49b26a588e2b",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67"
+      ],
+      "tags": [
+        "graph:step:8"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 8,
+        "langgraph_node": "search_hotel",
+        "langgraph_triggers": [
+          "branch:to:search_hotel"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "search_hotel"
+        ],
+        "langgraph_checkpoint_ns": "search_hotel:327b6fb7-2755-073a-9688-dab8068b8e78"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "run_itinerary_node",
+      "timestamp": "2026-09-06T18:33:07.138504+00:00",
+      "run_id": "01a077fe-df41-7bf0-a07e-449e88ff873d",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67"
+      ],
+      "tags": [
+        "graph:step:9"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "run_itinerary_node",
+        "langgraph_triggers": [
+          "branch:to:run_itinerary_node"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "run_itinerary_node"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "LangGraph",
+      "timestamp": "2026-09-06T18:33:07.139884+00:00",
+      "run_id": "01a077fe-df43-7d42-90d6-7f4763b76919",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d"
+      ],
+      "tags": [
+        "seq:step:1"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "run_itinerary_node",
+        "langgraph_triggers": [
+          "branch:to:run_itinerary_node"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "run_itinerary_node"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "cluster_by_neighborhood",
+      "timestamp": "2026-09-06T18:33:07.144070+00:00",
+      "run_id": "01a077fe-df46-7931-9a79-43623b9d6097",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d",
+        "01a077fe-df43-7d42-90d6-7f4763b76919"
+      ],
+      "tags": [
+        "graph:step:1"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 1,
+        "langgraph_node": "cluster_by_neighborhood",
+        "langgraph_triggers": [
+          "branch:to:cluster_by_neighborhood"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "cluster_by_neighborhood"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3|cluster_by_neighborhood:2b710271-bdc2-fa1e-7621-a25914497220",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "cluster_by_neighborhood",
+      "timestamp": "2026-09-06T18:33:07.152621+00:00",
+      "run_id": "01a077fe-df46-7931-9a79-43623b9d6097",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d",
+        "01a077fe-df43-7d42-90d6-7f4763b76919"
+      ],
+      "tags": [
+        "graph:step:1"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 1,
+        "langgraph_node": "cluster_by_neighborhood",
+        "langgraph_triggers": [
+          "branch:to:cluster_by_neighborhood"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "cluster_by_neighborhood"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3|cluster_by_neighborhood:2b710271-bdc2-fa1e-7621-a25914497220",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "build_itinerary",
+      "timestamp": "2026-09-06T18:33:07.157493+00:00",
+      "run_id": "01a077fe-df54-71b2-ba01-d5e20039b406",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d",
+        "01a077fe-df43-7d42-90d6-7f4763b76919"
+      ],
+      "tags": [
+        "graph:step:2"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 2,
+        "langgraph_node": "build_itinerary",
+        "langgraph_triggers": [
+          "branch:to:build_itinerary"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "build_itinerary"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3|build_itinerary:d126d66b-aaf2-5bf8-f1a2-c34bd665b0da",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "build_itinerary",
+      "timestamp": "2026-09-06T18:33:07.165635+00:00",
+      "run_id": "01a077fe-df54-71b2-ba01-d5e20039b406",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d",
+        "01a077fe-df43-7d42-90d6-7f4763b76919"
+      ],
+      "tags": [
+        "graph:step:2"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 2,
+        "langgraph_node": "build_itinerary",
+        "langgraph_triggers": [
+          "branch:to:build_itinerary"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "build_itinerary"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3|build_itinerary:d126d66b-aaf2-5bf8-f1a2-c34bd665b0da",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "align_flight_times",
+      "timestamp": "2026-09-06T18:33:07.170223+00:00",
+      "run_id": "01a077fe-df61-7d83-9253-8e03eeea8353",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d",
+        "01a077fe-df43-7d42-90d6-7f4763b76919"
+      ],
+      "tags": [
+        "graph:step:3"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 3,
+        "langgraph_node": "align_flight_times",
+        "langgraph_triggers": [
+          "branch:to:align_flight_times"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "align_flight_times"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3|align_flight_times:4aba4238-6c1e-824c-0961-ea3fc3d7259d",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "align_flight_times",
+      "timestamp": "2026-09-06T18:33:07.171508+00:00",
+      "run_id": "01a077fe-df61-7d83-9253-8e03eeea8353",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d",
+        "01a077fe-df43-7d42-90d6-7f4763b76919"
+      ],
+      "tags": [
+        "graph:step:3"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 3,
+        "langgraph_node": "align_flight_times",
+        "langgraph_triggers": [
+          "branch:to:align_flight_times"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "align_flight_times"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3|align_flight_times:4aba4238-6c1e-824c-0961-ea3fc3d7259d",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:07.173435+00:00",
+      "run_id": "01a077fe-df64-74f1-a414-3d0633f838dc",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d",
+        "01a077fe-df43-7d42-90d6-7f4763b76919"
+      ],
+      "tags": [
+        "graph:step:4"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 4,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3|plan_routes:79186627-73f0-334f-418f-9a84f4ed5064",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:07.225571+00:00",
+      "run_id": "01a077fe-df98-70e1-beec-605273b79eda",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d",
+        "01a077fe-df43-7d42-90d6-7f4763b76919",
+        "01a077fe-df64-74f1-a414-3d0633f838dc"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 4,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3|plan_routes:79186627-73f0-334f-418f-9a84f4ed5064",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:07.227175+00:00",
+      "run_id": "01a077fe-df98-70e1-beec-605273b79eda",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d",
+        "01a077fe-df43-7d42-90d6-7f4763b76919",
+        "01a077fe-df64-74f1-a414-3d0633f838dc"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 4,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3|plan_routes:79186627-73f0-334f-418f-9a84f4ed5064",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:07.228580+00:00",
+      "run_id": "01a077fe-df64-74f1-a414-3d0633f838dc",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d",
+        "01a077fe-df43-7d42-90d6-7f4763b76919"
+      ],
+      "tags": [
+        "graph:step:4"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 4,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3|plan_routes:79186627-73f0-334f-418f-9a84f4ed5064",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "apply_feasibility_swap",
+      "timestamp": "2026-09-06T18:33:07.233810+00:00",
+      "run_id": "01a077fe-dfa0-7881-bc0b-1cea4d87147f",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d",
+        "01a077fe-df43-7d42-90d6-7f4763b76919"
+      ],
+      "tags": [
+        "graph:step:5"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 5,
+        "langgraph_node": "apply_feasibility_swap",
+        "langgraph_triggers": [
+          "branch:to:apply_feasibility_swap"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "apply_feasibility_swap"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3|apply_feasibility_swap:a81601d2-6a98-64c9-7395-bdb26033a028",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "apply_feasibility_swap",
+      "timestamp": "2026-09-06T18:33:07.235611+00:00",
+      "run_id": "01a077fe-dfa0-7881-bc0b-1cea4d87147f",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d",
+        "01a077fe-df43-7d42-90d6-7f4763b76919"
+      ],
+      "tags": [
+        "graph:step:5"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 5,
+        "langgraph_node": "apply_feasibility_swap",
+        "langgraph_triggers": [
+          "branch:to:apply_feasibility_swap"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "apply_feasibility_swap"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3|apply_feasibility_swap:a81601d2-6a98-64c9-7395-bdb26033a028",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:07.237793+00:00",
+      "run_id": "01a077fe-dfa4-7180-86ab-e9ddfbc6e42b",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d",
+        "01a077fe-df43-7d42-90d6-7f4763b76919"
+      ],
+      "tags": [
+        "graph:step:6"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 6,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3|plan_routes:cb8a619f-5049-0633-400f-0f0ef969c488",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:07.282857+00:00",
+      "run_id": "01a077fe-dfce-7fe3-b6d1-c7dd9b5dd081",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d",
+        "01a077fe-df43-7d42-90d6-7f4763b76919",
+        "01a077fe-dfa4-7180-86ab-e9ddfbc6e42b"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 6,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3|plan_routes:cb8a619f-5049-0633-400f-0f0ef969c488",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:07.283810+00:00",
+      "run_id": "01a077fe-dfce-7fe3-b6d1-c7dd9b5dd081",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d",
+        "01a077fe-df43-7d42-90d6-7f4763b76919",
+        "01a077fe-dfa4-7180-86ab-e9ddfbc6e42b"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 6,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3|plan_routes:cb8a619f-5049-0633-400f-0f0ef969c488",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:07.284797+00:00",
+      "run_id": "01a077fe-dfa4-7180-86ab-e9ddfbc6e42b",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d",
+        "01a077fe-df43-7d42-90d6-7f4763b76919"
+      ],
+      "tags": [
+        "graph:step:6"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 6,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3|plan_routes:cb8a619f-5049-0633-400f-0f0ef969c488",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "apply_feasibility_swap",
+      "timestamp": "2026-09-06T18:33:07.287679+00:00",
+      "run_id": "01a077fe-dfd6-7a40-9557-27b79da2eef4",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d",
+        "01a077fe-df43-7d42-90d6-7f4763b76919"
+      ],
+      "tags": [
+        "graph:step:7"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 7,
+        "langgraph_node": "apply_feasibility_swap",
+        "langgraph_triggers": [
+          "branch:to:apply_feasibility_swap"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "apply_feasibility_swap"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3|apply_feasibility_swap:503d6e3b-aaa6-ed0a-0117-2e3f9083b1ce",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "apply_feasibility_swap",
+      "timestamp": "2026-09-06T18:33:07.290500+00:00",
+      "run_id": "01a077fe-dfd6-7a40-9557-27b79da2eef4",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d",
+        "01a077fe-df43-7d42-90d6-7f4763b76919"
+      ],
+      "tags": [
+        "graph:step:7"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 7,
+        "langgraph_node": "apply_feasibility_swap",
+        "langgraph_triggers": [
+          "branch:to:apply_feasibility_swap"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "apply_feasibility_swap"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3|apply_feasibility_swap:503d6e3b-aaa6-ed0a-0117-2e3f9083b1ce",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:07.294596+00:00",
+      "run_id": "01a077fe-dfdc-7342-8afd-d91ff1463b35",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d",
+        "01a077fe-df43-7d42-90d6-7f4763b76919"
+      ],
+      "tags": [
+        "graph:step:8"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 8,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3|plan_routes:86eae3b1-0d0b-4a64-4f4f-a48f882cf07a",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:07.338004+00:00",
+      "run_id": "01a077fe-e009-7cb0-812f-62acd68231a7",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d",
+        "01a077fe-df43-7d42-90d6-7f4763b76919",
+        "01a077fe-dfdc-7342-8afd-d91ff1463b35"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 8,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3|plan_routes:86eae3b1-0d0b-4a64-4f4f-a48f882cf07a",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:07.339112+00:00",
+      "run_id": "01a077fe-e009-7cb0-812f-62acd68231a7",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d",
+        "01a077fe-df43-7d42-90d6-7f4763b76919",
+        "01a077fe-dfdc-7342-8afd-d91ff1463b35"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 8,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3|plan_routes:86eae3b1-0d0b-4a64-4f4f-a48f882cf07a",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:07.339871+00:00",
+      "run_id": "01a077fe-dfdc-7342-8afd-d91ff1463b35",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d",
+        "01a077fe-df43-7d42-90d6-7f4763b76919"
+      ],
+      "tags": [
+        "graph:step:8"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 8,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3|plan_routes:86eae3b1-0d0b-4a64-4f4f-a48f882cf07a",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "validation_gate",
+      "timestamp": "2026-09-06T18:33:07.342378+00:00",
+      "run_id": "01a077fe-e00d-79f2-9d76-bca66b45048a",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d",
+        "01a077fe-df43-7d42-90d6-7f4763b76919"
+      ],
+      "tags": [
+        "graph:step:9"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3|validation_gate:5864c3a2-c16f-321b-de0d-6b450962512d",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "check_validation",
+      "timestamp": "2026-09-06T18:33:07.343698+00:00",
+      "run_id": "01a077fe-e00f-7c12-8f66-b6555bb35002",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d",
+        "01a077fe-df43-7d42-90d6-7f4763b76919",
+        "01a077fe-e00d-79f2-9d76-bca66b45048a"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3|validation_gate:5864c3a2-c16f-321b-de0d-6b450962512d",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "check_validation",
+      "timestamp": "2026-09-06T18:33:07.345029+00:00",
+      "run_id": "01a077fe-e00f-7c12-8f66-b6555bb35002",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d",
+        "01a077fe-df43-7d42-90d6-7f4763b76919",
+        "01a077fe-e00d-79f2-9d76-bca66b45048a"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3|validation_gate:5864c3a2-c16f-321b-de0d-6b450962512d",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "validation_gate",
+      "timestamp": "2026-09-06T18:33:07.349781+00:00",
+      "run_id": "01a077fe-e00d-79f2-9d76-bca66b45048a",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d",
+        "01a077fe-df43-7d42-90d6-7f4763b76919"
+      ],
+      "tags": [
+        "graph:step:9"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3|validation_gate:5864c3a2-c16f-321b-de0d-6b450962512d",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "build_itinerary",
+      "timestamp": "2026-09-06T18:33:07.351548+00:00",
+      "run_id": "01a077fe-e016-7032-bfef-5770d999aacc",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d",
+        "01a077fe-df43-7d42-90d6-7f4763b76919"
+      ],
+      "tags": [
+        "graph:step:10"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 10,
+        "langgraph_node": "build_itinerary",
+        "langgraph_triggers": [
+          "branch:to:build_itinerary"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "build_itinerary"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3|build_itinerary:10aa6219-4794-d5b2-c51d-2d2d4c0ed58b",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "build_itinerary",
+      "timestamp": "2026-09-06T18:33:07.355706+00:00",
+      "run_id": "01a077fe-e016-7032-bfef-5770d999aacc",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d",
+        "01a077fe-df43-7d42-90d6-7f4763b76919"
+      ],
+      "tags": [
+        "graph:step:10"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 10,
+        "langgraph_node": "build_itinerary",
+        "langgraph_triggers": [
+          "branch:to:build_itinerary"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "build_itinerary"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3|build_itinerary:10aa6219-4794-d5b2-c51d-2d2d4c0ed58b",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "align_flight_times",
+      "timestamp": "2026-09-06T18:33:07.357892+00:00",
+      "run_id": "01a077fe-e01d-7371-bf26-712f6672e7d7",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d",
+        "01a077fe-df43-7d42-90d6-7f4763b76919"
+      ],
+      "tags": [
+        "graph:step:11"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 11,
+        "langgraph_node": "align_flight_times",
+        "langgraph_triggers": [
+          "branch:to:align_flight_times"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "align_flight_times"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3|align_flight_times:9de05068-e587-f7b1-ac22-da6c001c872e",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "align_flight_times",
+      "timestamp": "2026-09-06T18:33:07.359172+00:00",
+      "run_id": "01a077fe-e01d-7371-bf26-712f6672e7d7",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d",
+        "01a077fe-df43-7d42-90d6-7f4763b76919"
+      ],
+      "tags": [
+        "graph:step:11"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 11,
+        "langgraph_node": "align_flight_times",
+        "langgraph_triggers": [
+          "branch:to:align_flight_times"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "align_flight_times"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3|align_flight_times:9de05068-e587-f7b1-ac22-da6c001c872e",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:07.361345+00:00",
+      "run_id": "01a077fe-e020-7242-95df-9c5f5645d77c",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d",
+        "01a077fe-df43-7d42-90d6-7f4763b76919"
+      ],
+      "tags": [
+        "graph:step:12"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 12,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3|plan_routes:ececd5f0-3570-821d-0b68-23d2ff439af2",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:07.417488+00:00",
+      "run_id": "01a077fe-e059-7980-b292-7bc81e1340c4",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d",
+        "01a077fe-df43-7d42-90d6-7f4763b76919",
+        "01a077fe-e020-7242-95df-9c5f5645d77c"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 12,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3|plan_routes:ececd5f0-3570-821d-0b68-23d2ff439af2",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:07.418224+00:00",
+      "run_id": "01a077fe-e059-7980-b292-7bc81e1340c4",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d",
+        "01a077fe-df43-7d42-90d6-7f4763b76919",
+        "01a077fe-e020-7242-95df-9c5f5645d77c"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 12,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3|plan_routes:ececd5f0-3570-821d-0b68-23d2ff439af2",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:07.419302+00:00",
+      "run_id": "01a077fe-e020-7242-95df-9c5f5645d77c",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d",
+        "01a077fe-df43-7d42-90d6-7f4763b76919"
+      ],
+      "tags": [
+        "graph:step:12"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 12,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3|plan_routes:ececd5f0-3570-821d-0b68-23d2ff439af2",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "validation_gate",
+      "timestamp": "2026-09-06T18:33:07.421537+00:00",
+      "run_id": "01a077fe-e05c-78d0-b943-16ebbccc7dad",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d",
+        "01a077fe-df43-7d42-90d6-7f4763b76919"
+      ],
+      "tags": [
+        "graph:step:13"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 13,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3|validation_gate:37892f10-ca5a-c5ca-da20-8400251d25ef",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "check_validation",
+      "timestamp": "2026-09-06T18:33:07.424091+00:00",
+      "run_id": "01a077fe-e05f-7670-a84f-4884bb33f54d",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d",
+        "01a077fe-df43-7d42-90d6-7f4763b76919",
+        "01a077fe-e05c-78d0-b943-16ebbccc7dad"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 13,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3|validation_gate:37892f10-ca5a-c5ca-da20-8400251d25ef",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "check_validation",
+      "timestamp": "2026-09-06T18:33:07.425185+00:00",
+      "run_id": "01a077fe-e05f-7670-a84f-4884bb33f54d",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d",
+        "01a077fe-df43-7d42-90d6-7f4763b76919",
+        "01a077fe-e05c-78d0-b943-16ebbccc7dad"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 13,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3|validation_gate:37892f10-ca5a-c5ca-da20-8400251d25ef",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "validation_gate",
+      "timestamp": "2026-09-06T18:33:07.426122+00:00",
+      "run_id": "01a077fe-e05c-78d0-b943-16ebbccc7dad",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d",
+        "01a077fe-df43-7d42-90d6-7f4763b76919"
+      ],
+      "tags": [
+        "graph:step:13"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 13,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3|validation_gate:37892f10-ca5a-c5ca-da20-8400251d25ef",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "build_itinerary",
+      "timestamp": "2026-09-06T18:33:07.429572+00:00",
+      "run_id": "01a077fe-e063-7780-b1df-afa2b1f553b6",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d",
+        "01a077fe-df43-7d42-90d6-7f4763b76919"
+      ],
+      "tags": [
+        "graph:step:14"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 14,
+        "langgraph_node": "build_itinerary",
+        "langgraph_triggers": [
+          "branch:to:build_itinerary"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "build_itinerary"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3|build_itinerary:1ed9bae2-b347-72b4-f7d5-3348cd192c02",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "build_itinerary",
+      "timestamp": "2026-09-06T18:33:07.436341+00:00",
+      "run_id": "01a077fe-e063-7780-b1df-afa2b1f553b6",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d",
+        "01a077fe-df43-7d42-90d6-7f4763b76919"
+      ],
+      "tags": [
+        "graph:step:14"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 14,
+        "langgraph_node": "build_itinerary",
+        "langgraph_triggers": [
+          "branch:to:build_itinerary"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "build_itinerary"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3|build_itinerary:1ed9bae2-b347-72b4-f7d5-3348cd192c02",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "align_flight_times",
+      "timestamp": "2026-09-06T18:33:07.438843+00:00",
+      "run_id": "01a077fe-e06d-7800-88aa-2580b8ba8142",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d",
+        "01a077fe-df43-7d42-90d6-7f4763b76919"
+      ],
+      "tags": [
+        "graph:step:15"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 15,
+        "langgraph_node": "align_flight_times",
+        "langgraph_triggers": [
+          "branch:to:align_flight_times"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "align_flight_times"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3|align_flight_times:cabf485e-144d-9814-ce05-70d5d722b369",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "align_flight_times",
+      "timestamp": "2026-09-06T18:33:07.440197+00:00",
+      "run_id": "01a077fe-e06d-7800-88aa-2580b8ba8142",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d",
+        "01a077fe-df43-7d42-90d6-7f4763b76919"
+      ],
+      "tags": [
+        "graph:step:15"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 15,
+        "langgraph_node": "align_flight_times",
+        "langgraph_triggers": [
+          "branch:to:align_flight_times"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "align_flight_times"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3|align_flight_times:cabf485e-144d-9814-ce05-70d5d722b369",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:07.441976+00:00",
+      "run_id": "01a077fe-e071-7c43-81bd-1927676bf220",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d",
+        "01a077fe-df43-7d42-90d6-7f4763b76919"
+      ],
+      "tags": [
+        "graph:step:16"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 16,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3|plan_routes:1e363252-594c-4bcf-d37f-14ad3845aa92",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:07.483431+00:00",
+      "run_id": "01a077fe-e09a-7261-b72c-bd658ff4fbfd",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d",
+        "01a077fe-df43-7d42-90d6-7f4763b76919",
+        "01a077fe-e071-7c43-81bd-1927676bf220"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 16,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3|plan_routes:1e363252-594c-4bcf-d37f-14ad3845aa92",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:07.484328+00:00",
+      "run_id": "01a077fe-e09a-7261-b72c-bd658ff4fbfd",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d",
+        "01a077fe-df43-7d42-90d6-7f4763b76919",
+        "01a077fe-e071-7c43-81bd-1927676bf220"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 16,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3|plan_routes:1e363252-594c-4bcf-d37f-14ad3845aa92",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:07.485174+00:00",
+      "run_id": "01a077fe-e071-7c43-81bd-1927676bf220",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d",
+        "01a077fe-df43-7d42-90d6-7f4763b76919"
+      ],
+      "tags": [
+        "graph:step:16"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 16,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3|plan_routes:1e363252-594c-4bcf-d37f-14ad3845aa92",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "validation_gate",
+      "timestamp": "2026-09-06T18:33:07.487482+00:00",
+      "run_id": "01a077fe-e09e-71a1-b4e5-9003e1a7fd68",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d",
+        "01a077fe-df43-7d42-90d6-7f4763b76919"
+      ],
+      "tags": [
+        "graph:step:17"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 17,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3|validation_gate:97e9f72a-f726-e89e-71f0-4e8ac6e5cbf3",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "check_validation",
+      "timestamp": "2026-09-06T18:33:07.489686+00:00",
+      "run_id": "01a077fe-e0a0-7133-8e11-6cdd9397ff09",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d",
+        "01a077fe-df43-7d42-90d6-7f4763b76919",
+        "01a077fe-e09e-71a1-b4e5-9003e1a7fd68"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 17,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3|validation_gate:97e9f72a-f726-e89e-71f0-4e8ac6e5cbf3",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "check_validation",
+      "timestamp": "2026-09-06T18:33:07.490952+00:00",
+      "run_id": "01a077fe-e0a0-7133-8e11-6cdd9397ff09",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d",
+        "01a077fe-df43-7d42-90d6-7f4763b76919",
+        "01a077fe-e09e-71a1-b4e5-9003e1a7fd68"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 17,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3|validation_gate:97e9f72a-f726-e89e-71f0-4e8ac6e5cbf3",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "validation_gate",
+      "timestamp": "2026-09-06T18:33:07.491975+00:00",
+      "run_id": "01a077fe-e09e-71a1-b4e5-9003e1a7fd68",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d",
+        "01a077fe-df43-7d42-90d6-7f4763b76919"
+      ],
+      "tags": [
+        "graph:step:17"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 17,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3|validation_gate:97e9f72a-f726-e89e-71f0-4e8ac6e5cbf3",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "LangGraph",
+      "timestamp": "2026-09-06T18:33:07.494468+00:00",
+      "run_id": "01a077fe-df43-7d42-90d6-7f4763b76919",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-df41-7bf0-a07e-449e88ff873d"
+      ],
+      "tags": [
+        "seq:step:1"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "run_itinerary_node",
+        "langgraph_triggers": [
+          "branch:to:run_itinerary_node"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "run_itinerary_node"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3",
+        "checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "run_itinerary_node",
+      "timestamp": "2026-09-06T18:33:07.496286+00:00",
+      "run_id": "01a077fe-df41-7bf0-a07e-449e88ff873d",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67"
+      ],
+      "tags": [
+        "graph:step:9"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "run_itinerary_node",
+        "langgraph_triggers": [
+          "branch:to:run_itinerary_node"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "run_itinerary_node"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:adf91902-e6dc-d929-b682-960e621a0ff3"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "compute_fairness",
+      "timestamp": "2026-09-06T18:33:07.501404+00:00",
+      "run_id": "01a077fe-e0ab-76f1-bb4b-110639c2d0c3",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67"
+      ],
+      "tags": [
+        "graph:step:10"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 10,
+        "langgraph_node": "compute_fairness",
+        "langgraph_triggers": [
+          "branch:to:compute_fairness"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "compute_fairness"
+        ],
+        "langgraph_checkpoint_ns": "compute_fairness:6f0c7c6c-6fa2-48f8-250c-3f841a25028f"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "route_after_fairness",
+      "timestamp": "2026-09-06T18:33:07.502851+00:00",
+      "run_id": "01a077fe-e0ae-7a93-8864-ca60d7667161",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-e0ab-76f1-bb4b-110639c2d0c3"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 10,
+        "langgraph_node": "compute_fairness",
+        "langgraph_triggers": [
+          "branch:to:compute_fairness"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "compute_fairness"
+        ],
+        "langgraph_checkpoint_ns": "compute_fairness:6f0c7c6c-6fa2-48f8-250c-3f841a25028f"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "route_after_fairness",
+      "timestamp": "2026-09-06T18:33:07.503870+00:00",
+      "run_id": "01a077fe-e0ae-7a93-8864-ca60d7667161",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67",
+        "01a077fe-e0ab-76f1-bb4b-110639c2d0c3"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 10,
+        "langgraph_node": "compute_fairness",
+        "langgraph_triggers": [
+          "branch:to:compute_fairness"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "compute_fairness"
+        ],
+        "langgraph_checkpoint_ns": "compute_fairness:6f0c7c6c-6fa2-48f8-250c-3f841a25028f"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "compute_fairness",
+      "timestamp": "2026-09-06T18:33:07.504796+00:00",
+      "run_id": "01a077fe-e0ab-76f1-bb4b-110639c2d0c3",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67"
+      ],
+      "tags": [
+        "graph:step:10"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 10,
+        "langgraph_node": "compute_fairness",
+        "langgraph_triggers": [
+          "branch:to:compute_fairness"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "compute_fairness"
+        ],
+        "langgraph_checkpoint_ns": "compute_fairness:6f0c7c6c-6fa2-48f8-250c-3f841a25028f"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "assemble_output",
+      "timestamp": "2026-09-06T18:33:07.506722+00:00",
+      "run_id": "01a077fe-e0b1-7380-877f-a9f30fbbddb4",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67"
+      ],
+      "tags": [
+        "graph:step:11"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 11,
+        "langgraph_node": "assemble_output",
+        "langgraph_triggers": [
+          "branch:to:assemble_output"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "assemble_output"
+        ],
+        "langgraph_checkpoint_ns": "assemble_output:d4546ba6-93a1-5b88-458f-3038a48eb0f2"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "assemble_output",
+      "timestamp": "2026-09-06T18:33:07.511298+00:00",
+      "run_id": "01a077fe-e0b1-7380-877f-a9f30fbbddb4",
+      "parent_ids": [
+        "01a077fe-df1b-7a73-aaa1-76365491bb67"
+      ],
+      "tags": [
+        "graph:step:11"
+      ],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph",
+        "langgraph_step": 11,
+        "langgraph_node": "assemble_output",
+        "langgraph_triggers": [
+          "branch:to:assemble_output"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "assemble_output"
+        ],
+        "langgraph_checkpoint_ns": "assemble_output:d4546ba6-93a1-5b88-458f-3038a48eb0f2"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "LangGraph",
+      "timestamp": "2026-09-06T18:33:07.515319+00:00",
+      "run_id": "01a077fe-df1b-7a73-aaa1-76365491bb67",
+      "parent_ids": [],
+      "tags": [],
+      "metadata": {
+        "trip_id": "18-diet-gluten_free",
+        "eval_tier": "offline",
+        "thread_id": "18-diet-gluten_free",
+        "ls_integration": "langgraph"
+      }
+    }
+  ],
+  "telemetry": {
+    "nodes": {
+      "extract_preference_constraints": {
+        "input_tokens": 531,
+        "output_tokens": 460,
+        "cache_read_tokens": 0,
+        "cost_usd": 0.002831,
+        "unpriced_calls": 0,
+        "llm_calls": 1,
+        "duration_ms": 3.159
+      },
+      "select_destination": {
+        "input_tokens": 1617,
+        "output_tokens": 230,
+        "cache_read_tokens": 0,
+        "cost_usd": 0.002767,
+        "unpriced_calls": 0,
+        "llm_calls": 1,
+        "duration_ms": 133.079
+      },
+      "build_itinerary": {
+        "input_tokens": 5662,
+        "output_tokens": 5331,
+        "cache_read_tokens": 0,
+        "cost_usd": 0.032317,
+        "unpriced_calls": 0,
+        "llm_calls": 3,
+        "duration_ms": 18.957
+      },
+      "assemble_output": {
+        "input_tokens": 1602,
+        "output_tokens": 1118,
+        "cache_read_tokens": 0,
+        "cost_usd": 0.007192,
+        "unpriced_calls": 0,
+        "llm_calls": 1,
+        "duration_ms": 4.718
+      },
+      "parse_input": {
+        "duration_ms": 4.608
+      },
+      "city_selection_hitl": {
+        "duration_ms": 1.227
+      },
+      "dynamic_tool_selection": {
+        "duration_ms": 1.754
+      },
+      "parallel_data_fetch": {
+        "duration_ms": 10.427
+      },
+      "budget_analysis": {
+        "duration_ms": 5.464
+      },
+      "search_hotel": {
+        "duration_ms": 2.885
+      },
+      "cluster_by_neighborhood": {
+        "duration_ms": 7.91
+      },
+      "align_flight_times": {
+        "duration_ms": 4.516
+      },
+      "plan_routes": {
+        "duration_ms": 249.24
+      },
+      "apply_feasibility_swap": {
+        "duration_ms": 4.694
+      },
+      "validation_gate": {
+        "duration_ms": 16.635
+      },
+      "run_itinerary_node": {
+        "duration_ms": 357.705
+      },
+      "compute_fairness": {
+        "duration_ms": 3.65
+      }
+    },
+    "totals": {
+      "input_tokens": 9412,
+      "output_tokens": 7139,
+      "cache_read_tokens": 0,
+      "cost_usd": 0.045107,
+      "unpriced_calls": 0,
+      "llm_calls": 6,
+      "duration_ms": 573.851
+    }
+  },
+  "hitl_resolutions": 1,
+  "tool_calls": [
+    {
+      "operation": "search_flights",
+      "request": {
+        "origin": "ORD",
+        "destination": "Surfside Beach",
+        "depart_date": "2026-09-08",
+        "return_date": "2026-09-11",
+        "adults": 1
+      }
+    },
+    {
+      "operation": "search_flights",
+      "request": {
+        "origin": "ATL",
+        "destination": "Surfside Beach",
+        "depart_date": "2026-09-08",
+        "return_date": "2026-09-11",
+        "adults": 1
+      }
+    },
+    {
+      "operation": "fetch_activities_by_category",
+      "request": {
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "categories": [
+          "food",
+          "outdoor",
+          "urban"
+        ],
+        "max_per_category": 10
+      }
+    },
+    {
+      "operation": "fetch_weather",
+      "request": {
+        "lat": 28.949,
+        "lng": -95.293,
+        "start_date": "2026-09-08",
+        "end_date": "2026-09-11",
+        "destination_name": "Surfside Beach"
+      }
+    },
+    {
+      "operation": "search_hotels",
+      "request": {
+        "destination": "Surfside Beach",
+        "check_in": "2026-09-08",
+        "check_out": "2026-09-11",
+        "budget_ceiling_usd": 810.0,
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        }
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 33.6653447,
+        "origin_lng": -78.910319,
+        "dest_lat": 28.9581242,
+        "dest_lng": -95.2766391,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9581242,
+        "origin_lng": -95.2766391,
+        "dest_lat": 28.949779499999998,
+        "dest_lng": -95.28490459999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.949779499999998,
+        "origin_lng": -95.28490459999999,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9515919,
+        "origin_lng": -95.2878874,
+        "dest_lat": 29.013253000000002,
+        "dest_lng": -95.32876879999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 29.013253000000002,
+        "origin_lng": -95.32876879999999,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 33.6653447,
+        "origin_lng": -78.910319,
+        "dest_lat": 28.9581242,
+        "dest_lng": -95.2766391,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9581242,
+        "origin_lng": -95.2766391,
+        "dest_lat": 28.9380657,
+        "dest_lng": -95.2955537,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9380657,
+        "origin_lng": -95.2955537,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9515919,
+        "origin_lng": -95.2878874,
+        "dest_lat": 28.9346868,
+        "dest_lng": -95.3039594,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9346868,
+        "origin_lng": -95.3039594,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 33.6653447,
+        "origin_lng": -78.910319,
+        "dest_lat": 28.9581242,
+        "dest_lng": -95.2766391,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9581242,
+        "origin_lng": -95.2766391,
+        "dest_lat": 29.026607600000002,
+        "dest_lng": -95.4567974,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 29.026607600000002,
+        "origin_lng": -95.4567974,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9515919,
+        "origin_lng": -95.2878874,
+        "dest_lat": 29.01748,
+        "dest_lng": -95.44596159999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 29.01748,
+        "origin_lng": -95.44596159999999,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 33.6653447,
+        "origin_lng": -78.910319,
+        "dest_lat": 28.9581242,
+        "dest_lng": -95.2766391,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9581242,
+        "origin_lng": -95.2766391,
+        "dest_lat": 28.949779499999998,
+        "dest_lng": -95.28490459999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.949779499999998,
+        "origin_lng": -95.28490459999999,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9515919,
+        "origin_lng": -95.2878874,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 33.6653447,
+        "origin_lng": -78.910319,
+        "dest_lat": 28.9581242,
+        "dest_lng": -95.2766391,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9581242,
+        "origin_lng": -95.2766391,
+        "dest_lat": 28.9380657,
+        "dest_lng": -95.2955537,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9380657,
+        "origin_lng": -95.2955537,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9515919,
+        "origin_lng": -95.2878874,
+        "dest_lat": 28.9346868,
+        "dest_lng": -95.3039594,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9346868,
+        "origin_lng": -95.3039594,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 33.6653447,
+        "origin_lng": -78.910319,
+        "dest_lat": 28.9581242,
+        "dest_lng": -95.2766391,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9581242,
+        "origin_lng": -95.2766391,
+        "dest_lat": 29.026607600000002,
+        "dest_lng": -95.4567974,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 29.026607600000002,
+        "origin_lng": -95.4567974,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9515919,
+        "origin_lng": -95.2878874,
+        "dest_lat": 29.01748,
+        "dest_lng": -95.44596159999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 29.01748,
+        "origin_lng": -95.44596159999999,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 33.6653447,
+        "origin_lng": -78.910319,
+        "dest_lat": 28.9581242,
+        "dest_lng": -95.2766391,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9581242,
+        "origin_lng": -95.2766391,
+        "dest_lat": 28.949779499999998,
+        "dest_lng": -95.28490459999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.949779499999998,
+        "origin_lng": -95.28490459999999,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9515919,
+        "origin_lng": -95.2878874,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 33.6653447,
+        "origin_lng": -78.910319,
+        "dest_lat": 28.9581242,
+        "dest_lng": -95.2766391,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9581242,
+        "origin_lng": -95.2766391,
+        "dest_lat": 28.9380657,
+        "dest_lng": -95.2955537,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9380657,
+        "origin_lng": -95.2955537,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9515919,
+        "origin_lng": -95.2878874,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 33.6653447,
+        "origin_lng": -78.910319,
+        "dest_lat": 28.9581242,
+        "dest_lng": -95.2766391,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9581242,
+        "origin_lng": -95.2766391,
+        "dest_lat": 29.026607600000002,
+        "dest_lng": -95.4567974,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 29.026607600000002,
+        "origin_lng": -95.4567974,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9515919,
+        "origin_lng": -95.2878874,
+        "dest_lat": 29.01748,
+        "dest_lng": -95.44596159999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 29.01748,
+        "origin_lng": -95.44596159999999,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 33.6653447,
+        "origin_lng": -78.910319,
+        "dest_lat": 28.9581242,
+        "dest_lng": -95.2766391,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9581242,
+        "origin_lng": -95.2766391,
+        "dest_lat": 28.949779499999998,
+        "dest_lng": -95.28490459999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.949779499999998,
+        "origin_lng": -95.28490459999999,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9515919,
+        "origin_lng": -95.2878874,
+        "dest_lat": 29.013253000000002,
+        "dest_lng": -95.32876879999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 29.013253000000002,
+        "origin_lng": -95.32876879999999,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 33.6653447,
+        "origin_lng": -78.910319,
+        "dest_lat": 28.9581242,
+        "dest_lng": -95.2766391,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9581242,
+        "origin_lng": -95.2766391,
+        "dest_lat": 28.9380657,
+        "dest_lng": -95.2955537,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9380657,
+        "origin_lng": -95.2955537,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9515919,
+        "origin_lng": -95.2878874,
+        "dest_lat": 28.9346868,
+        "dest_lng": -95.3039594,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9346868,
+        "origin_lng": -95.3039594,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 33.6653447,
+        "origin_lng": -78.910319,
+        "dest_lat": 28.9581242,
+        "dest_lng": -95.2766391,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9581242,
+        "origin_lng": -95.2766391,
+        "dest_lat": 29.01748,
+        "dest_lng": -95.44596159999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 29.01748,
+        "origin_lng": -95.44596159999999,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9515919,
+        "origin_lng": -95.2878874,
+        "dest_lat": 29.026607600000002,
+        "dest_lng": -95.4567974,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 29.026607600000002,
+        "origin_lng": -95.4567974,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 33.6653447,
+        "origin_lng": -78.910319,
+        "dest_lat": 28.9581242,
+        "dest_lng": -95.2766391,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9581242,
+        "origin_lng": -95.2766391,
+        "dest_lat": 28.949779499999998,
+        "dest_lng": -95.28490459999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.949779499999998,
+        "origin_lng": -95.28490459999999,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9515919,
+        "origin_lng": -95.2878874,
+        "dest_lat": 29.013253000000002,
+        "dest_lng": -95.32876879999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 29.013253000000002,
+        "origin_lng": -95.32876879999999,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 33.6653447,
+        "origin_lng": -78.910319,
+        "dest_lat": 28.9581242,
+        "dest_lng": -95.2766391,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9581242,
+        "origin_lng": -95.2766391,
+        "dest_lat": 28.9380657,
+        "dest_lng": -95.2955537,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9380657,
+        "origin_lng": -95.2955537,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9515919,
+        "origin_lng": -95.2878874,
+        "dest_lat": 28.9346868,
+        "dest_lng": -95.3039594,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9346868,
+        "origin_lng": -95.3039594,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 33.6653447,
+        "origin_lng": -78.910319,
+        "dest_lat": 28.9581242,
+        "dest_lng": -95.2766391,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9581242,
+        "origin_lng": -95.2766391,
+        "dest_lat": 29.026607600000002,
+        "dest_lng": -95.4567974,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 29.026607600000002,
+        "origin_lng": -95.4567974,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9515919,
+        "origin_lng": -95.2878874,
+        "dest_lat": 29.01748,
+        "dest_lng": -95.44596159999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 29.01748,
+        "origin_lng": -95.44596159999999,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    }
+  ]
+}

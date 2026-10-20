@@ -1,0 +1,28 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 28.949,
+      "lng": -95.293
+    },
+    "destination": "Surfside Beach",
+    "included_type": null,
+    "query": "Casual neighborhood walk"
+  },
+  "request_sha256": "7e42703249890317f3ace6354f329cfc4f0df67c68e6e2b6817505b22479a8b9",
+  "response": {
+    "address": "Surfside Beach, TX 77541, USA",
+    "category": "place",
+    "lat": 28.9599686,
+    "lng": -95.27599339999999,
+    "name": "1 Min Walk to Beach: A Surfside Beach Favorite!",
+    "place_id": "ChIJp35PgdtsQIYRk3LFQ__83wI",
+    "price_level": 0,
+    "rating": 0.0,
+    "tags": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

@@ -1,0 +1,580 @@
+{
+  "operation": "fetch_activities_by_category",
+  "request": {
+    "categories": [
+      "food",
+      "outdoor",
+      "urban"
+    ],
+    "coords": {
+      "lat": 36.4012,
+      "lng": -93.7374
+    },
+    "destination": "Eureka Springs",
+    "max_per_category": 10
+  },
+  "request_sha256": "c59765edcb5d9066bbf683ea17f1e13cd5af9cdcab8b0c5ea4ecb3daf4bcce4e",
+  "response": [
+    {
+      "address": "75 Prospect Ave Ste 105, Eureka Springs, AR 72632, USA",
+      "category": "food",
+      "lat": 36.4080588,
+      "lng": -93.73749409999999,
+      "name": "Crescent Hotel and Spa",
+      "place_id": "ChIJFQk9KszSzocRizyKl-W1oIQ",
+      "price_level": 0,
+      "rating": 4.5,
+      "tags": [
+        "hotel",
+        "tourist_attraction",
+        "wedding_venue",
+        "motel",
+        "spa",
+        "lodging",
+        "event_venue",
+        "service",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "12 Spring St, Eureka Springs, AR 72632, USA",
+      "category": "food",
+      "lat": 36.4023533,
+      "lng": -93.73729499999999,
+      "name": "Basin Park Hotel",
+      "place_id": "ChIJz_1Qn8nSzocRIYNSHPhkJHU",
+      "price_level": 0,
+      "rating": 4.3,
+      "tags": [
+        "hotel",
+        "tourist_attraction",
+        "wedding_venue",
+        "spa",
+        "lodging",
+        "event_venue",
+        "service",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "26 White St, Eureka Springs, AR 72632, USA",
+      "category": "food",
+      "lat": 36.4053924,
+      "lng": -93.7419548,
+      "name": "Ermilio's Italian Home Cooking",
+      "place_id": "ChIJt4DdZcvSzocR0re1UzIVtfo",
+      "price_level": 0,
+      "rating": 4.6,
+      "tags": [
+        "italian_restaurant",
+        "european_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "207 W Van Buren, Eureka Springs, AR 72632, USA",
+      "category": "food",
+      "lat": 36.398799499999996,
+      "lng": -93.7475856,
+      "name": "Myrtie Mae's",
+      "place_id": "ChIJS0tRqbvTzocRA6ruhPoQhVk",
+      "price_level": 0,
+      "rating": 4.4,
+      "tags": [
+        "family_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "71 S Main St, Eureka Springs, AR 72632, USA",
+      "category": "food",
+      "lat": 36.4005207,
+      "lng": -93.739899,
+      "name": "Local Flavor Cafe",
+      "place_id": "ChIJjRe2FsrSzocR_ZigsCeIpdA",
+      "price_level": 0,
+      "rating": 4.7,
+      "tags": [
+        "restaurant",
+        "american_restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "10 Center St, Eureka Springs, AR 72632, USA",
+      "category": "food",
+      "lat": 36.4027928,
+      "lng": -93.73660579999999,
+      "name": "Grotto Wood-Fired Grill and Wine Cave",
+      "place_id": "ChIJMwjkCcnSzocR3YeX-h_0xCs",
+      "price_level": 0,
+      "rating": 4.6,
+      "tags": [
+        "american_restaurant",
+        "fine_dining_restaurant",
+        "bar",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "2070 E Van Buren, Eureka Springs, AR 72632, USA",
+      "category": "food",
+      "lat": 36.3908762,
+      "lng": -93.731549,
+      "name": "McGarity's Restaurant & Irish Pub",
+      "place_id": "ChIJ04cY3ZzTzocRw_B77BKJcpE",
+      "price_level": 0,
+      "rating": 4.8,
+      "tags": [
+        "restaurant",
+        "family_restaurant",
+        "irish_pub",
+        "pub",
+        "gastropub",
+        "sports_bar",
+        "irish_restaurant",
+        "cocktail_bar",
+        "american_restaurant",
+        "bar",
+        "european_restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "3085 E Van Buren, Eureka Springs, AR 72632, USA",
+      "category": "food",
+      "lat": 36.3917235,
+      "lng": -93.7208308,
+      "name": "The Horseshoe Grill",
+      "place_id": "ChIJd_PLmwbTzocRX9pumovLOV4",
+      "price_level": 0,
+      "rating": 4.5,
+      "tags": [
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "55 B S Main St, Eureka Springs, AR 72632, USA",
+      "category": "food",
+      "lat": 36.4009944,
+      "lng": -93.73892699999999,
+      "name": "The Spring on Main",
+      "place_id": "ChIJXRzogkzTzocRwSvOMqPqz90",
+      "price_level": 0,
+      "rating": 4.5,
+      "tags": [
+        "american_restaurant",
+        "brunch_restaurant",
+        "breakfast_restaurant",
+        "cocktail_bar",
+        "food_store",
+        "bar",
+        "store",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "22 S Main St G, Eureka Springs, AR 72632, USA",
+      "category": "food",
+      "lat": 36.4013913,
+      "lng": -93.73777150000001,
+      "name": "Mud Street Cafe",
+      "place_id": "ChIJhSJqjMnSzocRxOr5MBWJwHs",
+      "price_level": 0,
+      "rating": 4.3,
+      "tags": [
+        "cafe",
+        "breakfast_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "5-19 Spring St, Eureka Springs, AR 72632, USA",
+      "category": "outdoor",
+      "lat": 36.401974599999996,
+      "lng": -93.73738639999999,
+      "name": "Eureka Springs Downtown",
+      "place_id": "ChIJKZtqLdDSzocRs47NsfMmqs4",
+      "price_level": 0,
+      "rating": 4.7,
+      "tags": [
+        "city_park",
+        "park",
+        "tourist_attraction",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "239 Turpentine Creek Ln, Eureka Springs, AR 72632, USA",
+      "category": "outdoor",
+      "lat": 36.309905,
+      "lng": -93.75562099999999,
+      "name": "Turpentine Creek Wildlife Refuge",
+      "place_id": "ChIJD0qkkjgzyYcRIcl6wAI4dPE",
+      "price_level": 0,
+      "rating": 4.8,
+      "tags": [
+        "wildlife_refuge",
+        "park",
+        "tourist_attraction",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "32297 State Hwy 86, Eagle Rock, MO 65641, USA",
+      "category": "outdoor",
+      "lat": 36.5119743,
+      "lng": -93.7136039,
+      "name": "Eureka Springs Safari Park",
+      "place_id": "ChIJVVmTNAPVzocR5Fha_Rhrqs0",
+      "price_level": 0,
+      "rating": 4.3,
+      "tags": [
+        "zoo",
+        "wildlife_park",
+        "park",
+        "tourist_attraction",
+        "educational_institution",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "348 Damsite River Rd, Eureka Springs, AR 72631, USA",
+      "category": "outdoor",
+      "lat": 36.4267669,
+      "lng": -93.84580919999999,
+      "name": "Beaver Dam Site Park",
+      "place_id": "ChIJVRWWufIuyYcR79p7BO6Je74",
+      "price_level": 0,
+      "rating": 4.7,
+      "tags": [
+        "park",
+        "tourist_attraction",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "1303 Co Rd 204, Eureka Springs, AR 72632, USA",
+      "category": "outdoor",
+      "lat": 36.434448599999996,
+      "lng": -93.7597234,
+      "name": "Lake Leatherwood City Park",
+      "place_id": "ChIJbxp5ReEsyYcROb8kY2N8X9U",
+      "price_level": 0,
+      "rating": 4.7,
+      "tags": [
+        "city_park",
+        "campground",
+        "park",
+        "playground",
+        "lodging",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "450 Passion Play Rd, Eureka Springs, AR 72632, USA",
+      "category": "outdoor",
+      "lat": 36.397555,
+      "lng": -93.713704,
+      "name": "Wanderlust RV Park & Cabins",
+      "place_id": "ChIJIzEZXI7SzocRVN_LeyOEWUg",
+      "price_level": 0,
+      "rating": 4.5,
+      "tags": [
+        "rv_park",
+        "camping_cabin",
+        "campground",
+        "park",
+        "lodging",
+        "storage",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "12485 Marina Rd #35, Garfield, AR 72732, USA",
+      "category": "outdoor",
+      "lat": 36.412237,
+      "lng": -93.89487960000001,
+      "name": "Lost Bridge North Park",
+      "place_id": "ChIJHQXl74gvyYcRTEVHkvoGSDg",
+      "price_level": 0,
+      "rating": 4.4,
+      "tags": [
+        "park",
+        "tourist_attraction",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "4 Spring St, Eureka Springs, AR 72632, USA",
+      "category": "outdoor",
+      "lat": 36.402096199999995,
+      "lng": -93.73774709999999,
+      "name": "Basin Spring Park",
+      "place_id": "ChIJc6MymsnSzocRnL2O7W_ThXk",
+      "price_level": 0,
+      "rating": 4.7,
+      "tags": [
+        "park",
+        "tourist_attraction",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "Eureka Springs, AR 72631, USA",
+      "category": "outdoor",
+      "lat": 36.427087,
+      "lng": -93.8481317,
+      "name": "Beaver Dam Park Pavillion 1",
+      "place_id": "ChIJizxsXPIuyYcRabrmM9TnNuY",
+      "price_level": 0,
+      "rating": 4.7,
+      "tags": [
+        "park",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "Oil Spring Rd, Eureka Springs, AR 72632, USA",
+      "category": "outdoor",
+      "lat": 36.3936329,
+      "lng": -93.7490505,
+      "name": "Black Bass Lake",
+      "place_id": "ChIJmdqXsU4tyYcRaXiJdtRhNic",
+      "price_level": 0,
+      "rating": 4.4,
+      "tags": [
+        "park",
+        "tourist_attraction",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "75 Prospect Ave Ste 105, Eureka Springs, AR 72632, USA",
+      "category": "urban",
+      "lat": 36.4080588,
+      "lng": -93.73749409999999,
+      "name": "Crescent Hotel and Spa",
+      "place_id": "ChIJFQk9KszSzocRizyKl-W1oIQ",
+      "price_level": 0,
+      "rating": 4.5,
+      "tags": [
+        "hotel",
+        "tourist_attraction",
+        "motel",
+        "spa",
+        "wedding_venue",
+        "restaurant",
+        "food",
+        "lodging",
+        "service",
+        "event_venue",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "12968 US-62, Eureka Springs, AR 72632, USA",
+      "category": "urban",
+      "lat": 36.416315999999995,
+      "lng": -93.7726242,
+      "name": "Thorncrown Chapel",
+      "place_id": "ChIJl3l5fhstyYcR6Q_y-wCDVvw",
+      "price_level": 0,
+      "rating": 4.8,
+      "tags": [
+        "church",
+        "tourist_attraction",
+        "non_profit_organization",
+        "wedding_venue",
+        "place_of_worship",
+        "association_or_organization",
+        "service",
+        "event_venue",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "5-19 Spring St, Eureka Springs, AR 72632, USA",
+      "category": "urban",
+      "lat": 36.401974599999996,
+      "lng": -93.73738639999999,
+      "name": "Eureka Springs Downtown",
+      "place_id": "ChIJKZtqLdDSzocRs47NsfMmqs4",
+      "price_level": 0,
+      "rating": 4.7,
+      "tags": [
+        "city_park",
+        "tourist_attraction",
+        "park",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "239 Turpentine Creek Ln, Eureka Springs, AR 72632, USA",
+      "category": "urban",
+      "lat": 36.309905,
+      "lng": -93.75562099999999,
+      "name": "Turpentine Creek Wildlife Refuge",
+      "place_id": "ChIJD0qkkjgzyYcRIcl6wAI4dPE",
+      "price_level": 0,
+      "rating": 4.8,
+      "tags": [
+        "wildlife_refuge",
+        "tourist_attraction",
+        "park",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "935 Passion Play Rd, Eureka Springs, AR 72632, USA",
+      "category": "urban",
+      "lat": 36.4088815,
+      "lng": -93.7251551,
+      "name": "Christ of the Ozarks",
+      "place_id": "ChIJvdXK-sLSzocRm7WEEJy-7Wo",
+      "price_level": 0,
+      "rating": 4.7,
+      "tags": [
+        "sculpture",
+        "tourist_attraction",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "338 Onyx Cave Lane, Eureka Springs, AR 72632, USA",
+      "category": "urban",
+      "lat": 36.4417067,
+      "lng": -93.6824493,
+      "name": "Onyx Cave",
+      "place_id": "ChIJs3hMSbfTzocRycUFuQIWnWU",
+      "price_level": 0,
+      "rating": 4.4,
+      "tags": [
+        "tourist_attraction",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "21494 Cavern Dr, Rogers, AR 72756, USA",
+      "category": "urban",
+      "lat": 36.2952521,
+      "lng": -93.90447019999999,
+      "name": "War Eagle Cavern",
+      "place_id": "ChIJ4ZVDOKgwyYcRVgYx8bR25kU",
+      "price_level": 0,
+      "rating": 4.8,
+      "tags": [
+        "tourist_attraction",
+        "gift_shop",
+        "hiking_area",
+        "sports_activity_location",
+        "store",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "32297 State Hwy 86, Eagle Rock, MO 65641, USA",
+      "category": "urban",
+      "lat": 36.5119743,
+      "lng": -93.7136039,
+      "name": "Eureka Springs Safari Park",
+      "place_id": "ChIJVVmTNAPVzocR5Fha_Rhrqs0",
+      "price_level": 0,
+      "rating": 4.3,
+      "tags": [
+        "zoo",
+        "tourist_attraction",
+        "wildlife_park",
+        "park",
+        "educational_institution",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "12 Spring St, Eureka Springs, AR 72632, USA",
+      "category": "urban",
+      "lat": 36.4023533,
+      "lng": -93.73729499999999,
+      "name": "Basin Park Hotel",
+      "place_id": "ChIJz_1Qn8nSzocRIYNSHPhkJHU",
+      "price_level": 0,
+      "rating": 4.3,
+      "tags": [
+        "hotel",
+        "tourist_attraction",
+        "spa",
+        "wedding_venue",
+        "restaurant",
+        "food",
+        "lodging",
+        "service",
+        "event_venue",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "348 Damsite River Rd, Eureka Springs, AR 72631, USA",
+      "category": "urban",
+      "lat": 36.4267669,
+      "lng": -93.84580919999999,
+      "name": "Beaver Dam Site Park",
+      "place_id": "ChIJVRWWufIuyYcR79p7BO6Je74",
+      "price_level": 0,
+      "rating": 4.7,
+      "tags": [
+        "park",
+        "tourist_attraction",
+        "point_of_interest",
+        "establishment"
+      ]
+    }
+  ]
+}

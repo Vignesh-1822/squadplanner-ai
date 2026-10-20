@@ -1,0 +1,25 @@
+{
+  "operation": "search_hotels",
+  "request": {
+    "budget_ceiling_usd": 1590.0,
+    "check_in": "2026-09-08",
+    "check_out": "2026-09-11",
+    "coords": {
+      "lat": 33.494,
+      "lng": -117.148
+    },
+    "destination": "Temecula"
+  },
+  "request_sha256": "ce9298a765d5e39ec7b55c0d59f01cce70353c4c8ee4e5d96c43817f09109f7b",
+  "response": {
+    "address": "41900 Moreno Rd, Temecula, CA 92590, USA",
+    "is_estimated": false,
+    "lat": 33.498007099999995,
+    "lng": -117.1510427,
+    "name": "Motel 6 Temecula, CA - Historic Old Town",
+    "place_id": "ChIJLTVMCMh_24ARpfR6TIxGygg",
+    "price_per_night_usd": 47.0,
+    "rating": 3.7,
+    "total_price_usd": 141.0
+  }
+}

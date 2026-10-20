@@ -1,0 +1,31 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 28.949,
+      "lng": -95.293
+    },
+    "destination": "Surfside Beach",
+    "included_type": null,
+    "query": "Continue Oyster Creek exploration"
+  },
+  "request_sha256": "ebd887fe62250a3cef7804f43c1e8059fd3593da7d349589aad783ce69fcbe37",
+  "response": {
+    "address": "412 Parkview Rd, Surfside Beach, TX 77541, USA",
+    "category": "place",
+    "lat": 28.9414886,
+    "lng": -95.2986253,
+    "name": "Jetty Shack",
+    "place_id": "ChIJt7SUSU0TQIYR6hyihAeoiiY",
+    "price_level": 0,
+    "rating": 4.5,
+    "tags": [
+      "bar_and_grill",
+      "bar",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

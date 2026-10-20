@@ -1,0 +1,33 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 28.949,
+      "lng": -95.293
+    },
+    "destination": "Surfside Beach",
+    "included_type": null,
+    "query": "Quintana Beach and Bird Sanctuary visit"
+  },
+  "request_sha256": "6659e3bdb11677be483f4ab7a63df6ed53e90adf9a0cd022ac3d0cc4e9ac288e",
+  "response": {
+    "address": "330 5th St, Quintana, TX 77541, USA",
+    "category": "place",
+    "lat": 28.9346868,
+    "lng": -95.3039594,
+    "name": "Quintana Beach County Park",
+    "place_id": "ChIJbxA6JVETQIYRsFUvpFX8YnE",
+    "price_level": 0,
+    "rating": 4.5,
+    "tags": [
+      "rv_park",
+      "real_estate_agency",
+      "travel_agency",
+      "park",
+      "lodging",
+      "service",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

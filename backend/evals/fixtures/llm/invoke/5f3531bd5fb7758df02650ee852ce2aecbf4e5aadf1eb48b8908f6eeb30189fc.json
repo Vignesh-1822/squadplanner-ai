@@ -1,0 +1,37 @@
+{
+  "operation": "invoke",
+  "request": {
+    "invoke_kwargs": {},
+    "node": "extract_preference_constraints",
+    "prompt": "Extract group trip planning constraints from natural-language preference notes.\nReturn ONLY raw JSON, no markdown, no backticks. Use this exact top-level shape:\n{raw_member_notes: list, raw_group_notes: string, hard_constraints: list, soft_preferences: list, schedule: object, activity_filters: object, meal_requirements: object, destination_intent: object}.\nClassify explicit must/avoid/timing requirements as hard_constraints. Classify general likes, vibes, and pacing as soft_preferences unless they are phrased as must/avoid.\nUse schedule.earliest_start_time as HH:MM when users avoid early mornings. Use activity_filters.avoid_tags for avoided activity categories. Use meal_requirements.must_include for cuisine or meal requirements. Use destination_intent.styles for destination-level intent like big_city, skyscrapers, skyline, architecture, museums, food_city, nightlife_city, beach, national_park, theme_parks, mountains, small_town, scenic_drives, shopping, quiet_escape. Use destination_intent.preferred_types for preferred destination types, and set destination_intent.iconic_preference true when users ask for iconic, famous, big-city, skyline, national-park, beach, or theme-park destinations.\n\nPreference notes JSON:\n{\"raw_member_notes\": [{\"member_id\": \"ava\", \"name\": \"Ava\", \"notes\": \"I like parks and markets, but first day should be easy.\"}, {\"member_id\": \"ben\", \"name\": \"Ben\", \"notes\": \"Urban neighborhoods and good food are the priority.\"}, {\"member_id\": \"chloe\", \"name\": \"Chloe\", \"notes\": \"Museums, walking, and no exhausting travel days.\"}, {\"member_id\": \"diego\", \"name\": \"Diego\", \"notes\": \"Keep costs fair across the group.\"}], \"raw_group_notes\": \"People are flying from far apart. Keep the first day light and avoid assuming everyone arrives early.\", \"hard_constraints\": [], \"soft_preferences\": [], \"schedule\": {\"avoid_early_mornings\": false, \"earliest_start_time\": null, \"pace\": \"balanced\"}, \"activity_filters\": {\"avoid_tags\": [], \"prefer_tags\": [], \"required_tags\": []}, \"meal_requirements\": {\"must_include\": [], \"avoid_terms\": []}, \"destination_intent\": {\"styles\": [], \"landmarks\": [], \"preferred_types\": [], \"iconic_preference\": false}}",
+    "tools": []
+  },
+  "request_sha256": "5f3531bd5fb7758df02650ee852ce2aecbf4e5aadf1eb48b8908f6eeb30189fc",
+  "response": {
+    "data": {
+      "additional_kwargs": {},
+      "content": "```json\n{\n  \"raw_member_notes\": [\n    {\n      \"member_id\": \"ava\",\n      \"name\": \"Ava\",\n      \"notes\": \"I like parks and markets, but first day should be easy.\"\n    },\n    {\n      \"member_id\": \"ben\",\n      \"name\": \"Ben\",\n      \"notes\": \"Urban neighborhoods and good food are the priority.\"\n    },\n    {\n      \"member_id\": \"chloe\",\n      \"name\": \"Chloe\",\n      \"notes\": \"Museums, walking, and no exhausting travel days.\"\n    },\n    {\n      \"member_id\": \"diego\",\n      \"name\": \"Diego\",\n      \"notes\": \"Keep costs fair across the group.\"\n    }\n  ],\n  \"raw_group_notes\": \"People are flying from far apart. Keep the first day light and avoid assuming everyone arrives early.\",\n  \"hard_constraints\": [\n    \"first_day_light_activities_only\",\n    \"no_exhausting_travel_days\",\n    \"fair_costs_across_group\",\n    \"accommodate_staggered_arrivals\"\n  ],\n  \"soft_preferences\": [\n    \"explore_parks\",\n    \"visit_markets\",\n    \"urban_neighborhoods\",\n    \"good_food_focus\",\n    \"museums\",\n    \"walking_based_activities\",\n    \"balanced_pace\"\n  ],\n  \"schedule\": {\n    \"avoid_early_mornings\": true,\n    \"earliest_start_time\": \"10:00\",\n    \"pace\": \"balanced\"\n  },\n  \"activity_filters\": {\n    \"avoid_tags\": [\n      \"exhausting_travel\",\n      \"high_endurance\"\n    ],\n    \"prefer_tags\": [\n      \"parks\",\n      \"markets\",\n      \"museums\",\n      \"walking\",\n      \"neighborhoods\"\n    ],\n    \"required_tags\": []\n  },\n  \"meal_requirements\": {\n    \"must_include\": [\n      \"good_food\"\n    ],\n    \"avoid_terms\": []\n  },\n  \"destination_intent\": {\n    \"styles\": [\n      \"food_city\",\n      \"parks\",\n      \"museums\"\n    ],\n    \"landmarks\": [],\n    \"preferred_types\": [\n      \"urban_destination\"\n    ],\n    \"iconic_preference\": false\n  }\n}\n```",
+      "id": "lc_run--01a07569-3814-7ce3-8089-81d5979db38c",
+      "invalid_tool_calls": [],
+      "name": null,
+      "response_metadata": {
+        "model_name": "claude-haiku-4-5-20251001",
+        "model_provider": "anthropic",
+        "stop_reason": "end_turn",
+        "stop_sequence": null
+      },
+      "tool_calls": [],
+      "type": "ai",
+      "usage_metadata": {
+        "input_token_details": {
+          "cache_creation": 0,
+          "cache_read": 0
+        },
+        "input_tokens": 572,
+        "output_tokens": 573,
+        "total_tokens": 1145
+      }
+    },
+    "type": "ai"
+  }
+}

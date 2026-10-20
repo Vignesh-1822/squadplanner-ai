@@ -1,0 +1,28 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 28.949,
+      "lng": -95.293
+    },
+    "destination": "Surfside Beach",
+    "included_type": null,
+    "query": "Travel to Brazoria County Beach area"
+  },
+  "request_sha256": "4d60222b0e0b8f9c0e1e3c096a50f01b1da7c95c40920b4aa9baa11b991a79d1",
+  "response": {
+    "address": "XQR6+4V, Surfside Beach, TX 77541, USA",
+    "category": "place",
+    "lat": 28.9893863,
+    "lng": -95.2378986,
+    "name": "Brazoria Beach",
+    "place_id": "ChIJ3_n98mVtQIYRVNc6qj_ZgZE",
+    "price_level": 0,
+    "rating": 4.7,
+    "tags": [
+      "tourist_attraction",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

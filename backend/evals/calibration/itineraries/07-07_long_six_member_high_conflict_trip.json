@@ -1,0 +1,681 @@
+{
+  "id": "07-07_long_six_member_high_conflict_trip",
+  "group_notes": "This is a reunion trip with conflicting styles. Hard constraints: no clubs, no alcohol-focused venues, no pork, respect vegan and gluten-free meals, no activity before 10:00 unless it is breakfast. Soft goals: one scenic outdoor day, one museum/culture day, one food-focused day, one shopping or market stop, and enough downtime that the trip does not feel rushed.",
+  "members": [
+    {
+      "member_id": "alex",
+      "name": "Alex",
+      "origin_city": "SFO",
+      "budget_usd": 2200,
+      "food_restrictions": [
+        "vegan"
+      ],
+      "preference_notes": "I want hiking, viewpoints, and nature. I am vegan. I hate clubs and do not want alcohol-centered venues.",
+      "preference_vector": {
+        "outdoor": 1.0,
+        "food": 0.6,
+        "nightlife": 0.0,
+        "urban": 0.2,
+        "shopping": 0.1
+      },
+      "is_leader": true
+    },
+    {
+      "member_id": "brooke",
+      "name": "Brooke",
+      "origin_city": "JFK",
+      "budget_usd": 2600,
+      "food_restrictions": [],
+      "preference_notes": "I want museums, architecture, cafes, and iconic city neighborhoods. I do not care about hiking.",
+      "preference_vector": {
+        "outdoor": 0.1,
+        "food": 0.8,
+        "nightlife": 0.3,
+        "urban": 1.0,
+        "shopping": 0.6
+      },
+      "is_leader": false
+    },
+    {
+      "member_id": "cam",
+      "name": "Cam",
+      "origin_city": "ATL",
+      "budget_usd": 1300,
+      "food_restrictions": [
+        "gluten_free"
+      ],
+      "preference_notes": "I am budget sensitive and gluten-free. No packed schedule. I need downtime every day.",
+      "preference_vector": {
+        "outdoor": 0.5,
+        "food": 0.7,
+        "nightlife": 0.1,
+        "urban": 0.5,
+        "shopping": 0.2
+      },
+      "is_leader": false
+    },
+    {
+      "member_id": "dev",
+      "name": "Dev",
+      "origin_city": "ORD",
+      "budget_usd": 1800,
+      "food_restrictions": [
+        "halal"
+      ],
+      "preference_notes": "No pork or bacon. I like late dinners, markets, and food halls, but not clubs.",
+      "preference_vector": {
+        "outdoor": 0.3,
+        "food": 1.0,
+        "nightlife": 0.6,
+        "urban": 0.7,
+        "shopping": 0.5
+      },
+      "is_leader": false
+    },
+    {
+      "member_id": "ella",
+      "name": "Ella",
+      "origin_city": "SEA",
+      "budget_usd": 2100,
+      "food_restrictions": [],
+      "preference_notes": "I want boutiques, local markets, photogenic streets, and at least one nicer dinner.",
+      "preference_vector": {
+        "outdoor": 0.2,
+        "food": 0.8,
+        "nightlife": 0.2,
+        "urban": 0.7,
+        "shopping": 1.0
+      },
+      "is_leader": false
+    },
+    {
+      "member_id": "finn",
+      "name": "Finn",
+      "origin_city": "MIA",
+      "budget_usd": 1500,
+      "food_restrictions": [],
+      "preference_notes": "I want beaches or water if possible, but I cannot handle early mornings. Keep travel between stops low.",
+      "preference_vector": {
+        "outdoor": 0.8,
+        "food": 0.5,
+        "nightlife": 0.1,
+        "urban": 0.3,
+        "shopping": 0.2
+      },
+      "is_leader": false
+    }
+  ],
+  "start_date": "2026-09-08",
+  "end_date": "2026-09-11",
+  "trip_duration_days": 3,
+  "destination": {
+    "name": "Newport",
+    "coords": {
+      "lat": 44.636,
+      "lng": -124.053
+    }
+  },
+  "hotel": {
+    "name": "Harbor Base Pineapple Inn",
+    "address": "372 Coddington Hwy, Newport, RI 02840, USA",
+    "price_per_night_usd": 79.0,
+    "total_price_usd": 237.0,
+    "rating": 3.1,
+    "is_estimated": false
+  },
+  "weather": {
+    "destination": "Newport",
+    "date_range": "2026-09-08 to 2026-09-11",
+    "avg_temp_c": 16.1,
+    "precipitation_mm": 0.0,
+    "summary": "Mild (16.1\u00b0C avg), dry conditions"
+  },
+  "days": [
+    {
+      "day_number": 1,
+      "date": "2026-09-08",
+      "neighborhood": "Newport Historic Bayfront",
+      "meals": [
+        "Breakfast at Harbor Base Pineapple Inn",
+        "Local Ocean Seafoods (gluten-free, vegan, halal options)",
+        "Clearwater Restaurant (vegan, gluten-free, halal-friendly seafood)"
+      ],
+      "estimated_day_cost_usd": 840.0,
+      "schedule": [
+        {
+          "time": "10:00",
+          "type": "activity",
+          "label": "Newport Historic Bayfront",
+          "notes": "Explore iconic waterfront architecture and streets, photogenic for group photos"
+        },
+        {
+          "time": "12:30",
+          "type": "meal",
+          "label": "Lunch at Local Ocean Seafoods",
+          "notes": "Fresh local catch, accommodates vegan options and gluten-free requests"
+        },
+        {
+          "time": "14:00",
+          "type": "activity",
+          "label": "Yaquina Head Outstanding Natural Area",
+          "notes": "Scenic viewpoint and outdoor nature walk, satisfies Alex's viewpoint preference"
+        },
+        {
+          "time": "16:00",
+          "type": "downtime",
+          "label": "Free time at Whalers Village",
+          "notes": "Shopping and browsing for Ella and group, low-pressure downtime for Cam"
+        },
+        {
+          "time": "19:00",
+          "type": "meal",
+          "label": "Dinner at Clearwater Restaurant",
+          "notes": "Elevated seafood dining, vegan and gluten-free accommodations available"
+        }
+      ],
+      "rationale": "Day 1 anchors the trip at the Historic Bayfront, satisfying Alex's desire for coastal viewpoints and nature at Yaquina Head, while honoring Brooke's preference for iconic neighborhoods and Ella's interest in photogenic streets and local character. The combination of harbor exploration, working seafood market, natural area access, and village shops creates a balanced introduction that avoids early mornings and maintains a relaxed pace with meaningful downtime between stops.",
+      "constraint_notes": [
+        "All activities start at 10:00 AM or later (no early mornings)",
+        "Local Ocean Seafoods offers fresh seafood with vegan options for Alex; Clearwater Restaurant accommodates dietary needs",
+        "Historic Bayfront and Whalers Village provide shopping and photogenic waterfront neighborhood exploration for Ella and Brooke",
+        "Yaquina Head satisfies Alex's viewpoint and nature preference",
+        "Three activities with natural gaps between them respect Cam's need for downtime and relaxed pace",
+        "No nightlife or alcohol-centered venues; family-friendly maritime and cultural focus"
+      ],
+      "total_travel_minutes": 65499,
+      "activities": [
+        {
+          "name": "Newport Historic Bayfront",
+          "category": "urban",
+          "address": "250-300 SW Bay Blvd., Newport, OR 97365, USA",
+          "lat": 44.6310396,
+          "lng": -124.0511696,
+          "price_level": 0,
+          "rating": 4.7,
+          "tags": [
+            "historical_landmark",
+            "tourist_attraction",
+            "historical_place",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Yaquina Head Outstanding Natural Area",
+          "category": "urban",
+          "address": "750 NW Lighthouse Dr, Newport, OR 97365, USA",
+          "lat": 44.6762003,
+          "lng": -124.07722109999999,
+          "price_level": 0,
+          "rating": 4.8,
+          "tags": [
+            "nature_preserve",
+            "wildlife_refuge",
+            "tourist_attraction",
+            "museum",
+            "park",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Whalers Village",
+          "category": "shopping",
+          "address": "N Coast Hwy, Newport, OR 97365, USA",
+          "lat": 44.651900499999996,
+          "lng": -124.0537377,
+          "price_level": 0,
+          "rating": 0.0,
+          "tags": [
+            "shopping_mall",
+            "point_of_interest",
+            "establishment"
+          ]
+        }
+      ],
+      "routes": [
+        {
+          "distance_meters": 4967702,
+          "duration_seconds": 3918062,
+          "mode": "WALK",
+          "from_order": 1,
+          "to_order": 2,
+          "from_label": "Harbor Base Pineapple Inn",
+          "to_label": "Newport Historic Bayfront"
+        },
+        {
+          "distance_meters": 198,
+          "duration_seconds": 169,
+          "mode": "WALK",
+          "from_order": 2,
+          "to_order": 3,
+          "from_label": "Newport Historic Bayfront",
+          "to_label": "Local Ocean Seafoods"
+        },
+        {
+          "distance_meters": 6972,
+          "duration_seconds": 5917,
+          "mode": "WALK",
+          "from_order": 3,
+          "to_order": 4,
+          "from_label": "Local Ocean Seafoods",
+          "to_label": "Yaquina Head Outstanding Natural Area"
+        },
+        {
+          "distance_meters": 4396,
+          "duration_seconds": 3699,
+          "mode": "WALK",
+          "from_order": 4,
+          "to_order": 5,
+          "from_label": "Yaquina Head Outstanding Natural Area",
+          "to_label": "Whalers Village"
+        },
+        {
+          "distance_meters": 2594,
+          "duration_seconds": 2123,
+          "mode": "WALK",
+          "from_order": 5,
+          "to_order": 6,
+          "from_label": "Whalers Village",
+          "to_label": "Clearwater Restaurant"
+        }
+      ]
+    },
+    {
+      "day_number": 2,
+      "date": "2026-09-09",
+      "neighborhood": "South Beach & Aquarium District",
+      "meals": [
+        "Breakfast at Harbor Base Pineapple Inn",
+        "South Beach Fish Market (fresh, vegan, gluten-free friendly)",
+        "Luna Sea Fish House Seal Rock (vegan pasta, gluten-free options)"
+      ],
+      "estimated_day_cost_usd": 720.0,
+      "schedule": [
+        {
+          "time": "10:00",
+          "type": "activity",
+          "label": "South Beach State Park",
+          "notes": "Beach and water activity satisfies Finn's water preference and Alex's outdoor interest"
+        },
+        {
+          "time": "12:30",
+          "type": "meal",
+          "label": "Lunch at South Beach Fish Market",
+          "notes": "Fresh market atmosphere, food-focused experience, flexible for all dietary needs"
+        },
+        {
+          "time": "14:00",
+          "type": "activity",
+          "label": "Oregon Coast Aquarium",
+          "notes": "Urban cultural attraction for Brooke, water-focused for Finn, low-intensity indoor option for Cam"
+        },
+        {
+          "time": "16:00",
+          "type": "downtime",
+          "label": "Browse Aquarium Village",
+          "notes": "Local shops and markets appeal to Ella and Dev; relaxed browsing time"
+        },
+        {
+          "time": "19:00",
+          "type": "meal",
+          "label": "Dinner at Luna Sea Fish House Seal Rock",
+          "notes": "Seafood with vegan and gluten-free pasta options; satisfies food-focused goal"
+        }
+      ],
+      "rationale": "Day 2 delivers the beach and aquarium experiences Finn prefers while providing cultural and food-focused activities for the group. South Beach State Park offers water access and scenic coastal views; the Oregon Coast Aquarium satisfies Brooke's museum interest; Aquarium Village provides boutique shopping for Ella; and Luna Sea Fish House offers a scenic waterfront dinner with seafood options. The day maintains a relaxed morning start and moderate activity load.",
+      "constraint_notes": [
+        "South Beach State Park and Luna Sea Fish House deliver Finn's beach and water preference",
+        "Oregon Coast Aquarium satisfies Brooke's museum and cultural interest",
+        "Aquarium Village offers boutique shopping exploration for Ella",
+        "South Beach Fish Market provides market atmosphere Dev appreciates; Luna Sea offers late-dinner option",
+        "Activities start at 10:00 AM; three stops with natural gaps maintain relaxed pace and downtime for Cam",
+        "Restaurants accommodate vegan (Alex), gluten-free (Cam), and pork-free (Dev) requirements",
+        "No clubs or alcohol-centered venues"
+      ],
+      "total_travel_minutes": 65608,
+      "activities": [
+        {
+          "name": "South Beach State Park",
+          "category": "outdoor",
+          "address": "5580 SW Coast Hwy, Newport, OR 97366, USA",
+          "lat": 44.6040432,
+          "lng": -124.0615564,
+          "price_level": 0,
+          "rating": 4.6,
+          "tags": [
+            "state_park",
+            "campground",
+            "park",
+            "lodging",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Oregon Coast Aquarium",
+          "category": "urban",
+          "address": "2820 SE Ferry Slip Rd, Newport, OR 97365, USA",
+          "lat": 44.617652799999995,
+          "lng": -124.0472528,
+          "price_level": 0,
+          "rating": 4.4,
+          "tags": [
+            "aquarium",
+            "tourist_attraction",
+            "gift_shop",
+            "educational_institution",
+            "association_or_organization",
+            "store",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Aquarium Village",
+          "category": "shopping",
+          "address": "3101 SE Ferry Slip Rd, Newport, OR 97365, USA",
+          "lat": 44.615353,
+          "lng": -124.04647340000001,
+          "price_level": 0,
+          "rating": 4.3,
+          "tags": [
+            "business_center",
+            "shopping_mall",
+            "zoo",
+            "storage",
+            "point_of_interest",
+            "service",
+            "establishment"
+          ]
+        }
+      ],
+      "routes": [
+        {
+          "distance_meters": 4972455,
+          "duration_seconds": 3921798,
+          "mode": "WALK",
+          "from_order": 1,
+          "to_order": 2,
+          "from_label": "Harbor Base Pineapple Inn",
+          "to_label": "South Beach State Park"
+        },
+        {
+          "distance_meters": 2438,
+          "duration_seconds": 1963,
+          "mode": "WALK",
+          "from_order": 2,
+          "to_order": 3,
+          "from_label": "South Beach State Park",
+          "to_label": "South Beach Fish Market"
+        },
+        {
+          "distance_meters": 993,
+          "duration_seconds": 823,
+          "mode": "WALK",
+          "from_order": 3,
+          "to_order": 4,
+          "from_label": "South Beach Fish Market",
+          "to_label": "Oregon Coast Aquarium"
+        },
+        {
+          "distance_meters": 481,
+          "duration_seconds": 389,
+          "mode": "WALK",
+          "from_order": 4,
+          "to_order": 5,
+          "from_label": "Oregon Coast Aquarium",
+          "to_label": "Aquarium Village"
+        },
+        {
+          "distance_meters": 14176,
+          "duration_seconds": 11515,
+          "mode": "WALK",
+          "from_order": 5,
+          "to_order": 6,
+          "from_label": "Aquarium Village",
+          "to_label": "Luna Sea Fish House Seal Rock"
+        }
+      ]
+    },
+    {
+      "day_number": 3,
+      "date": "2026-09-10",
+      "neighborhood": "Otter Crest Scenic Loop",
+      "meals": [
+        "Breakfast at Harbor Base Pineapple Inn",
+        "Tidal Raves (vegan bowl, gluten-free options available)",
+        "Gluten-free vegan dinner option or prepared meal from hotel"
+      ],
+      "estimated_day_cost_usd": 580.0,
+      "schedule": [
+        {
+          "time": "10:00",
+          "type": "activity",
+          "label": "Devils Punchbowl State Natural Area",
+          "notes": "Scenic coastal geology and tidal pools, excellent for hiking and nature viewpoints (Alex); photogenic (Ella)"
+        },
+        {
+          "time": "12:30",
+          "type": "meal",
+          "label": "Lunch at Tidal Raves",
+          "notes": "Vegan-friendly with gluten-free options; scenic viewpoint location"
+        },
+        {
+          "time": "14:00",
+          "type": "activity",
+          "label": "Otter Crest State Scenic Viewpoint",
+          "notes": "Outstanding viewpoint for all; Alex gets scenic outdoor experience; photogenic for Ella"
+        },
+        {
+          "time": "16:00",
+          "type": "activity",
+          "label": "OPRD Whale Watching Center",
+          "notes": "Nature and wildlife observation, low-intensity indoor/outdoor hybrid, educational"
+        },
+        {
+          "time": "19:00",
+          "type": "meal",
+          "label": "Dinner - prepared vegan gluten-free option or hotel arrangement",
+          "notes": "Final evening celebration; accommodates all restrictions without constraint"
+        }
+      ],
+      "rationale": "Day 3 showcases the scenic outdoor loop that Alex desires with dramatic natural formations, exceptional viewpoints, and whale-watching at the OPRD Whale Watching Center. Devils Punchbowl delivers the nature and coastal geology appeal; Otter Crest viewpoint satisfies the scenic viewpoint preference; and the day maintains beach and water access for Finn while avoiding early mornings and keeping travel between stops minimal. Tidal Raves and Georgie's Beachside Grill provide food-focused experiences with scenic settings.",
+      "constraint_notes": [
+        "Devils Punchbowl State Natural Area and Otter Crest State Scenic Viewpoint satisfy Alex's hiking, viewpoint, and nature priorities",
+        "OPRD Whale Watching Center delivers nature observation and scenic coastal experience",
+        "Water access and scenic beach views accommodate Finn's preference for coastal settings",
+        "All activities start at 10:00 AM or later; minimal travel between stops keeps pace relaxed",
+        "Tidal Raves and Georgie's Beachside Grill deliver scenic, higher-quality dining experiences with photogenic appeal and late-dinner options",
+        "Meals accommodate vegan (Alex), gluten-free (Cam), and pork-free (Dev) dietary requirements",
+        "No nightlife, clubs, or alcohol-centered venues; nature-focused and family-friendly throughout"
+      ],
+      "total_travel_minutes": 66112,
+      "activities": [
+        {
+          "name": "Devils Punchbowl State Natural Area",
+          "category": "outdoor",
+          "address": "122 1st St, Otter Rock, OR 97369, USA",
+          "lat": 44.7468595,
+          "lng": -124.06350119999999,
+          "price_level": 0,
+          "rating": 4.7,
+          "tags": [
+            "state_park",
+            "park",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Otter Crest State Scenic Viewpoint",
+          "category": "urban",
+          "address": "Otter Rock, OR 97369, USA",
+          "lat": 44.7600917,
+          "lng": -124.0670848,
+          "price_level": 0,
+          "rating": 4.8,
+          "tags": [
+            "state_park",
+            "tourist_attraction",
+            "park",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "OPRD Whale Watching Center",
+          "category": "outdoor",
+          "address": "119 US-101, Depoe Bay, OR 97341, USA",
+          "lat": 44.81005,
+          "lng": -124.06237800000001,
+          "price_level": 0,
+          "rating": 4.8,
+          "tags": [
+            "state_park",
+            "tour_agency",
+            "travel_agency",
+            "park",
+            "point_of_interest",
+            "service",
+            "establishment"
+          ]
+        }
+      ],
+      "routes": [
+        {
+          "distance_meters": 4981165,
+          "duration_seconds": 3929976,
+          "mode": "WALK",
+          "from_order": 1,
+          "to_order": 2,
+          "from_label": "Harbor Base Pineapple Inn",
+          "to_label": "Devils Punchbowl State Natural Area"
+        },
+        {
+          "distance_meters": 9576,
+          "duration_seconds": 7931,
+          "mode": "WALK",
+          "from_order": 2,
+          "to_order": 3,
+          "from_label": "Devils Punchbowl State Natural Area",
+          "to_label": "Tidal Raves"
+        },
+        {
+          "distance_meters": 6913,
+          "duration_seconds": 6014,
+          "mode": "WALK",
+          "from_order": 3,
+          "to_order": 4,
+          "from_label": "Tidal Raves",
+          "to_label": "Otter Crest State Scenic Viewpoint"
+        },
+        {
+          "distance_meters": 6327,
+          "duration_seconds": 4940,
+          "mode": "WALK",
+          "from_order": 4,
+          "to_order": 5,
+          "from_label": "Otter Crest State Scenic Viewpoint",
+          "to_label": "OPRD Whale Watching Center"
+        },
+        {
+          "distance_meters": 21802,
+          "duration_seconds": 17870,
+          "mode": "WALK",
+          "from_order": 5,
+          "to_order": 6,
+          "from_label": "OPRD Whale Watching Center",
+          "to_label": "Georgie's Beachside Grill"
+        }
+      ]
+    }
+  ],
+  "trip_pitch": "Newport, Oregon is a charming coastal town that beautifully bridges the competing interests of your diverse group. With a perfect blend of scenic natural attractions, cultural experiences, fresh seafood markets, and photogenic waterfront neighborhoods, Newport offers something for everyone\u2014whether you're chasing viewpoints and hiking trails, exploring maritime history and aquariums, discovering local boutiques, or simply enjoying leisurely meals with ocean views. This three-day escape provides the relaxed pace your group needs while delivering meaningful experiences across outdoor adventure, cultural discovery, and culinary exploration.\n\nYour itinerary is thoughtfully paced to respect everyone's travel style. Day 1 centers on the Historic Bayfront, where you'll explore the character and charm of Newport's iconic waterfront, visit a working fish market, experience dramatic coastal geology at Yaquina Head, and enjoy curated shopping and dining along the harbor. Day 2 shifts to South Beach and the Aquarium District, featuring pristine sandy beaches, fresh seafood at the Fish Market, the renowned Oregon Coast Aquarium, and charming village shops before dinner at a beachfront restaurant. Day 3 showcases the spectacular Otter Crest Scenic Loop, with dramatic tidal formations at Devils Punchbowl, exceptional viewpoints and whale-watching opportunities, and a final scenic dinner to cap your coastal adventure.\n\nYou'll be staying at the Harbor Base Pineapple Inn at just $79 per night ($237 total for three nights), offering exceptional value for a beachfront location. Newport's mild September weather averages 16.1\u00b0C with dry conditions\u2014perfect for outdoor exploration without summer crowds. Expect a relaxed atmosphere: no activity starts before 10:00 AM, travel between stops is minimal, and each day includes natural downtime between your three main activities. This pace allows everyone to recharge while experiencing the best of the Oregon Coast.\n\nWhether you're seeking dramatic coastal vistas, cultural attractions, fresh-caught seafood, or simply quality time with your group, Newport delivers an unforgettable reunion. From tide pools and whale-watching to waterfront galleries and local eateries, this itinerary honors each member's preferences while keeping the group together. Pack your comfortable shoes, bring a light jacket for the cool coastal breeze, and prepare for three days of genuine connection and coastal magic.",
+  "per_member_costs": [
+    {
+      "member_id": "alex",
+      "name": "Alex",
+      "budget_usd": 2200.0,
+      "flight_usd": 300.0,
+      "flight_is_estimated": true,
+      "hotel_share_usd": 39.5,
+      "activity_share_usd": 356.6666666666667,
+      "total_usd": 696.1666666666667,
+      "headroom_usd": 1503.8333333333333,
+      "utilization": 0.31643939393939396,
+      "fairness_utilization": 0.15431818181818183
+    },
+    {
+      "member_id": "brooke",
+      "name": "Brooke",
+      "budget_usd": 2600.0,
+      "flight_usd": 300.0,
+      "flight_is_estimated": true,
+      "hotel_share_usd": 39.5,
+      "activity_share_usd": 356.6666666666667,
+      "total_usd": 696.1666666666667,
+      "headroom_usd": 1903.8333333333333,
+      "utilization": 0.2677564102564103,
+      "fairness_utilization": 0.1305769230769231
+    },
+    {
+      "member_id": "cam",
+      "name": "Cam",
+      "budget_usd": 1300.0,
+      "flight_usd": 300.0,
+      "flight_is_estimated": true,
+      "hotel_share_usd": 39.5,
+      "activity_share_usd": 356.6666666666667,
+      "total_usd": 696.1666666666667,
+      "headroom_usd": 603.8333333333333,
+      "utilization": 0.5355128205128206,
+      "fairness_utilization": 0.2611538461538462
+    },
+    {
+      "member_id": "dev",
+      "name": "Dev",
+      "budget_usd": 1800.0,
+      "flight_usd": 300.0,
+      "flight_is_estimated": true,
+      "hotel_share_usd": 39.5,
+      "activity_share_usd": 356.6666666666667,
+      "total_usd": 696.1666666666667,
+      "headroom_usd": 1103.8333333333333,
+      "utilization": 0.3867592592592593,
+      "fairness_utilization": 0.18861111111111112
+    },
+    {
+      "member_id": "ella",
+      "name": "Ella",
+      "budget_usd": 2100.0,
+      "flight_usd": 300.0,
+      "flight_is_estimated": true,
+      "hotel_share_usd": 39.5,
+      "activity_share_usd": 356.6666666666667,
+      "total_usd": 696.1666666666667,
+      "headroom_usd": 1403.8333333333333,
+      "utilization": 0.33150793650793653,
+      "fairness_utilization": 0.16166666666666665
+    },
+    {
+      "member_id": "finn",
+      "name": "Finn",
+      "budget_usd": 1500.0,
+      "flight_usd": 300.0,
+      "flight_is_estimated": true,
+      "hotel_share_usd": 39.5,
+      "activity_share_usd": 356.6666666666667,
+      "total_usd": 696.1666666666667,
+      "headroom_usd": 803.8333333333333,
+      "utilization": 0.46411111111111114,
+      "fairness_utilization": 0.22633333333333333
+    }
+  ],
+  "provenance": {
+    "source_case_id": "07-07_long_six_member_high_conflict_trip",
+    "source_tier": "offline",
+    "planner_output": "Recorded live model output replayed without network access.",
+    "flight_data": "K-002 baseline: fixed $300 estimated flight per member."
+  }
+}

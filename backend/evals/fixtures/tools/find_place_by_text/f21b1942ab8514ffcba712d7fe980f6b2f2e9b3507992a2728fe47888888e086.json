@@ -1,0 +1,27 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 28.69,
+      "lng": -95.967
+    },
+    "destination": "Matagorda",
+    "included_type": null,
+    "query": "Relaxation and departure prep"
+  },
+  "request_sha256": "f21b1942ab8514ffcba712d7fe980f6b2f2e9b3507992a2728fe47888888e086",
+  "response": {
+    "address": "6420 FM Rd 2031, Matagorda, TX 77457, USA",
+    "category": "place",
+    "lat": 28.5961559,
+    "lng": -95.9758343,
+    "name": "Matagorda Beach",
+    "place_id": "ChIJpSv1ZC7ZQYYRr1Wl3EC7tnY",
+    "price_level": 0,
+    "rating": 4.5,
+    "tags": [
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

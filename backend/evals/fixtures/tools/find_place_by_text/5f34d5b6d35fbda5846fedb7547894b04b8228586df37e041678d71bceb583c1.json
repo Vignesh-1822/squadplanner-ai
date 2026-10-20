@@ -1,0 +1,29 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 41.8781,
+      "lng": -87.6298
+    },
+    "destination": "Chicago",
+    "included_type": null,
+    "query": "Neighborhood walking"
+  },
+  "request_sha256": "5f34d5b6d35fbda5846fedb7547894b04b8228586df37e041678d71bceb583c1",
+  "response": {
+    "address": "600 S Wells St, Chicago, IL 60607, USA",
+    "category": "place",
+    "lat": 41.8741536,
+    "lng": -87.6354953,
+    "name": "Southbank Riverwalk",
+    "place_id": "ChIJsR_vBVwtDogRq4a0IhopQZU",
+    "price_level": 0,
+    "rating": 4.8,
+    "tags": [
+      "city_park",
+      "park",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

@@ -277,6 +277,11 @@ async def get_compiled_graph():
     return build_graph().compile(checkpointer=checkpointer)
 
 
+def compile_eval_graph(checkpointer: Any):
+    """Compile the production graph with an injected, database-free checkpointer."""
+    return build_graph().compile(checkpointer=checkpointer)
+
+
 orchestrator_graph = None
 
 

@@ -1,0 +1,21 @@
+{
+  "operation": "search_flights",
+  "request": {
+    "adults": 1,
+    "depart_date": "2026-09-08",
+    "destination": "Chicago",
+    "origin": "MIA",
+    "return_date": "2026-09-11"
+  },
+  "request_sha256": "9a5d57ab4b630bed6c20db542579576928970890b1719ecbd61095face3a8080",
+  "response": {
+    "airline": "Estimated",
+    "depart_time": "2026-09-08T08:00:00",
+    "destination": "Chicago",
+    "is_estimated": true,
+    "member_id": "",
+    "origin": "MIA",
+    "price_usd": 300.0,
+    "return_time": "2026-09-11T18:00:00"
+  }
+}

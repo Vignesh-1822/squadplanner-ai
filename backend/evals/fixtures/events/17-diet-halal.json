@@ -1,0 +1,3043 @@
+{
+  "case_id": "17-diet-halal",
+  "events": [
+    {
+      "event": "on_chain_start",
+      "name": "LangGraph",
+      "timestamp": "2026-09-06T18:33:06.284884+00:00",
+      "run_id": "01a077fe-dbeb-7301-908e-b97037349e07",
+      "parent_ids": [],
+      "tags": [],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "parse_input",
+      "timestamp": "2026-09-06T18:33:06.289914+00:00",
+      "run_id": "01a077fe-dbf0-7eb2-aa0c-38acc8253053",
+      "parent_ids": [
+        "01a077fe-dbeb-7301-908e-b97037349e07"
+      ],
+      "tags": [
+        "graph:step:1"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 1,
+        "langgraph_node": "parse_input",
+        "langgraph_triggers": [
+          "branch:to:parse_input"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "parse_input"
+        ],
+        "langgraph_checkpoint_ns": "parse_input:b8fe8885-316c-7986-c3f6-2fcc555b2864"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "parse_input",
+      "timestamp": "2026-09-06T18:33:06.291305+00:00",
+      "run_id": "01a077fe-dbf0-7eb2-aa0c-38acc8253053",
+      "parent_ids": [
+        "01a077fe-dbeb-7301-908e-b97037349e07"
+      ],
+      "tags": [
+        "graph:step:1"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 1,
+        "langgraph_node": "parse_input",
+        "langgraph_triggers": [
+          "branch:to:parse_input"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "parse_input"
+        ],
+        "langgraph_checkpoint_ns": "parse_input:b8fe8885-316c-7986-c3f6-2fcc555b2864"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "extract_preference_constraints",
+      "timestamp": "2026-09-06T18:33:06.294392+00:00",
+      "run_id": "01a077fe-dbf5-7ab3-b999-8150b2360504",
+      "parent_ids": [
+        "01a077fe-dbeb-7301-908e-b97037349e07"
+      ],
+      "tags": [
+        "graph:step:2"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 2,
+        "langgraph_node": "extract_preference_constraints",
+        "langgraph_triggers": [
+          "branch:to:extract_preference_constraints"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "extract_preference_constraints"
+        ],
+        "langgraph_checkpoint_ns": "extract_preference_constraints:b3ad0978-97e1-13d3-35d6-4f29a00d5797"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "extract_preference_constraints",
+      "timestamp": "2026-09-06T18:33:06.299869+00:00",
+      "run_id": "01a077fe-dbf5-7ab3-b999-8150b2360504",
+      "parent_ids": [
+        "01a077fe-dbeb-7301-908e-b97037349e07"
+      ],
+      "tags": [
+        "graph:step:2"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 2,
+        "langgraph_node": "extract_preference_constraints",
+        "langgraph_triggers": [
+          "branch:to:extract_preference_constraints"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "extract_preference_constraints"
+        ],
+        "langgraph_checkpoint_ns": "extract_preference_constraints:b3ad0978-97e1-13d3-35d6-4f29a00d5797"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "select_destination",
+      "timestamp": "2026-09-06T18:33:06.301729+00:00",
+      "run_id": "01a077fe-dbfd-7113-aff2-ad13bf57868e",
+      "parent_ids": [
+        "01a077fe-dbeb-7301-908e-b97037349e07"
+      ],
+      "tags": [
+        "graph:step:3"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 3,
+        "langgraph_node": "select_destination",
+        "langgraph_triggers": [
+          "branch:to:select_destination"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "select_destination"
+        ],
+        "langgraph_checkpoint_ns": "select_destination:84b05833-36fe-4992-1efb-91dc96330f32"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "select_destination",
+      "timestamp": "2026-09-06T18:33:06.458260+00:00",
+      "run_id": "01a077fe-dbfd-7113-aff2-ad13bf57868e",
+      "parent_ids": [
+        "01a077fe-dbeb-7301-908e-b97037349e07"
+      ],
+      "tags": [
+        "graph:step:3"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 3,
+        "langgraph_node": "select_destination",
+        "langgraph_triggers": [
+          "branch:to:select_destination"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "select_destination"
+        ],
+        "langgraph_checkpoint_ns": "select_destination:84b05833-36fe-4992-1efb-91dc96330f32"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "city_selection_hitl",
+      "timestamp": "2026-09-06T18:33:06.465308+00:00",
+      "run_id": "01a077fe-dc9d-7c83-adeb-cd99bd321734",
+      "parent_ids": [
+        "01a077fe-dbeb-7301-908e-b97037349e07"
+      ],
+      "tags": [
+        "graph:step:4"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 4,
+        "langgraph_node": "city_selection_hitl",
+        "langgraph_triggers": [
+          "branch:to:city_selection_hitl"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "city_selection_hitl"
+        ],
+        "langgraph_checkpoint_ns": "city_selection_hitl:7d369e38-c082-a278-0145-a55e57163287"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "LangGraph",
+      "timestamp": "2026-09-06T18:33:06.468710+00:00",
+      "run_id": "01a077fe-dbeb-7301-908e-b97037349e07",
+      "parent_ids": [],
+      "tags": [],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "LangGraph",
+      "timestamp": "2026-09-06T18:33:06.470985+00:00",
+      "run_id": "01a077fe-dca6-7941-bdf5-a3b462cb1208",
+      "parent_ids": [],
+      "tags": [],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "city_selection_hitl",
+      "timestamp": "2026-09-06T18:33:06.472847+00:00",
+      "run_id": "01a077fe-dca8-74b0-a487-0a5c0fdfb3cc",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208"
+      ],
+      "tags": [
+        "graph:step:4"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 4,
+        "langgraph_node": "city_selection_hitl",
+        "langgraph_triggers": [
+          "branch:to:city_selection_hitl"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "city_selection_hitl"
+        ],
+        "langgraph_checkpoint_ns": "city_selection_hitl:7d369e38-c082-a278-0145-a55e57163287"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "city_selection_hitl",
+      "timestamp": "2026-09-06T18:33:06.473864+00:00",
+      "run_id": "01a077fe-dca8-74b0-a487-0a5c0fdfb3cc",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208"
+      ],
+      "tags": [
+        "graph:step:4"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 4,
+        "langgraph_node": "city_selection_hitl",
+        "langgraph_triggers": [
+          "branch:to:city_selection_hitl"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "city_selection_hitl"
+        ],
+        "langgraph_checkpoint_ns": "city_selection_hitl:7d369e38-c082-a278-0145-a55e57163287"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "dynamic_tool_selection",
+      "timestamp": "2026-09-06T18:33:06.475848+00:00",
+      "run_id": "01a077fe-dcaa-7393-841c-bdf86d5a287b",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208"
+      ],
+      "tags": [
+        "graph:step:5"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 5,
+        "langgraph_node": "dynamic_tool_selection",
+        "langgraph_triggers": [
+          "branch:to:dynamic_tool_selection"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "dynamic_tool_selection"
+        ],
+        "langgraph_checkpoint_ns": "dynamic_tool_selection:104dee37-cc14-d410-0c45-5a6b1d2e616b"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "dynamic_tool_selection",
+      "timestamp": "2026-09-06T18:33:06.476957+00:00",
+      "run_id": "01a077fe-dcaa-7393-841c-bdf86d5a287b",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208"
+      ],
+      "tags": [
+        "graph:step:5"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 5,
+        "langgraph_node": "dynamic_tool_selection",
+        "langgraph_triggers": [
+          "branch:to:dynamic_tool_selection"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "dynamic_tool_selection"
+        ],
+        "langgraph_checkpoint_ns": "dynamic_tool_selection:104dee37-cc14-d410-0c45-5a6b1d2e616b"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "parallel_data_fetch",
+      "timestamp": "2026-09-06T18:33:06.478959+00:00",
+      "run_id": "01a077fe-dcae-7511-99cd-82e9f4d19a20",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208"
+      ],
+      "tags": [
+        "graph:step:6"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 6,
+        "langgraph_node": "parallel_data_fetch",
+        "langgraph_triggers": [
+          "branch:to:parallel_data_fetch"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "parallel_data_fetch"
+        ],
+        "langgraph_checkpoint_ns": "parallel_data_fetch:9e00fd21-5664-19c0-8af7-f8c8501c8c69"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "parallel_data_fetch",
+      "timestamp": "2026-09-06T18:33:06.487145+00:00",
+      "run_id": "01a077fe-dcae-7511-99cd-82e9f4d19a20",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208"
+      ],
+      "tags": [
+        "graph:step:6"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 6,
+        "langgraph_node": "parallel_data_fetch",
+        "langgraph_triggers": [
+          "branch:to:parallel_data_fetch"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "parallel_data_fetch"
+        ],
+        "langgraph_checkpoint_ns": "parallel_data_fetch:9e00fd21-5664-19c0-8af7-f8c8501c8c69"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "budget_analysis",
+      "timestamp": "2026-09-06T18:33:06.490250+00:00",
+      "run_id": "01a077fe-dcb9-7e62-a8e7-e44bfa04ac14",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208"
+      ],
+      "tags": [
+        "graph:step:7"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 7,
+        "langgraph_node": "budget_analysis",
+        "langgraph_triggers": [
+          "branch:to:budget_analysis"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "budget_analysis"
+        ],
+        "langgraph_checkpoint_ns": "budget_analysis:f8748111-9347-acab-b81a-4fd4e1ef8786"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "route_after_budget",
+      "timestamp": "2026-09-06T18:33:06.493549+00:00",
+      "run_id": "01a077fe-dcbc-7d53-8e3d-9ab7236f29ba",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208",
+        "01a077fe-dcb9-7e62-a8e7-e44bfa04ac14"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 7,
+        "langgraph_node": "budget_analysis",
+        "langgraph_triggers": [
+          "branch:to:budget_analysis"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "budget_analysis"
+        ],
+        "langgraph_checkpoint_ns": "budget_analysis:f8748111-9347-acab-b81a-4fd4e1ef8786"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "route_after_budget",
+      "timestamp": "2026-09-06T18:33:06.499208+00:00",
+      "run_id": "01a077fe-dcbc-7d53-8e3d-9ab7236f29ba",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208",
+        "01a077fe-dcb9-7e62-a8e7-e44bfa04ac14"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 7,
+        "langgraph_node": "budget_analysis",
+        "langgraph_triggers": [
+          "branch:to:budget_analysis"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "budget_analysis"
+        ],
+        "langgraph_checkpoint_ns": "budget_analysis:f8748111-9347-acab-b81a-4fd4e1ef8786"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "budget_analysis",
+      "timestamp": "2026-09-06T18:33:06.501154+00:00",
+      "run_id": "01a077fe-dcb9-7e62-a8e7-e44bfa04ac14",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208"
+      ],
+      "tags": [
+        "graph:step:7"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 7,
+        "langgraph_node": "budget_analysis",
+        "langgraph_triggers": [
+          "branch:to:budget_analysis"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "budget_analysis"
+        ],
+        "langgraph_checkpoint_ns": "budget_analysis:f8748111-9347-acab-b81a-4fd4e1ef8786"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "search_hotel",
+      "timestamp": "2026-09-06T18:33:06.503289+00:00",
+      "run_id": "01a077fe-dcc6-76b0-9160-5d8fcfe883eb",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208"
+      ],
+      "tags": [
+        "graph:step:8"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 8,
+        "langgraph_node": "search_hotel",
+        "langgraph_triggers": [
+          "branch:to:search_hotel"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "search_hotel"
+        ],
+        "langgraph_checkpoint_ns": "search_hotel:183e8957-f6d7-1dac-fa87-40651cf0f825"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "search_hotel",
+      "timestamp": "2026-09-06T18:33:06.506025+00:00",
+      "run_id": "01a077fe-dcc6-76b0-9160-5d8fcfe883eb",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208"
+      ],
+      "tags": [
+        "graph:step:8"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 8,
+        "langgraph_node": "search_hotel",
+        "langgraph_triggers": [
+          "branch:to:search_hotel"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "search_hotel"
+        ],
+        "langgraph_checkpoint_ns": "search_hotel:183e8957-f6d7-1dac-fa87-40651cf0f825"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "run_itinerary_node",
+      "timestamp": "2026-09-06T18:33:06.508998+00:00",
+      "run_id": "01a077fe-dccc-7870-ad12-70153e73510b",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208"
+      ],
+      "tags": [
+        "graph:step:9"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "run_itinerary_node",
+        "langgraph_triggers": [
+          "branch:to:run_itinerary_node"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "run_itinerary_node"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "LangGraph",
+      "timestamp": "2026-09-06T18:33:06.510119+00:00",
+      "run_id": "01a077fe-dccd-7cc3-8ee1-00db729208e9",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208",
+        "01a077fe-dccc-7870-ad12-70153e73510b"
+      ],
+      "tags": [
+        "seq:step:1"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "run_itinerary_node",
+        "langgraph_triggers": [
+          "branch:to:run_itinerary_node"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "run_itinerary_node"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312",
+        "checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "cluster_by_neighborhood",
+      "timestamp": "2026-09-06T18:33:06.515465+00:00",
+      "run_id": "01a077fe-dcd0-7d23-a839-612a5b4f9b62",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208",
+        "01a077fe-dccc-7870-ad12-70153e73510b",
+        "01a077fe-dccd-7cc3-8ee1-00db729208e9"
+      ],
+      "tags": [
+        "graph:step:1"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 1,
+        "langgraph_node": "cluster_by_neighborhood",
+        "langgraph_triggers": [
+          "branch:to:cluster_by_neighborhood"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "cluster_by_neighborhood"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312|cluster_by_neighborhood:09e17044-52a3-4cfd-6037-81087176f80b",
+        "checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "cluster_by_neighborhood",
+      "timestamp": "2026-09-06T18:33:06.518654+00:00",
+      "run_id": "01a077fe-dcd0-7d23-a839-612a5b4f9b62",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208",
+        "01a077fe-dccc-7870-ad12-70153e73510b",
+        "01a077fe-dccd-7cc3-8ee1-00db729208e9"
+      ],
+      "tags": [
+        "graph:step:1"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 1,
+        "langgraph_node": "cluster_by_neighborhood",
+        "langgraph_triggers": [
+          "branch:to:cluster_by_neighborhood"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "cluster_by_neighborhood"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312|cluster_by_neighborhood:09e17044-52a3-4cfd-6037-81087176f80b",
+        "checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "build_itinerary",
+      "timestamp": "2026-09-06T18:33:06.520192+00:00",
+      "run_id": "01a077fe-dcd7-7ee2-8ef8-b9dbc8a20dc4",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208",
+        "01a077fe-dccc-7870-ad12-70153e73510b",
+        "01a077fe-dccd-7cc3-8ee1-00db729208e9"
+      ],
+      "tags": [
+        "graph:step:2"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 2,
+        "langgraph_node": "build_itinerary",
+        "langgraph_triggers": [
+          "branch:to:build_itinerary"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "build_itinerary"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312|build_itinerary:4e9b5787-2a58-1eca-953f-eda778c1a8f1",
+        "checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "build_itinerary",
+      "timestamp": "2026-09-06T18:33:06.525883+00:00",
+      "run_id": "01a077fe-dcd7-7ee2-8ef8-b9dbc8a20dc4",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208",
+        "01a077fe-dccc-7870-ad12-70153e73510b",
+        "01a077fe-dccd-7cc3-8ee1-00db729208e9"
+      ],
+      "tags": [
+        "graph:step:2"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 2,
+        "langgraph_node": "build_itinerary",
+        "langgraph_triggers": [
+          "branch:to:build_itinerary"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "build_itinerary"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312|build_itinerary:4e9b5787-2a58-1eca-953f-eda778c1a8f1",
+        "checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "align_flight_times",
+      "timestamp": "2026-09-06T18:33:06.532436+00:00",
+      "run_id": "01a077fe-dcdf-78a3-9a13-43708e3b1fd4",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208",
+        "01a077fe-dccc-7870-ad12-70153e73510b",
+        "01a077fe-dccd-7cc3-8ee1-00db729208e9"
+      ],
+      "tags": [
+        "graph:step:3"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 3,
+        "langgraph_node": "align_flight_times",
+        "langgraph_triggers": [
+          "branch:to:align_flight_times"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "align_flight_times"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312|align_flight_times:92dbd0ad-3afe-a1ea-b246-7752bbc5e077",
+        "checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "align_flight_times",
+      "timestamp": "2026-09-06T18:33:06.535641+00:00",
+      "run_id": "01a077fe-dcdf-78a3-9a13-43708e3b1fd4",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208",
+        "01a077fe-dccc-7870-ad12-70153e73510b",
+        "01a077fe-dccd-7cc3-8ee1-00db729208e9"
+      ],
+      "tags": [
+        "graph:step:3"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 3,
+        "langgraph_node": "align_flight_times",
+        "langgraph_triggers": [
+          "branch:to:align_flight_times"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "align_flight_times"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312|align_flight_times:92dbd0ad-3afe-a1ea-b246-7752bbc5e077",
+        "checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:06.538266+00:00",
+      "run_id": "01a077fe-dce9-7af2-a0f9-620e1e516ad8",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208",
+        "01a077fe-dccc-7870-ad12-70153e73510b",
+        "01a077fe-dccd-7cc3-8ee1-00db729208e9"
+      ],
+      "tags": [
+        "graph:step:4"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 4,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312|plan_routes:4dde878a-a9b3-e5d4-fba0-4215816674f1",
+        "checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:06.590823+00:00",
+      "run_id": "01a077fe-dd1e-72c1-b7db-9a444d377734",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208",
+        "01a077fe-dccc-7870-ad12-70153e73510b",
+        "01a077fe-dccd-7cc3-8ee1-00db729208e9",
+        "01a077fe-dce9-7af2-a0f9-620e1e516ad8"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 4,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312|plan_routes:4dde878a-a9b3-e5d4-fba0-4215816674f1",
+        "checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:06.592497+00:00",
+      "run_id": "01a077fe-dd1e-72c1-b7db-9a444d377734",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208",
+        "01a077fe-dccc-7870-ad12-70153e73510b",
+        "01a077fe-dccd-7cc3-8ee1-00db729208e9",
+        "01a077fe-dce9-7af2-a0f9-620e1e516ad8"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 4,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312|plan_routes:4dde878a-a9b3-e5d4-fba0-4215816674f1",
+        "checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:06.593832+00:00",
+      "run_id": "01a077fe-dce9-7af2-a0f9-620e1e516ad8",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208",
+        "01a077fe-dccc-7870-ad12-70153e73510b",
+        "01a077fe-dccd-7cc3-8ee1-00db729208e9"
+      ],
+      "tags": [
+        "graph:step:4"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 4,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312|plan_routes:4dde878a-a9b3-e5d4-fba0-4215816674f1",
+        "checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "apply_feasibility_swap",
+      "timestamp": "2026-09-06T18:33:06.599773+00:00",
+      "run_id": "01a077fe-dd22-7732-95ed-7a59b4613e6c",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208",
+        "01a077fe-dccc-7870-ad12-70153e73510b",
+        "01a077fe-dccd-7cc3-8ee1-00db729208e9"
+      ],
+      "tags": [
+        "graph:step:5"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 5,
+        "langgraph_node": "apply_feasibility_swap",
+        "langgraph_triggers": [
+          "branch:to:apply_feasibility_swap"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "apply_feasibility_swap"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312|apply_feasibility_swap:e8c6872b-7f28-70b9-f75b-b474ad928a10",
+        "checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "apply_feasibility_swap",
+      "timestamp": "2026-09-06T18:33:06.601912+00:00",
+      "run_id": "01a077fe-dd22-7732-95ed-7a59b4613e6c",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208",
+        "01a077fe-dccc-7870-ad12-70153e73510b",
+        "01a077fe-dccd-7cc3-8ee1-00db729208e9"
+      ],
+      "tags": [
+        "graph:step:5"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 5,
+        "langgraph_node": "apply_feasibility_swap",
+        "langgraph_triggers": [
+          "branch:to:apply_feasibility_swap"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "apply_feasibility_swap"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312|apply_feasibility_swap:e8c6872b-7f28-70b9-f75b-b474ad928a10",
+        "checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:06.605065+00:00",
+      "run_id": "01a077fe-dd2b-7c93-bc1e-bcd30ba8e0f9",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208",
+        "01a077fe-dccc-7870-ad12-70153e73510b",
+        "01a077fe-dccd-7cc3-8ee1-00db729208e9"
+      ],
+      "tags": [
+        "graph:step:6"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 6,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312|plan_routes:dad90f09-9d3b-7513-cf75-76dff7ef761f",
+        "checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:06.705110+00:00",
+      "run_id": "01a077fe-dd90-7f82-ad6d-c7d0502d5bbd",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208",
+        "01a077fe-dccc-7870-ad12-70153e73510b",
+        "01a077fe-dccd-7cc3-8ee1-00db729208e9",
+        "01a077fe-dd2b-7c93-bc1e-bcd30ba8e0f9"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 6,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312|plan_routes:dad90f09-9d3b-7513-cf75-76dff7ef761f",
+        "checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:06.706948+00:00",
+      "run_id": "01a077fe-dd90-7f82-ad6d-c7d0502d5bbd",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208",
+        "01a077fe-dccc-7870-ad12-70153e73510b",
+        "01a077fe-dccd-7cc3-8ee1-00db729208e9",
+        "01a077fe-dd2b-7c93-bc1e-bcd30ba8e0f9"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 6,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312|plan_routes:dad90f09-9d3b-7513-cf75-76dff7ef761f",
+        "checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:06.708302+00:00",
+      "run_id": "01a077fe-dd2b-7c93-bc1e-bcd30ba8e0f9",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208",
+        "01a077fe-dccc-7870-ad12-70153e73510b",
+        "01a077fe-dccd-7cc3-8ee1-00db729208e9"
+      ],
+      "tags": [
+        "graph:step:6"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 6,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312|plan_routes:dad90f09-9d3b-7513-cf75-76dff7ef761f",
+        "checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "apply_feasibility_swap",
+      "timestamp": "2026-09-06T18:33:06.711652+00:00",
+      "run_id": "01a077fe-dd96-79b2-b7d0-e94c2cd5935c",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208",
+        "01a077fe-dccc-7870-ad12-70153e73510b",
+        "01a077fe-dccd-7cc3-8ee1-00db729208e9"
+      ],
+      "tags": [
+        "graph:step:7"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 7,
+        "langgraph_node": "apply_feasibility_swap",
+        "langgraph_triggers": [
+          "branch:to:apply_feasibility_swap"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "apply_feasibility_swap"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312|apply_feasibility_swap:da8046f2-b35e-3fd7-d026-3896dd7716aa",
+        "checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "apply_feasibility_swap",
+      "timestamp": "2026-09-06T18:33:06.718132+00:00",
+      "run_id": "01a077fe-dd96-79b2-b7d0-e94c2cd5935c",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208",
+        "01a077fe-dccc-7870-ad12-70153e73510b",
+        "01a077fe-dccd-7cc3-8ee1-00db729208e9"
+      ],
+      "tags": [
+        "graph:step:7"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 7,
+        "langgraph_node": "apply_feasibility_swap",
+        "langgraph_triggers": [
+          "branch:to:apply_feasibility_swap"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "apply_feasibility_swap"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312|apply_feasibility_swap:da8046f2-b35e-3fd7-d026-3896dd7716aa",
+        "checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:06.721392+00:00",
+      "run_id": "01a077fe-dd9f-77b0-a24b-3168b50da120",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208",
+        "01a077fe-dccc-7870-ad12-70153e73510b",
+        "01a077fe-dccd-7cc3-8ee1-00db729208e9"
+      ],
+      "tags": [
+        "graph:step:8"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 8,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312|plan_routes:0929d075-a046-316e-4515-f185c4336aa1",
+        "checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:06.757152+00:00",
+      "run_id": "01a077fe-ddc4-7e52-aa85-4f2d7baf0d9f",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208",
+        "01a077fe-dccc-7870-ad12-70153e73510b",
+        "01a077fe-dccd-7cc3-8ee1-00db729208e9",
+        "01a077fe-dd9f-77b0-a24b-3168b50da120"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 8,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312|plan_routes:0929d075-a046-316e-4515-f185c4336aa1",
+        "checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:06.758670+00:00",
+      "run_id": "01a077fe-ddc4-7e52-aa85-4f2d7baf0d9f",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208",
+        "01a077fe-dccc-7870-ad12-70153e73510b",
+        "01a077fe-dccd-7cc3-8ee1-00db729208e9",
+        "01a077fe-dd9f-77b0-a24b-3168b50da120"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 8,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312|plan_routes:0929d075-a046-316e-4515-f185c4336aa1",
+        "checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:06.759519+00:00",
+      "run_id": "01a077fe-dd9f-77b0-a24b-3168b50da120",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208",
+        "01a077fe-dccc-7870-ad12-70153e73510b",
+        "01a077fe-dccd-7cc3-8ee1-00db729208e9"
+      ],
+      "tags": [
+        "graph:step:8"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 8,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312|plan_routes:0929d075-a046-316e-4515-f185c4336aa1",
+        "checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "validation_gate",
+      "timestamp": "2026-09-06T18:33:06.762918+00:00",
+      "run_id": "01a077fe-ddc8-7282-bbdf-05d106f258db",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208",
+        "01a077fe-dccc-7870-ad12-70153e73510b",
+        "01a077fe-dccd-7cc3-8ee1-00db729208e9"
+      ],
+      "tags": [
+        "graph:step:9"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312|validation_gate:1c5b47a4-708b-8ad3-8548-7984c8facaa4",
+        "checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "check_validation",
+      "timestamp": "2026-09-06T18:33:06.765889+00:00",
+      "run_id": "01a077fe-ddcd-72c0-bd8b-8d9fa4a6cb27",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208",
+        "01a077fe-dccc-7870-ad12-70153e73510b",
+        "01a077fe-dccd-7cc3-8ee1-00db729208e9",
+        "01a077fe-ddc8-7282-bbdf-05d106f258db"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312|validation_gate:1c5b47a4-708b-8ad3-8548-7984c8facaa4",
+        "checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "check_validation",
+      "timestamp": "2026-09-06T18:33:06.767004+00:00",
+      "run_id": "01a077fe-ddcd-72c0-bd8b-8d9fa4a6cb27",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208",
+        "01a077fe-dccc-7870-ad12-70153e73510b",
+        "01a077fe-dccd-7cc3-8ee1-00db729208e9",
+        "01a077fe-ddc8-7282-bbdf-05d106f258db"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312|validation_gate:1c5b47a4-708b-8ad3-8548-7984c8facaa4",
+        "checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "validation_gate",
+      "timestamp": "2026-09-06T18:33:06.767869+00:00",
+      "run_id": "01a077fe-ddc8-7282-bbdf-05d106f258db",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208",
+        "01a077fe-dccc-7870-ad12-70153e73510b",
+        "01a077fe-dccd-7cc3-8ee1-00db729208e9"
+      ],
+      "tags": [
+        "graph:step:9"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312|validation_gate:1c5b47a4-708b-8ad3-8548-7984c8facaa4",
+        "checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "build_itinerary",
+      "timestamp": "2026-09-06T18:33:06.769521+00:00",
+      "run_id": "01a077fe-ddd0-70b0-af83-a7a10c9f3f14",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208",
+        "01a077fe-dccc-7870-ad12-70153e73510b",
+        "01a077fe-dccd-7cc3-8ee1-00db729208e9"
+      ],
+      "tags": [
+        "graph:step:10"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 10,
+        "langgraph_node": "build_itinerary",
+        "langgraph_triggers": [
+          "branch:to:build_itinerary"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "build_itinerary"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312|build_itinerary:d1c1cf60-3b0f-6761-ea04-db91edc1a2b7",
+        "checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "build_itinerary",
+      "timestamp": "2026-09-06T18:33:06.773589+00:00",
+      "run_id": "01a077fe-ddd0-70b0-af83-a7a10c9f3f14",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208",
+        "01a077fe-dccc-7870-ad12-70153e73510b",
+        "01a077fe-dccd-7cc3-8ee1-00db729208e9"
+      ],
+      "tags": [
+        "graph:step:10"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 10,
+        "langgraph_node": "build_itinerary",
+        "langgraph_triggers": [
+          "branch:to:build_itinerary"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "build_itinerary"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312|build_itinerary:d1c1cf60-3b0f-6761-ea04-db91edc1a2b7",
+        "checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "align_flight_times",
+      "timestamp": "2026-09-06T18:33:06.775046+00:00",
+      "run_id": "01a077fe-ddd6-7042-ad4b-b363f2381974",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208",
+        "01a077fe-dccc-7870-ad12-70153e73510b",
+        "01a077fe-dccd-7cc3-8ee1-00db729208e9"
+      ],
+      "tags": [
+        "graph:step:11"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 11,
+        "langgraph_node": "align_flight_times",
+        "langgraph_triggers": [
+          "branch:to:align_flight_times"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "align_flight_times"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312|align_flight_times:6fb4d581-dd89-cbf5-7878-0311dee7a69e",
+        "checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "align_flight_times",
+      "timestamp": "2026-09-06T18:33:06.776506+00:00",
+      "run_id": "01a077fe-ddd6-7042-ad4b-b363f2381974",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208",
+        "01a077fe-dccc-7870-ad12-70153e73510b",
+        "01a077fe-dccd-7cc3-8ee1-00db729208e9"
+      ],
+      "tags": [
+        "graph:step:11"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 11,
+        "langgraph_node": "align_flight_times",
+        "langgraph_triggers": [
+          "branch:to:align_flight_times"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "align_flight_times"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312|align_flight_times:6fb4d581-dd89-cbf5-7878-0311dee7a69e",
+        "checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:06.778629+00:00",
+      "run_id": "01a077fe-ddd9-7501-b336-a9df5d8fabed",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208",
+        "01a077fe-dccc-7870-ad12-70153e73510b",
+        "01a077fe-dccd-7cc3-8ee1-00db729208e9"
+      ],
+      "tags": [
+        "graph:step:12"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 12,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312|plan_routes:b5706335-81b9-333e-f276-2e6e94b81fa7",
+        "checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:06.823205+00:00",
+      "run_id": "01a077fe-de06-7a20-b9b8-6d4cf2a77868",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208",
+        "01a077fe-dccc-7870-ad12-70153e73510b",
+        "01a077fe-dccd-7cc3-8ee1-00db729208e9",
+        "01a077fe-ddd9-7501-b336-a9df5d8fabed"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 12,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312|plan_routes:b5706335-81b9-333e-f276-2e6e94b81fa7",
+        "checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:06.824597+00:00",
+      "run_id": "01a077fe-de06-7a20-b9b8-6d4cf2a77868",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208",
+        "01a077fe-dccc-7870-ad12-70153e73510b",
+        "01a077fe-dccd-7cc3-8ee1-00db729208e9",
+        "01a077fe-ddd9-7501-b336-a9df5d8fabed"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 12,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312|plan_routes:b5706335-81b9-333e-f276-2e6e94b81fa7",
+        "checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:06.825382+00:00",
+      "run_id": "01a077fe-ddd9-7501-b336-a9df5d8fabed",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208",
+        "01a077fe-dccc-7870-ad12-70153e73510b",
+        "01a077fe-dccd-7cc3-8ee1-00db729208e9"
+      ],
+      "tags": [
+        "graph:step:12"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 12,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312|plan_routes:b5706335-81b9-333e-f276-2e6e94b81fa7",
+        "checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "validation_gate",
+      "timestamp": "2026-09-06T18:33:06.829284+00:00",
+      "run_id": "01a077fe-de0a-7ed3-a2d4-c6875ebcc3e0",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208",
+        "01a077fe-dccc-7870-ad12-70153e73510b",
+        "01a077fe-dccd-7cc3-8ee1-00db729208e9"
+      ],
+      "tags": [
+        "graph:step:13"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 13,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312|validation_gate:73333611-912a-e28f-ef5a-6596cc98ae06",
+        "checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "check_validation",
+      "timestamp": "2026-09-06T18:33:06.833050+00:00",
+      "run_id": "01a077fe-de10-73d0-90da-facda7f70c29",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208",
+        "01a077fe-dccc-7870-ad12-70153e73510b",
+        "01a077fe-dccd-7cc3-8ee1-00db729208e9",
+        "01a077fe-de0a-7ed3-a2d4-c6875ebcc3e0"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 13,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312|validation_gate:73333611-912a-e28f-ef5a-6596cc98ae06",
+        "checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "check_validation",
+      "timestamp": "2026-09-06T18:33:06.834504+00:00",
+      "run_id": "01a077fe-de10-73d0-90da-facda7f70c29",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208",
+        "01a077fe-dccc-7870-ad12-70153e73510b",
+        "01a077fe-dccd-7cc3-8ee1-00db729208e9",
+        "01a077fe-de0a-7ed3-a2d4-c6875ebcc3e0"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 13,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312|validation_gate:73333611-912a-e28f-ef5a-6596cc98ae06",
+        "checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "validation_gate",
+      "timestamp": "2026-09-06T18:33:06.835773+00:00",
+      "run_id": "01a077fe-de0a-7ed3-a2d4-c6875ebcc3e0",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208",
+        "01a077fe-dccc-7870-ad12-70153e73510b",
+        "01a077fe-dccd-7cc3-8ee1-00db729208e9"
+      ],
+      "tags": [
+        "graph:step:13"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 13,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312|validation_gate:73333611-912a-e28f-ef5a-6596cc98ae06",
+        "checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "LangGraph",
+      "timestamp": "2026-09-06T18:33:06.837943+00:00",
+      "run_id": "01a077fe-dccd-7cc3-8ee1-00db729208e9",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208",
+        "01a077fe-dccc-7870-ad12-70153e73510b"
+      ],
+      "tags": [
+        "seq:step:1"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "run_itinerary_node",
+        "langgraph_triggers": [
+          "branch:to:run_itinerary_node"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "run_itinerary_node"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312",
+        "checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "run_itinerary_node",
+      "timestamp": "2026-09-06T18:33:06.838741+00:00",
+      "run_id": "01a077fe-dccc-7870-ad12-70153e73510b",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208"
+      ],
+      "tags": [
+        "graph:step:9"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "run_itinerary_node",
+        "langgraph_triggers": [
+          "branch:to:run_itinerary_node"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "run_itinerary_node"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:09a62086-1d63-b609-e692-f27b8b76c312"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "compute_fairness",
+      "timestamp": "2026-09-06T18:33:06.840624+00:00",
+      "run_id": "01a077fe-de17-7273-835a-779a9ba47c79",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208"
+      ],
+      "tags": [
+        "graph:step:10"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 10,
+        "langgraph_node": "compute_fairness",
+        "langgraph_triggers": [
+          "branch:to:compute_fairness"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "compute_fairness"
+        ],
+        "langgraph_checkpoint_ns": "compute_fairness:55ce046a-2f88-4196-dd3a-01a557400bc1"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "route_after_fairness",
+      "timestamp": "2026-09-06T18:33:06.842014+00:00",
+      "run_id": "01a077fe-de19-76b3-83a7-f4a8c8afe3b6",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208",
+        "01a077fe-de17-7273-835a-779a9ba47c79"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 10,
+        "langgraph_node": "compute_fairness",
+        "langgraph_triggers": [
+          "branch:to:compute_fairness"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "compute_fairness"
+        ],
+        "langgraph_checkpoint_ns": "compute_fairness:55ce046a-2f88-4196-dd3a-01a557400bc1"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "route_after_fairness",
+      "timestamp": "2026-09-06T18:33:06.842866+00:00",
+      "run_id": "01a077fe-de19-76b3-83a7-f4a8c8afe3b6",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208",
+        "01a077fe-de17-7273-835a-779a9ba47c79"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 10,
+        "langgraph_node": "compute_fairness",
+        "langgraph_triggers": [
+          "branch:to:compute_fairness"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "compute_fairness"
+        ],
+        "langgraph_checkpoint_ns": "compute_fairness:55ce046a-2f88-4196-dd3a-01a557400bc1"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "compute_fairness",
+      "timestamp": "2026-09-06T18:33:06.843779+00:00",
+      "run_id": "01a077fe-de17-7273-835a-779a9ba47c79",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208"
+      ],
+      "tags": [
+        "graph:step:10"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 10,
+        "langgraph_node": "compute_fairness",
+        "langgraph_triggers": [
+          "branch:to:compute_fairness"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "compute_fairness"
+        ],
+        "langgraph_checkpoint_ns": "compute_fairness:55ce046a-2f88-4196-dd3a-01a557400bc1"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "assemble_output",
+      "timestamp": "2026-09-06T18:33:06.845661+00:00",
+      "run_id": "01a077fe-de1c-7d62-83e5-c3f3f66e9ae0",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208"
+      ],
+      "tags": [
+        "graph:step:11"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 11,
+        "langgraph_node": "assemble_output",
+        "langgraph_triggers": [
+          "branch:to:assemble_output"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "assemble_output"
+        ],
+        "langgraph_checkpoint_ns": "assemble_output:9c72b6dc-8648-129a-b2df-9d4c874a680f"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "assemble_output",
+      "timestamp": "2026-09-06T18:33:06.853039+00:00",
+      "run_id": "01a077fe-de1c-7d62-83e5-c3f3f66e9ae0",
+      "parent_ids": [
+        "01a077fe-dca6-7941-bdf5-a3b462cb1208"
+      ],
+      "tags": [
+        "graph:step:11"
+      ],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph",
+        "langgraph_step": 11,
+        "langgraph_node": "assemble_output",
+        "langgraph_triggers": [
+          "branch:to:assemble_output"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "assemble_output"
+        ],
+        "langgraph_checkpoint_ns": "assemble_output:9c72b6dc-8648-129a-b2df-9d4c874a680f"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "LangGraph",
+      "timestamp": "2026-09-06T18:33:06.856872+00:00",
+      "run_id": "01a077fe-dca6-7941-bdf5-a3b462cb1208",
+      "parent_ids": [],
+      "tags": [],
+      "metadata": {
+        "trip_id": "17-diet-halal",
+        "eval_tier": "offline",
+        "thread_id": "17-diet-halal",
+        "ls_integration": "langgraph"
+      }
+    }
+  ],
+  "telemetry": {
+    "nodes": {
+      "extract_preference_constraints": {
+        "input_tokens": 531,
+        "output_tokens": 460,
+        "cache_read_tokens": 0,
+        "cost_usd": 0.002831,
+        "unpriced_calls": 0,
+        "llm_calls": 1,
+        "duration_ms": 5.565
+      },
+      "select_destination": {
+        "input_tokens": 1617,
+        "output_tokens": 230,
+        "cache_read_tokens": 0,
+        "cost_usd": 0.002767,
+        "unpriced_calls": 0,
+        "llm_calls": 1,
+        "duration_ms": 156.301
+      },
+      "build_itinerary": {
+        "input_tokens": 3776,
+        "output_tokens": 3630,
+        "cache_read_tokens": 0,
+        "cost_usd": 0.021926,
+        "unpriced_calls": 0,
+        "llm_calls": 2,
+        "duration_ms": 9.757
+      },
+      "assemble_output": {
+        "input_tokens": 1578,
+        "output_tokens": 1194,
+        "cache_read_tokens": 0,
+        "cost_usd": 0.007548,
+        "unpriced_calls": 0,
+        "llm_calls": 1,
+        "duration_ms": 7.541
+      },
+      "parse_input": {
+        "duration_ms": 1.598
+      },
+      "city_selection_hitl": {
+        "duration_ms": 0.897
+      },
+      "dynamic_tool_selection": {
+        "duration_ms": 1.128
+      },
+      "parallel_data_fetch": {
+        "duration_ms": 8.026
+      },
+      "budget_analysis": {
+        "duration_ms": 10.926
+      },
+      "search_hotel": {
+        "duration_ms": 2.569
+      },
+      "cluster_by_neighborhood": {
+        "duration_ms": 3.425
+      },
+      "align_flight_times": {
+        "duration_ms": 8.947
+      },
+      "plan_routes": {
+        "duration_ms": 243.972
+      },
+      "apply_feasibility_swap": {
+        "duration_ms": 11.08
+      },
+      "validation_gate": {
+        "duration_ms": 12.968
+      },
+      "run_itinerary_node": {
+        "duration_ms": 330.016
+      },
+      "compute_fairness": {
+        "duration_ms": 3.201
+      }
+    },
+    "totals": {
+      "input_tokens": 7502,
+      "output_tokens": 5514,
+      "cache_read_tokens": 0,
+      "cost_usd": 0.035072,
+      "unpriced_calls": 0,
+      "llm_calls": 5,
+      "duration_ms": 571.936
+    }
+  },
+  "hitl_resolutions": 1,
+  "tool_calls": [
+    {
+      "operation": "search_flights",
+      "request": {
+        "origin": "ORD",
+        "destination": "Surfside Beach",
+        "depart_date": "2026-09-08",
+        "return_date": "2026-09-11",
+        "adults": 1
+      }
+    },
+    {
+      "operation": "search_flights",
+      "request": {
+        "origin": "ATL",
+        "destination": "Surfside Beach",
+        "depart_date": "2026-09-08",
+        "return_date": "2026-09-11",
+        "adults": 1
+      }
+    },
+    {
+      "operation": "fetch_activities_by_category",
+      "request": {
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "categories": [
+          "food",
+          "outdoor",
+          "urban"
+        ],
+        "max_per_category": 10
+      }
+    },
+    {
+      "operation": "fetch_weather",
+      "request": {
+        "lat": 28.949,
+        "lng": -95.293,
+        "start_date": "2026-09-08",
+        "end_date": "2026-09-11",
+        "destination_name": "Surfside Beach"
+      }
+    },
+    {
+      "operation": "search_hotels",
+      "request": {
+        "destination": "Surfside Beach",
+        "check_in": "2026-09-08",
+        "check_out": "2026-09-11",
+        "budget_ceiling_usd": 810.0,
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        }
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 33.6653447,
+        "origin_lng": -78.910319,
+        "dest_lat": 28.9581242,
+        "dest_lng": -95.2766391,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9581242,
+        "origin_lng": -95.2766391,
+        "dest_lat": 28.949779499999998,
+        "dest_lng": -95.28490459999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.949779499999998,
+        "origin_lng": -95.28490459999999,
+        "dest_lat": 28.9532539,
+        "dest_lng": -95.281722,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9532539,
+        "origin_lng": -95.281722,
+        "dest_lat": 29.013253000000002,
+        "dest_lng": -95.32876879999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 29.013253000000002,
+        "origin_lng": -95.32876879999999,
+        "dest_lat": 28.9581242,
+        "dest_lng": -95.2766391,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Italian dinner (Alice's must-include requirement)",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 33.6653447,
+        "origin_lng": -78.910319,
+        "dest_lat": 28.9581242,
+        "dest_lng": -95.2766391,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9581242,
+        "origin_lng": -95.2766391,
+        "dest_lat": 28.9380657,
+        "dest_lng": -95.2955537,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9380657,
+        "origin_lng": -95.2955537,
+        "dest_lat": 28.9414886,
+        "dest_lng": -95.2986253,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9414886,
+        "origin_lng": -95.2986253,
+        "dest_lat": 28.9346868,
+        "dest_lng": -95.3039594,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9346868,
+        "origin_lng": -95.3039594,
+        "dest_lat": 33.611111099999995,
+        "dest_lng": -78.9808333,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 33.6653447,
+        "origin_lng": -78.910319,
+        "dest_lat": 28.9581242,
+        "dest_lng": -95.2766391,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9581242,
+        "origin_lng": -95.2766391,
+        "dest_lat": 29.026607600000002,
+        "dest_lng": -95.4567974,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 29.026607600000002,
+        "origin_lng": -95.4567974,
+        "dest_lat": 29.0294833,
+        "dest_lng": -95.4208194,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 29.0294833,
+        "origin_lng": -95.4208194,
+        "dest_lat": 29.01748,
+        "dest_lng": -95.44596159999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 29.01748,
+        "origin_lng": -95.44596159999999,
+        "dest_lat": 29.0443038,
+        "dest_lng": -95.4555511,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 33.6653447,
+        "origin_lng": -78.910319,
+        "dest_lat": 28.9581242,
+        "dest_lng": -95.2766391,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9581242,
+        "origin_lng": -95.2766391,
+        "dest_lat": 28.949779499999998,
+        "dest_lng": -95.28490459999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.949779499999998,
+        "origin_lng": -95.28490459999999,
+        "dest_lat": 28.9532539,
+        "dest_lng": -95.281722,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9532539,
+        "origin_lng": -95.281722,
+        "dest_lat": 28.9581242,
+        "dest_lng": -95.2766391,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Italian dinner (Alice's must-include requirement)",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 33.6653447,
+        "origin_lng": -78.910319,
+        "dest_lat": 28.9581242,
+        "dest_lng": -95.2766391,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9581242,
+        "origin_lng": -95.2766391,
+        "dest_lat": 28.9380657,
+        "dest_lng": -95.2955537,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9380657,
+        "origin_lng": -95.2955537,
+        "dest_lat": 28.9414886,
+        "dest_lng": -95.2986253,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9414886,
+        "origin_lng": -95.2986253,
+        "dest_lat": 28.9346868,
+        "dest_lng": -95.3039594,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9346868,
+        "origin_lng": -95.3039594,
+        "dest_lat": 33.611111099999995,
+        "dest_lng": -78.9808333,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 33.6653447,
+        "origin_lng": -78.910319,
+        "dest_lat": 28.9581242,
+        "dest_lng": -95.2766391,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9581242,
+        "origin_lng": -95.2766391,
+        "dest_lat": 29.026607600000002,
+        "dest_lng": -95.4567974,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 29.026607600000002,
+        "origin_lng": -95.4567974,
+        "dest_lat": 29.0294833,
+        "dest_lng": -95.4208194,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 29.0294833,
+        "origin_lng": -95.4208194,
+        "dest_lat": 29.01748,
+        "dest_lng": -95.44596159999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 29.01748,
+        "origin_lng": -95.44596159999999,
+        "dest_lat": 29.0443038,
+        "dest_lng": -95.4555511,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 33.6653447,
+        "origin_lng": -78.910319,
+        "dest_lat": 28.9581242,
+        "dest_lng": -95.2766391,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9581242,
+        "origin_lng": -95.2766391,
+        "dest_lat": 28.949779499999998,
+        "dest_lng": -95.28490459999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.949779499999998,
+        "origin_lng": -95.28490459999999,
+        "dest_lat": 28.9532539,
+        "dest_lng": -95.281722,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9532539,
+        "origin_lng": -95.281722,
+        "dest_lat": 28.9581242,
+        "dest_lng": -95.2766391,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Italian dinner (Alice's must-include requirement)",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 33.6653447,
+        "origin_lng": -78.910319,
+        "dest_lat": 28.9581242,
+        "dest_lng": -95.2766391,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9581242,
+        "origin_lng": -95.2766391,
+        "dest_lat": 28.9380657,
+        "dest_lng": -95.2955537,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9380657,
+        "origin_lng": -95.2955537,
+        "dest_lat": 28.9414886,
+        "dest_lng": -95.2986253,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9414886,
+        "origin_lng": -95.2986253,
+        "dest_lat": 33.611111099999995,
+        "dest_lng": -78.9808333,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 33.6653447,
+        "origin_lng": -78.910319,
+        "dest_lat": 28.9581242,
+        "dest_lng": -95.2766391,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9581242,
+        "origin_lng": -95.2766391,
+        "dest_lat": 29.026607600000002,
+        "dest_lng": -95.4567974,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 29.026607600000002,
+        "origin_lng": -95.4567974,
+        "dest_lat": 29.0294833,
+        "dest_lng": -95.4208194,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 29.0294833,
+        "origin_lng": -95.4208194,
+        "dest_lat": 29.01748,
+        "dest_lng": -95.44596159999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 29.01748,
+        "origin_lng": -95.44596159999999,
+        "dest_lat": 29.0443038,
+        "dest_lng": -95.4555511,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 33.6653447,
+        "origin_lng": -78.910319,
+        "dest_lat": 28.9581242,
+        "dest_lng": -95.2766391,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9581242,
+        "origin_lng": -95.2766391,
+        "dest_lat": 28.949779499999998,
+        "dest_lng": -95.28490459999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.949779499999998,
+        "origin_lng": -95.28490459999999,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9515919,
+        "origin_lng": -95.2878874,
+        "dest_lat": 29.013253000000002,
+        "dest_lng": -95.32876879999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 29.013253000000002,
+        "origin_lng": -95.32876879999999,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 33.6653447,
+        "origin_lng": -78.910319,
+        "dest_lat": 28.9581242,
+        "dest_lng": -95.2766391,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9581242,
+        "origin_lng": -95.2766391,
+        "dest_lat": 28.9380657,
+        "dest_lng": -95.2955537,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9380657,
+        "origin_lng": -95.2955537,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9515919,
+        "origin_lng": -95.2878874,
+        "dest_lat": 28.9346868,
+        "dest_lng": -95.3039594,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9346868,
+        "origin_lng": -95.3039594,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 33.6653447,
+        "origin_lng": -78.910319,
+        "dest_lat": 28.9581242,
+        "dest_lng": -95.2766391,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9581242,
+        "origin_lng": -95.2766391,
+        "dest_lat": 29.026607600000002,
+        "dest_lng": -95.4567974,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 29.026607600000002,
+        "origin_lng": -95.4567974,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9515919,
+        "origin_lng": -95.2878874,
+        "dest_lat": 29.01748,
+        "dest_lng": -95.44596159999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 29.01748,
+        "origin_lng": -95.44596159999999,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    }
+  ]
+}

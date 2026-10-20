@@ -2,13 +2,15 @@
 
 import uuid
 from datetime import datetime, timezone
+from typing import Any
 
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Request
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel, Field
 
 from agent.nodes.parse_refinement import UnsupportedRefinement, parse_refinement_message
-from db.client import get_collection
+from api.middleware.authz import get_trips_collection, require_leader, require_member
+from api.middleware.rate_limit import get_user_key, limiter
 from utils.refinement_streaming import stream_refinement_events
 
 router = APIRouter(prefix="/trips", tags=["refinements"])
@@ -32,11 +34,14 @@ def _now() -> str:
 
 
 @router.post("/{trip_id}/refine")
-async def refine_trip(trip_id: str, body: RefineTripRequest):
-    trips = get_collection("trips")
-    trip = await trips.find_one({"trip_id": trip_id})
-    if not trip:
-        raise HTTPException(status_code=404, detail="Trip not found")
+@limiter.limit("10/hour", key_func=get_user_key)
+async def refine_trip(
+    request: Request,
+    trip_id: str,
+    body: RefineTripRequest,
+    trip: dict = Depends(require_leader),
+    trips: Any = Depends(get_trips_collection),
+):
     if not trip.get("final_state") or not trip.get("trip_pitch"):
         raise HTTPException(status_code=409, detail="Trip must complete before it can be refined")
 
@@ -75,11 +80,11 @@ async def refine_trip(trip_id: str, body: RefineTripRequest):
 
 
 @router.get("/{trip_id}/refinements/{refinement_id}/stream")
-async def stream_refinement(trip_id: str, refinement_id: str):
-    trips = get_collection("trips")
-    trip = await trips.find_one({"trip_id": trip_id})
-    if not trip:
-        raise HTTPException(status_code=404, detail="Trip not found")
+async def stream_refinement(
+    trip_id: str,
+    refinement_id: str,
+    trip: dict = Depends(require_member),
+):
     if not (trip.get("refinements") or {}).get(refinement_id):
         raise HTTPException(status_code=404, detail="Refinement not found")
 

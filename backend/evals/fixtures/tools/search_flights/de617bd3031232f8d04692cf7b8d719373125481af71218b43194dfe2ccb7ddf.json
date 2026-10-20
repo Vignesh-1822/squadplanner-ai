@@ -1,0 +1,21 @@
+{
+  "operation": "search_flights",
+  "request": {
+    "adults": 1,
+    "depart_date": "2026-09-08",
+    "destination": "Matagorda",
+    "origin": "DEN",
+    "return_date": "2026-09-11"
+  },
+  "request_sha256": "de617bd3031232f8d04692cf7b8d719373125481af71218b43194dfe2ccb7ddf",
+  "response": {
+    "airline": "Estimated",
+    "depart_time": "2026-09-08T08:00:00",
+    "destination": "Matagorda",
+    "is_estimated": true,
+    "member_id": "",
+    "origin": "DEN",
+    "price_usd": 300.0,
+    "return_time": "2026-09-11T18:00:00"
+  }
+}

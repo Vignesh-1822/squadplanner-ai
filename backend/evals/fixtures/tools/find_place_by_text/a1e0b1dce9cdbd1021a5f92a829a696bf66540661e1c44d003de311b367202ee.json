@@ -1,0 +1,27 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 38.04,
+      "lng": -84.503
+    },
+    "destination": "Lexington",
+    "included_type": null,
+    "query": "Neighborhood stroll - Andover area"
+  },
+  "request_sha256": "a1e0b1dce9cdbd1021a5f92a829a696bf66540661e1c44d003de311b367202ee",
+  "response": {
+    "address": "Andover Hills, Lexington, KY 40509, USA",
+    "category": "place",
+    "lat": 37.995494099999995,
+    "lng": -84.4133272,
+    "name": "Andover Hills",
+    "place_id": "ChIJ9aFG2z5QQogRtuXCK0POW_M",
+    "price_level": 0,
+    "rating": 0.0,
+    "tags": [
+      "neighborhood",
+      "political"
+    ]
+  }
+}

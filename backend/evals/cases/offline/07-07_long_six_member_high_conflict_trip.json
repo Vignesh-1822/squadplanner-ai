@@ -1,0 +1,128 @@
+{
+  "id": "07-07_long_six_member_high_conflict_trip",
+  "title": "Long Six-Member High-Conflict Trip",
+  "purpose": "Stress test: six travelers, five nights, conflicting weights, conflicting natural language, dietary restrictions, budget spread, and explainability.",
+  "tier": "offline",
+  "tags": [
+    "seed"
+  ],
+  "payload": {
+    "group_notes": "This is a reunion trip with conflicting styles. Hard constraints: no clubs, no alcohol-focused venues, no pork, respect vegan and gluten-free meals, no activity before 10:00 unless it is breakfast. Soft goals: one scenic outdoor day, one museum/culture day, one food-focused day, one shopping or market stop, and enough downtime that the trip does not feel rushed.",
+    "members": [
+      {
+        "member_id": "alex",
+        "name": "Alex",
+        "origin_city": "SFO",
+        "budget_usd": 2200,
+        "food_restrictions": [
+          "vegan"
+        ],
+        "preference_notes": "I want hiking, viewpoints, and nature. I am vegan. I hate clubs and do not want alcohol-centered venues.",
+        "preference_vector": {
+          "outdoor": 1.0,
+          "food": 0.6,
+          "nightlife": 0.0,
+          "urban": 0.2,
+          "shopping": 0.1
+        },
+        "is_leader": true
+      },
+      {
+        "member_id": "brooke",
+        "name": "Brooke",
+        "origin_city": "JFK",
+        "budget_usd": 2600,
+        "food_restrictions": [],
+        "preference_notes": "I want museums, architecture, cafes, and iconic city neighborhoods. I do not care about hiking.",
+        "preference_vector": {
+          "outdoor": 0.1,
+          "food": 0.8,
+          "nightlife": 0.3,
+          "urban": 1.0,
+          "shopping": 0.6
+        },
+        "is_leader": false
+      },
+      {
+        "member_id": "cam",
+        "name": "Cam",
+        "origin_city": "ATL",
+        "budget_usd": 1300,
+        "food_restrictions": [
+          "gluten_free"
+        ],
+        "preference_notes": "I am budget sensitive and gluten-free. No packed schedule. I need downtime every day.",
+        "preference_vector": {
+          "outdoor": 0.5,
+          "food": 0.7,
+          "nightlife": 0.1,
+          "urban": 0.5,
+          "shopping": 0.2
+        },
+        "is_leader": false
+      },
+      {
+        "member_id": "dev",
+        "name": "Dev",
+        "origin_city": "ORD",
+        "budget_usd": 1800,
+        "food_restrictions": [
+          "halal"
+        ],
+        "preference_notes": "No pork or bacon. I like late dinners, markets, and food halls, but not clubs.",
+        "preference_vector": {
+          "outdoor": 0.3,
+          "food": 1.0,
+          "nightlife": 0.6,
+          "urban": 0.7,
+          "shopping": 0.5
+        },
+        "is_leader": false
+      },
+      {
+        "member_id": "ella",
+        "name": "Ella",
+        "origin_city": "SEA",
+        "budget_usd": 2100,
+        "food_restrictions": [],
+        "preference_notes": "I want boutiques, local markets, photogenic streets, and at least one nicer dinner.",
+        "preference_vector": {
+          "outdoor": 0.2,
+          "food": 0.8,
+          "nightlife": 0.2,
+          "urban": 0.7,
+          "shopping": 1.0
+        },
+        "is_leader": false
+      },
+      {
+        "member_id": "finn",
+        "name": "Finn",
+        "origin_city": "MIA",
+        "budget_usd": 1500,
+        "food_restrictions": [],
+        "preference_notes": "I want beaches or water if possible, but I cannot handle early mornings. Keep travel between stops low.",
+        "preference_vector": {
+          "outdoor": 0.8,
+          "food": 0.5,
+          "nightlife": 0.1,
+          "urban": 0.3,
+          "shopping": 0.2
+        },
+        "is_leader": false
+      }
+    ],
+    "start_date": "2026-09-08",
+    "end_date": "2026-09-11"
+  },
+  "hitl_choices": [
+    0,
+    0,
+    0
+  ],
+  "expect_budget_retry": false,
+  "expect_fairness_retry": false,
+  "expect_validation_rebuild": null,
+  "graph_only": false,
+  "expected_known_issues": []
+}

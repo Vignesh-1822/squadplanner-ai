@@ -1,0 +1,617 @@
+{
+  "operation": "fetch_activities_by_category",
+  "request": {
+    "categories": [
+      "food",
+      "outdoor",
+      "urban",
+      "shopping"
+    ],
+    "coords": {
+      "lat": 44.636,
+      "lng": -124.053
+    },
+    "destination": "Newport",
+    "max_per_category": 10
+  },
+  "request_sha256": "aa0cb37f721322ca3e0e93f2a6c35164da75828e53d4c7cf1de9fe1843e907bc",
+  "response": [
+    {
+      "address": "213 SE Bay Blvd., Newport, OR 97365, USA",
+      "category": "food",
+      "lat": 44.6320962,
+      "lng": -124.0491293,
+      "name": "Local Ocean Seafoods",
+      "place_id": "ChIJlwA0YbTXwVQRM-UFa-SmnHY",
+      "price_level": 0,
+      "rating": 4.6,
+      "tags": [
+        "seafood_restaurant",
+        "fish_and_chips_restaurant",
+        "british_restaurant",
+        "bar",
+        "market",
+        "european_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "506 SW Elizabeth St, Newport, OR 97365, USA",
+      "category": "food",
+      "lat": 44.629287,
+      "lng": -124.06432159999999,
+      "name": "Georgie's Beachside Grill",
+      "place_id": "ChIJla-hE7jXwVQRYSeILlOqAbo",
+      "price_level": 0,
+      "rating": 4.5,
+      "tags": [
+        "seafood_restaurant",
+        "vegetarian_restaurant",
+        "fish_and_chips_restaurant",
+        "breakfast_restaurant",
+        "family_restaurant",
+        "british_restaurant",
+        "bar",
+        "european_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "3640 S Coast Hwy, South Beach, OR 97366, USA",
+      "category": "food",
+      "lat": 44.611806099999995,
+      "lng": -124.0511507,
+      "name": "South Beach Fish Market",
+      "place_id": "ChIJreulqgvXwVQRoYuuyJKz80U",
+      "price_level": 0,
+      "rating": 4.5,
+      "tags": [
+        "seafood_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "279 US-101, Depoe Bay, OR 97341, USA",
+      "category": "food",
+      "lat": 44.815335999999995,
+      "lng": -124.0627855,
+      "name": "Tidal Raves",
+      "place_id": "ChIJXV4ZD_yH6lQRzq8OHYE7jRE",
+      "price_level": 0,
+      "rating": 4.7,
+      "tags": [
+        "seafood_restaurant",
+        "bar",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "728 NW Beach Dr, Newport, OR 97365, USA",
+      "category": "food",
+      "lat": 44.639013999999996,
+      "lng": -124.06133870000001,
+      "name": "Chowder Bowl",
+      "place_id": "ChIJ-elQRszXwVQRqnORPnqZWDg",
+      "price_level": 0,
+      "rating": 4.5,
+      "tags": [
+        "fish_and_chips_restaurant",
+        "hamburger_restaurant",
+        "british_restaurant",
+        "seafood_restaurant",
+        "european_restaurant",
+        "american_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "325 SW Bay Blvd., Newport, OR 97365, USA",
+      "category": "food",
+      "lat": 44.630252899999995,
+      "lng": -124.05255799999998,
+      "name": "Clearwater Restaurant",
+      "place_id": "ChIJUwMSqLbXwVQRhJS_az3Q6eI",
+      "price_level": 0,
+      "rating": 4.5,
+      "tags": [
+        "restaurant",
+        "meal_delivery",
+        "food_delivery",
+        "seafood_restaurant",
+        "american_restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "The Original Mo's, 622 SW Bay Blvd., Newport, OR 97365, USA",
+      "category": "food",
+      "lat": 44.6291654,
+      "lng": -124.0551014,
+      "name": "Mo's Seafood & Chowder",
+      "place_id": "ChIJ6aY41LDXwVQRZAW-F_esPuE",
+      "price_level": 0,
+      "rating": 4.3,
+      "tags": [
+        "seafood_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "10111 NW Pacific Coast Hwy, Seal Rock, OR 97376, USA",
+      "category": "food",
+      "lat": 44.4979538,
+      "lng": -124.0821392,
+      "name": "Luna Sea Fish House Seal Rock",
+      "place_id": "ChIJFVW7a6uUwVQRf_Uut4VAVsY",
+      "price_level": 0,
+      "rating": 4.5,
+      "tags": [
+        "seafood_restaurant",
+        "breakfast_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "534 N Coast Hwy, Newport, OR 97365, USA",
+      "category": "food",
+      "lat": 44.6402504,
+      "lng": -124.05270100000001,
+      "name": "Newport Cafe",
+      "place_id": "ChIJ0XzcezPWwVQRCWN1HDlZnXU",
+      "price_level": 0,
+      "rating": 4.4,
+      "tags": [
+        "restaurant",
+        "hamburger_restaurant",
+        "diner",
+        "breakfast_restaurant",
+        "cafe",
+        "seafood_restaurant",
+        "american_restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "58 US-101, Depoe Bay, OR 97341, USA",
+      "category": "food",
+      "lat": 44.8108843,
+      "lng": -124.0617602,
+      "name": "Gracie's Sea Hag",
+      "place_id": "ChIJ5Qvio1h96lQRL1wXbZPFT-Y",
+      "price_level": 0,
+      "rating": 4.4,
+      "tags": [
+        "seafood_restaurant",
+        "lounge_bar",
+        "night_club",
+        "bar",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "122 1st St, Otter Rock, OR 97369, USA",
+      "category": "outdoor",
+      "lat": 44.7468595,
+      "lng": -124.06350119999999,
+      "name": "Devils Punchbowl State Natural Area",
+      "place_id": "ChIJX6gm9jF86lQRFPq1rNyrqbM",
+      "price_level": 0,
+      "rating": 4.7,
+      "tags": [
+        "state_park",
+        "park",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "5580 SW Coast Hwy, Newport, OR 97366, USA",
+      "category": "outdoor",
+      "lat": 44.6040432,
+      "lng": -124.0615564,
+      "name": "South Beach State Park",
+      "place_id": "ChIJr_6XGHDXwVQR24s5IVCD6vQ",
+      "price_level": 0,
+      "rating": 4.6,
+      "tags": [
+        "state_park",
+        "campground",
+        "park",
+        "lodging",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "198 NE 123rd St, Newport, OR 97365, USA",
+      "category": "outdoor",
+      "lat": 44.7322674,
+      "lng": -124.05262359999999,
+      "name": "Beverly Beach State Park",
+      "place_id": "ChIJ_ScUt5p-6lQR3j-oQVx-QU8",
+      "price_level": 0,
+      "rating": 4.7,
+      "tags": [
+        "state_park",
+        "campground",
+        "park",
+        "lodging",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "Yaquina Bay Lighthouse, Newport, OR 97365, USA",
+      "category": "outdoor",
+      "lat": 44.6241896,
+      "lng": -124.06306909999999,
+      "name": "Yaquina Bay Lighthouse",
+      "place_id": "ChIJAQAMerzXwVQRILSuATy2BTg",
+      "price_level": 0,
+      "rating": 4.6,
+      "tags": [
+        "state_park",
+        "tourist_attraction",
+        "park",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "50 SE 123rd St, South Beach, OR 97366, USA",
+      "category": "outdoor",
+      "lat": 44.548328999999995,
+      "lng": -124.07130099999999,
+      "name": "Thousand Trails Whalers Rest",
+      "place_id": "ChIJ5_gWPDTawVQRcWKUVbrr1SM",
+      "price_level": 0,
+      "rating": 4.4,
+      "tags": [
+        "campground",
+        "childrens_camp",
+        "rv_park",
+        "sports_activity_location",
+        "park",
+        "lodging",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ]
+    },
+    {
+      "address": "119 US-101, Depoe Bay, OR 97341, USA",
+      "category": "outdoor",
+      "lat": 44.81005,
+      "lng": -124.06237800000001,
+      "name": "OPRD Whale Watching Center",
+      "place_id": "ChIJ_Xl8M_iH6lQR5SyRM5vLdww",
+      "price_level": 0,
+      "rating": 4.8,
+      "tags": [
+        "state_park",
+        "tour_agency",
+        "travel_agency",
+        "park",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ]
+    },
+    {
+      "address": "750 NW Lighthouse Dr, Newport, OR 97365, USA",
+      "category": "outdoor",
+      "lat": 44.6762003,
+      "lng": -124.07722109999999,
+      "name": "Yaquina Head Outstanding Natural Area",
+      "place_id": "ChIJjXTSyu546lQRDAJxWXyX7eo",
+      "price_level": 0,
+      "rating": 4.8,
+      "tags": [
+        "nature_preserve",
+        "tourist_attraction",
+        "wildlife_refuge",
+        "museum",
+        "park",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "Otter Rock, OR 97369, USA",
+      "category": "outdoor",
+      "lat": 44.7600917,
+      "lng": -124.0670848,
+      "name": "Otter Crest State Scenic Viewpoint",
+      "place_id": "ChIJoS07e7R96lQRgWuix-WNJCI",
+      "price_level": 0,
+      "rating": 4.8,
+      "tags": [
+        "state_park",
+        "tourist_attraction",
+        "park",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "Agate Beach State Wayside, Newport, OR 97365, USA",
+      "category": "outdoor",
+      "lat": 44.6591124,
+      "lng": -124.05742169999998,
+      "name": "Agate Beach State Recreation Site",
+      "place_id": "ChIJMxiFFJx46lQRGEPxr0p5b3Q",
+      "price_level": 0,
+      "rating": 4.5,
+      "tags": [
+        "state_park",
+        "park",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "State Recreation Site, 10032 NW Pacific Coast Hwy, Seal Rock, OR 97376, USA",
+      "category": "outdoor",
+      "lat": 44.49637020000001,
+      "lng": -124.08389539999999,
+      "name": "Seal Rock State Recreation Site",
+      "place_id": "ChIJQSXw-aDcwVQRaHpns2MMbVY",
+      "price_level": 0,
+      "rating": 4.8,
+      "tags": [
+        "state_park",
+        "park",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "2820 SE Ferry Slip Rd, Newport, OR 97365, USA",
+      "category": "urban",
+      "lat": 44.617652799999995,
+      "lng": -124.0472528,
+      "name": "Oregon Coast Aquarium",
+      "place_id": "ChIJoSlzvqfXwVQRVnlawCpEvqI",
+      "price_level": 0,
+      "rating": 4.4,
+      "tags": [
+        "aquarium",
+        "tourist_attraction",
+        "gift_shop",
+        "educational_institution",
+        "association_or_organization",
+        "store",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "250-300 SW Bay Blvd., Newport, OR 97365, USA",
+      "category": "urban",
+      "lat": 44.6310396,
+      "lng": -124.0511696,
+      "name": "Newport Historic Bayfront",
+      "place_id": "ChIJ35bQFrTXwVQR794OJWKopJk",
+      "price_level": 0,
+      "rating": 4.7,
+      "tags": [
+        "historical_landmark",
+        "tourist_attraction",
+        "historical_place",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "250 SW Bay Blvd., Newport, OR 97365, USA",
+      "category": "urban",
+      "lat": 44.6309921,
+      "lng": -124.0518635,
+      "name": "Ripley's Believe It or Not! World of Adventure",
+      "place_id": "ChIJPWNFFLTXwVQRpCjyhx4BJkE",
+      "price_level": 0,
+      "rating": 4.3,
+      "tags": [
+        "tourist_attraction",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "Yaquina Bay Lighthouse, Newport, OR 97365, USA",
+      "category": "urban",
+      "lat": 44.6241896,
+      "lng": -124.06306909999999,
+      "name": "Yaquina Bay Lighthouse",
+      "place_id": "ChIJAQAMerzXwVQRILSuATy2BTg",
+      "price_level": 0,
+      "rating": 4.6,
+      "tags": [
+        "state_park",
+        "tourist_attraction",
+        "park",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "Port Dock One, 325 SW Bay Blvd., Newport, OR 97365, USA",
+      "category": "urban",
+      "lat": 44.6301561,
+      "lng": -124.0522836,
+      "name": "Sea Lion Docks",
+      "place_id": "ChIJsxTHA7TXwVQROkJT5Nbo4pw",
+      "price_level": 0,
+      "rating": 4.7,
+      "tags": [
+        "tourist_attraction",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "2820 SE Ferry Slip Rd, Newport, OR 97365, USA",
+      "category": "urban",
+      "lat": 44.6167161,
+      "lng": -124.04603039999999,
+      "name": "Newport aquarium",
+      "place_id": "ChIJHV3SVgDXwVQR8zywdpbm0AI",
+      "price_level": 0,
+      "rating": 4.7,
+      "tags": [
+        "tourist_attraction",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "122 1st St, Otter Rock, OR 97369, USA",
+      "category": "urban",
+      "lat": 44.7471083,
+      "lng": -124.0651917,
+      "name": "Devils Punchbowl Arch",
+      "place_id": "ChIJecEdmzF86lQREhArlR6sqMI",
+      "price_level": 0,
+      "rating": 4.7,
+      "tags": [
+        "tourist_attraction",
+        "bowling_alley",
+        "sports_complex",
+        "sports_activity_location",
+        "store",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "750 NW Lighthouse Dr, Newport, OR 97365, USA",
+      "category": "urban",
+      "lat": 44.6762003,
+      "lng": -124.07722109999999,
+      "name": "Yaquina Head Outstanding Natural Area",
+      "place_id": "ChIJjXTSyu546lQRDAJxWXyX7eo",
+      "price_level": 0,
+      "rating": 4.8,
+      "tags": [
+        "nature_preserve",
+        "wildlife_refuge",
+        "tourist_attraction",
+        "museum",
+        "park",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "Otter Rock, OR 97369, USA",
+      "category": "urban",
+      "lat": 44.7600917,
+      "lng": -124.0670848,
+      "name": "Otter Crest State Scenic Viewpoint",
+      "place_id": "ChIJoS07e7R96lQRgWuix-WNJCI",
+      "price_level": 0,
+      "rating": 4.8,
+      "tags": [
+        "state_park",
+        "tourist_attraction",
+        "park",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "Newport, OR 97366, USA",
+      "category": "urban",
+      "lat": 44.5213093,
+      "lng": -124.07294099999999,
+      "name": "Ona Beach",
+      "place_id": "ChIJGfsqUwrbwVQRHiGe5buwa20",
+      "price_level": 0,
+      "rating": 4.7,
+      "tags": [
+        "state_park",
+        "tourist_attraction",
+        "park",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "3101 SE Ferry Slip Rd, Newport, OR 97365, USA",
+      "category": "shopping",
+      "lat": 44.615353,
+      "lng": -124.04647340000001,
+      "name": "Aquarium Village",
+      "place_id": "ChIJFciMwgnXwVQRP8ZRJRpN8WI",
+      "price_level": 0,
+      "rating": 4.3,
+      "tags": [
+        "business_center",
+        "shopping_mall",
+        "zoo",
+        "storage",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ]
+    },
+    {
+      "address": "342 SW Bay Blvd., Newport, OR 97365, USA",
+      "category": "shopping",
+      "lat": 44.6303262,
+      "lng": -124.05297159999999,
+      "name": "The Gear Shed Shops Mini Mall",
+      "place_id": "ChIJvRZ9prbXwVQRBH-gvwcxHKw",
+      "price_level": 0,
+      "rating": 4.2,
+      "tags": [
+        "shopping_mall",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "N Coast Hwy, Newport, OR 97365, USA",
+      "category": "shopping",
+      "lat": 44.651900499999996,
+      "lng": -124.0537377,
+      "name": "Whalers Village",
+      "place_id": "ChIJEVTTMADXwVQR4ungm2zQetM",
+      "price_level": 0,
+      "rating": 0.0,
+      "tags": [
+        "shopping_mall",
+        "point_of_interest",
+        "establishment"
+      ]
+    }
+  ]
+}

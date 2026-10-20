@@ -1,0 +1,25 @@
+{
+  "operation": "search_hotels",
+  "request": {
+    "budget_ceiling_usd": 2100.0,
+    "check_in": "2026-09-08",
+    "check_out": "2026-09-11",
+    "coords": {
+      "lat": 41.8781,
+      "lng": -87.6298
+    },
+    "destination": "Chicago"
+  },
+  "request_sha256": "e577afb120839a66b651c23e09903b676ed9691f1cb94f6045156cc7ad463885",
+  "response": {
+    "address": "1301 N State Pkwy, Chicago, IL 60610, USA",
+    "is_estimated": false,
+    "lat": 41.9060542,
+    "lng": -87.6284696,
+    "name": "Ambassador Gold Coast - The Chicago Hotel Collection",
+    "place_id": "ChIJyx6-KGbTD4gR1ISDCCcsgKw",
+    "price_per_night_usd": 82.0,
+    "rating": 3.2,
+    "total_price_usd": 246.0
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "operation": "search_hotels",
+  "request": {
+    "budget_ceiling_usd": 315.0,
+    "check_in": "2026-09-08",
+    "check_out": "2026-09-11",
+    "coords": {
+      "lat": 36.4012,
+      "lng": -93.7374
+    },
+    "destination": "Eureka Springs"
+  },
+  "request_sha256": "72c380cd6d9d81e0663b2663f659152c54519460ac4f99d7e62011db1b86951b",
+  "response": {
+    "address": "101 E Van Buren, Eureka Springs, AR 72632, USA",
+    "is_estimated": false,
+    "lat": 36.3940078,
+    "lng": -93.7412676,
+    "name": "Osage Creek Lodge",
+    "place_id": "ChIJRcc6uqXTzocRQ9jtUR99Zmo",
+    "price_per_night_usd": 68.0,
+    "rating": 4.4,
+    "total_price_usd": 204.0
+  }
+}

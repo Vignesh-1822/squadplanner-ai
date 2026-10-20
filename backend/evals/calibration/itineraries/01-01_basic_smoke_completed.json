@@ -1,0 +1,520 @@
+{
+  "id": "01-01_basic_smoke_completed",
+  "group_notes": "Keep the trip relaxed, avoid rushed mornings, and make sure the plan respects everyone's must-haves.",
+  "members": [
+    {
+      "member_id": "alice",
+      "name": "Alice",
+      "origin_city": "ORD",
+      "budget_usd": 1500,
+      "food_restrictions": [
+        "vegetarian"
+      ],
+      "preference_notes": "Hates early mornings, no clubs, wants Italian food at least once.",
+      "preference_vector": {
+        "outdoor": 0.8,
+        "food": 0.7,
+        "nightlife": 0.2,
+        "urban": 0.6,
+        "shopping": 0.1
+      },
+      "is_leader": true
+    },
+    {
+      "member_id": "bob",
+      "name": "Bob",
+      "origin_city": "ATL",
+      "budget_usd": 1200,
+      "food_restrictions": [],
+      "preference_notes": "Likes relaxed days with good meals and urban neighborhoods, but does not want an overpacked schedule.",
+      "preference_vector": {
+        "outdoor": 0.5,
+        "food": 0.8,
+        "nightlife": 0.6,
+        "urban": 0.4,
+        "shopping": 0.3
+      },
+      "is_leader": false
+    },
+    {
+      "member_id": "carol",
+      "name": "Carol",
+      "origin_city": "LAX",
+      "budget_usd": 2000,
+      "food_restrictions": [],
+      "preference_notes": "Interested in scenic walks and museums, but not late-night clubbing.",
+      "preference_vector": {
+        "outdoor": 0.6,
+        "food": 0.6,
+        "nightlife": 0.4,
+        "urban": 0.7,
+        "shopping": 0.5
+      },
+      "is_leader": false
+    }
+  ],
+  "start_date": "2026-09-08",
+  "end_date": "2026-09-11",
+  "trip_duration_days": 3,
+  "destination": {
+    "name": "Surfside Beach",
+    "coords": {
+      "lat": 28.949,
+      "lng": -95.293
+    }
+  },
+  "hotel": {
+    "name": "Holiday Sands South Vacations",
+    "address": "2411 S Ocean Blvd Ste a, Myrtle Beach, SC 29577, USA",
+    "price_per_night_usd": 64.0,
+    "total_price_usd": 192.0,
+    "rating": 3.8,
+    "is_estimated": false
+  },
+  "weather": {
+    "destination": "Surfside Beach",
+    "date_range": "2026-09-08 to 2026-09-11",
+    "avg_temp_c": 30.0,
+    "precipitation_mm": 16.1,
+    "summary": "Warm (30.0\u00b0C avg), light rain expected"
+  },
+  "days": [
+    {
+      "day_number": 1,
+      "date": "2026-09-08",
+      "neighborhood": "Surfside Beach",
+      "meals": [
+        "Hotel breakfast at Holiday Sands South Vacations",
+        "Vegetarian sandwich at Seahorse Bar & Grill",
+        "Dinner at Beach Front Deck Bar and Grill (vegetarian options)"
+      ],
+      "estimated_day_cost_usd": 180.0,
+      "schedule": [
+        {
+          "time": "10:00",
+          "type": "activity",
+          "label": "Surfside Beach scenic walk",
+          "notes": "Relaxed beachfront exploration, scenic coastal views"
+        },
+        {
+          "time": "12:30",
+          "type": "meal",
+          "label": "Lunch at Seahorse Bar & Grill",
+          "notes": "Vegetarian-friendly coastal dining"
+        },
+        {
+          "time": "14:00",
+          "type": "activity",
+          "label": "Oyster Creek Municipal Park and Stahlman Park exploration",
+          "notes": "Scenic walk through park areas, relaxed outdoor time"
+        },
+        {
+          "time": "18:30",
+          "type": "meal",
+          "label": "Dinner at Beach Front Deck Bar and Grill",
+          "notes": "Waterfront dining with vegetarian options"
+        }
+      ],
+      "rationale": "Day 1 anchors the trip with classic beach experiences at Surfside Beach and Oyster Creek Municipal Park, offering scenic waterfront activities Carol will enjoy. The 10:00 AM start respects Alice's preference for no early mornings, while three well-spaced stops\u2014beach, lunch, park, dinner\u2014maintain the relaxed pace Bob and the group prioritize. Two dining experiences at Seahorse Bar & Grill and Beach Front Deck Bar and Grill ensure quality meals without overscheduling.",
+      "constraint_notes": [
+        "No early morning start; day begins at 10:00 AM",
+        "Relaxed pace: exactly 3 stops across 8.5 hours",
+        "No nightlife or club activities scheduled",
+        "Scenic waterfront walks at Surfside Beach",
+        "Two quality dining experiences included"
+      ],
+      "total_travel_minutes": 30933,
+      "activities": [
+        {
+          "name": "Surfside Beach",
+          "category": "urban",
+          "address": "206 Starfish St, Freeport, TX 77541, USA",
+          "lat": 28.949779499999998,
+          "lng": -95.28490459999999,
+          "price_level": 0,
+          "rating": 4.6,
+          "tags": [
+            "nature_preserve",
+            "tourist_attraction",
+            "park",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Oyster Creek Municipal Park",
+          "category": "urban",
+          "address": "4001-, 4021 FM523, Oyster Creek, TX 77541, USA",
+          "lat": 29.013253000000002,
+          "lng": -95.32876879999999,
+          "price_level": 0,
+          "rating": 4.5,
+          "tags": [
+            "park",
+            "tourist_attraction",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Stahlman Park",
+          "category": "urban",
+          "address": "2211 Bluewater Hwy, Surfside Beach, TX 77541, USA",
+          "lat": 28.9716048,
+          "lng": -95.26171660000001,
+          "price_level": 0,
+          "rating": 4.4,
+          "tags": [
+            "park",
+            "tourist_attraction",
+            "point_of_interest",
+            "establishment"
+          ]
+        }
+      ],
+      "routes": [
+        {
+          "distance_meters": 2233408,
+          "duration_seconds": 1810563,
+          "mode": "WALK",
+          "from_order": 1,
+          "to_order": 2,
+          "from_label": "Holiday Sands South Vacations",
+          "to_label": "Surfside Beach"
+        },
+        {
+          "distance_meters": 484,
+          "duration_seconds": 387,
+          "mode": "WALK",
+          "from_order": 2,
+          "to_order": 3,
+          "from_label": "Surfside Beach",
+          "to_label": "Seahorse Bar & Grill"
+        },
+        {
+          "distance_meters": 27192,
+          "duration_seconds": 21910,
+          "mode": "WALK",
+          "from_order": 3,
+          "to_order": 4,
+          "from_label": "Seahorse Bar & Grill",
+          "to_label": "Oyster Creek Municipal Park"
+        },
+        {
+          "distance_meters": 28683,
+          "duration_seconds": 23137,
+          "mode": "WALK",
+          "from_order": 4,
+          "to_order": 5,
+          "from_label": "Oyster Creek Municipal Park",
+          "to_label": "Beach Front Deck Bar and Grill"
+        }
+      ]
+    },
+    {
+      "day_number": 2,
+      "date": "2026-09-09",
+      "neighborhood": "Surfside Jetty and Quintana",
+      "meals": [
+        "Hotel breakfast at Holiday Sands South Vacations",
+        "Lunch at Jetty Shack",
+        "Italian dinner at local Italian restaurant in Freeport area"
+      ],
+      "estimated_day_cost_usd": 195.0,
+      "schedule": [
+        {
+          "time": "10:00",
+          "type": "activity",
+          "label": "Surfside Jetty County Park exploration",
+          "notes": "Scenic waterfront walk, jetty views, relaxed pace"
+        },
+        {
+          "time": "12:30",
+          "type": "meal",
+          "label": "Lunch at Jetty Shack",
+          "notes": "Casual waterfront dining with vegetarian options"
+        },
+        {
+          "time": "14:30",
+          "type": "activity",
+          "label": "Quintana Beach and Bird Sanctuary visit",
+          "notes": "Scenic beach time and birdwatching, museum-quality nature experience"
+        },
+        {
+          "time": "18:30",
+          "type": "meal",
+          "label": "Italian dinner (Freeport area)",
+          "notes": "Fulfills Alice's requirement for Italian cuisine, vegetarian pasta options available"
+        }
+      ],
+      "rationale": "Day 2 showcases scenic jetty and beach park environments that align with Carol's interest in scenic walks and waterfront exploration. The Italian dinner at Malibu Of Surfside Italian Restaurant fulfills Alice's must-have Italian meal requirement. Starting at 10:00 AM with three measured stops\u2014Surfside Jetty County Park, lunch, Quintana Beach County Park, dinner\u2014maintains the group's preference for unhurried, non-overwhelming days.",
+      "constraint_notes": [
+        "No early morning start; day begins at 10:00 AM",
+        "Italian cuisine requirement satisfied at Malibu Of Surfside",
+        "Relaxed pace: exactly 3 stops across 8.5 hours",
+        "Scenic walks and waterfront parks (Jetty and Quintana)",
+        "No nightlife or club activities scheduled"
+      ],
+      "total_travel_minutes": 60412,
+      "activities": [
+        {
+          "name": "Surfside Jetty County Park",
+          "category": "urban",
+          "address": "101 Parkview Rd, Surfside Beach, TX 77541, USA",
+          "lat": 28.9380657,
+          "lng": -95.2955537,
+          "price_level": 0,
+          "rating": 4.5,
+          "tags": [
+            "park",
+            "tourist_attraction",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Quintana Beach County Park",
+          "category": "outdoor",
+          "address": "330 5th St, Quintana, TX 77541, USA",
+          "lat": 28.9346868,
+          "lng": -95.3039594,
+          "price_level": 0,
+          "rating": 4.5,
+          "tags": [
+            "rv_park",
+            "real_estate_agency",
+            "travel_agency",
+            "lodging",
+            "park",
+            "service",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Quintana Neotropical Bird Sanctuary",
+          "category": "urban",
+          "address": "814 Lamar St, Quintana, TX 77541, USA",
+          "lat": 28.9337826,
+          "lng": -95.30845339999999,
+          "price_level": 0,
+          "rating": 4.6,
+          "tags": [
+            "nature_preserve",
+            "tourist_attraction",
+            "park",
+            "point_of_interest",
+            "establishment"
+          ]
+        }
+      ],
+      "routes": [
+        {
+          "distance_meters": 2231962,
+          "duration_seconds": 1809369,
+          "mode": "WALK",
+          "from_order": 1,
+          "to_order": 2,
+          "from_label": "Holiday Sands South Vacations",
+          "to_label": "Surfside Jetty County Park"
+        },
+        {
+          "distance_meters": 508,
+          "duration_seconds": 413,
+          "mode": "WALK",
+          "from_order": 2,
+          "to_order": 3,
+          "from_label": "Surfside Jetty County Park",
+          "to_label": "Jetty Shack"
+        },
+        {
+          "distance_meters": 1904,
+          "duration_seconds": 1404,
+          "mode": "WALK",
+          "from_order": 3,
+          "to_order": 4,
+          "from_label": "Jetty Shack",
+          "to_label": "Quintana Beach County Park"
+        },
+        {
+          "distance_meters": 2237015,
+          "duration_seconds": 1813564,
+          "mode": "WALK",
+          "from_order": 4,
+          "to_order": 5,
+          "from_label": "Quintana Beach County Park",
+          "to_label": "Malibu Of Surfside Italian Restaurant"
+        }
+      ]
+    },
+    {
+      "day_number": 3,
+      "date": "2026-09-10",
+      "neighborhood": "Lake Jackson and Clute",
+      "meals": [
+        "Hotel breakfast at Holiday Sands South Vacations",
+        "Lunch at Sea Center Texas caf\u00e9 or local spot",
+        "Vegetarian Tex-Mex dinner at La Casona Tex Mex"
+      ],
+      "estimated_day_cost_usd": 170.0,
+      "schedule": [
+        {
+          "time": "10:00",
+          "type": "activity",
+          "label": "Lake Jackson Recreation Center visit",
+          "notes": "Outdoor park exploration, scenic lake views, relaxed activity"
+        },
+        {
+          "time": "12:30",
+          "type": "meal",
+          "label": "Lunch near Lake Jackson area",
+          "notes": "Vegetarian-friendly casual lunch"
+        },
+        {
+          "time": "14:00",
+          "type": "activity",
+          "label": "Sea Center Texas and A.A. MacLean Park",
+          "notes": "Educational marine center and park, museum experience combined with scenic outdoors"
+        },
+        {
+          "time": "18:30",
+          "type": "meal",
+          "label": "Dinner at La Casona Tex Mex",
+          "notes": "Vegetarian Tex-Mex options, relaxed dining experience"
+        }
+      ],
+      "rationale": "Day 3 offers cultural and recreational variety with Lake Jackson Recreation Center and Sea Center Texas, providing museum-like exploration that appeals to Carol's interest in cultural sites. The 10:00 AM start continues to respect Alice's no-early-mornings preference. Three balanced stops\u2014recreation center, lunch, sea center, dinner\u2014preserve the relaxed pacing Bob requested while delivering diverse experiences without rushing.",
+      "constraint_notes": [
+        "No early morning start; day begins at 10:00 AM",
+        "Cultural/museum-style experience at Sea Center Texas",
+        "Relaxed pace: exactly 3 stops across 8.5 hours",
+        "No nightlife or club activities scheduled",
+        "Quality meal experiences at Backyard Patio and La Casona Tex Mex"
+      ],
+      "total_travel_minutes": 30007,
+      "activities": [
+        {
+          "name": "Lake Jackson Recreation Center",
+          "category": "outdoor",
+          "address": "91 Lake Rd, Lake Jackson, TX 77566, USA",
+          "lat": 29.026607600000002,
+          "lng": -95.4567974,
+          "price_level": 0,
+          "rating": 4.5,
+          "tags": [
+            "skateboard_park",
+            "gym",
+            "swimming_pool",
+            "sports_complex",
+            "sports_activity_location",
+            "park",
+            "health",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Sea Center Texas",
+          "category": "urban",
+          "address": "302 Medical Dr, Lake Jackson, TX 77566, USA",
+          "lat": 29.01748,
+          "lng": -95.44596159999999,
+          "price_level": 0,
+          "rating": 4.7,
+          "tags": [
+            "aquarium",
+            "tourist_attraction",
+            "point_of_interest",
+            "establishment"
+          ]
+        }
+      ],
+      "routes": [
+        {
+          "distance_meters": 2210835,
+          "duration_seconds": 1792213,
+          "mode": "WALK",
+          "from_order": 1,
+          "to_order": 2,
+          "from_label": "Holiday Sands South Vacations",
+          "to_label": "Lake Jackson Recreation Center"
+        },
+        {
+          "distance_meters": 2638,
+          "duration_seconds": 2234,
+          "mode": "WALK",
+          "from_order": 2,
+          "to_order": 3,
+          "from_label": "Lake Jackson Recreation Center",
+          "to_label": "Backyard Patio"
+        },
+        {
+          "distance_meters": 3480,
+          "duration_seconds": 2893,
+          "mode": "WALK",
+          "from_order": 3,
+          "to_order": 4,
+          "from_label": "Backyard Patio",
+          "to_label": "Sea Center Texas"
+        },
+        {
+          "distance_meters": 3753,
+          "duration_seconds": 3092,
+          "mode": "WALK",
+          "from_order": 4,
+          "to_order": 5,
+          "from_label": "Sea Center Texas",
+          "to_label": "La Casona Tex Mex"
+        }
+      ]
+    }
+  ],
+  "trip_pitch": "Escape to Surfside Beach, Texas, a laid-back coastal gem perfect for your group of three seeking relaxation without the rush. This charming beach community offers the ideal balance of scenic waterfront activities, excellent dining, and cultural experiences\u2014all designed around a comfortable pace that respects everyone's need to avoid early mornings and embrace true downtime. Whether you're drawn to peaceful beach walks, local parks, or quality time over memorable meals, Surfside Beach delivers an authentic Texas coastal experience without the hustle of overcrowded tourist destinations.\n\nYour three-day itinerary unfolds naturally across the region's best highlights. Day 1 centers on Surfside Beach itself, beginning with a morning at the shoreline before enjoying lunch at Seahorse Bar & Grill, an afternoon at Oyster Creek Municipal Park, and dinner at Beach Front Deck Bar and Grill. Day 2 takes you to Surfside Jetty County Park for scenic exploration, followed by lunch at Jetty Shack and an afternoon at Quintana Beach County Park, then dinner at Malibu Of Surfside Italian Restaurant\u2014satisfying Alice's Italian food requirement. Day 3 shifts inland to Lake Jackson Recreation Center and Sea Center Texas, with lunch at Backyard Patio and dinner at La Casona Tex Mex, offering cultural and recreational variety without overextending your schedule.\n\nYou'll base yourselves at the budget-friendly Holiday Sands South Vacations hotel at just $64 per night ($192 total for three nights), giving you comfortable accommodations without breaking the bank. Expect warm weather averaging 30\u00b0C with occasional light rain, so pack layers and sun protection along with a light rain jacket. All activities start at 10:00 AM or later, honoring the group's preference to avoid early mornings, and the day's pacing remains deliberately relaxed\u2014never more than three stops per day\u2014so you won't feel rushed between meals and experiences.\n\nThis is your chance to experience authentic Texas coastal living at your own pace: morning beach walks, leisurely meals at local favorites, and afternoons exploring parks and cultural sites without the pressure of a packed itinerary. Surfside Beach awaits with open arms and unhurried days\u2014bring your appetite, your sense of adventure, and your readiness to simply be present with great company and great food.",
+  "per_member_costs": [
+    {
+      "member_id": "alice",
+      "name": "Alice",
+      "budget_usd": 1500.0,
+      "flight_usd": 300.0,
+      "flight_is_estimated": true,
+      "hotel_share_usd": 64.0,
+      "activity_share_usd": 181.66666666666666,
+      "total_usd": 545.6666666666666,
+      "headroom_usd": 954.3333333333334,
+      "utilization": 0.36377777777777776,
+      "fairness_utilization": 0.24266666666666667
+    },
+    {
+      "member_id": "bob",
+      "name": "Bob",
+      "budget_usd": 1200.0,
+      "flight_usd": 300.0,
+      "flight_is_estimated": true,
+      "hotel_share_usd": 64.0,
+      "activity_share_usd": 181.66666666666666,
+      "total_usd": 545.6666666666666,
+      "headroom_usd": 654.3333333333334,
+      "utilization": 0.4547222222222222,
+      "fairness_utilization": 0.30333333333333334
+    },
+    {
+      "member_id": "carol",
+      "name": "Carol",
+      "budget_usd": 2000.0,
+      "flight_usd": 300.0,
+      "flight_is_estimated": true,
+      "hotel_share_usd": 64.0,
+      "activity_share_usd": 181.66666666666666,
+      "total_usd": 545.6666666666666,
+      "headroom_usd": 1454.3333333333335,
+      "utilization": 0.2728333333333333,
+      "fairness_utilization": 0.182
+    }
+  ],
+  "provenance": {
+    "source_case_id": "01-01_basic_smoke_completed",
+    "source_tier": "offline",
+    "planner_output": "Recorded live model output replayed without network access.",
+    "flight_data": "K-002 baseline: fixed $300 estimated flight per member."
+  }
+}

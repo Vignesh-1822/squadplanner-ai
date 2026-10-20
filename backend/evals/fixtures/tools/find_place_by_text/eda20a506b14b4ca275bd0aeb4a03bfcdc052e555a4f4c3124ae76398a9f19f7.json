@@ -1,0 +1,31 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 38.04,
+      "lng": -84.503
+    },
+    "destination": "Lexington",
+    "included_type": null,
+    "query": "Local area relaxation"
+  },
+  "request_sha256": "eda20a506b14b4ca275bd0aeb4a03bfcdc052e555a4f4c3124ae76398a9f19f7",
+  "response": {
+    "address": "431 S Broadway #112, Lexington, KY 40508, USA",
+    "category": "place",
+    "lat": 38.045570600000005,
+    "lng": -84.5050646,
+    "name": "As\u00e9 Massage",
+    "place_id": "ChIJJ_RyXtJFQogRuq5d8VQ6AL4",
+    "price_level": 0,
+    "rating": 5.0,
+    "tags": [
+      "massage_spa",
+      "massage",
+      "spa",
+      "point_of_interest",
+      "service",
+      "establishment"
+    ]
+  }
+}

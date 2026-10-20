@@ -1,0 +1,34 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 38.04,
+      "lng": -84.503
+    },
+    "destination": "Lexington",
+    "included_type": null,
+    "query": "Explore Main Street neighborhood"
+  },
+  "request_sha256": "fa11065082f1fc8df5959dce6ea0030cd854799c8492f3c7ddb1b5fc38a408ce",
+  "response": {
+    "address": "215 W Main St Ste 75, Lexington, KY 40507, USA",
+    "category": "place",
+    "lat": 38.0476593,
+    "lng": -84.4976786,
+    "name": "VisitLEX Lexington Visitors Center",
+    "place_id": "ChIJO9vWS-hEQogRjhtViRWKEEU",
+    "price_level": 0,
+    "rating": 4.7,
+    "tags": [
+      "tourist_information_center",
+      "visitor_center",
+      "gift_shop",
+      "tour_agency",
+      "travel_agency",
+      "store",
+      "service",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

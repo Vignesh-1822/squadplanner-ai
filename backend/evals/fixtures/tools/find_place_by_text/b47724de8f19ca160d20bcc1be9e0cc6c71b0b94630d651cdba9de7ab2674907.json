@@ -1,0 +1,31 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 44.636,
+      "lng": -124.053
+    },
+    "destination": "Newport",
+    "included_type": "restaurant",
+    "query": "Picnic lunch at scenic overlook"
+  },
+  "request_sha256": "b47724de8f19ca160d20bcc1be9e0cc6c71b0b94630d651cdba9de7ab2674907",
+  "response": {
+    "address": "526 NW Coast St, Newport, OR 97365, USA",
+    "category": "food",
+    "lat": 44.6396126,
+    "lng": -124.0605267,
+    "name": "Nye Beach Cafe",
+    "place_id": "ChIJ1TJw_8zXwVQRUSRK2oR9gOc",
+    "price_level": 0,
+    "rating": 4.6,
+    "tags": [
+      "cafe",
+      "breakfast_restaurant",
+      "restaurant",
+      "point_of_interest",
+      "food",
+      "establishment"
+    ]
+  }
+}

@@ -980,7 +980,7 @@ async def validation_gate(state: ItineraryState) -> dict:
     for day in days:
         for meal in day.get("meals", []):
             meal_lower = str(meal).lower()
-            for keyword in keywords:
+            for keyword in sorted(keywords):
                 if keyword in meal_lower:
                     errors.append(
                         f"Day {day.get('day_number', '?')} meal violates food restriction keyword: {keyword}."

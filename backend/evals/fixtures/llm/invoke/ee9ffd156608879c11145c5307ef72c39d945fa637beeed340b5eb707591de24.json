@@ -1,0 +1,37 @@
+{
+  "operation": "invoke",
+  "request": {
+    "invoke_kwargs": {},
+    "node": "extract_preference_constraints",
+    "prompt": "Extract group trip planning constraints from natural-language preference notes.\nReturn ONLY raw JSON, no markdown, no backticks. Use this exact top-level shape:\n{raw_member_notes: list, raw_group_notes: string, hard_constraints: list, soft_preferences: list, schedule: object, activity_filters: object, meal_requirements: object, destination_intent: object}.\nClassify explicit must/avoid/timing requirements as hard_constraints. Classify general likes, vibes, and pacing as soft_preferences unless they are phrased as must/avoid.\nUse schedule.earliest_start_time as HH:MM when users avoid early mornings. Use activity_filters.avoid_tags for avoided activity categories. Use meal_requirements.must_include for cuisine or meal requirements. Use destination_intent.styles for destination-level intent like big_city, skyscrapers, skyline, architecture, museums, food_city, nightlife_city, beach, national_park, theme_parks, mountains, small_town, scenic_drives, shopping, quiet_escape. Use destination_intent.preferred_types for preferred destination types, and set destination_intent.iconic_preference true when users ask for iconic, famous, big-city, skyline, national-park, beach, or theme-park destinations.\n\nPreference notes JSON:\n{\"raw_member_notes\": [{\"member_id\": \"member-1\", \"name\": \"Member 1\", \"notes\": \"Hates early mornings, no clubs, wants Italian food at least once.\"}, {\"member_id\": \"member-2\", \"name\": \"Member 2\", \"notes\": \"Likes relaxed days with good meals and urban neighborhoods, but does not want an overpacked schedule.\"}, {\"member_id\": \"member-3\", \"name\": \"Member 3\", \"notes\": \"Interested in scenic walks and museums, but not late-night clubbing.\"}, {\"member_id\": \"member-4\", \"name\": \"Member 4\", \"notes\": \"Hates early mornings, no clubs, wants Italian food at least once.\"}, {\"member_id\": \"member-5\", \"name\": \"Member 5\", \"notes\": \"Likes relaxed days with good meals and urban neighborhoods, but does not want an overpacked schedule.\"}, {\"member_id\": \"member-6\", \"name\": \"Member 6\", \"notes\": \"Interested in scenic walks and museums, but not late-night clubbing.\"}, {\"member_id\": \"member-7\", \"name\": \"Member 7\", \"notes\": \"Hates early mornings, no clubs, wants Italian food at least once.\"}, {\"member_id\": \"member-8\", \"name\": \"Member 8\", \"notes\": \"Likes relaxed days with good meals and urban neighborhoods, but does not want an overpacked schedule.\"}], \"raw_group_notes\": \"Keep the trip relaxed, avoid rushed mornings, and make sure the plan respects everyone's must-haves.\", \"hard_constraints\": [], \"soft_preferences\": [], \"schedule\": {\"avoid_early_mornings\": false, \"earliest_start_time\": null, \"pace\": \"balanced\"}, \"activity_filters\": {\"avoid_tags\": [], \"prefer_tags\": [], \"required_tags\": []}, \"meal_requirements\": {\"must_include\": [], \"avoid_terms\": []}, \"destination_intent\": {\"styles\": [], \"landmarks\": [], \"preferred_types\": [], \"iconic_preference\": false}}",
+    "tools": []
+  },
+  "request_sha256": "ee9ffd156608879c11145c5307ef72c39d945fa637beeed340b5eb707591de24",
+  "response": {
+    "data": {
+      "additional_kwargs": {},
+      "content": "```json\n{\n  \"raw_member_notes\": [\n    {\n      \"member_id\": \"member-1\",\n      \"name\": \"Member 1\",\n      \"notes\": \"Hates early mornings, no clubs, wants Italian food at least once.\"\n    },\n    {\n      \"member_id\": \"member-2\",\n      \"name\": \"Member 2\",\n      \"notes\": \"Likes relaxed days with good meals and urban neighborhoods, but does not want an overpacked schedule.\"\n    },\n    {\n      \"member_id\": \"member-3\",\n      \"name\": \"Member 3\",\n      \"notes\": \"Interested in scenic walks and museums, but not late-night clubbing.\"\n    },\n    {\n      \"member_id\": \"member-4\",\n      \"name\": \"Member 4\",\n      \"notes\": \"Hates early mornings, no clubs, wants Italian food at least once.\"\n    },\n    {\n      \"member_id\": \"member-5\",\n      \"name\": \"Member 5\",\n      \"notes\": \"Likes relaxed days with good meals and urban neighborhoods, but does not want an overpacked schedule.\"\n    },\n    {\n      \"member_id\": \"member-6\",\n      \"name\": \"Member 6\",\n      \"notes\": \"Interested in scenic walks and museums, but not late-night clubbing.\"\n    },\n    {\n      \"member_id\": \"member-7\",\n      \"name\": \"Member 7\",\n      \"notes\": \"Hates early mornings, no clubs, wants Italian food at least once.\"\n    },\n    {\n      \"member_id\": \"member-8\",\n      \"name\": \"Member 8\",\n      \"notes\": \"Likes relaxed days with good meals and urban neighborhoods, but does not want an overpacked schedule.\"\n    }\n  ],\n  \"raw_group_notes\": \"Keep the trip relaxed, avoid rushed mornings, and make sure the plan respects everyone's must-haves.\",\n  \"hard_constraints\": [\n    \"No clubs or late-night clubbing\",\n    \"Must include Italian food at least once\",\n    \"Avoid early morning starts\",\n    \"No overpacked schedule\"\n  ],\n  \"soft_preferences\": [\n    \"Relaxed pace with downtime\",\n    \"Good meals and dining experiences\",\n    \"Urban neighborhoods exploration\",\n    \"Scenic walks\",\n    \"Museums\"\n  ],\n  \"schedule\": {\n    \"avoid_early_mornings\": true,\n    \"earliest_start_time\": \"09:00\",\n    \"pace\": \"relaxed\"\n  },\n  \"activity_filters\": {\n    \"avoid_tags\": [\n      \"nightclubs\",\n      \"clubbing\",\n      \"late-night\"\n    ],\n    \"prefer_tags\": [\n      \"scenic_walks\",\n      \"museums\",\n      \"urban_exploration\"\n    ],\n    \"required_tags\": []\n  },\n  \"meal_requirements\": {\n    \"must_include\": [\n      \"Italian\"\n    ],\n    \"avoid_terms\": []\n  },\n  \"destination_intent\": {\n    \"styles\": [\n      \"food_city\",\n      \"museums\",\n      \"urban_neighborhoods\",\n      \"scenic_drives\"\n    ],\n    \"landmarks\": [],\n    \"preferred_types\": [\n      \"urban\"\n    ],\n    \"iconic_preference\": false\n  }\n}\n```",
+      "id": "lc_run--01a07577-fe04-7412-92db-99ce2e78aa11",
+      "invalid_tool_calls": [],
+      "name": null,
+      "response_metadata": {
+        "model_name": "claude-haiku-4-5-20251001",
+        "model_provider": "anthropic",
+        "stop_reason": "end_turn",
+        "stop_sequence": null
+      },
+      "tool_calls": [],
+      "type": "ai",
+      "usage_metadata": {
+        "input_token_details": {
+          "cache_creation": 0,
+          "cache_read": 0
+        },
+        "input_tokens": 787,
+        "output_tokens": 817,
+        "total_tokens": 1604
+      }
+    },
+    "type": "ai"
+  }
+}

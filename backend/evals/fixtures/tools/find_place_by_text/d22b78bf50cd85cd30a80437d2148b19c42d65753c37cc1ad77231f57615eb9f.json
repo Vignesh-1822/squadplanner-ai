@@ -1,0 +1,29 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 38.04,
+      "lng": -84.503
+    },
+    "destination": "Lexington",
+    "included_type": "lodging",
+    "query": "Clarion Hotel Conference Center Lexington North Casual property featuring free hot breakfast & an airport shuttle, plus a bar/grill, a pool & a gym."
+  },
+  "request_sha256": "d22b78bf50cd85cd30a80437d2148b19c42d65753c37cc1ad77231f57615eb9f",
+  "response": {
+    "address": "1950 Newtown Pike, Lexington, KY 40511, USA",
+    "category": "place",
+    "lat": 38.0971116,
+    "lng": -84.4848512,
+    "name": "Clarion Hotel Conference Center Lexington North",
+    "place_id": "ChIJNRZaBCxEQogRmwA84J74Cfo",
+    "price_level": 0,
+    "rating": 3.8,
+    "tags": [
+      "hotel",
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

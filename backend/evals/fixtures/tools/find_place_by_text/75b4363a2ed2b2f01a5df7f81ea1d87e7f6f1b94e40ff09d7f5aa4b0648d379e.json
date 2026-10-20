@@ -1,0 +1,39 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 28.949,
+      "lng": -95.293
+    },
+    "destination": "Surfside Beach",
+    "included_type": null,
+    "query": "La Michoacana Meat Market area exploration"
+  },
+  "request_sha256": "75b4363a2ed2b2f01a5df7f81ea1d87e7f6f1b94e40ff09d7f5aa4b0648d379e",
+  "response": {
+    "address": "501 S Main St, Clute, TX 77531, USA",
+    "category": "place",
+    "lat": 29.0164144,
+    "lng": -95.40401879999999,
+    "name": "La Michoacana Meat Market",
+    "place_id": "ChIJBbXoeOVBQIYRrr13UkY_q-E",
+    "price_level": 0,
+    "rating": 4.2,
+    "tags": [
+      "butcher_shop",
+      "supermarket",
+      "grocery_store",
+      "mexican_restaurant",
+      "market",
+      "bakery",
+      "food_store",
+      "manufacturer",
+      "store",
+      "service",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

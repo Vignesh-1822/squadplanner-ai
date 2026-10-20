@@ -1,11 +1,12 @@
 """Human-in-the-loop graph resume routes."""
 
 from datetime import datetime, timezone
+from typing import Any
 
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel
 
-from db.client import get_collection
+from api.middleware.authz import get_trips_collection, require_leader
 
 router = APIRouter(prefix="/trips", tags=["hitl"])
 
@@ -24,12 +25,12 @@ async def _get_orchestrator_graph():
 
 
 @router.post("/{trip_id}/confirm-city")
-async def confirm_city(trip_id: str, body: CityConfirmRequest):
-    trips = get_collection("trips")
-    trip = await trips.find_one({"trip_id": trip_id})
-    if not trip:
-        raise HTTPException(status_code=404, detail="Trip not found")
-
+async def confirm_city(
+    trip_id: str,
+    body: CityConfirmRequest,
+    trip: dict = Depends(require_leader),
+    trips: Any = Depends(get_trips_collection),
+):
     graph = await _get_orchestrator_graph()
     config = {"configurable": {"thread_id": trip_id}}
     snapshot = await graph.aget_state(config)

@@ -4,10 +4,13 @@ import logging
 from datetime import datetime, timedelta, timezone
 
 import httpx
+from langsmith import traceable
 
 from agent.state import ActivityResult
 from config import settings
 from db.client import get_collection
+from evals.modes import EvalMode, tool_mode
+from evals.replay.tools import NO_REPLAY, ReplayRecordingError, record_tool, replay_tool
 
 logger = logging.getLogger(__name__)
 
@@ -30,6 +33,7 @@ _PRICE_LEVEL_MAP: dict[str, int] = {
 }
 
 
+@traceable(name="fetch_activities_by_category", run_type="tool")
 async def fetch_activities_by_category(
     destination: str,
     coords: dict,
@@ -37,6 +41,16 @@ async def fetch_activities_by_category(
     max_per_category: int = 10,
 ) -> list[ActivityResult]:
     """Return a flat list of ActivityResults for all requested categories."""
+    replay_request = {
+        "destination": destination,
+        "coords": coords,
+        "categories": categories,
+        "max_per_category": max_per_category,
+    }
+    replayed = replay_tool("fetch_activities_by_category", replay_request)
+    if replayed is not NO_REPLAY:
+        return [ActivityResult(**activity) for activity in replayed]
+
     collection = get_collection("api_cache")
     all_results: list[ActivityResult] = []
 
@@ -121,12 +135,24 @@ async def fetch_activities_by_category(
 
             all_results.extend(parsed)
 
+        except ReplayRecordingError:
+            raise
         except Exception as exc:  # noqa: BLE001
             logger.error("fetch_activities_by_category API error for category '%s': %s", category, exc)
+            if tool_mode() is EvalMode.RECORD:
+                raise ReplayRecordingError(
+                    f"Google Places failed for category {category!r}; refusing partial fixture"
+                ) from exc
 
+    record_tool(
+        "fetch_activities_by_category",
+        replay_request,
+        [dict(activity) for activity in all_results],
+    )
     return all_results
 
 
+@traceable(name="find_place_by_text", run_type="tool")
 async def find_place_by_text(
     query: str,
     destination: str,
@@ -138,6 +164,16 @@ async def find_place_by_text(
     if not clean_query:
         return None
 
+    replay_request = {
+        "query": clean_query,
+        "destination": destination,
+        "coords": coords,
+        "included_type": included_type,
+    }
+    replayed = replay_tool("find_place_by_text", replay_request)
+    if replayed is not NO_REPLAY:
+        return ActivityResult(**replayed) if replayed is not None else None
+
     collection = get_collection("api_cache")
     type_part = included_type or "any"
     cache_key = f"places_text:{destination}:{type_part}:{clean_query}".lower()
@@ -147,7 +183,9 @@ async def find_place_by_text(
         cached = await collection.find_one({"key": cache_key, "cached_at": {"$gte": cutoff}})
         if cached and cached.get("place"):
             place = dict(cached["place"])
-            return ActivityResult(**place)
+            result = ActivityResult(**place)
+            record_tool("find_place_by_text", replay_request, dict(result))
+            return result
     except Exception as cache_exc:  # noqa: BLE001
         logger.warning("Place text cache read failed for '%s': %s", clean_query, cache_exc)
 
@@ -186,6 +224,7 @@ async def find_place_by_text(
 
         places = data.get("places", [])
         if not places:
+            record_tool("find_place_by_text", replay_request, None)
             return None
 
         place = places[0]
@@ -202,6 +241,7 @@ async def find_place_by_text(
             rating=float(place.get("rating", 0.0)),
             tags=place.get("types", []),
         )
+        record_tool("find_place_by_text", replay_request, dict(parsed))
 
         try:
             doc = {
@@ -214,8 +254,14 @@ async def find_place_by_text(
             logger.warning("Place text cache write failed for '%s': %s", clean_query, write_exc)
 
         return parsed
+    except ReplayRecordingError:
+        raise
     except Exception as exc:  # noqa: BLE001
         logger.error("find_place_by_text API error for '%s': %s", clean_query, exc)
+        if tool_mode() is EvalMode.RECORD:
+            raise ReplayRecordingError(
+                f"Google Places text search failed for {clean_query!r}; refusing fallback"
+            ) from exc
         return None
 
 

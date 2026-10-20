@@ -1,0 +1,17 @@
+{
+  "operation": "get_route",
+  "request": {
+    "dest_lat": 41.893924,
+    "dest_lng": -87.62459729999999,
+    "mode": "WALK",
+    "origin_lat": 41.878876399999996,
+    "origin_lng": -87.6359149
+  },
+  "request_sha256": "7ef85e74dea98481f35ff2a5e12f7b90f83752a7b1dca78c7765cd8bd325c0f2",
+  "response": {
+    "distance_meters": 2563,
+    "duration_seconds": 2247,
+    "mode": "WALK",
+    "polyline": "wpr~Fpk{uOAuBD?AqFCq@D??m@C?CsFgA?k@CiCB?B[@@Ck@@UC_@B{CDIA?o@}BDwA?_@??FcBC{B@[A?AQ?g@C_AJoAAQ??EyBB[AeAD?Cu@@B{E?[C?@uGE??sH@_@B??YG??iCIo@Wu@C@c@k@C@}@w@SY]YOU]_@Wo@Is@@{AII_Ek@MPKD[KOUAEq@Ee@@?Dc@?ACeBB[EY?[Fg@@SEeDD@Lc@B?Ic@?UEgA@?Pa@G?I_C@@j@"
+  }
+}

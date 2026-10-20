@@ -1,0 +1,35 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 28.949,
+      "lng": -95.293
+    },
+    "destination": "Surfside Beach",
+    "included_type": null,
+    "query": "Clute Plaza shopping"
+  },
+  "request_sha256": "5a770cdad11cbf321a734b3beee406fc3522755e25df21bb0182ed8420083a8b",
+  "response": {
+    "address": "111 Fort Velasco Dr, Surfside Beach, TX 77541, USA",
+    "category": "place",
+    "lat": 28.950423,
+    "lng": -95.2883499,
+    "name": "Surfside Food Mart",
+    "place_id": "ChIJLZwNaFptQIYRoAG10H-lSYc",
+    "price_level": 0,
+    "rating": 4.2,
+    "tags": [
+      "convenience_store",
+      "deli",
+      "grocery_store",
+      "food_store",
+      "meal_takeaway",
+      "store",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

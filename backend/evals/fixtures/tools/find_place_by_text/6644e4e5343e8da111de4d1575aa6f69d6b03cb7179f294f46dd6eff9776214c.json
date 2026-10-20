@@ -1,0 +1,29 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 38.04,
+      "lng": -84.503
+    },
+    "destination": "Lexington",
+    "included_type": "restaurant",
+    "query": "Final dinner"
+  },
+  "request_sha256": "6644e4e5343e8da111de4d1575aa6f69d6b03cb7179f294f46dd6eff9776214c",
+  "response": {
+    "address": "369 W Vine St, Lexington, KY 40507, USA",
+    "category": "food",
+    "lat": 38.0485618,
+    "lng": -84.5001491,
+    "name": "The Triangle Grille",
+    "place_id": "ChIJY1Jm2exEQogRmwhT9ag4v1E",
+    "price_level": 0,
+    "rating": 3.9,
+    "tags": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

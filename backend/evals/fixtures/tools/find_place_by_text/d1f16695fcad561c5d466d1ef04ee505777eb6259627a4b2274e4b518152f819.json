@@ -1,0 +1,28 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 41.8781,
+      "lng": -87.6298
+    },
+    "destination": "Chicago",
+    "included_type": null,
+    "query": "Lincoln Park nightlife"
+  },
+  "request_sha256": "d1f16695fcad561c5d466d1ef04ee505777eb6259627a4b2274e4b518152f819",
+  "response": {
+    "address": "2833 N Sheffield Ave, Chicago, IL 60657, USA",
+    "category": "place",
+    "lat": 41.9336737,
+    "lng": -87.65372099999999,
+    "name": "Replay Lincoln Park",
+    "place_id": "ChIJ8Yz5zgDTD4gRmYymn9iFpCs",
+    "price_level": 0,
+    "rating": 4.3,
+    "tags": [
+      "bar",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

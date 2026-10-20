@@ -1,0 +1,812 @@
+{
+  "operation": "fetch_activities_by_category",
+  "request": {
+    "categories": [
+      "food",
+      "nightlife",
+      "urban",
+      "shopping"
+    ],
+    "coords": {
+      "lat": 41.8781,
+      "lng": -87.6298
+    },
+    "destination": "Chicago",
+    "max_per_category": 10
+  },
+  "request_sha256": "07e7823c8372675918c07873b2bc12a447519e83c6d6d6e1c1d669d60e069f4f",
+  "response": [
+    {
+      "address": "130 E Randolph St, Chicago, IL 60601, USA",
+      "category": "food",
+      "lat": 41.8851301,
+      "lng": -87.62376119999999,
+      "name": "Giordano's",
+      "place_id": "ChIJh3i0BqYsDogR6yp0y6TFlOQ",
+      "price_level": 0,
+      "rating": 4.5,
+      "tags": [
+        "pizza_delivery",
+        "shipping_service",
+        "pizza_restaurant",
+        "meal_delivery",
+        "food_delivery",
+        "meal_takeaway",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ]
+    },
+    {
+      "address": "100 W Ontario St, Chicago, IL 60610, USA",
+      "category": "food",
+      "lat": 41.893511,
+      "lng": -87.6315393,
+      "name": "Portillo's & Barnelli's Chicago",
+      "place_id": "ChIJf_CED7MsDogR72PLB04AlFA",
+      "price_level": 0,
+      "rating": 4.4,
+      "tags": [
+        "fast_food_restaurant",
+        "sandwich_shop",
+        "hot_dog_restaurant",
+        "american_restaurant",
+        "meal_takeaway",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "2207 N Clybourn Ave, Chicago, IL 60614, USA",
+      "category": "food",
+      "lat": 41.921934,
+      "lng": -87.6643512,
+      "name": "Pequod's Pizza",
+      "place_id": "ChIJQ6vcPuTSD4gRTbyKKQufF_o",
+      "price_level": 0,
+      "rating": 4.4,
+      "tags": [
+        "pizza_restaurant",
+        "sports_bar",
+        "catering_service",
+        "family_restaurant",
+        "pub",
+        "bar",
+        "italian_restaurant",
+        "pizza_delivery",
+        "meal_delivery",
+        "food_delivery",
+        "european_restaurant",
+        "meal_takeaway",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ]
+    },
+    {
+      "address": "43 E Ohio St, Chicago, IL 60611, USA",
+      "category": "food",
+      "lat": 41.8923302,
+      "lng": -87.6262663,
+      "name": "Eataly",
+      "place_id": "ChIJe_Fq2lctDogRTpK221p4Fmg",
+      "price_level": 0,
+      "rating": 4.3,
+      "tags": [
+        "italian_restaurant",
+        "grocery_store",
+        "food_store",
+        "european_restaurant",
+        "store",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "410 N Michigan Ave, Chicago, IL 60611, USA",
+      "category": "food",
+      "lat": 41.8900007,
+      "lng": -87.62477009999999,
+      "name": "Lou Malnati's Pizzeria",
+      "place_id": "ChIJyaEwrW8tDogRxoGYX687qvE",
+      "price_level": 0,
+      "rating": 4.2,
+      "tags": [
+        "pizza_restaurant",
+        "pizza_delivery",
+        "meal_delivery",
+        "food_delivery",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "505 N Michigan Ave, Chicago, IL 60611, USA",
+      "category": "food",
+      "lat": 41.8911399,
+      "lng": -87.62387079999999,
+      "name": "InterContinental Chicago Magnificent Mile by IHG",
+      "place_id": "ChIJuVcSDqwsDogR4y5g88HpjII",
+      "price_level": 0,
+      "rating": 4.4,
+      "tags": [
+        "hotel",
+        "massage_spa",
+        "resort_hotel",
+        "wedding_venue",
+        "convention_center",
+        "massage",
+        "spa",
+        "event_venue",
+        "lodging",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ]
+    },
+    {
+      "address": "130 E Randolph St, Chicago, IL 60601, USA",
+      "category": "food",
+      "lat": 41.8847209,
+      "lng": -87.6228606,
+      "name": "Wildberry Pancakes & Cafe",
+      "place_id": "ChIJbwD-GqYsDogRFT9FTurCL5U",
+      "price_level": 0,
+      "rating": 4.6,
+      "tags": [
+        "brunch_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "323 E Wacker Dr, Chicago, IL 60601, USA",
+      "category": "food",
+      "lat": 41.8873928,
+      "lng": -87.6194841,
+      "name": "Swissotel Chicago",
+      "place_id": "ChIJeV8SKagsDogR0AKhyUqxgKM",
+      "price_level": 0,
+      "rating": 4.3,
+      "tags": [
+        "hotel",
+        "lodging",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "12 S Michigan Ave, Chicago, IL 60603, USA",
+      "category": "food",
+      "lat": 41.881763,
+      "lng": -87.6248395,
+      "name": "Cindy's Rooftop",
+      "place_id": "ChIJeYbaOKQsDogRfJrgIMgDNvE",
+      "price_level": 0,
+      "rating": 4.4,
+      "tags": [
+        "restaurant",
+        "bar",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "317 N Clark St, Chicago, IL 60654, USA",
+      "category": "food",
+      "lat": 41.8878363,
+      "lng": -87.630842,
+      "name": "Pizzeria Portofino",
+      "place_id": "ChIJF774nd4tDogRWPjaRHqyj5I",
+      "price_level": 0,
+      "rating": 4.9,
+      "tags": [
+        "pizza_restaurant",
+        "italian_restaurant",
+        "european_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "646 N Michigan Ave, Chicago, IL 60611, USA",
+      "category": "nightlife",
+      "lat": 41.893924,
+      "lng": -87.62459729999999,
+      "name": "Starbucks Reserve Roastery",
+      "place_id": "ChIJ18J7NDUtDogRHjOXXc8DXsY",
+      "price_level": 0,
+      "rating": 4.4,
+      "tags": [
+        "cafe",
+        "tourist_attraction",
+        "cocktail_bar",
+        "coffee_roastery",
+        "bakery",
+        "bar",
+        "coffee_shop",
+        "food_store",
+        "store",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "875 N Michigan Ave 94th floor, Chicago, IL 60611, USA",
+      "category": "nightlife",
+      "lat": 41.8990104,
+      "lng": -87.6232416,
+      "name": "360 CHICAGO",
+      "place_id": "ChIJNbKQElTTD4gRdOsDd3qTFHM",
+      "price_level": 0,
+      "rating": 4.5,
+      "tags": [
+        "observation_deck",
+        "tourist_attraction",
+        "bar",
+        "event_venue",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "2207 N Clybourn Ave, Chicago, IL 60614, USA",
+      "category": "nightlife",
+      "lat": 41.921934,
+      "lng": -87.6643512,
+      "name": "Pequod's Pizza",
+      "place_id": "ChIJQ6vcPuTSD4gRTbyKKQufF_o",
+      "price_level": 0,
+      "rating": 4.4,
+      "tags": [
+        "pizza_restaurant",
+        "family_restaurant",
+        "sports_bar",
+        "pizza_delivery",
+        "meal_delivery",
+        "meal_takeaway",
+        "pub",
+        "catering_service",
+        "food_delivery",
+        "european_restaurant",
+        "italian_restaurant",
+        "bar",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ]
+    },
+    {
+      "address": "12 S Michigan Ave, Chicago, IL 60603, USA",
+      "category": "nightlife",
+      "lat": 41.881763,
+      "lng": -87.6248395,
+      "name": "Cindy's Rooftop",
+      "place_id": "ChIJeYbaOKQsDogRfJrgIMgDNvE",
+      "price_level": 0,
+      "rating": 4.4,
+      "tags": [
+        "restaurant",
+        "bar",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "145 N Dearborn St, Chicago, IL 60602, USA",
+      "category": "nightlife",
+      "lat": 41.8843373,
+      "lng": -87.6292766,
+      "name": "The Dearborn",
+      "place_id": "ChIJ-XdXNKUsDogRW-m5g5Siao8",
+      "price_level": 0,
+      "rating": 4.7,
+      "tags": [
+        "american_restaurant",
+        "fish_and_chips_restaurant",
+        "brunch_restaurant",
+        "seafood_restaurant",
+        "cocktail_bar",
+        "british_restaurant",
+        "irish_restaurant",
+        "european_restaurant",
+        "bar",
+        "event_venue",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "302 N Green St 3rd Floor, Chicago, IL 60607, USA",
+      "category": "nightlife",
+      "lat": 41.887004999999995,
+      "lng": -87.64885009999999,
+      "name": "Aba",
+      "place_id": "ChIJHy_uxjQtDogREgbDgcjizn8",
+      "price_level": 0,
+      "rating": 4.8,
+      "tags": [
+        "mediterranean_restaurant",
+        "bar",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "626 N State St, Chicago, IL 60654, USA",
+      "category": "nightlife",
+      "lat": 41.8935763,
+      "lng": -87.6284713,
+      "name": "Quartino Ristorante",
+      "place_id": "ChIJqfIkY60sDogRMP2otSWdKJA",
+      "price_level": 0,
+      "rating": 4.7,
+      "tags": [
+        "italian_restaurant",
+        "pizza_restaurant",
+        "wine_bar",
+        "european_restaurant",
+        "bar",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "329 N Dearborn St, Chicago, IL 60654, USA",
+      "category": "nightlife",
+      "lat": 41.888275,
+      "lng": -87.6288411,
+      "name": "House of Blues Chicago",
+      "place_id": "ChIJ05UHzLEsDogRSZiv23eq-Mg",
+      "price_level": 0,
+      "rating": 4.5,
+      "tags": [
+        "live_music_venue",
+        "banquet_hall",
+        "concert_hall",
+        "auditorium",
+        "wedding_venue",
+        "lounge_bar",
+        "bar",
+        "night_club",
+        "event_venue",
+        "store",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ]
+    },
+    {
+      "address": "24 S Michigan Ave, Chicago, IL 60603, USA",
+      "category": "nightlife",
+      "lat": 41.8813268,
+      "lng": -87.6246925,
+      "name": "The Gage",
+      "place_id": "ChIJ5a8ra6QsDogRENtJLAp40AE",
+      "price_level": 0,
+      "rating": 4.6,
+      "tags": [
+        "american_restaurant",
+        "pub",
+        "bar",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "25 S Halsted St, Chicago, IL 60661, USA",
+      "category": "nightlife",
+      "lat": 41.880866,
+      "lng": -87.6469826,
+      "name": "Crowne Plaza Chicago West Loop by IHG",
+      "place_id": "ChIJTblVlsQsDogRSAXP93WjvMA",
+      "price_level": 0,
+      "rating": 3.9,
+      "tags": [
+        "hotel",
+        "fitness_center",
+        "swimming_pool",
+        "gym",
+        "business_center",
+        "lodging",
+        "bar",
+        "sports_activity_location",
+        "health",
+        "event_venue",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ]
+    },
+    {
+      "address": "600 E Grand Ave, Chicago, IL 60611, USA",
+      "category": "urban",
+      "lat": 41.8918633,
+      "lng": -87.6050944,
+      "name": "Navy Pier",
+      "place_id": "ChIJ2y7xkU0rDogR3KSIsJbbrNA",
+      "price_level": 0,
+      "rating": 4.6,
+      "tags": [
+        "tourist_attraction",
+        "ferris_wheel",
+        "cultural_center",
+        "amusement_center",
+        "event_venue",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "1060 W Addison St, Chicago, IL 60613, USA",
+      "category": "urban",
+      "lat": 41.9484384,
+      "lng": -87.6553327,
+      "name": "Wrigley Field",
+      "place_id": "ChIJId-a5bLTD4gRRtbdduE-6hw",
+      "price_level": 0,
+      "rating": 4.8,
+      "tags": [
+        "stadium",
+        "tourist_attraction",
+        "event_venue",
+        "sports_complex",
+        "athletic_field",
+        "sports_activity_location",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "Chicago, IL 60602, USA",
+      "category": "urban",
+      "lat": 41.8825524,
+      "lng": -87.62255139999999,
+      "name": "Millennium Park",
+      "place_id": "ChIJA5xPiqYsDogRBBCptdwsGEQ",
+      "price_level": 0,
+      "rating": 4.8,
+      "tags": [
+        "park",
+        "tourist_attraction",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "1200 S DuSable Lake Shore Dr, Chicago, IL 60605, USA",
+      "category": "urban",
+      "lat": 41.867572599999995,
+      "lng": -87.614038,
+      "name": "Shedd Aquarium",
+      "place_id": "ChIJ-XW3X2MrDogR3_tQ3-OdBTI",
+      "price_level": 0,
+      "rating": 4.5,
+      "tags": [
+        "aquarium",
+        "historical_landmark",
+        "tourist_attraction",
+        "historical_place",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "233 S Wacker Dr, Chicago, IL 60606, USA",
+      "category": "urban",
+      "lat": 41.878876399999996,
+      "lng": -87.6359149,
+      "name": "Willis Tower",
+      "place_id": "ChIJu_tp4r4sDogRfYy4Xs5tDwE",
+      "price_level": 0,
+      "rating": 4.5,
+      "tags": [
+        "tourist_attraction",
+        "observation_deck",
+        "corporate_office",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "Chicago, IL 60614, USA",
+      "category": "urban",
+      "lat": 41.921703,
+      "lng": -87.6336403,
+      "name": "Lincoln Park Zoo",
+      "place_id": "ChIJB5o6CWvTD4gR25QC-QbMQAk",
+      "price_level": 0,
+      "rating": 4.6,
+      "tags": [
+        "zoo",
+        "tourist_attraction",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "111 S Michigan Ave, Chicago, IL 60603, USA",
+      "category": "urban",
+      "lat": 41.8796031,
+      "lng": -87.6223504,
+      "name": "The Art Institute of Chicago",
+      "place_id": "ChIJlUbZ4qMsDogR3tCinMzzKUg",
+      "price_level": 0,
+      "rating": 4.8,
+      "tags": [
+        "museum",
+        "tourist_attraction",
+        "art_museum",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "201 E Randolph St, Chicago, IL 60602, USA",
+      "category": "urban",
+      "lat": 41.8826572,
+      "lng": -87.6233039,
+      "name": "Cloud Gate",
+      "place_id": "ChIJ9Sszh6YsDogRUUo6zu8_TQY",
+      "price_level": 0,
+      "rating": 4.7,
+      "tags": [
+        "sculpture",
+        "tourist_attraction",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "646 N Michigan Ave, Chicago, IL 60611, USA",
+      "category": "urban",
+      "lat": 41.893924,
+      "lng": -87.62459729999999,
+      "name": "Starbucks Reserve Roastery",
+      "place_id": "ChIJ18J7NDUtDogRHjOXXc8DXsY",
+      "price_level": 0,
+      "rating": 4.4,
+      "tags": [
+        "cafe",
+        "tourist_attraction",
+        "cocktail_bar",
+        "coffee_shop",
+        "bakery",
+        "bar",
+        "coffee_roastery",
+        "food_store",
+        "store",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "1400 S Lake Shore Dr, Chicago, IL 60605, USA",
+      "category": "urban",
+      "lat": 41.866261,
+      "lng": -87.6169805,
+      "name": "Field Museum",
+      "place_id": "ChIJV0AwM30rDogR2sd-X0cgErU",
+      "price_level": 0,
+      "rating": 4.7,
+      "tags": [
+        "tourist_attraction",
+        "museum",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "835 N Michigan Ave, Chicago, IL 60611, USA",
+      "category": "shopping",
+      "lat": 41.8979303,
+      "lng": -87.6228927,
+      "name": "Water Tower Place",
+      "place_id": "ChIJeQOqg1PTD4gRFLiIyAncMuE",
+      "price_level": 0,
+      "rating": 4.5,
+      "tags": [
+        "shopping_mall",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "4104 N Harlem Ave, Norridge, IL 60706, USA",
+      "category": "shopping",
+      "lat": 41.9557582,
+      "lng": -87.8085804,
+      "name": "Harlem Irving Plaza",
+      "place_id": "ChIJqZht47bLD4gROda12IbBxd0",
+      "price_level": 0,
+      "rating": 4.4,
+      "tags": [
+        "shopping_mall",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "7501 W Cermak Rd, North Riverside, IL 60546, USA",
+      "category": "shopping",
+      "lat": 41.847252999999995,
+      "lng": -87.8106116,
+      "name": "North Riverside Park Mall",
+      "place_id": "ChIJ3zTr1000DogRVGoJNXaagkg",
+      "price_level": 0,
+      "rating": 4.2,
+      "tags": [
+        "shopping_mall",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "108 N State St, Chicago, IL 60602, USA",
+      "category": "shopping",
+      "lat": 41.8834734,
+      "lng": -87.6282109,
+      "name": "Block 37",
+      "place_id": "ChIJDQZMMqUsDogRu9WvEkLpNDY",
+      "price_level": 0,
+      "rating": 4.3,
+      "tags": [
+        "shopping_mall",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "900 N Michigan Ave, Chicago, IL 60611, USA",
+      "category": "shopping",
+      "lat": 41.899611,
+      "lng": -87.6251964,
+      "name": "900 North Michigan Shops",
+      "place_id": "ChIJtVu_5VPTD4gR6gogw1DhmJ4",
+      "price_level": 0,
+      "rating": 4.5,
+      "tags": [
+        "shopping_mall",
+        "food_court",
+        "womens_clothing_store",
+        "tailor",
+        "hair_salon",
+        "hair_care",
+        "sports_coaching",
+        "educational_institution",
+        "sports_school",
+        "health",
+        "food",
+        "clothing_store",
+        "store",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "520 N Michigan Ave, Chicago, IL 60611, USA",
+      "category": "shopping",
+      "lat": 41.891476499999996,
+      "lng": -87.62491829999999,
+      "name": "The Shops at North Bridge",
+      "place_id": "ChIJ1e8DbqwsDogRNv-31VC3KaM",
+      "price_level": 0,
+      "rating": 4.4,
+      "tags": [
+        "shopping_mall",
+        "shoe_store",
+        "womens_clothing_store",
+        "department_store",
+        "hair_salon",
+        "hair_care",
+        "restaurant",
+        "food",
+        "clothing_store",
+        "store",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "150 W Roosevelt Rd, Chicago, IL 60605, USA",
+      "category": "shopping",
+      "lat": 41.8678745,
+      "lng": -87.632564,
+      "name": "Roosevelt Collection Shops",
+      "place_id": "ChIJ49-PDJEsDogRMrnzwXHY7PM",
+      "price_level": 0,
+      "rating": 4.4,
+      "tags": [
+        "shopping_mall",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "5220 S Pulaski Rd, Chicago, IL 60632, USA",
+      "category": "shopping",
+      "lat": 41.798055600000005,
+      "lng": -87.725,
+      "name": "Super Mall",
+      "place_id": "ChIJUXzIKpYxDogRDBK6kH3Vfr8",
+      "price_level": 0,
+      "rating": 4.1,
+      "tags": [
+        "shopping_mall",
+        "flea_market",
+        "shoe_store",
+        "market",
+        "clothing_store",
+        "store",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "2600 N Narragansett Ave, Chicago, IL 60639, USA",
+      "category": "shopping",
+      "lat": 41.9284572,
+      "lng": -87.7873882,
+      "name": "The Brickyard",
+      "place_id": "ChIJ52xdz2_LD4gRc2-4ojDUubo",
+      "price_level": 0,
+      "rating": 4.3,
+      "tags": [
+        "shopping_mall",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "2301 S Wentworth Ave, Chicago, IL 60616, USA",
+      "category": "shopping",
+      "lat": 41.850823299999995,
+      "lng": -87.6314163,
+      "name": "Chinatown",
+      "place_id": "ChIJN2eVWf0tDogRT9oT7xcQ6Sc",
+      "price_level": 0,
+      "rating": 4.6,
+      "tags": [
+        "shopping_mall",
+        "point_of_interest",
+        "establishment"
+      ]
+    }
+  ]
+}

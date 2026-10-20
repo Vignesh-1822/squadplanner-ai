@@ -1,0 +1,1564 @@
+{
+  "schema_version": 1,
+  "source_tier": "offline",
+  "rubric_version": "c0836c796e24c6015deb0cc6f46d21aaae4f7685cf6ad13109d58a8889863418",
+  "item_count": 20,
+  "quality_band_counts": {
+    "clean": 3,
+    "degraded": 9,
+    "mixed": 8
+  },
+  "items": [
+    {
+      "id": "01-01_basic_smoke_completed",
+      "title": "Basic Smoke Test",
+      "dimensions": {
+        "group_size": 3,
+        "trip_length_days": 3,
+        "dietary_restrictions": [
+          "vegetarian"
+        ],
+        "restricted_member_count": 1,
+        "budget_min_usd": 1200.0,
+        "budget_max_usd": 2000.0,
+        "budget_spread_usd": 800.0,
+        "graph_only": false
+      },
+      "quality_proxy": {
+        "band": "mixed",
+        "deterministic": {
+          "budget_compliance": {
+            "passed": true,
+            "scorable": true
+          },
+          "dates": {
+            "passed": true,
+            "scorable": true
+          },
+          "dietary": {
+            "passed": true,
+            "scorable": true
+          },
+          "fairness_spread": {
+            "passed": true,
+            "scorable": true
+          },
+          "flight_alignment": {
+            "passed": false,
+            "scorable": false
+          },
+          "geographic_plausibility": {
+            "passed": true,
+            "scorable": true
+          },
+          "hard_avoids": {
+            "passed": true,
+            "scorable": true
+          },
+          "radius": {
+            "passed": false,
+            "scorable": true
+          },
+          "schema_complete": {
+            "passed": true,
+            "scorable": true
+          }
+        },
+        "trajectory": {
+          "expected_nodes": {
+            "passed": true
+          },
+          "rebuild_bound": {
+            "passed": true
+          },
+          "retry_routes": {
+            "passed": true
+          },
+          "tool_arguments": {
+            "passed": true
+          }
+        },
+        "deterministic_failures": [
+          "radius"
+        ],
+        "trajectory_failures": [],
+        "itinerary_rebuilds": 1
+      },
+      "selection_rationale": "mixed quality proxy (radius); 3 members, 3 days, dietary load vegetarian, budget spread $800."
+    },
+    {
+      "id": "02-02_preference_weight_conflict",
+      "title": "Preference Weight Conflict",
+      "dimensions": {
+        "group_size": 4,
+        "trip_length_days": 3,
+        "dietary_restrictions": [],
+        "restricted_member_count": 0,
+        "budget_min_usd": 1500.0,
+        "budget_max_usd": 1800.0,
+        "budget_spread_usd": 300.0,
+        "graph_only": false
+      },
+      "quality_proxy": {
+        "band": "mixed",
+        "deterministic": {
+          "budget_compliance": {
+            "passed": true,
+            "scorable": true
+          },
+          "dates": {
+            "passed": true,
+            "scorable": true
+          },
+          "dietary": {
+            "passed": true,
+            "scorable": true
+          },
+          "fairness_spread": {
+            "passed": true,
+            "scorable": true
+          },
+          "flight_alignment": {
+            "passed": false,
+            "scorable": false
+          },
+          "geographic_plausibility": {
+            "passed": true,
+            "scorable": true
+          },
+          "hard_avoids": {
+            "passed": true,
+            "scorable": true
+          },
+          "radius": {
+            "passed": false,
+            "scorable": true
+          },
+          "schema_complete": {
+            "passed": true,
+            "scorable": true
+          }
+        },
+        "trajectory": {
+          "expected_nodes": {
+            "passed": true
+          },
+          "rebuild_bound": {
+            "passed": true
+          },
+          "retry_routes": {
+            "passed": true
+          },
+          "tool_arguments": {
+            "passed": true
+          }
+        },
+        "deterministic_failures": [
+          "radius"
+        ],
+        "trajectory_failures": [],
+        "itinerary_rebuilds": 0
+      },
+      "selection_rationale": "mixed quality proxy (radius); 4 members, 3 days, dietary load none, budget spread $300."
+    },
+    {
+      "id": "03-03_natural_language_conflict",
+      "title": "Natural-Language Preference Conflict",
+      "dimensions": {
+        "group_size": 3,
+        "trip_length_days": 3,
+        "dietary_restrictions": [
+          "gluten_free",
+          "shellfish"
+        ],
+        "restricted_member_count": 2,
+        "budget_min_usd": 1600.0,
+        "budget_max_usd": 1900.0,
+        "budget_spread_usd": 300.0,
+        "graph_only": false
+      },
+      "quality_proxy": {
+        "band": "degraded",
+        "deterministic": {
+          "budget_compliance": {
+            "passed": true,
+            "scorable": true
+          },
+          "dates": {
+            "passed": true,
+            "scorable": true
+          },
+          "dietary": {
+            "passed": true,
+            "scorable": true
+          },
+          "fairness_spread": {
+            "passed": true,
+            "scorable": true
+          },
+          "flight_alignment": {
+            "passed": false,
+            "scorable": false
+          },
+          "geographic_plausibility": {
+            "passed": true,
+            "scorable": true
+          },
+          "hard_avoids": {
+            "passed": true,
+            "scorable": true
+          },
+          "radius": {
+            "passed": true,
+            "scorable": true
+          },
+          "schema_complete": {
+            "passed": true,
+            "scorable": true
+          }
+        },
+        "trajectory": {
+          "expected_nodes": {
+            "passed": true
+          },
+          "rebuild_bound": {
+            "passed": false
+          },
+          "retry_routes": {
+            "passed": true
+          },
+          "tool_arguments": {
+            "passed": true
+          }
+        },
+        "deterministic_failures": [],
+        "trajectory_failures": [
+          "rebuild_bound"
+        ],
+        "itinerary_rebuilds": 2
+      },
+      "selection_rationale": "degraded quality proxy (rebuild_bound); 3 members, 3 days, dietary load gluten_free, shellfish, budget spread $300."
+    },
+    {
+      "id": "04-04_budget_limit_crossing",
+      "title": "Budget Limit Crossing",
+      "dimensions": {
+        "group_size": 3,
+        "trip_length_days": 3,
+        "dietary_restrictions": [],
+        "restricted_member_count": 0,
+        "budget_min_usd": 450.0,
+        "budget_max_usd": 550.0,
+        "budget_spread_usd": 100.0,
+        "graph_only": false
+      },
+      "quality_proxy": {
+        "band": "degraded",
+        "deterministic": {
+          "budget_compliance": {
+            "passed": false,
+            "scorable": true
+          },
+          "dates": {
+            "passed": true,
+            "scorable": true
+          },
+          "dietary": {
+            "passed": true,
+            "scorable": true
+          },
+          "fairness_spread": {
+            "passed": true,
+            "scorable": true
+          },
+          "flight_alignment": {
+            "passed": false,
+            "scorable": false
+          },
+          "geographic_plausibility": {
+            "passed": true,
+            "scorable": true
+          },
+          "hard_avoids": {
+            "passed": true,
+            "scorable": true
+          },
+          "radius": {
+            "passed": false,
+            "scorable": true
+          },
+          "schema_complete": {
+            "passed": true,
+            "scorable": true
+          }
+        },
+        "trajectory": {
+          "expected_nodes": {
+            "passed": true
+          },
+          "rebuild_bound": {
+            "passed": true
+          },
+          "retry_routes": {
+            "passed": false
+          },
+          "tool_arguments": {
+            "passed": true
+          }
+        },
+        "deterministic_failures": [
+          "budget_compliance",
+          "radius"
+        ],
+        "trajectory_failures": [
+          "retry_routes"
+        ],
+        "itinerary_rebuilds": 0
+      },
+      "selection_rationale": "degraded quality proxy (budget_compliance, radius, retry_routes); 3 members, 3 days, dietary load none, budget spread $100."
+    },
+    {
+      "id": "07-07_long_six_member_high_conflict_trip",
+      "title": "Long Six-Member High-Conflict Trip",
+      "dimensions": {
+        "group_size": 6,
+        "trip_length_days": 3,
+        "dietary_restrictions": [
+          "gluten_free",
+          "halal",
+          "vegan"
+        ],
+        "restricted_member_count": 3,
+        "budget_min_usd": 1300.0,
+        "budget_max_usd": 2600.0,
+        "budget_spread_usd": 1300.0,
+        "graph_only": false
+      },
+      "quality_proxy": {
+        "band": "degraded",
+        "deterministic": {
+          "budget_compliance": {
+            "passed": true,
+            "scorable": true
+          },
+          "dates": {
+            "passed": true,
+            "scorable": true
+          },
+          "dietary": {
+            "passed": false,
+            "scorable": true
+          },
+          "fairness_spread": {
+            "passed": true,
+            "scorable": true
+          },
+          "flight_alignment": {
+            "passed": false,
+            "scorable": false
+          },
+          "geographic_plausibility": {
+            "passed": true,
+            "scorable": true
+          },
+          "hard_avoids": {
+            "passed": true,
+            "scorable": true
+          },
+          "radius": {
+            "passed": false,
+            "scorable": true
+          },
+          "schema_complete": {
+            "passed": true,
+            "scorable": true
+          }
+        },
+        "trajectory": {
+          "expected_nodes": {
+            "passed": true
+          },
+          "rebuild_bound": {
+            "passed": false
+          },
+          "retry_routes": {
+            "passed": true
+          },
+          "tool_arguments": {
+            "passed": true
+          }
+        },
+        "deterministic_failures": [
+          "dietary",
+          "radius"
+        ],
+        "trajectory_failures": [
+          "rebuild_bound"
+        ],
+        "itinerary_rebuilds": 2
+      },
+      "selection_rationale": "degraded quality proxy (dietary, radius, rebuild_bound); 6 members, 3 days, dietary load gluten_free, halal, vegan, budget spread $1300."
+    },
+    {
+      "id": "08-08_big_city_skyscraper_intent",
+      "title": "Big City Skyscraper Intent",
+      "dimensions": {
+        "group_size": 4,
+        "trip_length_days": 3,
+        "dietary_restrictions": [],
+        "restricted_member_count": 0,
+        "budget_min_usd": 1500.0,
+        "budget_max_usd": 2000.0,
+        "budget_spread_usd": 500.0,
+        "graph_only": false
+      },
+      "quality_proxy": {
+        "band": "clean",
+        "deterministic": {
+          "budget_compliance": {
+            "passed": true,
+            "scorable": true
+          },
+          "dates": {
+            "passed": true,
+            "scorable": true
+          },
+          "dietary": {
+            "passed": true,
+            "scorable": true
+          },
+          "fairness_spread": {
+            "passed": true,
+            "scorable": true
+          },
+          "flight_alignment": {
+            "passed": false,
+            "scorable": false
+          },
+          "geographic_plausibility": {
+            "passed": true,
+            "scorable": true
+          },
+          "hard_avoids": {
+            "passed": true,
+            "scorable": true
+          },
+          "radius": {
+            "passed": true,
+            "scorable": true
+          },
+          "schema_complete": {
+            "passed": true,
+            "scorable": true
+          }
+        },
+        "trajectory": {
+          "expected_nodes": {
+            "passed": true
+          },
+          "rebuild_bound": {
+            "passed": true
+          },
+          "retry_routes": {
+            "passed": true
+          },
+          "tool_arguments": {
+            "passed": true
+          }
+        },
+        "deterministic_failures": [],
+        "trajectory_failures": [],
+        "itinerary_rebuilds": 1
+      },
+      "selection_rationale": "clean quality proxy (no scored failures); 4 members, 3 days, dietary load none, budget spread $500."
+    },
+    {
+      "id": "09-happy_path_relaxed_mixed_group",
+      "title": "Happy path three-person trip with HITL city choice",
+      "dimensions": {
+        "group_size": 3,
+        "trip_length_days": 3,
+        "dietary_restrictions": [
+          "vegetarian"
+        ],
+        "restricted_member_count": 1,
+        "budget_min_usd": 1200.0,
+        "budget_max_usd": 2000.0,
+        "budget_spread_usd": 800.0,
+        "graph_only": false
+      },
+      "quality_proxy": {
+        "band": "mixed",
+        "deterministic": {
+          "budget_compliance": {
+            "passed": true,
+            "scorable": true
+          },
+          "dates": {
+            "passed": true,
+            "scorable": true
+          },
+          "dietary": {
+            "passed": true,
+            "scorable": true
+          },
+          "fairness_spread": {
+            "passed": true,
+            "scorable": true
+          },
+          "flight_alignment": {
+            "passed": false,
+            "scorable": false
+          },
+          "geographic_plausibility": {
+            "passed": true,
+            "scorable": true
+          },
+          "hard_avoids": {
+            "passed": true,
+            "scorable": true
+          },
+          "radius": {
+            "passed": false,
+            "scorable": true
+          },
+          "schema_complete": {
+            "passed": true,
+            "scorable": true
+          }
+        },
+        "trajectory": {
+          "expected_nodes": {
+            "passed": true
+          },
+          "rebuild_bound": {
+            "passed": true
+          },
+          "retry_routes": {
+            "passed": true
+          },
+          "tool_arguments": {
+            "passed": true
+          }
+        },
+        "deterministic_failures": [
+          "radius"
+        ],
+        "trajectory_failures": [],
+        "itinerary_rebuilds": 1
+      },
+      "selection_rationale": "mixed quality proxy (radius); 3 members, 3 days, dietary load vegetarian, budget spread $800."
+    },
+    {
+      "id": "10-budget_pressure_group",
+      "title": "Tight budget should trigger budget analysis pressure",
+      "dimensions": {
+        "group_size": 2,
+        "trip_length_days": 3,
+        "dietary_restrictions": [],
+        "restricted_member_count": 0,
+        "budget_min_usd": 450.0,
+        "budget_max_usd": 500.0,
+        "budget_spread_usd": 50.0,
+        "graph_only": false
+      },
+      "quality_proxy": {
+        "band": "degraded",
+        "deterministic": {
+          "budget_compliance": {
+            "passed": false,
+            "scorable": true
+          },
+          "dates": {
+            "passed": true,
+            "scorable": true
+          },
+          "dietary": {
+            "passed": true,
+            "scorable": true
+          },
+          "fairness_spread": {
+            "passed": true,
+            "scorable": true
+          },
+          "flight_alignment": {
+            "passed": false,
+            "scorable": false
+          },
+          "geographic_plausibility": {
+            "passed": true,
+            "scorable": true
+          },
+          "hard_avoids": {
+            "passed": true,
+            "scorable": true
+          },
+          "radius": {
+            "passed": false,
+            "scorable": true
+          },
+          "schema_complete": {
+            "passed": true,
+            "scorable": true
+          }
+        },
+        "trajectory": {
+          "expected_nodes": {
+            "passed": true
+          },
+          "rebuild_bound": {
+            "passed": false
+          },
+          "retry_routes": {
+            "passed": false
+          },
+          "tool_arguments": {
+            "passed": true
+          }
+        },
+        "deterministic_failures": [
+          "budget_compliance",
+          "radius"
+        ],
+        "trajectory_failures": [
+          "rebuild_bound",
+          "retry_routes"
+        ],
+        "itinerary_rebuilds": 2
+      },
+      "selection_rationale": "degraded quality proxy (budget_compliance, radius, rebuild_bound, retry_routes); 2 members, 3 days, dietary load none, budget spread $50."
+    },
+    {
+      "id": "11-food_restriction_validation",
+      "title": "Vegan and gluten-free meal validation",
+      "dimensions": {
+        "group_size": 2,
+        "trip_length_days": 3,
+        "dietary_restrictions": [
+          "gluten_free",
+          "halal",
+          "vegan"
+        ],
+        "restricted_member_count": 2,
+        "budget_min_usd": 1600.0,
+        "budget_max_usd": 1800.0,
+        "budget_spread_usd": 200.0,
+        "graph_only": false
+      },
+      "quality_proxy": {
+        "band": "mixed",
+        "deterministic": {
+          "budget_compliance": {
+            "passed": true,
+            "scorable": true
+          },
+          "dates": {
+            "passed": true,
+            "scorable": true
+          },
+          "dietary": {
+            "passed": true,
+            "scorable": true
+          },
+          "fairness_spread": {
+            "passed": true,
+            "scorable": true
+          },
+          "flight_alignment": {
+            "passed": false,
+            "scorable": false
+          },
+          "geographic_plausibility": {
+            "passed": true,
+            "scorable": true
+          },
+          "hard_avoids": {
+            "passed": true,
+            "scorable": true
+          },
+          "radius": {
+            "passed": false,
+            "scorable": true
+          },
+          "schema_complete": {
+            "passed": true,
+            "scorable": true
+          }
+        },
+        "trajectory": {
+          "expected_nodes": {
+            "passed": true
+          },
+          "rebuild_bound": {
+            "passed": true
+          },
+          "retry_routes": {
+            "passed": true
+          },
+          "tool_arguments": {
+            "passed": true
+          }
+        },
+        "deterministic_failures": [
+          "radius"
+        ],
+        "trajectory_failures": [],
+        "itinerary_rebuilds": 0
+      },
+      "selection_rationale": "mixed quality proxy (radius); 2 members, 3 days, dietary load gluten_free, halal, vegan, budget spread $200."
+    },
+    {
+      "id": "12-nightlife_hard_avoid",
+      "title": "High nightlife score but explicit no clubs",
+      "dimensions": {
+        "group_size": 1,
+        "trip_length_days": 3,
+        "dietary_restrictions": [],
+        "restricted_member_count": 0,
+        "budget_min_usd": 1700.0,
+        "budget_max_usd": 1700.0,
+        "budget_spread_usd": 0.0,
+        "graph_only": false
+      },
+      "quality_proxy": {
+        "band": "clean",
+        "deterministic": {
+          "budget_compliance": {
+            "passed": true,
+            "scorable": true
+          },
+          "dates": {
+            "passed": true,
+            "scorable": true
+          },
+          "dietary": {
+            "passed": true,
+            "scorable": true
+          },
+          "fairness_spread": {
+            "passed": true,
+            "scorable": true
+          },
+          "flight_alignment": {
+            "passed": false,
+            "scorable": false
+          },
+          "geographic_plausibility": {
+            "passed": true,
+            "scorable": true
+          },
+          "hard_avoids": {
+            "passed": true,
+            "scorable": true
+          },
+          "radius": {
+            "passed": true,
+            "scorable": true
+          },
+          "schema_complete": {
+            "passed": true,
+            "scorable": true
+          }
+        },
+        "trajectory": {
+          "expected_nodes": {
+            "passed": true
+          },
+          "rebuild_bound": {
+            "passed": true
+          },
+          "retry_routes": {
+            "passed": true
+          },
+          "tool_arguments": {
+            "passed": true
+          }
+        },
+        "deterministic_failures": [],
+        "trajectory_failures": [],
+        "itinerary_rebuilds": 0
+      },
+      "selection_rationale": "clean quality proxy (no scored failures); 1 members, 3 days, dietary load none, budget spread $0."
+    },
+    {
+      "id": "14-wide-budget-spread",
+      "title": "Wide budget spread",
+      "dimensions": {
+        "group_size": 3,
+        "trip_length_days": 3,
+        "dietary_restrictions": [
+          "vegetarian"
+        ],
+        "restricted_member_count": 1,
+        "budget_min_usd": 400.0,
+        "budget_max_usd": 4000.0,
+        "budget_spread_usd": 3600.0,
+        "graph_only": false
+      },
+      "quality_proxy": {
+        "band": "degraded",
+        "deterministic": {
+          "budget_compliance": {
+            "passed": false,
+            "scorable": true
+          },
+          "dates": {
+            "passed": true,
+            "scorable": true
+          },
+          "dietary": {
+            "passed": true,
+            "scorable": true
+          },
+          "fairness_spread": {
+            "passed": false,
+            "scorable": true
+          },
+          "flight_alignment": {
+            "passed": false,
+            "scorable": false
+          },
+          "geographic_plausibility": {
+            "passed": true,
+            "scorable": true
+          },
+          "hard_avoids": {
+            "passed": true,
+            "scorable": true
+          },
+          "radius": {
+            "passed": false,
+            "scorable": true
+          },
+          "schema_complete": {
+            "passed": true,
+            "scorable": true
+          }
+        },
+        "trajectory": {
+          "expected_nodes": {
+            "passed": true
+          },
+          "rebuild_bound": {
+            "passed": false
+          },
+          "retry_routes": {
+            "passed": true
+          },
+          "tool_arguments": {
+            "passed": true
+          }
+        },
+        "deterministic_failures": [
+          "budget_compliance",
+          "fairness_spread",
+          "radius"
+        ],
+        "trajectory_failures": [
+          "rebuild_bound"
+        ],
+        "itinerary_rebuilds": 3
+      },
+      "selection_rationale": "degraded quality proxy (budget_compliance, fairness_spread, radius, rebuild_bound); 3 members, 3 days, dietary load vegetarian, budget spread $3600."
+    },
+    {
+      "id": "16-diet-vegan",
+      "title": "vegan meals",
+      "dimensions": {
+        "group_size": 2,
+        "trip_length_days": 3,
+        "dietary_restrictions": [
+          "vegan"
+        ],
+        "restricted_member_count": 1,
+        "budget_min_usd": 1200.0,
+        "budget_max_usd": 1500.0,
+        "budget_spread_usd": 300.0,
+        "graph_only": false
+      },
+      "quality_proxy": {
+        "band": "mixed",
+        "deterministic": {
+          "budget_compliance": {
+            "passed": true,
+            "scorable": true
+          },
+          "dates": {
+            "passed": true,
+            "scorable": true
+          },
+          "dietary": {
+            "passed": true,
+            "scorable": true
+          },
+          "fairness_spread": {
+            "passed": true,
+            "scorable": true
+          },
+          "flight_alignment": {
+            "passed": false,
+            "scorable": false
+          },
+          "geographic_plausibility": {
+            "passed": true,
+            "scorable": true
+          },
+          "hard_avoids": {
+            "passed": true,
+            "scorable": true
+          },
+          "radius": {
+            "passed": false,
+            "scorable": true
+          },
+          "schema_complete": {
+            "passed": true,
+            "scorable": true
+          }
+        },
+        "trajectory": {
+          "expected_nodes": {
+            "passed": true
+          },
+          "rebuild_bound": {
+            "passed": true
+          },
+          "retry_routes": {
+            "passed": true
+          },
+          "tool_arguments": {
+            "passed": true
+          }
+        },
+        "deterministic_failures": [
+          "radius"
+        ],
+        "trajectory_failures": [],
+        "itinerary_rebuilds": 1
+      },
+      "selection_rationale": "mixed quality proxy (radius); 2 members, 3 days, dietary load vegan, budget spread $300."
+    },
+    {
+      "id": "17-diet-halal",
+      "title": "halal meals",
+      "dimensions": {
+        "group_size": 2,
+        "trip_length_days": 3,
+        "dietary_restrictions": [
+          "halal"
+        ],
+        "restricted_member_count": 1,
+        "budget_min_usd": 1200.0,
+        "budget_max_usd": 1500.0,
+        "budget_spread_usd": 300.0,
+        "graph_only": false
+      },
+      "quality_proxy": {
+        "band": "mixed",
+        "deterministic": {
+          "budget_compliance": {
+            "passed": true,
+            "scorable": true
+          },
+          "dates": {
+            "passed": true,
+            "scorable": true
+          },
+          "dietary": {
+            "passed": true,
+            "scorable": true
+          },
+          "fairness_spread": {
+            "passed": true,
+            "scorable": true
+          },
+          "flight_alignment": {
+            "passed": false,
+            "scorable": false
+          },
+          "geographic_plausibility": {
+            "passed": true,
+            "scorable": true
+          },
+          "hard_avoids": {
+            "passed": true,
+            "scorable": true
+          },
+          "radius": {
+            "passed": false,
+            "scorable": true
+          },
+          "schema_complete": {
+            "passed": true,
+            "scorable": true
+          }
+        },
+        "trajectory": {
+          "expected_nodes": {
+            "passed": true
+          },
+          "rebuild_bound": {
+            "passed": true
+          },
+          "retry_routes": {
+            "passed": true
+          },
+          "tool_arguments": {
+            "passed": true
+          }
+        },
+        "deterministic_failures": [
+          "radius"
+        ],
+        "trajectory_failures": [],
+        "itinerary_rebuilds": 1
+      },
+      "selection_rationale": "mixed quality proxy (radius); 2 members, 3 days, dietary load halal, budget spread $300."
+    },
+    {
+      "id": "19-hard-avoid",
+      "title": "Hard avoid terms",
+      "dimensions": {
+        "group_size": 3,
+        "trip_length_days": 3,
+        "dietary_restrictions": [
+          "vegetarian"
+        ],
+        "restricted_member_count": 1,
+        "budget_min_usd": 1200.0,
+        "budget_max_usd": 2000.0,
+        "budget_spread_usd": 800.0,
+        "graph_only": false
+      },
+      "quality_proxy": {
+        "band": "mixed",
+        "deterministic": {
+          "budget_compliance": {
+            "passed": true,
+            "scorable": true
+          },
+          "dates": {
+            "passed": true,
+            "scorable": true
+          },
+          "dietary": {
+            "passed": true,
+            "scorable": true
+          },
+          "fairness_spread": {
+            "passed": true,
+            "scorable": true
+          },
+          "flight_alignment": {
+            "passed": false,
+            "scorable": false
+          },
+          "geographic_plausibility": {
+            "passed": true,
+            "scorable": true
+          },
+          "hard_avoids": {
+            "passed": true,
+            "scorable": true
+          },
+          "radius": {
+            "passed": false,
+            "scorable": true
+          },
+          "schema_complete": {
+            "passed": true,
+            "scorable": true
+          }
+        },
+        "trajectory": {
+          "expected_nodes": {
+            "passed": true
+          },
+          "rebuild_bound": {
+            "passed": true
+          },
+          "retry_routes": {
+            "passed": true
+          },
+          "tool_arguments": {
+            "passed": true
+          }
+        },
+        "deterministic_failures": [
+          "radius"
+        ],
+        "trajectory_failures": [],
+        "itinerary_rebuilds": 0
+      },
+      "selection_rationale": "mixed quality proxy (radius); 3 members, 3 days, dietary load vegetarian, budget spread $800."
+    },
+    {
+      "id": "21-single-member",
+      "title": "Single member",
+      "dimensions": {
+        "group_size": 1,
+        "trip_length_days": 3,
+        "dietary_restrictions": [
+          "vegetarian"
+        ],
+        "restricted_member_count": 1,
+        "budget_min_usd": 1500.0,
+        "budget_max_usd": 1500.0,
+        "budget_spread_usd": 0.0,
+        "graph_only": false
+      },
+      "quality_proxy": {
+        "band": "degraded",
+        "deterministic": {
+          "budget_compliance": {
+            "passed": true,
+            "scorable": true
+          },
+          "dates": {
+            "passed": true,
+            "scorable": true
+          },
+          "dietary": {
+            "passed": true,
+            "scorable": true
+          },
+          "fairness_spread": {
+            "passed": true,
+            "scorable": true
+          },
+          "flight_alignment": {
+            "passed": false,
+            "scorable": false
+          },
+          "geographic_plausibility": {
+            "passed": true,
+            "scorable": true
+          },
+          "hard_avoids": {
+            "passed": true,
+            "scorable": true
+          },
+          "radius": {
+            "passed": false,
+            "scorable": true
+          },
+          "schema_complete": {
+            "passed": true,
+            "scorable": true
+          }
+        },
+        "trajectory": {
+          "expected_nodes": {
+            "passed": true
+          },
+          "rebuild_bound": {
+            "passed": false
+          },
+          "retry_routes": {
+            "passed": true
+          },
+          "tool_arguments": {
+            "passed": true
+          }
+        },
+        "deterministic_failures": [
+          "radius"
+        ],
+        "trajectory_failures": [
+          "rebuild_bound"
+        ],
+        "itinerary_rebuilds": 2
+      },
+      "selection_rationale": "degraded quality proxy (radius, rebuild_bound); 1 members, 3 days, dietary load vegetarian, budget spread $0."
+    },
+    {
+      "id": "22-eight-members",
+      "title": "Eight members",
+      "dimensions": {
+        "group_size": 8,
+        "trip_length_days": 3,
+        "dietary_restrictions": [
+          "vegetarian"
+        ],
+        "restricted_member_count": 3,
+        "budget_min_usd": 1200.0,
+        "budget_max_usd": 2000.0,
+        "budget_spread_usd": 800.0,
+        "graph_only": false
+      },
+      "quality_proxy": {
+        "band": "degraded",
+        "deterministic": {
+          "budget_compliance": {
+            "passed": true,
+            "scorable": true
+          },
+          "dates": {
+            "passed": true,
+            "scorable": true
+          },
+          "dietary": {
+            "passed": true,
+            "scorable": true
+          },
+          "fairness_spread": {
+            "passed": true,
+            "scorable": true
+          },
+          "flight_alignment": {
+            "passed": false,
+            "scorable": false
+          },
+          "geographic_plausibility": {
+            "passed": true,
+            "scorable": true
+          },
+          "hard_avoids": {
+            "passed": true,
+            "scorable": true
+          },
+          "radius": {
+            "passed": false,
+            "scorable": true
+          },
+          "schema_complete": {
+            "passed": true,
+            "scorable": true
+          }
+        },
+        "trajectory": {
+          "expected_nodes": {
+            "passed": true
+          },
+          "rebuild_bound": {
+            "passed": false
+          },
+          "retry_routes": {
+            "passed": true
+          },
+          "tool_arguments": {
+            "passed": true
+          }
+        },
+        "deterministic_failures": [
+          "radius"
+        ],
+        "trajectory_failures": [
+          "rebuild_bound"
+        ],
+        "itinerary_rebuilds": 2
+      },
+      "selection_rationale": "degraded quality proxy (radius, rebuild_bound); 8 members, 3 days, dietary load vegetarian, budget spread $800."
+    },
+    {
+      "id": "23-two-day",
+      "title": "Two-day graph window",
+      "dimensions": {
+        "group_size": 2,
+        "trip_length_days": 2,
+        "dietary_restrictions": [
+          "vegetarian"
+        ],
+        "restricted_member_count": 1,
+        "budget_min_usd": 1200.0,
+        "budget_max_usd": 1500.0,
+        "budget_spread_usd": 300.0,
+        "graph_only": false
+      },
+      "quality_proxy": {
+        "band": "mixed",
+        "deterministic": {
+          "budget_compliance": {
+            "passed": true,
+            "scorable": true
+          },
+          "dates": {
+            "passed": true,
+            "scorable": true
+          },
+          "dietary": {
+            "passed": true,
+            "scorable": true
+          },
+          "fairness_spread": {
+            "passed": true,
+            "scorable": true
+          },
+          "flight_alignment": {
+            "passed": false,
+            "scorable": false
+          },
+          "geographic_plausibility": {
+            "passed": true,
+            "scorable": true
+          },
+          "hard_avoids": {
+            "passed": true,
+            "scorable": true
+          },
+          "radius": {
+            "passed": false,
+            "scorable": true
+          },
+          "schema_complete": {
+            "passed": true,
+            "scorable": true
+          }
+        },
+        "trajectory": {
+          "expected_nodes": {
+            "passed": true
+          },
+          "rebuild_bound": {
+            "passed": true
+          },
+          "retry_routes": {
+            "passed": true
+          },
+          "tool_arguments": {
+            "passed": true
+          }
+        },
+        "deterministic_failures": [
+          "radius"
+        ],
+        "trajectory_failures": [],
+        "itinerary_rebuilds": 1
+      },
+      "selection_rationale": "mixed quality proxy (radius); 2 members, 2 days, dietary load vegetarian, budget spread $300."
+    },
+    {
+      "id": "24-fourteen-day",
+      "title": "Fourteen-day graph window",
+      "dimensions": {
+        "group_size": 2,
+        "trip_length_days": 14,
+        "dietary_restrictions": [
+          "vegetarian"
+        ],
+        "restricted_member_count": 1,
+        "budget_min_usd": 1200.0,
+        "budget_max_usd": 1500.0,
+        "budget_spread_usd": 300.0,
+        "graph_only": true
+      },
+      "quality_proxy": {
+        "band": "degraded",
+        "deterministic": {
+          "budget_compliance": {
+            "passed": false,
+            "scorable": true
+          },
+          "dates": {
+            "passed": false,
+            "scorable": true
+          },
+          "dietary": {
+            "passed": true,
+            "scorable": true
+          },
+          "fairness_spread": {
+            "passed": true,
+            "scorable": true
+          },
+          "flight_alignment": {
+            "passed": false,
+            "scorable": false
+          },
+          "geographic_plausibility": {
+            "passed": true,
+            "scorable": true
+          },
+          "hard_avoids": {
+            "passed": true,
+            "scorable": true
+          },
+          "radius": {
+            "passed": false,
+            "scorable": true
+          },
+          "schema_complete": {
+            "passed": true,
+            "scorable": true
+          }
+        },
+        "trajectory": {
+          "expected_nodes": {
+            "passed": true
+          },
+          "rebuild_bound": {
+            "passed": false
+          },
+          "retry_routes": {
+            "passed": true
+          },
+          "tool_arguments": {
+            "passed": true
+          }
+        },
+        "deterministic_failures": [
+          "budget_compliance",
+          "dates",
+          "radius"
+        ],
+        "trajectory_failures": [
+          "rebuild_bound"
+        ],
+        "itinerary_rebuilds": 2
+      },
+      "selection_rationale": "degraded quality proxy (budget_compliance, dates, radius, rebuild_bound); 2 members, 14 days, dietary load vegetarian, budget spread $300."
+    },
+    {
+      "id": "25-opposite-vectors",
+      "title": "Opposite preference vectors",
+      "dimensions": {
+        "group_size": 3,
+        "trip_length_days": 3,
+        "dietary_restrictions": [
+          "vegetarian"
+        ],
+        "restricted_member_count": 1,
+        "budget_min_usd": 1200.0,
+        "budget_max_usd": 2000.0,
+        "budget_spread_usd": 800.0,
+        "graph_only": false
+      },
+      "quality_proxy": {
+        "band": "clean",
+        "deterministic": {
+          "budget_compliance": {
+            "passed": true,
+            "scorable": true
+          },
+          "dates": {
+            "passed": true,
+            "scorable": true
+          },
+          "dietary": {
+            "passed": true,
+            "scorable": true
+          },
+          "fairness_spread": {
+            "passed": true,
+            "scorable": true
+          },
+          "flight_alignment": {
+            "passed": false,
+            "scorable": false
+          },
+          "geographic_plausibility": {
+            "passed": true,
+            "scorable": true
+          },
+          "hard_avoids": {
+            "passed": true,
+            "scorable": true
+          },
+          "radius": {
+            "passed": true,
+            "scorable": true
+          },
+          "schema_complete": {
+            "passed": true,
+            "scorable": true
+          }
+        },
+        "trajectory": {
+          "expected_nodes": {
+            "passed": true
+          },
+          "rebuild_bound": {
+            "passed": true
+          },
+          "retry_routes": {
+            "passed": true
+          },
+          "tool_arguments": {
+            "passed": true
+          }
+        },
+        "deterministic_failures": [],
+        "trajectory_failures": [],
+        "itinerary_rebuilds": 1
+      },
+      "selection_rationale": "clean quality proxy (no scored failures); 3 members, 3 days, dietary load vegetarian, budget spread $800."
+    },
+    {
+      "id": "30-all-outdoor",
+      "title": "All outdoor preference",
+      "dimensions": {
+        "group_size": 3,
+        "trip_length_days": 3,
+        "dietary_restrictions": [
+          "vegetarian"
+        ],
+        "restricted_member_count": 1,
+        "budget_min_usd": 1200.0,
+        "budget_max_usd": 2000.0,
+        "budget_spread_usd": 800.0,
+        "graph_only": false
+      },
+      "quality_proxy": {
+        "band": "degraded",
+        "deterministic": {
+          "budget_compliance": {
+            "passed": true,
+            "scorable": true
+          },
+          "dates": {
+            "passed": true,
+            "scorable": true
+          },
+          "dietary": {
+            "passed": true,
+            "scorable": true
+          },
+          "fairness_spread": {
+            "passed": true,
+            "scorable": true
+          },
+          "flight_alignment": {
+            "passed": false,
+            "scorable": false
+          },
+          "geographic_plausibility": {
+            "passed": true,
+            "scorable": true
+          },
+          "hard_avoids": {
+            "passed": true,
+            "scorable": true
+          },
+          "radius": {
+            "passed": true,
+            "scorable": true
+          },
+          "schema_complete": {
+            "passed": true,
+            "scorable": true
+          }
+        },
+        "trajectory": {
+          "expected_nodes": {
+            "passed": true
+          },
+          "rebuild_bound": {
+            "passed": false
+          },
+          "retry_routes": {
+            "passed": true
+          },
+          "tool_arguments": {
+            "passed": true
+          }
+        },
+        "deterministic_failures": [],
+        "trajectory_failures": [
+          "rebuild_bound"
+        ],
+        "itinerary_rebuilds": 2
+      },
+      "selection_rationale": "degraded quality proxy (rebuild_bound); 3 members, 3 days, dietary load vegetarian, budget spread $800."
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 28.949,
+      "lng": -95.293
+    },
+    "destination": "Surfside Beach",
+    "included_type": null,
+    "query": "Continued beach and nature exploration"
+  },
+  "request_sha256": "90c92fff1d896534544e54e2927f6a76b4ce15f39565f6e02c7e37229bbdc290",
+  "response": {
+    "address": "110 Ocean Ave, Surfside Beach, TX 77541, USA",
+    "category": "place",
+    "lat": 28.953641200000003,
+    "lng": -95.28141070000001,
+    "name": "Ocean Ave Public Beach Access",
+    "place_id": "ChIJvZtpuuBtQIYRkGJ7G4KpGIs",
+    "price_level": 0,
+    "rating": 4.8,
+    "tags": [
+      "tourist_attraction",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

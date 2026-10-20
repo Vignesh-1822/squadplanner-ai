@@ -1,0 +1,30 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 33.494,
+      "lng": -117.148
+    },
+    "destination": "Temecula",
+    "included_type": "lodging",
+    "query": "Motel 6 Temecula, CA - Historic Old Town Modern roadside property with an outdoor pool, a coin laundry & free morning coffee."
+  },
+  "request_sha256": "bc447d31d2745990b3f7ffadb0ae2b00cdaeccce98e5085c9c275503b38fbf9b",
+  "response": {
+    "address": "41900 Moreno Rd, Temecula, CA 92590, USA",
+    "category": "place",
+    "lat": 33.498007099999995,
+    "lng": -117.1510427,
+    "name": "Motel 6 Temecula, CA - Historic Old Town",
+    "place_id": "ChIJLTVMCMh_24ARpfR6TIxGygg",
+    "price_level": 0,
+    "rating": 3.7,
+    "tags": [
+      "motel",
+      "hotel",
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

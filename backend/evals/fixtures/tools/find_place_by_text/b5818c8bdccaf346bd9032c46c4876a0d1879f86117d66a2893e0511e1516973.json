@@ -1,0 +1,30 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 28.69,
+      "lng": -95.967
+    },
+    "destination": "Matagorda",
+    "included_type": "restaurant",
+    "query": "Lunch"
+  },
+  "request_sha256": "b5818c8bdccaf346bd9032c46c4876a0d1879f86117d66a2893e0511e1516973",
+  "response": {
+    "address": "698 Bernardo St, Matagorda, TX 77457, USA",
+    "category": "food",
+    "lat": 28.695076899999997,
+    "lng": -95.9608994,
+    "name": "Charlie Ro's BBQ, Matagorda",
+    "place_id": "ChIJf0DqzbfbQYYR4JrslEJ-SA8",
+    "price_level": 0,
+    "rating": 5.0,
+    "tags": [
+      "barbecue_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

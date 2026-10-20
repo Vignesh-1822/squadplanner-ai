@@ -1,0 +1,29 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 38.04,
+      "lng": -84.503
+    },
+    "destination": "Lexington",
+    "included_type": null,
+    "query": "Museum or cultural site visit"
+  },
+  "request_sha256": "76307c0040bb7d2649201f0169a9a0de807687b0b746bf08d98b1043767918a8",
+  "response": {
+    "address": "362 N Martin Luther King Blvd, Lexington, KY 40508, USA",
+    "category": "place",
+    "lat": 38.0487812,
+    "lng": -84.488621,
+    "name": "The Living Arts & Science Center",
+    "place_id": "ChIJP-uPFeVEQogRgUViREKOMGM",
+    "price_level": 0,
+    "rating": 4.7,
+    "tags": [
+      "museum",
+      "tourist_attraction",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

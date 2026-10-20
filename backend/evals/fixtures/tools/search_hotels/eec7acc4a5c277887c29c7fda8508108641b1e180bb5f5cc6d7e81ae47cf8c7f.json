@@ -1,0 +1,25 @@
+{
+  "operation": "search_hotels",
+  "request": {
+    "budget_ceiling_usd": 450.0,
+    "check_in": "2026-09-08",
+    "check_out": "2026-09-11",
+    "coords": {
+      "lat": 28.69,
+      "lng": -95.967
+    },
+    "destination": "Matagorda"
+  },
+  "request_sha256": "eec7acc4a5c277887c29c7fda8508108641b1e180bb5f5cc6d7e81ae47cf8c7f",
+  "response": {
+    "address": "23082 TX-60 S, Matagorda, TX 77457, USA",
+    "is_estimated": false,
+    "lat": 28.697998,
+    "lng": -95.9586563,
+    "name": "Westwood Inn Matagorda",
+    "place_id": "ChIJF9vW3OrbQYYRirzvlW4Kj4Q",
+    "price_per_night_usd": 137.0,
+    "rating": 3.9,
+    "total_price_usd": 411.0
+  }
+}

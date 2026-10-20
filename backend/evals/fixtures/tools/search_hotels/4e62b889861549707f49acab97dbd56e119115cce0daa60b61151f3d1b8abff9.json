@@ -1,0 +1,25 @@
+{
+  "operation": "search_hotels",
+  "request": {
+    "budget_ceiling_usd": 3450.0,
+    "check_in": "2026-09-08",
+    "check_out": "2026-09-11",
+    "coords": {
+      "lat": 44.636,
+      "lng": -124.053
+    },
+    "destination": "Newport"
+  },
+  "request_sha256": "4e62b889861549707f49acab97dbd56e119115cce0daa60b61151f3d1b8abff9",
+  "response": {
+    "address": "372 Coddington Hwy, Newport, RI 02840, USA",
+    "is_estimated": false,
+    "lat": 41.5186476,
+    "lng": -71.311301,
+    "name": "Harbor Base Pineapple Inn",
+    "place_id": "ChIJs9BpVeeu5YkRmngENkgRYP4",
+    "price_per_night_usd": 79.0,
+    "rating": 3.1,
+    "total_price_usd": 237.0
+  }
+}

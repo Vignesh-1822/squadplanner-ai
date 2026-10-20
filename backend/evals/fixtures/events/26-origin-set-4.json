@@ -1,0 +1,3233 @@
+{
+  "case_id": "26-origin-set-4",
+  "events": [
+    {
+      "event": "on_chain_start",
+      "name": "LangGraph",
+      "timestamp": "2026-09-06T18:33:12.239832+00:00",
+      "run_id": "01a077fe-f32e-7013-a532-b79e23e815d4",
+      "parent_ids": [],
+      "tags": [],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "parse_input",
+      "timestamp": "2026-09-06T18:33:12.246684+00:00",
+      "run_id": "01a077fe-f335-7271-bbec-121675bf7ff5",
+      "parent_ids": [
+        "01a077fe-f32e-7013-a532-b79e23e815d4"
+      ],
+      "tags": [
+        "graph:step:1"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 1,
+        "langgraph_node": "parse_input",
+        "langgraph_triggers": [
+          "branch:to:parse_input"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "parse_input"
+        ],
+        "langgraph_checkpoint_ns": "parse_input:b55fe348-8ebd-e789-dc48-76d830d99c32"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "parse_input",
+      "timestamp": "2026-09-06T18:33:12.247854+00:00",
+      "run_id": "01a077fe-f335-7271-bbec-121675bf7ff5",
+      "parent_ids": [
+        "01a077fe-f32e-7013-a532-b79e23e815d4"
+      ],
+      "tags": [
+        "graph:step:1"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 1,
+        "langgraph_node": "parse_input",
+        "langgraph_triggers": [
+          "branch:to:parse_input"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "parse_input"
+        ],
+        "langgraph_checkpoint_ns": "parse_input:b55fe348-8ebd-e789-dc48-76d830d99c32"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "extract_preference_constraints",
+      "timestamp": "2026-09-06T18:33:12.249539+00:00",
+      "run_id": "01a077fe-f339-7ff3-b55b-424c0b2c9cb7",
+      "parent_ids": [
+        "01a077fe-f32e-7013-a532-b79e23e815d4"
+      ],
+      "tags": [
+        "graph:step:2"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 2,
+        "langgraph_node": "extract_preference_constraints",
+        "langgraph_triggers": [
+          "branch:to:extract_preference_constraints"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "extract_preference_constraints"
+        ],
+        "langgraph_checkpoint_ns": "extract_preference_constraints:9c29d9ff-2929-61c1-239f-f0a8a4809f65"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "extract_preference_constraints",
+      "timestamp": "2026-09-06T18:33:12.252974+00:00",
+      "run_id": "01a077fe-f339-7ff3-b55b-424c0b2c9cb7",
+      "parent_ids": [
+        "01a077fe-f32e-7013-a532-b79e23e815d4"
+      ],
+      "tags": [
+        "graph:step:2"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 2,
+        "langgraph_node": "extract_preference_constraints",
+        "langgraph_triggers": [
+          "branch:to:extract_preference_constraints"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "extract_preference_constraints"
+        ],
+        "langgraph_checkpoint_ns": "extract_preference_constraints:9c29d9ff-2929-61c1-239f-f0a8a4809f65"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "select_destination",
+      "timestamp": "2026-09-06T18:33:12.256040+00:00",
+      "run_id": "01a077fe-f33f-7682-97b5-0e73ffc694da",
+      "parent_ids": [
+        "01a077fe-f32e-7013-a532-b79e23e815d4"
+      ],
+      "tags": [
+        "graph:step:3"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 3,
+        "langgraph_node": "select_destination",
+        "langgraph_triggers": [
+          "branch:to:select_destination"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "select_destination"
+        ],
+        "langgraph_checkpoint_ns": "select_destination:2aa2a9c1-f9b1-b120-2d91-4aea2259a02f"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "select_destination",
+      "timestamp": "2026-09-06T18:33:12.374528+00:00",
+      "run_id": "01a077fe-f33f-7682-97b5-0e73ffc694da",
+      "parent_ids": [
+        "01a077fe-f32e-7013-a532-b79e23e815d4"
+      ],
+      "tags": [
+        "graph:step:3"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 3,
+        "langgraph_node": "select_destination",
+        "langgraph_triggers": [
+          "branch:to:select_destination"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "select_destination"
+        ],
+        "langgraph_checkpoint_ns": "select_destination:2aa2a9c1-f9b1-b120-2d91-4aea2259a02f"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "city_selection_hitl",
+      "timestamp": "2026-09-06T18:33:12.380322+00:00",
+      "run_id": "01a077fe-f3bb-71f0-beef-c081fe3d0184",
+      "parent_ids": [
+        "01a077fe-f32e-7013-a532-b79e23e815d4"
+      ],
+      "tags": [
+        "graph:step:4"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 4,
+        "langgraph_node": "city_selection_hitl",
+        "langgraph_triggers": [
+          "branch:to:city_selection_hitl"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "city_selection_hitl"
+        ],
+        "langgraph_checkpoint_ns": "city_selection_hitl:6b407ee6-3d60-7bfa-577d-4d78266e3f6c"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "LangGraph",
+      "timestamp": "2026-09-06T18:33:12.382568+00:00",
+      "run_id": "01a077fe-f32e-7013-a532-b79e23e815d4",
+      "parent_ids": [],
+      "tags": [],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "LangGraph",
+      "timestamp": "2026-09-06T18:33:12.384508+00:00",
+      "run_id": "01a077fe-f3bf-7e42-be4e-d55a9491b11c",
+      "parent_ids": [],
+      "tags": [],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "city_selection_hitl",
+      "timestamp": "2026-09-06T18:33:12.386294+00:00",
+      "run_id": "01a077fe-f3c1-73e0-8497-e5316033bfe5",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c"
+      ],
+      "tags": [
+        "graph:step:4"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 4,
+        "langgraph_node": "city_selection_hitl",
+        "langgraph_triggers": [
+          "branch:to:city_selection_hitl"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "city_selection_hitl"
+        ],
+        "langgraph_checkpoint_ns": "city_selection_hitl:6b407ee6-3d60-7bfa-577d-4d78266e3f6c"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "city_selection_hitl",
+      "timestamp": "2026-09-06T18:33:12.387588+00:00",
+      "run_id": "01a077fe-f3c1-73e0-8497-e5316033bfe5",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c"
+      ],
+      "tags": [
+        "graph:step:4"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 4,
+        "langgraph_node": "city_selection_hitl",
+        "langgraph_triggers": [
+          "branch:to:city_selection_hitl"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "city_selection_hitl"
+        ],
+        "langgraph_checkpoint_ns": "city_selection_hitl:6b407ee6-3d60-7bfa-577d-4d78266e3f6c"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "dynamic_tool_selection",
+      "timestamp": "2026-09-06T18:33:12.390045+00:00",
+      "run_id": "01a077fe-f3c5-7930-8343-5d1dae0b7584",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c"
+      ],
+      "tags": [
+        "graph:step:5"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 5,
+        "langgraph_node": "dynamic_tool_selection",
+        "langgraph_triggers": [
+          "branch:to:dynamic_tool_selection"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "dynamic_tool_selection"
+        ],
+        "langgraph_checkpoint_ns": "dynamic_tool_selection:cbe1ea48-9e7a-e352-089a-11aba40c627d"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "dynamic_tool_selection",
+      "timestamp": "2026-09-06T18:33:12.392823+00:00",
+      "run_id": "01a077fe-f3c5-7930-8343-5d1dae0b7584",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c"
+      ],
+      "tags": [
+        "graph:step:5"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 5,
+        "langgraph_node": "dynamic_tool_selection",
+        "langgraph_triggers": [
+          "branch:to:dynamic_tool_selection"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "dynamic_tool_selection"
+        ],
+        "langgraph_checkpoint_ns": "dynamic_tool_selection:cbe1ea48-9e7a-e352-089a-11aba40c627d"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "parallel_data_fetch",
+      "timestamp": "2026-09-06T18:33:12.396922+00:00",
+      "run_id": "01a077fe-f3cc-7f12-b677-5a5df37f9a34",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c"
+      ],
+      "tags": [
+        "graph:step:6"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 6,
+        "langgraph_node": "parallel_data_fetch",
+        "langgraph_triggers": [
+          "branch:to:parallel_data_fetch"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "parallel_data_fetch"
+        ],
+        "langgraph_checkpoint_ns": "parallel_data_fetch:312e1acf-6be2-137f-3b5e-d647898534d0"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "parallel_data_fetch",
+      "timestamp": "2026-09-06T18:33:12.402357+00:00",
+      "run_id": "01a077fe-f3cc-7f12-b677-5a5df37f9a34",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c"
+      ],
+      "tags": [
+        "graph:step:6"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 6,
+        "langgraph_node": "parallel_data_fetch",
+        "langgraph_triggers": [
+          "branch:to:parallel_data_fetch"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "parallel_data_fetch"
+        ],
+        "langgraph_checkpoint_ns": "parallel_data_fetch:312e1acf-6be2-137f-3b5e-d647898534d0"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "budget_analysis",
+      "timestamp": "2026-09-06T18:33:12.403776+00:00",
+      "run_id": "01a077fe-f3d3-7042-b6eb-2672b5822e0b",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c"
+      ],
+      "tags": [
+        "graph:step:7"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 7,
+        "langgraph_node": "budget_analysis",
+        "langgraph_triggers": [
+          "branch:to:budget_analysis"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "budget_analysis"
+        ],
+        "langgraph_checkpoint_ns": "budget_analysis:27729b24-e138-8ee6-67e3-d3bfe62bb931"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "route_after_budget",
+      "timestamp": "2026-09-06T18:33:12.404721+00:00",
+      "run_id": "01a077fe-f3d4-7d12-92a1-b8e61edb95f9",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c",
+        "01a077fe-f3d3-7042-b6eb-2672b5822e0b"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 7,
+        "langgraph_node": "budget_analysis",
+        "langgraph_triggers": [
+          "branch:to:budget_analysis"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "budget_analysis"
+        ],
+        "langgraph_checkpoint_ns": "budget_analysis:27729b24-e138-8ee6-67e3-d3bfe62bb931"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "route_after_budget",
+      "timestamp": "2026-09-06T18:33:12.406215+00:00",
+      "run_id": "01a077fe-f3d4-7d12-92a1-b8e61edb95f9",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c",
+        "01a077fe-f3d3-7042-b6eb-2672b5822e0b"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 7,
+        "langgraph_node": "budget_analysis",
+        "langgraph_triggers": [
+          "branch:to:budget_analysis"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "budget_analysis"
+        ],
+        "langgraph_checkpoint_ns": "budget_analysis:27729b24-e138-8ee6-67e3-d3bfe62bb931"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "budget_analysis",
+      "timestamp": "2026-09-06T18:33:12.406917+00:00",
+      "run_id": "01a077fe-f3d3-7042-b6eb-2672b5822e0b",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c"
+      ],
+      "tags": [
+        "graph:step:7"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 7,
+        "langgraph_node": "budget_analysis",
+        "langgraph_triggers": [
+          "branch:to:budget_analysis"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "budget_analysis"
+        ],
+        "langgraph_checkpoint_ns": "budget_analysis:27729b24-e138-8ee6-67e3-d3bfe62bb931"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "search_hotel",
+      "timestamp": "2026-09-06T18:33:12.408688+00:00",
+      "run_id": "01a077fe-f3d7-7bd3-ba58-9baf50695e2f",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c"
+      ],
+      "tags": [
+        "graph:step:8"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 8,
+        "langgraph_node": "search_hotel",
+        "langgraph_triggers": [
+          "branch:to:search_hotel"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "search_hotel"
+        ],
+        "langgraph_checkpoint_ns": "search_hotel:9c9f9eb1-b9a4-f392-10d0-127694965e41"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "search_hotel",
+      "timestamp": "2026-09-06T18:33:12.413603+00:00",
+      "run_id": "01a077fe-f3d7-7bd3-ba58-9baf50695e2f",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c"
+      ],
+      "tags": [
+        "graph:step:8"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 8,
+        "langgraph_node": "search_hotel",
+        "langgraph_triggers": [
+          "branch:to:search_hotel"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "search_hotel"
+        ],
+        "langgraph_checkpoint_ns": "search_hotel:9c9f9eb1-b9a4-f392-10d0-127694965e41"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "run_itinerary_node",
+      "timestamp": "2026-09-06T18:33:12.415280+00:00",
+      "run_id": "01a077fe-f3de-7b73-b1bf-45d0fc734cda",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c"
+      ],
+      "tags": [
+        "graph:step:9"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "run_itinerary_node",
+        "langgraph_triggers": [
+          "branch:to:run_itinerary_node"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "run_itinerary_node"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "LangGraph",
+      "timestamp": "2026-09-06T18:33:12.416466+00:00",
+      "run_id": "01a077fe-f3e0-7db0-9f69-5b2342be7f7e",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c",
+        "01a077fe-f3de-7b73-b1bf-45d0fc734cda"
+      ],
+      "tags": [
+        "seq:step:1"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "run_itinerary_node",
+        "langgraph_triggers": [
+          "branch:to:run_itinerary_node"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "run_itinerary_node"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e",
+        "checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "cluster_by_neighborhood",
+      "timestamp": "2026-09-06T18:33:12.418924+00:00",
+      "run_id": "01a077fe-f3e2-7a23-875f-6c3bb038d36c",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c",
+        "01a077fe-f3de-7b73-b1bf-45d0fc734cda",
+        "01a077fe-f3e0-7db0-9f69-5b2342be7f7e"
+      ],
+      "tags": [
+        "graph:step:1"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 1,
+        "langgraph_node": "cluster_by_neighborhood",
+        "langgraph_triggers": [
+          "branch:to:cluster_by_neighborhood"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "cluster_by_neighborhood"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e|cluster_by_neighborhood:0fbe68a6-0eb4-2867-9d1e-ce16878371cc",
+        "checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "cluster_by_neighborhood",
+      "timestamp": "2026-09-06T18:33:12.420844+00:00",
+      "run_id": "01a077fe-f3e2-7a23-875f-6c3bb038d36c",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c",
+        "01a077fe-f3de-7b73-b1bf-45d0fc734cda",
+        "01a077fe-f3e0-7db0-9f69-5b2342be7f7e"
+      ],
+      "tags": [
+        "graph:step:1"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 1,
+        "langgraph_node": "cluster_by_neighborhood",
+        "langgraph_triggers": [
+          "branch:to:cluster_by_neighborhood"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "cluster_by_neighborhood"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e|cluster_by_neighborhood:0fbe68a6-0eb4-2867-9d1e-ce16878371cc",
+        "checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "build_itinerary",
+      "timestamp": "2026-09-06T18:33:12.423000+00:00",
+      "run_id": "01a077fe-f3e6-78f0-ad70-f4b11c3dc3ce",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c",
+        "01a077fe-f3de-7b73-b1bf-45d0fc734cda",
+        "01a077fe-f3e0-7db0-9f69-5b2342be7f7e"
+      ],
+      "tags": [
+        "graph:step:2"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 2,
+        "langgraph_node": "build_itinerary",
+        "langgraph_triggers": [
+          "branch:to:build_itinerary"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "build_itinerary"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e|build_itinerary:5d7bba96-382f-c342-45ef-36d033745ed5",
+        "checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "build_itinerary",
+      "timestamp": "2026-09-06T18:33:12.428199+00:00",
+      "run_id": "01a077fe-f3e6-78f0-ad70-f4b11c3dc3ce",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c",
+        "01a077fe-f3de-7b73-b1bf-45d0fc734cda",
+        "01a077fe-f3e0-7db0-9f69-5b2342be7f7e"
+      ],
+      "tags": [
+        "graph:step:2"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 2,
+        "langgraph_node": "build_itinerary",
+        "langgraph_triggers": [
+          "branch:to:build_itinerary"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "build_itinerary"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e|build_itinerary:5d7bba96-382f-c342-45ef-36d033745ed5",
+        "checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "align_flight_times",
+      "timestamp": "2026-09-06T18:33:12.429616+00:00",
+      "run_id": "01a077fe-f3ed-7d81-b9b4-fa65fa00c1f6",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c",
+        "01a077fe-f3de-7b73-b1bf-45d0fc734cda",
+        "01a077fe-f3e0-7db0-9f69-5b2342be7f7e"
+      ],
+      "tags": [
+        "graph:step:3"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 3,
+        "langgraph_node": "align_flight_times",
+        "langgraph_triggers": [
+          "branch:to:align_flight_times"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "align_flight_times"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e|align_flight_times:bc393d89-285e-24ba-9a96-1edb9393530e",
+        "checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "align_flight_times",
+      "timestamp": "2026-09-06T18:33:12.430833+00:00",
+      "run_id": "01a077fe-f3ed-7d81-b9b4-fa65fa00c1f6",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c",
+        "01a077fe-f3de-7b73-b1bf-45d0fc734cda",
+        "01a077fe-f3e0-7db0-9f69-5b2342be7f7e"
+      ],
+      "tags": [
+        "graph:step:3"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 3,
+        "langgraph_node": "align_flight_times",
+        "langgraph_triggers": [
+          "branch:to:align_flight_times"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "align_flight_times"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e|align_flight_times:bc393d89-285e-24ba-9a96-1edb9393530e",
+        "checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:12.432692+00:00",
+      "run_id": "01a077fe-f3f0-7e92-8f14-56a205bee32c",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c",
+        "01a077fe-f3de-7b73-b1bf-45d0fc734cda",
+        "01a077fe-f3e0-7db0-9f69-5b2342be7f7e"
+      ],
+      "tags": [
+        "graph:step:4"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 4,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e|plan_routes:a1bd929f-de79-c388-cfec-234e69d14270",
+        "checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:12.470973+00:00",
+      "run_id": "01a077fe-f416-7312-923c-d0a5da7ac4e2",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c",
+        "01a077fe-f3de-7b73-b1bf-45d0fc734cda",
+        "01a077fe-f3e0-7db0-9f69-5b2342be7f7e",
+        "01a077fe-f3f0-7e92-8f14-56a205bee32c"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 4,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e|plan_routes:a1bd929f-de79-c388-cfec-234e69d14270",
+        "checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:12.471695+00:00",
+      "run_id": "01a077fe-f416-7312-923c-d0a5da7ac4e2",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c",
+        "01a077fe-f3de-7b73-b1bf-45d0fc734cda",
+        "01a077fe-f3e0-7db0-9f69-5b2342be7f7e",
+        "01a077fe-f3f0-7e92-8f14-56a205bee32c"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 4,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e|plan_routes:a1bd929f-de79-c388-cfec-234e69d14270",
+        "checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:12.472306+00:00",
+      "run_id": "01a077fe-f3f0-7e92-8f14-56a205bee32c",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c",
+        "01a077fe-f3de-7b73-b1bf-45d0fc734cda",
+        "01a077fe-f3e0-7db0-9f69-5b2342be7f7e"
+      ],
+      "tags": [
+        "graph:step:4"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 4,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e|plan_routes:a1bd929f-de79-c388-cfec-234e69d14270",
+        "checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "apply_feasibility_swap",
+      "timestamp": "2026-09-06T18:33:12.473784+00:00",
+      "run_id": "01a077fe-f419-7350-983a-03798b509461",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c",
+        "01a077fe-f3de-7b73-b1bf-45d0fc734cda",
+        "01a077fe-f3e0-7db0-9f69-5b2342be7f7e"
+      ],
+      "tags": [
+        "graph:step:5"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 5,
+        "langgraph_node": "apply_feasibility_swap",
+        "langgraph_triggers": [
+          "branch:to:apply_feasibility_swap"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "apply_feasibility_swap"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e|apply_feasibility_swap:2d0ceabe-d337-eaf6-3f54-628d101e6ad1",
+        "checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "apply_feasibility_swap",
+      "timestamp": "2026-09-06T18:33:12.478656+00:00",
+      "run_id": "01a077fe-f419-7350-983a-03798b509461",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c",
+        "01a077fe-f3de-7b73-b1bf-45d0fc734cda",
+        "01a077fe-f3e0-7db0-9f69-5b2342be7f7e"
+      ],
+      "tags": [
+        "graph:step:5"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 5,
+        "langgraph_node": "apply_feasibility_swap",
+        "langgraph_triggers": [
+          "branch:to:apply_feasibility_swap"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "apply_feasibility_swap"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e|apply_feasibility_swap:2d0ceabe-d337-eaf6-3f54-628d101e6ad1",
+        "checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:12.480545+00:00",
+      "run_id": "01a077fe-f41f-7131-a4f8-d8b4938b294a",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c",
+        "01a077fe-f3de-7b73-b1bf-45d0fc734cda",
+        "01a077fe-f3e0-7db0-9f69-5b2342be7f7e"
+      ],
+      "tags": [
+        "graph:step:6"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 6,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e|plan_routes:0c87b54d-0bbd-3a3a-dd47-cd6428d029fd",
+        "checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:12.517894+00:00",
+      "run_id": "01a077fe-f445-7c10-8db6-bc108aff3a08",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c",
+        "01a077fe-f3de-7b73-b1bf-45d0fc734cda",
+        "01a077fe-f3e0-7db0-9f69-5b2342be7f7e",
+        "01a077fe-f41f-7131-a4f8-d8b4938b294a"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 6,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e|plan_routes:0c87b54d-0bbd-3a3a-dd47-cd6428d029fd",
+        "checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:12.518605+00:00",
+      "run_id": "01a077fe-f445-7c10-8db6-bc108aff3a08",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c",
+        "01a077fe-f3de-7b73-b1bf-45d0fc734cda",
+        "01a077fe-f3e0-7db0-9f69-5b2342be7f7e",
+        "01a077fe-f41f-7131-a4f8-d8b4938b294a"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 6,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e|plan_routes:0c87b54d-0bbd-3a3a-dd47-cd6428d029fd",
+        "checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:12.519411+00:00",
+      "run_id": "01a077fe-f41f-7131-a4f8-d8b4938b294a",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c",
+        "01a077fe-f3de-7b73-b1bf-45d0fc734cda",
+        "01a077fe-f3e0-7db0-9f69-5b2342be7f7e"
+      ],
+      "tags": [
+        "graph:step:6"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 6,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e|plan_routes:0c87b54d-0bbd-3a3a-dd47-cd6428d029fd",
+        "checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "apply_feasibility_swap",
+      "timestamp": "2026-09-06T18:33:12.521842+00:00",
+      "run_id": "01a077fe-f448-7411-972b-15d0d900306a",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c",
+        "01a077fe-f3de-7b73-b1bf-45d0fc734cda",
+        "01a077fe-f3e0-7db0-9f69-5b2342be7f7e"
+      ],
+      "tags": [
+        "graph:step:7"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 7,
+        "langgraph_node": "apply_feasibility_swap",
+        "langgraph_triggers": [
+          "branch:to:apply_feasibility_swap"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "apply_feasibility_swap"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e|apply_feasibility_swap:927d1744-f5e2-bb4b-5e92-90c9e08ae191",
+        "checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "apply_feasibility_swap",
+      "timestamp": "2026-09-06T18:33:12.524282+00:00",
+      "run_id": "01a077fe-f448-7411-972b-15d0d900306a",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c",
+        "01a077fe-f3de-7b73-b1bf-45d0fc734cda",
+        "01a077fe-f3e0-7db0-9f69-5b2342be7f7e"
+      ],
+      "tags": [
+        "graph:step:7"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 7,
+        "langgraph_node": "apply_feasibility_swap",
+        "langgraph_triggers": [
+          "branch:to:apply_feasibility_swap"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "apply_feasibility_swap"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e|apply_feasibility_swap:927d1744-f5e2-bb4b-5e92-90c9e08ae191",
+        "checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:12.529591+00:00",
+      "run_id": "01a077fe-f450-7c81-a21b-8e83ea1200d1",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c",
+        "01a077fe-f3de-7b73-b1bf-45d0fc734cda",
+        "01a077fe-f3e0-7db0-9f69-5b2342be7f7e"
+      ],
+      "tags": [
+        "graph:step:8"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 8,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e|plan_routes:2f961760-26fd-40b2-aaaa-7a5b37c096ae",
+        "checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:12.562309+00:00",
+      "run_id": "01a077fe-f471-7502-8109-b8b41d019f43",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c",
+        "01a077fe-f3de-7b73-b1bf-45d0fc734cda",
+        "01a077fe-f3e0-7db0-9f69-5b2342be7f7e",
+        "01a077fe-f450-7c81-a21b-8e83ea1200d1"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 8,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e|plan_routes:2f961760-26fd-40b2-aaaa-7a5b37c096ae",
+        "checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:12.563066+00:00",
+      "run_id": "01a077fe-f471-7502-8109-b8b41d019f43",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c",
+        "01a077fe-f3de-7b73-b1bf-45d0fc734cda",
+        "01a077fe-f3e0-7db0-9f69-5b2342be7f7e",
+        "01a077fe-f450-7c81-a21b-8e83ea1200d1"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 8,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e|plan_routes:2f961760-26fd-40b2-aaaa-7a5b37c096ae",
+        "checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:12.563774+00:00",
+      "run_id": "01a077fe-f450-7c81-a21b-8e83ea1200d1",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c",
+        "01a077fe-f3de-7b73-b1bf-45d0fc734cda",
+        "01a077fe-f3e0-7db0-9f69-5b2342be7f7e"
+      ],
+      "tags": [
+        "graph:step:8"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 8,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e|plan_routes:2f961760-26fd-40b2-aaaa-7a5b37c096ae",
+        "checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "validation_gate",
+      "timestamp": "2026-09-06T18:33:12.566216+00:00",
+      "run_id": "01a077fe-f474-7c20-8fb4-ef0ecf5223b3",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c",
+        "01a077fe-f3de-7b73-b1bf-45d0fc734cda",
+        "01a077fe-f3e0-7db0-9f69-5b2342be7f7e"
+      ],
+      "tags": [
+        "graph:step:9"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e|validation_gate:cd9c9ae5-f2b5-965b-3999-c16acccb0fb8",
+        "checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "check_validation",
+      "timestamp": "2026-09-06T18:33:12.567918+00:00",
+      "run_id": "01a077fe-f477-70d0-904f-fbbb18672b22",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c",
+        "01a077fe-f3de-7b73-b1bf-45d0fc734cda",
+        "01a077fe-f3e0-7db0-9f69-5b2342be7f7e",
+        "01a077fe-f474-7c20-8fb4-ef0ecf5223b3"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e|validation_gate:cd9c9ae5-f2b5-965b-3999-c16acccb0fb8",
+        "checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "check_validation",
+      "timestamp": "2026-09-06T18:33:12.568687+00:00",
+      "run_id": "01a077fe-f477-70d0-904f-fbbb18672b22",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c",
+        "01a077fe-f3de-7b73-b1bf-45d0fc734cda",
+        "01a077fe-f3e0-7db0-9f69-5b2342be7f7e",
+        "01a077fe-f474-7c20-8fb4-ef0ecf5223b3"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e|validation_gate:cd9c9ae5-f2b5-965b-3999-c16acccb0fb8",
+        "checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "validation_gate",
+      "timestamp": "2026-09-06T18:33:12.569194+00:00",
+      "run_id": "01a077fe-f474-7c20-8fb4-ef0ecf5223b3",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c",
+        "01a077fe-f3de-7b73-b1bf-45d0fc734cda",
+        "01a077fe-f3e0-7db0-9f69-5b2342be7f7e"
+      ],
+      "tags": [
+        "graph:step:9"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e|validation_gate:cd9c9ae5-f2b5-965b-3999-c16acccb0fb8",
+        "checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "build_itinerary",
+      "timestamp": "2026-09-06T18:33:12.570655+00:00",
+      "run_id": "01a077fe-f47a-7e50-bda8-f90b2c8781ca",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c",
+        "01a077fe-f3de-7b73-b1bf-45d0fc734cda",
+        "01a077fe-f3e0-7db0-9f69-5b2342be7f7e"
+      ],
+      "tags": [
+        "graph:step:10"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 10,
+        "langgraph_node": "build_itinerary",
+        "langgraph_triggers": [
+          "branch:to:build_itinerary"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "build_itinerary"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e|build_itinerary:154688e2-57f5-8b6c-edd7-9b8b050f8397",
+        "checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "build_itinerary",
+      "timestamp": "2026-09-06T18:33:12.574584+00:00",
+      "run_id": "01a077fe-f47a-7e50-bda8-f90b2c8781ca",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c",
+        "01a077fe-f3de-7b73-b1bf-45d0fc734cda",
+        "01a077fe-f3e0-7db0-9f69-5b2342be7f7e"
+      ],
+      "tags": [
+        "graph:step:10"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 10,
+        "langgraph_node": "build_itinerary",
+        "langgraph_triggers": [
+          "branch:to:build_itinerary"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "build_itinerary"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e|build_itinerary:154688e2-57f5-8b6c-edd7-9b8b050f8397",
+        "checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "align_flight_times",
+      "timestamp": "2026-09-06T18:33:12.577544+00:00",
+      "run_id": "01a077fe-f480-7623-ac8b-da9ddc60fa2e",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c",
+        "01a077fe-f3de-7b73-b1bf-45d0fc734cda",
+        "01a077fe-f3e0-7db0-9f69-5b2342be7f7e"
+      ],
+      "tags": [
+        "graph:step:11"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 11,
+        "langgraph_node": "align_flight_times",
+        "langgraph_triggers": [
+          "branch:to:align_flight_times"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "align_flight_times"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e|align_flight_times:e51191c9-e801-2e85-4dec-5cfdac3a69fb",
+        "checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "align_flight_times",
+      "timestamp": "2026-09-06T18:33:12.578885+00:00",
+      "run_id": "01a077fe-f480-7623-ac8b-da9ddc60fa2e",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c",
+        "01a077fe-f3de-7b73-b1bf-45d0fc734cda",
+        "01a077fe-f3e0-7db0-9f69-5b2342be7f7e"
+      ],
+      "tags": [
+        "graph:step:11"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 11,
+        "langgraph_node": "align_flight_times",
+        "langgraph_triggers": [
+          "branch:to:align_flight_times"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "align_flight_times"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e|align_flight_times:e51191c9-e801-2e85-4dec-5cfdac3a69fb",
+        "checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:12.580486+00:00",
+      "run_id": "01a077fe-f483-7952-8921-c112af9cd6dd",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c",
+        "01a077fe-f3de-7b73-b1bf-45d0fc734cda",
+        "01a077fe-f3e0-7db0-9f69-5b2342be7f7e"
+      ],
+      "tags": [
+        "graph:step:12"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 12,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e|plan_routes:93447dcf-c3f6-3b22-9759-3cc06a8cf58f",
+        "checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:12.600923+00:00",
+      "run_id": "01a077fe-f498-7603-a22f-24b1ac176f0e",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c",
+        "01a077fe-f3de-7b73-b1bf-45d0fc734cda",
+        "01a077fe-f3e0-7db0-9f69-5b2342be7f7e",
+        "01a077fe-f483-7952-8921-c112af9cd6dd"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 12,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e|plan_routes:93447dcf-c3f6-3b22-9759-3cc06a8cf58f",
+        "checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:12.601642+00:00",
+      "run_id": "01a077fe-f498-7603-a22f-24b1ac176f0e",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c",
+        "01a077fe-f3de-7b73-b1bf-45d0fc734cda",
+        "01a077fe-f3e0-7db0-9f69-5b2342be7f7e",
+        "01a077fe-f483-7952-8921-c112af9cd6dd"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 12,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e|plan_routes:93447dcf-c3f6-3b22-9759-3cc06a8cf58f",
+        "checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:12.602265+00:00",
+      "run_id": "01a077fe-f483-7952-8921-c112af9cd6dd",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c",
+        "01a077fe-f3de-7b73-b1bf-45d0fc734cda",
+        "01a077fe-f3e0-7db0-9f69-5b2342be7f7e"
+      ],
+      "tags": [
+        "graph:step:12"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 12,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e|plan_routes:93447dcf-c3f6-3b22-9759-3cc06a8cf58f",
+        "checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "validation_gate",
+      "timestamp": "2026-09-06T18:33:12.604565+00:00",
+      "run_id": "01a077fe-f49b-7692-9748-5f3ee7eb9f2f",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c",
+        "01a077fe-f3de-7b73-b1bf-45d0fc734cda",
+        "01a077fe-f3e0-7db0-9f69-5b2342be7f7e"
+      ],
+      "tags": [
+        "graph:step:13"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 13,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e|validation_gate:f08e618d-e81e-8a3c-ea4f-f38e1e95119b",
+        "checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "check_validation",
+      "timestamp": "2026-09-06T18:33:12.605960+00:00",
+      "run_id": "01a077fe-f49d-7a30-9195-99b907965482",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c",
+        "01a077fe-f3de-7b73-b1bf-45d0fc734cda",
+        "01a077fe-f3e0-7db0-9f69-5b2342be7f7e",
+        "01a077fe-f49b-7692-9748-5f3ee7eb9f2f"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 13,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e|validation_gate:f08e618d-e81e-8a3c-ea4f-f38e1e95119b",
+        "checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "check_validation",
+      "timestamp": "2026-09-06T18:33:12.606884+00:00",
+      "run_id": "01a077fe-f49d-7a30-9195-99b907965482",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c",
+        "01a077fe-f3de-7b73-b1bf-45d0fc734cda",
+        "01a077fe-f3e0-7db0-9f69-5b2342be7f7e",
+        "01a077fe-f49b-7692-9748-5f3ee7eb9f2f"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 13,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e|validation_gate:f08e618d-e81e-8a3c-ea4f-f38e1e95119b",
+        "checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "validation_gate",
+      "timestamp": "2026-09-06T18:33:12.607591+00:00",
+      "run_id": "01a077fe-f49b-7692-9748-5f3ee7eb9f2f",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c",
+        "01a077fe-f3de-7b73-b1bf-45d0fc734cda",
+        "01a077fe-f3e0-7db0-9f69-5b2342be7f7e"
+      ],
+      "tags": [
+        "graph:step:13"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 13,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e|validation_gate:f08e618d-e81e-8a3c-ea4f-f38e1e95119b",
+        "checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "LangGraph",
+      "timestamp": "2026-09-06T18:33:12.612130+00:00",
+      "run_id": "01a077fe-f3e0-7db0-9f69-5b2342be7f7e",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c",
+        "01a077fe-f3de-7b73-b1bf-45d0fc734cda"
+      ],
+      "tags": [
+        "seq:step:1"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "run_itinerary_node",
+        "langgraph_triggers": [
+          "branch:to:run_itinerary_node"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "run_itinerary_node"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e",
+        "checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "run_itinerary_node",
+      "timestamp": "2026-09-06T18:33:12.612895+00:00",
+      "run_id": "01a077fe-f3de-7b73-b1bf-45d0fc734cda",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c"
+      ],
+      "tags": [
+        "graph:step:9"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "run_itinerary_node",
+        "langgraph_triggers": [
+          "branch:to:run_itinerary_node"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "run_itinerary_node"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:50c4bc57-8923-0313-0521-46d6668c279e"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "compute_fairness",
+      "timestamp": "2026-09-06T18:33:12.615992+00:00",
+      "run_id": "01a077fe-f4a6-7f42-9dc1-a543c11a34f6",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c"
+      ],
+      "tags": [
+        "graph:step:10"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 10,
+        "langgraph_node": "compute_fairness",
+        "langgraph_triggers": [
+          "branch:to:compute_fairness"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "compute_fairness"
+        ],
+        "langgraph_checkpoint_ns": "compute_fairness:ef1487bd-752b-f94b-4aaa-736edb978314"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "route_after_fairness",
+      "timestamp": "2026-09-06T18:33:12.617068+00:00",
+      "run_id": "01a077fe-f4a8-71f0-8624-9224bc6c0926",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c",
+        "01a077fe-f4a6-7f42-9dc1-a543c11a34f6"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 10,
+        "langgraph_node": "compute_fairness",
+        "langgraph_triggers": [
+          "branch:to:compute_fairness"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "compute_fairness"
+        ],
+        "langgraph_checkpoint_ns": "compute_fairness:ef1487bd-752b-f94b-4aaa-736edb978314"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "route_after_fairness",
+      "timestamp": "2026-09-06T18:33:12.617687+00:00",
+      "run_id": "01a077fe-f4a8-71f0-8624-9224bc6c0926",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c",
+        "01a077fe-f4a6-7f42-9dc1-a543c11a34f6"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 10,
+        "langgraph_node": "compute_fairness",
+        "langgraph_triggers": [
+          "branch:to:compute_fairness"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "compute_fairness"
+        ],
+        "langgraph_checkpoint_ns": "compute_fairness:ef1487bd-752b-f94b-4aaa-736edb978314"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "compute_fairness",
+      "timestamp": "2026-09-06T18:33:12.618405+00:00",
+      "run_id": "01a077fe-f4a6-7f42-9dc1-a543c11a34f6",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c"
+      ],
+      "tags": [
+        "graph:step:10"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 10,
+        "langgraph_node": "compute_fairness",
+        "langgraph_triggers": [
+          "branch:to:compute_fairness"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "compute_fairness"
+        ],
+        "langgraph_checkpoint_ns": "compute_fairness:ef1487bd-752b-f94b-4aaa-736edb978314"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "assemble_output",
+      "timestamp": "2026-09-06T18:33:12.619810+00:00",
+      "run_id": "01a077fe-f4ab-7580-b6fa-31fcb1efbaf1",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c"
+      ],
+      "tags": [
+        "graph:step:11"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 11,
+        "langgraph_node": "assemble_output",
+        "langgraph_triggers": [
+          "branch:to:assemble_output"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "assemble_output"
+        ],
+        "langgraph_checkpoint_ns": "assemble_output:5b1ccd92-f1e1-0e9d-e00e-96a06cfd5884"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "assemble_output",
+      "timestamp": "2026-09-06T18:33:12.623371+00:00",
+      "run_id": "01a077fe-f4ab-7580-b6fa-31fcb1efbaf1",
+      "parent_ids": [
+        "01a077fe-f3bf-7e42-be4e-d55a9491b11c"
+      ],
+      "tags": [
+        "graph:step:11"
+      ],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph",
+        "langgraph_step": 11,
+        "langgraph_node": "assemble_output",
+        "langgraph_triggers": [
+          "branch:to:assemble_output"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "assemble_output"
+        ],
+        "langgraph_checkpoint_ns": "assemble_output:5b1ccd92-f1e1-0e9d-e00e-96a06cfd5884"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "LangGraph",
+      "timestamp": "2026-09-06T18:33:12.629072+00:00",
+      "run_id": "01a077fe-f3bf-7e42-be4e-d55a9491b11c",
+      "parent_ids": [],
+      "tags": [],
+      "metadata": {
+        "trip_id": "26-origin-set-4",
+        "eval_tier": "offline",
+        "thread_id": "26-origin-set-4",
+        "ls_integration": "langgraph"
+      }
+    }
+  ],
+  "telemetry": {
+    "nodes": {
+      "extract_preference_constraints": {
+        "input_tokens": 566,
+        "output_tokens": 547,
+        "cache_read_tokens": 0,
+        "cost_usd": 0.003301,
+        "unpriced_calls": 0,
+        "llm_calls": 1,
+        "duration_ms": 3.471
+      },
+      "select_destination": {
+        "input_tokens": 1701,
+        "output_tokens": 204,
+        "cache_read_tokens": 0,
+        "cost_usd": 0.002721,
+        "unpriced_calls": 0,
+        "llm_calls": 1,
+        "duration_ms": 118.385
+      },
+      "build_itinerary": {
+        "input_tokens": 3938,
+        "output_tokens": 3650,
+        "cache_read_tokens": 0,
+        "cost_usd": 0.022188,
+        "unpriced_calls": 0,
+        "llm_calls": 2,
+        "duration_ms": 9.284
+      },
+      "assemble_output": {
+        "input_tokens": 1577,
+        "output_tokens": 1190,
+        "cache_read_tokens": 0,
+        "cost_usd": 0.007527,
+        "unpriced_calls": 0,
+        "llm_calls": 1,
+        "duration_ms": 3.616
+      },
+      "parse_input": {
+        "duration_ms": 1.161
+      },
+      "city_selection_hitl": {
+        "duration_ms": 1.305
+      },
+      "dynamic_tool_selection": {
+        "duration_ms": 2.785
+      },
+      "parallel_data_fetch": {
+        "duration_ms": 5.464
+      },
+      "budget_analysis": {
+        "duration_ms": 3.215
+      },
+      "search_hotel": {
+        "duration_ms": 5.418
+      },
+      "cluster_by_neighborhood": {
+        "duration_ms": 1.843
+      },
+      "align_flight_times": {
+        "duration_ms": 2.595
+      },
+      "plan_routes": {
+        "duration_ms": 134.677
+      },
+      "apply_feasibility_swap": {
+        "duration_ms": 7.044
+      },
+      "validation_gate": {
+        "duration_ms": 6.495
+      },
+      "run_itinerary_node": {
+        "duration_ms": 197.734
+      },
+      "compute_fairness": {
+        "duration_ms": 2.488
+      }
+    },
+    "totals": {
+      "input_tokens": 7782,
+      "output_tokens": 5591,
+      "cache_read_tokens": 0,
+      "cost_usd": 0.035737,
+      "unpriced_calls": 0,
+      "llm_calls": 5,
+      "duration_ms": 389.339
+    }
+  },
+  "hitl_resolutions": 1,
+  "tool_calls": [
+    {
+      "operation": "search_flights",
+      "request": {
+        "origin": "BOS",
+        "destination": "Surfside Beach",
+        "depart_date": "2026-09-08",
+        "return_date": "2026-09-11",
+        "adults": 1
+      }
+    },
+    {
+      "operation": "search_flights",
+      "request": {
+        "origin": "MIA",
+        "destination": "Surfside Beach",
+        "depart_date": "2026-09-08",
+        "return_date": "2026-09-11",
+        "adults": 1
+      }
+    },
+    {
+      "operation": "search_flights",
+      "request": {
+        "origin": "SEA",
+        "destination": "Surfside Beach",
+        "depart_date": "2026-09-08",
+        "return_date": "2026-09-11",
+        "adults": 1
+      }
+    },
+    {
+      "operation": "fetch_activities_by_category",
+      "request": {
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "categories": [
+          "food",
+          "outdoor",
+          "urban"
+        ],
+        "max_per_category": 10
+      }
+    },
+    {
+      "operation": "fetch_weather",
+      "request": {
+        "lat": 28.949,
+        "lng": -95.293,
+        "start_date": "2026-09-08",
+        "end_date": "2026-09-11",
+        "destination_name": "Surfside Beach"
+      }
+    },
+    {
+      "operation": "search_hotels",
+      "request": {
+        "destination": "Surfside Beach",
+        "check_in": "2026-09-08",
+        "check_out": "2026-09-11",
+        "budget_ceiling_usd": 1410.0,
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        }
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 33.6653447,
+        "origin_lng": -78.910319,
+        "dest_lat": 28.9581242,
+        "dest_lng": -95.2766391,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9581242,
+        "origin_lng": -95.2766391,
+        "dest_lat": 28.949779499999998,
+        "dest_lng": -95.28490459999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.949779499999998,
+        "origin_lng": -95.28490459999999,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9515919,
+        "origin_lng": -95.2878874,
+        "dest_lat": 29.013253000000002,
+        "dest_lng": -95.32876879999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 29.013253000000002,
+        "origin_lng": -95.32876879999999,
+        "dest_lat": 28.9716048,
+        "dest_lng": -95.26171660000001,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9716048,
+        "origin_lng": -95.26171660000001,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 33.6653447,
+        "origin_lng": -78.910319,
+        "dest_lat": 28.9581242,
+        "dest_lng": -95.2766391,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9581242,
+        "origin_lng": -95.2766391,
+        "dest_lat": 28.9380657,
+        "dest_lng": -95.2955537,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9380657,
+        "origin_lng": -95.2955537,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9515919,
+        "origin_lng": -95.2878874,
+        "dest_lat": 28.9337826,
+        "dest_lng": -95.30845339999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9337826,
+        "origin_lng": -95.30845339999999,
+        "dest_lat": 28.9346868,
+        "dest_lng": -95.3039594,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9346868,
+        "origin_lng": -95.3039594,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Sea Center Texas visit",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": null
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 33.6653447,
+        "origin_lng": -78.910319,
+        "dest_lat": 28.9581242,
+        "dest_lng": -95.2766391,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9581242,
+        "origin_lng": -95.2766391,
+        "dest_lat": 29.026607600000002,
+        "dest_lng": -95.4567974,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 29.026607600000002,
+        "origin_lng": -95.4567974,
+        "dest_lat": 29.0284164,
+        "dest_lng": -95.4601204,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 29.0284164,
+        "origin_lng": -95.4601204,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9515919,
+        "origin_lng": -95.2878874,
+        "dest_lat": 29.01748,
+        "dest_lng": -95.44596159999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 29.01748,
+        "origin_lng": -95.44596159999999,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 33.6653447,
+        "origin_lng": -78.910319,
+        "dest_lat": 28.9581242,
+        "dest_lng": -95.2766391,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9581242,
+        "origin_lng": -95.2766391,
+        "dest_lat": 28.949779499999998,
+        "dest_lng": -95.28490459999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.949779499999998,
+        "origin_lng": -95.28490459999999,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9515919,
+        "origin_lng": -95.2878874,
+        "dest_lat": 29.013253000000002,
+        "dest_lng": -95.32876879999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 29.013253000000002,
+        "origin_lng": -95.32876879999999,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 33.6653447,
+        "origin_lng": -78.910319,
+        "dest_lat": 28.9581242,
+        "dest_lng": -95.2766391,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9581242,
+        "origin_lng": -95.2766391,
+        "dest_lat": 28.9380657,
+        "dest_lng": -95.2955537,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9380657,
+        "origin_lng": -95.2955537,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9515919,
+        "origin_lng": -95.2878874,
+        "dest_lat": 28.9337826,
+        "dest_lng": -95.30845339999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9337826,
+        "origin_lng": -95.30845339999999,
+        "dest_lat": 28.9346868,
+        "dest_lng": -95.3039594,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9346868,
+        "origin_lng": -95.3039594,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 33.6653447,
+        "origin_lng": -78.910319,
+        "dest_lat": 28.9581242,
+        "dest_lng": -95.2766391,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9581242,
+        "origin_lng": -95.2766391,
+        "dest_lat": 29.026607600000002,
+        "dest_lng": -95.4567974,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 29.026607600000002,
+        "origin_lng": -95.4567974,
+        "dest_lat": 29.0284164,
+        "dest_lng": -95.4601204,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 29.0284164,
+        "origin_lng": -95.4601204,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9515919,
+        "origin_lng": -95.2878874,
+        "dest_lat": 29.01748,
+        "dest_lng": -95.44596159999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 29.01748,
+        "origin_lng": -95.44596159999999,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 33.6653447,
+        "origin_lng": -78.910319,
+        "dest_lat": 28.9581242,
+        "dest_lng": -95.2766391,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9581242,
+        "origin_lng": -95.2766391,
+        "dest_lat": 28.949779499999998,
+        "dest_lng": -95.28490459999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.949779499999998,
+        "origin_lng": -95.28490459999999,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9515919,
+        "origin_lng": -95.2878874,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 33.6653447,
+        "origin_lng": -78.910319,
+        "dest_lat": 28.9581242,
+        "dest_lng": -95.2766391,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9581242,
+        "origin_lng": -95.2766391,
+        "dest_lat": 28.9380657,
+        "dest_lng": -95.2955537,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9380657,
+        "origin_lng": -95.2955537,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9515919,
+        "origin_lng": -95.2878874,
+        "dest_lat": 28.9337826,
+        "dest_lng": -95.30845339999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9337826,
+        "origin_lng": -95.30845339999999,
+        "dest_lat": 28.9346868,
+        "dest_lng": -95.3039594,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9346868,
+        "origin_lng": -95.3039594,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 33.6653447,
+        "origin_lng": -78.910319,
+        "dest_lat": 28.9581242,
+        "dest_lng": -95.2766391,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9581242,
+        "origin_lng": -95.2766391,
+        "dest_lat": 29.026607600000002,
+        "dest_lng": -95.4567974,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 29.026607600000002,
+        "origin_lng": -95.4567974,
+        "dest_lat": 29.0284164,
+        "dest_lng": -95.4601204,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 29.0284164,
+        "origin_lng": -95.4601204,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9515919,
+        "origin_lng": -95.2878874,
+        "dest_lat": 29.01748,
+        "dest_lng": -95.44596159999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 29.01748,
+        "origin_lng": -95.44596159999999,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 33.6653447,
+        "origin_lng": -78.910319,
+        "dest_lat": 28.949779499999998,
+        "dest_lng": -95.28490459999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.949779499999998,
+        "origin_lng": -95.28490459999999,
+        "dest_lat": 28.9532539,
+        "dest_lng": -95.281722,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9532539,
+        "origin_lng": -95.281722,
+        "dest_lat": 29.013253000000002,
+        "dest_lng": -95.32876879999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 29.013253000000002,
+        "origin_lng": -95.32876879999999,
+        "dest_lat": 28.9581242,
+        "dest_lng": -95.2766391,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Quintana Beach and Bird Sanctuary visit",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": null
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Italian dinner (Freeport area)",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 33.6653447,
+        "origin_lng": -78.910319,
+        "dest_lat": 28.9380657,
+        "dest_lng": -95.2955537,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9380657,
+        "origin_lng": -95.2955537,
+        "dest_lat": 28.9414886,
+        "dest_lng": -95.2986253,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9414886,
+        "origin_lng": -95.2986253,
+        "dest_lat": 28.9346868,
+        "dest_lng": -95.3039594,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9346868,
+        "origin_lng": -95.3039594,
+        "dest_lat": 33.611111099999995,
+        "dest_lng": -78.9808333,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch near Lake Jackson area",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 33.6653447,
+        "origin_lng": -78.910319,
+        "dest_lat": 29.026607600000002,
+        "dest_lng": -95.4567974,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 29.026607600000002,
+        "origin_lng": -95.4567974,
+        "dest_lat": 29.043342300000003,
+        "dest_lng": -95.44930029999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 29.043342300000003,
+        "origin_lng": -95.44930029999999,
+        "dest_lat": 29.01748,
+        "dest_lng": -95.44596159999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 29.01748,
+        "origin_lng": -95.44596159999999,
+        "dest_lat": 29.0416327,
+        "dest_lng": -95.45764790000001,
+        "mode": "WALK"
+      }
+    }
+  ]
+}

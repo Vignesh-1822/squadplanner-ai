@@ -1,0 +1,32 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 44.636,
+      "lng": -124.053
+    },
+    "destination": "Newport",
+    "included_type": "restaurant",
+    "query": "Return to hotel, rest and prepare for final dinner"
+  },
+  "request_sha256": "6a543c5dc08e82114b418c46129c969d2c7d7b758ee9f56420ebb06f27a9bc3b",
+  "response": {
+    "address": "267 NW Cliff St, Newport, OR 97365, USA",
+    "category": "food",
+    "lat": 44.638273999999996,
+    "lng": -124.06214000000001,
+    "name": "Hotel Sylvia",
+    "place_id": "ChIJJ0zhF8zXwVQRRZeKCJZ4kJg",
+    "price_level": 0,
+    "rating": 4.6,
+    "tags": [
+      "hotel",
+      "inn",
+      "lodging",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

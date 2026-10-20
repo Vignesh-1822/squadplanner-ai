@@ -1,0 +1,29 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 44.636,
+      "lng": -124.053
+    },
+    "destination": "Newport",
+    "included_type": null,
+    "query": "Rest and regroup at hotel"
+  },
+  "request_sha256": "d2c20b16eacc0dc26f1013fc48cea779797a31ab05cbd3393f8e7ce21353c1dc",
+  "response": {
+    "address": "155 SW Elizabeth St, Newport, OR 97365, USA",
+    "category": "place",
+    "lat": 44.6352515,
+    "lng": -124.06291,
+    "name": "Allred Hotel",
+    "place_id": "ChIJTzLbGMnXwVQRYbLCkqQzv-8",
+    "price_level": 0,
+    "rating": 4.7,
+    "tags": [
+      "hotel",
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

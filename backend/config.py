@@ -20,15 +20,23 @@ class Settings(BaseSettings):
         default="anthropic",
         validation_alias="LLM_PROVIDER",
     )
-    anthropic_api_key: str = Field(validation_alias="ANTHROPIC_API_KEY")
+    anthropic_api_key: str = Field(default="", validation_alias="ANTHROPIC_API_KEY")
     groq_api_key: str = Field(default="", validation_alias="GROQ_API_KEY")
-    serpapi_key: str = Field(validation_alias="SERPAPI_KEY")
-    google_places_api_key: str = Field(validation_alias="GOOGLE_PLACES_API_KEY")
-    google_routes_api_key: str = Field(validation_alias="GOOGLE_ROUTES_API_KEY")
+    serpapi_key: str = Field(default="", validation_alias="SERPAPI_KEY")
+    google_places_api_key: str = Field(default="", validation_alias="GOOGLE_PLACES_API_KEY")
+    google_routes_api_key: str = Field(default="", validation_alias="GOOGLE_ROUTES_API_KEY")
 
     langchain_api_key: str | None = Field(default=None, validation_alias="LANGCHAIN_API_KEY")
     langchain_tracing_v2: str = Field(default="false", validation_alias="LANGCHAIN_TRACING_V2")
     langchain_project: str = Field(default="squadplanner", validation_alias="LANGCHAIN_PROJECT")
+    evals_tool_mode: Literal["off", "replay", "record"] = Field(
+        default="off",
+        validation_alias="EVALS_TOOL_MODE",
+    )
+    evals_llm_mode: Literal["off", "replay", "record"] = Field(
+        default="off",
+        validation_alias="EVALS_LLM_MODE",
+    )
 
     serpapi_monthly_hard_limit: int = Field(
         default=200,
@@ -53,6 +61,16 @@ class Settings(BaseSettings):
         validation_alias="WIKIMEDIA_CONTACT",
     )
     frontend_url: str = Field(default="http://localhost:5173", validation_alias="FRONTEND_URL")
+    cookie_secure: bool = Field(default=False, validation_alias="COOKIE_SECURE")
+    cors_origins: str = Field(
+        default="http://localhost:5173,http://localhost:5174",
+        validation_alias="CORS_ORIGINS",
+    )
+
+    @property
+    def cors_origin_list(self) -> list[str]:
+        """Return the explicit origins allowed to send credentialed requests."""
+        return [origin.strip() for origin in self.cors_origins.split(",") if origin.strip()]
 
 
 settings = Settings()
@@ -60,6 +78,9 @@ settings = Settings()
 
 def configure_langsmith() -> None:
     """Configure LangSmith environment variables when tracing is enabled."""
+    if os.getenv("PYTEST_CURRENT_TEST"):
+        os.environ["LANGCHAIN_TRACING_V2"] = "false"
+        return
     if settings.langchain_tracing_v2.lower() != "true":
         return
 
@@ -72,14 +93,15 @@ def configure_langsmith() -> None:
 
 def get_llm() -> Any:
     """Return a chat model for the configured provider (lazy-imports providers)."""
+    llm: Any
     if settings.llm_provider == "anthropic":
         from langchain_anthropic import ChatAnthropic
 
-        return ChatAnthropic(
+        llm = ChatAnthropic(
             model="claude-haiku-4-5",
             api_key=settings.anthropic_api_key,
         )
-    if settings.llm_provider == "groq":
+    elif settings.llm_provider == "groq":
         try:
             from langchain_groq import ChatGroq
         except ImportError as err:
@@ -88,8 +110,16 @@ def get_llm() -> Any:
                 "(pip install langchain-groq)."
             ) from err
 
-        return ChatGroq(
+        llm = ChatGroq(
             model="llama-3.1-8b-instant",
             api_key=settings.groq_api_key,
         )
-    raise ValueError(f"Unsupported LLM_PROVIDER: {settings.llm_provider}")
+    else:
+        raise ValueError(f"Unsupported LLM_PROVIDER: {settings.llm_provider}")
+
+    eval_mode = os.getenv("EVALS_LLM_MODE", settings.evals_llm_mode).strip().lower()
+    if eval_mode != "off":
+        from evals.replay.llm import ReplayLLM
+
+        return ReplayLLM(llm)
+    return llm

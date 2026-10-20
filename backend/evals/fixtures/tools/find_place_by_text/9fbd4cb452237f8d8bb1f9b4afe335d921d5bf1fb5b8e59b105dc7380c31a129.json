@@ -1,0 +1,40 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 41.8781,
+      "lng": -87.6298
+    },
+    "destination": "Chicago",
+    "included_type": "restaurant",
+    "query": "Breakfast"
+  },
+  "request_sha256": "9fbd4cb452237f8d8bb1f9b4afe335d921d5bf1fb5b8e59b105dc7380c31a129",
+  "response": {
+    "address": "22 E Adams St, Chicago, IL 60603, USA",
+    "category": "food",
+    "lat": 41.8796069,
+    "lng": -87.62687679999999,
+    "name": "Broadway Cafe",
+    "place_id": "ChIJe-HI1sstDogRppD3KPRhydQ",
+    "price_level": 0,
+    "rating": 4.6,
+    "tags": [
+      "cafe",
+      "cake_shop",
+      "sandwich_shop",
+      "breakfast_restaurant",
+      "coffee_shop",
+      "bakery",
+      "food_store",
+      "wholesaler",
+      "manufacturer",
+      "restaurant",
+      "food",
+      "store",
+      "point_of_interest",
+      "service",
+      "establishment"
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "operation": "search_flights",
+  "request": {
+    "adults": 1,
+    "depart_date": "2026-09-08",
+    "destination": "Chicago",
+    "origin": "SEA",
+    "return_date": "2026-09-11"
+  },
+  "request_sha256": "cae6832a8fac27dc48b90cf3738d74126b61266365004d19e553ed5f105ae2c7",
+  "response": {
+    "airline": "Estimated",
+    "depart_time": "2026-09-08T08:00:00",
+    "destination": "Chicago",
+    "is_estimated": true,
+    "member_id": "",
+    "origin": "SEA",
+    "price_usd": 300.0,
+    "return_time": "2026-09-11T18:00:00"
+  }
+}

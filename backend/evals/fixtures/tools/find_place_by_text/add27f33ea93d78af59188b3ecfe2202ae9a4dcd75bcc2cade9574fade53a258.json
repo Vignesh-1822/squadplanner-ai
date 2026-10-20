@@ -1,0 +1,30 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 41.8781,
+      "lng": -87.6298
+    },
+    "destination": "Chicago",
+    "included_type": null,
+    "query": "Chinatown neighborhood exploration"
+  },
+  "request_sha256": "add27f33ea93d78af59188b3ecfe2202ae9a4dcd75bcc2cade9574fade53a258",
+  "response": {
+    "address": "2206 S Wentworth Ave, Chicago, IL 60616, USA",
+    "category": "place",
+    "lat": 41.8526163,
+    "lng": -87.63201339999999,
+    "name": "Chicago's Chinatown Gateway",
+    "place_id": "ChIJibQNt2MsDogR031grm8gh4U",
+    "price_level": 0,
+    "rating": 4.4,
+    "tags": [
+      "historical_landmark",
+      "tourist_attraction",
+      "historical_place",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

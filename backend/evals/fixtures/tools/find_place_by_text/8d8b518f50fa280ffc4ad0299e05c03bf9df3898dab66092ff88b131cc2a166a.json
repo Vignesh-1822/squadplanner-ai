@@ -1,0 +1,29 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 28.949,
+      "lng": -95.293
+    },
+    "destination": "Surfside Beach",
+    "included_type": "lodging",
+    "query": "Gazebo Inn Oceanfront Budget option with homey rooms, oceanfront balconies with rocking chairs & free Wi-Fi, plus a pool."
+  },
+  "request_sha256": "8d8b518f50fa280ffc4ad0299e05c03bf9df3898dab66092ff88b131cc2a166a",
+  "response": {
+    "address": "1607 S Ocean Blvd, Myrtle Beach, SC 29577, USA",
+    "category": "place",
+    "lat": 33.6720793,
+    "lng": -78.90172969999999,
+    "name": "Gazebo Inn Oceanfront",
+    "place_id": "ChIJQ0-hwMBpAIkRhdrmv-XDu7o",
+    "price_level": 0,
+    "rating": 3.7,
+    "tags": [
+      "hotel",
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

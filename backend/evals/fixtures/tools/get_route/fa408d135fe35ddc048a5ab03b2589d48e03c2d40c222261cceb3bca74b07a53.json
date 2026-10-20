@@ -1,0 +1,17 @@
+{
+  "operation": "get_route",
+  "request": {
+    "dest_lat": 28.9489403,
+    "dest_lng": -95.2907563,
+    "mode": "WALK",
+    "origin_lat": 28.9515919,
+    "origin_lng": -95.2878874
+  },
+  "request_sha256": "fa408d135fe35ddc048a5ab03b2589d48e03c2d40c222261cceb3bca74b07a53",
+  "response": {
+    "distance_meters": 476,
+    "duration_seconds": 391,
+    "mode": "WALK",
+    "polyline": "uquoD`}qdQJYLQdG~FxCxCeAvAtBrB"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 38.04,
+      "lng": -84.503
+    },
+    "destination": "Lexington",
+    "included_type": "restaurant",
+    "query": "Breakfast"
+  },
+  "request_sha256": "0878cee533a3d6ded736f6a7597a99c4414b1b1ab7c01c904bad7d079c5662ac",
+  "response": {
+    "address": "262 N Limestone, Lexington, KY 40508, USA",
+    "category": "food",
+    "lat": 38.0491078,
+    "lng": -84.4926203,
+    "name": "doodles breakfast and lunch",
+    "place_id": "ChIJsXFMtu9EQogRuExARYGQnEo",
+    "price_level": 0,
+    "rating": 4.4,
+    "tags": [
+      "breakfast_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

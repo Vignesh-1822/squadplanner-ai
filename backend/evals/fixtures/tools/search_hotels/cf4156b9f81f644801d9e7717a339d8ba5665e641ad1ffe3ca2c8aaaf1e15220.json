@@ -1,0 +1,25 @@
+{
+  "operation": "search_hotels",
+  "request": {
+    "budget_ceiling_usd": 1410.0,
+    "check_in": "2026-09-08",
+    "check_out": "2026-09-11",
+    "coords": {
+      "lat": 48.696,
+      "lng": -113.718
+    },
+    "destination": "Glacier National Park"
+  },
+  "request_sha256": "cf4156b9f81f644801d9e7717a339d8ba5665e641ad1ffe3ca2c8aaaf1e15220",
+  "response": {
+    "address": "1147 Rte 3, Browning, MT 59417, USA",
+    "is_estimated": false,
+    "lat": 48.7967004,
+    "lng": -113.65777469999999,
+    "name": "Many Glacier Hotel (over budget)",
+    "place_id": "ChIJ93d8QhKmaFMRb7vjfpE3hQ0",
+    "price_per_night_usd": 120.0,
+    "rating": 4.6,
+    "total_price_usd": 360.0
+  }
+}

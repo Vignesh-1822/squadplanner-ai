@@ -1,0 +1,30 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 38.04,
+      "lng": -84.503
+    },
+    "destination": "Lexington",
+    "included_type": null,
+    "query": "Relaxed morning activity or neighborhood exploration"
+  },
+  "request_sha256": "ebf50899ebc7df9d3ce34b7743890c04bf3114aae094b2d78b3190a4812d8013",
+  "response": {
+    "address": "540 E Third St, Lexington, KY 40508, USA",
+    "category": "place",
+    "lat": 38.0434313,
+    "lng": -84.48394809999999,
+    "name": "Charles Young Center",
+    "place_id": "ChIJo6xqFOFEQogR6LRg3ia9I8E",
+    "price_level": 0,
+    "rating": 4.7,
+    "tags": [
+      "community_center",
+      "event_venue",
+      "point_of_interest",
+      "service",
+      "establishment"
+    ]
+  }
+}

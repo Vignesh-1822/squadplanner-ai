@@ -1,0 +1,30 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 28.949,
+      "lng": -95.293
+    },
+    "destination": "Surfside Beach",
+    "included_type": "restaurant",
+    "query": "Lunch - Lake Jackson area"
+  },
+  "request_sha256": "6259dc7d654f8a0615ded1b94650b3fca226a30a2e9e5b9a84a734fd43d622aa",
+  "response": {
+    "address": "38 Circle Way St, Lake Jackson, TX 77566, USA",
+    "category": "food",
+    "lat": 29.043342300000003,
+    "lng": -95.44930029999999,
+    "name": "Backyard Patio",
+    "place_id": "ChIJiTR-0rNDQIYR9ZoLIkvmTd0",
+    "price_level": 0,
+    "rating": 4.4,
+    "tags": [
+      "american_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

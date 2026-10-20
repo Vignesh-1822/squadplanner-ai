@@ -1,0 +1,30 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 28.949,
+      "lng": -95.293
+    },
+    "destination": "Surfside Beach",
+    "included_type": null,
+    "query": "Beach time and packing preparation"
+  },
+  "request_sha256": "c248a5335a0125aa9f90d06e6757b5673eb6b183f76286ef2555c93cb485aac7",
+  "response": {
+    "address": "206 Starfish St, Freeport, TX 77541, USA",
+    "category": "place",
+    "lat": 28.949779499999998,
+    "lng": -95.28490459999999,
+    "name": "Surfside Beach",
+    "place_id": "ChIJTwGL0CxtQIYRGkhDk4i_7Mo",
+    "price_level": 0,
+    "rating": 4.6,
+    "tags": [
+      "tourist_attraction",
+      "nature_preserve",
+      "park",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

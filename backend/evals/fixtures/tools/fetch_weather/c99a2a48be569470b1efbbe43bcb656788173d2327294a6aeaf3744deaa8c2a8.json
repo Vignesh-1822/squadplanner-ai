@@ -1,0 +1,18 @@
+{
+  "operation": "fetch_weather",
+  "request": {
+    "destination_name": "Chicago",
+    "end_date": "2026-09-11",
+    "lat": 41.8781,
+    "lng": -87.6298,
+    "start_date": "2026-09-08"
+  },
+  "request_sha256": "c99a2a48be569470b1efbbe43bcb656788173d2327294a6aeaf3744deaa8c2a8",
+  "response": {
+    "avg_temp_c": 23.9,
+    "date_range": "2026-09-08 to 2026-09-11",
+    "destination": "Chicago",
+    "precipitation_mm": 4.0,
+    "summary": "Mild (23.9\u00b0C avg), dry conditions"
+  }
+}

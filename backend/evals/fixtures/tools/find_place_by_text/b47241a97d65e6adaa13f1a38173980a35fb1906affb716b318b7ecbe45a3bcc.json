@@ -1,0 +1,31 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 28.949,
+      "lng": -95.293
+    },
+    "destination": "Surfside Beach",
+    "included_type": "restaurant",
+    "query": "Italian dinner (Alice's must-include requirement)"
+  },
+  "request_sha256": "b47241a97d65e6adaa13f1a38173980a35fb1906affb716b318b7ecbe45a3bcc",
+  "response": {
+    "address": "815 Surfside Dr, Surfside Beach, SC 29575, USA",
+    "category": "food",
+    "lat": 33.611111099999995,
+    "lng": -78.9808333,
+    "name": "Malibu Of Surfside Italian Restaurant",
+    "place_id": "ChIJu1vdQPlAAIkRkoJO5rLO5BU",
+    "price_level": 0,
+    "rating": 4.6,
+    "tags": [
+      "italian_restaurant",
+      "european_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

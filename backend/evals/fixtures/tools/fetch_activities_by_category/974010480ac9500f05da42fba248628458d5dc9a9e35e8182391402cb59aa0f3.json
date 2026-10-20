@@ -1,0 +1,558 @@
+{
+  "operation": "fetch_activities_by_category",
+  "request": {
+    "categories": [
+      "food",
+      "outdoor",
+      "urban"
+    ],
+    "coords": {
+      "lat": 28.949,
+      "lng": -95.293
+    },
+    "destination": "Surfside Beach",
+    "max_per_category": 10
+  },
+  "request_sha256": "974010480ac9500f05da42fba248628458d5dc9a9e35e8182391402cb59aa0f3",
+  "response": [
+    {
+      "address": "310 Ocean Dr, Surfside Beach, TX 77541, USA",
+      "category": "food",
+      "lat": 28.9532539,
+      "lng": -95.281722,
+      "name": "Seahorse Bar & Grill",
+      "place_id": "ChIJF8xuc89sQIYRekk3h_Mg8kQ",
+      "price_level": 0,
+      "rating": 4.2,
+      "tags": [
+        "seafood_restaurant",
+        "hamburger_restaurant",
+        "american_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "750 Bluewater Hwy A, Surfside Beach, TX 77541, USA",
+      "category": "food",
+      "lat": 28.9581242,
+      "lng": -95.2766391,
+      "name": "Beach Front Deck Bar and Grill",
+      "place_id": "ChIJkadRENtsQIYRxJKpRAWJ0ew",
+      "price_level": 0,
+      "rating": 3.9,
+      "tags": [
+        "bar_and_grill",
+        "seafood_restaurant",
+        "bar",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "121 TX-332 A, Lake Jackson, TX 77566, USA",
+      "category": "food",
+      "lat": 29.046697299999998,
+      "lng": -95.457335,
+      "name": "Chick-fil-A",
+      "place_id": "ChIJJ71JEupDQIYRRN4rZqqN9EI",
+      "price_level": 0,
+      "rating": 4.5,
+      "tags": [
+        "fast_food_restaurant",
+        "breakfast_restaurant",
+        "family_restaurant",
+        "catering_service",
+        "food_delivery",
+        "chicken_restaurant",
+        "shipping_service",
+        "restaurant",
+        "food",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "120 Commerce St, Clute, TX 77531, USA",
+      "category": "food",
+      "lat": 29.0145736,
+      "lng": -95.4032392,
+      "name": "El Toro Mexican Restaurant - Clute",
+      "place_id": "ChIJq4mi6uVBQIYRz9MZgduRwgg",
+      "price_level": 0,
+      "rating": 4.6,
+      "tags": [
+        "tex_mex_restaurant",
+        "bar_and_grill",
+        "mexican_restaurant",
+        "bar",
+        "american_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "105 Abner Jackson Pkwy, Lake Jackson, TX 77566, USA",
+      "category": "food",
+      "lat": 29.0416327,
+      "lng": -95.45764790000001,
+      "name": "La Casona Tex Mex",
+      "place_id": "ChIJmZR2XcJDQIYRdBcikss_VC0",
+      "price_level": 0,
+      "rating": 4.4,
+      "tags": [
+        "tex_mex_restaurant",
+        "bar_and_grill",
+        "latin_american_restaurant",
+        "bar",
+        "american_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "330 Dixie Dr G, Lake Jackson, TX 77566, USA",
+      "category": "food",
+      "lat": 29.0294833,
+      "lng": -95.4208194,
+      "name": "Asiel's Restaurant",
+      "place_id": "ChIJw7o0oolBQIYRI6lypJn7Cv0",
+      "price_level": 0,
+      "rating": 4.5,
+      "tags": [
+        "american_restaurant",
+        "breakfast_restaurant",
+        "seafood_restaurant",
+        "catering_service",
+        "cocktail_bar",
+        "food_delivery",
+        "bar",
+        "restaurant",
+        "food",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "100 TX-332 Suite 1126, Lake Jackson, TX 77566, USA",
+      "category": "food",
+      "lat": 29.0493659,
+      "lng": -95.4583755,
+      "name": "Texas Roadhouse",
+      "place_id": "ChIJBe2igexDQIYR1Ts8cotowEk",
+      "price_level": 0,
+      "rating": 4.3,
+      "tags": [
+        "steak_house",
+        "american_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "501 S Main St, Clute, TX 77531, USA",
+      "category": "food",
+      "lat": 29.0164144,
+      "lng": -95.40401879999999,
+      "name": "La Michoacana Meat Market",
+      "place_id": "ChIJBbXoeOVBQIYRrr13UkY_q-E",
+      "price_level": 0,
+      "rating": 4.2,
+      "tags": [
+        "butcher_shop",
+        "market",
+        "bakery",
+        "mexican_restaurant",
+        "supermarket",
+        "grocery_store",
+        "food_store",
+        "restaurant",
+        "food",
+        "store",
+        "service",
+        "point_of_interest",
+        "manufacturer",
+        "establishment"
+      ]
+    },
+    {
+      "address": "106 TX-332, Lake Jackson, TX 77566, USA",
+      "category": "food",
+      "lat": 29.0443038,
+      "lng": -95.4555511,
+      "name": "Jimmy Joe's Texas Kitchen & Bar",
+      "place_id": "ChIJb0lMfXFDQIYRXyam_-t16xg",
+      "price_level": 0,
+      "rating": 4.5,
+      "tags": [
+        "seafood_restaurant",
+        "hamburger_restaurant",
+        "american_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "412 Parkview Rd, Surfside Beach, TX 77541, USA",
+      "category": "food",
+      "lat": 28.9414886,
+      "lng": -95.2986253,
+      "name": "Jetty Shack",
+      "place_id": "ChIJt7SUSU0TQIYR6hyihAeoiiY",
+      "price_level": 0,
+      "rating": 4.5,
+      "tags": [
+        "bar_and_grill",
+        "bar",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "101 Parkview Rd, Surfside Beach, TX 77541, USA",
+      "category": "outdoor",
+      "lat": 28.9380657,
+      "lng": -95.2955537,
+      "name": "Surfside Jetty County Park",
+      "place_id": "ChIJHREgXUwTQIYRM50qzmXt9Ek",
+      "price_level": 0,
+      "rating": 4.5,
+      "tags": [
+        "park",
+        "tourist_attraction",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "206 Starfish St, Freeport, TX 77541, USA",
+      "category": "outdoor",
+      "lat": 28.949779499999998,
+      "lng": -95.28490459999999,
+      "name": "Surfside Beach",
+      "place_id": "ChIJTwGL0CxtQIYRGkhDk4i_7Mo",
+      "price_level": 0,
+      "rating": 4.6,
+      "tags": [
+        "tourist_attraction",
+        "nature_preserve",
+        "park",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "3302 Bryan Beach Rd, Freeport, TX 77541, USA",
+      "category": "outdoor",
+      "lat": 28.9116766,
+      "lng": -95.33593929999999,
+      "name": "Freeport Bryan Beach",
+      "place_id": "ChIJWwX7VzsVQIYRXz7eD8XNy1o",
+      "price_level": 0,
+      "rating": 4.5,
+      "tags": [
+        "park",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "3312 County Rd 257, Freeport, TX 77541, USA",
+      "category": "outdoor",
+      "lat": 28.9903043,
+      "lng": -95.23803869999999,
+      "name": "Brazoria County Beach Free Camping",
+      "place_id": "ChIJAVjymg1tQIYRutiu3Hsy2Aw",
+      "price_level": 0,
+      "rating": 4.6,
+      "tags": [
+        "tourist_attraction",
+        "park",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "330 5th St, Quintana, TX 77541, USA",
+      "category": "outdoor",
+      "lat": 28.9346868,
+      "lng": -95.3039594,
+      "name": "Quintana Beach County Park",
+      "place_id": "ChIJbxA6JVETQIYRsFUvpFX8YnE",
+      "price_level": 0,
+      "rating": 4.5,
+      "tags": [
+        "rv_park",
+        "real_estate_agency",
+        "travel_agency",
+        "lodging",
+        "park",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "91 Lake Rd, Lake Jackson, TX 77566, USA",
+      "category": "outdoor",
+      "lat": 29.026607600000002,
+      "lng": -95.4567974,
+      "name": "Lake Jackson Recreation Center",
+      "place_id": "ChIJLwZ5epJDQIYRO9pjKxhZAI8",
+      "price_level": 0,
+      "rating": 4.5,
+      "tags": [
+        "skateboard_park",
+        "gym",
+        "swimming_pool",
+        "sports_complex",
+        "sports_activity_location",
+        "park",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "106 Yucca Ave, Freeport, TX 77541, USA",
+      "category": "outdoor",
+      "lat": 28.9627655,
+      "lng": -95.2713541,
+      "name": "Yucca Avenue Public Beach Access",
+      "place_id": "ChIJl-Bg795sQIYRB0a97JotCNM",
+      "price_level": 0,
+      "rating": 4.6,
+      "tags": [
+        "park",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "4001-, 4021 FM523, Oyster Creek, TX 77541, USA",
+      "category": "outdoor",
+      "lat": 29.013253000000002,
+      "lng": -95.32876879999999,
+      "name": "Oyster Creek Municipal Park",
+      "place_id": "ChIJHfRs_-prQIYRUH7zXCYTTDc",
+      "price_level": 0,
+      "rating": 4.5,
+      "tags": [
+        "park",
+        "tourist_attraction",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "93 Lake Rd, Lake Jackson, TX 77566, USA",
+      "category": "outdoor",
+      "lat": 29.0284164,
+      "lng": -95.4601204,
+      "name": "A.A. MacLean Park",
+      "place_id": "ChIJhWNQEPlBQIYRbFuv3RgJMnI",
+      "price_level": 0,
+      "rating": 4.6,
+      "tags": [
+        "park",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "2211 Bluewater Hwy, Surfside Beach, TX 77541, USA",
+      "category": "outdoor",
+      "lat": 28.9716048,
+      "lng": -95.26171660000001,
+      "name": "Stahlman Park",
+      "place_id": "ChIJXc84aRltQIYRI4eX9Owl-fM",
+      "price_level": 0,
+      "rating": 4.4,
+      "tags": [
+        "park",
+        "tourist_attraction",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "101 Parkview Rd, Surfside Beach, TX 77541, USA",
+      "category": "urban",
+      "lat": 28.9380657,
+      "lng": -95.2955537,
+      "name": "Surfside Jetty County Park",
+      "place_id": "ChIJHREgXUwTQIYRM50qzmXt9Ek",
+      "price_level": 0,
+      "rating": 4.5,
+      "tags": [
+        "park",
+        "tourist_attraction",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "206 Starfish St, Freeport, TX 77541, USA",
+      "category": "urban",
+      "lat": 28.949779499999998,
+      "lng": -95.28490459999999,
+      "name": "Surfside Beach",
+      "place_id": "ChIJTwGL0CxtQIYRGkhDk4i_7Mo",
+      "price_level": 0,
+      "rating": 4.6,
+      "tags": [
+        "nature_preserve",
+        "tourist_attraction",
+        "park",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "302 Medical Dr, Lake Jackson, TX 77566, USA",
+      "category": "urban",
+      "lat": 29.01748,
+      "lng": -95.44596159999999,
+      "name": "Sea Center Texas",
+      "place_id": "ChIJJ3BssNhDQIYRVuXF4VhGkEk",
+      "price_level": 0,
+      "rating": 4.7,
+      "tags": [
+        "aquarium",
+        "tourist_attraction",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "3312 County Rd 257, Freeport, TX 77541, USA",
+      "category": "urban",
+      "lat": 28.9903043,
+      "lng": -95.23803869999999,
+      "name": "Brazoria County Beach Free Camping",
+      "place_id": "ChIJAVjymg1tQIYRutiu3Hsy2Aw",
+      "price_level": 0,
+      "rating": 4.6,
+      "tags": [
+        "tourist_attraction",
+        "park",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "898 2nd St, Quintana, TX 77541, USA",
+      "category": "urban",
+      "lat": 28.935602000000003,
+      "lng": -95.30378200000001,
+      "name": "Quintana Beach",
+      "place_id": "ChIJEcdpaU4TQIYRODPuMl55Low",
+      "price_level": 0,
+      "rating": 4.6,
+      "tags": [
+        "tourist_attraction",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "4001-, 4021 FM523, Oyster Creek, TX 77541, USA",
+      "category": "urban",
+      "lat": 29.013253000000002,
+      "lng": -95.32876879999999,
+      "name": "Oyster Creek Municipal Park",
+      "place_id": "ChIJHfRs_-prQIYRUH7zXCYTTDc",
+      "price_level": 0,
+      "rating": 4.5,
+      "tags": [
+        "park",
+        "tourist_attraction",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "2211 Bluewater Hwy, Surfside Beach, TX 77541, USA",
+      "category": "urban",
+      "lat": 28.9716048,
+      "lng": -95.26171660000001,
+      "name": "Stahlman Park",
+      "place_id": "ChIJXc84aRltQIYRI4eX9Owl-fM",
+      "price_level": 0,
+      "rating": 4.4,
+      "tags": [
+        "park",
+        "tourist_attraction",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "6233 TX-36, Freeport, TX 77541, USA",
+      "category": "urban",
+      "lat": 28.9492141,
+      "lng": -95.4387742,
+      "name": "Justin Hurst Wildlife Management Area",
+      "place_id": "ChIJy7wL5psVQIYR2pjGeZciqkY",
+      "price_level": 0,
+      "rating": 4.2,
+      "tags": [
+        "wildlife_park",
+        "tourist_attraction",
+        "zoo",
+        "park",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "100 Narcissus St, Lake Jackson, TX 77566, USA",
+      "category": "urban",
+      "lat": 29.035282900000002,
+      "lng": -95.43341769999999,
+      "name": "Jasmine Park",
+      "place_id": "ChIJN923gixCQIYRUO7O5ORXRHw",
+      "price_level": 0,
+      "rating": 4.4,
+      "tags": [
+        "park",
+        "tourist_attraction",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "814 Lamar St, Quintana, TX 77541, USA",
+      "category": "urban",
+      "lat": 28.9337826,
+      "lng": -95.30845339999999,
+      "name": "Quintana Neotropical Bird Sanctuary",
+      "place_id": "ChIJQVZdRFYTQIYRd4T5cYOG6F0",
+      "price_level": 0,
+      "rating": 4.6,
+      "tags": [
+        "nature_preserve",
+        "tourist_attraction",
+        "park",
+        "point_of_interest",
+        "establishment"
+      ]
+    }
+  ]
+}

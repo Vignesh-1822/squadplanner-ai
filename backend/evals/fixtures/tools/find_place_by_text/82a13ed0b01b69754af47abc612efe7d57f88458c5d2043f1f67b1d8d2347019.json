@@ -1,0 +1,30 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 28.69,
+      "lng": -95.967
+    },
+    "destination": "Matagorda",
+    "included_type": "restaurant",
+    "query": "Dinner"
+  },
+  "request_sha256": "82a13ed0b01b69754af47abc612efe7d57f88458c5d2043f1f67b1d8d2347019",
+  "response": {
+    "address": "190 County Rd 255, Matagorda, TX 77457, USA",
+    "category": "food",
+    "lat": 28.6938839,
+    "lng": -95.95871249999999,
+    "name": "Waterfront Restaurant",
+    "place_id": "ChIJHw2tVzzZQYYRn3YmibXc1mw",
+    "price_level": 0,
+    "rating": 4.3,
+    "tags": [
+      "seafood_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

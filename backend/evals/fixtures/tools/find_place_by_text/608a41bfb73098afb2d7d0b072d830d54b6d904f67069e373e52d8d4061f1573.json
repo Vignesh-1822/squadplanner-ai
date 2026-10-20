@@ -1,0 +1,29 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 38.04,
+      "lng": -84.503
+    },
+    "destination": "Lexington",
+    "included_type": null,
+    "query": "Scenic walk through Pleasant Ridge neighborhood"
+  },
+  "request_sha256": "608a41bfb73098afb2d7d0b072d830d54b6d904f67069e373e52d8d4061f1573",
+  "response": {
+    "address": "1350 Pleasant Ridge Dr, Lexington, KY 40509, USA",
+    "category": "place",
+    "lat": 38.010343,
+    "lng": -84.405776,
+    "name": "Pleasant Ridge Park",
+    "place_id": "ChIJraHjXFNRQogRGnmL2H0qgKo",
+    "price_level": 0,
+    "rating": 4.4,
+    "tags": [
+      "city_park",
+      "park",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 28.69,
+      "lng": -95.967
+    },
+    "destination": "Matagorda",
+    "included_type": null,
+    "query": "Relaxation time"
+  },
+  "request_sha256": "ad5965e3a69eda282e9b4792e030093dffc0c388c3e3ba8cf3022c798b7e3752",
+  "response": {
+    "address": "40 Fisher St, Matagorda, TX 77457, USA",
+    "category": "place",
+    "lat": 28.6947065,
+    "lng": -95.9612355,
+    "name": "Fisherman's Motel",
+    "place_id": "ChIJhQpMlBLbQYYRlwxVtzRl-RI",
+    "price_level": 0,
+    "rating": 4.4,
+    "tags": [
+      "motel",
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

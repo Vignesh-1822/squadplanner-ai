@@ -1,0 +1,29 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 48.696,
+      "lng": -113.718
+    },
+    "destination": "Glacier National Park",
+    "included_type": "restaurant",
+    "query": "Lunch"
+  },
+  "request_sha256": "536d50e70a55d9f4d58fedcff5714725e6d3908d39f75837a8bf5943c7cf1ab4",
+  "response": {
+    "address": "288 Lake McDonald Ldg Lp, West Glacier, MT 59936, USA",
+    "category": "food",
+    "lat": 48.6172648,
+    "lng": -113.8794447,
+    "name": "Russell's Fireside Dining Room",
+    "place_id": "ChIJ30BCy_AcZlMRhxIToP4TpXU",
+    "price_level": 0,
+    "rating": 3.7,
+    "tags": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

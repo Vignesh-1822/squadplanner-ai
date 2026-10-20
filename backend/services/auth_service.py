@@ -9,7 +9,7 @@ from jose import JWTError, jwt
 from config import settings
 
 JWT_ALGORITHM = "HS256"
-JWT_EXPIRY_DAYS = 7
+JWT_EXPIRY_HOURS = 24
 
 
 def hash_password(plain: str) -> str:
@@ -20,9 +20,14 @@ def verify_password(plain: str, hashed: str) -> bool:
     return bcrypt.checkpw(plain.encode("utf-8"), hashed.encode("utf-8"))
 
 
-def create_jwt(user_id: str, email: str) -> str:
-    expire = datetime.now(timezone.utc) + timedelta(days=JWT_EXPIRY_DAYS)
-    payload = {"sub": user_id, "email": email, "exp": expire}
+def create_jwt(user_id: str, email: str, token_version: int = 0) -> str:
+    expire = datetime.now(timezone.utc) + timedelta(hours=JWT_EXPIRY_HOURS)
+    payload = {
+        "sub": user_id,
+        "email": email,
+        "token_version": token_version,
+        "exp": expire,
+    }
     return jwt.encode(payload, settings.jwt_secret, algorithm=JWT_ALGORITHM)
 
 

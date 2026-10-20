@@ -1,0 +1,37 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 28.949,
+      "lng": -95.293
+    },
+    "destination": "Surfside Beach",
+    "included_type": "restaurant",
+    "query": "Dinner at La Michoacana"
+  },
+  "request_sha256": "8003fd4e04614866b7b94409917d4e06493b163ed3279a3a5740c1883db70589",
+  "response": {
+    "address": "10 Surf Dr, Surfside Beach, TX 77541, USA",
+    "category": "food",
+    "lat": 28.9509567,
+    "lng": -95.2871191,
+    "name": "Sharkies Bar & Grill",
+    "place_id": "ChIJYyAJq8lsQIYRhzqW42sPjaE",
+    "price_level": 0,
+    "rating": 4.1,
+    "tags": [
+      "bar_and_grill",
+      "taco_restaurant",
+      "family_restaurant",
+      "sandwich_shop",
+      "hamburger_restaurant",
+      "seafood_restaurant",
+      "bar",
+      "american_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

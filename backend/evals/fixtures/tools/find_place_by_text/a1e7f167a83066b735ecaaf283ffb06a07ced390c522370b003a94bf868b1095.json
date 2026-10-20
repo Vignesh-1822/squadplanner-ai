@@ -1,0 +1,30 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 44.636,
+      "lng": -124.053
+    },
+    "destination": "Newport",
+    "included_type": null,
+    "query": "Rest and leisure"
+  },
+  "request_sha256": "a1e7f167a83066b735ecaaf283ffb06a07ced390c522370b003a94bf868b1095",
+  "response": {
+    "address": "Newport Recreation Center, 225 SE Avery St, Newport, OR 97365, USA",
+    "category": "place",
+    "lat": 44.634856,
+    "lng": -124.051654,
+    "name": "Newport Recreation Center",
+    "place_id": "ChIJP9qHXbXXwVQRG20ABN4J8DY",
+    "price_level": 0,
+    "rating": 4.5,
+    "tags": [
+      "gym",
+      "sports_activity_location",
+      "health",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 44.636,
+      "lng": -124.053
+    },
+    "destination": "Newport",
+    "included_type": "restaurant",
+    "query": "Picnic lunch at scenic viewpoint"
+  },
+  "request_sha256": "39112d711068e3d4059e0ecf4f4a5516981163e5e82f12cf46e37df14f23d83a",
+  "response": {
+    "address": "900 Newport Center Dr, Newport Beach, CA 92660, USA",
+    "category": "food",
+    "lat": 33.6166096,
+    "lng": -117.8793356,
+    "name": "VIEW Restaurant & Lounge",
+    "place_id": "ChIJ3288kn3g3IARLhJa4KC2qNY",
+    "price_level": 0,
+    "rating": 4.4,
+    "tags": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 33.494,
+      "lng": -117.148
+    },
+    "destination": "Temecula",
+    "included_type": null,
+    "query": "Murrieta Plaza Shopping"
+  },
+  "request_sha256": "a67d97882486873be5f991faea4ea21bfad6c1e74df9257dc999a0c3dc383f8f",
+  "response": {
+    "address": "40820 Winchester Rd, Temecula, CA 92591, USA",
+    "category": "place",
+    "lat": 33.5251895,
+    "lng": -117.1541469,
+    "name": "Promenade Temecula",
+    "place_id": "ChIJ_2fq7T5-24ARGt10kfqgeTg",
+    "price_level": 0,
+    "rating": 4.5,
+    "tags": [
+      "shopping_mall",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

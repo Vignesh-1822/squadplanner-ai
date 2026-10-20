@@ -1,0 +1,29 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 28.949,
+      "lng": -95.293
+    },
+    "destination": "Surfside Beach",
+    "included_type": null,
+    "query": "Continue Bryan Beach exploration"
+  },
+  "request_sha256": "d30b3e04caf5fe9b8f665b71124fa8edd55b539d9d88b84568a58eb39b5da744",
+  "response": {
+    "address": "101 Parkview Rd, Surfside Beach, TX 77541, USA",
+    "category": "place",
+    "lat": 28.9380657,
+    "lng": -95.2955537,
+    "name": "Surfside Jetty County Park",
+    "place_id": "ChIJHREgXUwTQIYRM50qzmXt9Ek",
+    "price_level": 0,
+    "rating": 4.5,
+    "tags": [
+      "park",
+      "tourist_attraction",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

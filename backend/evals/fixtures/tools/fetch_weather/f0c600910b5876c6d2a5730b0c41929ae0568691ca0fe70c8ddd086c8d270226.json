@@ -1,0 +1,18 @@
+{
+  "operation": "fetch_weather",
+  "request": {
+    "destination_name": "Temecula",
+    "end_date": "2026-09-11",
+    "lat": 33.494,
+    "lng": -117.148,
+    "start_date": "2026-09-08"
+  },
+  "request_sha256": "f0c600910b5876c6d2a5730b0c41929ae0568691ca0fe70c8ddd086c8d270226",
+  "response": {
+    "avg_temp_c": 29.6,
+    "date_range": "2026-09-08 to 2026-09-11",
+    "destination": "Temecula",
+    "precipitation_mm": 0.0,
+    "summary": "Warm (29.6\u00b0C avg), dry conditions"
+  }
+}

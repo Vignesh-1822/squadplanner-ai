@@ -1,0 +1,29 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 38.04,
+      "lng": -84.503
+    },
+    "destination": "Lexington",
+    "included_type": "restaurant",
+    "query": "Dinner venue selection"
+  },
+  "request_sha256": "3ce51e358a433b5332a9f83f76202398ff3578bcd5d895c528c3dbced156ee7b",
+  "response": {
+    "address": "380 S Mill St, Lexington, KY 40508, USA",
+    "category": "food",
+    "lat": 38.0449649,
+    "lng": -84.5026366,
+    "name": "Millstone",
+    "place_id": "ChIJv7kLoRRFQogRIR0CcbwxhQQ",
+    "price_level": 0,
+    "rating": 4.7,
+    "tags": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

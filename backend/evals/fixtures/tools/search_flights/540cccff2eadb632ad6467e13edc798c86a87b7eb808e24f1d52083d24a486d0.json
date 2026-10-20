@@ -1,0 +1,21 @@
+{
+  "operation": "search_flights",
+  "request": {
+    "adults": 1,
+    "depart_date": "2026-09-08",
+    "destination": "Temecula",
+    "origin": "MIA",
+    "return_date": "2026-09-11"
+  },
+  "request_sha256": "540cccff2eadb632ad6467e13edc798c86a87b7eb808e24f1d52083d24a486d0",
+  "response": {
+    "airline": "Estimated",
+    "depart_time": "2026-09-08T08:00:00",
+    "destination": "Temecula",
+    "is_estimated": true,
+    "member_id": "",
+    "origin": "MIA",
+    "price_usd": 300.0,
+    "return_time": "2026-09-11T18:00:00"
+  }
+}

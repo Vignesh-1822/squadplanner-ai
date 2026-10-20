@@ -1,0 +1,28 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 41.8781,
+      "lng": -87.6298
+    },
+    "destination": "Chicago",
+    "included_type": null,
+    "query": "Lakefront walking & Roosevelt Collection Shops"
+  },
+  "request_sha256": "dcf6d62c8717902aa35a0d32737364ced72134493d2d7f557780b817e8b979a9",
+  "response": {
+    "address": "150 W Roosevelt Rd, Chicago, IL 60605, USA",
+    "category": "place",
+    "lat": 41.8678745,
+    "lng": -87.632564,
+    "name": "Roosevelt Collection Shops",
+    "place_id": "ChIJ49-PDJEsDogRMrnzwXHY7PM",
+    "price_level": 0,
+    "rating": 4.4,
+    "tags": [
+      "shopping_mall",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

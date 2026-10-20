@@ -1,0 +1,29 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 44.636,
+      "lng": -124.053
+    },
+    "destination": "Newport",
+    "included_type": "restaurant",
+    "query": "Rest before dinner"
+  },
+  "request_sha256": "0b792d2c3e08bdec512ae6b30892c30db1f7084960bd0a15d10eff4bae6bc32b",
+  "response": {
+    "address": "424 SW Coast Hwy, Newport, OR 97365, USA",
+    "category": "food",
+    "lat": 44.6331566,
+    "lng": -124.0573225,
+    "name": "Newport Fuego Latino",
+    "place_id": "ChIJ5wqESTjXwVQRqjUQfTADVC8",
+    "price_level": 0,
+    "rating": 4.6,
+    "tags": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

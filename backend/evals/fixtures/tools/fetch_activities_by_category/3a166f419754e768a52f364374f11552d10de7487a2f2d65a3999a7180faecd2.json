@@ -1,0 +1,310 @@
+{
+  "operation": "fetch_activities_by_category",
+  "request": {
+    "categories": [
+      "food",
+      "outdoor"
+    ],
+    "coords": {
+      "lat": 28.69,
+      "lng": -95.967
+    },
+    "destination": "Matagorda",
+    "max_per_category": 10
+  },
+  "request_sha256": "3a166f419754e768a52f364374f11552d10de7487a2f2d65a3999a7180faecd2",
+  "response": [
+    {
+      "address": "190 County Rd 255, Matagorda, TX 77457, USA",
+      "category": "food",
+      "lat": 28.6938839,
+      "lng": -95.95871249999999,
+      "name": "Waterfront Restaurant",
+      "place_id": "ChIJHw2tVzzZQYYRn3YmibXc1mw",
+      "price_level": 0,
+      "rating": 4.3,
+      "tags": [
+        "seafood_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "582 Fisher St, Matagorda, TX 77457, USA",
+      "category": "food",
+      "lat": 28.6908763,
+      "lng": -95.9689908,
+      "name": "Snappers Bar & Grill",
+      "place_id": "ChIJN30DaOHbQYYRMII4vQyL2WQ",
+      "price_level": 0,
+      "rating": 4.2,
+      "tags": [
+        "bar_and_grill",
+        "bar",
+        "seafood_restaurant",
+        "american_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "18411 TX-60, Bay City, TX 77414, USA",
+      "category": "food",
+      "lat": 28.763892799999997,
+      "lng": -95.9429783,
+      "name": "Lighthouse BBQ Cafe",
+      "place_id": "ChIJ3wATUcjFQYYR5YCSl3o5Wmw",
+      "price_level": 0,
+      "rating": 4.4,
+      "tags": [
+        "barbecue_restaurant",
+        "sandwich_shop",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "333 Fisher St, Matagorda, TX 77457, USA",
+      "category": "food",
+      "lat": 28.692031399999998,
+      "lng": -95.9650448,
+      "name": "Coastal Que BBQ & More",
+      "place_id": "ChIJa69XHDLbQYYRJ2pEubFF6wY",
+      "price_level": 0,
+      "rating": 4.8,
+      "tags": [
+        "barbecue_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "FM Rd 2031, Matagorda, TX 77457, USA",
+      "category": "food",
+      "lat": 28.690600900000003,
+      "lng": -95.9684953,
+      "name": "Gorda Grill",
+      "place_id": "ChIJcaFdnnHbQYYRkg7HMUdTbeU",
+      "price_level": 0,
+      "rating": 4.5,
+      "tags": [
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "698 Bernardo St, Matagorda, TX 77457, USA",
+      "category": "food",
+      "lat": 28.695076899999997,
+      "lng": -95.9608994,
+      "name": "Charlie Ro's BBQ, Matagorda",
+      "place_id": "ChIJf0DqzbfbQYYR4JrslEJ-SA8",
+      "price_level": 0,
+      "rating": 5.0,
+      "tags": [
+        "barbecue_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "Matagorda, TX 77457, USA",
+      "category": "food",
+      "lat": 28.6937167,
+      "lng": -95.96313289999999,
+      "name": "HUNT BROTHERS PIZZA",
+      "place_id": "ChIJ-9UwX23bQYYR0hbwkObYkOE",
+      "price_level": 0,
+      "rating": 0.0,
+      "tags": [
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "1428 FM Rd 2031, Matagorda, TX 77457, USA",
+      "category": "food",
+      "lat": 28.6694189,
+      "lng": -95.9646607,
+      "name": "Matagorda Wharf",
+      "place_id": "ChIJKWMAtwrbQYYR9vxt8_VkmTk",
+      "price_level": 0,
+      "rating": 5.0,
+      "tags": [
+        "american_restaurant",
+        "coffee_stand",
+        "fishing_charter",
+        "travel_agency",
+        "real_estate_agency",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ]
+    },
+    {
+      "address": "6420 FM Rd 2031, Matagorda, TX 77457, USA",
+      "category": "outdoor",
+      "lat": 28.5978718,
+      "lng": -95.9776639,
+      "name": "Matagorda Bay Nature Park",
+      "place_id": "ChIJE-CU4J_bQYYRiLQz6uAgTb0",
+      "price_level": 0,
+      "rating": 4.7,
+      "tags": [
+        "state_park",
+        "park",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ]
+    },
+    {
+      "address": "6420 FM Rd 2031, Matagorda, TX 77457, USA",
+      "category": "outdoor",
+      "lat": 28.5970178,
+      "lng": -95.9777692,
+      "name": "Jetty Park",
+      "place_id": "ChIJ43cycyzZQYYROqWAnapkWkM",
+      "price_level": 0,
+      "rating": 4.5,
+      "tags": [
+        "park",
+        "tourist_attraction",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "Collegeport, TX 77428, USA",
+      "category": "outdoor",
+      "lat": 28.6762528,
+      "lng": -96.0403728,
+      "name": "Mad Island WMA",
+      "place_id": "ChIJ0bcSI6fdQYYRQeMo7_mREE4",
+      "price_level": 0,
+      "rating": 4.6,
+      "tags": [
+        "wildlife_refuge",
+        "tourist_attraction",
+        "park",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "FM521, Bay City, TX 77414, USA",
+      "category": "outdoor",
+      "lat": 28.788225999999998,
+      "lng": -95.9987922,
+      "name": "FM 521 River Park",
+      "place_id": "ChIJ4_iJKJHDQYYRZy0YWCR6OrU",
+      "price_level": 0,
+      "rating": 4.2,
+      "tags": [
+        "park",
+        "campground",
+        "lodging",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "Wadsworth, TX 77483, USA",
+      "category": "outdoor",
+      "lat": 28.757134199999996,
+      "lng": -95.81381999999999,
+      "name": "Big Boggy National Wildlife Refuge",
+      "place_id": "ChIJg6LRG-DNQYYR51IUXh6yszY",
+      "price_level": 0,
+      "rating": 3.2,
+      "tags": [
+        "wildlife_refuge",
+        "park",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "6420 FM Rd 2031, Matagorda, TX 77457, USA",
+      "category": "outdoor",
+      "lat": 28.598704899999998,
+      "lng": -95.9786141,
+      "name": "Matagorda Bay Welcome Center",
+      "place_id": "ChIJ90Sq8c3ZQYYRhUeoEG8V0eQ",
+      "price_level": 0,
+      "rating": 4.6,
+      "tags": [
+        "visitor_center",
+        "tourist_information_center",
+        "tour_agency",
+        "travel_agency",
+        "park",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ]
+    },
+    {
+      "address": "J29G+7Q, Matagorda, TX 77457, USA",
+      "category": "outdoor",
+      "lat": 28.618209999999998,
+      "lng": -95.97308,
+      "name": "Parker\u2019s Cut",
+      "place_id": "ChIJJyfDVP_ZQYYRFbaOFwuPEww",
+      "price_level": 0,
+      "rating": 5.0,
+      "tags": [
+        "nature_preserve",
+        "park",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "861 Wightman St, Matagorda, TX 77457, USA",
+      "category": "outdoor",
+      "lat": 28.6933455,
+      "lng": -95.96909090000001,
+      "name": "Bill Whitworth Memorial Park",
+      "place_id": "ChIJoykhgInbQYYRu9BnUvGcYiE",
+      "price_level": 0,
+      "rating": 0.0,
+      "tags": [
+        "park",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "H2R9+G2, Texas, USA",
+      "category": "outdoor",
+      "lat": 28.591333,
+      "lng": -95.9824982,
+      "name": "Matagorda fishing hole",
+      "place_id": "ChIJB5CfdwDZQYYRnbsDiwTPtZw",
+      "price_level": 0,
+      "rating": 0.0,
+      "tags": [
+        "park",
+        "point_of_interest",
+        "establishment"
+      ]
+    }
+  ]
+}

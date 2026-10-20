@@ -1,0 +1,37 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 44.636,
+      "lng": -124.053
+    },
+    "destination": "Newport",
+    "included_type": "restaurant",
+    "query": "Dinner - prepared vegan gluten-free option or hotel arrangement"
+  },
+  "request_sha256": "a205c133495877955ca5d7409af853b524301ec9143889a041f7201c1bd1f9c9",
+  "response": {
+    "address": "506 SW Elizabeth St, Newport, OR 97365, USA",
+    "category": "food",
+    "lat": 44.629287,
+    "lng": -124.06432159999999,
+    "name": "Georgie's Beachside Grill",
+    "place_id": "ChIJla-hE7jXwVQRYSeILlOqAbo",
+    "price_level": 0,
+    "rating": 4.5,
+    "tags": [
+      "seafood_restaurant",
+      "breakfast_restaurant",
+      "fish_and_chips_restaurant",
+      "family_restaurant",
+      "vegetarian_restaurant",
+      "british_restaurant",
+      "bar",
+      "european_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

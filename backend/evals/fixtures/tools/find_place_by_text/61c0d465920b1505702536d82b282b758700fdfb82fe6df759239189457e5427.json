@@ -1,0 +1,29 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 28.69,
+      "lng": -95.967
+    },
+    "destination": "Matagorda",
+    "included_type": "lodging",
+    "query": "Westwood Inn Matagorda Matagorda"
+  },
+  "request_sha256": "61c0d465920b1505702536d82b282b758700fdfb82fe6df759239189457e5427",
+  "response": {
+    "address": "23082 TX-60 S, Matagorda, TX 77457, USA",
+    "category": "place",
+    "lat": 28.697998,
+    "lng": -95.9586563,
+    "name": "Westwood Inn Matagorda",
+    "place_id": "ChIJF9vW3OrbQYYRirzvlW4Kj4Q",
+    "price_level": 0,
+    "rating": 3.9,
+    "tags": [
+      "motel",
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

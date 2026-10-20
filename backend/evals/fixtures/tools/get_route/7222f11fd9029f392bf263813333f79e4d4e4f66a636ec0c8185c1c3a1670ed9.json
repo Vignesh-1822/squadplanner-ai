@@ -1,0 +1,17 @@
+{
+  "operation": "get_route",
+  "request": {
+    "dest_lat": 48.765777799999995,
+    "dest_lng": -113.7408889,
+    "mode": "WALK",
+    "origin_lat": 48.797241299999996,
+    "origin_lng": -113.65759179999999
+  },
+  "request_sha256": "7222f11fd9029f392bf263813333f79e4d4e4f66a636ec0c8185c1c3a1670ed9",
+  "response": {
+    "distance_meters": 16576,
+    "duration_seconds": 17362,
+    "mode": "WALK",
+    "polyline": "kuyhHdtutT{A[}@g@s@o@m@U{@Gc@FsFrACd@OZEx@?l@Fp@?~@_@nAEdA@t@XzCDfCLhCFr@P|@j@zAFVCLD`@@v@Vx@Pl@l@fBVTTj@H^LRl@VTF^nDDt@FtBAZXtAp@bB@LIAQFP`@d@dBVhBDfDI~MJtIf@pGBbC]BUVo@vAK^Ip@CrBAhBTdCJ`DNtBAVOp@G`@s@rAUn@SfAITDrAP~@QtAY~@QnAa@hBm@vB[dCU`BWjAGj@eAhCOdAmApD]ZGRBx@@j@Ej@e@jBMv@IjAm@lBaCjKGr@ArBD`@Tj@dAtBXz@h@bBZfAf@fBVp@NZh@r@Hz@JXLNBl@TbAPZLdADbABNb@x@Fd@D`AXzBRp@NnALp@^\\JXBh@?n@Ld@Vf@?hAD`@A|@IXM`AKh@G`BBX\\~@Nj@PRNh@RVNRJJf@dBRz@NVBRj@xBDnAd@hCJ|@DlCFd@Fv@D`@TlA`@r@j@d@\\E\\_@ZITL`@Pd@L`@E^MVDVh@Nd@h@r@X`@?NGb@AhAMlBUz@MT}@\\Ur@W|ACrAQ`AAVNvALx@@r@L|@Fh@P^Pf@D`@XpABf@t@`Bt@rAJl@LLERTd@TJXZPZ@`@EzAcAlDWp@Kp@?j@Hj@?x@El@EZHRb@b@z@~@Xf@P|@Rh@XXHTNN`@|@J`@f@h@L^Fb@x@tCVf@Lz@LVHj@\\xAh@nCZdBZrA^v@Hl@HhBTXr@n@z@pAv@fBn@rC?z@H|@Pv@Zt@p@`AH`@LZHd@Xl@\\Dr@C\\P\\XTZb@Af@EHJB`@BbANv@Tv@ER?f@R|@?l@Ad@DZBp@Pl@^f@Pd@b@dBd@`AHZ\\x@LVZd@TpAn@vAb@`@^NrALXJRPh@jATdAPt@NRj@X`@CJLVp@HN^PZA\\Rn@Ch@AZIVFXRV?zAS`@C`@?f@Q^OXHn@XXZLB~ADjATNNDR?r@Cn@Ar@Cp@GIu@gBQUk@YO@?FJNLj@RxA`@vC?Bu@qASe@MM_Ba@kAOK@DFZ`@l@dBX~ATpBjA`G\\jARl@f@|CHXE@OSeA}@kAeBiAgAuBkC[a@Ya@_@QkA@GFBLLT`@nBJdA|@|DRl@h@dAXlAxEzJVf@r@dB\\r@HXLNNr@HDP?t@`@DHNCJEd@Jp@dAb@`@DJSK[Gm@YI@[Z[^WAYISHa@Ou@DG]W_@[u@OCIBYGW]OUe@}@_BeCMOo@{@MEYe@GIGQSQQ_@QIY@SLQTQDU~@OjADr@@z@GvAKbAINM@KAI@ICQBOIM?c@Qk@CwAWQKs@SUScA_@?Ll@lA?Dy@g@y@]k@YC@^fAf@b@^N\\Xb@~AP`@Xl@n@dAh@bBv@~AXn@n@x@f@`@p@bAr@jAh@~@d@d@b@Vb@B^Gt@FXGHMVoAZc@DEp@B^FRNL\\FN\\JX^Tn@Fp@@t@Hh@Th@Lj@v@rBXZP\\XjALTD|@HhBHf@HR@h@?^@b@PxA^zANPRh@b@z@Jn@d@jARl@jAlCDl@^nAPVVRZv@v@fAv@`@XT\\Nr@zBR~BGfCJfBT`CPx@JRJHf@~@NJ`@FTGNM^g@`@Wn@q@t@SnAw@PMAPG^]lAOZ]j@Up@@Dd@I~@?f@@v@R\\C^DbA]h@?t@HpAp@jArANGFOEW@y@\\KGu@KWC_@g@qAc@oB?u@Iw@?OTsARu@r@iA\\gA^s@Fg@B]Eo@Fe@RWLK^gAFMF_@@u@RiBLiBZuBFyAXgBRs@F}@v@wCPURg@Rq@n@kAVc@`@k@\\Uf@u@dA}BLc@?]\\}@ZeAh@aAb@uB`@gA\\uAXu@BUv@wBh@kC\\e@t@gAx@yBHOj@u@XwALmBDwBIkADgBAcBFiBX{Cj@mG`A_FX{@rAqF\\cBr@oB"
+  }
+}

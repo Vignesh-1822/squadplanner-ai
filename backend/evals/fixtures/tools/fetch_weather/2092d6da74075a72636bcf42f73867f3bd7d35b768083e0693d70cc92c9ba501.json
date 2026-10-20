@@ -1,0 +1,18 @@
+{
+  "operation": "fetch_weather",
+  "request": {
+    "destination_name": "Matagorda",
+    "end_date": "2026-09-11",
+    "lat": 28.69,
+    "lng": -95.967,
+    "start_date": "2026-09-08"
+  },
+  "request_sha256": "2092d6da74075a72636bcf42f73867f3bd7d35b768083e0693d70cc92c9ba501",
+  "response": {
+    "avg_temp_c": 30.5,
+    "date_range": "2026-09-08 to 2026-09-11",
+    "destination": "Matagorda",
+    "precipitation_mm": 0.1,
+    "summary": "Warm (30.5\u00b0C avg), dry conditions"
+  }
+}

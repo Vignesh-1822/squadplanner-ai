@@ -1,0 +1,30 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 48.696,
+      "lng": -113.718
+    },
+    "destination": "Glacier National Park",
+    "included_type": "restaurant",
+    "query": "Breakfast"
+  },
+  "request_sha256": "8f27a2975965441642b98beeb5928cf31249357a50aea6c848a11ed0a2d1c7b2",
+  "response": {
+    "address": "1147 Rte 3, Browning, MT 59417, USA",
+    "category": "food",
+    "lat": 48.797241299999996,
+    "lng": -113.65759179999999,
+    "name": "Ptarmigan Dining Hall",
+    "place_id": "ChIJn0sHWbmzaFMRfVy1mA2LbQs",
+    "price_level": 0,
+    "rating": 3.5,
+    "tags": [
+      "american_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

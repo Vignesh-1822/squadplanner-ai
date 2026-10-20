@@ -1,0 +1,3578 @@
+{
+  "case_id": "08-08_big_city_skyscraper_intent",
+  "events": [
+    {
+      "event": "on_chain_start",
+      "name": "LangGraph",
+      "timestamp": "2026-09-06T18:32:59.247953+00:00",
+      "run_id": "01a077fe-c06e-7c91-a3bb-56065f2f2b08",
+      "parent_ids": [],
+      "tags": [],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "parse_input",
+      "timestamp": "2026-09-06T18:32:59.255579+00:00",
+      "run_id": "01a077fe-c076-7f81-9a66-9d15a5ab671f",
+      "parent_ids": [
+        "01a077fe-c06e-7c91-a3bb-56065f2f2b08"
+      ],
+      "tags": [
+        "graph:step:1"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 1,
+        "langgraph_node": "parse_input",
+        "langgraph_triggers": [
+          "branch:to:parse_input"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "parse_input"
+        ],
+        "langgraph_checkpoint_ns": "parse_input:d49fa21a-2d8e-2adc-324a-0c34b523bc00"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "parse_input",
+      "timestamp": "2026-09-06T18:32:59.258324+00:00",
+      "run_id": "01a077fe-c076-7f81-9a66-9d15a5ab671f",
+      "parent_ids": [
+        "01a077fe-c06e-7c91-a3bb-56065f2f2b08"
+      ],
+      "tags": [
+        "graph:step:1"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 1,
+        "langgraph_node": "parse_input",
+        "langgraph_triggers": [
+          "branch:to:parse_input"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "parse_input"
+        ],
+        "langgraph_checkpoint_ns": "parse_input:d49fa21a-2d8e-2adc-324a-0c34b523bc00"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "extract_preference_constraints",
+      "timestamp": "2026-09-06T18:32:59.260913+00:00",
+      "run_id": "01a077fe-c07c-7592-9713-bd87d54c6036",
+      "parent_ids": [
+        "01a077fe-c06e-7c91-a3bb-56065f2f2b08"
+      ],
+      "tags": [
+        "graph:step:2"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 2,
+        "langgraph_node": "extract_preference_constraints",
+        "langgraph_triggers": [
+          "branch:to:extract_preference_constraints"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "extract_preference_constraints"
+        ],
+        "langgraph_checkpoint_ns": "extract_preference_constraints:63baefe8-f475-c1f7-da8b-749ec3a0ccd0"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "extract_preference_constraints",
+      "timestamp": "2026-09-06T18:32:59.265612+00:00",
+      "run_id": "01a077fe-c07c-7592-9713-bd87d54c6036",
+      "parent_ids": [
+        "01a077fe-c06e-7c91-a3bb-56065f2f2b08"
+      ],
+      "tags": [
+        "graph:step:2"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 2,
+        "langgraph_node": "extract_preference_constraints",
+        "langgraph_triggers": [
+          "branch:to:extract_preference_constraints"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "extract_preference_constraints"
+        ],
+        "langgraph_checkpoint_ns": "extract_preference_constraints:63baefe8-f475-c1f7-da8b-749ec3a0ccd0"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "select_destination",
+      "timestamp": "2026-09-06T18:32:59.269347+00:00",
+      "run_id": "01a077fe-c083-7c31-b636-f8cbf0b00e0d",
+      "parent_ids": [
+        "01a077fe-c06e-7c91-a3bb-56065f2f2b08"
+      ],
+      "tags": [
+        "graph:step:3"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 3,
+        "langgraph_node": "select_destination",
+        "langgraph_triggers": [
+          "branch:to:select_destination"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "select_destination"
+        ],
+        "langgraph_checkpoint_ns": "select_destination:38023e03-52ee-0f13-67ff-2aae02bfe429"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "select_destination",
+      "timestamp": "2026-09-06T18:32:59.402287+00:00",
+      "run_id": "01a077fe-c083-7c31-b636-f8cbf0b00e0d",
+      "parent_ids": [
+        "01a077fe-c06e-7c91-a3bb-56065f2f2b08"
+      ],
+      "tags": [
+        "graph:step:3"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 3,
+        "langgraph_node": "select_destination",
+        "langgraph_triggers": [
+          "branch:to:select_destination"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "select_destination"
+        ],
+        "langgraph_checkpoint_ns": "select_destination:38023e03-52ee-0f13-67ff-2aae02bfe429"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "city_selection_hitl",
+      "timestamp": "2026-09-06T18:32:59.405723+00:00",
+      "run_id": "01a077fe-c10c-7793-8d8f-f92a516e83ff",
+      "parent_ids": [
+        "01a077fe-c06e-7c91-a3bb-56065f2f2b08"
+      ],
+      "tags": [
+        "graph:step:4"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 4,
+        "langgraph_node": "city_selection_hitl",
+        "langgraph_triggers": [
+          "branch:to:city_selection_hitl"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "city_selection_hitl"
+        ],
+        "langgraph_checkpoint_ns": "city_selection_hitl:e54e8abf-bb90-7659-56ce-749e75879de4"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "LangGraph",
+      "timestamp": "2026-09-06T18:32:59.407953+00:00",
+      "run_id": "01a077fe-c06e-7c91-a3bb-56065f2f2b08",
+      "parent_ids": [],
+      "tags": [],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "LangGraph",
+      "timestamp": "2026-09-06T18:32:59.410765+00:00",
+      "run_id": "01a077fe-c111-7952-bf07-bd67bc7cbc9d",
+      "parent_ids": [],
+      "tags": [],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "city_selection_hitl",
+      "timestamp": "2026-09-06T18:32:59.412900+00:00",
+      "run_id": "01a077fe-c114-7950-8df6-dcb11c0b6da2",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d"
+      ],
+      "tags": [
+        "graph:step:4"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 4,
+        "langgraph_node": "city_selection_hitl",
+        "langgraph_triggers": [
+          "branch:to:city_selection_hitl"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "city_selection_hitl"
+        ],
+        "langgraph_checkpoint_ns": "city_selection_hitl:e54e8abf-bb90-7659-56ce-749e75879de4"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "city_selection_hitl",
+      "timestamp": "2026-09-06T18:32:59.413997+00:00",
+      "run_id": "01a077fe-c114-7950-8df6-dcb11c0b6da2",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d"
+      ],
+      "tags": [
+        "graph:step:4"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 4,
+        "langgraph_node": "city_selection_hitl",
+        "langgraph_triggers": [
+          "branch:to:city_selection_hitl"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "city_selection_hitl"
+        ],
+        "langgraph_checkpoint_ns": "city_selection_hitl:e54e8abf-bb90-7659-56ce-749e75879de4"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "dynamic_tool_selection",
+      "timestamp": "2026-09-06T18:32:59.415942+00:00",
+      "run_id": "01a077fe-c117-76d0-8973-833ec93aac38",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d"
+      ],
+      "tags": [
+        "graph:step:5"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 5,
+        "langgraph_node": "dynamic_tool_selection",
+        "langgraph_triggers": [
+          "branch:to:dynamic_tool_selection"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "dynamic_tool_selection"
+        ],
+        "langgraph_checkpoint_ns": "dynamic_tool_selection:3813d4a2-4a28-386a-a6dd-5f331ab175d7"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "dynamic_tool_selection",
+      "timestamp": "2026-09-06T18:32:59.420682+00:00",
+      "run_id": "01a077fe-c117-76d0-8973-833ec93aac38",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d"
+      ],
+      "tags": [
+        "graph:step:5"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 5,
+        "langgraph_node": "dynamic_tool_selection",
+        "langgraph_triggers": [
+          "branch:to:dynamic_tool_selection"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "dynamic_tool_selection"
+        ],
+        "langgraph_checkpoint_ns": "dynamic_tool_selection:3813d4a2-4a28-386a-a6dd-5f331ab175d7"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "parallel_data_fetch",
+      "timestamp": "2026-09-06T18:32:59.423287+00:00",
+      "run_id": "01a077fe-c11e-7f80-bbed-7e486d92ab20",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d"
+      ],
+      "tags": [
+        "graph:step:6"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 6,
+        "langgraph_node": "parallel_data_fetch",
+        "langgraph_triggers": [
+          "branch:to:parallel_data_fetch"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "parallel_data_fetch"
+        ],
+        "langgraph_checkpoint_ns": "parallel_data_fetch:d6bdab53-a4c3-8ad0-bf4f-77c8700ca27d"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "parallel_data_fetch",
+      "timestamp": "2026-09-06T18:32:59.436380+00:00",
+      "run_id": "01a077fe-c11e-7f80-bbed-7e486d92ab20",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d"
+      ],
+      "tags": [
+        "graph:step:6"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 6,
+        "langgraph_node": "parallel_data_fetch",
+        "langgraph_triggers": [
+          "branch:to:parallel_data_fetch"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "parallel_data_fetch"
+        ],
+        "langgraph_checkpoint_ns": "parallel_data_fetch:d6bdab53-a4c3-8ad0-bf4f-77c8700ca27d"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "budget_analysis",
+      "timestamp": "2026-09-06T18:32:59.439213+00:00",
+      "run_id": "01a077fe-c12e-7e93-bbe2-64e41f3dd210",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d"
+      ],
+      "tags": [
+        "graph:step:7"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 7,
+        "langgraph_node": "budget_analysis",
+        "langgraph_triggers": [
+          "branch:to:budget_analysis"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "budget_analysis"
+        ],
+        "langgraph_checkpoint_ns": "budget_analysis:e998bcf5-4439-d8f3-2e0b-29e016324a9c"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "route_after_budget",
+      "timestamp": "2026-09-06T18:32:59.440517+00:00",
+      "run_id": "01a077fe-c130-7c30-8035-99d9b1461542",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d",
+        "01a077fe-c12e-7e93-bbe2-64e41f3dd210"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 7,
+        "langgraph_node": "budget_analysis",
+        "langgraph_triggers": [
+          "branch:to:budget_analysis"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "budget_analysis"
+        ],
+        "langgraph_checkpoint_ns": "budget_analysis:e998bcf5-4439-d8f3-2e0b-29e016324a9c"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "route_after_budget",
+      "timestamp": "2026-09-06T18:32:59.441405+00:00",
+      "run_id": "01a077fe-c130-7c30-8035-99d9b1461542",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d",
+        "01a077fe-c12e-7e93-bbe2-64e41f3dd210"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 7,
+        "langgraph_node": "budget_analysis",
+        "langgraph_triggers": [
+          "branch:to:budget_analysis"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "budget_analysis"
+        ],
+        "langgraph_checkpoint_ns": "budget_analysis:e998bcf5-4439-d8f3-2e0b-29e016324a9c"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "budget_analysis",
+      "timestamp": "2026-09-06T18:32:59.442199+00:00",
+      "run_id": "01a077fe-c12e-7e93-bbe2-64e41f3dd210",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d"
+      ],
+      "tags": [
+        "graph:step:7"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 7,
+        "langgraph_node": "budget_analysis",
+        "langgraph_triggers": [
+          "branch:to:budget_analysis"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "budget_analysis"
+        ],
+        "langgraph_checkpoint_ns": "budget_analysis:e998bcf5-4439-d8f3-2e0b-29e016324a9c"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "search_hotel",
+      "timestamp": "2026-09-06T18:32:59.443930+00:00",
+      "run_id": "01a077fe-c133-7cb0-9e33-23ed39c5b7b7",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d"
+      ],
+      "tags": [
+        "graph:step:8"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 8,
+        "langgraph_node": "search_hotel",
+        "langgraph_triggers": [
+          "branch:to:search_hotel"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "search_hotel"
+        ],
+        "langgraph_checkpoint_ns": "search_hotel:742819c5-db98-bd8d-8830-f6a63c62f351"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "search_hotel",
+      "timestamp": "2026-09-06T18:32:59.446977+00:00",
+      "run_id": "01a077fe-c133-7cb0-9e33-23ed39c5b7b7",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d"
+      ],
+      "tags": [
+        "graph:step:8"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 8,
+        "langgraph_node": "search_hotel",
+        "langgraph_triggers": [
+          "branch:to:search_hotel"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "search_hotel"
+        ],
+        "langgraph_checkpoint_ns": "search_hotel:742819c5-db98-bd8d-8830-f6a63c62f351"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "run_itinerary_node",
+      "timestamp": "2026-09-06T18:32:59.448694+00:00",
+      "run_id": "01a077fe-c138-7eb3-975f-0b3d2be5a479",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d"
+      ],
+      "tags": [
+        "graph:step:9"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "run_itinerary_node",
+        "langgraph_triggers": [
+          "branch:to:run_itinerary_node"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "run_itinerary_node"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "LangGraph",
+      "timestamp": "2026-09-06T18:32:59.449684+00:00",
+      "run_id": "01a077fe-c139-7873-b197-1cd79e8015ab",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d",
+        "01a077fe-c138-7eb3-975f-0b3d2be5a479"
+      ],
+      "tags": [
+        "seq:step:1"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "run_itinerary_node",
+        "langgraph_triggers": [
+          "branch:to:run_itinerary_node"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "run_itinerary_node"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199",
+        "checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "cluster_by_neighborhood",
+      "timestamp": "2026-09-06T18:32:59.456754+00:00",
+      "run_id": "01a077fe-c13f-78b0-b84f-d27bdaa86194",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d",
+        "01a077fe-c138-7eb3-975f-0b3d2be5a479",
+        "01a077fe-c139-7873-b197-1cd79e8015ab"
+      ],
+      "tags": [
+        "graph:step:1"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 1,
+        "langgraph_node": "cluster_by_neighborhood",
+        "langgraph_triggers": [
+          "branch:to:cluster_by_neighborhood"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "cluster_by_neighborhood"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199|cluster_by_neighborhood:f4b08a75-a386-857f-2b93-b3a6f39ae4f7",
+        "checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "cluster_by_neighborhood",
+      "timestamp": "2026-09-06T18:32:59.460524+00:00",
+      "run_id": "01a077fe-c13f-78b0-b84f-d27bdaa86194",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d",
+        "01a077fe-c138-7eb3-975f-0b3d2be5a479",
+        "01a077fe-c139-7873-b197-1cd79e8015ab"
+      ],
+      "tags": [
+        "graph:step:1"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 1,
+        "langgraph_node": "cluster_by_neighborhood",
+        "langgraph_triggers": [
+          "branch:to:cluster_by_neighborhood"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "cluster_by_neighborhood"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199|cluster_by_neighborhood:f4b08a75-a386-857f-2b93-b3a6f39ae4f7",
+        "checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "build_itinerary",
+      "timestamp": "2026-09-06T18:32:59.463294+00:00",
+      "run_id": "01a077fe-c146-73d1-ba73-6e605d0f0632",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d",
+        "01a077fe-c138-7eb3-975f-0b3d2be5a479",
+        "01a077fe-c139-7873-b197-1cd79e8015ab"
+      ],
+      "tags": [
+        "graph:step:2"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 2,
+        "langgraph_node": "build_itinerary",
+        "langgraph_triggers": [
+          "branch:to:build_itinerary"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "build_itinerary"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199|build_itinerary:9fd6099c-e1a7-a406-2294-c816b9bedb3e",
+        "checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "build_itinerary",
+      "timestamp": "2026-09-06T18:32:59.469251+00:00",
+      "run_id": "01a077fe-c146-73d1-ba73-6e605d0f0632",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d",
+        "01a077fe-c138-7eb3-975f-0b3d2be5a479",
+        "01a077fe-c139-7873-b197-1cd79e8015ab"
+      ],
+      "tags": [
+        "graph:step:2"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 2,
+        "langgraph_node": "build_itinerary",
+        "langgraph_triggers": [
+          "branch:to:build_itinerary"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "build_itinerary"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199|build_itinerary:9fd6099c-e1a7-a406-2294-c816b9bedb3e",
+        "checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "align_flight_times",
+      "timestamp": "2026-09-06T18:32:59.472029+00:00",
+      "run_id": "01a077fe-c14f-7ee2-8599-f649690f7c69",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d",
+        "01a077fe-c138-7eb3-975f-0b3d2be5a479",
+        "01a077fe-c139-7873-b197-1cd79e8015ab"
+      ],
+      "tags": [
+        "graph:step:3"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 3,
+        "langgraph_node": "align_flight_times",
+        "langgraph_triggers": [
+          "branch:to:align_flight_times"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "align_flight_times"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199|align_flight_times:8de7ab0b-a52a-df72-e4b9-8e562ff52920",
+        "checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "align_flight_times",
+      "timestamp": "2026-09-06T18:32:59.473645+00:00",
+      "run_id": "01a077fe-c14f-7ee2-8599-f649690f7c69",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d",
+        "01a077fe-c138-7eb3-975f-0b3d2be5a479",
+        "01a077fe-c139-7873-b197-1cd79e8015ab"
+      ],
+      "tags": [
+        "graph:step:3"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 3,
+        "langgraph_node": "align_flight_times",
+        "langgraph_triggers": [
+          "branch:to:align_flight_times"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "align_flight_times"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199|align_flight_times:8de7ab0b-a52a-df72-e4b9-8e562ff52920",
+        "checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:32:59.475101+00:00",
+      "run_id": "01a077fe-c152-7fa2-bde7-17ddb2fdae10",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d",
+        "01a077fe-c138-7eb3-975f-0b3d2be5a479",
+        "01a077fe-c139-7873-b197-1cd79e8015ab"
+      ],
+      "tags": [
+        "graph:step:4"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 4,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199|plan_routes:10d52c15-a74f-9944-d5dd-79e2c1f5cb1a",
+        "checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:32:59.554573+00:00",
+      "run_id": "01a077fe-c1a1-73d0-a5bc-2ce11f4b7471",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d",
+        "01a077fe-c138-7eb3-975f-0b3d2be5a479",
+        "01a077fe-c139-7873-b197-1cd79e8015ab",
+        "01a077fe-c152-7fa2-bde7-17ddb2fdae10"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 4,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199|plan_routes:10d52c15-a74f-9944-d5dd-79e2c1f5cb1a",
+        "checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:32:59.556046+00:00",
+      "run_id": "01a077fe-c1a1-73d0-a5bc-2ce11f4b7471",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d",
+        "01a077fe-c138-7eb3-975f-0b3d2be5a479",
+        "01a077fe-c139-7873-b197-1cd79e8015ab",
+        "01a077fe-c152-7fa2-bde7-17ddb2fdae10"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 4,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199|plan_routes:10d52c15-a74f-9944-d5dd-79e2c1f5cb1a",
+        "checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:32:59.556890+00:00",
+      "run_id": "01a077fe-c152-7fa2-bde7-17ddb2fdae10",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d",
+        "01a077fe-c138-7eb3-975f-0b3d2be5a479",
+        "01a077fe-c139-7873-b197-1cd79e8015ab"
+      ],
+      "tags": [
+        "graph:step:4"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 4,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199|plan_routes:10d52c15-a74f-9944-d5dd-79e2c1f5cb1a",
+        "checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "apply_feasibility_swap",
+      "timestamp": "2026-09-06T18:32:59.559523+00:00",
+      "run_id": "01a077fe-c1a6-7811-8fe1-aeaa6faa57ad",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d",
+        "01a077fe-c138-7eb3-975f-0b3d2be5a479",
+        "01a077fe-c139-7873-b197-1cd79e8015ab"
+      ],
+      "tags": [
+        "graph:step:5"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 5,
+        "langgraph_node": "apply_feasibility_swap",
+        "langgraph_triggers": [
+          "branch:to:apply_feasibility_swap"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "apply_feasibility_swap"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199|apply_feasibility_swap:dabf993c-f9fa-8919-8518-6737cb65321a",
+        "checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "apply_feasibility_swap",
+      "timestamp": "2026-09-06T18:32:59.562980+00:00",
+      "run_id": "01a077fe-c1a6-7811-8fe1-aeaa6faa57ad",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d",
+        "01a077fe-c138-7eb3-975f-0b3d2be5a479",
+        "01a077fe-c139-7873-b197-1cd79e8015ab"
+      ],
+      "tags": [
+        "graph:step:5"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 5,
+        "langgraph_node": "apply_feasibility_swap",
+        "langgraph_triggers": [
+          "branch:to:apply_feasibility_swap"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "apply_feasibility_swap"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199|apply_feasibility_swap:dabf993c-f9fa-8919-8518-6737cb65321a",
+        "checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:32:59.565557+00:00",
+      "run_id": "01a077fe-c1ac-7083-be19-859e7054c649",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d",
+        "01a077fe-c138-7eb3-975f-0b3d2be5a479",
+        "01a077fe-c139-7873-b197-1cd79e8015ab"
+      ],
+      "tags": [
+        "graph:step:6"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 6,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199|plan_routes:1a8d9c99-5079-632c-8fcd-132271da325c",
+        "checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:32:59.628329+00:00",
+      "run_id": "01a077fe-c1eb-77c1-a1e2-a25c54e97234",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d",
+        "01a077fe-c138-7eb3-975f-0b3d2be5a479",
+        "01a077fe-c139-7873-b197-1cd79e8015ab",
+        "01a077fe-c1ac-7083-be19-859e7054c649"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 6,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199|plan_routes:1a8d9c99-5079-632c-8fcd-132271da325c",
+        "checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:32:59.629868+00:00",
+      "run_id": "01a077fe-c1eb-77c1-a1e2-a25c54e97234",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d",
+        "01a077fe-c138-7eb3-975f-0b3d2be5a479",
+        "01a077fe-c139-7873-b197-1cd79e8015ab",
+        "01a077fe-c1ac-7083-be19-859e7054c649"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 6,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199|plan_routes:1a8d9c99-5079-632c-8fcd-132271da325c",
+        "checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:32:59.632030+00:00",
+      "run_id": "01a077fe-c1ac-7083-be19-859e7054c649",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d",
+        "01a077fe-c138-7eb3-975f-0b3d2be5a479",
+        "01a077fe-c139-7873-b197-1cd79e8015ab"
+      ],
+      "tags": [
+        "graph:step:6"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 6,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199|plan_routes:1a8d9c99-5079-632c-8fcd-132271da325c",
+        "checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "apply_feasibility_swap",
+      "timestamp": "2026-09-06T18:32:59.637082+00:00",
+      "run_id": "01a077fe-c1f2-7e30-a3f4-33661f48275e",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d",
+        "01a077fe-c138-7eb3-975f-0b3d2be5a479",
+        "01a077fe-c139-7873-b197-1cd79e8015ab"
+      ],
+      "tags": [
+        "graph:step:7"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 7,
+        "langgraph_node": "apply_feasibility_swap",
+        "langgraph_triggers": [
+          "branch:to:apply_feasibility_swap"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "apply_feasibility_swap"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199|apply_feasibility_swap:17e8d1a8-efc0-e977-9847-15bea3d657ad",
+        "checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "apply_feasibility_swap",
+      "timestamp": "2026-09-06T18:32:59.639513+00:00",
+      "run_id": "01a077fe-c1f2-7e30-a3f4-33661f48275e",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d",
+        "01a077fe-c138-7eb3-975f-0b3d2be5a479",
+        "01a077fe-c139-7873-b197-1cd79e8015ab"
+      ],
+      "tags": [
+        "graph:step:7"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 7,
+        "langgraph_node": "apply_feasibility_swap",
+        "langgraph_triggers": [
+          "branch:to:apply_feasibility_swap"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "apply_feasibility_swap"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199|apply_feasibility_swap:17e8d1a8-efc0-e977-9847-15bea3d657ad",
+        "checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:32:59.641562+00:00",
+      "run_id": "01a077fe-c1f8-73d1-9a11-3cf3f0965e0f",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d",
+        "01a077fe-c138-7eb3-975f-0b3d2be5a479",
+        "01a077fe-c139-7873-b197-1cd79e8015ab"
+      ],
+      "tags": [
+        "graph:step:8"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 8,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199|plan_routes:07effb48-1194-8404-4639-31c1befd8c93",
+        "checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:32:59.693999+00:00",
+      "run_id": "01a077fe-c22d-7df3-9593-7b0da9358604",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d",
+        "01a077fe-c138-7eb3-975f-0b3d2be5a479",
+        "01a077fe-c139-7873-b197-1cd79e8015ab",
+        "01a077fe-c1f8-73d1-9a11-3cf3f0965e0f"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 8,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199|plan_routes:07effb48-1194-8404-4639-31c1befd8c93",
+        "checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:32:59.695915+00:00",
+      "run_id": "01a077fe-c22d-7df3-9593-7b0da9358604",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d",
+        "01a077fe-c138-7eb3-975f-0b3d2be5a479",
+        "01a077fe-c139-7873-b197-1cd79e8015ab",
+        "01a077fe-c1f8-73d1-9a11-3cf3f0965e0f"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 8,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199|plan_routes:07effb48-1194-8404-4639-31c1befd8c93",
+        "checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:32:59.697497+00:00",
+      "run_id": "01a077fe-c1f8-73d1-9a11-3cf3f0965e0f",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d",
+        "01a077fe-c138-7eb3-975f-0b3d2be5a479",
+        "01a077fe-c139-7873-b197-1cd79e8015ab"
+      ],
+      "tags": [
+        "graph:step:8"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 8,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199|plan_routes:07effb48-1194-8404-4639-31c1befd8c93",
+        "checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "validation_gate",
+      "timestamp": "2026-09-06T18:32:59.699154+00:00",
+      "run_id": "01a077fe-c232-7920-b6e2-322a0195ce1f",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d",
+        "01a077fe-c138-7eb3-975f-0b3d2be5a479",
+        "01a077fe-c139-7873-b197-1cd79e8015ab"
+      ],
+      "tags": [
+        "graph:step:9"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199|validation_gate:50cbc325-1496-f206-52f6-b22626120e43",
+        "checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "check_validation",
+      "timestamp": "2026-09-06T18:32:59.703802+00:00",
+      "run_id": "01a077fe-c234-7532-98a2-0023683947ad",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d",
+        "01a077fe-c138-7eb3-975f-0b3d2be5a479",
+        "01a077fe-c139-7873-b197-1cd79e8015ab",
+        "01a077fe-c232-7920-b6e2-322a0195ce1f"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199|validation_gate:50cbc325-1496-f206-52f6-b22626120e43",
+        "checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "check_validation",
+      "timestamp": "2026-09-06T18:32:59.705325+00:00",
+      "run_id": "01a077fe-c234-7532-98a2-0023683947ad",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d",
+        "01a077fe-c138-7eb3-975f-0b3d2be5a479",
+        "01a077fe-c139-7873-b197-1cd79e8015ab",
+        "01a077fe-c232-7920-b6e2-322a0195ce1f"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199|validation_gate:50cbc325-1496-f206-52f6-b22626120e43",
+        "checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "validation_gate",
+      "timestamp": "2026-09-06T18:32:59.706683+00:00",
+      "run_id": "01a077fe-c232-7920-b6e2-322a0195ce1f",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d",
+        "01a077fe-c138-7eb3-975f-0b3d2be5a479",
+        "01a077fe-c139-7873-b197-1cd79e8015ab"
+      ],
+      "tags": [
+        "graph:step:9"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199|validation_gate:50cbc325-1496-f206-52f6-b22626120e43",
+        "checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "build_itinerary",
+      "timestamp": "2026-09-06T18:32:59.710469+00:00",
+      "run_id": "01a077fe-c23d-71b1-9888-59e5f2184923",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d",
+        "01a077fe-c138-7eb3-975f-0b3d2be5a479",
+        "01a077fe-c139-7873-b197-1cd79e8015ab"
+      ],
+      "tags": [
+        "graph:step:10"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 10,
+        "langgraph_node": "build_itinerary",
+        "langgraph_triggers": [
+          "branch:to:build_itinerary"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "build_itinerary"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199|build_itinerary:e36b7eae-d711-9f0d-ea42-565c1f4e8e1e",
+        "checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "build_itinerary",
+      "timestamp": "2026-09-06T18:32:59.716289+00:00",
+      "run_id": "01a077fe-c23d-71b1-9888-59e5f2184923",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d",
+        "01a077fe-c138-7eb3-975f-0b3d2be5a479",
+        "01a077fe-c139-7873-b197-1cd79e8015ab"
+      ],
+      "tags": [
+        "graph:step:10"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 10,
+        "langgraph_node": "build_itinerary",
+        "langgraph_triggers": [
+          "branch:to:build_itinerary"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "build_itinerary"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199|build_itinerary:e36b7eae-d711-9f0d-ea42-565c1f4e8e1e",
+        "checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "align_flight_times",
+      "timestamp": "2026-09-06T18:32:59.722092+00:00",
+      "run_id": "01a077fe-c249-7293-8ad8-9a7bd2da9eb1",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d",
+        "01a077fe-c138-7eb3-975f-0b3d2be5a479",
+        "01a077fe-c139-7873-b197-1cd79e8015ab"
+      ],
+      "tags": [
+        "graph:step:11"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 11,
+        "langgraph_node": "align_flight_times",
+        "langgraph_triggers": [
+          "branch:to:align_flight_times"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "align_flight_times"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199|align_flight_times:e0c80a62-10b0-c8ae-04d2-68685940e072",
+        "checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "align_flight_times",
+      "timestamp": "2026-09-06T18:32:59.723732+00:00",
+      "run_id": "01a077fe-c249-7293-8ad8-9a7bd2da9eb1",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d",
+        "01a077fe-c138-7eb3-975f-0b3d2be5a479",
+        "01a077fe-c139-7873-b197-1cd79e8015ab"
+      ],
+      "tags": [
+        "graph:step:11"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 11,
+        "langgraph_node": "align_flight_times",
+        "langgraph_triggers": [
+          "branch:to:align_flight_times"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "align_flight_times"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199|align_flight_times:e0c80a62-10b0-c8ae-04d2-68685940e072",
+        "checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:32:59.725725+00:00",
+      "run_id": "01a077fe-c24c-7b93-ba0f-90f2d496552b",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d",
+        "01a077fe-c138-7eb3-975f-0b3d2be5a479",
+        "01a077fe-c139-7873-b197-1cd79e8015ab"
+      ],
+      "tags": [
+        "graph:step:12"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 12,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199|plan_routes:dec96376-3771-13d8-816f-1125f03d008d",
+        "checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:32:59.798672+00:00",
+      "run_id": "01a077fe-c295-7112-b096-b1ac8cc97549",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d",
+        "01a077fe-c138-7eb3-975f-0b3d2be5a479",
+        "01a077fe-c139-7873-b197-1cd79e8015ab",
+        "01a077fe-c24c-7b93-ba0f-90f2d496552b"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 12,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199|plan_routes:dec96376-3771-13d8-816f-1125f03d008d",
+        "checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:32:59.799980+00:00",
+      "run_id": "01a077fe-c295-7112-b096-b1ac8cc97549",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d",
+        "01a077fe-c138-7eb3-975f-0b3d2be5a479",
+        "01a077fe-c139-7873-b197-1cd79e8015ab",
+        "01a077fe-c24c-7b93-ba0f-90f2d496552b"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 12,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199|plan_routes:dec96376-3771-13d8-816f-1125f03d008d",
+        "checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:32:59.804285+00:00",
+      "run_id": "01a077fe-c24c-7b93-ba0f-90f2d496552b",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d",
+        "01a077fe-c138-7eb3-975f-0b3d2be5a479",
+        "01a077fe-c139-7873-b197-1cd79e8015ab"
+      ],
+      "tags": [
+        "graph:step:12"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 12,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199|plan_routes:dec96376-3771-13d8-816f-1125f03d008d",
+        "checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "validation_gate",
+      "timestamp": "2026-09-06T18:32:59.807141+00:00",
+      "run_id": "01a077fe-c29e-72f3-9f8d-e38c4ef6dc0e",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d",
+        "01a077fe-c138-7eb3-975f-0b3d2be5a479",
+        "01a077fe-c139-7873-b197-1cd79e8015ab"
+      ],
+      "tags": [
+        "graph:step:13"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 13,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199|validation_gate:d5a5ade2-4c3c-d3cb-dff7-2bf2329a7ce9",
+        "checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "check_validation",
+      "timestamp": "2026-09-06T18:32:59.809233+00:00",
+      "run_id": "01a077fe-c2a0-7352-b7f0-9b594855fef9",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d",
+        "01a077fe-c138-7eb3-975f-0b3d2be5a479",
+        "01a077fe-c139-7873-b197-1cd79e8015ab",
+        "01a077fe-c29e-72f3-9f8d-e38c4ef6dc0e"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 13,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199|validation_gate:d5a5ade2-4c3c-d3cb-dff7-2bf2329a7ce9",
+        "checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "check_validation",
+      "timestamp": "2026-09-06T18:32:59.810187+00:00",
+      "run_id": "01a077fe-c2a0-7352-b7f0-9b594855fef9",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d",
+        "01a077fe-c138-7eb3-975f-0b3d2be5a479",
+        "01a077fe-c139-7873-b197-1cd79e8015ab",
+        "01a077fe-c29e-72f3-9f8d-e38c4ef6dc0e"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 13,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199|validation_gate:d5a5ade2-4c3c-d3cb-dff7-2bf2329a7ce9",
+        "checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "validation_gate",
+      "timestamp": "2026-09-06T18:32:59.811564+00:00",
+      "run_id": "01a077fe-c29e-72f3-9f8d-e38c4ef6dc0e",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d",
+        "01a077fe-c138-7eb3-975f-0b3d2be5a479",
+        "01a077fe-c139-7873-b197-1cd79e8015ab"
+      ],
+      "tags": [
+        "graph:step:13"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 13,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199|validation_gate:d5a5ade2-4c3c-d3cb-dff7-2bf2329a7ce9",
+        "checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "LangGraph",
+      "timestamp": "2026-09-06T18:32:59.813419+00:00",
+      "run_id": "01a077fe-c139-7873-b197-1cd79e8015ab",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d",
+        "01a077fe-c138-7eb3-975f-0b3d2be5a479"
+      ],
+      "tags": [
+        "seq:step:1"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "run_itinerary_node",
+        "langgraph_triggers": [
+          "branch:to:run_itinerary_node"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "run_itinerary_node"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199",
+        "checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "run_itinerary_node",
+      "timestamp": "2026-09-06T18:32:59.815159+00:00",
+      "run_id": "01a077fe-c138-7eb3-975f-0b3d2be5a479",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d"
+      ],
+      "tags": [
+        "graph:step:9"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "run_itinerary_node",
+        "langgraph_triggers": [
+          "branch:to:run_itinerary_node"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "run_itinerary_node"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:ad223be1-30e0-e4a6-b155-2d1f30757199"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "compute_fairness",
+      "timestamp": "2026-09-06T18:32:59.820381+00:00",
+      "run_id": "01a077fe-c2a9-75d0-82ec-395b59404da5",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d"
+      ],
+      "tags": [
+        "graph:step:10"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 10,
+        "langgraph_node": "compute_fairness",
+        "langgraph_triggers": [
+          "branch:to:compute_fairness"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "compute_fairness"
+        ],
+        "langgraph_checkpoint_ns": "compute_fairness:ba64ce95-f73a-9ab9-02db-d45ef88a98c4"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "route_after_fairness",
+      "timestamp": "2026-09-06T18:32:59.821520+00:00",
+      "run_id": "01a077fe-c2ad-73f3-811c-411f2d25cc6f",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d",
+        "01a077fe-c2a9-75d0-82ec-395b59404da5"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 10,
+        "langgraph_node": "compute_fairness",
+        "langgraph_triggers": [
+          "branch:to:compute_fairness"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "compute_fairness"
+        ],
+        "langgraph_checkpoint_ns": "compute_fairness:ba64ce95-f73a-9ab9-02db-d45ef88a98c4"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "route_after_fairness",
+      "timestamp": "2026-09-06T18:32:59.822841+00:00",
+      "run_id": "01a077fe-c2ad-73f3-811c-411f2d25cc6f",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d",
+        "01a077fe-c2a9-75d0-82ec-395b59404da5"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 10,
+        "langgraph_node": "compute_fairness",
+        "langgraph_triggers": [
+          "branch:to:compute_fairness"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "compute_fairness"
+        ],
+        "langgraph_checkpoint_ns": "compute_fairness:ba64ce95-f73a-9ab9-02db-d45ef88a98c4"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "compute_fairness",
+      "timestamp": "2026-09-06T18:32:59.823961+00:00",
+      "run_id": "01a077fe-c2a9-75d0-82ec-395b59404da5",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d"
+      ],
+      "tags": [
+        "graph:step:10"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 10,
+        "langgraph_node": "compute_fairness",
+        "langgraph_triggers": [
+          "branch:to:compute_fairness"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "compute_fairness"
+        ],
+        "langgraph_checkpoint_ns": "compute_fairness:ba64ce95-f73a-9ab9-02db-d45ef88a98c4"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "assemble_output",
+      "timestamp": "2026-09-06T18:32:59.826829+00:00",
+      "run_id": "01a077fe-c2b1-7f70-b56c-b8b7afad23c7",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d"
+      ],
+      "tags": [
+        "graph:step:11"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 11,
+        "langgraph_node": "assemble_output",
+        "langgraph_triggers": [
+          "branch:to:assemble_output"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "assemble_output"
+        ],
+        "langgraph_checkpoint_ns": "assemble_output:c45c898b-cb4d-8d4c-0f93-44f654bf962c"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "assemble_output",
+      "timestamp": "2026-09-06T18:32:59.837971+00:00",
+      "run_id": "01a077fe-c2b1-7f70-b56c-b8b7afad23c7",
+      "parent_ids": [
+        "01a077fe-c111-7952-bf07-bd67bc7cbc9d"
+      ],
+      "tags": [
+        "graph:step:11"
+      ],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph",
+        "langgraph_step": 11,
+        "langgraph_node": "assemble_output",
+        "langgraph_triggers": [
+          "branch:to:assemble_output"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "assemble_output"
+        ],
+        "langgraph_checkpoint_ns": "assemble_output:c45c898b-cb4d-8d4c-0f93-44f654bf962c"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "LangGraph",
+      "timestamp": "2026-09-06T18:32:59.840258+00:00",
+      "run_id": "01a077fe-c111-7952-bf07-bd67bc7cbc9d",
+      "parent_ids": [],
+      "tags": [],
+      "metadata": {
+        "trip_id": "08-08_big_city_skyscraper_intent",
+        "eval_tier": "offline",
+        "thread_id": "08-08_big_city_skyscraper_intent",
+        "ls_integration": "langgraph"
+      }
+    }
+  ],
+  "telemetry": {
+    "nodes": {
+      "extract_preference_constraints": {
+        "input_tokens": 597,
+        "output_tokens": 636,
+        "cache_read_tokens": 0,
+        "cost_usd": 0.003777,
+        "unpriced_calls": 0,
+        "llm_calls": 1,
+        "duration_ms": 4.88
+      },
+      "select_destination": {
+        "input_tokens": 1493,
+        "output_tokens": 248,
+        "cache_read_tokens": 0,
+        "cost_usd": 0.002733,
+        "unpriced_calls": 0,
+        "llm_calls": 1,
+        "duration_ms": 133.225
+      },
+      "build_itinerary": {
+        "input_tokens": 3355,
+        "output_tokens": 4606,
+        "cache_read_tokens": 0,
+        "cost_usd": 0.026385,
+        "unpriced_calls": 0,
+        "llm_calls": 2,
+        "duration_ms": 11.772
+      },
+      "assemble_output": {
+        "input_tokens": 1326,
+        "output_tokens": 1431,
+        "cache_read_tokens": 0,
+        "cost_usd": 0.008481,
+        "unpriced_calls": 0,
+        "llm_calls": 1,
+        "duration_ms": 11.459
+      },
+      "parse_input": {
+        "duration_ms": 2.579
+      },
+      "city_selection_hitl": {
+        "duration_ms": 1.204
+      },
+      "dynamic_tool_selection": {
+        "duration_ms": 2.619
+      },
+      "parallel_data_fetch": {
+        "duration_ms": 12.04
+      },
+      "budget_analysis": {
+        "duration_ms": 3.388
+      },
+      "search_hotel": {
+        "duration_ms": 3.203
+      },
+      "cluster_by_neighborhood": {
+        "duration_ms": 3.825
+      },
+      "align_flight_times": {
+        "duration_ms": 3.618
+      },
+      "plan_routes": {
+        "duration_ms": 282.079
+      },
+      "apply_feasibility_swap": {
+        "duration_ms": 5.335
+      },
+      "validation_gate": {
+        "duration_ms": 11.569
+      },
+      "run_itinerary_node": {
+        "duration_ms": 366.509
+      },
+      "compute_fairness": {
+        "duration_ms": 3.82
+      }
+    },
+    "totals": {
+      "input_tokens": 6771,
+      "output_tokens": 6921,
+      "cache_read_tokens": 0,
+      "cost_usd": 0.041376,
+      "unpriced_calls": 0,
+      "llm_calls": 5,
+      "duration_ms": 592.287
+    }
+  },
+  "hitl_resolutions": 1,
+  "tool_calls": [
+    {
+      "operation": "search_flights",
+      "request": {
+        "origin": "SEA",
+        "destination": "Chicago",
+        "depart_date": "2026-09-08",
+        "return_date": "2026-09-11",
+        "adults": 1
+      }
+    },
+    {
+      "operation": "search_flights",
+      "request": {
+        "origin": "MIA",
+        "destination": "Chicago",
+        "depart_date": "2026-09-08",
+        "return_date": "2026-09-11",
+        "adults": 1
+      }
+    },
+    {
+      "operation": "search_flights",
+      "request": {
+        "origin": "BOS",
+        "destination": "Chicago",
+        "depart_date": "2026-09-08",
+        "return_date": "2026-09-11",
+        "adults": 1
+      }
+    },
+    {
+      "operation": "search_flights",
+      "request": {
+        "origin": "PHX",
+        "destination": "Chicago",
+        "depart_date": "2026-09-08",
+        "return_date": "2026-09-11",
+        "adults": 1
+      }
+    },
+    {
+      "operation": "fetch_activities_by_category",
+      "request": {
+        "destination": "Chicago",
+        "coords": {
+          "lat": 41.8781,
+          "lng": -87.6298
+        },
+        "categories": [
+          "food",
+          "nightlife",
+          "urban",
+          "shopping"
+        ],
+        "max_per_category": 10
+      }
+    },
+    {
+      "operation": "fetch_weather",
+      "request": {
+        "lat": 41.8781,
+        "lng": -87.6298,
+        "start_date": "2026-09-08",
+        "end_date": "2026-09-11",
+        "destination_name": "Chicago"
+      }
+    },
+    {
+      "operation": "search_hotels",
+      "request": {
+        "destination": "Chicago",
+        "check_in": "2026-09-08",
+        "check_out": "2026-09-11",
+        "budget_ceiling_usd": 2100.0,
+        "coords": {
+          "lat": 41.8781,
+          "lng": -87.6298
+        }
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Chicago",
+        "coords": {
+          "lat": 41.8781,
+          "lng": -87.6298
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Chicago",
+        "coords": {
+          "lat": 41.8781,
+          "lng": -87.6298
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Chicago",
+        "coords": {
+          "lat": 41.8781,
+          "lng": -87.6298
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.9060542,
+        "origin_lng": -87.6284696,
+        "dest_lat": 41.8796069,
+        "dest_lng": -87.62687679999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.8796069,
+        "origin_lng": -87.62687679999999,
+        "dest_lat": 41.8825524,
+        "dest_lng": -87.62255139999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.8825524,
+        "origin_lng": -87.62255139999999,
+        "dest_lat": 41.8843373,
+        "dest_lng": -87.6292766,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.8843373,
+        "origin_lng": -87.6292766,
+        "dest_lat": 41.8796031,
+        "dest_lng": -87.6223504,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.8796031,
+        "origin_lng": -87.6223504,
+        "dest_lat": 41.878876399999996,
+        "dest_lng": -87.6359149,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.878876399999996,
+        "origin_lng": -87.6359149,
+        "dest_lat": 41.8843373,
+        "dest_lng": -87.6292766,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.8843373,
+        "origin_lng": -87.6292766,
+        "dest_lat": 41.881763,
+        "dest_lng": -87.6248395,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Chicago",
+        "coords": {
+          "lat": 41.8781,
+          "lng": -87.6298
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Chicago",
+        "coords": {
+          "lat": 41.8781,
+          "lng": -87.6298
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Chicago",
+        "coords": {
+          "lat": 41.8781,
+          "lng": -87.6298
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lincoln Park nightlife",
+        "destination": "Chicago",
+        "coords": {
+          "lat": 41.8781,
+          "lng": -87.6298
+        },
+        "included_type": null
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.9060542,
+        "origin_lng": -87.6284696,
+        "dest_lat": 41.8796069,
+        "dest_lng": -87.62687679999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.8796069,
+        "origin_lng": -87.62687679999999,
+        "dest_lat": 41.921703,
+        "dest_lng": -87.6336403,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.921703,
+        "origin_lng": -87.6336403,
+        "dest_lat": 41.9484384,
+        "dest_lng": -87.6553327,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.9484384,
+        "origin_lng": -87.6553327,
+        "dest_lat": 41.8843373,
+        "dest_lng": -87.6292766,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.8843373,
+        "origin_lng": -87.6292766,
+        "dest_lat": 41.9284572,
+        "dest_lng": -87.7873882,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.9284572,
+        "origin_lng": -87.7873882,
+        "dest_lat": 41.8843373,
+        "dest_lng": -87.6292766,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.8843373,
+        "origin_lng": -87.6292766,
+        "dest_lat": 41.9336737,
+        "dest_lng": -87.65372099999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Chicago",
+        "coords": {
+          "lat": 41.8781,
+          "lng": -87.6298
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Chicago",
+        "coords": {
+          "lat": 41.8781,
+          "lng": -87.6298
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lakefront walking & Roosevelt Collection Shops",
+        "destination": "Chicago",
+        "coords": {
+          "lat": 41.8781,
+          "lng": -87.6298
+        },
+        "included_type": null
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Chinatown neighborhood exploration",
+        "destination": "Chicago",
+        "coords": {
+          "lat": 41.8781,
+          "lng": -87.6298
+        },
+        "included_type": null
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Chicago",
+        "coords": {
+          "lat": 41.8781,
+          "lng": -87.6298
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.9060542,
+        "origin_lng": -87.6284696,
+        "dest_lat": 41.8796069,
+        "dest_lng": -87.62687679999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.8796069,
+        "origin_lng": -87.62687679999999,
+        "dest_lat": 41.866261,
+        "dest_lng": -87.6169805,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.866261,
+        "origin_lng": -87.6169805,
+        "dest_lat": 41.8843373,
+        "dest_lng": -87.6292766,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.8843373,
+        "origin_lng": -87.6292766,
+        "dest_lat": 41.867572599999995,
+        "dest_lng": -87.614038,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.867572599999995,
+        "origin_lng": -87.614038,
+        "dest_lat": 41.8678745,
+        "dest_lng": -87.632564,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.8678745,
+        "origin_lng": -87.632564,
+        "dest_lat": 41.8526163,
+        "dest_lng": -87.63201339999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.8526163,
+        "origin_lng": -87.63201339999999,
+        "dest_lat": 41.8843373,
+        "dest_lng": -87.6292766,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Chicago",
+        "coords": {
+          "lat": 41.8781,
+          "lng": -87.6298
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Chicago",
+        "coords": {
+          "lat": 41.8781,
+          "lng": -87.6298
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Chicago",
+        "coords": {
+          "lat": 41.8781,
+          "lng": -87.6298
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.9060542,
+        "origin_lng": -87.6284696,
+        "dest_lat": 41.8796069,
+        "dest_lng": -87.62687679999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.8796069,
+        "origin_lng": -87.62687679999999,
+        "dest_lat": 41.8825524,
+        "dest_lng": -87.62255139999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.8825524,
+        "origin_lng": -87.62255139999999,
+        "dest_lat": 41.8843373,
+        "dest_lng": -87.6292766,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.8843373,
+        "origin_lng": -87.6292766,
+        "dest_lat": 41.8796031,
+        "dest_lng": -87.6223504,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.8796031,
+        "origin_lng": -87.6223504,
+        "dest_lat": 41.878876399999996,
+        "dest_lng": -87.6359149,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.878876399999996,
+        "origin_lng": -87.6359149,
+        "dest_lat": 41.8843373,
+        "dest_lng": -87.6292766,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.8843373,
+        "origin_lng": -87.6292766,
+        "dest_lat": 41.881763,
+        "dest_lng": -87.6248395,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Chicago",
+        "coords": {
+          "lat": 41.8781,
+          "lng": -87.6298
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Chicago",
+        "coords": {
+          "lat": 41.8781,
+          "lng": -87.6298
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Chicago",
+        "coords": {
+          "lat": 41.8781,
+          "lng": -87.6298
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.9060542,
+        "origin_lng": -87.6284696,
+        "dest_lat": 41.8796069,
+        "dest_lng": -87.62687679999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.8796069,
+        "origin_lng": -87.62687679999999,
+        "dest_lat": 41.921703,
+        "dest_lng": -87.6336403,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.921703,
+        "origin_lng": -87.6336403,
+        "dest_lat": 41.9484384,
+        "dest_lng": -87.6553327,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.9484384,
+        "origin_lng": -87.6553327,
+        "dest_lat": 41.8843373,
+        "dest_lng": -87.6292766,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.8843373,
+        "origin_lng": -87.6292766,
+        "dest_lat": 41.9284572,
+        "dest_lng": -87.7873882,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.9284572,
+        "origin_lng": -87.7873882,
+        "dest_lat": 41.8843373,
+        "dest_lng": -87.6292766,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Chicago",
+        "coords": {
+          "lat": 41.8781,
+          "lng": -87.6298
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Chicago",
+        "coords": {
+          "lat": 41.8781,
+          "lng": -87.6298
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Chinatown neighborhood exploration",
+        "destination": "Chicago",
+        "coords": {
+          "lat": 41.8781,
+          "lng": -87.6298
+        },
+        "included_type": null
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Chicago",
+        "coords": {
+          "lat": 41.8781,
+          "lng": -87.6298
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.9060542,
+        "origin_lng": -87.6284696,
+        "dest_lat": 41.8796069,
+        "dest_lng": -87.62687679999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.8796069,
+        "origin_lng": -87.62687679999999,
+        "dest_lat": 41.866261,
+        "dest_lng": -87.6169805,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.866261,
+        "origin_lng": -87.6169805,
+        "dest_lat": 41.8843373,
+        "dest_lng": -87.6292766,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.8843373,
+        "origin_lng": -87.6292766,
+        "dest_lat": 41.867572599999995,
+        "dest_lng": -87.614038,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.867572599999995,
+        "origin_lng": -87.614038,
+        "dest_lat": 41.8678745,
+        "dest_lng": -87.632564,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.8678745,
+        "origin_lng": -87.632564,
+        "dest_lat": 41.8526163,
+        "dest_lng": -87.63201339999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.8526163,
+        "origin_lng": -87.63201339999999,
+        "dest_lat": 41.8843373,
+        "dest_lng": -87.6292766,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Chicago",
+        "coords": {
+          "lat": 41.8781,
+          "lng": -87.6298
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Chicago",
+        "coords": {
+          "lat": 41.8781,
+          "lng": -87.6298
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Chicago",
+        "coords": {
+          "lat": 41.8781,
+          "lng": -87.6298
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.9060542,
+        "origin_lng": -87.6284696,
+        "dest_lat": 41.8796069,
+        "dest_lng": -87.62687679999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.8796069,
+        "origin_lng": -87.62687679999999,
+        "dest_lat": 41.8825524,
+        "dest_lng": -87.62255139999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.8825524,
+        "origin_lng": -87.62255139999999,
+        "dest_lat": 41.8843373,
+        "dest_lng": -87.6292766,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.8843373,
+        "origin_lng": -87.6292766,
+        "dest_lat": 41.8796031,
+        "dest_lng": -87.6223504,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.8796031,
+        "origin_lng": -87.6223504,
+        "dest_lat": 41.878876399999996,
+        "dest_lng": -87.6359149,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.878876399999996,
+        "origin_lng": -87.6359149,
+        "dest_lat": 41.8843373,
+        "dest_lng": -87.6292766,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.8843373,
+        "origin_lng": -87.6292766,
+        "dest_lat": 41.881763,
+        "dest_lng": -87.6248395,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Chicago",
+        "coords": {
+          "lat": 41.8781,
+          "lng": -87.6298
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Chicago",
+        "coords": {
+          "lat": 41.8781,
+          "lng": -87.6298
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Chicago",
+        "coords": {
+          "lat": 41.8781,
+          "lng": -87.6298
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.9060542,
+        "origin_lng": -87.6284696,
+        "dest_lat": 41.8796069,
+        "dest_lng": -87.62687679999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.8796069,
+        "origin_lng": -87.62687679999999,
+        "dest_lat": 41.921703,
+        "dest_lng": -87.6336403,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.921703,
+        "origin_lng": -87.6336403,
+        "dest_lat": 41.9484384,
+        "dest_lng": -87.6553327,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.9484384,
+        "origin_lng": -87.6553327,
+        "dest_lat": 41.8843373,
+        "dest_lng": -87.6292766,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.8843373,
+        "origin_lng": -87.6292766,
+        "dest_lat": 41.8843373,
+        "dest_lng": -87.6292766,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Chicago",
+        "coords": {
+          "lat": 41.8781,
+          "lng": -87.6298
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Chicago",
+        "coords": {
+          "lat": 41.8781,
+          "lng": -87.6298
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Chinatown neighborhood exploration",
+        "destination": "Chicago",
+        "coords": {
+          "lat": 41.8781,
+          "lng": -87.6298
+        },
+        "included_type": null
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Chicago",
+        "coords": {
+          "lat": 41.8781,
+          "lng": -87.6298
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.9060542,
+        "origin_lng": -87.6284696,
+        "dest_lat": 41.8796069,
+        "dest_lng": -87.62687679999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.8796069,
+        "origin_lng": -87.62687679999999,
+        "dest_lat": 41.866261,
+        "dest_lng": -87.6169805,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.866261,
+        "origin_lng": -87.6169805,
+        "dest_lat": 41.8843373,
+        "dest_lng": -87.6292766,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.8843373,
+        "origin_lng": -87.6292766,
+        "dest_lat": 41.867572599999995,
+        "dest_lng": -87.614038,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.867572599999995,
+        "origin_lng": -87.614038,
+        "dest_lat": 41.8678745,
+        "dest_lng": -87.632564,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.8678745,
+        "origin_lng": -87.632564,
+        "dest_lat": 41.8526163,
+        "dest_lng": -87.63201339999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.8526163,
+        "origin_lng": -87.63201339999999,
+        "dest_lat": 41.8843373,
+        "dest_lng": -87.6292766,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Chicago",
+        "coords": {
+          "lat": 41.8781,
+          "lng": -87.6298
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Chicago",
+        "coords": {
+          "lat": 41.8781,
+          "lng": -87.6298
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Chicago",
+        "coords": {
+          "lat": 41.8781,
+          "lng": -87.6298
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.9060542,
+        "origin_lng": -87.6284696,
+        "dest_lat": 41.8796069,
+        "dest_lng": -87.62687679999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.8796069,
+        "origin_lng": -87.62687679999999,
+        "dest_lat": 41.8825524,
+        "dest_lng": -87.62255139999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.8825524,
+        "origin_lng": -87.62255139999999,
+        "dest_lat": 41.8826572,
+        "dest_lng": -87.6233039,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.8826572,
+        "origin_lng": -87.6233039,
+        "dest_lat": 41.8843373,
+        "dest_lng": -87.6292766,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.8843373,
+        "origin_lng": -87.6292766,
+        "dest_lat": 41.8796031,
+        "dest_lng": -87.6223504,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.8796031,
+        "origin_lng": -87.6223504,
+        "dest_lat": 41.878876399999996,
+        "dest_lng": -87.6359149,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.878876399999996,
+        "origin_lng": -87.6359149,
+        "dest_lat": 41.893924,
+        "dest_lng": -87.62459729999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.893924,
+        "origin_lng": -87.62459729999999,
+        "dest_lat": 41.8843373,
+        "dest_lng": -87.6292766,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Chicago",
+        "coords": {
+          "lat": 41.8781,
+          "lng": -87.6298
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Chicago",
+        "coords": {
+          "lat": 41.8781,
+          "lng": -87.6298
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Neighborhood walking",
+        "destination": "Chicago",
+        "coords": {
+          "lat": 41.8781,
+          "lng": -87.6298
+        },
+        "included_type": null
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Chicago",
+        "coords": {
+          "lat": 41.8781,
+          "lng": -87.6298
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.9060542,
+        "origin_lng": -87.6284696,
+        "dest_lat": 41.8796069,
+        "dest_lng": -87.62687679999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.8796069,
+        "origin_lng": -87.62687679999999,
+        "dest_lat": 41.921703,
+        "dest_lng": -87.6336403,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.921703,
+        "origin_lng": -87.6336403,
+        "dest_lat": 41.8843373,
+        "dest_lng": -87.6292766,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.8843373,
+        "origin_lng": -87.6292766,
+        "dest_lat": 41.9484384,
+        "dest_lng": -87.6553327,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.9484384,
+        "origin_lng": -87.6553327,
+        "dest_lat": 41.9284572,
+        "dest_lng": -87.7873882,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.9284572,
+        "origin_lng": -87.7873882,
+        "dest_lat": 41.8741536,
+        "dest_lng": -87.6354953,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.8741536,
+        "origin_lng": -87.6354953,
+        "dest_lat": 41.8843373,
+        "dest_lng": -87.6292766,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Chicago",
+        "coords": {
+          "lat": 41.8781,
+          "lng": -87.6298
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Chicago",
+        "coords": {
+          "lat": 41.8781,
+          "lng": -87.6298
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Grant Park walking",
+        "destination": "Chicago",
+        "coords": {
+          "lat": 41.8781,
+          "lng": -87.6298
+        },
+        "included_type": null
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Chicago",
+        "coords": {
+          "lat": 41.8781,
+          "lng": -87.6298
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.9060542,
+        "origin_lng": -87.6284696,
+        "dest_lat": 41.8796069,
+        "dest_lng": -87.62687679999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.8796069,
+        "origin_lng": -87.62687679999999,
+        "dest_lat": 41.866261,
+        "dest_lng": -87.6169805,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.866261,
+        "origin_lng": -87.6169805,
+        "dest_lat": 41.8843373,
+        "dest_lng": -87.6292766,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.8843373,
+        "origin_lng": -87.6292766,
+        "dest_lat": 41.867572599999995,
+        "dest_lng": -87.614038,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.867572599999995,
+        "origin_lng": -87.614038,
+        "dest_lat": 41.8739324,
+        "dest_lng": -87.61988079999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.8739324,
+        "origin_lng": -87.61988079999999,
+        "dest_lat": 41.8678745,
+        "dest_lng": -87.632564,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 41.8678745,
+        "origin_lng": -87.632564,
+        "dest_lat": 41.8843373,
+        "dest_lng": -87.6292766,
+        "mode": "WALK"
+      }
+    }
+  ]
+}

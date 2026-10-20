@@ -1,0 +1,4159 @@
+{
+  "case_id": "29-all-food",
+  "events": [
+    {
+      "event": "on_chain_start",
+      "name": "LangGraph",
+      "timestamp": "2026-09-06T18:33:13.579616+00:00",
+      "run_id": "01a077fe-f869-71c3-a823-076a9f853960",
+      "parent_ids": [],
+      "tags": [],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "parse_input",
+      "timestamp": "2026-09-06T18:33:13.582740+00:00",
+      "run_id": "01a077fe-f86d-7a82-a03d-efa98c99a264",
+      "parent_ids": [
+        "01a077fe-f869-71c3-a823-076a9f853960"
+      ],
+      "tags": [
+        "graph:step:1"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 1,
+        "langgraph_node": "parse_input",
+        "langgraph_triggers": [
+          "branch:to:parse_input"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "parse_input"
+        ],
+        "langgraph_checkpoint_ns": "parse_input:71200808-8cae-7ff7-ae85-c2dd299f6225"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "parse_input",
+      "timestamp": "2026-09-06T18:33:13.584167+00:00",
+      "run_id": "01a077fe-f86d-7a82-a03d-efa98c99a264",
+      "parent_ids": [
+        "01a077fe-f869-71c3-a823-076a9f853960"
+      ],
+      "tags": [
+        "graph:step:1"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 1,
+        "langgraph_node": "parse_input",
+        "langgraph_triggers": [
+          "branch:to:parse_input"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "parse_input"
+        ],
+        "langgraph_checkpoint_ns": "parse_input:71200808-8cae-7ff7-ae85-c2dd299f6225"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "extract_preference_constraints",
+      "timestamp": "2026-09-06T18:33:13.586658+00:00",
+      "run_id": "01a077fe-f871-7b22-8bb1-f193760f27f8",
+      "parent_ids": [
+        "01a077fe-f869-71c3-a823-076a9f853960"
+      ],
+      "tags": [
+        "graph:step:2"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 2,
+        "langgraph_node": "extract_preference_constraints",
+        "langgraph_triggers": [
+          "branch:to:extract_preference_constraints"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "extract_preference_constraints"
+        ],
+        "langgraph_checkpoint_ns": "extract_preference_constraints:8ead6323-936f-64c4-f8fd-d409a9ab1dad"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "extract_preference_constraints",
+      "timestamp": "2026-09-06T18:33:13.590890+00:00",
+      "run_id": "01a077fe-f871-7b22-8bb1-f193760f27f8",
+      "parent_ids": [
+        "01a077fe-f869-71c3-a823-076a9f853960"
+      ],
+      "tags": [
+        "graph:step:2"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 2,
+        "langgraph_node": "extract_preference_constraints",
+        "langgraph_triggers": [
+          "branch:to:extract_preference_constraints"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "extract_preference_constraints"
+        ],
+        "langgraph_checkpoint_ns": "extract_preference_constraints:8ead6323-936f-64c4-f8fd-d409a9ab1dad"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "select_destination",
+      "timestamp": "2026-09-06T18:33:13.595134+00:00",
+      "run_id": "01a077fe-f87a-78c0-9814-408fdafd8585",
+      "parent_ids": [
+        "01a077fe-f869-71c3-a823-076a9f853960"
+      ],
+      "tags": [
+        "graph:step:3"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 3,
+        "langgraph_node": "select_destination",
+        "langgraph_triggers": [
+          "branch:to:select_destination"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "select_destination"
+        ],
+        "langgraph_checkpoint_ns": "select_destination:296b23a9-8e77-90b3-cf77-cb528d7ef1d0"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "select_destination",
+      "timestamp": "2026-09-06T18:33:13.692955+00:00",
+      "run_id": "01a077fe-f87a-78c0-9814-408fdafd8585",
+      "parent_ids": [
+        "01a077fe-f869-71c3-a823-076a9f853960"
+      ],
+      "tags": [
+        "graph:step:3"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 3,
+        "langgraph_node": "select_destination",
+        "langgraph_triggers": [
+          "branch:to:select_destination"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "select_destination"
+        ],
+        "langgraph_checkpoint_ns": "select_destination:296b23a9-8e77-90b3-cf77-cb528d7ef1d0"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "city_selection_hitl",
+      "timestamp": "2026-09-06T18:33:13.695290+00:00",
+      "run_id": "01a077fe-f8de-7a01-9d5a-bffb162c1bdf",
+      "parent_ids": [
+        "01a077fe-f869-71c3-a823-076a9f853960"
+      ],
+      "tags": [
+        "graph:step:4"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 4,
+        "langgraph_node": "city_selection_hitl",
+        "langgraph_triggers": [
+          "branch:to:city_selection_hitl"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "city_selection_hitl"
+        ],
+        "langgraph_checkpoint_ns": "city_selection_hitl:ca1b9b15-b0d0-fddf-515f-da1e98dd49dc"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "LangGraph",
+      "timestamp": "2026-09-06T18:33:13.697802+00:00",
+      "run_id": "01a077fe-f869-71c3-a823-076a9f853960",
+      "parent_ids": [],
+      "tags": [],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "LangGraph",
+      "timestamp": "2026-09-06T18:33:13.699651+00:00",
+      "run_id": "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+      "parent_ids": [],
+      "tags": [],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "city_selection_hitl",
+      "timestamp": "2026-09-06T18:33:13.701151+00:00",
+      "run_id": "01a077fe-f8e4-7893-95d2-b840b526e801",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911"
+      ],
+      "tags": [
+        "graph:step:4"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 4,
+        "langgraph_node": "city_selection_hitl",
+        "langgraph_triggers": [
+          "branch:to:city_selection_hitl"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "city_selection_hitl"
+        ],
+        "langgraph_checkpoint_ns": "city_selection_hitl:ca1b9b15-b0d0-fddf-515f-da1e98dd49dc"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "city_selection_hitl",
+      "timestamp": "2026-09-06T18:33:13.702309+00:00",
+      "run_id": "01a077fe-f8e4-7893-95d2-b840b526e801",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911"
+      ],
+      "tags": [
+        "graph:step:4"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 4,
+        "langgraph_node": "city_selection_hitl",
+        "langgraph_triggers": [
+          "branch:to:city_selection_hitl"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "city_selection_hitl"
+        ],
+        "langgraph_checkpoint_ns": "city_selection_hitl:ca1b9b15-b0d0-fddf-515f-da1e98dd49dc"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "dynamic_tool_selection",
+      "timestamp": "2026-09-06T18:33:13.704768+00:00",
+      "run_id": "01a077fe-f8e8-79c2-b7e0-c10d0cda2535",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911"
+      ],
+      "tags": [
+        "graph:step:5"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 5,
+        "langgraph_node": "dynamic_tool_selection",
+        "langgraph_triggers": [
+          "branch:to:dynamic_tool_selection"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "dynamic_tool_selection"
+        ],
+        "langgraph_checkpoint_ns": "dynamic_tool_selection:ecd0128a-762b-cfe1-fccc-6f1e33f2c132"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "dynamic_tool_selection",
+      "timestamp": "2026-09-06T18:33:13.705921+00:00",
+      "run_id": "01a077fe-f8e8-79c2-b7e0-c10d0cda2535",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911"
+      ],
+      "tags": [
+        "graph:step:5"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 5,
+        "langgraph_node": "dynamic_tool_selection",
+        "langgraph_triggers": [
+          "branch:to:dynamic_tool_selection"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "dynamic_tool_selection"
+        ],
+        "langgraph_checkpoint_ns": "dynamic_tool_selection:ecd0128a-762b-cfe1-fccc-6f1e33f2c132"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "parallel_data_fetch",
+      "timestamp": "2026-09-06T18:33:13.710855+00:00",
+      "run_id": "01a077fe-f8ec-7e93-b0aa-dbeea081134d",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911"
+      ],
+      "tags": [
+        "graph:step:6"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 6,
+        "langgraph_node": "parallel_data_fetch",
+        "langgraph_triggers": [
+          "branch:to:parallel_data_fetch"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "parallel_data_fetch"
+        ],
+        "langgraph_checkpoint_ns": "parallel_data_fetch:ec3eebdf-d5e0-61be-4411-e83715958d36"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "parallel_data_fetch",
+      "timestamp": "2026-09-06T18:33:13.718158+00:00",
+      "run_id": "01a077fe-f8ec-7e93-b0aa-dbeea081134d",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911"
+      ],
+      "tags": [
+        "graph:step:6"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 6,
+        "langgraph_node": "parallel_data_fetch",
+        "langgraph_triggers": [
+          "branch:to:parallel_data_fetch"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "parallel_data_fetch"
+        ],
+        "langgraph_checkpoint_ns": "parallel_data_fetch:ec3eebdf-d5e0-61be-4411-e83715958d36"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "budget_analysis",
+      "timestamp": "2026-09-06T18:33:13.719343+00:00",
+      "run_id": "01a077fe-f8f6-7923-ae59-f655e162a9d5",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911"
+      ],
+      "tags": [
+        "graph:step:7"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 7,
+        "langgraph_node": "budget_analysis",
+        "langgraph_triggers": [
+          "branch:to:budget_analysis"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "budget_analysis"
+        ],
+        "langgraph_checkpoint_ns": "budget_analysis:422bb7ba-79f2-4aac-8cdd-d14bb32a20f6"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "route_after_budget",
+      "timestamp": "2026-09-06T18:33:13.720675+00:00",
+      "run_id": "01a077fe-f8f8-7433-845b-7ca27bec1432",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f8f6-7923-ae59-f655e162a9d5"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 7,
+        "langgraph_node": "budget_analysis",
+        "langgraph_triggers": [
+          "branch:to:budget_analysis"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "budget_analysis"
+        ],
+        "langgraph_checkpoint_ns": "budget_analysis:422bb7ba-79f2-4aac-8cdd-d14bb32a20f6"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "route_after_budget",
+      "timestamp": "2026-09-06T18:33:13.721874+00:00",
+      "run_id": "01a077fe-f8f8-7433-845b-7ca27bec1432",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f8f6-7923-ae59-f655e162a9d5"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 7,
+        "langgraph_node": "budget_analysis",
+        "langgraph_triggers": [
+          "branch:to:budget_analysis"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "budget_analysis"
+        ],
+        "langgraph_checkpoint_ns": "budget_analysis:422bb7ba-79f2-4aac-8cdd-d14bb32a20f6"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "budget_analysis",
+      "timestamp": "2026-09-06T18:33:13.722820+00:00",
+      "run_id": "01a077fe-f8f6-7923-ae59-f655e162a9d5",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911"
+      ],
+      "tags": [
+        "graph:step:7"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 7,
+        "langgraph_node": "budget_analysis",
+        "langgraph_triggers": [
+          "branch:to:budget_analysis"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "budget_analysis"
+        ],
+        "langgraph_checkpoint_ns": "budget_analysis:422bb7ba-79f2-4aac-8cdd-d14bb32a20f6"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "search_hotel",
+      "timestamp": "2026-09-06T18:33:13.726394+00:00",
+      "run_id": "01a077fe-f8fc-7380-9c3d-db7b2e055af1",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911"
+      ],
+      "tags": [
+        "graph:step:8"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 8,
+        "langgraph_node": "search_hotel",
+        "langgraph_triggers": [
+          "branch:to:search_hotel"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "search_hotel"
+        ],
+        "langgraph_checkpoint_ns": "search_hotel:81f6f656-5e25-b706-9084-6e57d0707bf4"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "search_hotel",
+      "timestamp": "2026-09-06T18:33:13.729094+00:00",
+      "run_id": "01a077fe-f8fc-7380-9c3d-db7b2e055af1",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911"
+      ],
+      "tags": [
+        "graph:step:8"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 8,
+        "langgraph_node": "search_hotel",
+        "langgraph_triggers": [
+          "branch:to:search_hotel"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "search_hotel"
+        ],
+        "langgraph_checkpoint_ns": "search_hotel:81f6f656-5e25-b706-9084-6e57d0707bf4"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "run_itinerary_node",
+      "timestamp": "2026-09-06T18:33:13.730655+00:00",
+      "run_id": "01a077fe-f902-76c0-a79e-0aa258141a4a",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911"
+      ],
+      "tags": [
+        "graph:step:9"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "run_itinerary_node",
+        "langgraph_triggers": [
+          "branch:to:run_itinerary_node"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "run_itinerary_node"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "LangGraph",
+      "timestamp": "2026-09-06T18:33:13.731428+00:00",
+      "run_id": "01a077fe-f903-73c0-a628-f5dd3b08131f",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a"
+      ],
+      "tags": [
+        "seq:step:1"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "run_itinerary_node",
+        "langgraph_triggers": [
+          "branch:to:run_itinerary_node"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "run_itinerary_node"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "cluster_by_neighborhood",
+      "timestamp": "2026-09-06T18:33:13.733306+00:00",
+      "run_id": "01a077fe-f904-7831-8bdf-4eb3af959636",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a",
+        "01a077fe-f903-73c0-a628-f5dd3b08131f"
+      ],
+      "tags": [
+        "graph:step:1"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 1,
+        "langgraph_node": "cluster_by_neighborhood",
+        "langgraph_triggers": [
+          "branch:to:cluster_by_neighborhood"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "cluster_by_neighborhood"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d|cluster_by_neighborhood:9e04a530-bad9-8d27-8ddd-dc934751a99e",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "cluster_by_neighborhood",
+      "timestamp": "2026-09-06T18:33:13.734839+00:00",
+      "run_id": "01a077fe-f904-7831-8bdf-4eb3af959636",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a",
+        "01a077fe-f903-73c0-a628-f5dd3b08131f"
+      ],
+      "tags": [
+        "graph:step:1"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 1,
+        "langgraph_node": "cluster_by_neighborhood",
+        "langgraph_triggers": [
+          "branch:to:cluster_by_neighborhood"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "cluster_by_neighborhood"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d|cluster_by_neighborhood:9e04a530-bad9-8d27-8ddd-dc934751a99e",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "build_itinerary",
+      "timestamp": "2026-09-06T18:33:13.736248+00:00",
+      "run_id": "01a077fe-f907-7251-9647-74fabfb40cf4",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a",
+        "01a077fe-f903-73c0-a628-f5dd3b08131f"
+      ],
+      "tags": [
+        "graph:step:2"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 2,
+        "langgraph_node": "build_itinerary",
+        "langgraph_triggers": [
+          "branch:to:build_itinerary"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "build_itinerary"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d|build_itinerary:ff39ee09-48d2-bab3-bba3-dff2615e3ec0",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "build_itinerary",
+      "timestamp": "2026-09-06T18:33:13.739520+00:00",
+      "run_id": "01a077fe-f907-7251-9647-74fabfb40cf4",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a",
+        "01a077fe-f903-73c0-a628-f5dd3b08131f"
+      ],
+      "tags": [
+        "graph:step:2"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 2,
+        "langgraph_node": "build_itinerary",
+        "langgraph_triggers": [
+          "branch:to:build_itinerary"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "build_itinerary"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d|build_itinerary:ff39ee09-48d2-bab3-bba3-dff2615e3ec0",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "align_flight_times",
+      "timestamp": "2026-09-06T18:33:13.742921+00:00",
+      "run_id": "01a077fe-f90c-7542-9e15-67dbee3024c0",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a",
+        "01a077fe-f903-73c0-a628-f5dd3b08131f"
+      ],
+      "tags": [
+        "graph:step:3"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 3,
+        "langgraph_node": "align_flight_times",
+        "langgraph_triggers": [
+          "branch:to:align_flight_times"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "align_flight_times"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d|align_flight_times:01151939-0b03-b12f-7103-79d12d9958d3",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "align_flight_times",
+      "timestamp": "2026-09-06T18:33:13.746686+00:00",
+      "run_id": "01a077fe-f90c-7542-9e15-67dbee3024c0",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a",
+        "01a077fe-f903-73c0-a628-f5dd3b08131f"
+      ],
+      "tags": [
+        "graph:step:3"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 3,
+        "langgraph_node": "align_flight_times",
+        "langgraph_triggers": [
+          "branch:to:align_flight_times"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "align_flight_times"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d|align_flight_times:01151939-0b03-b12f-7103-79d12d9958d3",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:13.748178+00:00",
+      "run_id": "01a077fe-f913-70c0-b7b9-787d92961eb9",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a",
+        "01a077fe-f903-73c0-a628-f5dd3b08131f"
+      ],
+      "tags": [
+        "graph:step:4"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 4,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d|plan_routes:3c7f21bf-dbd6-b42a-83e7-f96958431c40",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:13.798244+00:00",
+      "run_id": "01a077fe-f945-7070-9413-2b6af592976e",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a",
+        "01a077fe-f903-73c0-a628-f5dd3b08131f",
+        "01a077fe-f913-70c0-b7b9-787d92961eb9"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 4,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d|plan_routes:3c7f21bf-dbd6-b42a-83e7-f96958431c40",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:13.798972+00:00",
+      "run_id": "01a077fe-f945-7070-9413-2b6af592976e",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a",
+        "01a077fe-f903-73c0-a628-f5dd3b08131f",
+        "01a077fe-f913-70c0-b7b9-787d92961eb9"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 4,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d|plan_routes:3c7f21bf-dbd6-b42a-83e7-f96958431c40",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:13.799752+00:00",
+      "run_id": "01a077fe-f913-70c0-b7b9-787d92961eb9",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a",
+        "01a077fe-f903-73c0-a628-f5dd3b08131f"
+      ],
+      "tags": [
+        "graph:step:4"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 4,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d|plan_routes:3c7f21bf-dbd6-b42a-83e7-f96958431c40",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "apply_feasibility_swap",
+      "timestamp": "2026-09-06T18:33:13.801070+00:00",
+      "run_id": "01a077fe-f948-72d2-ba3f-897686a75a7b",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a",
+        "01a077fe-f903-73c0-a628-f5dd3b08131f"
+      ],
+      "tags": [
+        "graph:step:5"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 5,
+        "langgraph_node": "apply_feasibility_swap",
+        "langgraph_triggers": [
+          "branch:to:apply_feasibility_swap"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "apply_feasibility_swap"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d|apply_feasibility_swap:c1fa65d3-7b46-4919-ceca-83c93ac40d76",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "apply_feasibility_swap",
+      "timestamp": "2026-09-06T18:33:13.802337+00:00",
+      "run_id": "01a077fe-f948-72d2-ba3f-897686a75a7b",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a",
+        "01a077fe-f903-73c0-a628-f5dd3b08131f"
+      ],
+      "tags": [
+        "graph:step:5"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 5,
+        "langgraph_node": "apply_feasibility_swap",
+        "langgraph_triggers": [
+          "branch:to:apply_feasibility_swap"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "apply_feasibility_swap"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d|apply_feasibility_swap:c1fa65d3-7b46-4919-ceca-83c93ac40d76",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:13.803556+00:00",
+      "run_id": "01a077fe-f94b-7770-90e2-9f3a69f56176",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a",
+        "01a077fe-f903-73c0-a628-f5dd3b08131f"
+      ],
+      "tags": [
+        "graph:step:6"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 6,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d|plan_routes:7c8b00d1-517b-e18b-d54e-b6f006fd7e53",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:13.837583+00:00",
+      "run_id": "01a077fe-f96d-7011-a740-1d779ed3fddc",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a",
+        "01a077fe-f903-73c0-a628-f5dd3b08131f",
+        "01a077fe-f94b-7770-90e2-9f3a69f56176"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 6,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d|plan_routes:7c8b00d1-517b-e18b-d54e-b6f006fd7e53",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:13.838178+00:00",
+      "run_id": "01a077fe-f96d-7011-a740-1d779ed3fddc",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a",
+        "01a077fe-f903-73c0-a628-f5dd3b08131f",
+        "01a077fe-f94b-7770-90e2-9f3a69f56176"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 6,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d|plan_routes:7c8b00d1-517b-e18b-d54e-b6f006fd7e53",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:13.838742+00:00",
+      "run_id": "01a077fe-f94b-7770-90e2-9f3a69f56176",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a",
+        "01a077fe-f903-73c0-a628-f5dd3b08131f"
+      ],
+      "tags": [
+        "graph:step:6"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 6,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d|plan_routes:7c8b00d1-517b-e18b-d54e-b6f006fd7e53",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "apply_feasibility_swap",
+      "timestamp": "2026-09-06T18:33:13.840122+00:00",
+      "run_id": "01a077fe-f96f-7f12-9f2c-ee52bae8ce27",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a",
+        "01a077fe-f903-73c0-a628-f5dd3b08131f"
+      ],
+      "tags": [
+        "graph:step:7"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 7,
+        "langgraph_node": "apply_feasibility_swap",
+        "langgraph_triggers": [
+          "branch:to:apply_feasibility_swap"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "apply_feasibility_swap"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d|apply_feasibility_swap:30ef088e-2930-be8e-0f46-964316a75e2a",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "apply_feasibility_swap",
+      "timestamp": "2026-09-06T18:33:13.843290+00:00",
+      "run_id": "01a077fe-f96f-7f12-9f2c-ee52bae8ce27",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a",
+        "01a077fe-f903-73c0-a628-f5dd3b08131f"
+      ],
+      "tags": [
+        "graph:step:7"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 7,
+        "langgraph_node": "apply_feasibility_swap",
+        "langgraph_triggers": [
+          "branch:to:apply_feasibility_swap"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "apply_feasibility_swap"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d|apply_feasibility_swap:30ef088e-2930-be8e-0f46-964316a75e2a",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:13.844797+00:00",
+      "run_id": "01a077fe-f974-7530-b0e7-70c520f463c5",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a",
+        "01a077fe-f903-73c0-a628-f5dd3b08131f"
+      ],
+      "tags": [
+        "graph:step:8"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 8,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d|plan_routes:c7b13170-0f6f-11a6-ee9a-c57275d5d10b",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:13.872462+00:00",
+      "run_id": "01a077fe-f98f-70f2-92ca-65d45e8c6718",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a",
+        "01a077fe-f903-73c0-a628-f5dd3b08131f",
+        "01a077fe-f974-7530-b0e7-70c520f463c5"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 8,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d|plan_routes:c7b13170-0f6f-11a6-ee9a-c57275d5d10b",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:13.873451+00:00",
+      "run_id": "01a077fe-f98f-70f2-92ca-65d45e8c6718",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a",
+        "01a077fe-f903-73c0-a628-f5dd3b08131f",
+        "01a077fe-f974-7530-b0e7-70c520f463c5"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 8,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d|plan_routes:c7b13170-0f6f-11a6-ee9a-c57275d5d10b",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:13.874589+00:00",
+      "run_id": "01a077fe-f974-7530-b0e7-70c520f463c5",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a",
+        "01a077fe-f903-73c0-a628-f5dd3b08131f"
+      ],
+      "tags": [
+        "graph:step:8"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 8,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d|plan_routes:c7b13170-0f6f-11a6-ee9a-c57275d5d10b",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "validation_gate",
+      "timestamp": "2026-09-06T18:33:13.877421+00:00",
+      "run_id": "01a077fe-f994-7613-8a81-039c73ef8edc",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a",
+        "01a077fe-f903-73c0-a628-f5dd3b08131f"
+      ],
+      "tags": [
+        "graph:step:9"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d|validation_gate:71ba5dc0-3093-9b7a-01be-ff1ebfb8ea18",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "check_validation",
+      "timestamp": "2026-09-06T18:33:13.878471+00:00",
+      "run_id": "01a077fe-f996-7002-960c-f1a7928bc1c5",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a",
+        "01a077fe-f903-73c0-a628-f5dd3b08131f",
+        "01a077fe-f994-7613-8a81-039c73ef8edc"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d|validation_gate:71ba5dc0-3093-9b7a-01be-ff1ebfb8ea18",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "check_validation",
+      "timestamp": "2026-09-06T18:33:13.879160+00:00",
+      "run_id": "01a077fe-f996-7002-960c-f1a7928bc1c5",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a",
+        "01a077fe-f903-73c0-a628-f5dd3b08131f",
+        "01a077fe-f994-7613-8a81-039c73ef8edc"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d|validation_gate:71ba5dc0-3093-9b7a-01be-ff1ebfb8ea18",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "validation_gate",
+      "timestamp": "2026-09-06T18:33:13.879716+00:00",
+      "run_id": "01a077fe-f994-7613-8a81-039c73ef8edc",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a",
+        "01a077fe-f903-73c0-a628-f5dd3b08131f"
+      ],
+      "tags": [
+        "graph:step:9"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d|validation_gate:71ba5dc0-3093-9b7a-01be-ff1ebfb8ea18",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "build_itinerary",
+      "timestamp": "2026-09-06T18:33:13.881037+00:00",
+      "run_id": "01a077fe-f998-7780-8664-319f80c3c039",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a",
+        "01a077fe-f903-73c0-a628-f5dd3b08131f"
+      ],
+      "tags": [
+        "graph:step:10"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 10,
+        "langgraph_node": "build_itinerary",
+        "langgraph_triggers": [
+          "branch:to:build_itinerary"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "build_itinerary"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d|build_itinerary:7d34c552-32d5-793f-b74e-02906ff3d546",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "build_itinerary",
+      "timestamp": "2026-09-06T18:33:13.884084+00:00",
+      "run_id": "01a077fe-f998-7780-8664-319f80c3c039",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a",
+        "01a077fe-f903-73c0-a628-f5dd3b08131f"
+      ],
+      "tags": [
+        "graph:step:10"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 10,
+        "langgraph_node": "build_itinerary",
+        "langgraph_triggers": [
+          "branch:to:build_itinerary"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "build_itinerary"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d|build_itinerary:7d34c552-32d5-793f-b74e-02906ff3d546",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "align_flight_times",
+      "timestamp": "2026-09-06T18:33:13.885388+00:00",
+      "run_id": "01a077fe-f99c-7a10-819e-fc1341a71246",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a",
+        "01a077fe-f903-73c0-a628-f5dd3b08131f"
+      ],
+      "tags": [
+        "graph:step:11"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 11,
+        "langgraph_node": "align_flight_times",
+        "langgraph_triggers": [
+          "branch:to:align_flight_times"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "align_flight_times"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d|align_flight_times:3be094cb-d6fd-c1b3-9c26-6cf495f795e9",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "align_flight_times",
+      "timestamp": "2026-09-06T18:33:13.886582+00:00",
+      "run_id": "01a077fe-f99c-7a10-819e-fc1341a71246",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a",
+        "01a077fe-f903-73c0-a628-f5dd3b08131f"
+      ],
+      "tags": [
+        "graph:step:11"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 11,
+        "langgraph_node": "align_flight_times",
+        "langgraph_triggers": [
+          "branch:to:align_flight_times"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "align_flight_times"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d|align_flight_times:3be094cb-d6fd-c1b3-9c26-6cf495f795e9",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:13.888060+00:00",
+      "run_id": "01a077fe-f99f-7bd1-a3e9-5f9434d6b32f",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a",
+        "01a077fe-f903-73c0-a628-f5dd3b08131f"
+      ],
+      "tags": [
+        "graph:step:12"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 12,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d|plan_routes:e34b7307-d179-0692-2aa9-44292053cc3f",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:13.945621+00:00",
+      "run_id": "01a077fe-f9d9-7c63-88ad-c12423f9f7a7",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a",
+        "01a077fe-f903-73c0-a628-f5dd3b08131f",
+        "01a077fe-f99f-7bd1-a3e9-5f9434d6b32f"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 12,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d|plan_routes:e34b7307-d179-0692-2aa9-44292053cc3f",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:13.947041+00:00",
+      "run_id": "01a077fe-f9d9-7c63-88ad-c12423f9f7a7",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a",
+        "01a077fe-f903-73c0-a628-f5dd3b08131f",
+        "01a077fe-f99f-7bd1-a3e9-5f9434d6b32f"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 12,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d|plan_routes:e34b7307-d179-0692-2aa9-44292053cc3f",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:13.948061+00:00",
+      "run_id": "01a077fe-f99f-7bd1-a3e9-5f9434d6b32f",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a",
+        "01a077fe-f903-73c0-a628-f5dd3b08131f"
+      ],
+      "tags": [
+        "graph:step:12"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 12,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d|plan_routes:e34b7307-d179-0692-2aa9-44292053cc3f",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "validation_gate",
+      "timestamp": "2026-09-06T18:33:13.949354+00:00",
+      "run_id": "01a077fe-f9dc-7121-bb2c-0b6ab52e805d",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a",
+        "01a077fe-f903-73c0-a628-f5dd3b08131f"
+      ],
+      "tags": [
+        "graph:step:13"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 13,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d|validation_gate:01e8d51a-ffd5-353e-ee99-8444438c72e8",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "check_validation",
+      "timestamp": "2026-09-06T18:33:13.950341+00:00",
+      "run_id": "01a077fe-f9de-7472-b79b-b98b7ad6d0d4",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a",
+        "01a077fe-f903-73c0-a628-f5dd3b08131f",
+        "01a077fe-f9dc-7121-bb2c-0b6ab52e805d"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 13,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d|validation_gate:01e8d51a-ffd5-353e-ee99-8444438c72e8",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "check_validation",
+      "timestamp": "2026-09-06T18:33:13.950947+00:00",
+      "run_id": "01a077fe-f9de-7472-b79b-b98b7ad6d0d4",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a",
+        "01a077fe-f903-73c0-a628-f5dd3b08131f",
+        "01a077fe-f9dc-7121-bb2c-0b6ab52e805d"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 13,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d|validation_gate:01e8d51a-ffd5-353e-ee99-8444438c72e8",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "validation_gate",
+      "timestamp": "2026-09-06T18:33:13.951574+00:00",
+      "run_id": "01a077fe-f9dc-7121-bb2c-0b6ab52e805d",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a",
+        "01a077fe-f903-73c0-a628-f5dd3b08131f"
+      ],
+      "tags": [
+        "graph:step:13"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 13,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d|validation_gate:01e8d51a-ffd5-353e-ee99-8444438c72e8",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "build_itinerary",
+      "timestamp": "2026-09-06T18:33:13.953912+00:00",
+      "run_id": "01a077fe-f9e1-7c00-9079-bb690a9e957c",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a",
+        "01a077fe-f903-73c0-a628-f5dd3b08131f"
+      ],
+      "tags": [
+        "graph:step:14"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 14,
+        "langgraph_node": "build_itinerary",
+        "langgraph_triggers": [
+          "branch:to:build_itinerary"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "build_itinerary"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d|build_itinerary:885510bf-0dd7-2fd9-caa5-cc7e46737ca0",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "build_itinerary",
+      "timestamp": "2026-09-06T18:33:13.957013+00:00",
+      "run_id": "01a077fe-f9e1-7c00-9079-bb690a9e957c",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a",
+        "01a077fe-f903-73c0-a628-f5dd3b08131f"
+      ],
+      "tags": [
+        "graph:step:14"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 14,
+        "langgraph_node": "build_itinerary",
+        "langgraph_triggers": [
+          "branch:to:build_itinerary"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "build_itinerary"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d|build_itinerary:885510bf-0dd7-2fd9-caa5-cc7e46737ca0",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "align_flight_times",
+      "timestamp": "2026-09-06T18:33:13.962681+00:00",
+      "run_id": "01a077fe-f9ea-7270-8852-aea3ba973171",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a",
+        "01a077fe-f903-73c0-a628-f5dd3b08131f"
+      ],
+      "tags": [
+        "graph:step:15"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 15,
+        "langgraph_node": "align_flight_times",
+        "langgraph_triggers": [
+          "branch:to:align_flight_times"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "align_flight_times"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d|align_flight_times:973cf272-0ef8-8230-cc8e-3fd9b17b6c4c",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "align_flight_times",
+      "timestamp": "2026-09-06T18:33:13.963682+00:00",
+      "run_id": "01a077fe-f9ea-7270-8852-aea3ba973171",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a",
+        "01a077fe-f903-73c0-a628-f5dd3b08131f"
+      ],
+      "tags": [
+        "graph:step:15"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 15,
+        "langgraph_node": "align_flight_times",
+        "langgraph_triggers": [
+          "branch:to:align_flight_times"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "align_flight_times"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d|align_flight_times:973cf272-0ef8-8230-cc8e-3fd9b17b6c4c",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:13.964865+00:00",
+      "run_id": "01a077fe-f9ec-7cc1-9e8f-8b1a5904517f",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a",
+        "01a077fe-f903-73c0-a628-f5dd3b08131f"
+      ],
+      "tags": [
+        "graph:step:16"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 16,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d|plan_routes:b129962a-21b7-e5cb-eb63-7ec45a06405d",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:14.003555+00:00",
+      "run_id": "01a077fe-fa13-7a23-b048-85ffc04d885d",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a",
+        "01a077fe-f903-73c0-a628-f5dd3b08131f",
+        "01a077fe-f9ec-7cc1-9e8f-8b1a5904517f"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 16,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d|plan_routes:b129962a-21b7-e5cb-eb63-7ec45a06405d",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:14.004453+00:00",
+      "run_id": "01a077fe-fa13-7a23-b048-85ffc04d885d",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a",
+        "01a077fe-f903-73c0-a628-f5dd3b08131f",
+        "01a077fe-f9ec-7cc1-9e8f-8b1a5904517f"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 16,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d|plan_routes:b129962a-21b7-e5cb-eb63-7ec45a06405d",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:14.005227+00:00",
+      "run_id": "01a077fe-f9ec-7cc1-9e8f-8b1a5904517f",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a",
+        "01a077fe-f903-73c0-a628-f5dd3b08131f"
+      ],
+      "tags": [
+        "graph:step:16"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 16,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d|plan_routes:b129962a-21b7-e5cb-eb63-7ec45a06405d",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "validation_gate",
+      "timestamp": "2026-09-06T18:33:14.010201+00:00",
+      "run_id": "01a077fe-fa16-7e31-9aa5-650a6d890046",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a",
+        "01a077fe-f903-73c0-a628-f5dd3b08131f"
+      ],
+      "tags": [
+        "graph:step:17"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 17,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d|validation_gate:a5f23a80-8861-6412-09c3-8adbe3a01b9f",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "check_validation",
+      "timestamp": "2026-09-06T18:33:14.012656+00:00",
+      "run_id": "01a077fe-fa1c-7cb1-8394-6585a47de75f",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a",
+        "01a077fe-f903-73c0-a628-f5dd3b08131f",
+        "01a077fe-fa16-7e31-9aa5-650a6d890046"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 17,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d|validation_gate:a5f23a80-8861-6412-09c3-8adbe3a01b9f",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "check_validation",
+      "timestamp": "2026-09-06T18:33:14.013570+00:00",
+      "run_id": "01a077fe-fa1c-7cb1-8394-6585a47de75f",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a",
+        "01a077fe-f903-73c0-a628-f5dd3b08131f",
+        "01a077fe-fa16-7e31-9aa5-650a6d890046"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 17,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d|validation_gate:a5f23a80-8861-6412-09c3-8adbe3a01b9f",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "validation_gate",
+      "timestamp": "2026-09-06T18:33:14.014252+00:00",
+      "run_id": "01a077fe-fa16-7e31-9aa5-650a6d890046",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a",
+        "01a077fe-f903-73c0-a628-f5dd3b08131f"
+      ],
+      "tags": [
+        "graph:step:17"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 17,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d|validation_gate:a5f23a80-8861-6412-09c3-8adbe3a01b9f",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "LangGraph",
+      "timestamp": "2026-09-06T18:33:14.015503+00:00",
+      "run_id": "01a077fe-f903-73c0-a628-f5dd3b08131f",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-f902-76c0-a79e-0aa258141a4a"
+      ],
+      "tags": [
+        "seq:step:1"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "run_itinerary_node",
+        "langgraph_triggers": [
+          "branch:to:run_itinerary_node"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "run_itinerary_node"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d",
+        "checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "run_itinerary_node",
+      "timestamp": "2026-09-06T18:33:14.016329+00:00",
+      "run_id": "01a077fe-f902-76c0-a79e-0aa258141a4a",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911"
+      ],
+      "tags": [
+        "graph:step:9"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "run_itinerary_node",
+        "langgraph_triggers": [
+          "branch:to:run_itinerary_node"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "run_itinerary_node"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f3518312-a7f0-e6f7-1ac6-14be0202447d"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "compute_fairness",
+      "timestamp": "2026-09-06T18:33:14.017636+00:00",
+      "run_id": "01a077fe-fa21-7b80-9fd5-5109f8f088a1",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911"
+      ],
+      "tags": [
+        "graph:step:10"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 10,
+        "langgraph_node": "compute_fairness",
+        "langgraph_triggers": [
+          "branch:to:compute_fairness"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "compute_fairness"
+        ],
+        "langgraph_checkpoint_ns": "compute_fairness:2029c920-b656-01b1-02a3-170a40e983af"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "route_after_fairness",
+      "timestamp": "2026-09-06T18:33:14.018464+00:00",
+      "run_id": "01a077fe-fa22-7d33-bc42-15ff4f02c948",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-fa21-7b80-9fd5-5109f8f088a1"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 10,
+        "langgraph_node": "compute_fairness",
+        "langgraph_triggers": [
+          "branch:to:compute_fairness"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "compute_fairness"
+        ],
+        "langgraph_checkpoint_ns": "compute_fairness:2029c920-b656-01b1-02a3-170a40e983af"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "route_after_fairness",
+      "timestamp": "2026-09-06T18:33:14.019041+00:00",
+      "run_id": "01a077fe-fa22-7d33-bc42-15ff4f02c948",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+        "01a077fe-fa21-7b80-9fd5-5109f8f088a1"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 10,
+        "langgraph_node": "compute_fairness",
+        "langgraph_triggers": [
+          "branch:to:compute_fairness"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "compute_fairness"
+        ],
+        "langgraph_checkpoint_ns": "compute_fairness:2029c920-b656-01b1-02a3-170a40e983af"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "compute_fairness",
+      "timestamp": "2026-09-06T18:33:14.019533+00:00",
+      "run_id": "01a077fe-fa21-7b80-9fd5-5109f8f088a1",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911"
+      ],
+      "tags": [
+        "graph:step:10"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 10,
+        "langgraph_node": "compute_fairness",
+        "langgraph_triggers": [
+          "branch:to:compute_fairness"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "compute_fairness"
+        ],
+        "langgraph_checkpoint_ns": "compute_fairness:2029c920-b656-01b1-02a3-170a40e983af"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "assemble_output",
+      "timestamp": "2026-09-06T18:33:14.020878+00:00",
+      "run_id": "01a077fe-fa24-75d1-b7cb-77430970a506",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911"
+      ],
+      "tags": [
+        "graph:step:11"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 11,
+        "langgraph_node": "assemble_output",
+        "langgraph_triggers": [
+          "branch:to:assemble_output"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "assemble_output"
+        ],
+        "langgraph_checkpoint_ns": "assemble_output:cfb41cdc-a8ef-6a7b-dd63-0993c19d9a37"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "assemble_output",
+      "timestamp": "2026-09-06T18:33:14.026834+00:00",
+      "run_id": "01a077fe-fa24-75d1-b7cb-77430970a506",
+      "parent_ids": [
+        "01a077fe-f8e2-77e1-9e6b-1759ae6dc911"
+      ],
+      "tags": [
+        "graph:step:11"
+      ],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph",
+        "langgraph_step": 11,
+        "langgraph_node": "assemble_output",
+        "langgraph_triggers": [
+          "branch:to:assemble_output"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "assemble_output"
+        ],
+        "langgraph_checkpoint_ns": "assemble_output:cfb41cdc-a8ef-6a7b-dd63-0993c19d9a37"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "LangGraph",
+      "timestamp": "2026-09-06T18:33:14.028520+00:00",
+      "run_id": "01a077fe-f8e2-77e1-9e6b-1759ae6dc911",
+      "parent_ids": [],
+      "tags": [],
+      "metadata": {
+        "trip_id": "29-all-food",
+        "eval_tier": "offline",
+        "thread_id": "29-all-food",
+        "ls_integration": "langgraph"
+      }
+    }
+  ],
+  "telemetry": {
+    "nodes": {
+      "extract_preference_constraints": {
+        "input_tokens": 566,
+        "output_tokens": 547,
+        "cache_read_tokens": 0,
+        "cost_usd": 0.003301,
+        "unpriced_calls": 0,
+        "llm_calls": 1,
+        "duration_ms": 4.096
+      },
+      "select_destination": {
+        "input_tokens": 1663,
+        "output_tokens": 191,
+        "cache_read_tokens": 0,
+        "cost_usd": 0.002618,
+        "unpriced_calls": 0,
+        "llm_calls": 1,
+        "duration_ms": 97.809
+      },
+      "build_itinerary": {
+        "input_tokens": 5227,
+        "output_tokens": 5475,
+        "cache_read_tokens": 0,
+        "cost_usd": 0.032602,
+        "unpriced_calls": 0,
+        "llm_calls": 3,
+        "duration_ms": 9.333
+      },
+      "assemble_output": {
+        "input_tokens": 1629,
+        "output_tokens": 1272,
+        "cache_read_tokens": 0,
+        "cost_usd": 0.007989,
+        "unpriced_calls": 0,
+        "llm_calls": 1,
+        "duration_ms": 5.924
+      },
+      "parse_input": {
+        "duration_ms": 1.472
+      },
+      "city_selection_hitl": {
+        "duration_ms": 0.948
+      },
+      "dynamic_tool_selection": {
+        "duration_ms": 1.244
+      },
+      "parallel_data_fetch": {
+        "duration_ms": 7.52
+      },
+      "budget_analysis": {
+        "duration_ms": 3.359
+      },
+      "search_hotel": {
+        "duration_ms": 2.808
+      },
+      "cluster_by_neighborhood": {
+        "duration_ms": 1.491
+      },
+      "align_flight_times": {
+        "duration_ms": 6.115
+      },
+      "plan_routes": {
+        "duration_ms": 216.947
+      },
+      "apply_feasibility_swap": {
+        "duration_ms": 4.463
+      },
+      "validation_gate": {
+        "duration_ms": 11.951
+      },
+      "run_itinerary_node": {
+        "duration_ms": 285.725
+      },
+      "compute_fairness": {
+        "duration_ms": 2.017
+      }
+    },
+    "totals": {
+      "input_tokens": 9085,
+      "output_tokens": 7485,
+      "cache_read_tokens": 0,
+      "cost_usd": 0.04651,
+      "unpriced_calls": 0,
+      "llm_calls": 6,
+      "duration_ms": 448.796
+    }
+  },
+  "hitl_resolutions": 1,
+  "tool_calls": [
+    {
+      "operation": "search_flights",
+      "request": {
+        "origin": "ORD",
+        "destination": "Lexington",
+        "depart_date": "2026-09-08",
+        "return_date": "2026-09-11",
+        "adults": 1
+      }
+    },
+    {
+      "operation": "search_flights",
+      "request": {
+        "origin": "ATL",
+        "destination": "Lexington",
+        "depart_date": "2026-09-08",
+        "return_date": "2026-09-11",
+        "adults": 1
+      }
+    },
+    {
+      "operation": "search_flights",
+      "request": {
+        "origin": "LAX",
+        "destination": "Lexington",
+        "depart_date": "2026-09-08",
+        "return_date": "2026-09-11",
+        "adults": 1
+      }
+    },
+    {
+      "operation": "fetch_activities_by_category",
+      "request": {
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "categories": [
+          "food"
+        ],
+        "max_per_category": 10
+      }
+    },
+    {
+      "operation": "fetch_weather",
+      "request": {
+        "lat": 38.04,
+        "lng": -84.503,
+        "start_date": "2026-09-08",
+        "end_date": "2026-09-11",
+        "destination_name": "Lexington"
+      }
+    },
+    {
+      "operation": "search_hotels",
+      "request": {
+        "destination": "Lexington",
+        "check_in": "2026-09-08",
+        "check_out": "2026-09-11",
+        "budget_ceiling_usd": 1410.0,
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        }
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Neighborhood exploration - Main Street",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": null
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.0971116,
+        "origin_lng": -84.4848512,
+        "dest_lat": 38.0491078,
+        "dest_lng": -84.4926203,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.0491078,
+        "origin_lng": -84.4926203,
+        "dest_lat": 38.0566579,
+        "dest_lng": -84.5202991,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.0566579,
+        "origin_lng": -84.5202991,
+        "dest_lat": 38.035266199999995,
+        "dest_lng": -84.5084937,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.035266199999995,
+        "origin_lng": -84.5084937,
+        "dest_lat": 38.0476593,
+        "dest_lng": -84.4976786,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.0476593,
+        "origin_lng": -84.4976786,
+        "dest_lat": 38.0449649,
+        "dest_lng": -84.5026366,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Scenic neighborhood walk - Pleasant Ridge area",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": null
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Continued neighborhood exploration",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": null
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.0971116,
+        "origin_lng": -84.4848512,
+        "dest_lat": 38.0491078,
+        "dest_lng": -84.4926203,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.0491078,
+        "origin_lng": -84.4926203,
+        "dest_lat": 38.010343,
+        "dest_lng": -84.405776,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.010343,
+        "origin_lng": -84.405776,
+        "dest_lat": 38.035266199999995,
+        "dest_lng": -84.5084937,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.035266199999995,
+        "origin_lng": -84.5084937,
+        "dest_lat": 38.0476074,
+        "dest_lng": -84.5023956,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.0476074,
+        "origin_lng": -84.5023956,
+        "dest_lat": 38.0449649,
+        "dest_lng": -84.5026366,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Neighborhood stroll - Andover area",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": null
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.0971116,
+        "origin_lng": -84.4848512,
+        "dest_lat": 38.0491078,
+        "dest_lng": -84.4926203,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.0491078,
+        "origin_lng": -84.4926203,
+        "dest_lat": 38.0020143,
+        "dest_lng": -84.4142632,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.0020143,
+        "origin_lng": -84.4142632,
+        "dest_lat": 38.035266199999995,
+        "dest_lng": -84.5084937,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.035266199999995,
+        "origin_lng": -84.5084937,
+        "dest_lat": 37.995494099999995,
+        "dest_lng": -84.4133272,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 37.995494099999995,
+        "origin_lng": -84.4133272,
+        "dest_lat": 38.0449649,
+        "dest_lng": -84.5026366,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.0971116,
+        "origin_lng": -84.4848512,
+        "dest_lat": 38.0491078,
+        "dest_lng": -84.4926203,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.0491078,
+        "origin_lng": -84.4926203,
+        "dest_lat": 38.0566579,
+        "dest_lng": -84.5202991,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.0566579,
+        "origin_lng": -84.5202991,
+        "dest_lat": 38.035266199999995,
+        "dest_lng": -84.5084937,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.035266199999995,
+        "origin_lng": -84.5084937,
+        "dest_lat": 38.0449649,
+        "dest_lng": -84.5026366,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Scenic neighborhood walk - Pleasant Ridge area",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": null
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Continued neighborhood exploration",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": null
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.0971116,
+        "origin_lng": -84.4848512,
+        "dest_lat": 38.0491078,
+        "dest_lng": -84.4926203,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.0491078,
+        "origin_lng": -84.4926203,
+        "dest_lat": 38.010343,
+        "dest_lng": -84.405776,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.010343,
+        "origin_lng": -84.405776,
+        "dest_lat": 38.035266199999995,
+        "dest_lng": -84.5084937,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.035266199999995,
+        "origin_lng": -84.5084937,
+        "dest_lat": 38.0476074,
+        "dest_lng": -84.5023956,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.0476074,
+        "origin_lng": -84.5023956,
+        "dest_lat": 38.0449649,
+        "dest_lng": -84.5026366,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Neighborhood stroll - Andover area",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": null
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.0971116,
+        "origin_lng": -84.4848512,
+        "dest_lat": 38.0491078,
+        "dest_lng": -84.4926203,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.0491078,
+        "origin_lng": -84.4926203,
+        "dest_lat": 38.0020143,
+        "dest_lng": -84.4142632,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.0020143,
+        "origin_lng": -84.4142632,
+        "dest_lat": 38.035266199999995,
+        "dest_lng": -84.5084937,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.035266199999995,
+        "origin_lng": -84.5084937,
+        "dest_lat": 37.995494099999995,
+        "dest_lng": -84.4133272,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 37.995494099999995,
+        "origin_lng": -84.4133272,
+        "dest_lat": 38.0449649,
+        "dest_lng": -84.5026366,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.0971116,
+        "origin_lng": -84.4848512,
+        "dest_lat": 38.0491078,
+        "dest_lng": -84.4926203,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.0491078,
+        "origin_lng": -84.4926203,
+        "dest_lat": 38.035266199999995,
+        "dest_lng": -84.5084937,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.035266199999995,
+        "origin_lng": -84.5084937,
+        "dest_lat": 38.0449649,
+        "dest_lng": -84.5026366,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Scenic neighborhood walk - Pleasant Ridge area",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": null
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Continued neighborhood exploration",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": null
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.0971116,
+        "origin_lng": -84.4848512,
+        "dest_lat": 38.0491078,
+        "dest_lng": -84.4926203,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.0491078,
+        "origin_lng": -84.4926203,
+        "dest_lat": 38.010343,
+        "dest_lng": -84.405776,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.010343,
+        "origin_lng": -84.405776,
+        "dest_lat": 38.035266199999995,
+        "dest_lng": -84.5084937,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.035266199999995,
+        "origin_lng": -84.5084937,
+        "dest_lat": 38.0476074,
+        "dest_lng": -84.5023956,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.0476074,
+        "origin_lng": -84.5023956,
+        "dest_lat": 38.0449649,
+        "dest_lng": -84.5026366,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Neighborhood stroll - Andover area",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": null
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.0971116,
+        "origin_lng": -84.4848512,
+        "dest_lat": 38.0491078,
+        "dest_lng": -84.4926203,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.0491078,
+        "origin_lng": -84.4926203,
+        "dest_lat": 38.0020143,
+        "dest_lng": -84.4142632,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.0020143,
+        "origin_lng": -84.4142632,
+        "dest_lat": 38.035266199999995,
+        "dest_lng": -84.5084937,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.035266199999995,
+        "origin_lng": -84.5084937,
+        "dest_lat": 37.995494099999995,
+        "dest_lng": -84.4133272,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 37.995494099999995,
+        "origin_lng": -84.4133272,
+        "dest_lat": 38.0449649,
+        "dest_lng": -84.5026366,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Neighborhood exploration - Main Street",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": null
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.0971116,
+        "origin_lng": -84.4848512,
+        "dest_lat": 38.0491078,
+        "dest_lng": -84.4926203,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.0491078,
+        "origin_lng": -84.4926203,
+        "dest_lat": 38.0566579,
+        "dest_lng": -84.5202991,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.0566579,
+        "origin_lng": -84.5202991,
+        "dest_lat": 38.035266199999995,
+        "dest_lng": -84.5084937,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.035266199999995,
+        "origin_lng": -84.5084937,
+        "dest_lat": 38.0476593,
+        "dest_lng": -84.4976786,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.0476593,
+        "origin_lng": -84.4976786,
+        "dest_lat": 38.041700399999996,
+        "dest_lng": -84.4922229,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.041700399999996,
+        "origin_lng": -84.4922229,
+        "dest_lat": 38.0449649,
+        "dest_lng": -84.5026366,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Museum or cultural site visit",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": null
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Scenic walk in Pleasant Ridge neighborhood",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": null
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner venue selection",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.0971116,
+        "origin_lng": -84.4848512,
+        "dest_lat": 38.0491078,
+        "dest_lng": -84.4926203,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.0491078,
+        "origin_lng": -84.4926203,
+        "dest_lat": 38.0487812,
+        "dest_lng": -84.488621,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.0487812,
+        "origin_lng": -84.488621,
+        "dest_lat": 38.035266199999995,
+        "dest_lng": -84.5084937,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.035266199999995,
+        "origin_lng": -84.5084937,
+        "dest_lat": 38.010343,
+        "dest_lng": -84.405776,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.010343,
+        "origin_lng": -84.405776,
+        "dest_lat": 38.0449649,
+        "dest_lng": -84.5026366,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.0449649,
+        "origin_lng": -84.5026366,
+        "dest_lat": 38.0449649,
+        "dest_lng": -84.5026366,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Relaxed morning activity or neighborhood exploration",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": null
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Casual neighborhood walk or shopping",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": null
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Final dinner",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.0971116,
+        "origin_lng": -84.4848512,
+        "dest_lat": 38.0491078,
+        "dest_lng": -84.4926203,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.0491078,
+        "origin_lng": -84.4926203,
+        "dest_lat": 38.0434313,
+        "dest_lng": -84.48394809999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.0434313,
+        "origin_lng": -84.48394809999999,
+        "dest_lat": 38.035266199999995,
+        "dest_lng": -84.5084937,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.035266199999995,
+        "origin_lng": -84.5084937,
+        "dest_lat": 38.0284632,
+        "dest_lng": -84.48982010000002,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.0284632,
+        "origin_lng": -84.48982010000002,
+        "dest_lat": 38.0485618,
+        "dest_lng": -84.5001491,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.0485618,
+        "origin_lng": -84.5001491,
+        "dest_lat": 38.0449649,
+        "dest_lng": -84.5026366,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Explore Main Street neighborhood",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": null
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.0971116,
+        "origin_lng": -84.4848512,
+        "dest_lat": 38.0491078,
+        "dest_lng": -84.4926203,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.0491078,
+        "origin_lng": -84.4926203,
+        "dest_lat": 38.0566579,
+        "dest_lng": -84.5202991,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.0566579,
+        "origin_lng": -84.5202991,
+        "dest_lat": 38.035266199999995,
+        "dest_lng": -84.5084937,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.035266199999995,
+        "origin_lng": -84.5084937,
+        "dest_lat": 38.0476593,
+        "dest_lng": -84.4976786,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.0476593,
+        "origin_lng": -84.4976786,
+        "dest_lat": 38.0449649,
+        "dest_lng": -84.5026366,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Scenic walk through Pleasant Ridge neighborhood",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": null
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Continue neighborhood exploration",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": null
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.0971116,
+        "origin_lng": -84.4848512,
+        "dest_lat": 38.0491078,
+        "dest_lng": -84.4926203,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.0491078,
+        "origin_lng": -84.4926203,
+        "dest_lat": 38.010343,
+        "dest_lng": -84.405776,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.010343,
+        "origin_lng": -84.405776,
+        "dest_lat": 38.035266199999995,
+        "dest_lng": -84.5084937,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.035266199999995,
+        "origin_lng": -84.5084937,
+        "dest_lat": 38.0443102,
+        "dest_lng": -84.5067911,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.0443102,
+        "origin_lng": -84.5067911,
+        "dest_lat": 38.0449649,
+        "dest_lng": -84.5026366,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Andover Shopping District exploration",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": null
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Local area relaxation",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": null
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Lexington",
+        "coords": {
+          "lat": 38.04,
+          "lng": -84.503
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.0971116,
+        "origin_lng": -84.4848512,
+        "dest_lat": 38.0491078,
+        "dest_lng": -84.4926203,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.0491078,
+        "origin_lng": -84.4926203,
+        "dest_lat": 37.995114199999996,
+        "dest_lng": -84.49632629999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 37.995114199999996,
+        "origin_lng": -84.49632629999999,
+        "dest_lat": 38.035266199999995,
+        "dest_lng": -84.5084937,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.035266199999995,
+        "origin_lng": -84.5084937,
+        "dest_lat": 38.045570600000005,
+        "dest_lng": -84.5050646,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 38.045570600000005,
+        "origin_lng": -84.5050646,
+        "dest_lat": 38.0449649,
+        "dest_lng": -84.5026366,
+        "mode": "WALK"
+      }
+    }
+  ]
+}

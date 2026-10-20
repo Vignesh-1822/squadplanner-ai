@@ -1,0 +1,28 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 28.949,
+      "lng": -95.293
+    },
+    "destination": "Surfside Beach",
+    "included_type": null,
+    "query": "Wildlife observation and walking"
+  },
+  "request_sha256": "ce330b6f5fed191ffe5310df9ae81792edb3d6a39a2c31b8b4c2842af45cda92",
+  "response": {
+    "address": "Surfside Vykruta Jetty Trail, Surfside Beach, TX 77541, USA",
+    "category": "place",
+    "lat": 28.930584099999997,
+    "lng": -95.28840319999999,
+    "name": "Surfside Beach Jetty Point",
+    "place_id": "ChIJO-g3w1oTQIYRnSVxJFdSVC8",
+    "price_level": 0,
+    "rating": 4.7,
+    "tags": [
+      "tourist_attraction",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

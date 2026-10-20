@@ -1,0 +1,17 @@
+{
+  "operation": "get_route",
+  "request": {
+    "dest_lat": 33.4933467,
+    "dest_lng": -117.1484981,
+    "mode": "WALK",
+    "origin_lat": 33.5238693,
+    "origin_lng": -117.01851439999999
+  },
+  "request_sha256": "4658018d550e4321c09266001a5594b1ab19e7a09858f626b3640dc19ebc399e",
+  "response": {
+    "distance_meters": 15792,
+    "duration_seconds": 12521,
+    "mode": "WALK",
+    "polyline": "isrkEbffiU`@DNHDVGh@dO`DvBV|BBhBGnBUnBe@hAa@zWaLhA]zBa@~CQbCDxAJ~B`@rBl@vBbArBtA|@v@tAxAbAxAlFlJf[`k@pAjBfF|F~LfNjBpC|@~AjAhC~@dC`AlDl@xCf@vDZ`EHdD@vCmArm@@p[ENDdVFtD?nKDx\\GbGIpBAjBAzJBfBDp@f@fDNb@d@h@r@|Aj@z@nAtARHTb@F\\PAnEhEhAlBn@|APh@vEdS`AfD~ApE|@nB|@fBOH\\j@BCvClG^lA^jBN|AF~AC`BW~B{AtJMvACtAH|CZ~Bf@hBhExL\\tATvALzABtAEbBQtBc@`DE?El@B?ChBD~APpB^jBb@vAl@nAr@hAz@~@dAx@zBbBz@z@p@~@n@jAv@dCTjABT`@bCG@Nr@FAd@pC`@l@Lz@DpAv@tE^pBd@hBp@~AVh@TX@H|B~Ej@|AXfAb@pDhAfLTxA`@lBb@xAxGhRt@tC`@`CRzBHtB?rBCjLAl@CnFOtCSdB}EzXi@zB_AxCeAfCm@fAWp@KRQHELe@h@gArAo@r@OL{G|GkCxBkCfBcAl@}CvAiFfBsGrBFZ[Lb@zFHlICz@EXQv@yKrVIl@g@TGTG\\MNKFW^DDWXkJ~L"
+  }
+}

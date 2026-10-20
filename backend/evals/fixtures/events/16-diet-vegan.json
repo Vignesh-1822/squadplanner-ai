@@ -1,0 +1,3157 @@
+{
+  "case_id": "16-diet-vegan",
+  "events": [
+    {
+      "event": "on_chain_start",
+      "name": "LangGraph",
+      "timestamp": "2026-09-06T18:33:05.588293+00:00",
+      "run_id": "01a077fe-d933-7310-b3f2-67c19b2f60aa",
+      "parent_ids": [],
+      "tags": [],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "parse_input",
+      "timestamp": "2026-09-06T18:33:05.592018+00:00",
+      "run_id": "01a077fe-d937-7fa3-bd9b-30eab726e4ef",
+      "parent_ids": [
+        "01a077fe-d933-7310-b3f2-67c19b2f60aa"
+      ],
+      "tags": [
+        "graph:step:1"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 1,
+        "langgraph_node": "parse_input",
+        "langgraph_triggers": [
+          "branch:to:parse_input"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "parse_input"
+        ],
+        "langgraph_checkpoint_ns": "parse_input:3238fdf3-1711-b869-e688-45cba0f8b3a7"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "parse_input",
+      "timestamp": "2026-09-06T18:33:05.593833+00:00",
+      "run_id": "01a077fe-d937-7fa3-bd9b-30eab726e4ef",
+      "parent_ids": [
+        "01a077fe-d933-7310-b3f2-67c19b2f60aa"
+      ],
+      "tags": [
+        "graph:step:1"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 1,
+        "langgraph_node": "parse_input",
+        "langgraph_triggers": [
+          "branch:to:parse_input"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "parse_input"
+        ],
+        "langgraph_checkpoint_ns": "parse_input:3238fdf3-1711-b869-e688-45cba0f8b3a7"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "extract_preference_constraints",
+      "timestamp": "2026-09-06T18:33:05.597745+00:00",
+      "run_id": "01a077fe-d93b-7731-ae0c-4c2f29ae05ba",
+      "parent_ids": [
+        "01a077fe-d933-7310-b3f2-67c19b2f60aa"
+      ],
+      "tags": [
+        "graph:step:2"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 2,
+        "langgraph_node": "extract_preference_constraints",
+        "langgraph_triggers": [
+          "branch:to:extract_preference_constraints"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "extract_preference_constraints"
+        ],
+        "langgraph_checkpoint_ns": "extract_preference_constraints:4979e355-7530-c220-2101-f1169a77b35d"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "extract_preference_constraints",
+      "timestamp": "2026-09-06T18:33:05.603974+00:00",
+      "run_id": "01a077fe-d93b-7731-ae0c-4c2f29ae05ba",
+      "parent_ids": [
+        "01a077fe-d933-7310-b3f2-67c19b2f60aa"
+      ],
+      "tags": [
+        "graph:step:2"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 2,
+        "langgraph_node": "extract_preference_constraints",
+        "langgraph_triggers": [
+          "branch:to:extract_preference_constraints"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "extract_preference_constraints"
+        ],
+        "langgraph_checkpoint_ns": "extract_preference_constraints:4979e355-7530-c220-2101-f1169a77b35d"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "select_destination",
+      "timestamp": "2026-09-06T18:33:05.605957+00:00",
+      "run_id": "01a077fe-d945-7c02-af41-98f446fe2678",
+      "parent_ids": [
+        "01a077fe-d933-7310-b3f2-67c19b2f60aa"
+      ],
+      "tags": [
+        "graph:step:3"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 3,
+        "langgraph_node": "select_destination",
+        "langgraph_triggers": [
+          "branch:to:select_destination"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "select_destination"
+        ],
+        "langgraph_checkpoint_ns": "select_destination:2562179c-7c04-ec66-4553-115ab078acf1"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "select_destination",
+      "timestamp": "2026-09-06T18:33:05.744071+00:00",
+      "run_id": "01a077fe-d945-7c02-af41-98f446fe2678",
+      "parent_ids": [
+        "01a077fe-d933-7310-b3f2-67c19b2f60aa"
+      ],
+      "tags": [
+        "graph:step:3"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 3,
+        "langgraph_node": "select_destination",
+        "langgraph_triggers": [
+          "branch:to:select_destination"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "select_destination"
+        ],
+        "langgraph_checkpoint_ns": "select_destination:2562179c-7c04-ec66-4553-115ab078acf1"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "city_selection_hitl",
+      "timestamp": "2026-09-06T18:33:05.750906+00:00",
+      "run_id": "01a077fe-d9d6-7ba3-b647-75ae70b2814a",
+      "parent_ids": [
+        "01a077fe-d933-7310-b3f2-67c19b2f60aa"
+      ],
+      "tags": [
+        "graph:step:4"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 4,
+        "langgraph_node": "city_selection_hitl",
+        "langgraph_triggers": [
+          "branch:to:city_selection_hitl"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "city_selection_hitl"
+        ],
+        "langgraph_checkpoint_ns": "city_selection_hitl:2bcf7df0-5dbe-3297-a7d3-2ca5b75954cc"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "LangGraph",
+      "timestamp": "2026-09-06T18:33:05.753597+00:00",
+      "run_id": "01a077fe-d933-7310-b3f2-67c19b2f60aa",
+      "parent_ids": [],
+      "tags": [],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "LangGraph",
+      "timestamp": "2026-09-06T18:33:05.755575+00:00",
+      "run_id": "01a077fe-d9da-7852-81ca-94b723f338c2",
+      "parent_ids": [],
+      "tags": [],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "city_selection_hitl",
+      "timestamp": "2026-09-06T18:33:05.757845+00:00",
+      "run_id": "01a077fe-d9dd-7021-b56d-95881dd6ae85",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2"
+      ],
+      "tags": [
+        "graph:step:4"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 4,
+        "langgraph_node": "city_selection_hitl",
+        "langgraph_triggers": [
+          "branch:to:city_selection_hitl"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "city_selection_hitl"
+        ],
+        "langgraph_checkpoint_ns": "city_selection_hitl:2bcf7df0-5dbe-3297-a7d3-2ca5b75954cc"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "city_selection_hitl",
+      "timestamp": "2026-09-06T18:33:05.759310+00:00",
+      "run_id": "01a077fe-d9dd-7021-b56d-95881dd6ae85",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2"
+      ],
+      "tags": [
+        "graph:step:4"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 4,
+        "langgraph_node": "city_selection_hitl",
+        "langgraph_triggers": [
+          "branch:to:city_selection_hitl"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "city_selection_hitl"
+        ],
+        "langgraph_checkpoint_ns": "city_selection_hitl:2bcf7df0-5dbe-3297-a7d3-2ca5b75954cc"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "dynamic_tool_selection",
+      "timestamp": "2026-09-06T18:33:05.761696+00:00",
+      "run_id": "01a077fe-d9e1-7be2-8642-83d84304b03e",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2"
+      ],
+      "tags": [
+        "graph:step:5"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 5,
+        "langgraph_node": "dynamic_tool_selection",
+        "langgraph_triggers": [
+          "branch:to:dynamic_tool_selection"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "dynamic_tool_selection"
+        ],
+        "langgraph_checkpoint_ns": "dynamic_tool_selection:ce5cfd6b-15d2-9c11-dfee-1a1d95cc706d"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "dynamic_tool_selection",
+      "timestamp": "2026-09-06T18:33:05.762604+00:00",
+      "run_id": "01a077fe-d9e1-7be2-8642-83d84304b03e",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2"
+      ],
+      "tags": [
+        "graph:step:5"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 5,
+        "langgraph_node": "dynamic_tool_selection",
+        "langgraph_triggers": [
+          "branch:to:dynamic_tool_selection"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "dynamic_tool_selection"
+        ],
+        "langgraph_checkpoint_ns": "dynamic_tool_selection:ce5cfd6b-15d2-9c11-dfee-1a1d95cc706d"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "parallel_data_fetch",
+      "timestamp": "2026-09-06T18:33:05.768071+00:00",
+      "run_id": "01a077fe-d9e7-7630-945a-0f9b1801d16c",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2"
+      ],
+      "tags": [
+        "graph:step:6"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 6,
+        "langgraph_node": "parallel_data_fetch",
+        "langgraph_triggers": [
+          "branch:to:parallel_data_fetch"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "parallel_data_fetch"
+        ],
+        "langgraph_checkpoint_ns": "parallel_data_fetch:579ce181-a56b-e0db-7644-52239fbffe95"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "parallel_data_fetch",
+      "timestamp": "2026-09-06T18:33:05.774568+00:00",
+      "run_id": "01a077fe-d9e7-7630-945a-0f9b1801d16c",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2"
+      ],
+      "tags": [
+        "graph:step:6"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 6,
+        "langgraph_node": "parallel_data_fetch",
+        "langgraph_triggers": [
+          "branch:to:parallel_data_fetch"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "parallel_data_fetch"
+        ],
+        "langgraph_checkpoint_ns": "parallel_data_fetch:579ce181-a56b-e0db-7644-52239fbffe95"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "budget_analysis",
+      "timestamp": "2026-09-06T18:33:05.776328+00:00",
+      "run_id": "01a077fe-d9ef-73a0-9f62-9f310f934961",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2"
+      ],
+      "tags": [
+        "graph:step:7"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 7,
+        "langgraph_node": "budget_analysis",
+        "langgraph_triggers": [
+          "branch:to:budget_analysis"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "budget_analysis"
+        ],
+        "langgraph_checkpoint_ns": "budget_analysis:16817bb9-e9e2-d365-b376-4d0290c0b716"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "route_after_budget",
+      "timestamp": "2026-09-06T18:33:05.777503+00:00",
+      "run_id": "01a077fe-d9f1-70d2-98da-1a99226fe3fb",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2",
+        "01a077fe-d9ef-73a0-9f62-9f310f934961"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 7,
+        "langgraph_node": "budget_analysis",
+        "langgraph_triggers": [
+          "branch:to:budget_analysis"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "budget_analysis"
+        ],
+        "langgraph_checkpoint_ns": "budget_analysis:16817bb9-e9e2-d365-b376-4d0290c0b716"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "route_after_budget",
+      "timestamp": "2026-09-06T18:33:05.778594+00:00",
+      "run_id": "01a077fe-d9f1-70d2-98da-1a99226fe3fb",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2",
+        "01a077fe-d9ef-73a0-9f62-9f310f934961"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 7,
+        "langgraph_node": "budget_analysis",
+        "langgraph_triggers": [
+          "branch:to:budget_analysis"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "budget_analysis"
+        ],
+        "langgraph_checkpoint_ns": "budget_analysis:16817bb9-e9e2-d365-b376-4d0290c0b716"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "budget_analysis",
+      "timestamp": "2026-09-06T18:33:05.783196+00:00",
+      "run_id": "01a077fe-d9ef-73a0-9f62-9f310f934961",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2"
+      ],
+      "tags": [
+        "graph:step:7"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 7,
+        "langgraph_node": "budget_analysis",
+        "langgraph_triggers": [
+          "branch:to:budget_analysis"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "budget_analysis"
+        ],
+        "langgraph_checkpoint_ns": "budget_analysis:16817bb9-e9e2-d365-b376-4d0290c0b716"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "search_hotel",
+      "timestamp": "2026-09-06T18:33:05.785423+00:00",
+      "run_id": "01a077fe-d9f8-7e10-8017-e89a7528ec41",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2"
+      ],
+      "tags": [
+        "graph:step:8"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 8,
+        "langgraph_node": "search_hotel",
+        "langgraph_triggers": [
+          "branch:to:search_hotel"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "search_hotel"
+        ],
+        "langgraph_checkpoint_ns": "search_hotel:ba24259c-4a16-28a2-466d-24bd9d062fd9"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "search_hotel",
+      "timestamp": "2026-09-06T18:33:05.794975+00:00",
+      "run_id": "01a077fe-d9f8-7e10-8017-e89a7528ec41",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2"
+      ],
+      "tags": [
+        "graph:step:8"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 8,
+        "langgraph_node": "search_hotel",
+        "langgraph_triggers": [
+          "branch:to:search_hotel"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "search_hotel"
+        ],
+        "langgraph_checkpoint_ns": "search_hotel:ba24259c-4a16-28a2-466d-24bd9d062fd9"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "run_itinerary_node",
+      "timestamp": "2026-09-06T18:33:05.801519+00:00",
+      "run_id": "01a077fe-da08-7ba1-a4a8-37f08036ba4f",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2"
+      ],
+      "tags": [
+        "graph:step:9"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "run_itinerary_node",
+        "langgraph_triggers": [
+          "branch:to:run_itinerary_node"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "run_itinerary_node"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "LangGraph",
+      "timestamp": "2026-09-06T18:33:05.802829+00:00",
+      "run_id": "01a077fe-da0a-76d1-90b4-2e9dc34d1dfc",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2",
+        "01a077fe-da08-7ba1-a4a8-37f08036ba4f"
+      ],
+      "tags": [
+        "seq:step:1"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "run_itinerary_node",
+        "langgraph_triggers": [
+          "branch:to:run_itinerary_node"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "run_itinerary_node"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2",
+        "checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "cluster_by_neighborhood",
+      "timestamp": "2026-09-06T18:33:05.805588+00:00",
+      "run_id": "01a077fe-da0c-7353-9ac8-8de921b57fd0",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2",
+        "01a077fe-da08-7ba1-a4a8-37f08036ba4f",
+        "01a077fe-da0a-76d1-90b4-2e9dc34d1dfc"
+      ],
+      "tags": [
+        "graph:step:1"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 1,
+        "langgraph_node": "cluster_by_neighborhood",
+        "langgraph_triggers": [
+          "branch:to:cluster_by_neighborhood"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "cluster_by_neighborhood"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2|cluster_by_neighborhood:8bf90b9d-d610-6d59-50cb-65bc39d5deab",
+        "checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "cluster_by_neighborhood",
+      "timestamp": "2026-09-06T18:33:05.807828+00:00",
+      "run_id": "01a077fe-da0c-7353-9ac8-8de921b57fd0",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2",
+        "01a077fe-da08-7ba1-a4a8-37f08036ba4f",
+        "01a077fe-da0a-76d1-90b4-2e9dc34d1dfc"
+      ],
+      "tags": [
+        "graph:step:1"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 1,
+        "langgraph_node": "cluster_by_neighborhood",
+        "langgraph_triggers": [
+          "branch:to:cluster_by_neighborhood"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "cluster_by_neighborhood"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2|cluster_by_neighborhood:8bf90b9d-d610-6d59-50cb-65bc39d5deab",
+        "checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "build_itinerary",
+      "timestamp": "2026-09-06T18:33:05.809960+00:00",
+      "run_id": "01a077fe-da11-7fd0-a174-8d40f169a7da",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2",
+        "01a077fe-da08-7ba1-a4a8-37f08036ba4f",
+        "01a077fe-da0a-76d1-90b4-2e9dc34d1dfc"
+      ],
+      "tags": [
+        "graph:step:2"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 2,
+        "langgraph_node": "build_itinerary",
+        "langgraph_triggers": [
+          "branch:to:build_itinerary"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "build_itinerary"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2|build_itinerary:7964d19c-b645-592c-2611-b9cde3378bfd",
+        "checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "build_itinerary",
+      "timestamp": "2026-09-06T18:33:05.817033+00:00",
+      "run_id": "01a077fe-da11-7fd0-a174-8d40f169a7da",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2",
+        "01a077fe-da08-7ba1-a4a8-37f08036ba4f",
+        "01a077fe-da0a-76d1-90b4-2e9dc34d1dfc"
+      ],
+      "tags": [
+        "graph:step:2"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 2,
+        "langgraph_node": "build_itinerary",
+        "langgraph_triggers": [
+          "branch:to:build_itinerary"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "build_itinerary"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2|build_itinerary:7964d19c-b645-592c-2611-b9cde3378bfd",
+        "checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "align_flight_times",
+      "timestamp": "2026-09-06T18:33:05.818747+00:00",
+      "run_id": "01a077fe-da19-7c81-a4b3-d5488428f653",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2",
+        "01a077fe-da08-7ba1-a4a8-37f08036ba4f",
+        "01a077fe-da0a-76d1-90b4-2e9dc34d1dfc"
+      ],
+      "tags": [
+        "graph:step:3"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 3,
+        "langgraph_node": "align_flight_times",
+        "langgraph_triggers": [
+          "branch:to:align_flight_times"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "align_flight_times"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2|align_flight_times:59077af0-d4e7-3e32-bbd9-445eccc79be9",
+        "checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "align_flight_times",
+      "timestamp": "2026-09-06T18:33:05.820291+00:00",
+      "run_id": "01a077fe-da19-7c81-a4b3-d5488428f653",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2",
+        "01a077fe-da08-7ba1-a4a8-37f08036ba4f",
+        "01a077fe-da0a-76d1-90b4-2e9dc34d1dfc"
+      ],
+      "tags": [
+        "graph:step:3"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 3,
+        "langgraph_node": "align_flight_times",
+        "langgraph_triggers": [
+          "branch:to:align_flight_times"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "align_flight_times"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2|align_flight_times:59077af0-d4e7-3e32-bbd9-445eccc79be9",
+        "checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:05.823206+00:00",
+      "run_id": "01a077fe-da1e-7402-87b4-cadf8685162b",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2",
+        "01a077fe-da08-7ba1-a4a8-37f08036ba4f",
+        "01a077fe-da0a-76d1-90b4-2e9dc34d1dfc"
+      ],
+      "tags": [
+        "graph:step:4"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 4,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2|plan_routes:a6ae4b6c-b5a9-d02e-8c72-6fe1adf65217",
+        "checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:05.875648+00:00",
+      "run_id": "01a077fe-da53-75c0-99f8-841c95bbb41b",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2",
+        "01a077fe-da08-7ba1-a4a8-37f08036ba4f",
+        "01a077fe-da0a-76d1-90b4-2e9dc34d1dfc",
+        "01a077fe-da1e-7402-87b4-cadf8685162b"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 4,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2|plan_routes:a6ae4b6c-b5a9-d02e-8c72-6fe1adf65217",
+        "checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:05.877919+00:00",
+      "run_id": "01a077fe-da53-75c0-99f8-841c95bbb41b",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2",
+        "01a077fe-da08-7ba1-a4a8-37f08036ba4f",
+        "01a077fe-da0a-76d1-90b4-2e9dc34d1dfc",
+        "01a077fe-da1e-7402-87b4-cadf8685162b"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 4,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2|plan_routes:a6ae4b6c-b5a9-d02e-8c72-6fe1adf65217",
+        "checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:05.879229+00:00",
+      "run_id": "01a077fe-da1e-7402-87b4-cadf8685162b",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2",
+        "01a077fe-da08-7ba1-a4a8-37f08036ba4f",
+        "01a077fe-da0a-76d1-90b4-2e9dc34d1dfc"
+      ],
+      "tags": [
+        "graph:step:4"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 4,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2|plan_routes:a6ae4b6c-b5a9-d02e-8c72-6fe1adf65217",
+        "checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "apply_feasibility_swap",
+      "timestamp": "2026-09-06T18:33:05.884071+00:00",
+      "run_id": "01a077fe-da5b-7c60-adfb-6df7ff294041",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2",
+        "01a077fe-da08-7ba1-a4a8-37f08036ba4f",
+        "01a077fe-da0a-76d1-90b4-2e9dc34d1dfc"
+      ],
+      "tags": [
+        "graph:step:5"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 5,
+        "langgraph_node": "apply_feasibility_swap",
+        "langgraph_triggers": [
+          "branch:to:apply_feasibility_swap"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "apply_feasibility_swap"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2|apply_feasibility_swap:83f857cd-fa7d-b8e8-7949-9da2a432c74a",
+        "checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "apply_feasibility_swap",
+      "timestamp": "2026-09-06T18:33:05.885947+00:00",
+      "run_id": "01a077fe-da5b-7c60-adfb-6df7ff294041",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2",
+        "01a077fe-da08-7ba1-a4a8-37f08036ba4f",
+        "01a077fe-da0a-76d1-90b4-2e9dc34d1dfc"
+      ],
+      "tags": [
+        "graph:step:5"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 5,
+        "langgraph_node": "apply_feasibility_swap",
+        "langgraph_triggers": [
+          "branch:to:apply_feasibility_swap"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "apply_feasibility_swap"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2|apply_feasibility_swap:83f857cd-fa7d-b8e8-7949-9da2a432c74a",
+        "checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:05.888075+00:00",
+      "run_id": "01a077fe-da5f-79a2-a89f-b362597e63e3",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2",
+        "01a077fe-da08-7ba1-a4a8-37f08036ba4f",
+        "01a077fe-da0a-76d1-90b4-2e9dc34d1dfc"
+      ],
+      "tags": [
+        "graph:step:6"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 6,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2|plan_routes:66c4fec4-fac1-4743-4eec-62440cc6c0ca",
+        "checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:05.930971+00:00",
+      "run_id": "01a077fe-da89-71d2-a837-2562ecd07b06",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2",
+        "01a077fe-da08-7ba1-a4a8-37f08036ba4f",
+        "01a077fe-da0a-76d1-90b4-2e9dc34d1dfc",
+        "01a077fe-da5f-79a2-a89f-b362597e63e3"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 6,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2|plan_routes:66c4fec4-fac1-4743-4eec-62440cc6c0ca",
+        "checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:05.932992+00:00",
+      "run_id": "01a077fe-da89-71d2-a837-2562ecd07b06",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2",
+        "01a077fe-da08-7ba1-a4a8-37f08036ba4f",
+        "01a077fe-da0a-76d1-90b4-2e9dc34d1dfc",
+        "01a077fe-da5f-79a2-a89f-b362597e63e3"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 6,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2|plan_routes:66c4fec4-fac1-4743-4eec-62440cc6c0ca",
+        "checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:05.933944+00:00",
+      "run_id": "01a077fe-da5f-79a2-a89f-b362597e63e3",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2",
+        "01a077fe-da08-7ba1-a4a8-37f08036ba4f",
+        "01a077fe-da0a-76d1-90b4-2e9dc34d1dfc"
+      ],
+      "tags": [
+        "graph:step:6"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 6,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2|plan_routes:66c4fec4-fac1-4743-4eec-62440cc6c0ca",
+        "checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "apply_feasibility_swap",
+      "timestamp": "2026-09-06T18:33:05.936418+00:00",
+      "run_id": "01a077fe-da8e-76b1-997a-357875d3df2d",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2",
+        "01a077fe-da08-7ba1-a4a8-37f08036ba4f",
+        "01a077fe-da0a-76d1-90b4-2e9dc34d1dfc"
+      ],
+      "tags": [
+        "graph:step:7"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 7,
+        "langgraph_node": "apply_feasibility_swap",
+        "langgraph_triggers": [
+          "branch:to:apply_feasibility_swap"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "apply_feasibility_swap"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2|apply_feasibility_swap:11548b0b-d92a-9ae1-acdb-4e013a757b54",
+        "checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "apply_feasibility_swap",
+      "timestamp": "2026-09-06T18:33:05.937950+00:00",
+      "run_id": "01a077fe-da8e-76b1-997a-357875d3df2d",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2",
+        "01a077fe-da08-7ba1-a4a8-37f08036ba4f",
+        "01a077fe-da0a-76d1-90b4-2e9dc34d1dfc"
+      ],
+      "tags": [
+        "graph:step:7"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 7,
+        "langgraph_node": "apply_feasibility_swap",
+        "langgraph_triggers": [
+          "branch:to:apply_feasibility_swap"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "apply_feasibility_swap"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2|apply_feasibility_swap:11548b0b-d92a-9ae1-acdb-4e013a757b54",
+        "checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:05.940576+00:00",
+      "run_id": "01a077fe-da93-7af3-87e6-f1e564d96cd4",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2",
+        "01a077fe-da08-7ba1-a4a8-37f08036ba4f",
+        "01a077fe-da0a-76d1-90b4-2e9dc34d1dfc"
+      ],
+      "tags": [
+        "graph:step:8"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 8,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2|plan_routes:cf9000d6-b730-a687-9ef0-555be47b3362",
+        "checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:05.984295+00:00",
+      "run_id": "01a077fe-dabf-7051-b8a4-601b2fb9d0a7",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2",
+        "01a077fe-da08-7ba1-a4a8-37f08036ba4f",
+        "01a077fe-da0a-76d1-90b4-2e9dc34d1dfc",
+        "01a077fe-da93-7af3-87e6-f1e564d96cd4"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 8,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2|plan_routes:cf9000d6-b730-a687-9ef0-555be47b3362",
+        "checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:05.985268+00:00",
+      "run_id": "01a077fe-dabf-7051-b8a4-601b2fb9d0a7",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2",
+        "01a077fe-da08-7ba1-a4a8-37f08036ba4f",
+        "01a077fe-da0a-76d1-90b4-2e9dc34d1dfc",
+        "01a077fe-da93-7af3-87e6-f1e564d96cd4"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 8,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2|plan_routes:cf9000d6-b730-a687-9ef0-555be47b3362",
+        "checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:05.986154+00:00",
+      "run_id": "01a077fe-da93-7af3-87e6-f1e564d96cd4",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2",
+        "01a077fe-da08-7ba1-a4a8-37f08036ba4f",
+        "01a077fe-da0a-76d1-90b4-2e9dc34d1dfc"
+      ],
+      "tags": [
+        "graph:step:8"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 8,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2|plan_routes:cf9000d6-b730-a687-9ef0-555be47b3362",
+        "checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "validation_gate",
+      "timestamp": "2026-09-06T18:33:05.989152+00:00",
+      "run_id": "01a077fe-dac3-78e1-a1c3-f7f1d8383294",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2",
+        "01a077fe-da08-7ba1-a4a8-37f08036ba4f",
+        "01a077fe-da0a-76d1-90b4-2e9dc34d1dfc"
+      ],
+      "tags": [
+        "graph:step:9"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2|validation_gate:bb1da224-c207-4ed1-aa9b-8ae7badd85a8",
+        "checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "check_validation",
+      "timestamp": "2026-09-06T18:33:05.991086+00:00",
+      "run_id": "01a077fe-dac6-7853-8e9f-e9d1dcec0776",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2",
+        "01a077fe-da08-7ba1-a4a8-37f08036ba4f",
+        "01a077fe-da0a-76d1-90b4-2e9dc34d1dfc",
+        "01a077fe-dac3-78e1-a1c3-f7f1d8383294"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2|validation_gate:bb1da224-c207-4ed1-aa9b-8ae7badd85a8",
+        "checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "check_validation",
+      "timestamp": "2026-09-06T18:33:05.992402+00:00",
+      "run_id": "01a077fe-dac6-7853-8e9f-e9d1dcec0776",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2",
+        "01a077fe-da08-7ba1-a4a8-37f08036ba4f",
+        "01a077fe-da0a-76d1-90b4-2e9dc34d1dfc",
+        "01a077fe-dac3-78e1-a1c3-f7f1d8383294"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2|validation_gate:bb1da224-c207-4ed1-aa9b-8ae7badd85a8",
+        "checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "validation_gate",
+      "timestamp": "2026-09-06T18:33:05.993282+00:00",
+      "run_id": "01a077fe-dac3-78e1-a1c3-f7f1d8383294",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2",
+        "01a077fe-da08-7ba1-a4a8-37f08036ba4f",
+        "01a077fe-da0a-76d1-90b4-2e9dc34d1dfc"
+      ],
+      "tags": [
+        "graph:step:9"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2|validation_gate:bb1da224-c207-4ed1-aa9b-8ae7badd85a8",
+        "checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "build_itinerary",
+      "timestamp": "2026-09-06T18:33:05.996596+00:00",
+      "run_id": "01a077fe-dacb-71c1-821f-c114640b7ffc",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2",
+        "01a077fe-da08-7ba1-a4a8-37f08036ba4f",
+        "01a077fe-da0a-76d1-90b4-2e9dc34d1dfc"
+      ],
+      "tags": [
+        "graph:step:10"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 10,
+        "langgraph_node": "build_itinerary",
+        "langgraph_triggers": [
+          "branch:to:build_itinerary"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "build_itinerary"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2|build_itinerary:21926489-8114-2464-6c51-9b49421d775c",
+        "checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "build_itinerary",
+      "timestamp": "2026-09-06T18:33:06.003325+00:00",
+      "run_id": "01a077fe-dacb-71c1-821f-c114640b7ffc",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2",
+        "01a077fe-da08-7ba1-a4a8-37f08036ba4f",
+        "01a077fe-da0a-76d1-90b4-2e9dc34d1dfc"
+      ],
+      "tags": [
+        "graph:step:10"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 10,
+        "langgraph_node": "build_itinerary",
+        "langgraph_triggers": [
+          "branch:to:build_itinerary"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "build_itinerary"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2|build_itinerary:21926489-8114-2464-6c51-9b49421d775c",
+        "checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "align_flight_times",
+      "timestamp": "2026-09-06T18:33:06.005104+00:00",
+      "run_id": "01a077fe-dad4-7f11-90d0-18fbaa7194b5",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2",
+        "01a077fe-da08-7ba1-a4a8-37f08036ba4f",
+        "01a077fe-da0a-76d1-90b4-2e9dc34d1dfc"
+      ],
+      "tags": [
+        "graph:step:11"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 11,
+        "langgraph_node": "align_flight_times",
+        "langgraph_triggers": [
+          "branch:to:align_flight_times"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "align_flight_times"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2|align_flight_times:b543546e-069b-84a4-76c1-1899bc4653d3",
+        "checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "align_flight_times",
+      "timestamp": "2026-09-06T18:33:06.006300+00:00",
+      "run_id": "01a077fe-dad4-7f11-90d0-18fbaa7194b5",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2",
+        "01a077fe-da08-7ba1-a4a8-37f08036ba4f",
+        "01a077fe-da0a-76d1-90b4-2e9dc34d1dfc"
+      ],
+      "tags": [
+        "graph:step:11"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 11,
+        "langgraph_node": "align_flight_times",
+        "langgraph_triggers": [
+          "branch:to:align_flight_times"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "align_flight_times"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2|align_flight_times:b543546e-069b-84a4-76c1-1899bc4653d3",
+        "checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:06.008164+00:00",
+      "run_id": "01a077fe-dad7-7a50-8ff8-975c4b6083c4",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2",
+        "01a077fe-da08-7ba1-a4a8-37f08036ba4f",
+        "01a077fe-da0a-76d1-90b4-2e9dc34d1dfc"
+      ],
+      "tags": [
+        "graph:step:12"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 12,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2|plan_routes:8abeb1a3-34a5-a886-6277-7678798295eb",
+        "checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:06.050579+00:00",
+      "run_id": "01a077fe-db01-7092-b241-f741b8ccd7c2",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2",
+        "01a077fe-da08-7ba1-a4a8-37f08036ba4f",
+        "01a077fe-da0a-76d1-90b4-2e9dc34d1dfc",
+        "01a077fe-dad7-7a50-8ff8-975c4b6083c4"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 12,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2|plan_routes:8abeb1a3-34a5-a886-6277-7678798295eb",
+        "checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:06.052360+00:00",
+      "run_id": "01a077fe-db01-7092-b241-f741b8ccd7c2",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2",
+        "01a077fe-da08-7ba1-a4a8-37f08036ba4f",
+        "01a077fe-da0a-76d1-90b4-2e9dc34d1dfc",
+        "01a077fe-dad7-7a50-8ff8-975c4b6083c4"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 12,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2|plan_routes:8abeb1a3-34a5-a886-6277-7678798295eb",
+        "checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:06.053452+00:00",
+      "run_id": "01a077fe-dad7-7a50-8ff8-975c4b6083c4",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2",
+        "01a077fe-da08-7ba1-a4a8-37f08036ba4f",
+        "01a077fe-da0a-76d1-90b4-2e9dc34d1dfc"
+      ],
+      "tags": [
+        "graph:step:12"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 12,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2|plan_routes:8abeb1a3-34a5-a886-6277-7678798295eb",
+        "checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "validation_gate",
+      "timestamp": "2026-09-06T18:33:06.057400+00:00",
+      "run_id": "01a077fe-db06-7862-a9fa-e5ca057f1659",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2",
+        "01a077fe-da08-7ba1-a4a8-37f08036ba4f",
+        "01a077fe-da0a-76d1-90b4-2e9dc34d1dfc"
+      ],
+      "tags": [
+        "graph:step:13"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 13,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2|validation_gate:51f3bdf9-cc7f-1d1e-71b1-423ca46248d9",
+        "checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "check_validation",
+      "timestamp": "2026-09-06T18:33:06.060837+00:00",
+      "run_id": "01a077fe-db0c-7880-b512-8063b73db61d",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2",
+        "01a077fe-da08-7ba1-a4a8-37f08036ba4f",
+        "01a077fe-da0a-76d1-90b4-2e9dc34d1dfc",
+        "01a077fe-db06-7862-a9fa-e5ca057f1659"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 13,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2|validation_gate:51f3bdf9-cc7f-1d1e-71b1-423ca46248d9",
+        "checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "check_validation",
+      "timestamp": "2026-09-06T18:33:06.062898+00:00",
+      "run_id": "01a077fe-db0c-7880-b512-8063b73db61d",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2",
+        "01a077fe-da08-7ba1-a4a8-37f08036ba4f",
+        "01a077fe-da0a-76d1-90b4-2e9dc34d1dfc",
+        "01a077fe-db06-7862-a9fa-e5ca057f1659"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 13,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2|validation_gate:51f3bdf9-cc7f-1d1e-71b1-423ca46248d9",
+        "checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "validation_gate",
+      "timestamp": "2026-09-06T18:33:06.067204+00:00",
+      "run_id": "01a077fe-db06-7862-a9fa-e5ca057f1659",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2",
+        "01a077fe-da08-7ba1-a4a8-37f08036ba4f",
+        "01a077fe-da0a-76d1-90b4-2e9dc34d1dfc"
+      ],
+      "tags": [
+        "graph:step:13"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 13,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2|validation_gate:51f3bdf9-cc7f-1d1e-71b1-423ca46248d9",
+        "checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "LangGraph",
+      "timestamp": "2026-09-06T18:33:06.068696+00:00",
+      "run_id": "01a077fe-da0a-76d1-90b4-2e9dc34d1dfc",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2",
+        "01a077fe-da08-7ba1-a4a8-37f08036ba4f"
+      ],
+      "tags": [
+        "seq:step:1"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "run_itinerary_node",
+        "langgraph_triggers": [
+          "branch:to:run_itinerary_node"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "run_itinerary_node"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2",
+        "checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "run_itinerary_node",
+      "timestamp": "2026-09-06T18:33:06.069686+00:00",
+      "run_id": "01a077fe-da08-7ba1-a4a8-37f08036ba4f",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2"
+      ],
+      "tags": [
+        "graph:step:9"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "run_itinerary_node",
+        "langgraph_triggers": [
+          "branch:to:run_itinerary_node"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "run_itinerary_node"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:f9931cff-53de-bd02-d6db-2e74decb1ad2"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "compute_fairness",
+      "timestamp": "2026-09-06T18:33:06.072682+00:00",
+      "run_id": "01a077fe-db17-79d3-b8f0-905b52d4e945",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2"
+      ],
+      "tags": [
+        "graph:step:10"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 10,
+        "langgraph_node": "compute_fairness",
+        "langgraph_triggers": [
+          "branch:to:compute_fairness"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "compute_fairness"
+        ],
+        "langgraph_checkpoint_ns": "compute_fairness:a75aa020-3e5d-7a27-33df-f0e3f33af117"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "route_after_fairness",
+      "timestamp": "2026-09-06T18:33:06.074239+00:00",
+      "run_id": "01a077fe-db19-7ce2-afac-e14618338de0",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2",
+        "01a077fe-db17-79d3-b8f0-905b52d4e945"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 10,
+        "langgraph_node": "compute_fairness",
+        "langgraph_triggers": [
+          "branch:to:compute_fairness"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "compute_fairness"
+        ],
+        "langgraph_checkpoint_ns": "compute_fairness:a75aa020-3e5d-7a27-33df-f0e3f33af117"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "route_after_fairness",
+      "timestamp": "2026-09-06T18:33:06.075445+00:00",
+      "run_id": "01a077fe-db19-7ce2-afac-e14618338de0",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2",
+        "01a077fe-db17-79d3-b8f0-905b52d4e945"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 10,
+        "langgraph_node": "compute_fairness",
+        "langgraph_triggers": [
+          "branch:to:compute_fairness"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "compute_fairness"
+        ],
+        "langgraph_checkpoint_ns": "compute_fairness:a75aa020-3e5d-7a27-33df-f0e3f33af117"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "compute_fairness",
+      "timestamp": "2026-09-06T18:33:06.076396+00:00",
+      "run_id": "01a077fe-db17-79d3-b8f0-905b52d4e945",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2"
+      ],
+      "tags": [
+        "graph:step:10"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 10,
+        "langgraph_node": "compute_fairness",
+        "langgraph_triggers": [
+          "branch:to:compute_fairness"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "compute_fairness"
+        ],
+        "langgraph_checkpoint_ns": "compute_fairness:a75aa020-3e5d-7a27-33df-f0e3f33af117"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "assemble_output",
+      "timestamp": "2026-09-06T18:33:06.078346+00:00",
+      "run_id": "01a077fe-db1d-77c2-9fa6-9f4465aa8dad",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2"
+      ],
+      "tags": [
+        "graph:step:11"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 11,
+        "langgraph_node": "assemble_output",
+        "langgraph_triggers": [
+          "branch:to:assemble_output"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "assemble_output"
+        ],
+        "langgraph_checkpoint_ns": "assemble_output:2e9549af-10bc-e778-993d-b989975c07de"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "assemble_output",
+      "timestamp": "2026-09-06T18:33:06.087004+00:00",
+      "run_id": "01a077fe-db1d-77c2-9fa6-9f4465aa8dad",
+      "parent_ids": [
+        "01a077fe-d9da-7852-81ca-94b723f338c2"
+      ],
+      "tags": [
+        "graph:step:11"
+      ],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph",
+        "langgraph_step": 11,
+        "langgraph_node": "assemble_output",
+        "langgraph_triggers": [
+          "branch:to:assemble_output"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "assemble_output"
+        ],
+        "langgraph_checkpoint_ns": "assemble_output:2e9549af-10bc-e778-993d-b989975c07de"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "LangGraph",
+      "timestamp": "2026-09-06T18:33:06.089493+00:00",
+      "run_id": "01a077fe-d9da-7852-81ca-94b723f338c2",
+      "parent_ids": [],
+      "tags": [],
+      "metadata": {
+        "trip_id": "16-diet-vegan",
+        "eval_tier": "offline",
+        "thread_id": "16-diet-vegan",
+        "ls_integration": "langgraph"
+      }
+    }
+  ],
+  "telemetry": {
+    "nodes": {
+      "extract_preference_constraints": {
+        "input_tokens": 531,
+        "output_tokens": 460,
+        "cache_read_tokens": 0,
+        "cost_usd": 0.002831,
+        "unpriced_calls": 0,
+        "llm_calls": 1,
+        "duration_ms": 7.665
+      },
+      "select_destination": {
+        "input_tokens": 1617,
+        "output_tokens": 230,
+        "cache_read_tokens": 0,
+        "cost_usd": 0.002767,
+        "unpriced_calls": 0,
+        "llm_calls": 1,
+        "duration_ms": 138.274
+      },
+      "build_itinerary": {
+        "input_tokens": 3776,
+        "output_tokens": 3133,
+        "cache_read_tokens": 0,
+        "cost_usd": 0.019441,
+        "unpriced_calls": 0,
+        "llm_calls": 2,
+        "duration_ms": 14.234
+      },
+      "assemble_output": {
+        "input_tokens": 1518,
+        "output_tokens": 1132,
+        "cache_read_tokens": 0,
+        "cost_usd": 0.007178,
+        "unpriced_calls": 0,
+        "llm_calls": 1,
+        "duration_ms": 8.685
+      },
+      "parse_input": {
+        "duration_ms": 1.856
+      },
+      "city_selection_hitl": {
+        "duration_ms": 1.453
+      },
+      "dynamic_tool_selection": {
+        "duration_ms": 1.03
+      },
+      "parallel_data_fetch": {
+        "duration_ms": 6.658
+      },
+      "budget_analysis": {
+        "duration_ms": 6.71
+      },
+      "search_hotel": {
+        "duration_ms": 9.625
+      },
+      "cluster_by_neighborhood": {
+        "duration_ms": 2.271
+      },
+      "align_flight_times": {
+        "duration_ms": 2.903
+      },
+      "plan_routes": {
+        "duration_ms": 192.594
+      },
+      "apply_feasibility_swap": {
+        "duration_ms": 3.795
+      },
+      "validation_gate": {
+        "duration_ms": 14.587
+      },
+      "run_itinerary_node": {
+        "duration_ms": 268.537
+      },
+      "compute_fairness": {
+        "duration_ms": 4.025
+      }
+    },
+    "totals": {
+      "input_tokens": 7442,
+      "output_tokens": 4955,
+      "cache_read_tokens": 0,
+      "cost_usd": 0.032217,
+      "unpriced_calls": 0,
+      "llm_calls": 5,
+      "duration_ms": 501.285
+    }
+  },
+  "hitl_resolutions": 1,
+  "tool_calls": [
+    {
+      "operation": "search_flights",
+      "request": {
+        "origin": "ORD",
+        "destination": "Surfside Beach",
+        "depart_date": "2026-09-08",
+        "return_date": "2026-09-11",
+        "adults": 1
+      }
+    },
+    {
+      "operation": "search_flights",
+      "request": {
+        "origin": "ATL",
+        "destination": "Surfside Beach",
+        "depart_date": "2026-09-08",
+        "return_date": "2026-09-11",
+        "adults": 1
+      }
+    },
+    {
+      "operation": "fetch_activities_by_category",
+      "request": {
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "categories": [
+          "food",
+          "outdoor",
+          "urban"
+        ],
+        "max_per_category": 10
+      }
+    },
+    {
+      "operation": "fetch_weather",
+      "request": {
+        "lat": 28.949,
+        "lng": -95.293,
+        "start_date": "2026-09-08",
+        "end_date": "2026-09-11",
+        "destination_name": "Surfside Beach"
+      }
+    },
+    {
+      "operation": "search_hotels",
+      "request": {
+        "destination": "Surfside Beach",
+        "check_in": "2026-09-08",
+        "check_out": "2026-09-11",
+        "budget_ceiling_usd": 810.0,
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        }
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 33.6653447,
+        "origin_lng": -78.910319,
+        "dest_lat": 28.9581242,
+        "dest_lng": -95.2766391,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9581242,
+        "origin_lng": -95.2766391,
+        "dest_lat": 28.949779499999998,
+        "dest_lng": -95.28490459999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.949779499999998,
+        "origin_lng": -95.28490459999999,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9515919,
+        "origin_lng": -95.2878874,
+        "dest_lat": 29.013253000000002,
+        "dest_lng": -95.32876879999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 29.013253000000002,
+        "origin_lng": -95.32876879999999,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 33.6653447,
+        "origin_lng": -78.910319,
+        "dest_lat": 28.9581242,
+        "dest_lng": -95.2766391,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9581242,
+        "origin_lng": -95.2766391,
+        "dest_lat": 28.9380657,
+        "dest_lng": -95.2955537,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9380657,
+        "origin_lng": -95.2955537,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9515919,
+        "origin_lng": -95.2878874,
+        "dest_lat": 28.9346868,
+        "dest_lng": -95.3039594,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9346868,
+        "origin_lng": -95.3039594,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 33.6653447,
+        "origin_lng": -78.910319,
+        "dest_lat": 28.9581242,
+        "dest_lng": -95.2766391,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9581242,
+        "origin_lng": -95.2766391,
+        "dest_lat": 29.026607600000002,
+        "dest_lng": -95.4567974,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 29.026607600000002,
+        "origin_lng": -95.4567974,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9515919,
+        "origin_lng": -95.2878874,
+        "dest_lat": 29.01748,
+        "dest_lng": -95.44596159999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 29.01748,
+        "origin_lng": -95.44596159999999,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 33.6653447,
+        "origin_lng": -78.910319,
+        "dest_lat": 28.9581242,
+        "dest_lng": -95.2766391,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9581242,
+        "origin_lng": -95.2766391,
+        "dest_lat": 28.949779499999998,
+        "dest_lng": -95.28490459999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.949779499999998,
+        "origin_lng": -95.28490459999999,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9515919,
+        "origin_lng": -95.2878874,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 33.6653447,
+        "origin_lng": -78.910319,
+        "dest_lat": 28.9581242,
+        "dest_lng": -95.2766391,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9581242,
+        "origin_lng": -95.2766391,
+        "dest_lat": 28.9380657,
+        "dest_lng": -95.2955537,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9380657,
+        "origin_lng": -95.2955537,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9515919,
+        "origin_lng": -95.2878874,
+        "dest_lat": 28.9346868,
+        "dest_lng": -95.3039594,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9346868,
+        "origin_lng": -95.3039594,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 33.6653447,
+        "origin_lng": -78.910319,
+        "dest_lat": 28.9581242,
+        "dest_lng": -95.2766391,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9581242,
+        "origin_lng": -95.2766391,
+        "dest_lat": 29.026607600000002,
+        "dest_lng": -95.4567974,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 29.026607600000002,
+        "origin_lng": -95.4567974,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9515919,
+        "origin_lng": -95.2878874,
+        "dest_lat": 29.01748,
+        "dest_lng": -95.44596159999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 29.01748,
+        "origin_lng": -95.44596159999999,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 33.6653447,
+        "origin_lng": -78.910319,
+        "dest_lat": 28.9581242,
+        "dest_lng": -95.2766391,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9581242,
+        "origin_lng": -95.2766391,
+        "dest_lat": 28.949779499999998,
+        "dest_lng": -95.28490459999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.949779499999998,
+        "origin_lng": -95.28490459999999,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9515919,
+        "origin_lng": -95.2878874,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 33.6653447,
+        "origin_lng": -78.910319,
+        "dest_lat": 28.9581242,
+        "dest_lng": -95.2766391,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9581242,
+        "origin_lng": -95.2766391,
+        "dest_lat": 28.9380657,
+        "dest_lng": -95.2955537,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9380657,
+        "origin_lng": -95.2955537,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9515919,
+        "origin_lng": -95.2878874,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 33.6653447,
+        "origin_lng": -78.910319,
+        "dest_lat": 28.9581242,
+        "dest_lng": -95.2766391,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9581242,
+        "origin_lng": -95.2766391,
+        "dest_lat": 29.026607600000002,
+        "dest_lng": -95.4567974,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 29.026607600000002,
+        "origin_lng": -95.4567974,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9515919,
+        "origin_lng": -95.2878874,
+        "dest_lat": 29.01748,
+        "dest_lng": -95.44596159999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 29.01748,
+        "origin_lng": -95.44596159999999,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 33.6653447,
+        "origin_lng": -78.910319,
+        "dest_lat": 28.949779499999998,
+        "dest_lng": -95.28490459999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.949779499999998,
+        "origin_lng": -95.28490459999999,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9515919,
+        "origin_lng": -95.2878874,
+        "dest_lat": 29.013253000000002,
+        "dest_lng": -95.32876879999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 29.013253000000002,
+        "origin_lng": -95.32876879999999,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 33.6653447,
+        "origin_lng": -78.910319,
+        "dest_lat": 28.9380657,
+        "dest_lng": -95.2955537,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9380657,
+        "origin_lng": -95.2955537,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9515919,
+        "origin_lng": -95.2878874,
+        "dest_lat": 28.9346868,
+        "dest_lng": -95.3039594,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9346868,
+        "origin_lng": -95.3039594,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Surfside Beach",
+        "coords": {
+          "lat": 28.949,
+          "lng": -95.293
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 33.6653447,
+        "origin_lng": -78.910319,
+        "dest_lat": 29.026607600000002,
+        "dest_lng": -95.4567974,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 29.026607600000002,
+        "origin_lng": -95.4567974,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 28.9515919,
+        "origin_lng": -95.2878874,
+        "dest_lat": 29.01748,
+        "dest_lng": -95.44596159999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 29.01748,
+        "origin_lng": -95.44596159999999,
+        "dest_lat": 28.9515919,
+        "dest_lng": -95.2878874,
+        "mode": "WALK"
+      }
+    }
+  ]
+}

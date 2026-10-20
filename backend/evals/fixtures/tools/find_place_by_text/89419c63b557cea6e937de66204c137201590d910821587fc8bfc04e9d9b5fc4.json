@@ -1,0 +1,30 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 33.494,
+      "lng": -117.148
+    },
+    "destination": "Temecula",
+    "included_type": "restaurant",
+    "query": "Dinner - Winery charcuterie/gluten-free options at venue"
+  },
+  "request_sha256": "89419c63b557cea6e937de66204c137201590d910821587fc8bfc04e9d9b5fc4",
+  "response": {
+    "address": "35960 Rancho California Rd, Temecula, CA 92591, USA",
+    "category": "food",
+    "lat": 33.547126,
+    "lng": -117.04569319999999,
+    "name": "Creekside Grille",
+    "place_id": "ChIJcQLd2hF524ARMf61GBe5aw4",
+    "price_level": 0,
+    "rating": 4.4,
+    "tags": [
+      "american_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

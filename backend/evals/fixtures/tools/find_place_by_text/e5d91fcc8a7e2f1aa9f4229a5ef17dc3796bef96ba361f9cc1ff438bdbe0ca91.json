@@ -1,0 +1,29 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 28.949,
+      "lng": -95.293
+    },
+    "destination": "Surfside Beach",
+    "included_type": "restaurant",
+    "query": "Dinner with grilled fish and vegetables"
+  },
+  "request_sha256": "e5d91fcc8a7e2f1aa9f4229a5ef17dc3796bef96ba361f9cc1ff438bdbe0ca91",
+  "response": {
+    "address": "403 TX-332, Surfside Beach, TX 77541, USA",
+    "category": "food",
+    "lat": 28.9515919,
+    "lng": -95.2878874,
+    "name": "Salty Pelican Surfside Beach",
+    "place_id": "ChIJMSK_lOJtQIYRMwpyWtNSXdo",
+    "price_level": 0,
+    "rating": 3.9,
+    "tags": [
+      "restaurant",
+      "point_of_interest",
+      "food",
+      "establishment"
+    ]
+  }
+}

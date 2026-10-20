@@ -1,0 +1,594 @@
+{
+  "id": "12-nightlife_hard_avoid",
+  "group_notes": "No clubs, no nightclubs, no bar hopping. Keep evenings quiet.",
+  "members": [
+    {
+      "member_id": "ivy",
+      "name": "Ivy",
+      "origin_city": "JFK",
+      "budget_usd": 1700,
+      "food_restrictions": [],
+      "preference_notes": "Normally likes nightlife but this trip should have no clubs.",
+      "preference_vector": {
+        "outdoor": 0.4,
+        "food": 0.7,
+        "nightlife": 0.95,
+        "urban": 0.8,
+        "shopping": 0.4
+      },
+      "is_leader": true
+    }
+  ],
+  "start_date": "2026-09-08",
+  "end_date": "2026-09-11",
+  "trip_duration_days": 3,
+  "destination": {
+    "name": "Temecula",
+    "coords": {
+      "lat": 33.494,
+      "lng": -117.148
+    }
+  },
+  "hotel": {
+    "name": "Motel 6 Temecula, CA - Historic Old Town",
+    "address": "41900 Moreno Rd, Temecula, CA 92590, USA",
+    "price_per_night_usd": 47.0,
+    "total_price_usd": 141.0,
+    "rating": 3.7,
+    "is_estimated": false
+  },
+  "weather": {
+    "destination": "Temecula",
+    "date_range": "2026-09-08 to 2026-09-11",
+    "avg_temp_c": 29.6,
+    "precipitation_mm": 0.0,
+    "summary": "Warm (29.6\u00b0C avg), dry conditions"
+  },
+  "days": [
+    {
+      "day_number": 1,
+      "date": "2026-09-08",
+      "neighborhood": "Murrieta",
+      "meals": [
+        "Breakfast at Motel 6 Temecula",
+        "In-N-Out Burger (Murrieta)",
+        "Destination Smokehouse (Murrieta)"
+      ],
+      "estimated_day_cost_usd": 185.0,
+      "schedule": [
+        {
+          "time": "08:00",
+          "type": "meal",
+          "label": "Breakfast",
+          "notes": "Hotel breakfast before heading out"
+        },
+        {
+          "time": "09:30",
+          "type": "activity",
+          "label": "Santa Rosa Plateau Ecological Preserve",
+          "notes": "Outdoor nature preserve, hiking trails, scenic views"
+        },
+        {
+          "time": "12:30",
+          "type": "meal",
+          "label": "Lunch at In-N-Out Burger",
+          "notes": "Quick, casual lunch"
+        },
+        {
+          "time": "18:30",
+          "type": "meal",
+          "label": "Dinner at Destination Smokehouse",
+          "notes": "Hearty BBQ dinner"
+        }
+      ],
+      "rationale": "Day 1 establishes an active outdoor foundation with breakfast fueling a morning hike through Santa Rosa Plateau Ecological Preserve's scenic trails and wildflower displays. Casual mid-day and evening meals at In-N-Out Burger and Destination Smokehouse keep the pace relaxed and grounded, avoiding any nightlife venues per group preferences and allowing a comfortable evening after travel.",
+      "constraint_notes": [
+        "No nightlife, clubs, or bar venues scheduled\u2014all evening activities are quiet dining experiences",
+        "Breakfast provided to start day with energy for outdoor exploration",
+        "Balanced pace: active morning activity followed by relaxed meals and early evening return to hotel"
+      ],
+      "total_travel_minutes": 663,
+      "activities": [
+        {
+          "name": "Santa Rosa Plateau Ecological Preserve",
+          "category": "outdoor",
+          "address": "39400 Clinton Keith Rd, Murrieta, CA 92562, USA",
+          "lat": 33.5433653,
+          "lng": -117.26951299999999,
+          "price_level": 0,
+          "rating": 4.7,
+          "tags": [
+            "nature_preserve",
+            "tourist_attraction",
+            "visitor_center",
+            "tourist_information_center",
+            "tour_agency",
+            "travel_agency",
+            "park",
+            "point_of_interest",
+            "service",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Los Alamos Hills Sports Park",
+          "category": "urban",
+          "address": "37000 Ruth Ellen Way, Murrieta, CA 92563, USA",
+          "lat": 33.5826314,
+          "lng": -117.170155,
+          "price_level": 0,
+          "rating": 4.7,
+          "tags": [
+            "park",
+            "tourist_attraction",
+            "point_of_interest",
+            "establishment"
+          ]
+        }
+      ],
+      "routes": [
+        {
+          "distance_meters": 3135,
+          "duration_seconds": 2715,
+          "mode": "WALK",
+          "from_order": 1,
+          "to_order": 2,
+          "from_label": "Motel 6 Temecula, CA - Historic Old Town",
+          "to_label": "Breakfast Club of Temecula"
+        },
+        {
+          "distance_meters": 20875,
+          "duration_seconds": 17657,
+          "mode": "WALK",
+          "from_order": 2,
+          "to_order": 3,
+          "from_label": "Breakfast Club of Temecula",
+          "to_label": "Santa Rosa Plateau Ecological Preserve"
+        },
+        {
+          "distance_meters": 16988,
+          "duration_seconds": 13380,
+          "mode": "WALK",
+          "from_order": 3,
+          "to_order": 4,
+          "from_label": "Santa Rosa Plateau Ecological Preserve",
+          "to_label": "In-N-Out Burger"
+        },
+        {
+          "distance_meters": 7263,
+          "duration_seconds": 6063,
+          "mode": "WALK",
+          "from_order": 4,
+          "to_order": 5,
+          "from_label": "In-N-Out Burger",
+          "to_label": "Destination Smokehouse"
+        }
+      ]
+    },
+    {
+      "day_number": 2,
+      "date": "2026-09-09",
+      "neighborhood": "Temecula Wine Country",
+      "meals": [
+        "Breakfast at Motel 6 Temecula",
+        "The Goat & Vine (Old Town Temecula)",
+        "1909 Temecula (Old Town Temecula)"
+      ],
+      "estimated_day_cost_usd": 225.0,
+      "schedule": [
+        {
+          "time": "08:00",
+          "type": "meal",
+          "label": "Breakfast",
+          "notes": "Hotel breakfast"
+        },
+        {
+          "time": "09:30",
+          "type": "activity",
+          "label": "Harveston Lake Park",
+          "notes": "Scenic lake views, walking paths, outdoor recreation"
+        },
+        {
+          "time": "12:00",
+          "type": "meal",
+          "label": "Lunch at The Goat & Vine",
+          "notes": "Farm-to-table dining in Old Town"
+        },
+        {
+          "time": "13:30",
+          "type": "activity",
+          "label": "Old Town Temecula",
+          "notes": "Historic downtown area, shops, galleries, local culture"
+        },
+        {
+          "time": "15:30",
+          "type": "activity",
+          "label": "Wilson Creek Winery",
+          "notes": "Wine tasting, scenic vineyard views"
+        },
+        {
+          "time": "17:30",
+          "type": "activity",
+          "label": "Leoness Cellars",
+          "notes": "Premium winery experience, sunset views"
+        },
+        {
+          "time": "19:00",
+          "type": "meal",
+          "label": "Dinner at 1909 Temecula",
+          "notes": "Upscale dining in Old Town"
+        }
+      ],
+      "rationale": "Day 2 celebrates Temecula's wine country heritage with a morning lake activity at Harveston Lake Park, a leisurely lunch at The Goat & Vine, exploration of historic Old Town Temecula's galleries and shops, and two consecutive winery tastings at Wilson Creek Winery and Leoness Cellars. An upscale dinner at 1909 Temecula concludes a sophisticated yet relaxed day entirely free of nightlife venues, honoring the group's preference for quiet evenings.",
+      "constraint_notes": [
+        "No clubs, nightclubs, or bar hopping\u2014all activities are outdoor recreation, cultural exploration, and curated winery experiences",
+        "Wine tastings and dining are daytime/early evening only, maintaining peaceful atmosphere",
+        "Balanced itinerary mixes leisure (lake, shopping) with cultural enrichment (wineries, historic district)"
+      ],
+      "total_travel_minutes": 695,
+      "activities": [
+        {
+          "name": "Harveston Lake Park",
+          "category": "outdoor",
+          "address": "40148 Village Rd, Temecula, CA 92591, USA",
+          "lat": 33.536448299999996,
+          "lng": -117.1550851,
+          "price_level": 0,
+          "rating": 4.8,
+          "tags": [
+            "park",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Old Town Temecula",
+          "category": "urban",
+          "address": "28601 Old Town Front St, Temecula, CA 92590, USA",
+          "lat": 33.4937201,
+          "lng": -117.14970319999998,
+          "price_level": 0,
+          "rating": 4.7,
+          "tags": [
+            "tourist_attraction",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Wilson Creek Winery",
+          "category": "urban",
+          "address": "35960 Rancho California Rd, Temecula, CA 92591, USA",
+          "lat": 33.54718,
+          "lng": -117.04475599999999,
+          "price_level": 0,
+          "rating": 4.6,
+          "tags": [
+            "winery",
+            "vineyard",
+            "tourist_attraction",
+            "wedding_venue",
+            "event_venue",
+            "manufacturer",
+            "farm",
+            "food",
+            "point_of_interest",
+            "service",
+            "association_or_organization",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Leoness Cellars",
+          "category": "urban",
+          "address": "38311 De Portola Rd, Temecula, CA 92592, USA",
+          "lat": 33.5238693,
+          "lng": -117.01851439999999,
+          "price_level": 0,
+          "rating": 4.6,
+          "tags": [
+            "winery",
+            "wine_bar",
+            "brunch_restaurant",
+            "bar",
+            "fine_dining_restaurant",
+            "tourist_attraction",
+            "wedding_venue",
+            "event_venue",
+            "manufacturer",
+            "farm",
+            "restaurant",
+            "food",
+            "point_of_interest",
+            "service",
+            "establishment"
+          ]
+        }
+      ],
+      "routes": [
+        {
+          "distance_meters": 3135,
+          "duration_seconds": 2715,
+          "mode": "WALK",
+          "from_order": 1,
+          "to_order": 2,
+          "from_label": "Motel 6 Temecula, CA - Historic Old Town",
+          "to_label": "Breakfast Club of Temecula"
+        },
+        {
+          "distance_meters": 5515,
+          "duration_seconds": 4549,
+          "mode": "WALK",
+          "from_order": 2,
+          "to_order": 3,
+          "from_label": "Breakfast Club of Temecula",
+          "to_label": "Harveston Lake Park"
+        },
+        {
+          "distance_meters": 6286,
+          "duration_seconds": 5160,
+          "mode": "WALK",
+          "from_order": 3,
+          "to_order": 4,
+          "from_label": "Harveston Lake Park",
+          "to_label": "The Goat & Vine"
+        },
+        {
+          "distance_meters": 493,
+          "duration_seconds": 406,
+          "mode": "WALK",
+          "from_order": 4,
+          "to_order": 5,
+          "from_label": "The Goat & Vine",
+          "to_label": "Old Town Temecula"
+        },
+        {
+          "distance_meters": 14184,
+          "duration_seconds": 12022,
+          "mode": "WALK",
+          "from_order": 5,
+          "to_order": 6,
+          "from_label": "Old Town Temecula",
+          "to_label": "Wilson Creek Winery"
+        },
+        {
+          "distance_meters": 5338,
+          "duration_seconds": 4369,
+          "mode": "WALK",
+          "from_order": 6,
+          "to_order": 7,
+          "from_label": "Wilson Creek Winery",
+          "to_label": "Leoness Cellars"
+        },
+        {
+          "distance_meters": 15792,
+          "duration_seconds": 12521,
+          "mode": "WALK",
+          "from_order": 7,
+          "to_order": 8,
+          "from_label": "Leoness Cellars",
+          "to_label": "1909 Temecula"
+        }
+      ]
+    },
+    {
+      "day_number": 3,
+      "date": "2026-09-10",
+      "neighborhood": "South Temecula",
+      "meals": [
+        "Breakfast at Motel 6 Temecula",
+        "In-N-Out Burger (South Temecula)",
+        "Monserate Winery (dinner with wine and light fare)"
+      ],
+      "estimated_day_cost_usd": 165.0,
+      "schedule": [
+        {
+          "time": "08:00",
+          "type": "meal",
+          "label": "Breakfast",
+          "notes": "Hotel breakfast"
+        },
+        {
+          "time": "09:30",
+          "type": "activity",
+          "label": "Santa Margarita River Trail Preserve",
+          "notes": "Scenic hiking trails, natural river landscape, outdoor adventure"
+        },
+        {
+          "time": "12:00",
+          "type": "meal",
+          "label": "Lunch at In-N-Out Burger",
+          "notes": "Quick, casual lunch"
+        },
+        {
+          "time": "13:30",
+          "type": "activity",
+          "label": "Patricia H. Birdsall Sports Park",
+          "notes": "Recreation area, outdoor facilities, walking paths"
+        },
+        {
+          "time": "15:30",
+          "type": "activity",
+          "label": "Redhawk Towne Ctr",
+          "notes": "Shopping, retail therapy, local shops"
+        },
+        {
+          "time": "17:30",
+          "type": "activity",
+          "label": "Monserate Winery",
+          "notes": "Evening winery visit, wine tasting, relaxed ambiance"
+        },
+        {
+          "time": "19:00",
+          "type": "meal",
+          "label": "Dinner at Monserate Winery",
+          "notes": "Wine and light fare, quiet evening conclusion"
+        }
+      ],
+      "rationale": "Day 3 offers a tranquil conclusion with a serene morning hike along Santa Margarita River Trail Preserve, followed by casual lunch at In-N-Out Burger and recreational activities at Patricia H. Birdsall Sports Park. An afternoon shopping and dining pause at Redhawk Towne Ctr precedes a final winery experience and dinner at Monserate Winery, providing a peaceful, alcohol-forward evening that avoids all club and nightlife venues.",
+      "constraint_notes": [
+        "No nightlife or club venues\u2014final evening centers on winery tasting and dining only",
+        "Nature-focused morning maintains contemplative mood; afternoon and evening remain calm and intimate",
+        "All meals and activities support a quiet, relaxed departure vibe without high-energy nightlife"
+      ],
+      "total_travel_minutes": 1152,
+      "activities": [
+        {
+          "name": "Santa Margarita River Trail Preserve",
+          "category": "outdoor",
+          "address": "4251 River Edge Rd, Fallbrook, CA 92028, USA",
+          "lat": 33.4135412,
+          "lng": -117.2418831,
+          "price_level": 0,
+          "rating": 4.7,
+          "tags": [
+            "nature_preserve",
+            "hiking_area",
+            "sports_activity_location",
+            "park",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Patricia H. Birdsall Sports Park",
+          "category": "urban",
+          "address": "32380 Deer Hollow Way, Temecula, CA 92592, USA",
+          "lat": 33.4530491,
+          "lng": -117.0952931,
+          "price_level": 0,
+          "rating": 4.7,
+          "tags": [
+            "park",
+            "tourist_attraction",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Redhawk Towne Ctr",
+          "category": "shopping",
+          "address": "Temecula Pkwy & Redhawk Pkwy, CA-79, Temecula, CA 92592, USA",
+          "lat": 33.480337899999995,
+          "lng": -117.0969473,
+          "price_level": 0,
+          "rating": 4.3,
+          "tags": [
+            "shopping_mall",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Monserate Winery",
+          "category": "food",
+          "address": "2757 Gird Rd, Fallbrook, CA 92028, USA",
+          "lat": 33.3430536,
+          "lng": -117.19067530000001,
+          "price_level": 0,
+          "rating": 4.6,
+          "tags": [
+            "winery",
+            "vineyard",
+            "wedding_venue",
+            "farm",
+            "manufacturer",
+            "event_venue",
+            "service",
+            "restaurant",
+            "food",
+            "point_of_interest",
+            "establishment"
+          ]
+        }
+      ],
+      "routes": [
+        {
+          "distance_meters": 3135,
+          "duration_seconds": 2715,
+          "mode": "WALK",
+          "from_order": 1,
+          "to_order": 2,
+          "from_label": "Motel 6 Temecula, CA - Historic Old Town",
+          "to_label": "Breakfast Club of Temecula"
+        },
+        {
+          "distance_meters": 21863,
+          "duration_seconds": 18466,
+          "mode": "WALK",
+          "from_order": 2,
+          "to_order": 3,
+          "from_label": "Breakfast Club of Temecula",
+          "to_label": "Santa Margarita River Trail Preserve"
+        },
+        {
+          "distance_meters": 20993,
+          "duration_seconds": 18530,
+          "mode": "WALK",
+          "from_order": 3,
+          "to_order": 4,
+          "from_label": "Santa Margarita River Trail Preserve",
+          "to_label": "In-N-Out Burger"
+        },
+        {
+          "distance_meters": 10100,
+          "duration_seconds": 8417,
+          "mode": "WALK",
+          "from_order": 4,
+          "to_order": 5,
+          "from_label": "In-N-Out Burger",
+          "to_label": "Patricia H. Birdsall Sports Park"
+        },
+        {
+          "distance_meters": 4443,
+          "duration_seconds": 3587,
+          "mode": "WALK",
+          "from_order": 5,
+          "to_order": 6,
+          "from_label": "Patricia H. Birdsall Sports Park",
+          "to_label": "Redhawk Towne Ctr"
+        },
+        {
+          "distance_meters": 21669,
+          "duration_seconds": 17463,
+          "mode": "WALK",
+          "from_order": 6,
+          "to_order": 7,
+          "from_label": "Redhawk Towne Ctr",
+          "to_label": "Monserate Winery"
+        },
+        {
+          "distance_meters": 0,
+          "duration_seconds": 0,
+          "mode": "WALK",
+          "from_order": 7,
+          "to_order": 8,
+          "from_label": "Monserate Winery",
+          "to_label": "Monserate Winery"
+        }
+      ]
+    }
+  ],
+  "trip_pitch": "Discover Temecula, California\u2014a hidden gem in Southern California's wine country that perfectly balances outdoor adventure, culinary delights, and peaceful relaxation. This charming destination offers a warm, dry climate ideal for September travel, with a diverse array of activities spanning from ecological preserves to scenic wineries. Whether you're seeking natural beauty, local flavors, or cultural exploration, Temecula delivers an authentic Southern California experience without the hustle and bustle of major metropolitan areas. The region's laid-back atmosphere and welcoming community make it an ideal retreat for those looking to escape and reconnect.\n\nYour three-day journey showcases the best of what Temecula and surrounding areas have to offer. Day 1 kicks off with breakfast at the Breakfast Club of Temecula before exploring the pristine trails and wildflowers of Santa Rosa Plateau Ecological Preserve, with casual meals at In-N-Out Burger and a relaxing dinner at Destination Smokehouse. Day 2 immerses you in wine country, starting with a morning at Harveston Lake Park, followed by a charming lunch at The Goat & Vine, a stroll through historic Old Town Temecula's galleries and shops, and an afternoon wine-tasting tour at both Wilson Creek Winery and Leoness Cellars, capped with an elegant dinner at 1909 Temecula. Day 3 brings you south to experience the serene Santa Margarita River Trail Preserve, enjoy recreational activities at Patricia H. Birdsall Sports Park, explore the contemporary shopping and dining scene at Redhawk Towne Ctr, and finish with a tasting and dinner experience at Monserate Winery.\n\nYour home base is the budget-friendly Motel 6 Temecula, CA in Historic Old Town, offering exceptional value at just $47 per night for a three-night stay totaling $141. The area enjoys warm, dry weather throughout your visit with average temperatures around 30\u00b0C (86\u00b0F)\u2014perfect for outdoor activities and wine tasting. Expect a relaxed pace with early breakfasts fueling your daily adventures, and plan for casual to smart-casual attire for wineries and dining. The centralized location in Old Town puts you within easy reach of all confirmed activities, and the balanced itinerary alternates between active exploration and leisurely cultural experiences.\n\nPrepare for an unforgettable Temecula escape where wine flows, nature thrives, and peaceful evenings restore your spirit. This itinerary delivers authentic local experiences at an unbeatable value, with world-class wineries, outdoor natural wonders, and genuine hospitality at every turn. From morning trails to twilight tastings, every moment is designed for relaxation and discovery. Book your spot now and experience why Temecula is California's best-kept secret for the perfect getaway!",
+  "per_member_costs": [
+    {
+      "member_id": "ivy",
+      "name": "Ivy",
+      "budget_usd": 1700.0,
+      "flight_usd": 300.0,
+      "flight_is_estimated": true,
+      "hotel_share_usd": 141.0,
+      "activity_share_usd": 575.0,
+      "total_usd": 1016.0,
+      "headroom_usd": 684.0,
+      "utilization": 0.5976470588235294,
+      "fairness_utilization": 0.25941176470588234
+    }
+  ],
+  "provenance": {
+    "source_case_id": "12-nightlife_hard_avoid",
+    "source_tier": "offline",
+    "planner_output": "Recorded live model output replayed without network access.",
+    "flight_data": "K-002 baseline: fixed $300 estimated flight per member."
+  }
+}

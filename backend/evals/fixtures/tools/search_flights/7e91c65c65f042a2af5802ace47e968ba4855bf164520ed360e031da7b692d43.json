@@ -1,0 +1,21 @@
+{
+  "operation": "search_flights",
+  "request": {
+    "adults": 1,
+    "depart_date": "2026-09-08",
+    "destination": "Temecula",
+    "origin": "JFK",
+    "return_date": "2026-09-11"
+  },
+  "request_sha256": "7e91c65c65f042a2af5802ace47e968ba4855bf164520ed360e031da7b692d43",
+  "response": {
+    "airline": "Estimated",
+    "depart_time": "2026-09-08T08:00:00",
+    "destination": "Temecula",
+    "is_estimated": true,
+    "member_id": "",
+    "origin": "JFK",
+    "price_usd": 300.0,
+    "return_time": "2026-09-11T18:00:00"
+  }
+}

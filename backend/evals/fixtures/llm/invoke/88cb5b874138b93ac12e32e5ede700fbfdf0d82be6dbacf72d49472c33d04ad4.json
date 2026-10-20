@@ -1,0 +1,37 @@
+{
+  "operation": "invoke",
+  "request": {
+    "invoke_kwargs": {},
+    "node": "extract_preference_constraints",
+    "prompt": "Extract group trip planning constraints from natural-language preference notes.\nReturn ONLY raw JSON, no markdown, no backticks. Use this exact top-level shape:\n{raw_member_notes: list, raw_group_notes: string, hard_constraints: list, soft_preferences: list, schedule: object, activity_filters: object, meal_requirements: object, destination_intent: object}.\nClassify explicit must/avoid/timing requirements as hard_constraints. Classify general likes, vibes, and pacing as soft_preferences unless they are phrased as must/avoid.\nUse schedule.earliest_start_time as HH:MM when users avoid early mornings. Use activity_filters.avoid_tags for avoided activity categories. Use meal_requirements.must_include for cuisine or meal requirements. Use destination_intent.styles for destination-level intent like big_city, skyscrapers, skyline, architecture, museums, food_city, nightlife_city, beach, national_park, theme_parks, mountains, small_town, scenic_drives, shopping, quiet_escape. Use destination_intent.preferred_types for preferred destination types, and set destination_intent.iconic_preference true when users ask for iconic, famous, big-city, skyline, national-park, beach, or theme-park destinations.\n\nPreference notes JSON:\n{\"raw_member_notes\": [{\"member_id\": \"dana\", \"name\": \"Dana\", \"notes\": \"Happy with whatever the group picks.\"}, {\"member_id\": \"eli\", \"name\": \"Eli\", \"notes\": \"Wants city energy and iconic neighborhoods.\"}, {\"member_id\": \"mina\", \"name\": \"Mina\", \"notes\": \"Would love boutiques, markets, and good restaurants.\"}, {\"member_id\": \"gabe\", \"name\": \"Gabe\", \"notes\": \"Mostly wants scenic walks and not too much nightlife.\"}], \"raw_group_notes\": \"The group is split on what kind of trip this should be. Try to find a fair compromise.\", \"hard_constraints\": [], \"soft_preferences\": [], \"schedule\": {\"avoid_early_mornings\": false, \"earliest_start_time\": null, \"pace\": \"balanced\"}, \"activity_filters\": {\"avoid_tags\": [], \"prefer_tags\": [], \"required_tags\": []}, \"meal_requirements\": {\"must_include\": [], \"avoid_terms\": []}, \"destination_intent\": {\"styles\": [], \"landmarks\": [], \"preferred_types\": [], \"iconic_preference\": false}}",
+    "tools": []
+  },
+  "request_sha256": "88cb5b874138b93ac12e32e5ede700fbfdf0d82be6dbacf72d49472c33d04ad4",
+  "response": {
+    "data": {
+      "additional_kwargs": {},
+      "content": "```json\n{\n  \"raw_member_notes\": [\n    {\n      \"member_id\": \"dana\",\n      \"name\": \"Dana\",\n      \"notes\": \"Happy with whatever the group picks.\"\n    },\n    {\n      \"member_id\": \"eli\",\n      \"name\": \"Eli\",\n      \"notes\": \"Wants city energy and iconic neighborhoods.\"\n    },\n    {\n      \"member_id\": \"mina\",\n      \"name\": \"Mina\",\n      \"notes\": \"Would love boutiques, markets, and good restaurants.\"\n    },\n    {\n      \"member_id\": \"gabe\",\n      \"name\": \"Gabe\",\n      \"notes\": \"Mostly wants scenic walks and not too much nightlife.\"\n    }\n  ],\n  \"raw_group_notes\": \"The group is split on what kind of trip this should be. Try to find a fair compromise.\",\n  \"hard_constraints\": [\n    \"avoid_excessive_nightlife\"\n  ],\n  \"soft_preferences\": [\n    \"city_energy\",\n    \"iconic_neighborhoods\",\n    \"boutique_shopping\",\n    \"markets\",\n    \"good_restaurants\",\n    \"scenic_walks\",\n    \"balanced_pace\"\n  ],\n  \"schedule\": {\n    \"avoid_early_mornings\": false,\n    \"earliest_start_time\": null,\n    \"pace\": \"balanced\"\n  },\n  \"activity_filters\": {\n    \"avoid_tags\": [\n      \"nightlife\"\n    ],\n    \"prefer_tags\": [\n      \"walking\",\n      \"scenic\",\n      \"shopping\",\n      \"dining\"\n    ],\n    \"required_tags\": []\n  },\n  \"meal_requirements\": {\n    \"must_include\": [\n      \"good_restaurants\"\n    ],\n    \"avoid_terms\": []\n  },\n  \"destination_intent\": {\n    \"styles\": [\n      \"big_city\",\n      \"food_city\",\n      \"shopping\"\n    ],\n    \"landmarks\": [\n      \"iconic_neighborhoods\"\n    ],\n    \"preferred_types\": [],\n    \"iconic_preference\": true\n  }\n}\n```",
+      "id": "lc_run--01a07564-be0f-7f60-b843-2365520d2d20",
+      "invalid_tool_calls": [],
+      "name": null,
+      "response_metadata": {
+        "model_name": "claude-haiku-4-5-20251001",
+        "model_provider": "anthropic",
+        "stop_reason": "end_turn",
+        "stop_sequence": null
+      },
+      "tool_calls": [],
+      "type": "ai",
+      "usage_metadata": {
+        "input_token_details": {
+          "cache_creation": 0,
+          "cache_read": 0
+        },
+        "input_tokens": 570,
+        "output_tokens": 514,
+        "total_tokens": 1084
+      }
+    },
+    "type": "ai"
+  }
+}

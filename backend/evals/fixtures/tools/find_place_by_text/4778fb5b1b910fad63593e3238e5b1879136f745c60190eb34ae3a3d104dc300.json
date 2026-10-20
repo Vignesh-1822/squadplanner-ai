@@ -1,0 +1,29 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 28.949,
+      "lng": -95.293
+    },
+    "destination": "Surfside Beach",
+    "included_type": null,
+    "query": "Continued park time"
+  },
+  "request_sha256": "4778fb5b1b910fad63593e3238e5b1879136f745c60190eb34ae3a3d104dc300",
+  "response": {
+    "address": "101 Parkview Rd, Surfside Beach, TX 77541, USA",
+    "category": "place",
+    "lat": 28.9380657,
+    "lng": -95.2955537,
+    "name": "Surfside Jetty County Park",
+    "place_id": "ChIJHREgXUwTQIYRM50qzmXt9Ek",
+    "price_level": 0,
+    "rating": 4.5,
+    "tags": [
+      "park",
+      "tourist_attraction",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

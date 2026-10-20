@@ -16,6 +16,8 @@ from agent.nodes.parse_refinement import (
 )
 from agent.nodes.refine_agent import build_agentic_state_patch, plan_refinement_agentic
 from db.client import get_collection
+from evals.telemetry.usage import UsageTracker, telemetry_inc_fields
+from evals.tracing import build_callbacks, member_emails_from_trip
 from tools.google_places import fetch_activities_by_category, find_place_by_text
 from utils.streaming import _complete_payload, _get_orchestrator_graph, _stream_progress_events, format_sse_event
 
@@ -27,7 +29,7 @@ def _now() -> str:
 
 
 async def _resolve_refinement(
-    message: str, state: dict
+    message: str, state: dict, config: dict | None = None
 ) -> tuple[dict, dict, str, list[dict]]:
     """Plan a refinement, returning (parsed_event, state_patch, rerun_node, extra_activities).
 
@@ -37,7 +39,7 @@ async def _resolve_refinement(
     keep working offline / when the LLM is unavailable.
     """
     try:
-        plan, resolved = await plan_refinement_agentic(message, state)
+        plan, resolved = await plan_refinement_agentic(message, state, config=config)
     except UnsupportedRefinement:
         raise
     except Exception as exc:  # noqa: BLE001 - any agent failure degrades gracefully
@@ -100,25 +102,30 @@ async def _persist_refinement_complete(
     final_state: dict,
     payload: dict,
     parsed: dict,
+    telemetry_segment: dict,
 ) -> None:
+    update: dict[str, Any] = {
+        "$set": {
+            "status": "complete",
+            "trip_pitch": final_state.get("trip_pitch"),
+            "itinerary": payload["itinerary"],
+            "final_state": final_state,
+            "preference_constraints": payload["preference_constraints"],
+            "constraint_satisfaction": payload["constraint_satisfaction"],
+            "decision_log": final_state.get("decision_log", []),
+            "refinement_history": final_state.get("refinement_history", []),
+            f"refinements.{refinement_id}.status": "complete",
+            f"refinements.{refinement_id}.parsed": parsed,
+            f"refinements.{refinement_id}.completed_at": _now(),
+            "updated_at": _now(),
+        }
+    }
+    increments = telemetry_inc_fields(telemetry_segment)
+    if increments:
+        update["$inc"] = increments
     await trips.update_one(
         {"trip_id": trip_id},
-        {
-            "$set": {
-                "status": "complete",
-                "trip_pitch": final_state.get("trip_pitch"),
-                "itinerary": payload["itinerary"],
-                "final_state": final_state,
-                "preference_constraints": payload["preference_constraints"],
-                "constraint_satisfaction": payload["constraint_satisfaction"],
-                "decision_log": final_state.get("decision_log", []),
-                "refinement_history": final_state.get("refinement_history", []),
-                f"refinements.{refinement_id}.status": "complete",
-                f"refinements.{refinement_id}.parsed": parsed,
-                f"refinements.{refinement_id}.completed_at": _now(),
-                "updated_at": _now(),
-            }
-        },
+        update,
     )
 
 
@@ -129,12 +136,19 @@ async def stream_refinement_events(
     """Stream a completed-trip refinement by re-entering the existing graph state."""
     graph = await _get_orchestrator_graph()
     trips = get_collection("trips")
-    config = {"configurable": {"thread_id": trip_id}}
+    usage_tracker: UsageTracker | None = None
 
     try:
         trip = await trips.find_one({"trip_id": trip_id})
         if not trip:
             raise UnsupportedRefinement("Trip not found.", code="trip_not_found")
+        emails = member_emails_from_trip(trip)
+        callbacks, usage_tracker = build_callbacks(trip_id, emails)
+        config = {
+            "configurable": {"thread_id": trip_id},
+            "callbacks": callbacks,
+            "metadata": {"trip_id": trip_id, "refinement_id": refinement_id},
+        }
 
         refinement = _nested_get(trip, f"refinements.{refinement_id}")
         if not refinement:
@@ -173,7 +187,7 @@ async def stream_refinement_events(
             },
         )
 
-        parsed, patch, as_node, extra_activities = await _resolve_refinement(message, state)
+        parsed, patch, as_node, extra_activities = await _resolve_refinement(message, state, config)
 
         await trips.update_one(
             {"trip_id": trip_id},
@@ -219,21 +233,35 @@ async def stream_refinement_events(
         }
         payload["refinement_history"] = final_state.get("refinement_history", [])
 
-        await _persist_refinement_complete(trips, trip_id, refinement_id, final_state, payload, parsed)
+        telemetry_segment = usage_tracker.drain()
+        await _persist_refinement_complete(
+            trips,
+            trip_id,
+            refinement_id,
+            final_state,
+            payload,
+            parsed,
+            telemetry_segment,
+        )
         yield format_sse_event("REFINEMENT_COMPLETE", payload)
 
     except Exception as exc:  # noqa: BLE001
+        update: dict[str, Any] = {
+            "$set": {
+                "status": "complete",
+                f"refinements.{refinement_id}.status": "failed",
+                f"refinements.{refinement_id}.error": str(exc),
+                f"refinements.{refinement_id}.failed_at": _now(),
+                "updated_at": _now(),
+            }
+        }
+        if usage_tracker:
+            increments = telemetry_inc_fields(usage_tracker.drain())
+            if increments:
+                update["$inc"] = increments
         await trips.update_one(
             {"trip_id": trip_id},
-            {
-                "$set": {
-                    "status": "complete",
-                    f"refinements.{refinement_id}.status": "failed",
-                    f"refinements.{refinement_id}.error": str(exc),
-                    f"refinements.{refinement_id}.failed_at": _now(),
-                    "updated_at": _now(),
-                }
-            },
+            update,
         )
         yield format_sse_event(
             "ERROR",

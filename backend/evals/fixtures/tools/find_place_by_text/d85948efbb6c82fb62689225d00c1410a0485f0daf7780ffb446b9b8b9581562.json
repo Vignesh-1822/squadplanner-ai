@@ -1,0 +1,14 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 33.494,
+      "lng": -117.148
+    },
+    "destination": "Temecula",
+    "included_type": "restaurant",
+    "query": "Breakfast at Motel 6"
+  },
+  "request_sha256": "d85948efbb6c82fb62689225d00c1410a0485f0daf7780ffb446b9b8b9581562",
+  "response": null
+}

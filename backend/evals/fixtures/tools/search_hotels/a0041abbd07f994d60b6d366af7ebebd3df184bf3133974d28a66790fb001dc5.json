@@ -1,0 +1,25 @@
+{
+  "operation": "search_hotels",
+  "request": {
+    "budget_ceiling_usd": 810.0,
+    "check_in": "2026-09-08",
+    "check_out": "2026-09-11",
+    "coords": {
+      "lat": 28.949,
+      "lng": -95.293
+    },
+    "destination": "Surfside Beach"
+  },
+  "request_sha256": "a0041abbd07f994d60b6d366af7ebebd3df184bf3133974d28a66790fb001dc5",
+  "response": {
+    "address": "2411 S Ocean Blvd Ste a, Myrtle Beach, SC 29577, USA",
+    "is_estimated": false,
+    "lat": 33.6653447,
+    "lng": -78.910319,
+    "name": "Holiday Sands South Vacations",
+    "place_id": "ChIJt2GWluhpAIkRvQ4OEZYyJpw",
+    "price_per_night_usd": 64.0,
+    "rating": 3.8,
+    "total_price_usd": 192.0
+  }
+}

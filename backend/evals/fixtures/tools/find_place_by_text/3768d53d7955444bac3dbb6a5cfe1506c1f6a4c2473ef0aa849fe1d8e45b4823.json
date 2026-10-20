@@ -1,0 +1,29 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 28.949,
+      "lng": -95.293
+    },
+    "destination": "Surfside Beach",
+    "included_type": null,
+    "query": "Sea Center Texas visit"
+  },
+  "request_sha256": "3768d53d7955444bac3dbb6a5cfe1506c1f6a4c2473ef0aa849fe1d8e45b4823",
+  "response": {
+    "address": "302 Medical Dr, Lake Jackson, TX 77566, USA",
+    "category": "place",
+    "lat": 29.01748,
+    "lng": -95.44596159999999,
+    "name": "Sea Center Texas",
+    "place_id": "ChIJJ3BssNhDQIYRVuXF4VhGkEk",
+    "price_level": 0,
+    "rating": 4.7,
+    "tags": [
+      "aquarium",
+      "tourist_attraction",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

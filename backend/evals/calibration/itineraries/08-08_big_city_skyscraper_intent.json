@@ -1,0 +1,804 @@
+{
+  "id": "08-08_big_city_skyscraper_intent",
+  "group_notes": "People are flying from far apart. Keep the first day light and avoid assuming everyone arrives early.",
+  "members": [
+    {
+      "member_id": "ava",
+      "name": "Ava",
+      "origin_city": "SEA",
+      "budget_usd": 1900,
+      "food_restrictions": [],
+      "preference_notes": "I like big cities and urban exploration and want great nightclubs, but first day should be easy.",
+      "preference_vector": {
+        "outdoor": 0.1,
+        "food": 0.7,
+        "nightlife": 0.9,
+        "urban": 0.9,
+        "shopping": 0.7
+      },
+      "is_leader": true
+    },
+    {
+      "member_id": "ben",
+      "name": "Ben",
+      "origin_city": "MIA",
+      "budget_usd": 1600,
+      "food_restrictions": [],
+      "preference_notes": "Urban neighborhoods with dense skyscrapers and good food are the priority.",
+      "preference_vector": {
+        "outdoor": 0.3,
+        "food": 0.9,
+        "nightlife": 0.4,
+        "urban": 0.9,
+        "shopping": 0.3
+      },
+      "is_leader": false
+    },
+    {
+      "member_id": "chloe",
+      "name": "Chloe",
+      "origin_city": "BOS",
+      "budget_usd": 2000,
+      "food_restrictions": [],
+      "preference_notes": "Museums, walking, and no exhausting travel days. Also prefer a city with tall skyscrapers.",
+      "preference_vector": {
+        "outdoor": 0.5,
+        "food": 0.7,
+        "nightlife": 0.2,
+        "urban": 0.8,
+        "shopping": 0.5
+      },
+      "is_leader": false
+    },
+    {
+      "member_id": "diego",
+      "name": "Diego",
+      "origin_city": "PHX",
+      "budget_usd": 1500,
+      "food_restrictions": [],
+      "preference_notes": "Keep costs fair across the group.",
+      "preference_vector": {
+        "outdoor": 0.1,
+        "food": 0.5,
+        "nightlife": 0.8,
+        "urban": 0.9,
+        "shopping": 0.7
+      },
+      "is_leader": false
+    }
+  ],
+  "start_date": "2026-09-08",
+  "end_date": "2026-09-11",
+  "trip_duration_days": 3,
+  "destination": {
+    "name": "Chicago",
+    "coords": {
+      "lat": 41.8781,
+      "lng": -87.6298
+    }
+  },
+  "hotel": {
+    "name": "Ambassador Gold Coast - The Chicago Hotel Collection",
+    "address": "1301 N State Pkwy, Chicago, IL 60610, USA",
+    "price_per_night_usd": 82.0,
+    "total_price_usd": 246.0,
+    "rating": 3.2,
+    "is_estimated": false
+  },
+  "weather": {
+    "destination": "Chicago",
+    "date_range": "2026-09-08 to 2026-09-11",
+    "avg_temp_c": 23.9,
+    "precipitation_mm": 4.0,
+    "summary": "Mild (23.9\u00b0C avg), dry conditions"
+  },
+  "days": [
+    {
+      "day_number": 1,
+      "date": "2026-09-08",
+      "neighborhood": "Downtown Chicago / Loop",
+      "meals": [
+        "Wildberry Pancakes & Cafe",
+        "Giordano's",
+        "Cindy's Rooftop"
+      ],
+      "estimated_day_cost_usd": 320.0,
+      "schedule": [
+        {
+          "time": "10:00",
+          "type": "meal",
+          "label": "Breakfast",
+          "notes": "Wildberry Pancakes & Cafe near hotel"
+        },
+        {
+          "time": "10:30",
+          "type": "activity",
+          "label": "Millennium Park",
+          "notes": "Walking, iconic skyline views, free entry"
+        },
+        {
+          "time": "11:15",
+          "type": "activity",
+          "label": "Cloud Gate",
+          "notes": "Sculpture, walking, photo opportunity"
+        },
+        {
+          "time": "12:30",
+          "type": "meal",
+          "label": "Lunch",
+          "notes": "Giordano's Chicago classic deep-dish pizza"
+        },
+        {
+          "time": "14:00",
+          "type": "activity",
+          "label": "The Art Institute of Chicago",
+          "notes": "Museum, walking, world-class collection"
+        },
+        {
+          "time": "16:30",
+          "type": "activity",
+          "label": "Willis Tower",
+          "notes": "Iconic skyscraper, urban exploration, Skydeck views"
+        },
+        {
+          "time": "18:00",
+          "type": "activity",
+          "label": "Starbucks Reserve Roastery",
+          "notes": "Urban coffee experience, urban exploration"
+        },
+        {
+          "time": "19:30",
+          "type": "meal",
+          "label": "Dinner",
+          "notes": "Cindy's Rooftop with skyline views and nightlife atmosphere"
+        }
+      ],
+      "rationale": "Day 1 launches at the comfortable 10:00 AM start time with Broadway Cafe, allowing for varied arrival schedules. The Loop's iconic attractions\u2014Millennium Park, Cloud Gate, Willis Tower, and The Art Institute of Chicago\u2014showcase the dense skyscrapers and world-class museums that satisfy Chloe's preferences while delivering the urban architectural grandeur Ben prioritizes. This paced introduction respects Ava's request for an easy first day, avoiding overwhelming activities while establishing the big-city energy everyone expects. The Starbucks Reserve Roastery adds a cultural urban experience, and consistent meals at The Dearborn anchor the day logistically.",
+      "constraint_notes": [
+        "No activities before 10:00 AM\u2014respects late arrivals and avoids early mornings",
+        "Museums and walking activities emphasized (Art Institute, Millennium Park exploration)",
+        "Iconic skyscrapers and skyline featured (Willis Tower, Cloud Gate)",
+        "Balanced pacing for first day\u2014easy introduction per Ava's preference",
+        "Cost fair: hotel and meals at fixed venues keep spending predictable"
+      ],
+      "total_travel_minutes": 166,
+      "activities": [
+        {
+          "name": "Millennium Park",
+          "category": "urban",
+          "address": "Chicago, IL 60602, USA",
+          "lat": 41.8825524,
+          "lng": -87.62255139999999,
+          "price_level": 0,
+          "rating": 4.8,
+          "tags": [
+            "park",
+            "tourist_attraction",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Cloud Gate",
+          "category": "urban",
+          "address": "201 E Randolph St, Chicago, IL 60602, USA",
+          "lat": 41.8826572,
+          "lng": -87.6233039,
+          "price_level": 0,
+          "rating": 4.7,
+          "tags": [
+            "sculpture",
+            "tourist_attraction",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "The Art Institute of Chicago",
+          "category": "urban",
+          "address": "111 S Michigan Ave, Chicago, IL 60603, USA",
+          "lat": 41.8796031,
+          "lng": -87.6223504,
+          "price_level": 0,
+          "rating": 4.8,
+          "tags": [
+            "museum",
+            "tourist_attraction",
+            "art_museum",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Willis Tower",
+          "category": "urban",
+          "address": "233 S Wacker Dr, Chicago, IL 60606, USA",
+          "lat": 41.878876399999996,
+          "lng": -87.6359149,
+          "price_level": 0,
+          "rating": 4.5,
+          "tags": [
+            "tourist_attraction",
+            "observation_deck",
+            "corporate_office",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Starbucks Reserve Roastery",
+          "category": "urban",
+          "address": "646 N Michigan Ave, Chicago, IL 60611, USA",
+          "lat": 41.893924,
+          "lng": -87.62459729999999,
+          "price_level": 0,
+          "rating": 4.4,
+          "tags": [
+            "cafe",
+            "tourist_attraction",
+            "cocktail_bar",
+            "coffee_shop",
+            "bakery",
+            "bar",
+            "coffee_roastery",
+            "food_store",
+            "store",
+            "food",
+            "point_of_interest",
+            "establishment"
+          ]
+        }
+      ],
+      "routes": [
+        {
+          "distance_meters": 3095,
+          "duration_seconds": 2676,
+          "mode": "WALK",
+          "from_order": 1,
+          "to_order": 2,
+          "from_label": "Ambassador Gold Coast - The Chicago Hotel Collection",
+          "to_label": "Broadway Cafe"
+        },
+        {
+          "distance_meters": 698,
+          "duration_seconds": 621,
+          "mode": "WALK",
+          "from_order": 2,
+          "to_order": 3,
+          "from_label": "Broadway Cafe",
+          "to_label": "Millennium Park"
+        },
+        {
+          "distance_meters": 139,
+          "duration_seconds": 112,
+          "mode": "WALK",
+          "from_order": 3,
+          "to_order": 4,
+          "from_label": "Millennium Park",
+          "to_label": "Cloud Gate"
+        },
+        {
+          "distance_meters": 777,
+          "duration_seconds": 667,
+          "mode": "WALK",
+          "from_order": 4,
+          "to_order": 5,
+          "from_label": "Cloud Gate",
+          "to_label": "The Dearborn"
+        },
+        {
+          "distance_meters": 1033,
+          "duration_seconds": 948,
+          "mode": "WALK",
+          "from_order": 5,
+          "to_order": 6,
+          "from_label": "The Dearborn",
+          "to_label": "The Art Institute of Chicago"
+        },
+        {
+          "distance_meters": 1573,
+          "duration_seconds": 1419,
+          "mode": "WALK",
+          "from_order": 6,
+          "to_order": 7,
+          "from_label": "The Art Institute of Chicago",
+          "to_label": "Willis Tower"
+        },
+        {
+          "distance_meters": 2563,
+          "duration_seconds": 2247,
+          "mode": "WALK",
+          "from_order": 7,
+          "to_order": 8,
+          "from_label": "Willis Tower",
+          "to_label": "Starbucks Reserve Roastery"
+        },
+        {
+          "distance_meters": 1482,
+          "duration_seconds": 1294,
+          "mode": "WALK",
+          "from_order": 8,
+          "to_order": 9,
+          "from_label": "Starbucks Reserve Roastery",
+          "to_label": "The Dearborn"
+        }
+      ]
+    },
+    {
+      "day_number": 2,
+      "date": "2026-09-09",
+      "neighborhood": "Lincoln Park / Clybourn Corridor",
+      "meals": [
+        "Wildberry Pancakes & Cafe",
+        "Pequod's Pizza",
+        "Aba"
+      ],
+      "estimated_day_cost_usd": 280.0,
+      "schedule": [
+        {
+          "time": "10:00",
+          "type": "meal",
+          "label": "Breakfast",
+          "notes": "Wildberry Pancakes & Cafe, near hotel, early enough for full day"
+        },
+        {
+          "time": "11:00",
+          "type": "activity",
+          "label": "Lincoln Park Zoo",
+          "notes": "Free entry, walking, urban green space within walkable neighborhood"
+        },
+        {
+          "time": "13:00",
+          "type": "meal",
+          "label": "Lunch",
+          "notes": "Pequod's Pizza, iconic Chicago caramelized crust"
+        },
+        {
+          "time": "14:30",
+          "type": "activity",
+          "label": "Wrigley Field",
+          "notes": "Historic venue tour or exterior exploration, urban landmark"
+        },
+        {
+          "time": "16:00",
+          "type": "activity",
+          "label": "The Brickyard",
+          "notes": "Shopping and neighborhood exploration"
+        },
+        {
+          "time": "18:00",
+          "type": "activity",
+          "label": "Neighborhood walking",
+          "notes": "Clybourn Corridor walkability, urban exploration"
+        },
+        {
+          "time": "19:30",
+          "type": "meal",
+          "label": "Dinner",
+          "notes": "Aba, upscale Mediterranean cuisine, nightlife-friendly venue"
+        }
+      ],
+      "rationale": "Day 2 expands into Lincoln Park and the Clybourn Corridor, neighborhoods that embody urban exploration and walkability while maintaining balanced pacing. Lincoln Park Zoo and Wrigley Field deliver iconic Chicago experiences with neighborhood character, The Brickyard provides urban energy and dense development exploration, and Southbank Riverwalk offers scenic walking. This day satisfies Ben's focus on vibrant urban neighborhoods with good food (The Dearborn returns), Chloe's preference for walking and manageable daily rhythm, and Ava's desire for big-city exploration without exhaustion. The variety of venues keeps energy high while respecting the group's balanced-pace preference.",
+      "constraint_notes": [
+        "Walking and urban neighborhood exploration throughout",
+        "Historic and cultural landmarks (Wrigley Field, Lincoln Park Zoo)",
+        "No early starts\u201410:00 AM breakfast maintains schedule preference",
+        "Balanced activity mix prevents fatigue while delivering urban energy",
+        "Cost stability through consistent hotel and dining venues"
+      ],
+      "total_travel_minutes": 714,
+      "activities": [
+        {
+          "name": "Lincoln Park Zoo",
+          "category": "urban",
+          "address": "Chicago, IL 60614, USA",
+          "lat": 41.921703,
+          "lng": -87.6336403,
+          "price_level": 0,
+          "rating": 4.6,
+          "tags": [
+            "zoo",
+            "tourist_attraction",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Wrigley Field",
+          "category": "urban",
+          "address": "1060 W Addison St, Chicago, IL 60613, USA",
+          "lat": 41.9484384,
+          "lng": -87.6553327,
+          "price_level": 0,
+          "rating": 4.8,
+          "tags": [
+            "stadium",
+            "tourist_attraction",
+            "event_venue",
+            "sports_complex",
+            "athletic_field",
+            "sports_activity_location",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "The Brickyard",
+          "category": "shopping",
+          "address": "2600 N Narragansett Ave, Chicago, IL 60639, USA",
+          "lat": 41.9284572,
+          "lng": -87.7873882,
+          "price_level": 0,
+          "rating": 4.3,
+          "tags": [
+            "shopping_mall",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Pequod's Pizza",
+          "category": "nightlife",
+          "address": "2207 N Clybourn Ave, Chicago, IL 60614, USA",
+          "lat": 41.921934,
+          "lng": -87.6643512,
+          "price_level": 0,
+          "rating": 4.4,
+          "tags": [
+            "pizza_restaurant",
+            "family_restaurant",
+            "sports_bar",
+            "pizza_delivery",
+            "meal_delivery",
+            "meal_takeaway",
+            "pub",
+            "catering_service",
+            "food_delivery",
+            "european_restaurant",
+            "italian_restaurant",
+            "bar",
+            "restaurant",
+            "food",
+            "point_of_interest",
+            "service",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Southbank Riverwalk",
+          "category": "place",
+          "address": "600 S Wells St, Chicago, IL 60607, USA",
+          "lat": 41.8741536,
+          "lng": -87.6354953,
+          "price_level": 0,
+          "rating": 4.8,
+          "tags": [
+            "city_park",
+            "park",
+            "point_of_interest",
+            "establishment"
+          ]
+        }
+      ],
+      "routes": [
+        {
+          "distance_meters": 3095,
+          "duration_seconds": 2676,
+          "mode": "WALK",
+          "from_order": 1,
+          "to_order": 2,
+          "from_label": "Ambassador Gold Coast - The Chicago Hotel Collection",
+          "to_label": "Broadway Cafe"
+        },
+        {
+          "distance_meters": 5100,
+          "duration_seconds": 4335,
+          "mode": "WALK",
+          "from_order": 2,
+          "to_order": 3,
+          "from_label": "Broadway Cafe",
+          "to_label": "Lincoln Park Zoo"
+        },
+        {
+          "distance_meters": 4362,
+          "duration_seconds": 3690,
+          "mode": "WALK",
+          "from_order": 3,
+          "to_order": 4,
+          "from_label": "Lincoln Park Zoo",
+          "to_label": "The Dearborn"
+        },
+        {
+          "distance_meters": 7819,
+          "duration_seconds": 6611,
+          "mode": "WALK",
+          "from_order": 4,
+          "to_order": 5,
+          "from_label": "The Dearborn",
+          "to_label": "Wrigley Field"
+        },
+        {
+          "distance_meters": 12879,
+          "duration_seconds": 10879,
+          "mode": "WALK",
+          "from_order": 5,
+          "to_order": 6,
+          "from_label": "Wrigley Field",
+          "to_label": "The Brickyard"
+        },
+        {
+          "distance_meters": 15752,
+          "duration_seconds": 13257,
+          "mode": "WALK",
+          "from_order": 6,
+          "to_order": 7,
+          "from_label": "The Brickyard",
+          "to_label": "Southbank Riverwalk"
+        },
+        {
+          "distance_meters": 1647,
+          "duration_seconds": 1443,
+          "mode": "WALK",
+          "from_order": 7,
+          "to_order": 8,
+          "from_label": "Southbank Riverwalk",
+          "to_label": "The Dearborn"
+        }
+      ]
+    },
+    {
+      "day_number": 3,
+      "date": "2026-09-10",
+      "neighborhood": "Museum Campus / Grant Park",
+      "meals": [
+        "Wildberry Pancakes & Cafe",
+        "Eataly",
+        "Quartino Ristorante"
+      ],
+      "estimated_day_cost_usd": 340.0,
+      "schedule": [
+        {
+          "time": "10:00",
+          "type": "meal",
+          "label": "Breakfast",
+          "notes": "Wildberry Pancakes & Cafe, near hotel"
+        },
+        {
+          "time": "11:00",
+          "type": "activity",
+          "label": "Field Museum",
+          "notes": "Major museum, walking, world-class exhibits, iconic Chicago institution"
+        },
+        {
+          "time": "13:00",
+          "type": "meal",
+          "label": "Lunch",
+          "notes": "Eataly, Italian marketplace and restaurant, food-focused experience"
+        },
+        {
+          "time": "14:30",
+          "type": "activity",
+          "label": "Shedd Aquarium",
+          "notes": "Museum-style experience, walking, urban lakefront landmark"
+        },
+        {
+          "time": "16:30",
+          "type": "activity",
+          "label": "Grant Park walking",
+          "notes": "Urban outdoor exploration, skyline views, walkable green space"
+        },
+        {
+          "time": "17:30",
+          "type": "activity",
+          "label": "Roosevelt Collection Shops",
+          "notes": "Shopping, neighborhood exploration"
+        },
+        {
+          "time": "19:30",
+          "type": "meal",
+          "label": "Dinner",
+          "notes": "Quartino Ristorante, Italian cuisine, upscale nightlife atmosphere"
+        }
+      ],
+      "rationale": "Day 3 culminates at Museum Campus and Grant Park, delivering the museum-rich experience Chloe prioritizes while maintaining walkable, explorable spaces. The Field Museum and Shedd Aquarium represent world-class institutions that anchor Chicago's cultural identity, Grant Park provides expansive green space for continued walking and urban reflection, and Roosevelt Collection Shops offer final urban retail exploration. This finale respects everyone's preferences: museums and walkability for Chloe, urban landmarks and architectural diversity for Ben, continued city energy for Ava, and consistent cost structure for Diego. The day balances cultural depth with manageable pacing, ending the trip on a high note without fatigue.",
+      "constraint_notes": [
+        "Museums as centerpiece (Field Museum, Shedd Aquarium)\u2014core group preference",
+        "Walking and green space exploration (Grant Park and paths between venues)",
+        "Urban neighborhood retail (Roosevelt Collection Shops) adds exploratory variety",
+        "10:00 AM start maintains no-early-mornings standard",
+        "Final meals and hotel checkout coordinated through consistent venues; cost remains fair"
+      ],
+      "total_travel_minutes": 232,
+      "activities": [
+        {
+          "name": "Field Museum",
+          "category": "urban",
+          "address": "1400 S Lake Shore Dr, Chicago, IL 60605, USA",
+          "lat": 41.866261,
+          "lng": -87.6169805,
+          "price_level": 0,
+          "rating": 4.7,
+          "tags": [
+            "tourist_attraction",
+            "museum",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Shedd Aquarium",
+          "category": "urban",
+          "address": "1200 S DuSable Lake Shore Dr, Chicago, IL 60605, USA",
+          "lat": 41.867572599999995,
+          "lng": -87.614038,
+          "price_level": 0,
+          "rating": 4.5,
+          "tags": [
+            "aquarium",
+            "historical_landmark",
+            "tourist_attraction",
+            "historical_place",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Grant Park",
+          "category": "place",
+          "address": "331 E. Randolph St N Columbus Dr, Chicago, IL 60601, USA",
+          "lat": 41.8739324,
+          "lng": -87.61988079999999,
+          "price_level": 0,
+          "rating": 4.7,
+          "tags": [
+            "city_park",
+            "tourist_attraction",
+            "park",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Roosevelt Collection Shops",
+          "category": "shopping",
+          "address": "150 W Roosevelt Rd, Chicago, IL 60605, USA",
+          "lat": 41.8678745,
+          "lng": -87.632564,
+          "price_level": 0,
+          "rating": 4.4,
+          "tags": [
+            "shopping_mall",
+            "point_of_interest",
+            "establishment"
+          ]
+        }
+      ],
+      "routes": [
+        {
+          "distance_meters": 3095,
+          "duration_seconds": 2676,
+          "mode": "WALK",
+          "from_order": 1,
+          "to_order": 2,
+          "from_label": "Ambassador Gold Coast - The Chicago Hotel Collection",
+          "to_label": "Broadway Cafe"
+        },
+        {
+          "distance_meters": 2180,
+          "duration_seconds": 1852,
+          "mode": "WALK",
+          "from_order": 2,
+          "to_order": 3,
+          "from_label": "Broadway Cafe",
+          "to_label": "Field Museum"
+        },
+        {
+          "distance_meters": 2896,
+          "duration_seconds": 2439,
+          "mode": "WALK",
+          "from_order": 3,
+          "to_order": 4,
+          "from_label": "Field Museum",
+          "to_label": "The Dearborn"
+        },
+        {
+          "distance_meters": 3055,
+          "duration_seconds": 2589,
+          "mode": "WALK",
+          "from_order": 4,
+          "to_order": 5,
+          "from_label": "The Dearborn",
+          "to_label": "Shedd Aquarium"
+        },
+        {
+          "distance_meters": 1182,
+          "duration_seconds": 1001,
+          "mode": "WALK",
+          "from_order": 5,
+          "to_order": 6,
+          "from_label": "Shedd Aquarium",
+          "to_label": "Grant Park"
+        },
+        {
+          "distance_meters": 1754,
+          "duration_seconds": 1496,
+          "mode": "WALK",
+          "from_order": 6,
+          "to_order": 7,
+          "from_label": "Grant Park",
+          "to_label": "Roosevelt Collection Shops"
+        },
+        {
+          "distance_meters": 2246,
+          "duration_seconds": 1926,
+          "mode": "WALK",
+          "from_order": 7,
+          "to_order": 8,
+          "from_label": "Roosevelt Collection Shops",
+          "to_label": "The Dearborn"
+        }
+      ]
+    }
+  ],
+  "trip_pitch": "Chicago is the ultimate big-city destination for your group, perfectly balancing urban exploration, world-class museums, and iconic skyscrapers that define the modern American metropolis. With its walkable neighborhoods, dense downtown core, and vibrant cultural scene, Chicago delivers the architectural grandeur and cosmopolitan energy that appeals to everyone\u2014from museum enthusiasts to urban explorers who crave the pulse of a major metropolitan center. The city's legendary food scene and carefully curated itinerary ensure Ben's culinary and architectural priorities are met, while Chloe enjoys museum-rich days at a comfortable pace, and everyone experiences the scale and sophistication of true urban living.\n\nYour three-day journey captures Chicago's essence through carefully sequenced neighborhoods and landmarks. Day 1 anchors you in the iconic Loop, starting with Millennium Park and the famous Cloud Gate sculpture before ascending Willis Tower and absorbing world-class art at The Art Institute of Chicago\u2014a perfect introduction that respects everyone's arrival schedules with a 10:00 start. Day 2 shifts to Lincoln Park and the Clybourn Corridor, combining the beloved Lincoln Park Zoo with the historic charm of Wrigley Field, The Brickyard's urban energy, and the scenic Southbank Riverwalk for a neighborhood-focused experience. Day 3 concludes at Museum Campus and Grant Park, where the Field Museum and Shedd Aquarium deliver museum excellence, Grant Park's expansive green space provides walking and reflection, and Roosevelt Collection Shops offer a final urban retail exploration\u2014all bookended by consistent dining at The Dearborn and Broadway Cafe.\n\nYou'll base yourselves at the Ambassador Gold Coast\u2014The Chicago Hotel Collection hotel for all three nights at just $82 nightly, keeping costs fair and predictable for the group. Expect mild, dry September weather averaging 23.9\u00b0C, perfect for extended walking and outdoor exploration without weather disruptions. Daily schedules respect your group's preference for balanced pacing and no exhausting early mornings, with all activities launching at or after 10:00 AM to accommodate varied arrival times. Meals are anchored at trusted venues, ensuring consistent quality and allowing you to focus energy on iconic sights rather than restaurant hunting.\n\nChicago awaits with its towering skyline, world-famous museums, walkable neighborhoods, and the authentic urban energy your group craves. This itinerary delivers the big-city experience, cultural depth, and logistical ease that transform a group trip into an unforgettable shared adventure. From the reflective expanse of Cloud Gate to the immersive galleries of the Art Institute, from the historic ballpark to the natural wonders of the aquarium, every day offers the iconic landmarks and urban exploration that make Chicago irresistible.",
+  "per_member_costs": [
+    {
+      "member_id": "ava",
+      "name": "Ava",
+      "budget_usd": 1900.0,
+      "flight_usd": 300.0,
+      "flight_is_estimated": true,
+      "hotel_share_usd": 61.5,
+      "activity_share_usd": 235.0,
+      "total_usd": 596.5,
+      "headroom_usd": 1303.5,
+      "utilization": 0.31394736842105264,
+      "fairness_utilization": 0.19026315789473683
+    },
+    {
+      "member_id": "ben",
+      "name": "Ben",
+      "budget_usd": 1600.0,
+      "flight_usd": 300.0,
+      "flight_is_estimated": true,
+      "hotel_share_usd": 61.5,
+      "activity_share_usd": 235.0,
+      "total_usd": 596.5,
+      "headroom_usd": 1003.5,
+      "utilization": 0.3728125,
+      "fairness_utilization": 0.2259375
+    },
+    {
+      "member_id": "chloe",
+      "name": "Chloe",
+      "budget_usd": 2000.0,
+      "flight_usd": 300.0,
+      "flight_is_estimated": true,
+      "hotel_share_usd": 61.5,
+      "activity_share_usd": 235.0,
+      "total_usd": 596.5,
+      "headroom_usd": 1403.5,
+      "utilization": 0.29825,
+      "fairness_utilization": 0.18075
+    },
+    {
+      "member_id": "diego",
+      "name": "Diego",
+      "budget_usd": 1500.0,
+      "flight_usd": 300.0,
+      "flight_is_estimated": true,
+      "hotel_share_usd": 61.5,
+      "activity_share_usd": 235.0,
+      "total_usd": 596.5,
+      "headroom_usd": 903.5,
+      "utilization": 0.39766666666666667,
+      "fairness_utilization": 0.241
+    }
+  ],
+  "provenance": {
+    "source_case_id": "08-08_big_city_skyscraper_intent",
+    "source_tier": "offline",
+    "planner_output": "Recorded live model output replayed without network access.",
+    "flight_data": "K-002 baseline: fixed $300 estimated flight per member."
+  }
+}

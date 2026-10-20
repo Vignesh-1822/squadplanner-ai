@@ -1,0 +1,18 @@
+{
+  "operation": "fetch_weather",
+  "request": {
+    "destination_name": "Surfside Beach",
+    "end_date": "2026-09-21",
+    "lat": 28.949,
+    "lng": -95.293,
+    "start_date": "2026-09-07"
+  },
+  "request_sha256": "d16c4f136a77d6592710bb9b01ce747c690b20f048ae3fcfd2c333b31a93a119",
+  "response": {
+    "avg_temp_c": 28.9,
+    "date_range": "2026-09-07 to 2026-09-21",
+    "destination": "Surfside Beach",
+    "precipitation_mm": 25.5,
+    "summary": "Warm (28.9\u00b0C avg), significant rain expected"
+  }
+}

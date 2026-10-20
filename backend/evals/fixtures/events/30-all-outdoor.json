@@ -1,0 +1,3866 @@
+{
+  "case_id": "30-all-outdoor",
+  "events": [
+    {
+      "event": "on_chain_start",
+      "name": "LangGraph",
+      "timestamp": "2026-09-06T18:33:14.095141+00:00",
+      "run_id": "01a077fe-fa6e-7041-8892-ff9b2dbb816b",
+      "parent_ids": [],
+      "tags": [],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "parse_input",
+      "timestamp": "2026-09-06T18:33:14.097946+00:00",
+      "run_id": "01a077fe-fa70-7fd3-bfae-772c53470477",
+      "parent_ids": [
+        "01a077fe-fa6e-7041-8892-ff9b2dbb816b"
+      ],
+      "tags": [
+        "graph:step:1"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 1,
+        "langgraph_node": "parse_input",
+        "langgraph_triggers": [
+          "branch:to:parse_input"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "parse_input"
+        ],
+        "langgraph_checkpoint_ns": "parse_input:b4c8366c-f855-6592-07d3-11d7ce88eb7d"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "parse_input",
+      "timestamp": "2026-09-06T18:33:14.098805+00:00",
+      "run_id": "01a077fe-fa70-7fd3-bfae-772c53470477",
+      "parent_ids": [
+        "01a077fe-fa6e-7041-8892-ff9b2dbb816b"
+      ],
+      "tags": [
+        "graph:step:1"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 1,
+        "langgraph_node": "parse_input",
+        "langgraph_triggers": [
+          "branch:to:parse_input"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "parse_input"
+        ],
+        "langgraph_checkpoint_ns": "parse_input:b4c8366c-f855-6592-07d3-11d7ce88eb7d"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "extract_preference_constraints",
+      "timestamp": "2026-09-06T18:33:14.100165+00:00",
+      "run_id": "01a077fe-fa73-75e3-a082-ef87a53e63df",
+      "parent_ids": [
+        "01a077fe-fa6e-7041-8892-ff9b2dbb816b"
+      ],
+      "tags": [
+        "graph:step:2"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 2,
+        "langgraph_node": "extract_preference_constraints",
+        "langgraph_triggers": [
+          "branch:to:extract_preference_constraints"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "extract_preference_constraints"
+        ],
+        "langgraph_checkpoint_ns": "extract_preference_constraints:ae2129ca-ca7a-76bb-14b5-441f95205d3c"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "extract_preference_constraints",
+      "timestamp": "2026-09-06T18:33:14.102626+00:00",
+      "run_id": "01a077fe-fa73-75e3-a082-ef87a53e63df",
+      "parent_ids": [
+        "01a077fe-fa6e-7041-8892-ff9b2dbb816b"
+      ],
+      "tags": [
+        "graph:step:2"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 2,
+        "langgraph_node": "extract_preference_constraints",
+        "langgraph_triggers": [
+          "branch:to:extract_preference_constraints"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "extract_preference_constraints"
+        ],
+        "langgraph_checkpoint_ns": "extract_preference_constraints:ae2129ca-ca7a-76bb-14b5-441f95205d3c"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "select_destination",
+      "timestamp": "2026-09-06T18:33:14.104356+00:00",
+      "run_id": "01a077fe-fa77-7550-b093-160200189f5a",
+      "parent_ids": [
+        "01a077fe-fa6e-7041-8892-ff9b2dbb816b"
+      ],
+      "tags": [
+        "graph:step:3"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 3,
+        "langgraph_node": "select_destination",
+        "langgraph_triggers": [
+          "branch:to:select_destination"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "select_destination"
+        ],
+        "langgraph_checkpoint_ns": "select_destination:b89c36ab-cffd-6aa1-71b6-5393fb203a3c"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "select_destination",
+      "timestamp": "2026-09-06T18:33:14.200478+00:00",
+      "run_id": "01a077fe-fa77-7550-b093-160200189f5a",
+      "parent_ids": [
+        "01a077fe-fa6e-7041-8892-ff9b2dbb816b"
+      ],
+      "tags": [
+        "graph:step:3"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 3,
+        "langgraph_node": "select_destination",
+        "langgraph_triggers": [
+          "branch:to:select_destination"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "select_destination"
+        ],
+        "langgraph_checkpoint_ns": "select_destination:b89c36ab-cffd-6aa1-71b6-5393fb203a3c"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "city_selection_hitl",
+      "timestamp": "2026-09-06T18:33:14.203738+00:00",
+      "run_id": "01a077fe-fada-7972-a00f-959b063d5c1f",
+      "parent_ids": [
+        "01a077fe-fa6e-7041-8892-ff9b2dbb816b"
+      ],
+      "tags": [
+        "graph:step:4"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 4,
+        "langgraph_node": "city_selection_hitl",
+        "langgraph_triggers": [
+          "branch:to:city_selection_hitl"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "city_selection_hitl"
+        ],
+        "langgraph_checkpoint_ns": "city_selection_hitl:067b3d42-1712-baca-080e-7b05406b8205"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "LangGraph",
+      "timestamp": "2026-09-06T18:33:14.206398+00:00",
+      "run_id": "01a077fe-fa6e-7041-8892-ff9b2dbb816b",
+      "parent_ids": [],
+      "tags": [],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "LangGraph",
+      "timestamp": "2026-09-06T18:33:14.210807+00:00",
+      "run_id": "01a077fe-fae1-7d22-970a-99fcaad98383",
+      "parent_ids": [],
+      "tags": [],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "city_selection_hitl",
+      "timestamp": "2026-09-06T18:33:14.212402+00:00",
+      "run_id": "01a077fe-fae3-7472-bd26-70ed49a9e82c",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383"
+      ],
+      "tags": [
+        "graph:step:4"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 4,
+        "langgraph_node": "city_selection_hitl",
+        "langgraph_triggers": [
+          "branch:to:city_selection_hitl"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "city_selection_hitl"
+        ],
+        "langgraph_checkpoint_ns": "city_selection_hitl:067b3d42-1712-baca-080e-7b05406b8205"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "city_selection_hitl",
+      "timestamp": "2026-09-06T18:33:14.213260+00:00",
+      "run_id": "01a077fe-fae3-7472-bd26-70ed49a9e82c",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383"
+      ],
+      "tags": [
+        "graph:step:4"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 4,
+        "langgraph_node": "city_selection_hitl",
+        "langgraph_triggers": [
+          "branch:to:city_selection_hitl"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "city_selection_hitl"
+        ],
+        "langgraph_checkpoint_ns": "city_selection_hitl:067b3d42-1712-baca-080e-7b05406b8205"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "dynamic_tool_selection",
+      "timestamp": "2026-09-06T18:33:14.214659+00:00",
+      "run_id": "01a077fe-fae6-7c41-82f7-9576933e1f53",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383"
+      ],
+      "tags": [
+        "graph:step:5"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 5,
+        "langgraph_node": "dynamic_tool_selection",
+        "langgraph_triggers": [
+          "branch:to:dynamic_tool_selection"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "dynamic_tool_selection"
+        ],
+        "langgraph_checkpoint_ns": "dynamic_tool_selection:7fe6c26e-9dee-843a-10ef-fa9c45c0118c"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "dynamic_tool_selection",
+      "timestamp": "2026-09-06T18:33:14.215579+00:00",
+      "run_id": "01a077fe-fae6-7c41-82f7-9576933e1f53",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383"
+      ],
+      "tags": [
+        "graph:step:5"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 5,
+        "langgraph_node": "dynamic_tool_selection",
+        "langgraph_triggers": [
+          "branch:to:dynamic_tool_selection"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "dynamic_tool_selection"
+        ],
+        "langgraph_checkpoint_ns": "dynamic_tool_selection:7fe6c26e-9dee-843a-10ef-fa9c45c0118c"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "parallel_data_fetch",
+      "timestamp": "2026-09-06T18:33:14.217042+00:00",
+      "run_id": "01a077fe-fae8-74a2-82ea-90548c9e1b56",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383"
+      ],
+      "tags": [
+        "graph:step:6"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 6,
+        "langgraph_node": "parallel_data_fetch",
+        "langgraph_triggers": [
+          "branch:to:parallel_data_fetch"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "parallel_data_fetch"
+        ],
+        "langgraph_checkpoint_ns": "parallel_data_fetch:ddbb8065-d406-24e3-c1c0-9b2907ec0c9d"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "parallel_data_fetch",
+      "timestamp": "2026-09-06T18:33:14.221733+00:00",
+      "run_id": "01a077fe-fae8-74a2-82ea-90548c9e1b56",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383"
+      ],
+      "tags": [
+        "graph:step:6"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 6,
+        "langgraph_node": "parallel_data_fetch",
+        "langgraph_triggers": [
+          "branch:to:parallel_data_fetch"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "parallel_data_fetch"
+        ],
+        "langgraph_checkpoint_ns": "parallel_data_fetch:ddbb8065-d406-24e3-c1c0-9b2907ec0c9d"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "budget_analysis",
+      "timestamp": "2026-09-06T18:33:14.224072+00:00",
+      "run_id": "01a077fe-faef-75f2-bfcb-06052ce47ff8",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383"
+      ],
+      "tags": [
+        "graph:step:7"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 7,
+        "langgraph_node": "budget_analysis",
+        "langgraph_triggers": [
+          "branch:to:budget_analysis"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "budget_analysis"
+        ],
+        "langgraph_checkpoint_ns": "budget_analysis:9a1e181e-bf8d-61c0-522f-92da18fa8d2a"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "route_after_budget",
+      "timestamp": "2026-09-06T18:33:14.227970+00:00",
+      "run_id": "01a077fe-faf3-7890-8b0e-f2313213f4cf",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-faef-75f2-bfcb-06052ce47ff8"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 7,
+        "langgraph_node": "budget_analysis",
+        "langgraph_triggers": [
+          "branch:to:budget_analysis"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "budget_analysis"
+        ],
+        "langgraph_checkpoint_ns": "budget_analysis:9a1e181e-bf8d-61c0-522f-92da18fa8d2a"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "route_after_budget",
+      "timestamp": "2026-09-06T18:33:14.228724+00:00",
+      "run_id": "01a077fe-faf3-7890-8b0e-f2313213f4cf",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-faef-75f2-bfcb-06052ce47ff8"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 7,
+        "langgraph_node": "budget_analysis",
+        "langgraph_triggers": [
+          "branch:to:budget_analysis"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "budget_analysis"
+        ],
+        "langgraph_checkpoint_ns": "budget_analysis:9a1e181e-bf8d-61c0-522f-92da18fa8d2a"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "budget_analysis",
+      "timestamp": "2026-09-06T18:33:14.229609+00:00",
+      "run_id": "01a077fe-faef-75f2-bfcb-06052ce47ff8",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383"
+      ],
+      "tags": [
+        "graph:step:7"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 7,
+        "langgraph_node": "budget_analysis",
+        "langgraph_triggers": [
+          "branch:to:budget_analysis"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "budget_analysis"
+        ],
+        "langgraph_checkpoint_ns": "budget_analysis:9a1e181e-bf8d-61c0-522f-92da18fa8d2a"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "search_hotel",
+      "timestamp": "2026-09-06T18:33:14.231302+00:00",
+      "run_id": "01a077fe-faf6-7e31-8355-e8cfcc3d6c8e",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383"
+      ],
+      "tags": [
+        "graph:step:8"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 8,
+        "langgraph_node": "search_hotel",
+        "langgraph_triggers": [
+          "branch:to:search_hotel"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "search_hotel"
+        ],
+        "langgraph_checkpoint_ns": "search_hotel:4c8639ff-6138-06ad-cf9e-9b11df762559"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "search_hotel",
+      "timestamp": "2026-09-06T18:33:14.233123+00:00",
+      "run_id": "01a077fe-faf6-7e31-8355-e8cfcc3d6c8e",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383"
+      ],
+      "tags": [
+        "graph:step:8"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 8,
+        "langgraph_node": "search_hotel",
+        "langgraph_triggers": [
+          "branch:to:search_hotel"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "search_hotel"
+        ],
+        "langgraph_checkpoint_ns": "search_hotel:4c8639ff-6138-06ad-cf9e-9b11df762559"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "run_itinerary_node",
+      "timestamp": "2026-09-06T18:33:14.234442+00:00",
+      "run_id": "01a077fe-fafa-7173-90db-34d4720ca734",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383"
+      ],
+      "tags": [
+        "graph:step:9"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "run_itinerary_node",
+        "langgraph_triggers": [
+          "branch:to:run_itinerary_node"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "run_itinerary_node"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "LangGraph",
+      "timestamp": "2026-09-06T18:33:14.235162+00:00",
+      "run_id": "01a077fe-fafa-7173-90db-34ed54008f6f",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734"
+      ],
+      "tags": [
+        "seq:step:1"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "run_itinerary_node",
+        "langgraph_triggers": [
+          "branch:to:run_itinerary_node"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "run_itinerary_node"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "cluster_by_neighborhood",
+      "timestamp": "2026-09-06T18:33:14.237851+00:00",
+      "run_id": "01a077fe-fafc-77a2-86c1-cf91c8cac052",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734",
+        "01a077fe-fafa-7173-90db-34ed54008f6f"
+      ],
+      "tags": [
+        "graph:step:1"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 1,
+        "langgraph_node": "cluster_by_neighborhood",
+        "langgraph_triggers": [
+          "branch:to:cluster_by_neighborhood"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "cluster_by_neighborhood"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89|cluster_by_neighborhood:b304a538-9d3b-8a09-fbb1-3aa106da57ac",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "cluster_by_neighborhood",
+      "timestamp": "2026-09-06T18:33:14.239609+00:00",
+      "run_id": "01a077fe-fafc-77a2-86c1-cf91c8cac052",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734",
+        "01a077fe-fafa-7173-90db-34ed54008f6f"
+      ],
+      "tags": [
+        "graph:step:1"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 1,
+        "langgraph_node": "cluster_by_neighborhood",
+        "langgraph_triggers": [
+          "branch:to:cluster_by_neighborhood"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "cluster_by_neighborhood"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89|cluster_by_neighborhood:b304a538-9d3b-8a09-fbb1-3aa106da57ac",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "build_itinerary",
+      "timestamp": "2026-09-06T18:33:14.242355+00:00",
+      "run_id": "01a077fe-fb00-7a92-84f7-ac24a9bb95f4",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734",
+        "01a077fe-fafa-7173-90db-34ed54008f6f"
+      ],
+      "tags": [
+        "graph:step:2"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 2,
+        "langgraph_node": "build_itinerary",
+        "langgraph_triggers": [
+          "branch:to:build_itinerary"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "build_itinerary"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89|build_itinerary:441f9fd4-fd3b-b715-0c0a-c94413082921",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "build_itinerary",
+      "timestamp": "2026-09-06T18:33:14.246675+00:00",
+      "run_id": "01a077fe-fb00-7a92-84f7-ac24a9bb95f4",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734",
+        "01a077fe-fafa-7173-90db-34ed54008f6f"
+      ],
+      "tags": [
+        "graph:step:2"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 2,
+        "langgraph_node": "build_itinerary",
+        "langgraph_triggers": [
+          "branch:to:build_itinerary"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "build_itinerary"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89|build_itinerary:441f9fd4-fd3b-b715-0c0a-c94413082921",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "align_flight_times",
+      "timestamp": "2026-09-06T18:33:14.248056+00:00",
+      "run_id": "01a077fe-fb07-7ef0-bbd8-4755608073df",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734",
+        "01a077fe-fafa-7173-90db-34ed54008f6f"
+      ],
+      "tags": [
+        "graph:step:3"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 3,
+        "langgraph_node": "align_flight_times",
+        "langgraph_triggers": [
+          "branch:to:align_flight_times"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "align_flight_times"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89|align_flight_times:3f797299-36f3-36fa-5132-bab3e5bf295d",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "align_flight_times",
+      "timestamp": "2026-09-06T18:33:14.249198+00:00",
+      "run_id": "01a077fe-fb07-7ef0-bbd8-4755608073df",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734",
+        "01a077fe-fafa-7173-90db-34ed54008f6f"
+      ],
+      "tags": [
+        "graph:step:3"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 3,
+        "langgraph_node": "align_flight_times",
+        "langgraph_triggers": [
+          "branch:to:align_flight_times"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "align_flight_times"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89|align_flight_times:3f797299-36f3-36fa-5132-bab3e5bf295d",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:14.250898+00:00",
+      "run_id": "01a077fe-fb0a-7941-930f-37b9ec908e03",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734",
+        "01a077fe-fafa-7173-90db-34ed54008f6f"
+      ],
+      "tags": [
+        "graph:step:4"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 4,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89|plan_routes:8561db2d-d609-3c8b-170a-ba99173cbfdd",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:14.282218+00:00",
+      "run_id": "01a077fe-fb29-7532-b655-76bb7b293fa4",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734",
+        "01a077fe-fafa-7173-90db-34ed54008f6f",
+        "01a077fe-fb0a-7941-930f-37b9ec908e03"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 4,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89|plan_routes:8561db2d-d609-3c8b-170a-ba99173cbfdd",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:14.282891+00:00",
+      "run_id": "01a077fe-fb29-7532-b655-76bb7b293fa4",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734",
+        "01a077fe-fafa-7173-90db-34ed54008f6f",
+        "01a077fe-fb0a-7941-930f-37b9ec908e03"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 4,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89|plan_routes:8561db2d-d609-3c8b-170a-ba99173cbfdd",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:14.283473+00:00",
+      "run_id": "01a077fe-fb0a-7941-930f-37b9ec908e03",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734",
+        "01a077fe-fafa-7173-90db-34ed54008f6f"
+      ],
+      "tags": [
+        "graph:step:4"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 4,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89|plan_routes:8561db2d-d609-3c8b-170a-ba99173cbfdd",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "apply_feasibility_swap",
+      "timestamp": "2026-09-06T18:33:14.284974+00:00",
+      "run_id": "01a077fe-fb2c-77f2-9396-b2bd614d57e6",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734",
+        "01a077fe-fafa-7173-90db-34ed54008f6f"
+      ],
+      "tags": [
+        "graph:step:5"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 5,
+        "langgraph_node": "apply_feasibility_swap",
+        "langgraph_triggers": [
+          "branch:to:apply_feasibility_swap"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "apply_feasibility_swap"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89|apply_feasibility_swap:4c0dec4a-9875-f823-86b6-58e70f9f3b11",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "apply_feasibility_swap",
+      "timestamp": "2026-09-06T18:33:14.287308+00:00",
+      "run_id": "01a077fe-fb2c-77f2-9396-b2bd614d57e6",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734",
+        "01a077fe-fafa-7173-90db-34ed54008f6f"
+      ],
+      "tags": [
+        "graph:step:5"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 5,
+        "langgraph_node": "apply_feasibility_swap",
+        "langgraph_triggers": [
+          "branch:to:apply_feasibility_swap"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "apply_feasibility_swap"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89|apply_feasibility_swap:4c0dec4a-9875-f823-86b6-58e70f9f3b11",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:14.290179+00:00",
+      "run_id": "01a077fe-fb30-7582-8073-113c14676c29",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734",
+        "01a077fe-fafa-7173-90db-34ed54008f6f"
+      ],
+      "tags": [
+        "graph:step:6"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 6,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89|plan_routes:2aa46bc4-72a6-87a5-35c1-0d3b415499a7",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:14.318978+00:00",
+      "run_id": "01a077fe-fb4e-7f61-97a9-1dfb53c61155",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734",
+        "01a077fe-fafa-7173-90db-34ed54008f6f",
+        "01a077fe-fb30-7582-8073-113c14676c29"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 6,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89|plan_routes:2aa46bc4-72a6-87a5-35c1-0d3b415499a7",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:14.319682+00:00",
+      "run_id": "01a077fe-fb4e-7f61-97a9-1dfb53c61155",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734",
+        "01a077fe-fafa-7173-90db-34ed54008f6f",
+        "01a077fe-fb30-7582-8073-113c14676c29"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 6,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89|plan_routes:2aa46bc4-72a6-87a5-35c1-0d3b415499a7",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:14.321426+00:00",
+      "run_id": "01a077fe-fb30-7582-8073-113c14676c29",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734",
+        "01a077fe-fafa-7173-90db-34ed54008f6f"
+      ],
+      "tags": [
+        "graph:step:6"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 6,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89|plan_routes:2aa46bc4-72a6-87a5-35c1-0d3b415499a7",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "apply_feasibility_swap",
+      "timestamp": "2026-09-06T18:33:14.323222+00:00",
+      "run_id": "01a077fe-fb52-7f23-a07e-a5c3d2561380",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734",
+        "01a077fe-fafa-7173-90db-34ed54008f6f"
+      ],
+      "tags": [
+        "graph:step:7"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 7,
+        "langgraph_node": "apply_feasibility_swap",
+        "langgraph_triggers": [
+          "branch:to:apply_feasibility_swap"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "apply_feasibility_swap"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89|apply_feasibility_swap:f294a6c7-7bc2-2668-85da-f83ff3f56294",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "apply_feasibility_swap",
+      "timestamp": "2026-09-06T18:33:14.326559+00:00",
+      "run_id": "01a077fe-fb52-7f23-a07e-a5c3d2561380",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734",
+        "01a077fe-fafa-7173-90db-34ed54008f6f"
+      ],
+      "tags": [
+        "graph:step:7"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 7,
+        "langgraph_node": "apply_feasibility_swap",
+        "langgraph_triggers": [
+          "branch:to:apply_feasibility_swap"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "apply_feasibility_swap"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89|apply_feasibility_swap:f294a6c7-7bc2-2668-85da-f83ff3f56294",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:14.328983+00:00",
+      "run_id": "01a077fe-fb58-7cc0-873f-24e30943a201",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734",
+        "01a077fe-fafa-7173-90db-34ed54008f6f"
+      ],
+      "tags": [
+        "graph:step:8"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 8,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89|plan_routes:f77f5eae-34e3-8dc8-6d19-b138dedcb934",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:14.352443+00:00",
+      "run_id": "01a077fe-fb70-78a2-960e-cb278d2f54c3",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734",
+        "01a077fe-fafa-7173-90db-34ed54008f6f",
+        "01a077fe-fb58-7cc0-873f-24e30943a201"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 8,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89|plan_routes:f77f5eae-34e3-8dc8-6d19-b138dedcb934",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:14.353143+00:00",
+      "run_id": "01a077fe-fb70-78a2-960e-cb278d2f54c3",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734",
+        "01a077fe-fafa-7173-90db-34ed54008f6f",
+        "01a077fe-fb58-7cc0-873f-24e30943a201"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 8,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89|plan_routes:f77f5eae-34e3-8dc8-6d19-b138dedcb934",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:14.353762+00:00",
+      "run_id": "01a077fe-fb58-7cc0-873f-24e30943a201",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734",
+        "01a077fe-fafa-7173-90db-34ed54008f6f"
+      ],
+      "tags": [
+        "graph:step:8"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 8,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89|plan_routes:f77f5eae-34e3-8dc8-6d19-b138dedcb934",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "validation_gate",
+      "timestamp": "2026-09-06T18:33:14.355228+00:00",
+      "run_id": "01a077fe-fb72-7301-bf61-b25c499b45ca",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734",
+        "01a077fe-fafa-7173-90db-34ed54008f6f"
+      ],
+      "tags": [
+        "graph:step:9"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89|validation_gate:e2156f36-35f3-3fd2-a6f8-3ac3621e0c38",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "check_validation",
+      "timestamp": "2026-09-06T18:33:14.356564+00:00",
+      "run_id": "01a077fe-fb74-7381-bbe0-685b538f9486",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734",
+        "01a077fe-fafa-7173-90db-34ed54008f6f",
+        "01a077fe-fb72-7301-bf61-b25c499b45ca"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89|validation_gate:e2156f36-35f3-3fd2-a6f8-3ac3621e0c38",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "check_validation",
+      "timestamp": "2026-09-06T18:33:14.359307+00:00",
+      "run_id": "01a077fe-fb74-7381-bbe0-685b538f9486",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734",
+        "01a077fe-fafa-7173-90db-34ed54008f6f",
+        "01a077fe-fb72-7301-bf61-b25c499b45ca"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89|validation_gate:e2156f36-35f3-3fd2-a6f8-3ac3621e0c38",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "validation_gate",
+      "timestamp": "2026-09-06T18:33:14.360223+00:00",
+      "run_id": "01a077fe-fb72-7301-bf61-b25c499b45ca",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734",
+        "01a077fe-fafa-7173-90db-34ed54008f6f"
+      ],
+      "tags": [
+        "graph:step:9"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89|validation_gate:e2156f36-35f3-3fd2-a6f8-3ac3621e0c38",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "build_itinerary",
+      "timestamp": "2026-09-06T18:33:14.361479+00:00",
+      "run_id": "01a077fe-fb78-7403-bb0b-cca6422fdbc8",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734",
+        "01a077fe-fafa-7173-90db-34ed54008f6f"
+      ],
+      "tags": [
+        "graph:step:10"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 10,
+        "langgraph_node": "build_itinerary",
+        "langgraph_triggers": [
+          "branch:to:build_itinerary"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "build_itinerary"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89|build_itinerary:39cee330-fa38-4356-5836-1de068aa8211",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "build_itinerary",
+      "timestamp": "2026-09-06T18:33:14.365022+00:00",
+      "run_id": "01a077fe-fb78-7403-bb0b-cca6422fdbc8",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734",
+        "01a077fe-fafa-7173-90db-34ed54008f6f"
+      ],
+      "tags": [
+        "graph:step:10"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 10,
+        "langgraph_node": "build_itinerary",
+        "langgraph_triggers": [
+          "branch:to:build_itinerary"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "build_itinerary"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89|build_itinerary:39cee330-fa38-4356-5836-1de068aa8211",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "align_flight_times",
+      "timestamp": "2026-09-06T18:33:14.366354+00:00",
+      "run_id": "01a077fe-fb7d-7e93-a99b-a4a96ff0bceb",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734",
+        "01a077fe-fafa-7173-90db-34ed54008f6f"
+      ],
+      "tags": [
+        "graph:step:11"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 11,
+        "langgraph_node": "align_flight_times",
+        "langgraph_triggers": [
+          "branch:to:align_flight_times"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "align_flight_times"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89|align_flight_times:08c87234-b259-f60f-ad96-7aef31a10e3c",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "align_flight_times",
+      "timestamp": "2026-09-06T18:33:14.367259+00:00",
+      "run_id": "01a077fe-fb7d-7e93-a99b-a4a96ff0bceb",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734",
+        "01a077fe-fafa-7173-90db-34ed54008f6f"
+      ],
+      "tags": [
+        "graph:step:11"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 11,
+        "langgraph_node": "align_flight_times",
+        "langgraph_triggers": [
+          "branch:to:align_flight_times"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "align_flight_times"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89|align_flight_times:08c87234-b259-f60f-ad96-7aef31a10e3c",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:14.369006+00:00",
+      "run_id": "01a077fe-fb80-7410-ac7c-1c1f4ec7a64a",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734",
+        "01a077fe-fafa-7173-90db-34ed54008f6f"
+      ],
+      "tags": [
+        "graph:step:12"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 12,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89|plan_routes:af1af7a2-2caa-fdbc-d06c-4c466cf12228",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:14.399910+00:00",
+      "run_id": "01a077fe-fb9f-7e82-9d85-394fbc9719e4",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734",
+        "01a077fe-fafa-7173-90db-34ed54008f6f",
+        "01a077fe-fb80-7410-ac7c-1c1f4ec7a64a"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 12,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89|plan_routes:af1af7a2-2caa-fdbc-d06c-4c466cf12228",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:14.400542+00:00",
+      "run_id": "01a077fe-fb9f-7e82-9d85-394fbc9719e4",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734",
+        "01a077fe-fafa-7173-90db-34ed54008f6f",
+        "01a077fe-fb80-7410-ac7c-1c1f4ec7a64a"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 12,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89|plan_routes:af1af7a2-2caa-fdbc-d06c-4c466cf12228",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:14.401049+00:00",
+      "run_id": "01a077fe-fb80-7410-ac7c-1c1f4ec7a64a",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734",
+        "01a077fe-fafa-7173-90db-34ed54008f6f"
+      ],
+      "tags": [
+        "graph:step:12"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 12,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89|plan_routes:af1af7a2-2caa-fdbc-d06c-4c466cf12228",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "validation_gate",
+      "timestamp": "2026-09-06T18:33:14.402309+00:00",
+      "run_id": "01a077fe-fba1-7091-929b-01f2ae17e16c",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734",
+        "01a077fe-fafa-7173-90db-34ed54008f6f"
+      ],
+      "tags": [
+        "graph:step:13"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 13,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89|validation_gate:a250ba65-9afa-d8dd-5b6e-e7422ada1c96",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "check_validation",
+      "timestamp": "2026-09-06T18:33:14.404445+00:00",
+      "run_id": "01a077fe-fba3-73a1-8b06-6182cb2e5003",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734",
+        "01a077fe-fafa-7173-90db-34ed54008f6f",
+        "01a077fe-fba1-7091-929b-01f2ae17e16c"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 13,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89|validation_gate:a250ba65-9afa-d8dd-5b6e-e7422ada1c96",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "check_validation",
+      "timestamp": "2026-09-06T18:33:14.405115+00:00",
+      "run_id": "01a077fe-fba3-73a1-8b06-6182cb2e5003",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734",
+        "01a077fe-fafa-7173-90db-34ed54008f6f",
+        "01a077fe-fba1-7091-929b-01f2ae17e16c"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 13,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89|validation_gate:a250ba65-9afa-d8dd-5b6e-e7422ada1c96",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "validation_gate",
+      "timestamp": "2026-09-06T18:33:14.405868+00:00",
+      "run_id": "01a077fe-fba1-7091-929b-01f2ae17e16c",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734",
+        "01a077fe-fafa-7173-90db-34ed54008f6f"
+      ],
+      "tags": [
+        "graph:step:13"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 13,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89|validation_gate:a250ba65-9afa-d8dd-5b6e-e7422ada1c96",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "build_itinerary",
+      "timestamp": "2026-09-06T18:33:14.411702+00:00",
+      "run_id": "01a077fe-fba9-7162-926f-d9946f2ebe94",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734",
+        "01a077fe-fafa-7173-90db-34ed54008f6f"
+      ],
+      "tags": [
+        "graph:step:14"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 14,
+        "langgraph_node": "build_itinerary",
+        "langgraph_triggers": [
+          "branch:to:build_itinerary"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "build_itinerary"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89|build_itinerary:ded804b1-8de6-dca9-5d9d-8c6452dfa1dc",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "build_itinerary",
+      "timestamp": "2026-09-06T18:33:14.415513+00:00",
+      "run_id": "01a077fe-fba9-7162-926f-d9946f2ebe94",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734",
+        "01a077fe-fafa-7173-90db-34ed54008f6f"
+      ],
+      "tags": [
+        "graph:step:14"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 14,
+        "langgraph_node": "build_itinerary",
+        "langgraph_triggers": [
+          "branch:to:build_itinerary"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "build_itinerary"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89|build_itinerary:ded804b1-8de6-dca9-5d9d-8c6452dfa1dc",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "align_flight_times",
+      "timestamp": "2026-09-06T18:33:14.417424+00:00",
+      "run_id": "01a077fe-fbb0-70f0-a919-eb9aa1064cdd",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734",
+        "01a077fe-fafa-7173-90db-34ed54008f6f"
+      ],
+      "tags": [
+        "graph:step:15"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 15,
+        "langgraph_node": "align_flight_times",
+        "langgraph_triggers": [
+          "branch:to:align_flight_times"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "align_flight_times"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89|align_flight_times:311da0b3-2966-b0cc-6bb0-0ed31ffdb240",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "align_flight_times",
+      "timestamp": "2026-09-06T18:33:14.418942+00:00",
+      "run_id": "01a077fe-fbb0-70f0-a919-eb9aa1064cdd",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734",
+        "01a077fe-fafa-7173-90db-34ed54008f6f"
+      ],
+      "tags": [
+        "graph:step:15"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 15,
+        "langgraph_node": "align_flight_times",
+        "langgraph_triggers": [
+          "branch:to:align_flight_times"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "align_flight_times"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89|align_flight_times:311da0b3-2966-b0cc-6bb0-0ed31ffdb240",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:14.420138+00:00",
+      "run_id": "01a077fe-fbb3-7ae1-a6ba-cd4e762d461f",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734",
+        "01a077fe-fafa-7173-90db-34ed54008f6f"
+      ],
+      "tags": [
+        "graph:step:16"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 16,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89|plan_routes:0a95f9c8-46a1-2225-cda7-281606cd6db4",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:14.450137+00:00",
+      "run_id": "01a077fe-fbd1-7620-99d6-0c826300cb90",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734",
+        "01a077fe-fafa-7173-90db-34ed54008f6f",
+        "01a077fe-fbb3-7ae1-a6ba-cd4e762d461f"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 16,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89|plan_routes:0a95f9c8-46a1-2225-cda7-281606cd6db4",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "check_feasibility",
+      "timestamp": "2026-09-06T18:33:14.451309+00:00",
+      "run_id": "01a077fe-fbd1-7620-99d6-0c826300cb90",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734",
+        "01a077fe-fafa-7173-90db-34ed54008f6f",
+        "01a077fe-fbb3-7ae1-a6ba-cd4e762d461f"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 16,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89|plan_routes:0a95f9c8-46a1-2225-cda7-281606cd6db4",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "plan_routes",
+      "timestamp": "2026-09-06T18:33:14.452425+00:00",
+      "run_id": "01a077fe-fbb3-7ae1-a6ba-cd4e762d461f",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734",
+        "01a077fe-fafa-7173-90db-34ed54008f6f"
+      ],
+      "tags": [
+        "graph:step:16"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 16,
+        "langgraph_node": "plan_routes",
+        "langgraph_triggers": [
+          "branch:to:plan_routes"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "plan_routes"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89|plan_routes:0a95f9c8-46a1-2225-cda7-281606cd6db4",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "validation_gate",
+      "timestamp": "2026-09-06T18:33:14.454826+00:00",
+      "run_id": "01a077fe-fbd5-74a0-b6d9-e303b360b1e0",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734",
+        "01a077fe-fafa-7173-90db-34ed54008f6f"
+      ],
+      "tags": [
+        "graph:step:17"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 17,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89|validation_gate:905a071e-531a-27a0-5601-245895617d11",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "check_validation",
+      "timestamp": "2026-09-06T18:33:14.456006+00:00",
+      "run_id": "01a077fe-fbd7-7f61-9ac5-1c4dad5410ad",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734",
+        "01a077fe-fafa-7173-90db-34ed54008f6f",
+        "01a077fe-fbd5-74a0-b6d9-e303b360b1e0"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 17,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89|validation_gate:905a071e-531a-27a0-5601-245895617d11",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "check_validation",
+      "timestamp": "2026-09-06T18:33:14.461192+00:00",
+      "run_id": "01a077fe-fbd7-7f61-9ac5-1c4dad5410ad",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734",
+        "01a077fe-fafa-7173-90db-34ed54008f6f",
+        "01a077fe-fbd5-74a0-b6d9-e303b360b1e0"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 17,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89|validation_gate:905a071e-531a-27a0-5601-245895617d11",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "validation_gate",
+      "timestamp": "2026-09-06T18:33:14.462203+00:00",
+      "run_id": "01a077fe-fbd5-74a0-b6d9-e303b360b1e0",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734",
+        "01a077fe-fafa-7173-90db-34ed54008f6f"
+      ],
+      "tags": [
+        "graph:step:17"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 17,
+        "langgraph_node": "validation_gate",
+        "langgraph_triggers": [
+          "branch:to:validation_gate"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "validation_gate"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89|validation_gate:905a071e-531a-27a0-5601-245895617d11",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "LangGraph",
+      "timestamp": "2026-09-06T18:33:14.463553+00:00",
+      "run_id": "01a077fe-fafa-7173-90db-34ed54008f6f",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fafa-7173-90db-34d4720ca734"
+      ],
+      "tags": [
+        "seq:step:1"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "run_itinerary_node",
+        "langgraph_triggers": [
+          "branch:to:run_itinerary_node"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "run_itinerary_node"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89",
+        "checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "run_itinerary_node",
+      "timestamp": "2026-09-06T18:33:14.464444+00:00",
+      "run_id": "01a077fe-fafa-7173-90db-34d4720ca734",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383"
+      ],
+      "tags": [
+        "graph:step:9"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 9,
+        "langgraph_node": "run_itinerary_node",
+        "langgraph_triggers": [
+          "branch:to:run_itinerary_node"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "run_itinerary_node"
+        ],
+        "langgraph_checkpoint_ns": "run_itinerary_node:177e805c-60e0-4327-f906-e371ce2ebc89"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "compute_fairness",
+      "timestamp": "2026-09-06T18:33:14.466322+00:00",
+      "run_id": "01a077fe-fbe1-7313-9d55-25874ae8e9f2",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383"
+      ],
+      "tags": [
+        "graph:step:10"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 10,
+        "langgraph_node": "compute_fairness",
+        "langgraph_triggers": [
+          "branch:to:compute_fairness"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "compute_fairness"
+        ],
+        "langgraph_checkpoint_ns": "compute_fairness:a4e53575-b263-4a46-1e4f-683b7b625ec5"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "route_after_fairness",
+      "timestamp": "2026-09-06T18:33:14.467438+00:00",
+      "run_id": "01a077fe-fbe3-7aa3-b020-ceab4c2fb378",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fbe1-7313-9d55-25874ae8e9f2"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 10,
+        "langgraph_node": "compute_fairness",
+        "langgraph_triggers": [
+          "branch:to:compute_fairness"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "compute_fairness"
+        ],
+        "langgraph_checkpoint_ns": "compute_fairness:a4e53575-b263-4a46-1e4f-683b7b625ec5"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "route_after_fairness",
+      "timestamp": "2026-09-06T18:33:14.468245+00:00",
+      "run_id": "01a077fe-fbe3-7aa3-b020-ceab4c2fb378",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383",
+        "01a077fe-fbe1-7313-9d55-25874ae8e9f2"
+      ],
+      "tags": [
+        "seq:step:3"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 10,
+        "langgraph_node": "compute_fairness",
+        "langgraph_triggers": [
+          "branch:to:compute_fairness"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "compute_fairness"
+        ],
+        "langgraph_checkpoint_ns": "compute_fairness:a4e53575-b263-4a46-1e4f-683b7b625ec5"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "compute_fairness",
+      "timestamp": "2026-09-06T18:33:14.468851+00:00",
+      "run_id": "01a077fe-fbe1-7313-9d55-25874ae8e9f2",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383"
+      ],
+      "tags": [
+        "graph:step:10"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 10,
+        "langgraph_node": "compute_fairness",
+        "langgraph_triggers": [
+          "branch:to:compute_fairness"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "compute_fairness"
+        ],
+        "langgraph_checkpoint_ns": "compute_fairness:a4e53575-b263-4a46-1e4f-683b7b625ec5"
+      }
+    },
+    {
+      "event": "on_chain_start",
+      "name": "assemble_output",
+      "timestamp": "2026-09-06T18:33:14.470182+00:00",
+      "run_id": "01a077fe-fbe5-70a2-964f-1e7939a967db",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383"
+      ],
+      "tags": [
+        "graph:step:11"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 11,
+        "langgraph_node": "assemble_output",
+        "langgraph_triggers": [
+          "branch:to:assemble_output"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "assemble_output"
+        ],
+        "langgraph_checkpoint_ns": "assemble_output:6aaef059-b632-dd6f-74f8-c46ad02146dc"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "assemble_output",
+      "timestamp": "2026-09-06T18:33:14.473426+00:00",
+      "run_id": "01a077fe-fbe5-70a2-964f-1e7939a967db",
+      "parent_ids": [
+        "01a077fe-fae1-7d22-970a-99fcaad98383"
+      ],
+      "tags": [
+        "graph:step:11"
+      ],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph",
+        "langgraph_step": 11,
+        "langgraph_node": "assemble_output",
+        "langgraph_triggers": [
+          "branch:to:assemble_output"
+        ],
+        "langgraph_path": [
+          "__pregel_pull",
+          "assemble_output"
+        ],
+        "langgraph_checkpoint_ns": "assemble_output:6aaef059-b632-dd6f-74f8-c46ad02146dc"
+      }
+    },
+    {
+      "event": "on_chain_end",
+      "name": "LangGraph",
+      "timestamp": "2026-09-06T18:33:14.476487+00:00",
+      "run_id": "01a077fe-fae1-7d22-970a-99fcaad98383",
+      "parent_ids": [],
+      "tags": [],
+      "metadata": {
+        "trip_id": "30-all-outdoor",
+        "eval_tier": "offline",
+        "thread_id": "30-all-outdoor",
+        "ls_integration": "langgraph"
+      }
+    }
+  ],
+  "telemetry": {
+    "nodes": {
+      "extract_preference_constraints": {
+        "input_tokens": 566,
+        "output_tokens": 547,
+        "cache_read_tokens": 0,
+        "cost_usd": 0.003301,
+        "unpriced_calls": 0,
+        "llm_calls": 1,
+        "duration_ms": 2.494
+      },
+      "select_destination": {
+        "input_tokens": 1716,
+        "output_tokens": 207,
+        "cache_read_tokens": 0,
+        "cost_usd": 0.002751,
+        "unpriced_calls": 0,
+        "llm_calls": 1,
+        "duration_ms": 96.118
+      },
+      "build_itinerary": {
+        "input_tokens": 5232,
+        "output_tokens": 5370,
+        "cache_read_tokens": 0,
+        "cost_usd": 0.032082,
+        "unpriced_calls": 0,
+        "llm_calls": 3,
+        "duration_ms": 13.039
+      },
+      "assemble_output": {
+        "input_tokens": 1644,
+        "output_tokens": 1183,
+        "cache_read_tokens": 0,
+        "cost_usd": 0.007559,
+        "unpriced_calls": 0,
+        "llm_calls": 1,
+        "duration_ms": 3.185
+      },
+      "parse_input": {
+        "duration_ms": 1.119
+      },
+      "city_selection_hitl": {
+        "duration_ms": 0.827
+      },
+      "dynamic_tool_selection": {
+        "duration_ms": 0.977
+      },
+      "parallel_data_fetch": {
+        "duration_ms": 4.741
+      },
+      "budget_analysis": {
+        "duration_ms": 5.858
+      },
+      "search_hotel": {
+        "duration_ms": 1.977
+      },
+      "cluster_by_neighborhood": {
+        "duration_ms": 1.74
+      },
+      "align_flight_times": {
+        "duration_ms": 3.844
+      },
+      "plan_routes": {
+        "duration_ms": 152.984
+      },
+      "apply_feasibility_swap": {
+        "duration_ms": 5.734
+      },
+      "validation_gate": {
+        "duration_ms": 15.988
+      },
+      "run_itinerary_node": {
+        "duration_ms": 230.061
+      },
+      "compute_fairness": {
+        "duration_ms": 2.75
+      }
+    },
+    "totals": {
+      "input_tokens": 9158,
+      "output_tokens": 7307,
+      "cache_read_tokens": 0,
+      "cost_usd": 0.045693,
+      "unpriced_calls": 0,
+      "llm_calls": 6,
+      "duration_ms": 381.463
+    }
+  },
+  "hitl_resolutions": 1,
+  "tool_calls": [
+    {
+      "operation": "search_flights",
+      "request": {
+        "origin": "ORD",
+        "destination": "Glacier National Park",
+        "depart_date": "2026-09-08",
+        "return_date": "2026-09-11",
+        "adults": 1
+      }
+    },
+    {
+      "operation": "search_flights",
+      "request": {
+        "origin": "ATL",
+        "destination": "Glacier National Park",
+        "depart_date": "2026-09-08",
+        "return_date": "2026-09-11",
+        "adults": 1
+      }
+    },
+    {
+      "operation": "search_flights",
+      "request": {
+        "origin": "LAX",
+        "destination": "Glacier National Park",
+        "depart_date": "2026-09-08",
+        "return_date": "2026-09-11",
+        "adults": 1
+      }
+    },
+    {
+      "operation": "fetch_activities_by_category",
+      "request": {
+        "destination": "Glacier National Park",
+        "coords": {
+          "lat": 48.696,
+          "lng": -113.718
+        },
+        "categories": [
+          "food",
+          "outdoor"
+        ],
+        "max_per_category": 10
+      }
+    },
+    {
+      "operation": "fetch_weather",
+      "request": {
+        "lat": 48.696,
+        "lng": -113.718,
+        "start_date": "2026-09-08",
+        "end_date": "2026-09-11",
+        "destination_name": "Glacier National Park"
+      }
+    },
+    {
+      "operation": "search_hotels",
+      "request": {
+        "destination": "Glacier National Park",
+        "check_in": "2026-09-08",
+        "check_out": "2026-09-11",
+        "budget_ceiling_usd": 1410.0,
+        "coords": {
+          "lat": 48.696,
+          "lng": -113.718
+        }
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Glacier National Park",
+        "coords": {
+          "lat": 48.696,
+          "lng": -113.718
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Glacier National Park",
+        "coords": {
+          "lat": 48.696,
+          "lng": -113.718
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Glacier National Park",
+        "coords": {
+          "lat": 48.696,
+          "lng": -113.718
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.7967004,
+        "origin_lng": -113.65777469999999,
+        "dest_lat": 48.797241299999996,
+        "dest_lng": -113.65759179999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.797241299999996,
+        "origin_lng": -113.65759179999999,
+        "dest_lat": 48.6758251,
+        "dest_lng": -113.58035489999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.6758251,
+        "origin_lng": -113.58035489999999,
+        "dest_lat": 48.6172648,
+        "dest_lng": -113.8794447,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.6172648,
+        "origin_lng": -113.8794447,
+        "dest_lat": 48.676182,
+        "dest_lng": -113.57997100000001,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.676182,
+        "origin_lng": -113.57997100000001,
+        "dest_lat": 48.797241299999996,
+        "dest_lng": -113.65759179999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Glacier National Park",
+        "coords": {
+          "lat": 48.696,
+          "lng": -113.718
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Glacier National Park",
+        "coords": {
+          "lat": 48.696,
+          "lng": -113.718
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Glacier National Park",
+        "coords": {
+          "lat": 48.696,
+          "lng": -113.718
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.7967004,
+        "origin_lng": -113.65777469999999,
+        "dest_lat": 48.797241299999996,
+        "dest_lng": -113.65759179999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.797241299999996,
+        "origin_lng": -113.65759179999999,
+        "dest_lat": 48.6957872,
+        "dest_lng": -113.7279401,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.6957872,
+        "origin_lng": -113.7279401,
+        "dest_lat": 48.6172648,
+        "dest_lng": -113.8794447,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.6172648,
+        "origin_lng": -113.8794447,
+        "dest_lat": 48.6238246,
+        "dest_lng": -113.9083096,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.6238246,
+        "origin_lng": -113.9083096,
+        "dest_lat": 48.797241299999996,
+        "dest_lng": -113.65759179999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Glacier National Park",
+        "coords": {
+          "lat": 48.696,
+          "lng": -113.718
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Glacier National Park",
+        "coords": {
+          "lat": 48.696,
+          "lng": -113.718
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Glacier National Park",
+        "coords": {
+          "lat": 48.696,
+          "lng": -113.718
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.7967004,
+        "origin_lng": -113.65777469999999,
+        "dest_lat": 48.797241299999996,
+        "dest_lng": -113.65759179999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.797241299999996,
+        "origin_lng": -113.65759179999999,
+        "dest_lat": 48.765777799999995,
+        "dest_lng": -113.7408889,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.765777799999995,
+        "origin_lng": -113.7408889,
+        "dest_lat": 48.6172648,
+        "dest_lng": -113.8794447,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.6172648,
+        "origin_lng": -113.8794447,
+        "dest_lat": 48.756063,
+        "dest_lng": -113.77973159999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.756063,
+        "origin_lng": -113.77973159999999,
+        "dest_lat": 48.797241299999996,
+        "dest_lng": -113.65759179999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Glacier National Park",
+        "coords": {
+          "lat": 48.696,
+          "lng": -113.718
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Glacier National Park",
+        "coords": {
+          "lat": 48.696,
+          "lng": -113.718
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Glacier National Park",
+        "coords": {
+          "lat": 48.696,
+          "lng": -113.718
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.7967004,
+        "origin_lng": -113.65777469999999,
+        "dest_lat": 48.797241299999996,
+        "dest_lng": -113.65759179999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.797241299999996,
+        "origin_lng": -113.65759179999999,
+        "dest_lat": 48.6758251,
+        "dest_lng": -113.58035489999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.6758251,
+        "origin_lng": -113.58035489999999,
+        "dest_lat": 48.6172648,
+        "dest_lng": -113.8794447,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.6172648,
+        "origin_lng": -113.8794447,
+        "dest_lat": 48.797241299999996,
+        "dest_lng": -113.65759179999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Glacier National Park",
+        "coords": {
+          "lat": 48.696,
+          "lng": -113.718
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Glacier National Park",
+        "coords": {
+          "lat": 48.696,
+          "lng": -113.718
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Glacier National Park",
+        "coords": {
+          "lat": 48.696,
+          "lng": -113.718
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.7967004,
+        "origin_lng": -113.65777469999999,
+        "dest_lat": 48.797241299999996,
+        "dest_lng": -113.65759179999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.797241299999996,
+        "origin_lng": -113.65759179999999,
+        "dest_lat": 48.6957872,
+        "dest_lng": -113.7279401,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.6957872,
+        "origin_lng": -113.7279401,
+        "dest_lat": 48.6172648,
+        "dest_lng": -113.8794447,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.6172648,
+        "origin_lng": -113.8794447,
+        "dest_lat": 48.6238246,
+        "dest_lng": -113.9083096,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.6238246,
+        "origin_lng": -113.9083096,
+        "dest_lat": 48.797241299999996,
+        "dest_lng": -113.65759179999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Glacier National Park",
+        "coords": {
+          "lat": 48.696,
+          "lng": -113.718
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Glacier National Park",
+        "coords": {
+          "lat": 48.696,
+          "lng": -113.718
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Glacier National Park",
+        "coords": {
+          "lat": 48.696,
+          "lng": -113.718
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.7967004,
+        "origin_lng": -113.65777469999999,
+        "dest_lat": 48.797241299999996,
+        "dest_lng": -113.65759179999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.797241299999996,
+        "origin_lng": -113.65759179999999,
+        "dest_lat": 48.765777799999995,
+        "dest_lng": -113.7408889,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.765777799999995,
+        "origin_lng": -113.7408889,
+        "dest_lat": 48.6172648,
+        "dest_lng": -113.8794447,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.6172648,
+        "origin_lng": -113.8794447,
+        "dest_lat": 48.756063,
+        "dest_lng": -113.77973159999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.756063,
+        "origin_lng": -113.77973159999999,
+        "dest_lat": 48.797241299999996,
+        "dest_lng": -113.65759179999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Glacier National Park",
+        "coords": {
+          "lat": 48.696,
+          "lng": -113.718
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Glacier National Park",
+        "coords": {
+          "lat": 48.696,
+          "lng": -113.718
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Glacier National Park",
+        "coords": {
+          "lat": 48.696,
+          "lng": -113.718
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.7967004,
+        "origin_lng": -113.65777469999999,
+        "dest_lat": 48.797241299999996,
+        "dest_lng": -113.65759179999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.797241299999996,
+        "origin_lng": -113.65759179999999,
+        "dest_lat": 48.6758251,
+        "dest_lng": -113.58035489999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.6758251,
+        "origin_lng": -113.58035489999999,
+        "dest_lat": 48.6172648,
+        "dest_lng": -113.8794447,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.6172648,
+        "origin_lng": -113.8794447,
+        "dest_lat": 48.797241299999996,
+        "dest_lng": -113.65759179999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Glacier National Park",
+        "coords": {
+          "lat": 48.696,
+          "lng": -113.718
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Glacier National Park",
+        "coords": {
+          "lat": 48.696,
+          "lng": -113.718
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Glacier National Park",
+        "coords": {
+          "lat": 48.696,
+          "lng": -113.718
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.7967004,
+        "origin_lng": -113.65777469999999,
+        "dest_lat": 48.797241299999996,
+        "dest_lng": -113.65759179999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.797241299999996,
+        "origin_lng": -113.65759179999999,
+        "dest_lat": 48.6957872,
+        "dest_lng": -113.7279401,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.6957872,
+        "origin_lng": -113.7279401,
+        "dest_lat": 48.6172648,
+        "dest_lng": -113.8794447,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.6172648,
+        "origin_lng": -113.8794447,
+        "dest_lat": 48.797241299999996,
+        "dest_lng": -113.65759179999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Glacier National Park",
+        "coords": {
+          "lat": 48.696,
+          "lng": -113.718
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Glacier National Park",
+        "coords": {
+          "lat": 48.696,
+          "lng": -113.718
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Glacier National Park",
+        "coords": {
+          "lat": 48.696,
+          "lng": -113.718
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.7967004,
+        "origin_lng": -113.65777469999999,
+        "dest_lat": 48.797241299999996,
+        "dest_lng": -113.65759179999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.797241299999996,
+        "origin_lng": -113.65759179999999,
+        "dest_lat": 48.765777799999995,
+        "dest_lng": -113.7408889,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.765777799999995,
+        "origin_lng": -113.7408889,
+        "dest_lat": 48.6172648,
+        "dest_lng": -113.8794447,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.6172648,
+        "origin_lng": -113.8794447,
+        "dest_lat": 48.756063,
+        "dest_lng": -113.77973159999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.756063,
+        "origin_lng": -113.77973159999999,
+        "dest_lat": 48.797241299999996,
+        "dest_lng": -113.65759179999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Glacier National Park",
+        "coords": {
+          "lat": 48.696,
+          "lng": -113.718
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Glacier National Park",
+        "coords": {
+          "lat": 48.696,
+          "lng": -113.718
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Glacier National Park",
+        "coords": {
+          "lat": 48.696,
+          "lng": -113.718
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.7967004,
+        "origin_lng": -113.65777469999999,
+        "dest_lat": 48.797241299999996,
+        "dest_lng": -113.65759179999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.797241299999996,
+        "origin_lng": -113.65759179999999,
+        "dest_lat": 48.6758251,
+        "dest_lng": -113.58035489999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.6758251,
+        "origin_lng": -113.58035489999999,
+        "dest_lat": 48.6172648,
+        "dest_lng": -113.8794447,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.6172648,
+        "origin_lng": -113.8794447,
+        "dest_lat": 48.676182,
+        "dest_lng": -113.57997100000001,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.676182,
+        "origin_lng": -113.57997100000001,
+        "dest_lat": 48.797241299999996,
+        "dest_lng": -113.65759179999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Glacier National Park",
+        "coords": {
+          "lat": 48.696,
+          "lng": -113.718
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Glacier National Park",
+        "coords": {
+          "lat": 48.696,
+          "lng": -113.718
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Glacier National Park",
+        "coords": {
+          "lat": 48.696,
+          "lng": -113.718
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.7967004,
+        "origin_lng": -113.65777469999999,
+        "dest_lat": 48.797241299999996,
+        "dest_lng": -113.65759179999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.797241299999996,
+        "origin_lng": -113.65759179999999,
+        "dest_lat": 48.6957872,
+        "dest_lng": -113.7279401,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.6957872,
+        "origin_lng": -113.7279401,
+        "dest_lat": 48.6172648,
+        "dest_lng": -113.8794447,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.6172648,
+        "origin_lng": -113.8794447,
+        "dest_lat": 48.6238246,
+        "dest_lng": -113.9083096,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.6238246,
+        "origin_lng": -113.9083096,
+        "dest_lat": 48.797241299999996,
+        "dest_lng": -113.65759179999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Glacier National Park",
+        "coords": {
+          "lat": 48.696,
+          "lng": -113.718
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Glacier National Park",
+        "coords": {
+          "lat": 48.696,
+          "lng": -113.718
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Glacier National Park",
+        "coords": {
+          "lat": 48.696,
+          "lng": -113.718
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.7967004,
+        "origin_lng": -113.65777469999999,
+        "dest_lat": 48.797241299999996,
+        "dest_lng": -113.65759179999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.797241299999996,
+        "origin_lng": -113.65759179999999,
+        "dest_lat": 48.765777799999995,
+        "dest_lng": -113.7408889,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.765777799999995,
+        "origin_lng": -113.7408889,
+        "dest_lat": 48.6172648,
+        "dest_lng": -113.8794447,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.6172648,
+        "origin_lng": -113.8794447,
+        "dest_lat": 48.785638899999995,
+        "dest_lng": -113.7669444,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.785638899999995,
+        "origin_lng": -113.7669444,
+        "dest_lat": 48.797241299999996,
+        "dest_lng": -113.65759179999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Glacier National Park",
+        "coords": {
+          "lat": 48.696,
+          "lng": -113.718
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Glacier National Park",
+        "coords": {
+          "lat": 48.696,
+          "lng": -113.718
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Glacier National Park",
+        "coords": {
+          "lat": 48.696,
+          "lng": -113.718
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.7967004,
+        "origin_lng": -113.65777469999999,
+        "dest_lat": 48.797241299999996,
+        "dest_lng": -113.65759179999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.797241299999996,
+        "origin_lng": -113.65759179999999,
+        "dest_lat": 48.6758251,
+        "dest_lng": -113.58035489999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.6758251,
+        "origin_lng": -113.58035489999999,
+        "dest_lat": 48.6172648,
+        "dest_lng": -113.8794447,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.6172648,
+        "origin_lng": -113.8794447,
+        "dest_lat": 48.676182,
+        "dest_lng": -113.57997100000001,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.676182,
+        "origin_lng": -113.57997100000001,
+        "dest_lat": 48.797241299999996,
+        "dest_lng": -113.65759179999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Glacier National Park",
+        "coords": {
+          "lat": 48.696,
+          "lng": -113.718
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Glacier National Park",
+        "coords": {
+          "lat": 48.696,
+          "lng": -113.718
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Glacier National Park",
+        "coords": {
+          "lat": 48.696,
+          "lng": -113.718
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.7967004,
+        "origin_lng": -113.65777469999999,
+        "dest_lat": 48.797241299999996,
+        "dest_lng": -113.65759179999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.797241299999996,
+        "origin_lng": -113.65759179999999,
+        "dest_lat": 48.6957872,
+        "dest_lng": -113.7279401,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.6957872,
+        "origin_lng": -113.7279401,
+        "dest_lat": 48.6172648,
+        "dest_lng": -113.8794447,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.6172648,
+        "origin_lng": -113.8794447,
+        "dest_lat": 48.6238246,
+        "dest_lng": -113.9083096,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.6238246,
+        "origin_lng": -113.9083096,
+        "dest_lat": 48.797241299999996,
+        "dest_lng": -113.65759179999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Breakfast",
+        "destination": "Glacier National Park",
+        "coords": {
+          "lat": 48.696,
+          "lng": -113.718
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Lunch",
+        "destination": "Glacier National Park",
+        "coords": {
+          "lat": 48.696,
+          "lng": -113.718
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "find_place_by_text",
+      "request": {
+        "query": "Dinner",
+        "destination": "Glacier National Park",
+        "coords": {
+          "lat": 48.696,
+          "lng": -113.718
+        },
+        "included_type": "restaurant"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.7967004,
+        "origin_lng": -113.65777469999999,
+        "dest_lat": 48.797241299999996,
+        "dest_lng": -113.65759179999999,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.797241299999996,
+        "origin_lng": -113.65759179999999,
+        "dest_lat": 48.765777799999995,
+        "dest_lng": -113.7408889,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.765777799999995,
+        "origin_lng": -113.7408889,
+        "dest_lat": 48.6172648,
+        "dest_lng": -113.8794447,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.6172648,
+        "origin_lng": -113.8794447,
+        "dest_lat": 48.785638899999995,
+        "dest_lng": -113.7669444,
+        "mode": "WALK"
+      }
+    },
+    {
+      "operation": "get_route",
+      "request": {
+        "origin_lat": 48.785638899999995,
+        "origin_lng": -113.7669444,
+        "dest_lat": 48.797241299999996,
+        "dest_lng": -113.65759179999999,
+        "mode": "WALK"
+      }
+    }
+  ]
+}

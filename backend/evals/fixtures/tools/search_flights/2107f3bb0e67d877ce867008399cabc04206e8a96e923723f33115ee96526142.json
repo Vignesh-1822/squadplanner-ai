@@ -1,0 +1,21 @@
+{
+  "operation": "search_flights",
+  "request": {
+    "adults": 1,
+    "depart_date": "2026-09-08",
+    "destination": "Surfside Beach",
+    "origin": "ORD",
+    "return_date": "2026-09-22"
+  },
+  "request_sha256": "2107f3bb0e67d877ce867008399cabc04206e8a96e923723f33115ee96526142",
+  "response": {
+    "airline": "Estimated",
+    "depart_time": "2026-09-08T08:00:00",
+    "destination": "Surfside Beach",
+    "is_estimated": true,
+    "member_id": "",
+    "origin": "ORD",
+    "price_usd": 300.0,
+    "return_time": "2026-09-22T18:00:00"
+  }
+}

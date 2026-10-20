@@ -1,0 +1,31 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 48.696,
+      "lng": -113.718
+    },
+    "destination": "Glacier National Park",
+    "included_type": "restaurant",
+    "query": "Dinner - Italian restaurant"
+  },
+  "request_sha256": "6a9890ee85c8f22d27488f5dccb2ffe71bfbd4bbaf2b48cabde48b5fc82016c3",
+  "response": {
+    "address": "729 Nucleus Ave, Columbia Falls, MT 59912, USA",
+    "category": "food",
+    "lat": 48.371803899999996,
+    "lng": -114.18080239999999,
+    "name": "Three Forks Grille",
+    "place_id": "ChIJ80jXzAZBZlMRwQf6UgbZj4c",
+    "price_level": 0,
+    "rating": 4.5,
+    "tags": [
+      "restaurant",
+      "mediterranean_restaurant",
+      "fine_dining_restaurant",
+      "point_of_interest",
+      "food",
+      "establishment"
+    ]
+  }
+}

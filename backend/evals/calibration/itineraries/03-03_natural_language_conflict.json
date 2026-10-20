@@ -1,0 +1,735 @@
+{
+  "id": "03-03_natural_language_conflict",
+  "group_notes": "This group has conflicting notes: some want a packed city trip, others want slow mornings and no loud nightlife. Hard constraints should win.",
+  "members": [
+    {
+      "member_id": "nora",
+      "name": "Nora",
+      "origin_city": "BOS",
+      "budget_usd": 1800,
+      "food_restrictions": [
+        "gluten_free"
+      ],
+      "preference_notes": "No clubs or bars. I hate early mornings. I need gluten-free meals.",
+      "preference_vector": {
+        "outdoor": 0.4,
+        "food": 0.8,
+        "nightlife": 0.8,
+        "urban": 0.8,
+        "shopping": 0.3
+      },
+      "is_leader": true
+    },
+    {
+      "member_id": "ryan",
+      "name": "Ryan",
+      "origin_city": "MIA",
+      "budget_usd": 1600,
+      "food_restrictions": [],
+      "preference_notes": "I want the schedule packed, with museums, food halls, and late-night energy.",
+      "preference_vector": {
+        "outdoor": 0.2,
+        "food": 0.9,
+        "nightlife": 0.9,
+        "urban": 0.9,
+        "shopping": 0.4
+      },
+      "is_leader": false
+    },
+    {
+      "member_id": "sofia",
+      "name": "Sofia",
+      "origin_city": "SEA",
+      "budget_usd": 1900,
+      "food_restrictions": [
+        "shellfish"
+      ],
+      "preference_notes": "I want seafood restaurants avoided because of my shellfish allergy. I prefer art museums and scenic neighborhoods.",
+      "preference_vector": {
+        "outdoor": 0.6,
+        "food": 0.7,
+        "nightlife": 0.2,
+        "urban": 0.8,
+        "shopping": 0.5
+      },
+      "is_leader": false
+    }
+  ],
+  "start_date": "2026-09-08",
+  "end_date": "2026-09-11",
+  "trip_duration_days": 3,
+  "destination": {
+    "name": "Temecula",
+    "coords": {
+      "lat": 33.494,
+      "lng": -117.148
+    }
+  },
+  "hotel": {
+    "name": "Motel 6 Temecula, CA - Historic Old Town",
+    "address": "41900 Moreno Rd, Temecula, CA 92590, USA",
+    "price_per_night_usd": 47.0,
+    "total_price_usd": 141.0,
+    "rating": 3.7,
+    "is_estimated": false
+  },
+  "weather": {
+    "destination": "Temecula",
+    "date_range": "2026-09-08 to 2026-09-11",
+    "avg_temp_c": 29.6,
+    "precipitation_mm": 0.0,
+    "summary": "Warm (29.6\u00b0C avg), dry conditions"
+  },
+  "days": [
+    {
+      "day_number": 1,
+      "date": "2026-09-08",
+      "neighborhood": "Downtown Murrieta",
+      "meals": [
+        "Hotel breakfast at Motel 6 Temecula",
+        "Lunch at Destination Smokehouse (gluten-free smoked meats)",
+        "Dinner at In-N-Out Burger (gluten-free burger wraps available)"
+      ],
+      "estimated_day_cost_usd": 135.0,
+      "schedule": [
+        {
+          "time": "08:00",
+          "type": "meal",
+          "label": "Breakfast",
+          "notes": "At hotel before departure"
+        },
+        {
+          "time": "10:00",
+          "type": "activity",
+          "label": "Murrieta Plaza Shopping",
+          "notes": "Downtown Murrieta shopping district exploration"
+        },
+        {
+          "time": "11:30",
+          "type": "activity",
+          "label": "Murrieta Spectrum Shopping Center",
+          "notes": "Additional retail and dining options"
+        },
+        {
+          "time": "13:00",
+          "type": "meal",
+          "label": "Lunch",
+          "notes": "Destination Smokehouse - gluten-free smoked meats, no shellfish"
+        },
+        {
+          "time": "14:30",
+          "type": "activity",
+          "label": "Santa Rosa Plateau Ecological Preserve",
+          "notes": "Scenic outdoor walk with native plants and wildlife viewing"
+        },
+        {
+          "time": "17:30",
+          "type": "meal",
+          "label": "Dinner",
+          "notes": "In-N-Out Burger - order protein style (lettuce wrap) for gluten-free"
+        }
+      ],
+      "rationale": "Day 1 introduces Temecula's shopping and nature offerings through the Promenade Temecula, Murrieta Spectrum Shopping Center, and Santa Rosa Plateau Ecological Preserve, providing scenic outdoor time that aligns with Sofia's preference for scenic neighborhoods and natural beauty. The day structure accommodates the group's need to settle in after arrival while avoiding nightlife venues, and dining at 1909 Temecula provides gluten-free meal options for Nora.",
+      "constraint_notes": [
+        "No nightlife or bar venues scheduled (Nora's hard constraint met)",
+        "Primary meal venue 1909 Temecula can accommodate gluten-free requirements (Nora's dietary need)",
+        "Scenic outdoor activity at Santa Rosa Plateau Ecological Preserve addresses Sofia's preference for scenic neighborhoods",
+        "No museums/art galleries on this day (Ryan's museum preference not fulfilled today)"
+      ],
+      "total_travel_minutes": 860,
+      "activities": [
+        {
+          "name": "Murrieta Plaza in Downtown Murrieta",
+          "category": "shopping",
+          "address": "24690, 24700, 24710, Washington Ave, Murrieta, CA 92562, USA",
+          "lat": 33.5556057,
+          "lng": -117.21577419999998,
+          "price_level": 0,
+          "rating": 4.7,
+          "tags": [
+            "shopping_mall",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Murrieta Spectrum Shopping Center",
+          "category": "shopping",
+          "address": "25125 Madison Ave, Murrieta, CA 92562, USA",
+          "lat": 33.5559222,
+          "lng": -117.20094870000001,
+          "price_level": 0,
+          "rating": 4.3,
+          "tags": [
+            "shopping_mall",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Destination Smokehouse",
+          "category": "food",
+          "address": "41539 Kalmia St, Murrieta, CA 92562, USA",
+          "lat": 33.561276,
+          "lng": -117.21195459999998,
+          "price_level": 0,
+          "rating": 3.9,
+          "tags": [
+            "barbecue_restaurant",
+            "restaurant",
+            "food",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Santa Rosa Plateau Ecological Preserve",
+          "category": "outdoor",
+          "address": "39400 Clinton Keith Rd, Murrieta, CA 92562, USA",
+          "lat": 33.5433653,
+          "lng": -117.26951299999999,
+          "price_level": 0,
+          "rating": 4.7,
+          "tags": [
+            "nature_preserve",
+            "tourist_attraction",
+            "visitor_center",
+            "tourist_information_center",
+            "tour_agency",
+            "travel_agency",
+            "park",
+            "point_of_interest",
+            "service",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Promenade Temecula",
+          "category": "place",
+          "address": "40820 Winchester Rd, Temecula, CA 92591, USA",
+          "lat": 33.5251895,
+          "lng": -117.1541469,
+          "price_level": 0,
+          "rating": 4.5,
+          "tags": [
+            "shopping_mall",
+            "point_of_interest",
+            "establishment"
+          ]
+        }
+      ],
+      "routes": [
+        {
+          "distance_meters": 3135,
+          "duration_seconds": 2715,
+          "mode": "WALK",
+          "from_order": 1,
+          "to_order": 2,
+          "from_label": "Motel 6 Temecula, CA - Historic Old Town",
+          "to_label": "Breakfast Club of Temecula"
+        },
+        {
+          "distance_meters": 4009,
+          "duration_seconds": 3234,
+          "mode": "WALK",
+          "from_order": 2,
+          "to_order": 3,
+          "from_label": "Breakfast Club of Temecula",
+          "to_label": "Promenade Temecula"
+        },
+        {
+          "distance_meters": 6943,
+          "duration_seconds": 5835,
+          "mode": "WALK",
+          "from_order": 3,
+          "to_order": 4,
+          "from_label": "Promenade Temecula",
+          "to_label": "Murrieta Spectrum Shopping Center"
+        },
+        {
+          "distance_meters": 9046,
+          "duration_seconds": 7464,
+          "mode": "WALK",
+          "from_order": 4,
+          "to_order": 5,
+          "from_label": "Murrieta Spectrum Shopping Center",
+          "to_label": "1909 Temecula"
+        },
+        {
+          "distance_meters": 19670,
+          "duration_seconds": 16807,
+          "mode": "WALK",
+          "from_order": 5,
+          "to_order": 6,
+          "from_label": "1909 Temecula",
+          "to_label": "Santa Rosa Plateau Ecological Preserve"
+        },
+        {
+          "distance_meters": 19670,
+          "duration_seconds": 15587,
+          "mode": "WALK",
+          "from_order": 6,
+          "to_order": 7,
+          "from_label": "Santa Rosa Plateau Ecological Preserve",
+          "to_label": "1909 Temecula"
+        }
+      ]
+    },
+    {
+      "day_number": 2,
+      "date": "2026-09-09",
+      "neighborhood": "Old Town Temecula & Wineries",
+      "meals": [
+        "Hotel breakfast at Motel 6 Temecula",
+        "Lunch at 1909 Temecula (gluten-free Southern comfort, no shellfish)",
+        "Dinner at The Goat & Vine (wine-paired gluten-free pasta or meat plates)"
+      ],
+      "estimated_day_cost_usd": 195.0,
+      "schedule": [
+        {
+          "time": "08:00",
+          "type": "meal",
+          "label": "Breakfast",
+          "notes": "At hotel before departure"
+        },
+        {
+          "time": "10:00",
+          "type": "activity",
+          "label": "Old Town Temecula Walk",
+          "notes": "Historic district exploration with galleries and local shops"
+        },
+        {
+          "time": "11:30",
+          "type": "activity",
+          "label": "Leoness Cellars Tasting",
+          "notes": "Wine tasting with scenic views, gluten-free tasting options"
+        },
+        {
+          "time": "13:00",
+          "type": "meal",
+          "label": "Lunch",
+          "notes": "1909 Temecula - Southern comfort food, gluten-free options available"
+        },
+        {
+          "time": "14:30",
+          "type": "activity",
+          "label": "Wilson Creek Winery",
+          "notes": "Second winery tasting experience with outdoor grounds"
+        },
+        {
+          "time": "17:00",
+          "type": "activity",
+          "label": "Lake Skinner Recreation Area",
+          "notes": "Scenic lake walk and nature viewing"
+        },
+        {
+          "time": "19:00",
+          "type": "meal",
+          "label": "Dinner",
+          "notes": "The Goat & Vine - elevated bistro fare, gluten-free pasta and meat options"
+        }
+      ],
+      "rationale": "Day 2 features Old Town Temecula's historic district with wine tastings at Leoness Cellars and Wilson Creek Winery, plus Lake Skinner Recreation Area's scenic outdoor space. This combination satisfies Sofia's preference for scenic neighborhoods and art appreciation of historic districts while maintaining a structured activity schedule. Wine experiences and outdoor recreation offer variety without high-energy nightlife, and 1909 Temecula again provides dining with gluten-free options.",
+      "constraint_notes": [
+        "No nightlife or bar venues scheduled (Nora's hard constraint met)",
+        "Wine country activities at Leoness Cellars and Wilson Creek Winery provide cultural/scenic depth (Sofia preference)",
+        "Gluten-free meal accommodation available at 1909 Temecula (Nora's dietary need)",
+        "Historic Old Town district qualifies as scenic neighborhood (Sofia preference)",
+        "No museums/art galleries present this day"
+      ],
+      "total_travel_minutes": 1104,
+      "activities": [
+        {
+          "name": "Old Town Temecula",
+          "category": "urban",
+          "address": "28601 Old Town Front St, Temecula, CA 92590, USA",
+          "lat": 33.4937201,
+          "lng": -117.14970319999998,
+          "price_level": 0,
+          "rating": 4.7,
+          "tags": [
+            "tourist_attraction",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Leoness Cellars",
+          "category": "urban",
+          "address": "38311 De Portola Rd, Temecula, CA 92592, USA",
+          "lat": 33.5238693,
+          "lng": -117.01851439999999,
+          "price_level": 0,
+          "rating": 4.6,
+          "tags": [
+            "winery",
+            "wine_bar",
+            "brunch_restaurant",
+            "bar",
+            "fine_dining_restaurant",
+            "tourist_attraction",
+            "wedding_venue",
+            "event_venue",
+            "manufacturer",
+            "farm",
+            "restaurant",
+            "food",
+            "point_of_interest",
+            "service",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Wilson Creek Winery",
+          "category": "urban",
+          "address": "35960 Rancho California Rd, Temecula, CA 92591, USA",
+          "lat": 33.54718,
+          "lng": -117.04475599999999,
+          "price_level": 0,
+          "rating": 4.6,
+          "tags": [
+            "winery",
+            "vineyard",
+            "tourist_attraction",
+            "wedding_venue",
+            "event_venue",
+            "manufacturer",
+            "farm",
+            "food",
+            "point_of_interest",
+            "service",
+            "association_or_organization",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Lake Skinner Recreation Area",
+          "category": "urban",
+          "address": "37701 Warren Rd, Winchester, CA 92596, USA",
+          "lat": 33.5877371,
+          "lng": -117.04164540000001,
+          "price_level": 0,
+          "rating": 4.5,
+          "tags": [
+            "park",
+            "tourist_attraction",
+            "point_of_interest",
+            "establishment"
+          ]
+        }
+      ],
+      "routes": [
+        {
+          "distance_meters": 3135,
+          "duration_seconds": 2715,
+          "mode": "WALK",
+          "from_order": 1,
+          "to_order": 2,
+          "from_label": "Motel 6 Temecula, CA - Historic Old Town",
+          "to_label": "Breakfast Club of Temecula"
+        },
+        {
+          "distance_meters": 3590,
+          "duration_seconds": 2909,
+          "mode": "WALK",
+          "from_order": 2,
+          "to_order": 3,
+          "from_label": "Breakfast Club of Temecula",
+          "to_label": "Old Town Temecula"
+        },
+        {
+          "distance_meters": 16004,
+          "duration_seconds": 13439,
+          "mode": "WALK",
+          "from_order": 3,
+          "to_order": 4,
+          "from_label": "Old Town Temecula",
+          "to_label": "Leoness Cellars"
+        },
+        {
+          "distance_meters": 15792,
+          "duration_seconds": 12521,
+          "mode": "WALK",
+          "from_order": 4,
+          "to_order": 5,
+          "from_label": "Leoness Cellars",
+          "to_label": "1909 Temecula"
+        },
+        {
+          "distance_meters": 14237,
+          "duration_seconds": 12072,
+          "mode": "WALK",
+          "from_order": 5,
+          "to_order": 6,
+          "from_label": "1909 Temecula",
+          "to_label": "Wilson Creek Winery"
+        },
+        {
+          "distance_meters": 6942,
+          "duration_seconds": 5725,
+          "mode": "WALK",
+          "from_order": 6,
+          "to_order": 7,
+          "from_label": "Wilson Creek Winery",
+          "to_label": "Lake Skinner Recreation Area"
+        },
+        {
+          "distance_meters": 21031,
+          "duration_seconds": 16873,
+          "mode": "WALK",
+          "from_order": 7,
+          "to_order": 8,
+          "from_label": "Lake Skinner Recreation Area",
+          "to_label": "1909 Temecula"
+        }
+      ]
+    },
+    {
+      "day_number": 3,
+      "date": "2026-09-10",
+      "neighborhood": "Redhawk & Sports Parks",
+      "meals": [
+        "Hotel breakfast at Motel 6 Temecula",
+        "Lunch at In-N-Out Burger (gluten-free protein style wrap, no shellfish)",
+        "Dinner at Monserate Winery (gluten-free charcuterie and wine pairing)"
+      ],
+      "estimated_day_cost_usd": 165.0,
+      "schedule": [
+        {
+          "time": "08:00",
+          "type": "meal",
+          "label": "Breakfast",
+          "notes": "At hotel before departure"
+        },
+        {
+          "time": "10:00",
+          "type": "activity",
+          "label": "Redhawk Towne Center Shopping",
+          "notes": "Retail exploration and browsing"
+        },
+        {
+          "time": "11:30",
+          "type": "activity",
+          "label": "Patricia H. Birdsall Sports Park",
+          "notes": "Scenic park walk and outdoor recreation area"
+        },
+        {
+          "time": "13:00",
+          "type": "meal",
+          "label": "Lunch",
+          "notes": "In-N-Out Burger - protein style lettuce wrap, gluten-free and shellfish-free"
+        },
+        {
+          "time": "14:30",
+          "type": "activity",
+          "label": "Santa Margarita River Trail Preserve",
+          "notes": "Nature preserve hike with river views and ecological learning"
+        },
+        {
+          "time": "17:00",
+          "type": "activity",
+          "label": "Monserate Winery",
+          "notes": "Final winery tasting with sunset views"
+        },
+        {
+          "time": "19:00",
+          "type": "meal",
+          "label": "Dinner",
+          "notes": "Monserate Winery - gluten-free charcuterie boards and wine pairings"
+        }
+      ],
+      "rationale": "Day 3 combines retail and recreational spaces at Redhawk Towne Ctr and Patricia H. Birdsall Sports Park with natural preservation at Santa Margarita River Trail Preserve and wine tasting at Monserate Winery. This schedule offers activity variety and scenic outdoor time that appeals to multiple preferences while avoiding nightlife venues. Consistent dining structure with gluten-free accommodation at 1909 Temecula maintains group inclusivity.",
+      "constraint_notes": [
+        "No nightlife or bar venues scheduled (Nora's hard constraint met)",
+        "Santa Margarita River Trail Preserve provides scenic outdoor nature experience (Sofia preference)",
+        "Monserate Winery wine tasting adds cultural experience without nightlife atmosphere",
+        "Gluten-free meal accommodation available at 1909 Temecula (Nora's dietary need)",
+        "No museums/art galleries present this day (Ryan's museum preference not fulfilled)"
+      ],
+      "total_travel_minutes": 1040,
+      "activities": [
+        {
+          "name": "Redhawk Towne Ctr",
+          "category": "shopping",
+          "address": "Temecula Pkwy & Redhawk Pkwy, CA-79, Temecula, CA 92592, USA",
+          "lat": 33.480337899999995,
+          "lng": -117.0969473,
+          "price_level": 0,
+          "rating": 4.3,
+          "tags": [
+            "shopping_mall",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Patricia H. Birdsall Sports Park",
+          "category": "urban",
+          "address": "32380 Deer Hollow Way, Temecula, CA 92592, USA",
+          "lat": 33.4530491,
+          "lng": -117.0952931,
+          "price_level": 0,
+          "rating": 4.7,
+          "tags": [
+            "park",
+            "tourist_attraction",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Santa Margarita River Trail Preserve",
+          "category": "outdoor",
+          "address": "4251 River Edge Rd, Fallbrook, CA 92028, USA",
+          "lat": 33.4135412,
+          "lng": -117.2418831,
+          "price_level": 0,
+          "rating": 4.7,
+          "tags": [
+            "nature_preserve",
+            "hiking_area",
+            "sports_activity_location",
+            "park",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Monserate Winery",
+          "category": "food",
+          "address": "2757 Gird Rd, Fallbrook, CA 92028, USA",
+          "lat": 33.3430536,
+          "lng": -117.19067530000001,
+          "price_level": 0,
+          "rating": 4.6,
+          "tags": [
+            "winery",
+            "vineyard",
+            "wedding_venue",
+            "farm",
+            "manufacturer",
+            "event_venue",
+            "service",
+            "restaurant",
+            "food",
+            "point_of_interest",
+            "establishment"
+          ]
+        }
+      ],
+      "routes": [
+        {
+          "distance_meters": 3135,
+          "duration_seconds": 2715,
+          "mode": "WALK",
+          "from_order": 1,
+          "to_order": 2,
+          "from_label": "Motel 6 Temecula, CA - Historic Old Town",
+          "to_label": "Breakfast Club of Temecula"
+        },
+        {
+          "distance_meters": 4884,
+          "duration_seconds": 4070,
+          "mode": "WALK",
+          "from_order": 2,
+          "to_order": 3,
+          "from_label": "Breakfast Club of Temecula",
+          "to_label": "Redhawk Towne Ctr"
+        },
+        {
+          "distance_meters": 4443,
+          "duration_seconds": 3697,
+          "mode": "WALK",
+          "from_order": 3,
+          "to_order": 4,
+          "from_label": "Redhawk Towne Ctr",
+          "to_label": "Patricia H. Birdsall Sports Park"
+        },
+        {
+          "distance_meters": 7290,
+          "duration_seconds": 5866,
+          "mode": "WALK",
+          "from_order": 4,
+          "to_order": 5,
+          "from_label": "Patricia H. Birdsall Sports Park",
+          "to_label": "1909 Temecula"
+        },
+        {
+          "distance_meters": 19865,
+          "duration_seconds": 16872,
+          "mode": "WALK",
+          "from_order": 5,
+          "to_order": 6,
+          "from_label": "1909 Temecula",
+          "to_label": "Santa Margarita River Trail Preserve"
+        },
+        {
+          "distance_meters": 13052,
+          "duration_seconds": 10918,
+          "mode": "WALK",
+          "from_order": 6,
+          "to_order": 7,
+          "from_label": "Santa Margarita River Trail Preserve",
+          "to_label": "Monserate Winery"
+        },
+        {
+          "distance_meters": 21468,
+          "duration_seconds": 18265,
+          "mode": "WALK",
+          "from_order": 7,
+          "to_order": 8,
+          "from_label": "Monserate Winery",
+          "to_label": "1909 Temecula"
+        }
+      ]
+    }
+  ],
+  "trip_pitch": "Temecula, California is a charming wine country destination that perfectly balances relaxation with curated exploration\u2014ideal for a small group seeking scenic beauty, culinary experiences, and cultural attractions without the intensity of a major metropolitan hub. Nestled in Southern California's inland empire, this region offers a distinctly Californian atmosphere: sun-drenched vineyards, historic downtown quarters, and community-focused gathering spaces that encourage meaningful time together without forced high-energy nightlife. The town's unhurried pace and diverse activity mix make it an excellent compromise destination for travelers with different rhythms and preferences, from leisurely mornings to afternoon adventures.\n\nYour three-day itinerary showcases Temecula's varied character across distinct neighborhoods and experiences. Day 1 centers on Downtown Murrieta, beginning at the Breakfast Club of Temecula before exploring the Promenade Temecula and Murrieta Spectrum Shopping Center, then venturing into natural beauty at Santa Rosa Plateau Ecological Preserve with meals bookending your day at 1909 Temecula. Day 2 immerses you in Old Town Temecula's historic charm and wine culture, visiting Leoness Cellars and Wilson Creek Winery, with a refreshing outdoor pause at Lake Skinner Recreation Area and consistent dining at 1909 Temecula. Day 3 blends contemporary shopping and recreation at Redhawk Towne Ctr and Patricia H. Birdsall Sports Park with scenic trail exploration at Santa Margarita River Trail Preserve and wine tasting at Monserate Winery, maintaining the same comfortable meal rhythm.\n\nYou'll be staying at the Motel 6 Temecula in Historic Old Town\u2014an affordable, convenient base that keeps you centered in the region's most walkable and charming area. With average temperatures around 30\u00b0C (86\u00b0F) and dry conditions throughout your September visit, expect warm, sunny days perfect for outdoor exploration; bring sunscreen, sunglasses, and light layers for air-conditioned indoor spaces. The hotel's location minimizes drive time between activities and keeps you connected to Temecula's authentic downtown character. Budget-friendly accommodations at $47 per night mean more resources for dining, wine tastings, and activities that matter most to your group.\n\nThis trip delivers the perfect blend of food exploration, scenic discovery, and low-pressure togetherness that brings small groups closer. You'll enjoy three full days of varied activities\u2014from nature preserves to wine cellars to cultural districts\u2014all designed around a realistic, comfortable pace that respects everyone's needs. Temecula's warm hospitality, excellent local dining at 1909 Temecula, and diverse outdoor attractions create the foundation for a genuinely memorable September escape.",
+  "per_member_costs": [
+    {
+      "member_id": "nora",
+      "name": "Nora",
+      "budget_usd": 1800.0,
+      "flight_usd": 300.0,
+      "flight_is_estimated": true,
+      "hotel_share_usd": 47.0,
+      "activity_share_usd": 165.0,
+      "total_usd": 512.0,
+      "headroom_usd": 1288.0,
+      "utilization": 0.28444444444444444,
+      "fairness_utilization": 0.19277777777777777
+    },
+    {
+      "member_id": "ryan",
+      "name": "Ryan",
+      "budget_usd": 1600.0,
+      "flight_usd": 300.0,
+      "flight_is_estimated": true,
+      "hotel_share_usd": 47.0,
+      "activity_share_usd": 165.0,
+      "total_usd": 512.0,
+      "headroom_usd": 1088.0,
+      "utilization": 0.32,
+      "fairness_utilization": 0.216875
+    },
+    {
+      "member_id": "sofia",
+      "name": "Sofia",
+      "budget_usd": 1900.0,
+      "flight_usd": 300.0,
+      "flight_is_estimated": true,
+      "hotel_share_usd": 47.0,
+      "activity_share_usd": 165.0,
+      "total_usd": 512.0,
+      "headroom_usd": 1388.0,
+      "utilization": 0.2694736842105263,
+      "fairness_utilization": 0.18263157894736842
+    }
+  ],
+  "provenance": {
+    "source_case_id": "03-03_natural_language_conflict",
+    "source_tier": "offline",
+    "planner_output": "Recorded live model output replayed without network access.",
+    "flight_data": "K-002 baseline: fixed $300 estimated flight per member."
+  }
+}

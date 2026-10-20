@@ -1,0 +1,672 @@
+{
+  "id": "22-eight-members",
+  "group_notes": "Keep the trip relaxed, avoid rushed mornings, and make sure the plan respects everyone's must-haves.",
+  "members": [
+    {
+      "member_id": "member-1",
+      "name": "Member 1",
+      "origin_city": "ORD",
+      "budget_usd": 1500,
+      "food_restrictions": [
+        "vegetarian"
+      ],
+      "preference_notes": "Hates early mornings, no clubs, wants Italian food at least once.",
+      "preference_vector": {
+        "outdoor": 0.8,
+        "food": 0.7,
+        "nightlife": 0.2,
+        "urban": 0.6,
+        "shopping": 0.1
+      },
+      "is_leader": true
+    },
+    {
+      "member_id": "member-2",
+      "name": "Member 2",
+      "origin_city": "ATL",
+      "budget_usd": 1200,
+      "food_restrictions": [],
+      "preference_notes": "Likes relaxed days with good meals and urban neighborhoods, but does not want an overpacked schedule.",
+      "preference_vector": {
+        "outdoor": 0.5,
+        "food": 0.8,
+        "nightlife": 0.6,
+        "urban": 0.4,
+        "shopping": 0.3
+      },
+      "is_leader": false
+    },
+    {
+      "member_id": "member-3",
+      "name": "Member 3",
+      "origin_city": "LAX",
+      "budget_usd": 2000,
+      "food_restrictions": [],
+      "preference_notes": "Interested in scenic walks and museums, but not late-night clubbing.",
+      "preference_vector": {
+        "outdoor": 0.6,
+        "food": 0.6,
+        "nightlife": 0.4,
+        "urban": 0.7,
+        "shopping": 0.5
+      },
+      "is_leader": false
+    },
+    {
+      "member_id": "member-4",
+      "name": "Member 4",
+      "origin_city": "JFK",
+      "budget_usd": 1500,
+      "food_restrictions": [
+        "vegetarian"
+      ],
+      "preference_notes": "Hates early mornings, no clubs, wants Italian food at least once.",
+      "preference_vector": {
+        "outdoor": 0.8,
+        "food": 0.7,
+        "nightlife": 0.2,
+        "urban": 0.6,
+        "shopping": 0.1
+      },
+      "is_leader": false
+    },
+    {
+      "member_id": "member-5",
+      "name": "Member 5",
+      "origin_city": "ORD",
+      "budget_usd": 1200,
+      "food_restrictions": [],
+      "preference_notes": "Likes relaxed days with good meals and urban neighborhoods, but does not want an overpacked schedule.",
+      "preference_vector": {
+        "outdoor": 0.5,
+        "food": 0.8,
+        "nightlife": 0.6,
+        "urban": 0.4,
+        "shopping": 0.3
+      },
+      "is_leader": false
+    },
+    {
+      "member_id": "member-6",
+      "name": "Member 6",
+      "origin_city": "ATL",
+      "budget_usd": 2000,
+      "food_restrictions": [],
+      "preference_notes": "Interested in scenic walks and museums, but not late-night clubbing.",
+      "preference_vector": {
+        "outdoor": 0.6,
+        "food": 0.6,
+        "nightlife": 0.4,
+        "urban": 0.7,
+        "shopping": 0.5
+      },
+      "is_leader": false
+    },
+    {
+      "member_id": "member-7",
+      "name": "Member 7",
+      "origin_city": "LAX",
+      "budget_usd": 1500,
+      "food_restrictions": [
+        "vegetarian"
+      ],
+      "preference_notes": "Hates early mornings, no clubs, wants Italian food at least once.",
+      "preference_vector": {
+        "outdoor": 0.8,
+        "food": 0.7,
+        "nightlife": 0.2,
+        "urban": 0.6,
+        "shopping": 0.1
+      },
+      "is_leader": false
+    },
+    {
+      "member_id": "member-8",
+      "name": "Member 8",
+      "origin_city": "JFK",
+      "budget_usd": 1200,
+      "food_restrictions": [],
+      "preference_notes": "Likes relaxed days with good meals and urban neighborhoods, but does not want an overpacked schedule.",
+      "preference_vector": {
+        "outdoor": 0.5,
+        "food": 0.8,
+        "nightlife": 0.6,
+        "urban": 0.4,
+        "shopping": 0.3
+      },
+      "is_leader": false
+    }
+  ],
+  "start_date": "2026-09-08",
+  "end_date": "2026-09-11",
+  "trip_duration_days": 3,
+  "destination": {
+    "name": "Surfside Beach",
+    "coords": {
+      "lat": 28.949,
+      "lng": -95.293
+    }
+  },
+  "hotel": {
+    "name": "Holiday Sands South Vacations",
+    "address": "2411 S Ocean Blvd Ste a, Myrtle Beach, SC 29577, USA",
+    "price_per_night_usd": 64.0,
+    "total_price_usd": 192.0,
+    "rating": 3.8,
+    "is_estimated": false
+  },
+  "weather": {
+    "destination": "Surfside Beach",
+    "date_range": "2026-09-08 to 2026-09-11",
+    "avg_temp_c": 30.0,
+    "precipitation_mm": 16.1,
+    "summary": "Warm (30.0\u00b0C avg), light rain expected"
+  },
+  "days": [
+    {
+      "day_number": 1,
+      "date": "2026-09-08",
+      "neighborhood": "Surfside Beach",
+      "meals": [
+        "Hotel breakfast at Holiday Sands South",
+        "Vegetarian lunch at Seahorse Bar & Grill",
+        "Italian dinner at local Italian restaurant in Surfside Beach"
+      ],
+      "estimated_day_cost_usd": 240.0,
+      "schedule": [
+        {
+          "time": "09:00",
+          "type": "meal",
+          "label": "Breakfast",
+          "notes": "At hotel - Holiday Sands South Vacations"
+        },
+        {
+          "time": "10:30",
+          "type": "activity",
+          "label": "Surfside Beach",
+          "notes": "Scenic beach walk and relaxation"
+        },
+        {
+          "time": "12:30",
+          "type": "meal",
+          "label": "Lunch",
+          "notes": "Vegetarian options at Seahorse Bar & Grill"
+        },
+        {
+          "time": "14:00",
+          "type": "activity",
+          "label": "Oyster Creek Municipal Park",
+          "notes": "Scenic walk through urban park"
+        },
+        {
+          "time": "18:30",
+          "type": "meal",
+          "label": "Dinner",
+          "notes": "Italian cuisine, vegetarian options available"
+        }
+      ],
+      "rationale": "Day 1 introduces the group to Surfside Beach with a relaxed pace: a 9:00 AM breakfast at Beach Front Deck Bar and Grill sets a late-morning tone that respects everyone's preference to avoid early starts. The confirmed stops\u2014Surfside Beach for scenic beach time, Oyster Creek Municipal Park for outdoor activity, and two dining sessions at Salty Pelican\u2014create a balanced rhythm of nature, recreation, and quality meals without overcommitting the schedule.",
+      "constraint_notes": [
+        "9:00 AM start respects 'avoid early mornings' constraint (later than typical dawn activities)",
+        "No nightclub or nightlife venues scheduled",
+        "Three activities per day maintains relaxed, non-rushed pace",
+        "Multiple meals at confirmed venues support quality dining focus"
+      ],
+      "total_travel_minutes": 30940,
+      "activities": [
+        {
+          "name": "Surfside Beach",
+          "category": "urban",
+          "address": "206 Starfish St, Freeport, TX 77541, USA",
+          "lat": 28.949779499999998,
+          "lng": -95.28490459999999,
+          "price_level": 0,
+          "rating": 4.6,
+          "tags": [
+            "nature_preserve",
+            "tourist_attraction",
+            "park",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Oyster Creek Municipal Park",
+          "category": "urban",
+          "address": "4001-, 4021 FM523, Oyster Creek, TX 77541, USA",
+          "lat": 29.013253000000002,
+          "lng": -95.32876879999999,
+          "price_level": 0,
+          "rating": 4.5,
+          "tags": [
+            "park",
+            "tourist_attraction",
+            "point_of_interest",
+            "establishment"
+          ]
+        }
+      ],
+      "routes": [
+        {
+          "distance_meters": 2234577,
+          "duration_seconds": 1811532,
+          "mode": "WALK",
+          "from_order": 1,
+          "to_order": 2,
+          "from_label": "Holiday Sands South Vacations",
+          "to_label": "Beach Front Deck Bar and Grill"
+        },
+        {
+          "distance_meters": 1722,
+          "duration_seconds": 1443,
+          "mode": "WALK",
+          "from_order": 2,
+          "to_order": 3,
+          "from_label": "Beach Front Deck Bar and Grill",
+          "to_label": "Surfside Beach"
+        },
+        {
+          "distance_meters": 372,
+          "duration_seconds": 306,
+          "mode": "WALK",
+          "from_order": 3,
+          "to_order": 4,
+          "from_label": "Surfside Beach",
+          "to_label": "Salty Pelican Surfside Beach"
+        },
+        {
+          "distance_meters": 26387,
+          "duration_seconds": 21257,
+          "mode": "WALK",
+          "from_order": 4,
+          "to_order": 5,
+          "from_label": "Salty Pelican Surfside Beach",
+          "to_label": "Oyster Creek Municipal Park"
+        },
+        {
+          "distance_meters": 27194,
+          "duration_seconds": 21907,
+          "mode": "WALK",
+          "from_order": 5,
+          "to_order": 6,
+          "from_label": "Oyster Creek Municipal Park",
+          "to_label": "Salty Pelican Surfside Beach"
+        }
+      ]
+    },
+    {
+      "day_number": 2,
+      "date": "2026-09-09",
+      "neighborhood": "Surfside Jetty / Quintana Beach",
+      "meals": [
+        "Hotel breakfast at Holiday Sands South",
+        "Vegetarian lunch at Jetty Shack",
+        "Vegetarian dinner in urban neighborhood"
+      ],
+      "estimated_day_cost_usd": 220.0,
+      "schedule": [
+        {
+          "time": "09:00",
+          "type": "meal",
+          "label": "Breakfast",
+          "notes": "At hotel - Holiday Sands South Vacations"
+        },
+        {
+          "time": "10:30",
+          "type": "activity",
+          "label": "Surfside Jetty County Park",
+          "notes": "Scenic outdoor walk along jetty"
+        },
+        {
+          "time": "12:30",
+          "type": "meal",
+          "label": "Lunch",
+          "notes": "Vegetarian-friendly at Jetty Shack"
+        },
+        {
+          "time": "14:00",
+          "type": "activity",
+          "label": "Quintana Neotropical Bird Sanctuary",
+          "notes": "Urban nature walk and bird observation"
+        },
+        {
+          "time": "18:30",
+          "type": "meal",
+          "label": "Dinner",
+          "notes": "Vegetarian options in local neighborhood"
+        }
+      ],
+      "rationale": "Day 2 transitions to Surfside Jetty and Quintana for nature-focused exploration. The 9:00 AM breakfast at Beach Front Deck Bar and Grill is followed by scenic walks and birdwatching at Surfside Jetty County Park and Quintana Neotropical Bird Sanctuary\u2014ideal for members interested in scenic walks and nature museums. Salty Pelican meals bracket the day, maintaining the relaxed dining and exploration rhythm without overloading the schedule.",
+      "constraint_notes": [
+        "9:00 AM start respects 'avoid early mornings' constraint",
+        "Quintana Neotropical Bird Sanctuary offers museum-like educational experience and scenic outdoor walks",
+        "No nightclub or nightlife venues scheduled",
+        "Three activities per day with ample dining and downtime"
+      ],
+      "total_travel_minutes": 30355,
+      "activities": [
+        {
+          "name": "Surfside Jetty County Park",
+          "category": "urban",
+          "address": "101 Parkview Rd, Surfside Beach, TX 77541, USA",
+          "lat": 28.9380657,
+          "lng": -95.2955537,
+          "price_level": 0,
+          "rating": 4.5,
+          "tags": [
+            "park",
+            "tourist_attraction",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Quintana Neotropical Bird Sanctuary",
+          "category": "urban",
+          "address": "814 Lamar St, Quintana, TX 77541, USA",
+          "lat": 28.9337826,
+          "lng": -95.30845339999999,
+          "price_level": 0,
+          "rating": 4.6,
+          "tags": [
+            "nature_preserve",
+            "tourist_attraction",
+            "park",
+            "point_of_interest",
+            "establishment"
+          ]
+        }
+      ],
+      "routes": [
+        {
+          "distance_meters": 2234577,
+          "duration_seconds": 1811532,
+          "mode": "WALK",
+          "from_order": 1,
+          "to_order": 2,
+          "from_label": "Holiday Sands South Vacations",
+          "to_label": "Beach Front Deck Bar and Grill"
+        },
+        {
+          "distance_meters": 3335,
+          "duration_seconds": 2749,
+          "mode": "WALK",
+          "from_order": 2,
+          "to_order": 3,
+          "from_label": "Beach Front Deck Bar and Grill",
+          "to_label": "Surfside Jetty County Park"
+        },
+        {
+          "distance_meters": 1841,
+          "duration_seconds": 1514,
+          "mode": "WALK",
+          "from_order": 3,
+          "to_order": 4,
+          "from_label": "Surfside Jetty County Park",
+          "to_label": "Salty Pelican Surfside Beach"
+        },
+        {
+          "distance_meters": 3548,
+          "duration_seconds": 2753,
+          "mode": "WALK",
+          "from_order": 4,
+          "to_order": 5,
+          "from_label": "Salty Pelican Surfside Beach",
+          "to_label": "Quintana Neotropical Bird Sanctuary"
+        },
+        {
+          "distance_meters": 3548,
+          "duration_seconds": 2761,
+          "mode": "WALK",
+          "from_order": 5,
+          "to_order": 6,
+          "from_label": "Quintana Neotropical Bird Sanctuary",
+          "to_label": "Salty Pelican Surfside Beach"
+        }
+      ]
+    },
+    {
+      "day_number": 3,
+      "date": "2026-09-10",
+      "neighborhood": "Lake Jackson / Clute area",
+      "meals": [
+        "Hotel breakfast at Holiday Sands South",
+        "Vegetarian lunch at Lake Jackson area",
+        "Vegetarian Italian dinner or alternative"
+      ],
+      "estimated_day_cost_usd": 200.0,
+      "schedule": [
+        {
+          "time": "09:00",
+          "type": "meal",
+          "label": "Breakfast",
+          "notes": "At hotel - Holiday Sands South Vacations"
+        },
+        {
+          "time": "10:30",
+          "type": "activity",
+          "label": "Sea Center Texas",
+          "notes": "Museum and urban nature center"
+        },
+        {
+          "time": "12:30",
+          "type": "meal",
+          "label": "Lunch",
+          "notes": "Vegetarian options in Lake Jackson area"
+        },
+        {
+          "time": "14:00",
+          "type": "activity",
+          "label": "A.A. MacLean Park",
+          "notes": "Scenic outdoor park walk"
+        },
+        {
+          "time": "18:30",
+          "type": "meal",
+          "label": "Dinner",
+          "notes": "Vegetarian Italian or vegetarian alternative"
+        }
+      ],
+      "rationale": "Day 3 concludes the trip with Lake Jackson and Clute area attractions, starting at 9:00 AM at Beach Front Deck Bar and Grill. Sea Center Texas provides an educational, museum-quality experience, while A.A. MacLean Park offers additional outdoor recreation and scenic walks. The day maintains the established rhythm of breakfast, morning activity, lunch, afternoon activity, and dinner\u2014all confirmed venues with no rushing or early mornings.",
+      "constraint_notes": [
+        "9:00 AM start respects 'avoid early mornings' constraint",
+        "Sea Center Texas functions as a museum-quality educational venue",
+        "A.A. MacLean Park offers scenic walks and outdoor recreation",
+        "No nightclub or nightlife venues scheduled",
+        "Three activities per day maintains consistent, relaxed pacing"
+      ],
+      "total_travel_minutes": 31671,
+      "activities": [
+        {
+          "name": "Sea Center Texas",
+          "category": "urban",
+          "address": "302 Medical Dr, Lake Jackson, TX 77566, USA",
+          "lat": 29.01748,
+          "lng": -95.44596159999999,
+          "price_level": 0,
+          "rating": 4.7,
+          "tags": [
+            "aquarium",
+            "tourist_attraction",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "A.A. MacLean Park",
+          "category": "outdoor",
+          "address": "93 Lake Rd, Lake Jackson, TX 77566, USA",
+          "lat": 29.0284164,
+          "lng": -95.4601204,
+          "price_level": 0,
+          "rating": 4.6,
+          "tags": [
+            "park",
+            "point_of_interest",
+            "establishment"
+          ]
+        }
+      ],
+      "routes": [
+        {
+          "distance_meters": 2234577,
+          "duration_seconds": 1811532,
+          "mode": "WALK",
+          "from_order": 1,
+          "to_order": 2,
+          "from_label": "Holiday Sands South Vacations",
+          "to_label": "Beach Front Deck Bar and Grill"
+        },
+        {
+          "distance_meters": 27521,
+          "duration_seconds": 22284,
+          "mode": "WALK",
+          "from_order": 2,
+          "to_order": 3,
+          "from_label": "Beach Front Deck Bar and Grill",
+          "to_label": "Sea Center Texas"
+        },
+        {
+          "distance_meters": 26030,
+          "duration_seconds": 21052,
+          "mode": "WALK",
+          "from_order": 3,
+          "to_order": 4,
+          "from_label": "Sea Center Texas",
+          "to_label": "Salty Pelican Surfside Beach"
+        },
+        {
+          "distance_meters": 28090,
+          "duration_seconds": 22720,
+          "mode": "WALK",
+          "from_order": 4,
+          "to_order": 5,
+          "from_label": "Salty Pelican Surfside Beach",
+          "to_label": "A.A. MacLean Park"
+        },
+        {
+          "distance_meters": 28090,
+          "duration_seconds": 22720,
+          "mode": "WALK",
+          "from_order": 5,
+          "to_order": 6,
+          "from_label": "A.A. MacLean Park",
+          "to_label": "Salty Pelican Surfside Beach"
+        }
+      ]
+    }
+  ],
+  "trip_pitch": "Escape to Surfside Beach, TX, a laid-back coastal gem perfect for a group seeking relaxation, great food, and outdoor exploration without the stress of a packed schedule. This charming destination offers the ideal balance of beach culture and nature-based activities, allowing everyone to move at a comfortable pace while enjoying quality time together. Whether you're lounging by the shore, exploring local parks, or savoring fresh seafood, Surfside Beach delivers authentic Texas coastal hospitality in a welcoming, low-key setting that suits groups of all interests.\n\nYour three-day itinerary is thoughtfully designed around leisurely mornings and memorable meals. Day 1 kicks off with breakfast at Beach Front Deck Bar and Grill, followed by time at Surfside Beach itself, a midday bite at Salty Pelican Surfside Beach, an exploration of Oyster Creek Municipal Park, and an evening dinner back at Salty Pelican. Day 2 features the scenic beauty of Surfside Jetty County Park in the morning, more dining at Salty Pelican at lunch and dinner, plus an afternoon visit to the Quintana Neotropical Bird Sanctuary\u2014perfect for nature lovers and birding enthusiasts. Day 3 shifts to the Lake Jackson and Clute area, with visits to Sea Center Texas for educational exhibits and A.A. MacLean Park for outdoor recreation, bookended by meals at Beach Front Deck Bar and Grill and Salty Pelican.\n\nYou'll be staying at Holiday Sands South Vacations, a budget-friendly beachfront hotel at just $64 per night (total $192 for three nights), giving you direct access to the action and plenty of opportunities to rest between activities. Expect warm weather averaging 30\u00b0C with light rain possible, so pack light layers and be ready for that authentic Gulf Coast experience. The itinerary respects everyone's need for relaxed mornings and downtime\u2014no early starts, no nightlife venues, and a manageable three activities per day that keeps the mood easygoing and stress-free.\n\nThis trip is crafted for groups that value good company, excellent food, and natural beauty over packed schedules and constant rushing. With the flexibility to explore Surfside Beach, coastal parks, and wildlife sanctuaries at your own rhythm, you'll create genuine memories without anyone feeling overwhelmed. Get ready to unwind, recharge, and enjoy three perfect days on the Texas coast.",
+  "per_member_costs": [
+    {
+      "member_id": "member-1",
+      "name": "Member 1",
+      "budget_usd": 1500.0,
+      "flight_usd": 300.0,
+      "flight_is_estimated": true,
+      "hotel_share_usd": 24.0,
+      "activity_share_usd": 82.5,
+      "total_usd": 406.5,
+      "headroom_usd": 1093.5,
+      "utilization": 0.271,
+      "fairness_utilization": 0.216
+    },
+    {
+      "member_id": "member-2",
+      "name": "Member 2",
+      "budget_usd": 1200.0,
+      "flight_usd": 300.0,
+      "flight_is_estimated": true,
+      "hotel_share_usd": 24.0,
+      "activity_share_usd": 82.5,
+      "total_usd": 406.5,
+      "headroom_usd": 793.5,
+      "utilization": 0.33875,
+      "fairness_utilization": 0.27
+    },
+    {
+      "member_id": "member-3",
+      "name": "Member 3",
+      "budget_usd": 2000.0,
+      "flight_usd": 300.0,
+      "flight_is_estimated": true,
+      "hotel_share_usd": 24.0,
+      "activity_share_usd": 82.5,
+      "total_usd": 406.5,
+      "headroom_usd": 1593.5,
+      "utilization": 0.20325,
+      "fairness_utilization": 0.162
+    },
+    {
+      "member_id": "member-4",
+      "name": "Member 4",
+      "budget_usd": 1500.0,
+      "flight_usd": 300.0,
+      "flight_is_estimated": true,
+      "hotel_share_usd": 24.0,
+      "activity_share_usd": 82.5,
+      "total_usd": 406.5,
+      "headroom_usd": 1093.5,
+      "utilization": 0.271,
+      "fairness_utilization": 0.216
+    },
+    {
+      "member_id": "member-5",
+      "name": "Member 5",
+      "budget_usd": 1200.0,
+      "flight_usd": 300.0,
+      "flight_is_estimated": true,
+      "hotel_share_usd": 24.0,
+      "activity_share_usd": 82.5,
+      "total_usd": 406.5,
+      "headroom_usd": 793.5,
+      "utilization": 0.33875,
+      "fairness_utilization": 0.27
+    },
+    {
+      "member_id": "member-6",
+      "name": "Member 6",
+      "budget_usd": 2000.0,
+      "flight_usd": 300.0,
+      "flight_is_estimated": true,
+      "hotel_share_usd": 24.0,
+      "activity_share_usd": 82.5,
+      "total_usd": 406.5,
+      "headroom_usd": 1593.5,
+      "utilization": 0.20325,
+      "fairness_utilization": 0.162
+    },
+    {
+      "member_id": "member-7",
+      "name": "Member 7",
+      "budget_usd": 1500.0,
+      "flight_usd": 300.0,
+      "flight_is_estimated": true,
+      "hotel_share_usd": 24.0,
+      "activity_share_usd": 82.5,
+      "total_usd": 406.5,
+      "headroom_usd": 1093.5,
+      "utilization": 0.271,
+      "fairness_utilization": 0.216
+    },
+    {
+      "member_id": "member-8",
+      "name": "Member 8",
+      "budget_usd": 1200.0,
+      "flight_usd": 300.0,
+      "flight_is_estimated": true,
+      "hotel_share_usd": 24.0,
+      "activity_share_usd": 82.5,
+      "total_usd": 406.5,
+      "headroom_usd": 793.5,
+      "utilization": 0.33875,
+      "fairness_utilization": 0.27
+    }
+  ],
+  "provenance": {
+    "source_case_id": "22-eight-members",
+    "source_tier": "offline",
+    "planner_output": "Recorded live model output replayed without network access.",
+    "flight_data": "K-002 baseline: fixed $300 estimated flight per member."
+  }
+}

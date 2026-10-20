@@ -1,0 +1,18 @@
+{
+  "operation": "fetch_weather",
+  "request": {
+    "destination_name": "Lexington",
+    "end_date": "2026-09-11",
+    "lat": 38.04,
+    "lng": -84.503,
+    "start_date": "2026-09-08"
+  },
+  "request_sha256": "b9e5aebed71261dae6df2132d91a282f9e37966a2163082632f91956507d128c",
+  "response": {
+    "avg_temp_c": 24.9,
+    "date_range": "2026-09-08 to 2026-09-11",
+    "destination": "Lexington",
+    "precipitation_mm": 13.5,
+    "summary": "Mild (24.9\u00b0C avg), light rain expected"
+  }
+}

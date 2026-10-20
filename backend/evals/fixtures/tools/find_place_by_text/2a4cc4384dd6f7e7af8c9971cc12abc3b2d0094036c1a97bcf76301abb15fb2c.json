@@ -1,0 +1,34 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 38.04,
+      "lng": -84.503
+    },
+    "destination": "Lexington",
+    "included_type": null,
+    "query": "Continue neighborhood exploration"
+  },
+  "request_sha256": "2a4cc4384dd6f7e7af8c9971cc12abc3b2d0094036c1a97bcf76301abb15fb2c",
+  "response": {
+    "address": "545 S Broadway Ste 160, Lexington, KY 40508, USA",
+    "category": "place",
+    "lat": 38.0443102,
+    "lng": -84.5067911,
+    "name": "Chaotic Good: Coffee, Comics and Games",
+    "place_id": "ChIJtRgO0mVFQogRE7yxefa0SkE",
+    "price_level": 0,
+    "rating": 4.8,
+    "tags": [
+      "coffee_shop",
+      "toy_store",
+      "cafe",
+      "book_store",
+      "food_store",
+      "food",
+      "store",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

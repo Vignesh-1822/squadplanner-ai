@@ -1,0 +1,21 @@
+{
+  "operation": "search_flights",
+  "request": {
+    "adults": 1,
+    "depart_date": "2026-09-08",
+    "destination": "Temecula",
+    "origin": "BOS",
+    "return_date": "2026-09-11"
+  },
+  "request_sha256": "8b8f35c511044b6847f19225255f0143bf727d22e67fb46a3943f2546acb5038",
+  "response": {
+    "airline": "Estimated",
+    "depart_time": "2026-09-08T08:00:00",
+    "destination": "Temecula",
+    "is_estimated": true,
+    "member_id": "",
+    "origin": "BOS",
+    "price_usd": 300.0,
+    "return_time": "2026-09-11T18:00:00"
+  }
+}

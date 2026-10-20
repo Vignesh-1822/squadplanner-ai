@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SquadPlanner Blind Calibration</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f6f3ed;
+        --panel: #ffffff;
+        --ink: #1f2428;
+        --muted: #656d76;
+        --line: #d8d0c3;
+        --accent: #1d6f5f;
+        --accent-dark: #145246;
+        --warning: #fff7d6;
+        --warning-line: #d5a900;
+        --danger: #b42318;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font: 15px/1.5 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        border-bottom: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.96);
+      }
+
+      .shell { width: min(1320px, calc(100vw - 32px)); margin: 0 auto; }
+      .topbar, .login-row, .actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+      .topbar { min-height: 68px; justify-content: space-between; }
+      h1 { margin: 0; font-size: 21px; }
+      h2 { margin: 0 0 12px; font-size: 18px; }
+      h3 { margin: 0 0 8px; font-size: 16px; }
+      h4 { margin: 0 0 4px; font-size: 14px; }
+      p { margin: 0 0 10px; }
+
+      main { padding: 18px 0 40px; }
+      .layout { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(380px, 0.8fr); gap: 18px; }
+      .stack > * + * { margin-top: 16px; }
+      .panel { padding: 16px; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); }
+      .muted { color: var(--muted); }
+      .hidden { display: none !important; }
+      .error { color: var(--danger); }
+
+      .warning {
+        padding: 12px 14px;
+        border: 1px solid var(--warning-line);
+        border-radius: 8px;
+        background: var(--warning);
+      }
+
+      input[type="email"], input[type="password"], textarea {
+        padding: 9px 10px;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        background: #fff;
+        color: var(--ink);
+        font: inherit;
+      }
+
+      textarea { width: 100%; min-height: 66px; resize: vertical; }
+
+      button {
+        padding: 9px 14px;
+        border: 1px solid var(--accent);
+        border-radius: 6px;
+        background: var(--accent);
+        color: #fff;
+        font: inherit;
+        font-weight: 650;
+        cursor: pointer;
+      }
+
+      button:hover { background: var(--accent-dark); }
+      button:disabled { cursor: not-allowed; opacity: 0.55; }
+      button.secondary { background: #fff; color: var(--accent-dark); }
+
+      .member-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; }
+      .member, .day, .rubric { padding: 13px; border: 1px solid var(--line); border-radius: 8px; }
+      .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+      .chip { padding: 2px 7px; border-radius: 999px; background: #edf5f2; font-size: 12px; }
+
+      table { width: 100%; border-collapse: collapse; font-size: 13px; }
+      th, td { padding: 8px; border-bottom: 1px solid var(--line); text-align: right; }
+      th:first-child, td:first-child { text-align: left; }
+      .negative { color: var(--danger); font-weight: 650; }
+
+      .schedule { margin: 10px 0; padding: 0; list-style: none; }
+      .schedule li { display: grid; grid-template-columns: 70px 1fr; gap: 10px; padding: 7px 0; border-bottom: 1px solid #eee9e1; }
+      .route { font-size: 13px; color: var(--muted); }
+      .pitch { padding: 14px; border-left: 4px solid var(--accent); background: #f3f8f6; }
+
+      .rubric { padding: 14px; }
+      .anchor {
+        display: grid;
+        grid-template-columns: 26px 1fr;
+        gap: 9px;
+        padding: 9px 0;
+        border-top: 1px solid #eee9e1;
+        cursor: pointer;
+      }
+      .anchor:first-of-type { border-top: 0; }
+      .anchor input { margin-top: 4px; }
+      .anchor-title { font-weight: 700; }
+      .rubric textarea { margin-top: 10px; }
+      .sticky-submit { position: sticky; bottom: 12px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12); }
+
+      @media (max-width: 900px) {
+        .layout { grid-template-columns: 1fr; }
+        .sticky-submit { position: static; }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Blindness invariant: this page never receives or renders a stored or automated rating. -->
+    <header>
+      <div class="shell topbar">
+        <div>
+          <h1>SquadPlanner blind calibration</h1>
+          <div id="progress" class="muted">Sign in to load progress.</div>
+        </div>
+        <div class="login-row">
+          <input id="email" type="email" autocomplete="username" placeholder="Admin email" />
+          <input id="password" type="password" autocomplete="current-password" placeholder="Password" />
+          <button id="loginButton" type="button">Sign in</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="shell">
+      <div id="status" class="panel">Loading calibration session…</div>
+      <div id="content" class="layout hidden">
+        <div class="stack">
+          <div class="warning">
+            <strong>Flight-cost limitation:</strong>
+            every member's flight is the same fixed $300 estimate in this baseline. Use the displayed
+            totals consistently, but do not judge whether that airfare is realistic.
+          </div>
+
+          <section class="panel">
+            <h2 id="itemHeading">Calibration item</h2>
+            <p id="tripSummary" class="muted"></p>
+            <p id="groupNotes"></p>
+            <div id="members" class="member-grid"></div>
+          </section>
+
+          <section class="panel">
+            <h2>Per-member cost view</h2>
+            <p class="muted">Equal hotel and itinerary-cost shares; cheapest recorded flight per member.</p>
+            <div style="overflow-x: auto">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Member</th><th>Budget</th><th>Flight</th><th>Hotel share</th>
+                    <th>Activity share</th><th>Total</th><th>Headroom</th>
+                  </tr>
+                </thead>
+                <tbody id="costRows"></tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="panel">
+            <h2>Day-by-day itinerary</h2>
+            <div id="days" class="stack"></div>
+          </section>
+
+          <section class="panel">
+            <h2>Trip pitch</h2>
+            <div id="pitch" class="pitch"></div>
+          </section>
+        </div>
+
+        <aside class="stack">
+          <div class="panel">
+            <h2>Your independent ratings</h2>
+            <p class="muted">Choose one anchored level for each criterion. No rating is selected for you.</p>
+          </div>
+          <form id="labelForm" class="stack"></form>
+          <div class="panel sticky-submit">
+            <div class="actions">
+              <button id="saveButton" type="submit" form="labelForm">Save and continue</button>
+              <span id="saveStatus" class="muted"></span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <script>
+      const API = "/api";
+      const params = new URLSearchParams(window.location.search);
+      const passIndex = params.get("pass") === "2" ? 2 : 1;
+      const state = { itemIds: [], completed: new Set(), item: null, rubrics: {} };
+
+      const statusEl = document.getElementById("status");
+      const contentEl = document.getElementById("content");
+      const progressEl = document.getElementById("progress");
+      const formEl = document.getElementById("labelForm");
+      const saveButton = document.getElementById("saveButton");
+      const saveStatus = document.getElementById("saveStatus");
+
+      function money(value) {
+        return new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 })
+          .format(Number(value || 0));
+      }
+
+      function node(tag, text, className = "") {
+        const element = document.createElement(tag);
+        if (className) element.className = className;
+        if (text !== undefined && text !== null) element.textContent = String(text);
+        return element;
+      }
+
+      async function apiFetch(path, options = {}) {
+        const response = await fetch(`${API}${path}`, {
+          credentials: "include",
+          ...options,
+          headers: {
+            ...(options.body ? { "Content-Type": "application/json" } : {}),
+            ...(options.headers || {})
+          }
+        });
+        let body = null;
+        try { body = await response.json(); } catch (_) { body = {}; }
+        if (!response.ok) {
+          const error = new Error(body.detail || `Request failed (${response.status})`);
+          error.status = response.status;
+          throw error;
+        }
+        return body;
+      }
+
+      function renderMembers(item) {
+        const root = document.getElementById("members");
+        root.replaceChildren();
+        item.members.forEach((member) => {
+          const card = node("article", null, "member");
+          card.append(node("h3", member.name));
+          card.append(node("p", `${member.origin_city} · budget ${money(member.budget_usd)}`, "muted"));
+          if (member.preference_notes) card.append(node("p", member.preference_notes));
+          const chips = node("div", null, "chips");
+          Object.entries(member.preference_vector || {})
+            .sort((a, b) => Number(b[1]) - Number(a[1]))
+            .forEach(([name, value]) => chips.append(node("span", `${name} ${Number(value).toFixed(1)}`, "chip")));
+          (member.food_restrictions || []).forEach((value) => chips.append(node("span", `diet: ${value}`, "chip")));
+          card.append(chips);
+          root.append(card);
+        });
+      }
+
+      function renderCosts(item) {
+        const root = document.getElementById("costRows");
+        root.replaceChildren();
+        item.per_member_costs.forEach((cost) => {
+          const row = document.createElement("tr");
+          [
+            cost.name, money(cost.budget_usd), money(cost.flight_usd),
+            money(cost.hotel_share_usd), money(cost.activity_share_usd),
+            money(cost.total_usd), money(cost.headroom_usd)
+          ].forEach((value, index) => {
+            const cell = node("td", value);
+            if (index === 6 && Number(cost.headroom_usd) < 0) cell.className = "negative";
+            row.append(cell);
+          });
+          root.append(row);
+        });
+      }
+
+      function renderDays(item) {
+        const root = document.getElementById("days");
+        root.replaceChildren();
+        item.days.forEach((day) => {
+          const card = node("article", null, "day");
+          card.append(node("h3", `Day ${day.day_number} · ${day.date} · ${day.neighborhood || "Area not named"}`));
+          card.append(node("p", `Estimated group cost ${money(day.estimated_day_cost_usd)}`, "muted"));
+          const schedule = node("ol", null, "schedule");
+          (day.schedule || []).forEach((entry) => {
+            const line = node("li");
+            line.append(node("strong", entry.time || "—"));
+            const detail = node("div");
+            detail.append(node("div", entry.label || "Unnamed stop"));
+            if (entry.notes) detail.append(node("div", entry.notes, "muted"));
+            line.append(detail);
+            schedule.append(line);
+          });
+          card.append(schedule);
+          if ((day.routes || []).length) {
+            const routeHeading = node("h4", "Walking legs");
+            card.append(routeHeading);
+            day.routes.forEach((route) => {
+              const minutes = Math.round(Number(route.duration_seconds || 0) / 60);
+              const distance = (Number(route.distance_meters || 0) / 1000).toFixed(1);
+              card.append(node(
+                "div",
+                `${route.from_label || "Stop"} → ${route.to_label || "stop"}: ${minutes} min, ${distance} km`,
+                "route"
+              ));
+            });
+          }
+          if ((day.meals || []).length) card.append(node("p", `Meals: ${day.meals.join(" · ")}`));
+          if (day.rationale) card.append(node("p", day.rationale, "muted"));
+          root.append(card);
+        });
+      }
+
+      function renderRubrics(rubrics) {
+        formEl.replaceChildren();
+        Object.entries(rubrics).forEach(([rubricId, rubric]) => {
+          const section = node("section", null, "panel rubric");
+          section.append(node("h2", rubric.title));
+          [5, 4, 3, 2, 1].forEach((score) => {
+            const anchor = rubric.anchors[String(score)] || rubric.anchors[score];
+            const label = node("label", null, "anchor");
+            const radio = document.createElement("input");
+            radio.type = "radio";
+            radio.name = rubricId;
+            radio.value = String(score);
+            radio.required = true;
+            const text = node("div");
+            text.append(node("div", `${score} — ${anchor.label}`, "anchor-title"));
+            text.append(node("div", anchor.description, "muted"));
+            label.append(radio, text);
+            section.append(label);
+          });
+          const notes = document.createElement("textarea");
+          notes.name = `${rubricId}_notes`;
+          notes.maxLength = 2000;
+          notes.placeholder = "Optional notes explaining this rating";
+          section.append(notes);
+          formEl.append(section);
+        });
+      }
+
+      function renderSession(payload) {
+        state.itemIds = payload.item_ids;
+        state.completed = new Set(payload.completed_item_ids);
+        state.item = payload.item;
+        state.rubrics = payload.rubrics;
+        const position = state.itemIds.indexOf(state.item.id) + 1;
+        progressEl.textContent =
+          `Pass ${passIndex} · item ${position} of ${state.itemIds.length} · ${state.completed.size} saved`;
+        document.getElementById("itemHeading").textContent = `Calibration item ${position}`;
+        document.getElementById("tripSummary").textContent =
+          `${state.item.destination.name} · ${state.item.start_date} to ${state.item.end_date} · ` +
+          `${state.item.members.length} member${state.item.members.length === 1 ? "" : "s"}`;
+        document.getElementById("groupNotes").textContent = state.item.group_notes || "No group note supplied.";
+        document.getElementById("pitch").textContent = state.item.trip_pitch || "No trip pitch supplied.";
+        renderMembers(state.item);
+        renderCosts(state.item);
+        renderDays(state.item);
+        renderRubrics(state.rubrics);
+        statusEl.classList.add("hidden");
+        contentEl.classList.remove("hidden");
+        saveStatus.textContent = "";
+        saveButton.disabled = false;
+        window.scrollTo({ top: 0, behavior: "instant" });
+      }
+
+      async function loadSession(itemId = null) {
+        try {
+          const query = new URLSearchParams({ pass: String(passIndex) });
+          if (itemId) query.set("item_id", itemId);
+          renderSession(await apiFetch(`/calibration/session?${query}`));
+        } catch (error) {
+          contentEl.classList.add("hidden");
+          statusEl.classList.remove("hidden");
+          statusEl.textContent = error.status === 401
+            ? "Sign in with the admin account to begin or resume labelling."
+            : error.status === 403
+              ? "This page is restricted to the admin account. Set is_admin: true for the labelling user."
+              : error.message;
+          statusEl.className = `panel${error.status && error.status >= 400 ? " error" : ""}`;
+        }
+      }
+
+      document.getElementById("loginButton").addEventListener("click", async () => {
+        const button = document.getElementById("loginButton");
+        button.disabled = true;
+        try {
+          await apiFetch("/auth/login", {
+            method: "POST",
+            body: JSON.stringify({
+              email: document.getElementById("email").value,
+              password: document.getElementById("password").value
+            })
+          });
+          document.getElementById("password").value = "";
+          await loadSession();
+        } catch (error) {
+          statusEl.className = "panel error";
+          statusEl.textContent = error.message;
+        } finally {
+          button.disabled = false;
+        }
+      });
+
+      formEl.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        if (!formEl.reportValidity()) return;
+        saveButton.disabled = true;
+        saveStatus.textContent = "Saving…";
+        const data = new FormData(formEl);
+        const payload = { item_id: state.item.id, pass_index: passIndex };
+        Object.keys(state.rubrics).forEach((rubricId) => {
+          payload[rubricId] = {
+            score: Number(data.get(rubricId)),
+            notes: String(data.get(`${rubricId}_notes`) || "")
+          };
+        });
+        try {
+          await apiFetch("/calibration/labels", { method: "POST", body: JSON.stringify(payload) });
+          state.completed.add(state.item.id);
+          const nextId = state.itemIds.find((id) => !state.completed.has(id));
+          if (nextId) {
+            await loadSession(nextId);
+          } else {
+            contentEl.classList.add("hidden");
+            statusEl.className = "panel";
+            statusEl.classList.remove("hidden");
+            statusEl.textContent = passIndex === 1
+              ? "Pass 1 complete. Take a break, then open /debug/label.html?pass=2 to re-label items 1–3 blind."
+              : "Calibration labelling complete. Commit labels.json before Session 3.";
+            progressEl.textContent = `Pass ${passIndex} complete · ${state.completed.size} saved`;
+          }
+        } catch (error) {
+          saveStatus.textContent = error.message;
+          saveStatus.className = "error";
+          saveButton.disabled = false;
+        }
+      });
+
+      loadSession(params.get("item_id"));
+    </script>
+  </body>
+</html>

@@ -4,10 +4,12 @@ import logging
 import uuid
 from datetime import datetime, timezone
 
-from fastapi import APIRouter, Depends, HTTPException, Response, status
+from fastapi import APIRouter, Depends, HTTPException, Request, Response, status
 from pydantic import BaseModel
 
 from api.middleware.auth import get_current_user
+from api.middleware.rate_limit import limiter
+from config import settings
 from db.client import get_collection
 from services.auth_service import (
     create_jwt,
@@ -21,7 +23,7 @@ logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/auth", tags=["auth"])
 
 JWT_COOKIE = "access_token"
-COOKIE_MAX_AGE = 7 * 24 * 60 * 60  # 7 days in seconds
+COOKIE_MAX_AGE = 24 * 60 * 60
 
 
 def _set_auth_cookie(response: Response, token: str) -> None:
@@ -30,7 +32,7 @@ def _set_auth_cookie(response: Response, token: str) -> None:
         value=token,
         httponly=True,
         samesite="lax",
-        secure=False,  # set True in production behind HTTPS
+        secure=settings.cookie_secure,
         max_age=COOKIE_MAX_AGE,
     )
 
@@ -51,7 +53,8 @@ class GoogleRequest(BaseModel):
 
 
 @router.post("/register", status_code=status.HTTP_201_CREATED)
-async def register(body: RegisterRequest, response: Response):
+@limiter.limit("5/minute")
+async def register(request: Request, body: RegisterRequest, response: Response):
     users = get_collection("users")
 
     if await users.find_one({"email": body.email}):
@@ -66,17 +69,20 @@ async def register(body: RegisterRequest, response: Response):
         "auth_provider": "local",
         "hashed_password": hash_password(body.password),
         "created_at": datetime.now(timezone.utc).isoformat(),
+        "token_version": 0,
+        "is_admin": False,
     }
     await users.insert_one(doc)
 
-    token = create_jwt(user_id, body.email)
+    token = create_jwt(user_id, body.email, token_version=0)
     _set_auth_cookie(response, token)
 
     return {"id": user_id, "email": body.email, "name": body.name, "avatar_url": ""}
 
 
 @router.post("/login")
-async def login(body: LoginRequest, response: Response):
+@limiter.limit("10/minute")
+async def login(request: Request, body: LoginRequest, response: Response):
     users = get_collection("users")
     user = await users.find_one({"email": body.email})
 
@@ -86,7 +92,11 @@ async def login(body: LoginRequest, response: Response):
     if not verify_password(body.password, user["hashed_password"]):
         raise HTTPException(status_code=401, detail="Invalid email or password")
 
-    token = create_jwt(user["_id"], user["email"])
+    token = create_jwt(
+        user["_id"],
+        user["email"],
+        token_version=user.get("token_version", 0),
+    )
     _set_auth_cookie(response, token)
 
     return {
@@ -98,7 +108,8 @@ async def login(body: LoginRequest, response: Response):
 
 
 @router.post("/google")
-async def google_auth(body: GoogleRequest, response: Response):
+@limiter.limit("10/minute")
+async def google_auth(request: Request, body: GoogleRequest, response: Response):
     try:
         claims = await verify_google_token(body.token)
     except Exception as exc:
@@ -119,10 +130,16 @@ async def google_auth(body: GoogleRequest, response: Response):
             "auth_provider": "google",
             "hashed_password": None,
             "created_at": datetime.now(timezone.utc).isoformat(),
+            "token_version": 0,
+            "is_admin": False,
         }
         await users.insert_one(user)
 
-    token = create_jwt(user["_id"], user["email"])
+    token = create_jwt(
+        user["_id"],
+        user["email"],
+        token_version=user.get("token_version", 0),
+    )
     _set_auth_cookie(response, token)
 
     return {
@@ -134,8 +151,21 @@ async def google_auth(body: GoogleRequest, response: Response):
 
 
 @router.post("/logout")
-async def logout(response: Response):
-    response.delete_cookie(key=JWT_COOKIE)
+async def logout(
+    response: Response,
+    current_user: dict = Depends(get_current_user),
+):
+    users = get_collection("users")
+    await users.update_one(
+        {"email": current_user["email"]},
+        {"$inc": {"token_version": 1}},
+    )
+    response.delete_cookie(
+        key=JWT_COOKIE,
+        httponly=True,
+        samesite="lax",
+        secure=settings.cookie_secure,
+    )
     return {"message": "Logged out"}
 
 

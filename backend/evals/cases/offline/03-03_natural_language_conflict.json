@@ -1,0 +1,78 @@
+{
+  "id": "03-03_natural_language_conflict",
+  "title": "Natural-Language Preference Conflict",
+  "purpose": "Tests conflicts expressed in preference_notes and group_notes, especially hard constraints versus soft wishes.",
+  "tier": "offline",
+  "tags": [
+    "seed"
+  ],
+  "payload": {
+    "group_notes": "This group has conflicting notes: some want a packed city trip, others want slow mornings and no loud nightlife. Hard constraints should win.",
+    "members": [
+      {
+        "member_id": "nora",
+        "name": "Nora",
+        "origin_city": "BOS",
+        "budget_usd": 1800,
+        "food_restrictions": [
+          "gluten_free"
+        ],
+        "preference_notes": "No clubs or bars. I hate early mornings. I need gluten-free meals.",
+        "preference_vector": {
+          "outdoor": 0.4,
+          "food": 0.8,
+          "nightlife": 0.8,
+          "urban": 0.8,
+          "shopping": 0.3
+        },
+        "is_leader": true
+      },
+      {
+        "member_id": "ryan",
+        "name": "Ryan",
+        "origin_city": "MIA",
+        "budget_usd": 1600,
+        "food_restrictions": [],
+        "preference_notes": "I want the schedule packed, with museums, food halls, and late-night energy.",
+        "preference_vector": {
+          "outdoor": 0.2,
+          "food": 0.9,
+          "nightlife": 0.9,
+          "urban": 0.9,
+          "shopping": 0.4
+        },
+        "is_leader": false
+      },
+      {
+        "member_id": "sofia",
+        "name": "Sofia",
+        "origin_city": "SEA",
+        "budget_usd": 1900,
+        "food_restrictions": [
+          "shellfish"
+        ],
+        "preference_notes": "I want seafood restaurants avoided because of my shellfish allergy. I prefer art museums and scenic neighborhoods.",
+        "preference_vector": {
+          "outdoor": 0.6,
+          "food": 0.7,
+          "nightlife": 0.2,
+          "urban": 0.8,
+          "shopping": 0.5
+        },
+        "is_leader": false
+      }
+    ],
+    "start_date": "2026-09-08",
+    "end_date": "2026-09-11"
+  },
+  "hitl_choices": [
+    0,
+    0,
+    0
+  ],
+  "expect_budget_retry": false,
+  "expect_fairness_retry": false,
+  "expect_validation_rebuild": null,
+  "graph_only": false,
+  "expected_known_issues": []
+}

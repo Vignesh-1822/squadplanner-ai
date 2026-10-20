@@ -3,15 +3,18 @@
 import logging
 
 import httpx
+from langsmith import traceable
 
 from agent.state import ActivityResult
 from config import settings
+from evals.replay.tools import NO_REPLAY, ReplayRecordingError, record_tool, replay_tool
 
 logger = logging.getLogger(__name__)
 
 _FALLBACK_ROUTE = {"distance_meters": 0, "duration_seconds": 0, "polyline": "", "mode": "WALK"}
 
 
+@traceable(name="get_route", run_type="tool")
 async def get_route(
     origin_lat: float,
     origin_lng: float,
@@ -23,6 +26,17 @@ async def get_route(
 
     On error returns a zeroed fallback dict.
     """
+    replay_request = {
+        "origin_lat": origin_lat,
+        "origin_lng": origin_lng,
+        "dest_lat": dest_lat,
+        "dest_lng": dest_lng,
+        "mode": mode,
+    }
+    replayed = replay_tool("get_route", replay_request)
+    if replayed is not NO_REPLAY:
+        return dict(replayed)
+
     try:
         async with httpx.AsyncClient(timeout=20) as client:
             resp = await client.post(
@@ -51,16 +65,22 @@ async def get_route(
         duration_str: str = route.get("duration", "0s")
         duration_seconds = int(duration_str.rstrip("s")) if duration_str.endswith("s") else 0
 
-        return {
+        result = {
             "distance_meters": int(route.get("distanceMeters", 0)),
             "duration_seconds": duration_seconds,
             "polyline": route.get("polyline", {}).get("encodedPolyline", ""),
             "mode": mode,
         }
+        record_tool("get_route", replay_request, result)
+        return result
 
+    except ReplayRecordingError:
+        raise
     except Exception as exc:  # noqa: BLE001
         logger.error("get_route error: %s", exc)
-        return {**_FALLBACK_ROUTE, "mode": mode}
+        result = {**_FALLBACK_ROUTE, "mode": mode}
+        record_tool("get_route", replay_request, result)
+        return result
 
 
 async def plan_day_routes(activities: list[ActivityResult]) -> dict:

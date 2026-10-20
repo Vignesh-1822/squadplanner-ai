@@ -1,0 +1,44 @@
+{
+  "id": "21-single-member",
+  "title": "Single member",
+  "purpose": "Minimum squad size",
+  "tier": "offline",
+  "tags": [
+    "boundary"
+  ],
+  "payload": {
+    "group_notes": "Keep the trip relaxed, avoid rushed mornings, and make sure the plan respects everyone's must-haves.",
+    "members": [
+      {
+        "member_id": "alice",
+        "name": "Alice",
+        "origin_city": "ORD",
+        "budget_usd": 1500,
+        "food_restrictions": [
+          "vegetarian"
+        ],
+        "preference_notes": "Hates early mornings, no clubs, wants Italian food at least once.",
+        "preference_vector": {
+          "outdoor": 0.8,
+          "food": 0.7,
+          "nightlife": 0.2,
+          "urban": 0.6,
+          "shopping": 0.1
+        },
+        "is_leader": true
+      }
+    ],
+    "start_date": "2026-09-08",
+    "end_date": "2026-09-11"
+  },
+  "hitl_choices": [
+    0,
+    0,
+    0
+  ],
+  "expect_budget_retry": false,
+  "expect_fairness_retry": false,
+  "expect_validation_rebuild": null,
+  "graph_only": false,
+  "expected_known_issues": []
+}

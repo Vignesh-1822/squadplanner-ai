@@ -1,0 +1,37 @@
+{
+  "operation": "invoke",
+  "request": {
+    "invoke_kwargs": {},
+    "node": "extract_preference_constraints",
+    "prompt": "Extract group trip planning constraints from natural-language preference notes.\nReturn ONLY raw JSON, no markdown, no backticks. Use this exact top-level shape:\n{raw_member_notes: list, raw_group_notes: string, hard_constraints: list, soft_preferences: list, schedule: object, activity_filters: object, meal_requirements: object, destination_intent: object}.\nClassify explicit must/avoid/timing requirements as hard_constraints. Classify general likes, vibes, and pacing as soft_preferences unless they are phrased as must/avoid.\nUse schedule.earliest_start_time as HH:MM when users avoid early mornings. Use activity_filters.avoid_tags for avoided activity categories. Use meal_requirements.must_include for cuisine or meal requirements. Use destination_intent.styles for destination-level intent like big_city, skyscrapers, skyline, architecture, museums, food_city, nightlife_city, beach, national_park, theme_parks, mountains, small_town, scenic_drives, shopping, quiet_escape. Use destination_intent.preferred_types for preferred destination types, and set destination_intent.iconic_preference true when users ask for iconic, famous, big-city, skyline, national-park, beach, or theme-park destinations.\n\nPreference notes JSON:\n{\"raw_member_notes\": [{\"member_id\": \"alice\", \"name\": \"Alice\", \"notes\": \"Hates early mornings, no clubs, wants Italian food at least once.\"}, {\"member_id\": \"bob\", \"name\": \"Bob\", \"notes\": \"Likes relaxed days with good meals and urban neighborhoods, but does not want an overpacked schedule.\"}], \"raw_group_notes\": \"Keep the trip relaxed, avoid rushed mornings, and make sure the plan respects everyone's must-haves.\", \"hard_constraints\": [], \"soft_preferences\": [], \"schedule\": {\"avoid_early_mornings\": false, \"earliest_start_time\": null, \"pace\": \"balanced\"}, \"activity_filters\": {\"avoid_tags\": [], \"prefer_tags\": [], \"required_tags\": []}, \"meal_requirements\": {\"must_include\": [], \"avoid_terms\": []}, \"destination_intent\": {\"styles\": [], \"landmarks\": [], \"preferred_types\": [], \"iconic_preference\": false}}",
+    "tools": []
+  },
+  "request_sha256": "2da4c0859c5f4bf2c2a3bc487493097743f6e11e6c80f05ccaee7914bc5b6001",
+  "response": {
+    "data": {
+      "additional_kwargs": {},
+      "content": "```json\n{\n  \"raw_member_notes\": [\n    {\n      \"member_id\": \"alice\",\n      \"name\": \"Alice\",\n      \"notes\": \"Hates early mornings, no clubs, wants Italian food at least once.\"\n    },\n    {\n      \"member_id\": \"bob\",\n      \"name\": \"Bob\",\n      \"notes\": \"Likes relaxed days with good meals and urban neighborhoods, but does not want an overpacked schedule.\"\n    }\n  ],\n  \"raw_group_notes\": \"Keep the trip relaxed, avoid rushed mornings, and make sure the plan respects everyone's must-haves.\",\n  \"hard_constraints\": [\n    \"No nightclubs\",\n    \"Italian food must be included at least once\",\n    \"Avoid early morning starts\"\n  ],\n  \"soft_preferences\": [\n    \"Relaxed pacing with unrushed mornings\",\n    \"Good meals and dining experiences\",\n    \"Urban neighborhoods exploration\",\n    \"Avoid overpacked schedule\"\n  ],\n  \"schedule\": {\n    \"avoid_early_mornings\": true,\n    \"earliest_start_time\": \"10:00\",\n    \"pace\": \"relaxed\"\n  },\n  \"activity_filters\": {\n    \"avoid_tags\": [\n      \"nightlife\",\n      \"clubs\"\n    ],\n    \"prefer_tags\": [\n      \"dining\",\n      \"neighborhoods\",\n      \"food\"\n    ],\n    \"required_tags\": []\n  },\n  \"meal_requirements\": {\n    \"must_include\": [\n      \"Italian\"\n    ],\n    \"avoid_terms\": []\n  },\n  \"destination_intent\": {\n    \"styles\": [\n      \"food_city\",\n      \"urban_neighborhoods\"\n    ],\n    \"landmarks\": [],\n    \"preferred_types\": [\n      \"urban\"\n    ],\n    \"iconic_preference\": false\n  }\n}\n```",
+      "id": "lc_run--01a07571-d54b-76c3-a9f3-797a6ae6b86e",
+      "invalid_tool_calls": [],
+      "name": null,
+      "response_metadata": {
+        "model_name": "claude-haiku-4-5-20251001",
+        "model_provider": "anthropic",
+        "stop_reason": "end_turn",
+        "stop_sequence": null
+      },
+      "tool_calls": [],
+      "type": "ai",
+      "usage_metadata": {
+        "input_token_details": {
+          "cache_creation": 0,
+          "cache_read": 0
+        },
+        "input_tokens": 531,
+        "output_tokens": 460,
+        "total_tokens": 991
+      }
+    },
+    "type": "ai"
+  }
+}

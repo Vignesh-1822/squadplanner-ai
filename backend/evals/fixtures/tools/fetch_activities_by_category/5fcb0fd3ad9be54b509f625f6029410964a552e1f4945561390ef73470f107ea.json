@@ -1,0 +1,208 @@
+{
+  "operation": "fetch_activities_by_category",
+  "request": {
+    "categories": [
+      "food"
+    ],
+    "coords": {
+      "lat": 38.04,
+      "lng": -84.503
+    },
+    "destination": "Lexington",
+    "max_per_category": 10
+  },
+  "request_sha256": "5fcb0fd3ad9be54b509f625f6029410964a552e1f4945561390ef73470f107ea",
+  "response": [
+    {
+      "address": "362 E Main St, Lexington, KY 40507, USA",
+      "category": "food",
+      "lat": 38.041700399999996,
+      "lng": -84.4922229,
+      "name": "Carson's Food & Drink - On Main",
+      "place_id": "ChIJ9QuwQuhEQogReqRTnQ6sQ0M",
+      "price_level": 0,
+      "rating": 4.7,
+      "tags": [
+        "american_restaurant",
+        "diner",
+        "brunch_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "230 Pisgah Pike, Versailles, KY 40383, USA",
+      "category": "food",
+      "lat": 38.046881899999995,
+      "lng": -84.6525401,
+      "name": "The Kentucky Castle",
+      "place_id": "ChIJm5P8evdoQogRGPJsxrLge98",
+      "price_level": 0,
+      "rating": 4.5,
+      "tags": [
+        "hotel",
+        "spa",
+        "lodging",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "855 S Broadway, Lexington, KY 40504, USA",
+      "category": "food",
+      "lat": 38.0403576,
+      "lng": -84.5135367,
+      "name": "Cook Out",
+      "place_id": "ChIJlYZ3haJEQogRKfaTNfaec-8",
+      "price_level": 0,
+      "rating": 4.3,
+      "tags": [
+        "american_restaurant",
+        "chicken_restaurant",
+        "hamburger_restaurant",
+        "barbecue_restaurant",
+        "fast_food_restaurant",
+        "hot_dog_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "2201 War Admiral Way, Lexington, KY 40509, USA",
+      "category": "food",
+      "lat": 38.0402809,
+      "lng": -84.4282412,
+      "name": "Raising Cane's Chicken Fingers",
+      "place_id": "ChIJ1wZVhI1PQogRrkFSO4kCAro",
+      "price_level": 0,
+      "rating": 4.5,
+      "tags": [
+        "fast_food_restaurant",
+        "chicken_restaurant",
+        "american_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "544 S Upper St, Lexington, KY 40508, USA",
+      "category": "food",
+      "lat": 38.042476,
+      "lng": -84.5041873,
+      "name": "Raising Cane's Chicken Fingers",
+      "place_id": "ChIJEaCFppVEQogRNl6WOAaulfE",
+      "price_level": 0,
+      "rating": 4.4,
+      "tags": [
+        "fast_food_restaurant",
+        "chicken_restaurant",
+        "american_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "3116 Richmond Rd, Lexington, KY 40509, USA",
+      "category": "food",
+      "lat": 38.001546399999995,
+      "lng": -84.4481696,
+      "name": "Texas Roadhouse",
+      "place_id": "ChIJqWvqH6VaQogRxcTCszmhL38",
+      "price_level": 0,
+      "rating": 4.4,
+      "tags": [
+        "steak_house",
+        "american_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "3030 Lakecrest Cir, Lexington, KY 40513, USA",
+      "category": "food",
+      "lat": 38.015154599999995,
+      "lng": -84.5538105,
+      "name": "Texas Roadhouse",
+      "place_id": "ChIJMaRL2dFcQogRe7i4sUPpnmw",
+      "price_level": 0,
+      "rating": 4.5,
+      "tags": [
+        "steak_house",
+        "american_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "1920 Pleasant Ridge Dr, Lexington, KY 40509, USA",
+      "category": "food",
+      "lat": 38.017393299999995,
+      "lng": -84.4143055,
+      "name": "Malone's Hamburg",
+      "place_id": "ChIJVSXzB99PQogRpr1Yflsy3BQ",
+      "price_level": 0,
+      "rating": 4.7,
+      "tags": [
+        "steak_house",
+        "sushi_restaurant",
+        "seafood_restaurant",
+        "fine_dining_restaurant",
+        "american_restaurant",
+        "japanese_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "3450 Todds Rd Ste 100, Lexington, KY 40509, USA",
+      "category": "food",
+      "lat": 38.0020143,
+      "lng": -84.4142632,
+      "name": "Carson's Food & Drink - At Andover",
+      "place_id": "ChIJJ6W-cuhRQogRIJZeXMmxOhc",
+      "price_level": 0,
+      "rating": 4.6,
+      "tags": [
+        "american_restaurant",
+        "steak_house",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "1228 Manchester St, Lexington, KY 40504, USA",
+      "category": "food",
+      "lat": 38.0566579,
+      "lng": -84.5202991,
+      "name": "Goodfellas Pizzeria - Distillery",
+      "place_id": "ChIJ9eeXLoJEQogRRORYJumpICU",
+      "price_level": 0,
+      "rating": 3.7,
+      "tags": [
+        "pizza_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    }
+  ]
+}

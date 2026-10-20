@@ -1,0 +1,18 @@
+{
+  "operation": "fetch_weather",
+  "request": {
+    "destination_name": "Eureka Springs",
+    "end_date": "2026-09-11",
+    "lat": 36.4012,
+    "lng": -93.7374,
+    "start_date": "2026-09-08"
+  },
+  "request_sha256": "9ad17fe4f4e60186e29e95902a90db26aeed3c549b14a64d19176377e770fa36",
+  "response": {
+    "avg_temp_c": 27.7,
+    "date_range": "2026-09-08 to 2026-09-11",
+    "destination": "Eureka Springs",
+    "precipitation_mm": 8.4,
+    "summary": "Warm (27.7\u00b0C avg), light rain expected"
+  }
+}

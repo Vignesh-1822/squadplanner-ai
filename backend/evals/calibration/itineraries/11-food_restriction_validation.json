@@ -1,0 +1,495 @@
+{
+  "id": "11-food_restriction_validation",
+  "group_notes": "Food restrictions are mandatory. Prefer scenic neighborhoods and calm evenings.",
+  "members": [
+    {
+      "member_id": "nina",
+      "name": "Nina",
+      "origin_city": "BOS",
+      "budget_usd": 1800,
+      "food_restrictions": [
+        "vegan",
+        "gluten_free"
+      ],
+      "preference_notes": "No dairy, no eggs, no wheat. Wants relaxed mornings.",
+      "preference_vector": {
+        "outdoor": 0.7,
+        "food": 0.8,
+        "nightlife": 0.1,
+        "urban": 0.6,
+        "shopping": 0.2
+      },
+      "is_leader": true
+    },
+    {
+      "member_id": "omar",
+      "name": "Omar",
+      "origin_city": "DFW",
+      "budget_usd": 1600,
+      "food_restrictions": [
+        "halal"
+      ],
+      "preference_notes": "Museums and scenic walks, no bars.",
+      "preference_vector": {
+        "outdoor": 0.6,
+        "food": 0.7,
+        "nightlife": 0.1,
+        "urban": 0.8,
+        "shopping": 0.2
+      },
+      "is_leader": false
+    }
+  ],
+  "start_date": "2026-09-08",
+  "end_date": "2026-09-11",
+  "trip_duration_days": 3,
+  "destination": {
+    "name": "Surfside Beach",
+    "coords": {
+      "lat": 28.949,
+      "lng": -95.293
+    }
+  },
+  "hotel": {
+    "name": "Holiday Sands South Vacations",
+    "address": "2411 S Ocean Blvd Ste a, Myrtle Beach, SC 29577, USA",
+    "price_per_night_usd": 64.0,
+    "total_price_usd": 192.0,
+    "rating": 3.8,
+    "is_estimated": false
+  },
+  "weather": {
+    "destination": "Surfside Beach",
+    "date_range": "2026-09-08 to 2026-09-11",
+    "avg_temp_c": 30.0,
+    "precipitation_mm": 16.1,
+    "summary": "Warm (30.0\u00b0C avg), light rain expected"
+  },
+  "days": [
+    {
+      "day_number": 1,
+      "date": "2026-09-08",
+      "neighborhood": "Surfside Beach",
+      "meals": [
+        "Breakfast at Holiday Sands South Vacations",
+        "Vegan lunch at local caf\u00e9 near Surfside Beach",
+        "Vegan dinner at plant-based restaurant in Surfside area"
+      ],
+      "estimated_day_cost_usd": 85.0,
+      "schedule": [
+        {
+          "time": "09:00",
+          "type": "activity",
+          "label": "Surfside Beach scenic walk",
+          "notes": "Relaxed morning beach walk with scenic views"
+        },
+        {
+          "time": "12:30",
+          "type": "meal",
+          "label": "Lunch",
+          "notes": "Vegan-friendly caf\u00e9 near beach"
+        },
+        {
+          "time": "19:00",
+          "type": "meal",
+          "label": "Dinner",
+          "notes": "Vegan dinner, calm evening"
+        }
+      ],
+      "rationale": "Day 1 establishes your trip at Surfside Beach itself, the destination's heart. Morning beach time allows for the relaxed start Nina prefers, while dual meals at Salty Pelican Surfside Beach ensure Nina's dietary needs (no dairy, eggs, or wheat) can be carefully accommodated throughout the day. This calm introduction sets the unhurried tone for the entire getaway.",
+      "constraint_notes": [
+        "Relaxed morning: activities begin at 09:00, not earlier",
+        "No bars or nightlife scheduled",
+        "Salty Pelican dining allows communication of dietary restrictions (no dairy, no eggs, no wheat)",
+        "Calm, scenic beach-based day aligns with quiet-escape preference"
+      ],
+      "total_travel_minutes": 30181,
+      "activities": [
+        {
+          "name": "Surfside Beach",
+          "category": "urban",
+          "address": "206 Starfish St, Freeport, TX 77541, USA",
+          "lat": 28.949779499999998,
+          "lng": -95.28490459999999,
+          "price_level": 0,
+          "rating": 4.6,
+          "tags": [
+            "nature_preserve",
+            "tourist_attraction",
+            "park",
+            "point_of_interest",
+            "establishment"
+          ]
+        }
+      ],
+      "routes": [
+        {
+          "distance_meters": 2233408,
+          "duration_seconds": 1810563,
+          "mode": "WALK",
+          "from_order": 1,
+          "to_order": 2,
+          "from_label": "Holiday Sands South Vacations",
+          "to_label": "Surfside Beach"
+        },
+        {
+          "distance_meters": 372,
+          "duration_seconds": 306,
+          "mode": "WALK",
+          "from_order": 2,
+          "to_order": 3,
+          "from_label": "Surfside Beach",
+          "to_label": "Salty Pelican Surfside Beach"
+        },
+        {
+          "distance_meters": 0,
+          "duration_seconds": 0,
+          "mode": "WALK",
+          "from_order": 3,
+          "to_order": 4,
+          "from_label": "Salty Pelican Surfside Beach",
+          "to_label": "Salty Pelican Surfside Beach"
+        }
+      ]
+    },
+    {
+      "day_number": 2,
+      "date": "2026-09-09",
+      "neighborhood": "Quintana Beach County Park area",
+      "meals": [
+        "Breakfast at Holiday Sands South Vacations",
+        "Vegan lunch at local spot near Quintana Beach",
+        "Vegan dinner at plant-based restaurant"
+      ],
+      "estimated_day_cost_usd": 80.0,
+      "schedule": [
+        {
+          "time": "09:00",
+          "type": "activity",
+          "label": "Surfside Jetty County Park scenic walk",
+          "notes": "Waterfront scenic exploration, museum-quality natural observation"
+        },
+        {
+          "time": "12:00",
+          "type": "meal",
+          "label": "Lunch",
+          "notes": "Vegan-friendly lunch near jetty area"
+        },
+        {
+          "time": "13:30",
+          "type": "activity",
+          "label": "Quintana Beach County Park",
+          "notes": "Scenic beach park with outdoor recreation"
+        },
+        {
+          "time": "16:00",
+          "type": "activity",
+          "label": "Quintana Neotropical Bird Sanctuary",
+          "notes": "Nature observation and scenic walking tour"
+        },
+        {
+          "time": "19:00",
+          "type": "meal",
+          "label": "Dinner",
+          "notes": "Calm evening vegan dinner"
+        }
+      ],
+      "rationale": "Day 2 explores the Quintana Beach County Park area's natural and ornithological treasures, perfectly balancing Omar's interest in museums and scenic walks with a relaxed pace. Surfside Jetty County Park and Quintana Beach County Park offer scenic waterfront exploration, while Quintana Neotropical Bird Sanctuary provides museum-quality observation of regional wildlife. Salty Pelican meals bookend the day, ensuring consistent dietary accommodation for Nina.",
+      "constraint_notes": [
+        "Scenic walks at Surfside Jetty County Park and Quintana Beach County Park satisfy scenic-neighborhood and walking-tour preferences",
+        "Quintana Neotropical Bird Sanctuary functions as a museum/educational experience",
+        "Three activities total maintains relaxed, balanced pace",
+        "No early start: 09:00 launch respects relaxed-morning preference",
+        "No bars or nightlife; calm evening ensured",
+        "Salty Pelican meals support Nina's dietary restrictions throughout the day"
+      ],
+      "total_travel_minutes": 30280,
+      "activities": [
+        {
+          "name": "Surfside Jetty County Park",
+          "category": "urban",
+          "address": "101 Parkview Rd, Surfside Beach, TX 77541, USA",
+          "lat": 28.9380657,
+          "lng": -95.2955537,
+          "price_level": 0,
+          "rating": 4.5,
+          "tags": [
+            "park",
+            "tourist_attraction",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Quintana Beach County Park",
+          "category": "outdoor",
+          "address": "330 5th St, Quintana, TX 77541, USA",
+          "lat": 28.9346868,
+          "lng": -95.3039594,
+          "price_level": 0,
+          "rating": 4.5,
+          "tags": [
+            "rv_park",
+            "real_estate_agency",
+            "travel_agency",
+            "lodging",
+            "park",
+            "service",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Quintana Neotropical Bird Sanctuary",
+          "category": "urban",
+          "address": "814 Lamar St, Quintana, TX 77541, USA",
+          "lat": 28.9337826,
+          "lng": -95.30845339999999,
+          "price_level": 0,
+          "rating": 4.6,
+          "tags": [
+            "nature_preserve",
+            "tourist_attraction",
+            "park",
+            "point_of_interest",
+            "establishment"
+          ]
+        }
+      ],
+      "routes": [
+        {
+          "distance_meters": 2231962,
+          "duration_seconds": 1809369,
+          "mode": "WALK",
+          "from_order": 1,
+          "to_order": 2,
+          "from_label": "Holiday Sands South Vacations",
+          "to_label": "Surfside Jetty County Park"
+        },
+        {
+          "distance_meters": 1841,
+          "duration_seconds": 1514,
+          "mode": "WALK",
+          "from_order": 2,
+          "to_order": 3,
+          "from_label": "Surfside Jetty County Park",
+          "to_label": "Salty Pelican Surfside Beach"
+        },
+        {
+          "distance_meters": 3538,
+          "duration_seconds": 2748,
+          "mode": "WALK",
+          "from_order": 3,
+          "to_order": 4,
+          "from_label": "Salty Pelican Surfside Beach",
+          "to_label": "Quintana Beach County Park"
+        },
+        {
+          "distance_meters": 568,
+          "duration_seconds": 464,
+          "mode": "WALK",
+          "from_order": 4,
+          "to_order": 5,
+          "from_label": "Quintana Beach County Park",
+          "to_label": "Quintana Neotropical Bird Sanctuary"
+        },
+        {
+          "distance_meters": 3548,
+          "duration_seconds": 2761,
+          "mode": "WALK",
+          "from_order": 5,
+          "to_order": 6,
+          "from_label": "Quintana Neotropical Bird Sanctuary",
+          "to_label": "Salty Pelican Surfside Beach"
+        }
+      ]
+    },
+    {
+      "day_number": 3,
+      "date": "2026-09-10",
+      "neighborhood": "Lake Jackson Recreation Area",
+      "meals": [
+        "Breakfast at Holiday Sands South Vacations",
+        "Vegan lunch at local plant-based spot",
+        "Vegan dinner at sustainable restaurant"
+      ],
+      "estimated_day_cost_usd": 82.0,
+      "schedule": [
+        {
+          "time": "09:30",
+          "type": "activity",
+          "label": "Lake Jackson Recreation Center visit",
+          "notes": "Outdoor recreation and scenic lake exploration"
+        },
+        {
+          "time": "12:00",
+          "type": "meal",
+          "label": "Lunch",
+          "notes": "Vegan lunch near recreation area"
+        },
+        {
+          "time": "13:30",
+          "type": "activity",
+          "label": "A.A. MacLean Park scenic walk",
+          "notes": "Nature walk with scenic views"
+        },
+        {
+          "time": "16:00",
+          "type": "activity",
+          "label": "Sea Center Texas",
+          "notes": "Educational center with museum-quality exhibits and nature focus"
+        },
+        {
+          "time": "18:30",
+          "type": "meal",
+          "label": "Dinner",
+          "notes": "Calm evening vegan dinner"
+        }
+      ],
+      "rationale": "Day 3 transitions to Lake Jackson Recreation Area, combining recreational activities with museum-quality learning. Lake Jackson Recreation Center and A.A. MacLean Park satisfy the preference for scenic walks and calm outdoor time, while Sea Center Texas\u2014an aquatic museum\u2014delivers the museum experience Omar seeks. Salty Pelican meals maintain Nina's dietary safety, and the measured activity schedule preserves the relaxed pace the group values.",
+      "constraint_notes": [
+        "Sea Center Texas functions as a museum offering scenic observation of marine environments",
+        "A.A. MacLean Park provides scenic walking and peaceful outdoor space",
+        "Three activities total sustains relaxed, balanced pacing",
+        "No early morning: 09:30 start honors relaxed-morning preference",
+        "No bars or nightlife; calm evening ensured",
+        "Salty Pelican dining accommodates Nina's no-dairy, no-eggs, no-wheat restrictions",
+        "All activities support quiet-escape and scenic-neighborhood aesthetic"
+      ],
+      "total_travel_minutes": 31006,
+      "activities": [
+        {
+          "name": "Lake Jackson Recreation Center",
+          "category": "outdoor",
+          "address": "91 Lake Rd, Lake Jackson, TX 77566, USA",
+          "lat": 29.026607600000002,
+          "lng": -95.4567974,
+          "price_level": 0,
+          "rating": 4.5,
+          "tags": [
+            "skateboard_park",
+            "gym",
+            "swimming_pool",
+            "sports_complex",
+            "sports_activity_location",
+            "park",
+            "health",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "A.A. MacLean Park",
+          "category": "outdoor",
+          "address": "93 Lake Rd, Lake Jackson, TX 77566, USA",
+          "lat": 29.0284164,
+          "lng": -95.4601204,
+          "price_level": 0,
+          "rating": 4.6,
+          "tags": [
+            "park",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Sea Center Texas",
+          "category": "urban",
+          "address": "302 Medical Dr, Lake Jackson, TX 77566, USA",
+          "lat": 29.01748,
+          "lng": -95.44596159999999,
+          "price_level": 0,
+          "rating": 4.7,
+          "tags": [
+            "aquarium",
+            "tourist_attraction",
+            "point_of_interest",
+            "establishment"
+          ]
+        }
+      ],
+      "routes": [
+        {
+          "distance_meters": 2210835,
+          "duration_seconds": 1792213,
+          "mode": "WALK",
+          "from_order": 1,
+          "to_order": 2,
+          "from_label": "Holiday Sands South Vacations",
+          "to_label": "Lake Jackson Recreation Center"
+        },
+        {
+          "distance_meters": 27693,
+          "duration_seconds": 22398,
+          "mode": "WALK",
+          "from_order": 2,
+          "to_order": 3,
+          "from_label": "Lake Jackson Recreation Center",
+          "to_label": "Salty Pelican Surfside Beach"
+        },
+        {
+          "distance_meters": 28090,
+          "duration_seconds": 22720,
+          "mode": "WALK",
+          "from_order": 3,
+          "to_order": 4,
+          "from_label": "Salty Pelican Surfside Beach",
+          "to_label": "A.A. MacLean Park"
+        },
+        {
+          "distance_meters": 2462,
+          "duration_seconds": 2002,
+          "mode": "WALK",
+          "from_order": 4,
+          "to_order": 5,
+          "from_label": "A.A. MacLean Park",
+          "to_label": "Sea Center Texas"
+        },
+        {
+          "distance_meters": 26030,
+          "duration_seconds": 21052,
+          "mode": "WALK",
+          "from_order": 5,
+          "to_order": 6,
+          "from_label": "Sea Center Texas",
+          "to_label": "Salty Pelican Surfside Beach"
+        }
+      ]
+    }
+  ],
+  "trip_pitch": "Escape to Surfside Beach, TX, a serene coastal destination perfect for a intimate getaway built around relaxation and natural exploration. This charming Gulf Coast community offers the ideal blend of peaceful beach time, scenic outdoor activities, and quality moments together\u2014all without the hustle of crowded tourist hotspots. Whether you're seeking quiet mornings, waterfront walks, or opportunities to connect with local wildlife and natural habitats, Surfside Beach delivers an unhurried pace that lets you truly unwind. At just $64 per night, this trip combines affordability with authentic coastal charm, making it an accessible escape for anyone craving calm and connection.\n\nYour three-day itinerary strikes the perfect balance between activity and leisure. Day 1 starts at Surfside Beach itself, where you'll ease into the trip with morning beach time and meals at the welcoming Salty Pelican Surfside Beach. Day 2 explores the natural wonders of the Quintana area: begin at Surfside Jetty County Park for scenic waterfront views, continue to Quintana Beach County Park for outdoor exploration, and cap the day with a visit to Quintana Neotropical Bird Sanctuary\u2014a museum-quality experience showcasing regional avian life. Day 3 transitions inland to Lake Jackson Recreation Area, featuring activities at Lake Jackson Recreation Center, A.A. MacLean Park for peaceful walking and scenic surroundings, and Sea Center Texas, an aquatic museum offering both education and calm observation of marine ecosystems. Throughout all three days, Salty Pelican Surfside Beach provides consistent, thoughtful dining.\n\nYou'll base yourselves at Holiday Sands South Vacations, a comfortable beachfront hotel offering excellent value for a three-night stay. Expect warm September weather averaging 30\u00b0C with light rain possible\u2014pack layers and a light rain jacket to stay comfortable during outdoor activities. The relaxed scheduling honors your preference for calm mornings, with activities beginning no earlier than 09:00, giving you time to ease into each day. The pace is intentionally measured: three or fewer activities daily allow for genuine rest between experiences, and the combination of natural sites, wildlife sanctuaries, and recreational facilities caters to those seeking museums and scenic walks without bars or nightlife.\n\nThis is your moment to slow down and reconnect\u2014Surfside Beach and its surrounding natural areas provide exactly the quiet, authentic coastal experience you're after. With thoughtfully spaced activities, excellent local dining, and genuine wildlife and natural history opportunities, every day unfolds at your pace. Pack your curiosity and your appetite for calm; three days from now, you'll return home refreshed and rejuvenated.",
+  "per_member_costs": [
+    {
+      "member_id": "nina",
+      "name": "Nina",
+      "budget_usd": 1800.0,
+      "flight_usd": 300.0,
+      "flight_is_estimated": true,
+      "hotel_share_usd": 96.0,
+      "activity_share_usd": 123.5,
+      "total_usd": 519.5,
+      "headroom_usd": 1280.5,
+      "utilization": 0.2886111111111111,
+      "fairness_utilization": 0.22
+    },
+    {
+      "member_id": "omar",
+      "name": "Omar",
+      "budget_usd": 1600.0,
+      "flight_usd": 300.0,
+      "flight_is_estimated": true,
+      "hotel_share_usd": 96.0,
+      "activity_share_usd": 123.5,
+      "total_usd": 519.5,
+      "headroom_usd": 1080.5,
+      "utilization": 0.3246875,
+      "fairness_utilization": 0.2475
+    }
+  ],
+  "provenance": {
+    "source_case_id": "11-food_restriction_validation",
+    "source_tier": "offline",
+    "planner_output": "Recorded live model output replayed without network access.",
+    "flight_data": "K-002 baseline: fixed $300 estimated flight per member."
+  }
+}

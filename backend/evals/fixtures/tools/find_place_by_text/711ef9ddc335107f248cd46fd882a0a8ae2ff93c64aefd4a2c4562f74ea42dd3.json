@@ -1,0 +1,28 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 28.949,
+      "lng": -95.293
+    },
+    "destination": "Surfside Beach",
+    "included_type": null,
+    "query": "Travel to TX-332 area"
+  },
+  "request_sha256": "711ef9ddc335107f248cd46fd882a0a8ae2ff93c64aefd4a2c4562f74ea42dd3",
+  "response": {
+    "address": "Cobia Ln, Surfside Beach, TX 77541, USA",
+    "category": "place",
+    "lat": 28.953184399999998,
+    "lng": -95.2901746,
+    "name": "Surfside Beach",
+    "place_id": "ChIJx78oYABtQIYRZGsO8BKfWoc",
+    "price_level": 0,
+    "rating": 3.8,
+    "tags": [
+      "tourist_attraction",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

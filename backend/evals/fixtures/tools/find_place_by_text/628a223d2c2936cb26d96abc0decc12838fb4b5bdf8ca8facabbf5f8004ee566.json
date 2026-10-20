@@ -1,0 +1,28 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 33.494,
+      "lng": -117.148
+    },
+    "destination": "Temecula",
+    "included_type": null,
+    "query": "Redhawk Towne Center"
+  },
+  "request_sha256": "628a223d2c2936cb26d96abc0decc12838fb4b5bdf8ca8facabbf5f8004ee566",
+  "response": {
+    "address": "Temecula Pkwy & Redhawk Pkwy, CA-79, Temecula, CA 92592, USA",
+    "category": "place",
+    "lat": 33.480337899999995,
+    "lng": -117.0969473,
+    "name": "Redhawk Towne Ctr",
+    "place_id": "ChIJ1VTOrFh_24ARaled6j9zC7Q",
+    "price_level": 0,
+    "rating": 4.3,
+    "tags": [
+      "shopping_mall",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

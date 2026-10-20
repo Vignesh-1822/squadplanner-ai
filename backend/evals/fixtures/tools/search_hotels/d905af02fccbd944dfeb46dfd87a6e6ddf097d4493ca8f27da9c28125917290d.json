@@ -1,0 +1,25 @@
+{
+  "operation": "search_hotels",
+  "request": {
+    "budget_ceiling_usd": 810.0,
+    "check_in": "2026-09-07",
+    "check_out": "2026-09-21",
+    "coords": {
+      "lat": 28.949,
+      "lng": -95.293
+    },
+    "destination": "Surfside Beach"
+  },
+  "request_sha256": "d905af02fccbd944dfeb46dfd87a6e6ddf097d4493ca8f27da9c28125917290d",
+  "response": {
+    "address": "1001 S Ocean Blvd, Myrtle Beach, SC 29577, USA",
+    "is_estimated": false,
+    "lat": 33.6769256,
+    "lng": -78.8968294,
+    "name": "Polynesian Ocean Front Hotel",
+    "place_id": "ChIJZbVJS7hpAIkRCu8NpK6B098",
+    "price_per_night_usd": 60.0,
+    "rating": 2.4,
+    "total_price_usd": 840.0
+  }
+}

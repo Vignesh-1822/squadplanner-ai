@@ -1,0 +1,29 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 41.8781,
+      "lng": -87.6298
+    },
+    "destination": "Chicago",
+    "included_type": "lodging",
+    "query": "Ambassador Gold Coast - The Chicago Hotel Collection Chicago"
+  },
+  "request_sha256": "95ba19e0d6564844d3ea6bbbba5e40ee256a20d5dcf6876d277f665988f1cf78",
+  "response": {
+    "address": "1301 N State Pkwy, Chicago, IL 60610, USA",
+    "category": "place",
+    "lat": 41.9060542,
+    "lng": -87.6284696,
+    "name": "Ambassador Gold Coast - The Chicago Hotel Collection",
+    "place_id": "ChIJyx6-KGbTD4gR1ISDCCcsgKw",
+    "price_level": 0,
+    "rating": 3.2,
+    "tags": [
+      "hotel",
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "operation": "search_flights",
+  "request": {
+    "adults": 1,
+    "depart_date": "2026-09-08",
+    "destination": "Surfside Beach",
+    "origin": "PHX",
+    "return_date": "2026-09-11"
+  },
+  "request_sha256": "6fa8fb6b85a6059904c2f5b5df43625b8d224bda3929d5c03a820a5cd8c72a81",
+  "response": {
+    "airline": "Estimated",
+    "depart_time": "2026-09-08T08:00:00",
+    "destination": "Surfside Beach",
+    "is_estimated": true,
+    "member_id": "",
+    "origin": "PHX",
+    "price_usd": 300.0,
+    "return_time": "2026-09-11T18:00:00"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 36.4012,
+      "lng": -93.7374
+    },
+    "destination": "Eureka Springs",
+    "included_type": "restaurant",
+    "query": "Breakfast"
+  },
+  "request_sha256": "ffae950257990b01572ffc732a64a5d282a6d19850f5d8adec285cdf37e94551",
+  "response": {
+    "address": "Top Front Floor, 3 Dogwood Ridge A, Eureka Springs, AR 72632, USA",
+    "category": "food",
+    "lat": 36.406064799999996,
+    "lng": -93.7583856,
+    "name": "Sugar and Crumbs Cafe",
+    "place_id": "ChIJ5dkC-V4tyYcR3cyeTivB-Y8",
+    "price_level": 0,
+    "rating": 4.5,
+    "tags": [
+      "breakfast_restaurant",
+      "brunch_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

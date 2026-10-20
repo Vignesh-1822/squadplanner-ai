@@ -1,0 +1,34 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 28.949,
+      "lng": -95.293
+    },
+    "destination": "Surfside Beach",
+    "included_type": null,
+    "query": "El Toro Mexican Restaurant visit"
+  },
+  "request_sha256": "14ef3dc440aded3f7150d50c0c972d17dddd263b99977c9768fab96d161356be",
+  "response": {
+    "address": "120 Commerce St, Clute, TX 77531, USA",
+    "category": "place",
+    "lat": 29.0145736,
+    "lng": -95.4032392,
+    "name": "El Toro Mexican Restaurant - Clute",
+    "place_id": "ChIJq4mi6uVBQIYRz9MZgduRwgg",
+    "price_level": 0,
+    "rating": 4.6,
+    "tags": [
+      "tex_mex_restaurant",
+      "bar_and_grill",
+      "bar",
+      "mexican_restaurant",
+      "american_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 28.949,
+      "lng": -95.293
+    },
+    "destination": "Surfside Beach",
+    "included_type": "lodging",
+    "query": "Polynesian Ocean Front Hotel Budget inn offering in-room fridges & microwaves, free WiFi & cable TV, plus pools."
+  },
+  "request_sha256": "9f65055ae35900af21f54542c893b000b185bd9c94401b9aefa3ccc9d7d2769a",
+  "response": {
+    "address": "1001 S Ocean Blvd, Myrtle Beach, SC 29577, USA",
+    "category": "place",
+    "lat": 33.6769256,
+    "lng": -78.8968294,
+    "name": "Polynesian Ocean Front Hotel",
+    "place_id": "ChIJZbVJS7hpAIkRCu8NpK6B098",
+    "price_level": 0,
+    "rating": 2.4,
+    "tags": [
+      "hotel",
+      "resort_hotel",
+      "lodging",
+      "golf_course",
+      "athletic_field",
+      "sports_activity_location",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

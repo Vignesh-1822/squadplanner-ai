@@ -1,0 +1,753 @@
+{
+  "operation": "fetch_activities_by_category",
+  "request": {
+    "categories": [
+      "food",
+      "outdoor",
+      "urban",
+      "shopping"
+    ],
+    "coords": {
+      "lat": 33.494,
+      "lng": -117.148
+    },
+    "destination": "Temecula",
+    "max_per_category": 10
+  },
+  "request_sha256": "a3aa9eef06fc514320aefa8afbcd3e6467d1f4a6ef6230d16a7e10a8437c353f",
+  "response": [
+    {
+      "address": "39405 Murrieta Hot Springs Rd, Murrieta, CA 92563, USA",
+      "category": "food",
+      "lat": 33.5581423,
+      "lng": -117.1560191,
+      "name": "Murrieta Hot Springs",
+      "place_id": "ChIJOSUo2PF924AROapaidEDC0Q",
+      "price_level": 0,
+      "rating": 4.4,
+      "tags": [
+        "wellness_center",
+        "sauna",
+        "resort_hotel",
+        "hotel",
+        "public_bath",
+        "spa",
+        "lounge_bar",
+        "night_club",
+        "bar",
+        "lodging",
+        "health",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "41539 Kalmia St, Murrieta, CA 92562, USA",
+      "category": "food",
+      "lat": 33.561276,
+      "lng": -117.21195459999998,
+      "name": "Destination Smokehouse",
+      "place_id": "ChIJ_fegNmeD3IAR-zyTGdK4QVA",
+      "price_level": 0,
+      "rating": 3.9,
+      "tags": [
+        "barbecue_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "41150 Via Europa, Temecula, CA 92591, USA",
+      "category": "food",
+      "lat": 33.5231867,
+      "lng": -117.08609199999998,
+      "name": "Europa Village Wineries & Resort",
+      "place_id": "ChIJFeLu9dV-24ARaUXnirYj2wk",
+      "price_level": 0,
+      "rating": 4.6,
+      "tags": [
+        "winery",
+        "resort_hotel",
+        "hotel",
+        "wedding_venue",
+        "farm",
+        "lodging",
+        "manufacturer",
+        "event_venue",
+        "service",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "2757 Gird Rd, Fallbrook, CA 92028, USA",
+      "category": "food",
+      "lat": 33.3430536,
+      "lng": -117.19067530000001,
+      "name": "Monserate Winery",
+      "place_id": "ChIJhc0wB5N43IARHXft-oeadvE",
+      "price_level": 0,
+      "rating": 4.6,
+      "tags": [
+        "winery",
+        "vineyard",
+        "wedding_venue",
+        "farm",
+        "manufacturer",
+        "event_venue",
+        "service",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "28656 Old Town Front St, Temecula, CA 92590, USA",
+      "category": "food",
+      "lat": 33.4933467,
+      "lng": -117.1484981,
+      "name": "1909 Temecula",
+      "place_id": "ChIJ7boUNb9_24AReqXS_K3Ddko",
+      "price_level": 0,
+      "rating": 4.5,
+      "tags": [
+        "gastropub",
+        "cocktail_bar",
+        "brunch_restaurant",
+        "bar",
+        "american_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "27700 Jefferson Ave, Temecula, CA 92590, USA",
+      "category": "food",
+      "lat": 33.514993,
+      "lng": -117.1589754,
+      "name": "In-N-Out Burger",
+      "place_id": "ChIJtzGOVzB-24ARHSWbj4HG-MY",
+      "price_level": 0,
+      "rating": 4.7,
+      "tags": [
+        "hamburger_restaurant",
+        "diner",
+        "fast_food_restaurant",
+        "american_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "41090 California Oaks Rd, Murrieta, CA 92562, USA",
+      "category": "food",
+      "lat": 33.5637387,
+      "lng": -117.20221879999998,
+      "name": "Reading Cinemas at Cal Oaks Plaza with TITAN LUXE",
+      "place_id": "ChIJp9oy_EOC3IARZFZZ1jx6zak",
+      "price_level": 0,
+      "rating": 4.6,
+      "tags": [
+        "movie_theater",
+        "cafe",
+        "meal_takeaway",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "39697 Avenida Acacias, Murrieta, CA 92563, USA",
+      "category": "food",
+      "lat": 33.5732666,
+      "lng": -117.17899929999999,
+      "name": "In-N-Out Burger",
+      "place_id": "ChIJ-75HSHeC3IARMJisG43lffg",
+      "price_level": 0,
+      "rating": 4.7,
+      "tags": [
+        "hamburger_restaurant",
+        "diner",
+        "fast_food_restaurant",
+        "american_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "41923 2nd St #103, Temecula, CA 92590, USA",
+      "category": "food",
+      "lat": 33.492939299999996,
+      "lng": -117.1464786,
+      "name": "The Goat & Vine",
+      "place_id": "ChIJ2Rjghrh_24AR5PLXJJNNtgo",
+      "price_level": 0,
+      "rating": 4.7,
+      "tags": [
+        "american_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "30697 Temecula Pkwy, Temecula, CA 92592, USA",
+      "category": "food",
+      "lat": 33.4759118,
+      "lng": -117.12369149999999,
+      "name": "In-N-Out Burger",
+      "place_id": "ChIJ8XByVH5_24ARVks2DcZyY90",
+      "price_level": 0,
+      "rating": 4.7,
+      "tags": [
+        "hamburger_restaurant",
+        "diner",
+        "fast_food_restaurant",
+        "american_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "37701 Warren Rd, Winchester, CA 92596, USA",
+      "category": "outdoor",
+      "lat": 33.5877371,
+      "lng": -117.04164540000001,
+      "name": "Lake Skinner Recreation Area",
+      "place_id": "ChIJ67KnV85724ARswaViy6R6A0",
+      "price_level": 0,
+      "rating": 4.5,
+      "tags": [
+        "park",
+        "tourist_attraction",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "32380 Deer Hollow Way, Temecula, CA 92592, USA",
+      "category": "outdoor",
+      "lat": 33.4530491,
+      "lng": -117.0952931,
+      "name": "Patricia H. Birdsall Sports Park",
+      "place_id": "ChIJGSO07pGB24ARWyJniIXrJ-A",
+      "price_level": 0,
+      "rating": 4.7,
+      "tags": [
+        "park",
+        "tourist_attraction",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "37000 Ruth Ellen Way, Murrieta, CA 92563, USA",
+      "category": "outdoor",
+      "lat": 33.5826314,
+      "lng": -117.170155,
+      "name": "Los Alamos Hills Sports Park",
+      "place_id": "ChIJR5G5OYF924ARDcDJ7mq8vJo",
+      "price_level": 0,
+      "rating": 4.7,
+      "tags": [
+        "park",
+        "tourist_attraction",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "30875 Rancho Vista Rd, Temecula, CA 92592, USA",
+      "category": "outdoor",
+      "lat": 33.4994695,
+      "lng": -117.1265509,
+      "name": "Ronald Reagan Sports Park",
+      "place_id": "ChIJsZeRWKd_24ARBFRgDFmFitQ",
+      "price_level": 0,
+      "rating": 4.6,
+      "tags": [
+        "park",
+        "tourist_attraction",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "32101 Sommers Bnd, Temecula, CA 92591, USA",
+      "category": "outdoor",
+      "lat": 33.5444302,
+      "lng": -117.0995188,
+      "name": "Sommers Bend Sports Park",
+      "place_id": "ChIJd6Tgjlt_24ARldJv-MA998A",
+      "price_level": 0,
+      "rating": 4.8,
+      "tags": [
+        "park",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "4251 River Edge Rd, Fallbrook, CA 92028, USA",
+      "category": "outdoor",
+      "lat": 33.4135412,
+      "lng": -117.2418831,
+      "name": "Santa Margarita River Trail Preserve",
+      "place_id": "ChIJ1-C8c6l_3IAR7yf3jvcuqik",
+      "price_level": 0,
+      "rating": 4.7,
+      "tags": [
+        "nature_preserve",
+        "hiking_area",
+        "sports_activity_location",
+        "park",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "28582 Harveston Dr, Temecula, CA 92591, USA",
+      "category": "outdoor",
+      "lat": 33.533350999999996,
+      "lng": -117.16097099999999,
+      "name": "Harveston Community Park",
+      "place_id": "ChIJQTpfzxB-24ARGOxm9dXCVt4",
+      "price_level": 0,
+      "rating": 4.7,
+      "tags": [
+        "park",
+        "tourist_attraction",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "2551 Olive Hill Rd, Fallbrook, CA 92028, USA",
+      "category": "outdoor",
+      "lat": 33.346982,
+      "lng": -117.2478077,
+      "name": "Ingold Sports Park",
+      "place_id": "ChIJW4VH50B53IARfLn1gMwTrYM",
+      "price_level": 0,
+      "rating": 4.4,
+      "tags": [
+        "non_profit_organization",
+        "tourist_attraction",
+        "sports_complex",
+        "athletic_field",
+        "sports_activity_location",
+        "association_or_organization",
+        "park",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "40148 Village Rd, Temecula, CA 92591, USA",
+      "category": "outdoor",
+      "lat": 33.536448299999996,
+      "lng": -117.1550851,
+      "name": "Harveston Lake Park",
+      "place_id": "ChIJE-qPlxB-24ARahWlYoM672I",
+      "price_level": 0,
+      "rating": 4.8,
+      "tags": [
+        "park",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "39400 Clinton Keith Rd, Murrieta, CA 92562, USA",
+      "category": "outdoor",
+      "lat": 33.5433653,
+      "lng": -117.26951299999999,
+      "name": "Santa Rosa Plateau Ecological Preserve",
+      "place_id": "ChIJWSEHnn-D3IARhLpJ6prR7RE",
+      "price_level": 0,
+      "rating": 4.7,
+      "tags": [
+        "nature_preserve",
+        "tourist_attraction",
+        "visitor_center",
+        "tourist_information_center",
+        "tour_agency",
+        "travel_agency",
+        "park",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ]
+    },
+    {
+      "address": "45000 Pechanga Pkwy #45000, Temecula, CA 92592, USA",
+      "category": "urban",
+      "lat": 33.4564921,
+      "lng": -117.1066537,
+      "name": "Pechanga Resort Casino",
+      "place_id": "ChIJUxxhdb-B24ARQBNwDDy6vGQ",
+      "price_level": 0,
+      "rating": 4.4,
+      "tags": [
+        "resort_hotel",
+        "hotel",
+        "tourist_attraction",
+        "casino",
+        "lodging",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "35960 Rancho California Rd, Temecula, CA 92591, USA",
+      "category": "urban",
+      "lat": 33.54718,
+      "lng": -117.04475599999999,
+      "name": "Wilson Creek Winery",
+      "place_id": "ChIJcQLd2hF524ARgZfzG_oUH8I",
+      "price_level": 0,
+      "rating": 4.6,
+      "tags": [
+        "winery",
+        "vineyard",
+        "tourist_attraction",
+        "wedding_venue",
+        "event_venue",
+        "manufacturer",
+        "farm",
+        "food",
+        "point_of_interest",
+        "service",
+        "association_or_organization",
+        "establishment"
+      ]
+    },
+    {
+      "address": "28601 Old Town Front St, Temecula, CA 92590, USA",
+      "category": "urban",
+      "lat": 33.4937201,
+      "lng": -117.14970319999998,
+      "name": "Old Town Temecula",
+      "place_id": "ChIJOx2uBSp_24ARpZs5tlueRZA",
+      "price_level": 0,
+      "rating": 4.7,
+      "tags": [
+        "tourist_attraction",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "37701 Warren Rd, Winchester, CA 92596, USA",
+      "category": "urban",
+      "lat": 33.5877371,
+      "lng": -117.04164540000001,
+      "name": "Lake Skinner Recreation Area",
+      "place_id": "ChIJ67KnV85724ARswaViy6R6A0",
+      "price_level": 0,
+      "rating": 4.5,
+      "tags": [
+        "park",
+        "tourist_attraction",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "32380 Deer Hollow Way, Temecula, CA 92592, USA",
+      "category": "urban",
+      "lat": 33.4530491,
+      "lng": -117.0952931,
+      "name": "Patricia H. Birdsall Sports Park",
+      "place_id": "ChIJGSO07pGB24ARWyJniIXrJ-A",
+      "price_level": 0,
+      "rating": 4.7,
+      "tags": [
+        "park",
+        "tourist_attraction",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "37000 Ruth Ellen Way, Murrieta, CA 92563, USA",
+      "category": "urban",
+      "lat": 33.5826314,
+      "lng": -117.170155,
+      "name": "Los Alamos Hills Sports Park",
+      "place_id": "ChIJR5G5OYF924ARDcDJ7mq8vJo",
+      "price_level": 0,
+      "rating": 4.7,
+      "tags": [
+        "park",
+        "tourist_attraction",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "33410 Rancho California Rd, Temecula, CA 92591, USA",
+      "category": "urban",
+      "lat": 33.5256355,
+      "lng": -117.078026,
+      "name": "Miramonte Winery",
+      "place_id": "ChIJEzLqZNV424ARrpGWhJUlcpQ",
+      "price_level": 0,
+      "rating": 4.5,
+      "tags": [
+        "winery",
+        "wine_bar",
+        "bistro",
+        "liquor_store",
+        "bar",
+        "tourist_attraction",
+        "manufacturer",
+        "farm",
+        "restaurant",
+        "food",
+        "store",
+        "point_of_interest",
+        "service",
+        "association_or_organization",
+        "establishment"
+      ]
+    },
+    {
+      "address": "38311 De Portola Rd, Temecula, CA 92592, USA",
+      "category": "urban",
+      "lat": 33.5238693,
+      "lng": -117.01851439999999,
+      "name": "Leoness Cellars",
+      "place_id": "ChIJB8n6CUN424ARSoS8KLZUA0U",
+      "price_level": 0,
+      "rating": 4.6,
+      "tags": [
+        "winery",
+        "wine_bar",
+        "brunch_restaurant",
+        "bar",
+        "fine_dining_restaurant",
+        "tourist_attraction",
+        "wedding_venue",
+        "event_venue",
+        "manufacturer",
+        "farm",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ]
+    },
+    {
+      "address": "32720 Rancho California Rd, Temecula, CA 92591, USA",
+      "category": "urban",
+      "lat": 33.5244336,
+      "lng": -117.0898695,
+      "name": "Callaway Vineyard & Winery",
+      "place_id": "ChIJy6GsQyh_24AROvLdxSrFVis",
+      "price_level": 0,
+      "rating": 4.5,
+      "tags": [
+        "winery",
+        "vineyard",
+        "tourist_attraction",
+        "wedding_venue",
+        "event_venue",
+        "manufacturer",
+        "farm",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "service",
+        "association_or_organization",
+        "establishment"
+      ]
+    },
+    {
+      "address": "30875 Rancho Vista Rd, Temecula, CA 92592, USA",
+      "category": "urban",
+      "lat": 33.4994695,
+      "lng": -117.1265509,
+      "name": "Ronald Reagan Sports Park",
+      "place_id": "ChIJsZeRWKd_24ARBFRgDFmFitQ",
+      "price_level": 0,
+      "rating": 4.6,
+      "tags": [
+        "park",
+        "tourist_attraction",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "40820 Winchester Rd, Temecula, CA 92591, USA",
+      "category": "shopping",
+      "lat": 33.5251895,
+      "lng": -117.1541469,
+      "name": "Promenade Temecula",
+      "place_id": "ChIJ_2fq7T5-24ARGt10kfqgeTg",
+      "price_level": 0,
+      "rating": 4.5,
+      "tags": [
+        "shopping_mall",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "32115 Temecula Pkwy, Temecula, CA 92592, USA",
+      "category": "shopping",
+      "lat": 33.47895930000001,
+      "lng": -117.09778269999998,
+      "name": "Vail Headquarters",
+      "place_id": "ChIJr6HV-uGB24AR9oNxqCEBYv0",
+      "price_level": 0,
+      "rating": 4.7,
+      "tags": [
+        "shopping_mall",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "27548 Ynez Rd Suite I-9, Temecula, CA 92591, USA",
+      "category": "shopping",
+      "lat": 33.5056862,
+      "lng": -117.14844240000001,
+      "name": "Temecula Town Center",
+      "place_id": "ChIJB9W6tLV_24ARNnfD8kyLAeU",
+      "price_level": 0,
+      "rating": 4.4,
+      "tags": [
+        "shopping_mall",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "24690, 24700, 24710, Washington Ave, Murrieta, CA 92562, USA",
+      "category": "shopping",
+      "lat": 33.5556057,
+      "lng": -117.21577419999998,
+      "name": "Murrieta Plaza in Downtown Murrieta",
+      "place_id": "ChIJN57C9TWC3IARLFw6CExKk3Q",
+      "price_level": 0,
+      "rating": 4.7,
+      "tags": [
+        "shopping_mall",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "25125 Madison Ave, Murrieta, CA 92562, USA",
+      "category": "shopping",
+      "lat": 33.5559222,
+      "lng": -117.20094870000001,
+      "name": "Murrieta Spectrum Shopping Center",
+      "place_id": "ChIJ-wxt9z6C3IARsSzj3VhSx68",
+      "price_level": 0,
+      "rating": 4.3,
+      "tags": [
+        "shopping_mall",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "24510 Village Walk Pl, Murrieta, CA 92562, USA",
+      "category": "shopping",
+      "lat": 33.5654067,
+      "lng": -117.2115253,
+      "name": "Village Walk Plaza",
+      "place_id": "ChIJkxck1VGC3IARQqxBjothiS0",
+      "price_level": 0,
+      "rating": 4.4,
+      "tags": [
+        "shopping_mall",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "39825 Alta Murrieta Dr, Murrieta, CA 92563, USA",
+      "category": "shopping",
+      "lat": 33.5588731,
+      "lng": -117.1790072,
+      "name": "Murrieta Town Center Shopping Center",
+      "place_id": "ChIJa_dF8guC3IARGj6VkbO-uhs",
+      "price_level": 0,
+      "rating": 4.4,
+      "tags": [
+        "shopping_mall",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "Temecula Pkwy & Redhawk Pkwy, CA-79, Temecula, CA 92592, USA",
+      "category": "shopping",
+      "lat": 33.480337899999995,
+      "lng": -117.0969473,
+      "name": "Redhawk Towne Ctr",
+      "place_id": "ChIJ1VTOrFh_24ARaled6j9zC7Q",
+      "price_level": 0,
+      "rating": 4.3,
+      "tags": [
+        "shopping_mall",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "40820 Winchester Rd #1660, Temecula, CA 92591, USA",
+      "category": "shopping",
+      "lat": 33.5254215,
+      "lng": -117.1537506,
+      "name": "Sunglass Hut",
+      "place_id": "ChIJpf5z7D1-24ARRBsaRu84ZFc",
+      "price_level": 0,
+      "rating": 4.5,
+      "tags": [
+        "gift_shop",
+        "shopping_mall",
+        "store",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "address": "Winchester Rd & Margarita Rd, Winchester Rd, Temecula, CA 92591, USA",
+      "category": "shopping",
+      "lat": 33.528757,
+      "lng": -117.1516746,
+      "name": "Commons At Temecula",
+      "place_id": "ChIJXVN3e2t-24AR0LtkDnrQec4",
+      "price_level": 0,
+      "rating": 4.4,
+      "tags": [
+        "shopping_mall",
+        "point_of_interest",
+        "establishment"
+      ]
+    }
+  ]
+}

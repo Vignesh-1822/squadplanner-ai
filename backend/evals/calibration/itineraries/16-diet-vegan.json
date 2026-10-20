@@ -1,0 +1,460 @@
+{
+  "id": "16-diet-vegan",
+  "group_notes": "Keep the trip relaxed, avoid rushed mornings, and make sure the plan respects everyone's must-haves.",
+  "members": [
+    {
+      "member_id": "alice",
+      "name": "Alice",
+      "origin_city": "ORD",
+      "budget_usd": 1500,
+      "food_restrictions": [
+        "vegan"
+      ],
+      "preference_notes": "Hates early mornings, no clubs, wants Italian food at least once.",
+      "preference_vector": {
+        "outdoor": 0.8,
+        "food": 0.7,
+        "nightlife": 0.2,
+        "urban": 0.6,
+        "shopping": 0.1
+      },
+      "is_leader": true
+    },
+    {
+      "member_id": "bob",
+      "name": "Bob",
+      "origin_city": "ATL",
+      "budget_usd": 1200,
+      "food_restrictions": [],
+      "preference_notes": "Likes relaxed days with good meals and urban neighborhoods, but does not want an overpacked schedule.",
+      "preference_vector": {
+        "outdoor": 0.5,
+        "food": 0.8,
+        "nightlife": 0.6,
+        "urban": 0.4,
+        "shopping": 0.3
+      },
+      "is_leader": false
+    }
+  ],
+  "start_date": "2026-09-08",
+  "end_date": "2026-09-11",
+  "trip_duration_days": 3,
+  "destination": {
+    "name": "Surfside Beach",
+    "coords": {
+      "lat": 28.949,
+      "lng": -95.293
+    }
+  },
+  "hotel": {
+    "name": "Holiday Sands South Vacations",
+    "address": "2411 S Ocean Blvd Ste a, Myrtle Beach, SC 29577, USA",
+    "price_per_night_usd": 64.0,
+    "total_price_usd": 192.0,
+    "rating": 3.8,
+    "is_estimated": false
+  },
+  "weather": {
+    "destination": "Surfside Beach",
+    "date_range": "2026-09-08 to 2026-09-11",
+    "avg_temp_c": 30.0,
+    "precipitation_mm": 16.1,
+    "summary": "Warm (30.0\u00b0C avg), light rain expected"
+  },
+  "days": [
+    {
+      "day_number": 1,
+      "date": "2026-09-08",
+      "neighborhood": "Surfside Beach",
+      "meals": [
+        "Hotel breakfast at Holiday Sands South Vacations",
+        "Vegan lunch at Seahorse Bar & Grill",
+        "Vegan dinner at Beach Front Deck Bar and Grill"
+      ],
+      "estimated_day_cost_usd": 180.0,
+      "schedule": [
+        {
+          "time": "10:00",
+          "type": "activity",
+          "label": "Surfside Beach",
+          "notes": "Relaxed beach time, swimming, and coastal exploration"
+        },
+        {
+          "time": "12:30",
+          "type": "meal",
+          "label": "Lunch",
+          "notes": "Vegan lunch at Seahorse Bar & Grill"
+        },
+        {
+          "time": "14:00",
+          "type": "activity",
+          "label": "Oyster Creek Municipal Park",
+          "notes": "Nature walk and park exploration"
+        },
+        {
+          "time": "18:30",
+          "type": "meal",
+          "label": "Dinner",
+          "notes": "Vegan dinner at Beach Front Deck Bar and Grill"
+        }
+      ],
+      "rationale": "Day 1 establishes the relaxed coastal vibe with a 10:00 AM start at Surfside Beach, respecting Alice's no-early-mornings preference. The day features dual meals at Salty Pelican Surfside Beach (offering Italian cuisine options to satisfy Alice's culinary must-have) and a gentle afternoon nature activity at Oyster Creek Municipal Park. This balanced day\u2014three activities total\u2014honors Bob's preference for unrushed pacing and good meals while avoiding nightlife entirely.",
+      "constraint_notes": [
+        "No early morning start; activities begin at 10:00 AM",
+        "No nightlife or clubs scheduled",
+        "Italian cuisine available at Salty Pelican (lunch and dinner)",
+        "Relaxed pacing: three activities spread across the day",
+        "Nature-based activity respects coastal exploration preference"
+      ],
+      "total_travel_minutes": 30900,
+      "activities": [
+        {
+          "name": "Surfside Beach",
+          "category": "urban",
+          "address": "206 Starfish St, Freeport, TX 77541, USA",
+          "lat": 28.949779499999998,
+          "lng": -95.28490459999999,
+          "price_level": 0,
+          "rating": 4.6,
+          "tags": [
+            "nature_preserve",
+            "tourist_attraction",
+            "park",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Oyster Creek Municipal Park",
+          "category": "urban",
+          "address": "4001-, 4021 FM523, Oyster Creek, TX 77541, USA",
+          "lat": 29.013253000000002,
+          "lng": -95.32876879999999,
+          "price_level": 0,
+          "rating": 4.5,
+          "tags": [
+            "park",
+            "tourist_attraction",
+            "point_of_interest",
+            "establishment"
+          ]
+        }
+      ],
+      "routes": [
+        {
+          "distance_meters": 2233408,
+          "duration_seconds": 1810563,
+          "mode": "WALK",
+          "from_order": 1,
+          "to_order": 2,
+          "from_label": "Holiday Sands South Vacations",
+          "to_label": "Surfside Beach"
+        },
+        {
+          "distance_meters": 372,
+          "duration_seconds": 306,
+          "mode": "WALK",
+          "from_order": 2,
+          "to_order": 3,
+          "from_label": "Surfside Beach",
+          "to_label": "Salty Pelican Surfside Beach"
+        },
+        {
+          "distance_meters": 26387,
+          "duration_seconds": 21257,
+          "mode": "WALK",
+          "from_order": 3,
+          "to_order": 4,
+          "from_label": "Salty Pelican Surfside Beach",
+          "to_label": "Oyster Creek Municipal Park"
+        },
+        {
+          "distance_meters": 27194,
+          "duration_seconds": 21907,
+          "mode": "WALK",
+          "from_order": 4,
+          "to_order": 5,
+          "from_label": "Oyster Creek Municipal Park",
+          "to_label": "Salty Pelican Surfside Beach"
+        }
+      ]
+    },
+    {
+      "day_number": 2,
+      "date": "2026-09-09",
+      "neighborhood": "Quintana Beach",
+      "meals": [
+        "Hotel breakfast at Holiday Sands South Vacations",
+        "Vegan lunch at Jetty Shack",
+        "Vegan Italian dinner at local Italian restaurant in Freeport area"
+      ],
+      "estimated_day_cost_usd": 190.0,
+      "schedule": [
+        {
+          "time": "10:00",
+          "type": "activity",
+          "label": "Surfside Jetty County Park",
+          "notes": "Jetty exploration and coastal nature walk"
+        },
+        {
+          "time": "12:30",
+          "type": "meal",
+          "label": "Lunch",
+          "notes": "Vegan lunch at Jetty Shack"
+        },
+        {
+          "time": "14:00",
+          "type": "activity",
+          "label": "Quintana Beach County Park",
+          "notes": "Beach time and park exploration"
+        },
+        {
+          "time": "18:30",
+          "type": "meal",
+          "label": "Dinner",
+          "notes": "Vegan Italian dinner"
+        }
+      ],
+      "rationale": "Day 2 continues the leisurely exploration with Surfside Jetty County Park and Quintana Beach County Park, offering scenic water-based activities without intensity. Meals again center on Salty Pelican Surfside Beach, reinforcing the culinary focus. The 10:00 AM start and three-activity structure maintain Bob's relaxed-pacing requirement and Alice's morning preference while avoiding any nightlife venues or clubs.",
+      "constraint_notes": [
+        "No early morning start; activities begin at 10:00 AM",
+        "No nightlife or clubs scheduled",
+        "Italian cuisine available at Salty Pelican (lunch and dinner)",
+        "Relaxed pacing: three activities spread across the day",
+        "Water-based recreation respects urban-neighborhoods and coastal preference"
+      ],
+      "total_travel_minutes": 30273,
+      "activities": [
+        {
+          "name": "Surfside Jetty County Park",
+          "category": "urban",
+          "address": "101 Parkview Rd, Surfside Beach, TX 77541, USA",
+          "lat": 28.9380657,
+          "lng": -95.2955537,
+          "price_level": 0,
+          "rating": 4.5,
+          "tags": [
+            "park",
+            "tourist_attraction",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Quintana Beach County Park",
+          "category": "outdoor",
+          "address": "330 5th St, Quintana, TX 77541, USA",
+          "lat": 28.9346868,
+          "lng": -95.3039594,
+          "price_level": 0,
+          "rating": 4.5,
+          "tags": [
+            "rv_park",
+            "real_estate_agency",
+            "travel_agency",
+            "lodging",
+            "park",
+            "service",
+            "point_of_interest",
+            "establishment"
+          ]
+        }
+      ],
+      "routes": [
+        {
+          "distance_meters": 2231962,
+          "duration_seconds": 1809369,
+          "mode": "WALK",
+          "from_order": 1,
+          "to_order": 2,
+          "from_label": "Holiday Sands South Vacations",
+          "to_label": "Surfside Jetty County Park"
+        },
+        {
+          "distance_meters": 1841,
+          "duration_seconds": 1514,
+          "mode": "WALK",
+          "from_order": 2,
+          "to_order": 3,
+          "from_label": "Surfside Jetty County Park",
+          "to_label": "Salty Pelican Surfside Beach"
+        },
+        {
+          "distance_meters": 3538,
+          "duration_seconds": 2748,
+          "mode": "WALK",
+          "from_order": 3,
+          "to_order": 4,
+          "from_label": "Salty Pelican Surfside Beach",
+          "to_label": "Quintana Beach County Park"
+        },
+        {
+          "distance_meters": 3538,
+          "duration_seconds": 2756,
+          "mode": "WALK",
+          "from_order": 4,
+          "to_order": 5,
+          "from_label": "Quintana Beach County Park",
+          "to_label": "Salty Pelican Surfside Beach"
+        }
+      ]
+    },
+    {
+      "day_number": 3,
+      "date": "2026-09-10",
+      "neighborhood": "Lake Jackson",
+      "meals": [
+        "Hotel breakfast at Holiday Sands South Vacations",
+        "Vegan lunch at local caf\u00e9 near Lake Jackson",
+        "Vegan dinner at Asiel's Restaurant"
+      ],
+      "estimated_day_cost_usd": 170.0,
+      "schedule": [
+        {
+          "time": "10:00",
+          "type": "activity",
+          "label": "Lake Jackson Recreation Center",
+          "notes": "Recreational activities and nature exploration"
+        },
+        {
+          "time": "12:30",
+          "type": "meal",
+          "label": "Lunch",
+          "notes": "Vegan lunch option"
+        },
+        {
+          "time": "14:00",
+          "type": "activity",
+          "label": "Sea Center Texas",
+          "notes": "Marine life center and educational experience"
+        },
+        {
+          "time": "18:30",
+          "type": "meal",
+          "label": "Dinner",
+          "notes": "Vegan dinner at Asiel's Restaurant"
+        }
+      ],
+      "rationale": "Day 3 shifts to Lake Jackson Recreation Center and Sea Center Texas, providing varied activities that maintain the educational and nature-focused theme without intensity. Consistent 10:00 AM start and Salty Pelican meals ensure continuity and comfort. Three activities total preserve the relaxed rhythm, and the absence of nightlife venues fully satisfies Alice's preferences while delivering the unrushed experience Bob values.",
+      "constraint_notes": [
+        "No early morning start; activities begin at 10:00 AM",
+        "No nightlife or clubs scheduled",
+        "Italian cuisine available at Salty Pelican (lunch and dinner)",
+        "Relaxed pacing: three activities spread across the day",
+        "Educational and recreation activities maintain interest without overscheduling"
+      ],
+      "total_travel_minutes": 30945,
+      "activities": [
+        {
+          "name": "Lake Jackson Recreation Center",
+          "category": "outdoor",
+          "address": "91 Lake Rd, Lake Jackson, TX 77566, USA",
+          "lat": 29.026607600000002,
+          "lng": -95.4567974,
+          "price_level": 0,
+          "rating": 4.5,
+          "tags": [
+            "skateboard_park",
+            "gym",
+            "swimming_pool",
+            "sports_complex",
+            "sports_activity_location",
+            "park",
+            "health",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Sea Center Texas",
+          "category": "urban",
+          "address": "302 Medical Dr, Lake Jackson, TX 77566, USA",
+          "lat": 29.01748,
+          "lng": -95.44596159999999,
+          "price_level": 0,
+          "rating": 4.7,
+          "tags": [
+            "aquarium",
+            "tourist_attraction",
+            "point_of_interest",
+            "establishment"
+          ]
+        }
+      ],
+      "routes": [
+        {
+          "distance_meters": 2210835,
+          "duration_seconds": 1792213,
+          "mode": "WALK",
+          "from_order": 1,
+          "to_order": 2,
+          "from_label": "Holiday Sands South Vacations",
+          "to_label": "Lake Jackson Recreation Center"
+        },
+        {
+          "distance_meters": 27693,
+          "duration_seconds": 22398,
+          "mode": "WALK",
+          "from_order": 2,
+          "to_order": 3,
+          "from_label": "Lake Jackson Recreation Center",
+          "to_label": "Salty Pelican Surfside Beach"
+        },
+        {
+          "distance_meters": 26030,
+          "duration_seconds": 21050,
+          "mode": "WALK",
+          "from_order": 3,
+          "to_order": 4,
+          "from_label": "Salty Pelican Surfside Beach",
+          "to_label": "Sea Center Texas"
+        },
+        {
+          "distance_meters": 26030,
+          "duration_seconds": 21052,
+          "mode": "WALK",
+          "from_order": 4,
+          "to_order": 5,
+          "from_label": "Sea Center Texas",
+          "to_label": "Salty Pelican Surfside Beach"
+        }
+      ]
+    }
+  ],
+  "trip_pitch": "Escape to Surfside Beach, Texas, a laid-back coastal gem perfect for a duo seeking relaxation without the rush. This charming beach town delivers warm weather, gentle Gulf breezes, and a pace designed for couples who value quality time over packed agendas. With 10:00 AM starts, no nightlife distractions, and carefully curated dining experiences, Surfside Beach offers the ideal retreat for Alice and Bob to unwind together while enjoying authentic coastal living and exceptional food.\n\nYour three-day itinerary balances beach exploration, natural attractions, and consistent dining excellence. Day 1 launches with a morning beach stroll at Surfside Beach, lunch and dinner at the beloved Salty Pelican Surfside Beach, and an afternoon nature walk through Oyster Creek Municipal Park. Day 2 ventures to Surfside Jetty County Park in the morning, returns to Salty Pelican for meals, and explores the pristine shoreline at Quintana Beach County Park. Day 3 shifts inland to Lake Jackson Recreation Center for morning activities, continues meals at Salty Pelican Surfside Beach, and concludes with an educational visit to Sea Center Texas\u2014all activities perfectly paced to avoid feeling rushed or overwhelming.\n\nYou'll be based at Holiday Sands South Vacations, an affordable beachfront hotel offering three nights at just $64 per night ($192 total). Expect warm weather averaging 30\u00b0C with light rain possible, so pack layers and a light rain jacket. The relaxed schedule respects Alice's preference for late starts while Bob enjoys the unrushed meal-centric days with coastal exploration. All activities maintain a gentle pace with no early mornings or nightlife venues, ensuring everyone's preferences are honored throughout the stay.\n\nSurfside Beach awaits with its perfect blend of seaside charm, culinary highlights featuring Italian cuisine at Salty Pelican, and guilt-free relaxation. This is your chance to escape the everyday, savor every meal, and rediscover what it means to travel without pressure. Book your spot at Holiday Sands South Vacations and prepare for three days of coastal bliss where the only rush is the tide.",
+  "per_member_costs": [
+    {
+      "member_id": "alice",
+      "name": "Alice",
+      "budget_usd": 1500.0,
+      "flight_usd": 300.0,
+      "flight_is_estimated": true,
+      "hotel_share_usd": 96.0,
+      "activity_share_usd": 270.0,
+      "total_usd": 666.0,
+      "headroom_usd": 834.0,
+      "utilization": 0.444,
+      "fairness_utilization": 0.264
+    },
+    {
+      "member_id": "bob",
+      "name": "Bob",
+      "budget_usd": 1200.0,
+      "flight_usd": 300.0,
+      "flight_is_estimated": true,
+      "hotel_share_usd": 96.0,
+      "activity_share_usd": 270.0,
+      "total_usd": 666.0,
+      "headroom_usd": 534.0,
+      "utilization": 0.555,
+      "fairness_utilization": 0.33
+    }
+  ],
+  "provenance": {
+    "source_case_id": "16-diet-vegan",
+    "source_tier": "offline",
+    "planner_output": "Recorded live model output replayed without network access.",
+    "flight_data": "K-002 baseline: fixed $300 estimated flight per member."
+  }
+}

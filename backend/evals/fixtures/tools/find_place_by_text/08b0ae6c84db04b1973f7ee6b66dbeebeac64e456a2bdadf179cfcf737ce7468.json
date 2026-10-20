@@ -1,0 +1,32 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 36.4012,
+      "lng": -93.7374
+    },
+    "destination": "Eureka Springs",
+    "included_type": "restaurant",
+    "query": "Dinner"
+  },
+  "request_sha256": "08b0ae6c84db04b1973f7ee6b66dbeebeac64e456a2bdadf179cfcf737ce7468",
+  "response": {
+    "address": "10 Center St, Eureka Springs, AR 72632, USA",
+    "category": "food",
+    "lat": 36.4027928,
+    "lng": -93.73660579999999,
+    "name": "Grotto Wood-Fired Grill and Wine Cave",
+    "place_id": "ChIJMwjkCcnSzocR3YeX-h_0xCs",
+    "price_level": 0,
+    "rating": 4.6,
+    "tags": [
+      "american_restaurant",
+      "bar",
+      "fine_dining_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

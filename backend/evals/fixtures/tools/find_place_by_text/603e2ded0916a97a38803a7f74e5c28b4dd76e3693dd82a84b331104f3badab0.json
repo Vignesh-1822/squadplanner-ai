@@ -1,0 +1,28 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 38.04,
+      "lng": -84.503
+    },
+    "destination": "Lexington",
+    "included_type": null,
+    "query": "Andover Shopping District exploration"
+  },
+  "request_sha256": "603e2ded0916a97a38803a7f74e5c28b4dd76e3693dd82a84b331104f3badab0",
+  "response": {
+    "address": "3319 Tates Creek Rd #100, Lexington, KY 40502, USA",
+    "category": "place",
+    "lat": 37.995114199999996,
+    "lng": -84.49632629999999,
+    "name": "Lansdowne Shoppes",
+    "place_id": "ChIJaeMfehZbQogRvBV491mKxp0",
+    "price_level": 0,
+    "rating": 4.4,
+    "tags": [
+      "shopping_mall",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 28.949,
+      "lng": -95.293
+    },
+    "destination": "Surfside Beach",
+    "included_type": null,
+    "query": "Park facilities exploration"
+  },
+  "request_sha256": "8fa47a9d7aa26abedd80e52971287838103c37cfcb2c2bbfd1fc1c4e2b0e38b2",
+  "response": {
+    "address": "2211 Bluewater Hwy, Surfside Beach, TX 77541, USA",
+    "category": "place",
+    "lat": 28.9716048,
+    "lng": -95.26171660000001,
+    "name": "Stahlman Park",
+    "place_id": "ChIJXc84aRltQIYRI4eX9Owl-fM",
+    "price_level": 0,
+    "rating": 4.4,
+    "tags": [
+      "park",
+      "tourist_attraction",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

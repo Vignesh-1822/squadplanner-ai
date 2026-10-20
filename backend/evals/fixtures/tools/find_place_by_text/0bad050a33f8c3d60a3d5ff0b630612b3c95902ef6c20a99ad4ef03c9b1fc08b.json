@@ -1,0 +1,30 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 28.69,
+      "lng": -95.967
+    },
+    "destination": "Matagorda",
+    "included_type": "restaurant",
+    "query": "Breakfast at Westwood Inn"
+  },
+  "request_sha256": "0bad050a33f8c3d60a3d5ff0b630612b3c95902ef6c20a99ad4ef03c9b1fc08b",
+  "response": {
+    "address": "190 County Rd 255, Matagorda, TX 77457, USA",
+    "category": "food",
+    "lat": 28.6938839,
+    "lng": -95.95871249999999,
+    "name": "Waterfront Restaurant",
+    "place_id": "ChIJHw2tVzzZQYYRn3YmibXc1mw",
+    "price_level": 0,
+    "rating": 4.3,
+    "tags": [
+      "seafood_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

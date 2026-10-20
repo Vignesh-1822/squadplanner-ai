@@ -1,0 +1,32 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 28.949,
+      "lng": -95.293
+    },
+    "destination": "Surfside Beach",
+    "included_type": "lodging",
+    "query": "Holiday Sands South Vacations Oceanfront property with casual rooms & condos, plus pools, dining & a fitness center."
+  },
+  "request_sha256": "3aa97606060d76093ccf65bf16fc8f1e23113e86b6943acbe63ea13bf12040ec",
+  "response": {
+    "address": "2411 S Ocean Blvd Ste a, Myrtle Beach, SC 29577, USA",
+    "category": "place",
+    "lat": 33.6653447,
+    "lng": -78.910319,
+    "name": "Holiday Sands South Vacations",
+    "place_id": "ChIJt2GWluhpAIkRvQ4OEZYyJpw",
+    "price_level": 0,
+    "rating": 3.8,
+    "tags": [
+      "hotel",
+      "real_estate_agency",
+      "travel_agency",
+      "lodging",
+      "point_of_interest",
+      "service",
+      "establishment"
+    ]
+  }
+}

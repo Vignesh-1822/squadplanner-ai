@@ -1,0 +1,532 @@
+{
+  "id": "30-all-outdoor",
+  "group_notes": "Keep the trip relaxed, avoid rushed mornings, and make sure the plan respects everyone's must-haves.",
+  "members": [
+    {
+      "member_id": "alice",
+      "name": "Alice",
+      "origin_city": "ORD",
+      "budget_usd": 1500,
+      "food_restrictions": [
+        "vegetarian"
+      ],
+      "preference_notes": "Hates early mornings, no clubs, wants Italian food at least once.",
+      "preference_vector": {
+        "outdoor": 1.0,
+        "food": 0.0,
+        "nightlife": 0.0,
+        "urban": 0.0,
+        "shopping": 0.0
+      },
+      "is_leader": true
+    },
+    {
+      "member_id": "bob",
+      "name": "Bob",
+      "origin_city": "ATL",
+      "budget_usd": 1200,
+      "food_restrictions": [],
+      "preference_notes": "Likes relaxed days with good meals and urban neighborhoods, but does not want an overpacked schedule.",
+      "preference_vector": {
+        "outdoor": 1.0,
+        "food": 0.0,
+        "nightlife": 0.0,
+        "urban": 0.0,
+        "shopping": 0.0
+      },
+      "is_leader": false
+    },
+    {
+      "member_id": "carol",
+      "name": "Carol",
+      "origin_city": "LAX",
+      "budget_usd": 2000,
+      "food_restrictions": [],
+      "preference_notes": "Interested in scenic walks and museums, but not late-night clubbing.",
+      "preference_vector": {
+        "outdoor": 1.0,
+        "food": 0.0,
+        "nightlife": 0.0,
+        "urban": 0.0,
+        "shopping": 0.0
+      },
+      "is_leader": false
+    }
+  ],
+  "start_date": "2026-09-08",
+  "end_date": "2026-09-11",
+  "trip_duration_days": 3,
+  "destination": {
+    "name": "Glacier National Park",
+    "coords": {
+      "lat": 48.696,
+      "lng": -113.718
+    }
+  },
+  "hotel": {
+    "name": "Many Glacier Hotel (over budget)",
+    "address": "1147 Rte 3, Browning, MT 59417, USA",
+    "price_per_night_usd": 120.0,
+    "total_price_usd": 360.0,
+    "rating": 4.6,
+    "is_estimated": false
+  },
+  "weather": {
+    "destination": "Glacier National Park",
+    "date_range": "2026-09-08 to 2026-09-11",
+    "avg_temp_c": 6.3,
+    "precipitation_mm": 34.9,
+    "summary": "Cool (6.3\u00b0C avg), significant rain expected"
+  },
+  "days": [
+    {
+      "day_number": 1,
+      "date": "2026-09-08",
+      "neighborhood": "Browning",
+      "meals": [
+        "Hotel breakfast at Many Glacier Hotel",
+        "Picnic lunch near Sun Point",
+        "Two Dog Flats Restaurant (vegetarian options)"
+      ],
+      "estimated_day_cost_usd": 195.0,
+      "schedule": [
+        {
+          "time": "08:00",
+          "type": "meal",
+          "label": "Breakfast",
+          "notes": "Hotel breakfast at Many Glacier Hotel before departure"
+        },
+        {
+          "time": "10:30",
+          "type": "activity",
+          "label": "Sun Point Nature Trail",
+          "notes": "Scenic walk with glacier views, moderate difficulty, approximately 2-3 hours"
+        },
+        {
+          "time": "13:30",
+          "type": "meal",
+          "label": "Lunch",
+          "notes": "Packed picnic lunch near Sun Point Parking area"
+        },
+        {
+          "time": "15:00",
+          "type": "activity",
+          "label": "Sun Point Parking and scenic viewpoint",
+          "notes": "Easy access viewpoint, rest and photo opportunities"
+        },
+        {
+          "time": "18:30",
+          "type": "meal",
+          "label": "Dinner",
+          "notes": "Two Dog Flats Restaurant - vegetarian-friendly dining"
+        }
+      ],
+      "rationale": "Day 1 introduces the group to Many Glacier Hotel and immediate surroundings with two gentle scenic walks at Sun Point Nature Trail and Sun Point Parking. These activities align perfectly with Carol's interest in scenic walks while maintaining the group's commitment to relaxed pacing. Three structured meals at Ptarmigan Dining Hall (breakfast and dinner) and Russell's Fireside Dining Room (lunch) provide comfort and continuity without any nightlife, clubs, or early-morning pressure.",
+      "constraint_notes": [
+        "Relaxed pace: 2 activities, structured meal breaks, no rushed schedule",
+        "No nightlife or clubs scheduled",
+        "Scenic walks honored with Sun Point Nature Trail and Sun Point Parking",
+        "Meal structure supports group comfort despite early meal service"
+      ],
+      "total_travel_minutes": 1986,
+      "activities": [
+        {
+          "name": "Sun Point Nature Trail",
+          "category": "outdoor",
+          "address": "Browning, MT 59417, USA",
+          "lat": 48.6758251,
+          "lng": -113.58035489999999,
+          "price_level": 0,
+          "rating": 4.9,
+          "tags": [
+            "park",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Sun Point Parking",
+          "category": "outdoor",
+          "address": "MCGC+F2, Rising Sun, MT 59417, USA",
+          "lat": 48.676182,
+          "lng": -113.57997100000001,
+          "price_level": 0,
+          "rating": 0.0,
+          "tags": [
+            "park",
+            "point_of_interest",
+            "establishment"
+          ]
+        }
+      ],
+      "routes": [
+        {
+          "distance_meters": 56,
+          "duration_seconds": 47,
+          "mode": "WALK",
+          "from_order": 1,
+          "to_order": 2,
+          "from_label": "Many Glacier Hotel (over budget)",
+          "to_label": "Ptarmigan Dining Hall"
+        },
+        {
+          "distance_meters": 29169,
+          "duration_seconds": 25676,
+          "mode": "WALK",
+          "from_order": 2,
+          "to_order": 3,
+          "from_label": "Ptarmigan Dining Hall",
+          "to_label": "Sun Point Nature Trail"
+        },
+        {
+          "distance_meters": 33958,
+          "duration_seconds": 32431,
+          "mode": "WALK",
+          "from_order": 3,
+          "to_order": 4,
+          "from_label": "Sun Point Nature Trail",
+          "to_label": "Russell's Fireside Dining Room"
+        },
+        {
+          "distance_meters": 34174,
+          "duration_seconds": 33902,
+          "mode": "WALK",
+          "from_order": 4,
+          "to_order": 5,
+          "from_label": "Russell's Fireside Dining Room",
+          "to_label": "Sun Point Parking"
+        },
+        {
+          "distance_meters": 29385,
+          "duration_seconds": 27118,
+          "mode": "WALK",
+          "from_order": 5,
+          "to_order": 6,
+          "from_label": "Sun Point Parking",
+          "to_label": "Ptarmigan Dining Hall"
+        }
+      ]
+    },
+    {
+      "day_number": 2,
+      "date": "2026-09-09",
+      "neighborhood": "M65Q+9R",
+      "meals": [
+        "Hotel breakfast at Many Glacier Hotel",
+        "Packed lunch at Logan Pass",
+        "Jammer Joe's Grill & Pizzeria (Italian - vegetarian pasta available)"
+      ],
+      "estimated_day_cost_usd": 210.0,
+      "schedule": [
+        {
+          "time": "08:00",
+          "type": "meal",
+          "label": "Breakfast",
+          "notes": "Hotel breakfast at Many Glacier Hotel"
+        },
+        {
+          "time": "10:00",
+          "type": "activity",
+          "label": "Logan Pass scenic drive",
+          "notes": "Stunning high-altitude scenic overlook, accessible by car, moderate weather protection needed"
+        },
+        {
+          "time": "12:30",
+          "type": "meal",
+          "label": "Lunch",
+          "notes": "Packed lunch at Logan Pass overlook area"
+        },
+        {
+          "time": "14:00",
+          "type": "activity",
+          "label": "Kelly Camp Trailhead",
+          "notes": "Moderate scenic walk, approximately 2 hours, good views and wildlife potential"
+        },
+        {
+          "time": "18:30",
+          "type": "meal",
+          "label": "Dinner",
+          "notes": "Jammer Joe's Grill & Pizzeria - Italian restaurant with vegetarian pasta options (satisfies Alice's Italian requirement)"
+        }
+      ],
+      "rationale": "Day 2 builds on the group's rhythm with two signature park experiences: Logan Pass (iconic scenic viewpoint) and Kelly Camp Trailhead (accessible hiking adventure). These stops satisfy Carol's preference for scenic walks and natural exploration while keeping the schedule uncluttered for Bob. Three structured meals maintain the relaxed dining experience the group values, with no clubs, nightlife, or overpacking.",
+      "constraint_notes": [
+        "Relaxed pace: 2 activities with ample meal breaks, no overscheduling",
+        "No nightlife or clubs scheduled",
+        "Scenic walks and nature-focused activities aligned with group preferences",
+        "Meal structure supports group comfort despite early meal service"
+      ],
+      "total_travel_minutes": 1625,
+      "activities": [
+        {
+          "name": "Logan Pass",
+          "category": "outdoor",
+          "address": "West Glacier, MT 59936, USA",
+          "lat": 48.6957872,
+          "lng": -113.7279401,
+          "price_level": 0,
+          "rating": 4.9,
+          "tags": [
+            "park",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Kelly Camp Trailhead",
+          "category": "outdoor",
+          "address": "McDonald Lake Trail, West Glacier, MT 59936, USA",
+          "lat": 48.6238246,
+          "lng": -113.9083096,
+          "price_level": 0,
+          "rating": 0.0,
+          "tags": [
+            "park",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Jammer Joe's Grill & Pizzeria",
+          "category": "food",
+          "address": "West Glacier, MT 59936, USA",
+          "lat": 48.6176593,
+          "lng": -113.87650049999999,
+          "price_level": 0,
+          "rating": 3.7,
+          "tags": [
+            "pizza_restaurant",
+            "fast_food_restaurant",
+            "restaurant",
+            "food",
+            "point_of_interest",
+            "establishment"
+          ]
+        }
+      ],
+      "routes": [
+        {
+          "distance_meters": 56,
+          "duration_seconds": 47,
+          "mode": "WALK",
+          "from_order": 1,
+          "to_order": 2,
+          "from_label": "Many Glacier Hotel (over budget)",
+          "to_label": "Ptarmigan Dining Hall"
+        },
+        {
+          "distance_meters": 25726,
+          "duration_seconds": 24654,
+          "mode": "WALK",
+          "from_order": 2,
+          "to_order": 3,
+          "from_label": "Ptarmigan Dining Hall",
+          "to_label": "Logan Pass"
+        },
+        {
+          "distance_meters": 34945,
+          "duration_seconds": 25956,
+          "mode": "WALK",
+          "from_order": 3,
+          "to_order": 4,
+          "from_label": "Logan Pass",
+          "to_label": "Russell's Fireside Dining Room"
+        },
+        {
+          "distance_meters": 7371,
+          "duration_seconds": 6099,
+          "mode": "WALK",
+          "from_order": 4,
+          "to_order": 5,
+          "from_label": "Russell's Fireside Dining Room",
+          "to_label": "Kelly Camp Trailhead"
+        },
+        {
+          "distance_meters": 44616,
+          "duration_seconds": 40796,
+          "mode": "WALK",
+          "from_order": 5,
+          "to_order": 6,
+          "from_label": "Kelly Camp Trailhead",
+          "to_label": "Ptarmigan Dining Hall"
+        }
+      ]
+    },
+    {
+      "day_number": 3,
+      "date": "2026-09-10",
+      "neighborhood": "Q785+8J",
+      "meals": [
+        "Hotel breakfast at Many Glacier Hotel",
+        "Packed lunch at glacier viewpoint",
+        "Nell's Restaurant (vegetarian options)"
+      ],
+      "estimated_day_cost_usd": 185.0,
+      "schedule": [
+        {
+          "time": "08:00",
+          "type": "meal",
+          "label": "Breakfast",
+          "notes": "Hotel breakfast at Many Glacier Hotel"
+        },
+        {
+          "time": "10:30",
+          "type": "activity",
+          "label": "Grinnell Glacier Retreat scenic walk",
+          "notes": "Moderate hiking trail with glacier views, approximately 2-3 hours, spectacular scenery"
+        },
+        {
+          "time": "13:30",
+          "type": "meal",
+          "label": "Lunch",
+          "notes": "Packed lunch at glacier viewpoint"
+        },
+        {
+          "time": "15:00",
+          "type": "activity",
+          "label": "Swiftcurrent Glacier Retreat and Glacier National Park exploration",
+          "notes": "Scenic viewing and gentle exploration, easy access overlooks"
+        },
+        {
+          "time": "18:30",
+          "type": "meal",
+          "label": "Dinner",
+          "notes": "Nell's Restaurant - vegetarian-friendly dining with regional cuisine"
+        }
+      ],
+      "rationale": "Day 3 culminates the experience with two glacier retreat activities\u2014Grinnell Glacier Retreat and Swiftcurrent Glacier Retreat\u2014spectacular alpine destinations that deliver the scenic grandeur Carol seeks. The relaxed pacing with generous meal breaks at Ptarmigan Dining Hall and Russell's Fireside Dining Room honors Bob's desire for unhurried days and the group's collective need for comfort. No clubs, nightlife, or overcommitted scheduling closes the trip on a serene, memorable note.",
+      "constraint_notes": [
+        "Relaxed pace: 2 activities with structured meal breaks, no intensity buildup",
+        "No nightlife or clubs scheduled",
+        "Glacier retreats deliver premium scenic walks and natural wonder",
+        "Meal structure supports group comfort despite early meal service"
+      ],
+      "total_travel_minutes": 1453,
+      "activities": [
+        {
+          "name": "Grinnell Glacier Retreat",
+          "category": "outdoor",
+          "address": "Q785+8J, St Mary, MT 59417, USA",
+          "lat": 48.765777799999995,
+          "lng": -113.7408889,
+          "price_level": 0,
+          "rating": 0.0,
+          "tags": [
+            "park",
+            "point_of_interest",
+            "establishment"
+          ]
+        },
+        {
+          "name": "Swiftcurrent Glacier Retreat",
+          "category": "outdoor",
+          "address": "Q6PM+76, St Mary, MT 59417, USA",
+          "lat": 48.785638899999995,
+          "lng": -113.7669444,
+          "price_level": 0,
+          "rating": 0.0,
+          "tags": [
+            "park",
+            "point_of_interest",
+            "establishment"
+          ]
+        }
+      ],
+      "routes": [
+        {
+          "distance_meters": 56,
+          "duration_seconds": 47,
+          "mode": "WALK",
+          "from_order": 1,
+          "to_order": 2,
+          "from_label": "Many Glacier Hotel (over budget)",
+          "to_label": "Ptarmigan Dining Hall"
+        },
+        {
+          "distance_meters": 16576,
+          "duration_seconds": 17362,
+          "mode": "WALK",
+          "from_order": 2,
+          "to_order": 3,
+          "from_label": "Ptarmigan Dining Hall",
+          "to_label": "Grinnell Glacier Retreat"
+        },
+        {
+          "distance_meters": 30379,
+          "duration_seconds": 25038,
+          "mode": "WALK",
+          "from_order": 3,
+          "to_order": 4,
+          "from_label": "Grinnell Glacier Retreat",
+          "to_label": "Russell's Fireside Dining Room"
+        },
+        {
+          "distance_meters": 31549,
+          "duration_seconds": 31147,
+          "mode": "WALK",
+          "from_order": 4,
+          "to_order": 5,
+          "from_label": "Russell's Fireside Dining Room",
+          "to_label": "Swiftcurrent Glacier Retreat"
+        },
+        {
+          "distance_meters": 15458,
+          "duration_seconds": 13590,
+          "mode": "WALK",
+          "from_order": 5,
+          "to_order": 6,
+          "from_label": "Swiftcurrent Glacier Retreat",
+          "to_label": "Ptarmigan Dining Hall"
+        }
+      ]
+    }
+  ],
+  "trip_pitch": "Glacier National Park is Montana's crown jewel, offering a perfect mountain escape for groups seeking natural beauty, relaxed exploration, and exceptional dining experiences. With pristine alpine scenery, accessible trails, and a legendary historic hotel as your home base, this destination delivers the scenic grandeur and culinary highlights your group craves without the hustle of urban tourism. The park's dramatic landscapes and thoughtfully paced itinerary ensure everyone\u2014from early risers to those who prefer leisurely mornings\u2014can savor the experience at their own rhythm.\n\nYour three-day adventure balances world-class meals with immersive natural experiences. Day 1 centers on the Sun Point Nature Trail and Sun Point Parking area, providing gentle scenic walks perfect for Carol's love of natural beauty while maintaining a relaxed morning at Ptarmigan Dining Hall and Russell's Fireside Dining Room. Day 2 elevates the experience with Logan Pass and the Kelly Camp Trailhead, offering dramatic vistas and accessible hiking that satisfy both Alice's desire to avoid rushed schedules and Bob's preference for uncluttered days. Day 3 showcases the park's glacier retreats\u2014Grinnell Glacier Retreat and Swiftcurrent Glacier Retreat\u2014stunning scenic destinations that reward your group with unforgettable alpine views, all framed by exceptional dining at Ptarmigan Dining Hall and Russell's Fireside Dining Room.\n\nYour home base is the iconic Many Glacier Hotel, a historic gem perched on the shore of Swiftcurrent Lake, offering lodge-style comfort and legendary hospitality. Early September brings cool temperatures averaging 6.3\u00b0C with significant rain expected; pack layers, waterproof jackets, and sturdy hiking boots to stay comfortable during outdoor exploration. The hotel's central location provides easy access to all day's activities, and the relaxed schedule\u2014with no activities before 08:00 and generous breaks between stops\u2014respects everyone's need for a measured, unhurried pace. Ptarmigan Dining Hall and Russell's Fireside Dining Room will be your culinary anchors, delivering satisfying meals throughout the stay.\n\nThis Glacier National Park escape is your invitation to disconnect from the everyday and reconnect with raw alpine beauty, trusted companionship, and the simple joy of well-paced exploration. Three days of scenic walks, historic lodging, and outstanding mountain cuisine await\u2014a trip designed for your group's comfort, Alice's dining preferences, Bob's love of relaxed rhythms, and Carol's passion for natural wonders. The mountains are calling; answer with confidence and anticipation.",
+  "per_member_costs": [
+    {
+      "member_id": "alice",
+      "name": "Alice",
+      "budget_usd": 1500.0,
+      "flight_usd": 300.0,
+      "flight_is_estimated": true,
+      "hotel_share_usd": 120.0,
+      "activity_share_usd": 196.66666666666666,
+      "total_usd": 616.6666666666666,
+      "headroom_usd": 883.3333333333334,
+      "utilization": 0.4111111111111111,
+      "fairness_utilization": 0.28
+    },
+    {
+      "member_id": "bob",
+      "name": "Bob",
+      "budget_usd": 1200.0,
+      "flight_usd": 300.0,
+      "flight_is_estimated": true,
+      "hotel_share_usd": 120.0,
+      "activity_share_usd": 196.66666666666666,
+      "total_usd": 616.6666666666666,
+      "headroom_usd": 583.3333333333334,
+      "utilization": 0.5138888888888888,
+      "fairness_utilization": 0.35
+    },
+    {
+      "member_id": "carol",
+      "name": "Carol",
+      "budget_usd": 2000.0,
+      "flight_usd": 300.0,
+      "flight_is_estimated": true,
+      "hotel_share_usd": 120.0,
+      "activity_share_usd": 196.66666666666666,
+      "total_usd": 616.6666666666666,
+      "headroom_usd": 1383.3333333333335,
+      "utilization": 0.3083333333333333,
+      "fairness_utilization": 0.21
+    }
+  ],
+  "provenance": {
+    "source_case_id": "30-all-outdoor",
+    "source_tier": "offline",
+    "planner_output": "Recorded live model output replayed without network access.",
+    "flight_data": "K-002 baseline: fixed $300 estimated flight per member."
+  }
+}

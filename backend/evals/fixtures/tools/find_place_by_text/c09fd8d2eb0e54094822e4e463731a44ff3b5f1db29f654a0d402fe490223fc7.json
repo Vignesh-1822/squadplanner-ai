@@ -1,0 +1,32 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 28.949,
+      "lng": -95.293
+    },
+    "destination": "Surfside Beach",
+    "included_type": "restaurant",
+    "query": "Breakfast at hotel"
+  },
+  "request_sha256": "c09fd8d2eb0e54094822e4e463731a44ff3b5f1db29f654a0d402fe490223fc7",
+  "response": {
+    "address": "750 Bluewater Hwy A, Surfside Beach, TX 77541, USA",
+    "category": "food",
+    "lat": 28.9581242,
+    "lng": -95.2766391,
+    "name": "Beach Front Deck Bar and Grill",
+    "place_id": "ChIJkadRENtsQIYRxJKpRAWJ0ew",
+    "price_level": 0,
+    "rating": 3.9,
+    "tags": [
+      "bar_and_grill",
+      "seafood_restaurant",
+      "bar",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+}

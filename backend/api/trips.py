@@ -5,13 +5,19 @@ import logging
 import secrets
 import uuid
 from datetime import datetime, timedelta, timezone
-from typing import Literal
+from typing import Any, Literal
 
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Query, Request
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel, Field
 
-from db.client import get_collection
+from api.middleware.auth import get_current_user
+from api.middleware.authz import (
+    get_trips_collection,
+    get_users_collection,
+    require_member,
+)
+from api.middleware.rate_limit import get_user_key, limiter
 from services.email_service import send_trip_invite
 from tools.activity_images import (
     attach_activity_images,
@@ -25,6 +31,7 @@ from utils.streaming import stream_graph_events
 logger = logging.getLogger(__name__)
 
 router = APIRouter(prefix="/trips", tags=["trips"])
+_background_tasks: set[asyncio.Task[Any]] = set()
 
 
 class MemberRequest(BaseModel):
@@ -40,8 +47,7 @@ class MemberRequest(BaseModel):
 
 class CreateTripRequest(BaseModel):
     trip_name: str
-    created_by: str
-    invited_emails: list[str] = Field(default_factory=list)
+    invited_emails: list[str] = Field(default_factory=list, max_length=20)
 
 
 class InvitedMember(BaseModel):
@@ -160,28 +166,34 @@ def _summarize_members(members: list[dict]) -> list[dict]:
 
 
 @router.post("")
-async def create_trip(body: CreateTripRequest):
+@limiter.limit("10/hour", key_func=get_user_key)
+async def create_trip(
+    request: Request,
+    body: CreateTripRequest,
+    current_user: dict = Depends(get_current_user),
+    trips: Any = Depends(get_trips_collection),
+):
     trip_id = str(uuid.uuid4())
     invite_code = secrets.token_urlsafe(8)
     initial_state = _initial_trip_state(trip_id, body.trip_name)
     now = datetime.now(timezone.utc).isoformat()
+    created_by = current_user["email"]
 
     # The creator is a first-class squad member and the trip leader. Guests invited by email
     # start as "pending" until they join and submit preferences.
     invited_members = [
-        {"email": body.created_by, "status": "joined", "is_leader": True}
+        {"email": created_by, "status": "joined", "is_leader": True}
     ]
     for email in body.invited_emails:
-        if email and email != body.created_by:
+        if email and email != created_by:
             invited_members.append({"email": email, "status": "pending", "is_leader": False})
 
-    trips = get_collection("trips")
     await trips.insert_one(
         {
             "_id": trip_id,
             "trip_id": trip_id,
             "trip_name": body.trip_name,
-            "created_by": body.created_by,
+            "created_by": created_by,
             "invited_emails": body.invited_emails,
             "invited_members": invited_members,
             "invite_code": invite_code,
@@ -200,7 +212,9 @@ async def create_trip(body: CreateTripRequest):
                 except Exception as exc:
                     logger.error("Failed to send invite to %s: %s", email, exc)
 
-        asyncio.create_task(_send_invites())
+        task = asyncio.create_task(_send_invites())
+        _background_tasks.add(task)
+        task.add_done_callback(_background_tasks.discard)
 
     return {
         "trip_id": trip_id,
@@ -208,15 +222,25 @@ async def create_trip(body: CreateTripRequest):
         "status": "accepted",
         "stream_url": f"/trips/{trip_id}/stream",
     }
-@router.get("")
-async def list_trips(email: str | None = None):
-    trips_col = get_collection("trips")
-    query = {}
-    
-    if email:
-        query["created_by"] = email
 
-    cursor = trips_col.find(query).sort("created_at", -1)
+
+@router.get("")
+async def list_trips(
+    current_user: dict = Depends(get_current_user),
+    trips_col: Any = Depends(get_trips_collection),
+    skip: int = Query(default=0, ge=0),
+    limit: int = Query(default=50, ge=1, le=100),
+):
+    email = current_user["email"]
+    query = {
+        "$or": [
+            {"invited_members.email": email},
+            {"created_by": email},
+            {"invited_emails": email},
+        ]
+    }
+
+    cursor = trips_col.find(query).sort("created_at", -1).skip(skip).limit(limit)
     results = []
     async for doc in cursor:
         initial_state = doc.get("initial_state", {})
@@ -243,12 +267,12 @@ async def list_trips(email: str | None = None):
 
 
 @router.get("/{trip_id}", response_model=TripDetailsResponse)
-async def get_trip(trip_id: str):
-    trips = get_collection("trips")
-    trip = await trips.find_one({"trip_id": trip_id}, {"_id": 0})
-    if not trip:
-        raise HTTPException(status_code=404, detail="Trip not found")
-
+async def get_trip(
+    trip_id: str,
+    trip: dict = Depends(require_member),
+    trips: Any = Depends(get_trips_collection),
+    users: Any = Depends(get_users_collection),
+):
     raw_members, healed = _raw_members(trip)
     if healed:
         await trips.update_one(
@@ -257,7 +281,6 @@ async def get_trip(trip_id: str):
         )
     invited_members = _summarize_members(raw_members)
 
-    users = get_collection("users")
     # One query for the whole squad rather than one per member — the lobby polls this route.
     emails = [m.get("email", "") for m in invited_members if m.get("email")]
     users_by_email = {
@@ -315,16 +338,15 @@ async def get_trip(trip_id: str):
 
 
 @router.get("/{trip_id}/result")
-async def get_trip_result(trip_id: str):
+async def get_trip_result(
+    trip_id: str,
+    trip: dict = Depends(require_member),
+):
     """Return the completed itinerary payload persisted by the streaming pipeline.
 
     Lets the itinerary page load (and refinements re-load) a finished trip on a fresh page
     visit, independent of client-side storage.
     """
-    trips = get_collection("trips")
-    trip = await trips.find_one({"trip_id": trip_id}, {"_id": 0})
-    if not trip:
-        raise HTTPException(status_code=404, detail="Trip not found")
     if not trip.get("itinerary") and not (trip.get("final_state") or {}).get("trip_pitch"):
         raise HTTPException(status_code=409, detail="Trip has not completed yet")
 
@@ -365,13 +387,23 @@ async def get_trip_result(trip_id: str):
     }
 
 
-@router.get("/{trip_id}/stream")
-async def stream_trip(trip_id: str):
-    trips = get_collection("trips")
-    trip = await trips.find_one({"trip_id": trip_id})
-    if not trip:
-        raise HTTPException(status_code=404, detail="Trip not found")
+@router.get("/{trip_id}/telemetry")
+async def get_trip_telemetry(
+    trip_id: str,
+    trip: dict = Depends(require_member),
+):
+    """Return accumulated per-node token, cost and latency measurements."""
+    telemetry = trip.get("telemetry")
+    if not telemetry:
+        raise HTTPException(status_code=409, detail="Telemetry is not available for this trip yet")
+    return {"trip_id": trip_id, "telemetry": telemetry}
 
+
+@router.get("/{trip_id}/stream")
+async def stream_trip(
+    trip_id: str,
+    trip: dict = Depends(require_member),
+):
     return StreamingResponse(
         stream_graph_events(trip_id, trip["initial_state"]),
         media_type="text/event-stream",

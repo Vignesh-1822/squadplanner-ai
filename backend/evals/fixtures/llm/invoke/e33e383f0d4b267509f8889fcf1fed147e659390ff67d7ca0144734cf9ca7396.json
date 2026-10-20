@@ -1,0 +1,37 @@
+{
+  "operation": "invoke",
+  "request": {
+    "invoke_kwargs": {},
+    "node": "extract_preference_constraints",
+    "prompt": "Extract group trip planning constraints from natural-language preference notes.\nReturn ONLY raw JSON, no markdown, no backticks. Use this exact top-level shape:\n{raw_member_notes: list, raw_group_notes: string, hard_constraints: list, soft_preferences: list, schedule: object, activity_filters: object, meal_requirements: object, destination_intent: object}.\nClassify explicit must/avoid/timing requirements as hard_constraints. Classify general likes, vibes, and pacing as soft_preferences unless they are phrased as must/avoid.\nUse schedule.earliest_start_time as HH:MM when users avoid early mornings. Use activity_filters.avoid_tags for avoided activity categories. Use meal_requirements.must_include for cuisine or meal requirements. Use destination_intent.styles for destination-level intent like big_city, skyscrapers, skyline, architecture, museums, food_city, nightlife_city, beach, national_park, theme_parks, mountains, small_town, scenic_drives, shopping, quiet_escape. Use destination_intent.preferred_types for preferred destination types, and set destination_intent.iconic_preference true when users ask for iconic, famous, big-city, skyline, national-park, beach, or theme-park destinations.\n\nPreference notes JSON:\n{\"raw_member_notes\": [{\"member_id\": \"sam\", \"name\": \"Sam\", \"notes\": \"Okay with simple food and free outdoor activities.\"}, {\"member_id\": \"maya\", \"name\": \"Maya\", \"notes\": \"Prefers walkable low-cost activities.\"}], \"raw_group_notes\": \"Cheapest realistic weekend possible. Avoid expensive hotels.\", \"hard_constraints\": [], \"soft_preferences\": [], \"schedule\": {\"avoid_early_mornings\": false, \"earliest_start_time\": null, \"pace\": \"balanced\"}, \"activity_filters\": {\"avoid_tags\": [], \"prefer_tags\": [], \"required_tags\": []}, \"meal_requirements\": {\"must_include\": [], \"avoid_terms\": []}, \"destination_intent\": {\"styles\": [], \"landmarks\": [], \"preferred_types\": [], \"iconic_preference\": false}}",
+    "tools": []
+  },
+  "request_sha256": "e33e383f0d4b267509f8889fcf1fed147e659390ff67d7ca0144734cf9ca7396",
+  "response": {
+    "data": {
+      "additional_kwargs": {},
+      "content": "```json\n{\n  \"raw_member_notes\": [\n    {\n      \"member_id\": \"sam\",\n      \"name\": \"Sam\",\n      \"notes\": \"Okay with simple food and free outdoor activities.\"\n    },\n    {\n      \"member_id\": \"maya\",\n      \"name\": \"Maya\",\n      \"notes\": \"Prefers walkable low-cost activities.\"\n    }\n  ],\n  \"raw_group_notes\": \"Cheapest realistic weekend possible. Avoid expensive hotels.\",\n  \"hard_constraints\": [\n    \"avoid_expensive_hotels\",\n    \"budget_priority_weekend\"\n  ],\n  \"soft_preferences\": [\n    \"free_outdoor_activities\",\n    \"simple_food\",\n    \"walkable_activities\",\n    \"low_cost_focus\"\n  ],\n  \"schedule\": {\n    \"avoid_early_mornings\": false,\n    \"earliest_start_time\": null,\n    \"pace\": \"balanced\"\n  },\n  \"activity_filters\": {\n    \"avoid_tags\": [\n      \"expensive_paid_attractions\"\n    ],\n    \"prefer_tags\": [\n      \"free\",\n      \"outdoor\",\n      \"walkable\"\n    ],\n    \"required_tags\": []\n  },\n  \"meal_requirements\": {\n    \"must_include\": [],\n    \"avoid_terms\": [\n      \"expensive_dining\"\n    ]\n  },\n  \"destination_intent\": {\n    \"styles\": [],\n    \"landmarks\": [],\n    \"preferred_types\": [],\n    \"iconic_preference\": false\n  }\n}\n```",
+      "id": "lc_run--01a0756d-cd07-7810-adb9-881cf2f8e741",
+      "invalid_tool_calls": [],
+      "name": null,
+      "response_metadata": {
+        "model_name": "claude-haiku-4-5-20251001",
+        "model_provider": "anthropic",
+        "stop_reason": "end_turn",
+        "stop_sequence": null
+      },
+      "tool_calls": [],
+      "type": "ai",
+      "usage_metadata": {
+        "input_token_details": {
+          "cache_creation": 0,
+          "cache_read": 0
+        },
+        "input_tokens": 499,
+        "output_tokens": 381,
+        "total_tokens": 880
+      }
+    },
+    "type": "ai"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "operation": "find_place_by_text",
+  "request": {
+    "coords": {
+      "lat": 28.69,
+      "lng": -95.967
+    },
+    "destination": "Matagorda",
+    "included_type": "restaurant",
+    "query": "Breakfast"
+  },
+  "request_sha256": "9dfc527d129d18d0f0976e4f6351350dc250677a918d95fda819320402f9162f",
+  "response": {
+    "address": "FM Rd 2031, Matagorda, TX 77457, USA",
+    "category": "food",
+    "lat": 28.690600900000003,
+    "lng": -95.9684953,
+    "name": "Gorda Grill",
+    "place_id": "ChIJcaFdnnHbQYYRkg7HMUdTbeU",
+    "price_level": 0,
+    "rating": 4.5,
+    "tags": [
+      "restaurant",
+      "point_of_interest",
+      "food",
+      "establishment"
+    ]
+  }
+}
