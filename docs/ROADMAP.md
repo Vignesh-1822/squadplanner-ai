@@ -102,7 +102,8 @@ gap is the next planning task.
 
 ## Phase 8 — Legibility
 
-- [ ] `docker-compose.yml`: backend + Mongo + Langfuse
+- [x] `docker-compose.yml`: backend + frontend (nginx) — *partial: uses each user's own Atlas instead
+  of a Mongo container, and LangSmith instead of Langfuse (D-011). See `docs/DOCKER.md`.*
 - [ ] GitHub Actions: deterministic tests + eval suite per PR
 - [ ] Architecture diagram generated from the compiled graph
 - [ ] README rewrite: what it is → diagram → agent roster → evals → cost → demo GIF → setup

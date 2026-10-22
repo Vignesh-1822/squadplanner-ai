@@ -12,7 +12,8 @@ import ProtectedRoute from "@/atoms/ProtectedRoute"
 
 const router = createBrowserRouter([
   {
-    element: <HomeLayout />,
+    // Guard the whole layout, not just the page, so the header never renders for a logged-out user.
+    element: <ProtectedRoute><HomeLayout /></ProtectedRoute>,
     children: [
       { path: "/", element: <Home /> },
       { path: "/mytrips", element: <ProtectedRoute><MyTrips /></ProtectedRoute> },

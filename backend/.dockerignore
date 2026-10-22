@@ -1,0 +1,23 @@
+# Secrets never enter the image; they are supplied at runtime (env_file / -e).
+.env
+.env.*
+!.env_example
+
+# Local environments and generated files
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+tests/artifacts/
+evals/results/
+.DS_Store
+.vscode/
+.idea/
+
+# Not needed at runtime
+Dockerfile
+.dockerignore

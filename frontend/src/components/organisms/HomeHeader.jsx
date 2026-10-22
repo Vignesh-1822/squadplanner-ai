@@ -22,12 +22,13 @@ const HomeHeader = () => {
   const handleLogout = async () => {
     try {
       await logout()
-      setUser(null)
       toast.success("Successfully logged out!")
-      navigate("/auth")
     } catch (error) {
-      console.error("Logout failed:", error)
-      toast.error("Logout failed.")
+      // The cookie may already be gone server-side; still log out locally so the user is never stuck.
+      console.error("Logout request failed:", error)
+    } finally {
+      setUser(null)
+      navigate("/auth")
     }
   }
   
@@ -75,7 +76,7 @@ const HomeHeader = () => {
             {user?.avatar_url ? (
               <img src={user.avatar_url} alt="Profile" className="w-full h-full object-cover" />
             ) : (
-              user?.name ? user.name.slice(0, 2).toUpperCase() : user?.email ? user.email.slice(0, 2).toUpperCase() : "JD"
+              user?.name ? user.name.slice(0, 2).toUpperCase() : user?.email ? user.email.slice(0, 2).toUpperCase() : ""
             )}
           </div>
 

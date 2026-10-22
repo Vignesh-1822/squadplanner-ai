@@ -4,7 +4,7 @@ import logging
 import uuid
 from datetime import datetime, timezone
 
-from fastapi import APIRouter, Depends, HTTPException, Request, Response, status
+from fastapi import APIRouter, Cookie, Depends, HTTPException, Request, Response, status
 from pydantic import BaseModel
 
 from api.middleware.auth import get_current_user
@@ -153,13 +153,24 @@ async def google_auth(request: Request, body: GoogleRequest, response: Response)
 @router.post("/logout")
 async def logout(
     response: Response,
-    current_user: dict = Depends(get_current_user),
+    access_token: str | None = Cookie(default=None),
 ):
-    users = get_collection("users")
-    await users.update_one(
-        {"email": current_user["email"]},
-        {"$inc": {"token_version": 1}},
-    )
+    # Logout is idempotent: the cookie is always cleared, even when it is missing,
+    # expired, or already revoked. Sessions are only revoked server-side for a valid token.
+    current_user = None
+    if access_token:
+        try:
+            current_user = await get_current_user(access_token)
+        except HTTPException:
+            logger.info("Logout called with an invalid or revoked session; clearing cookie only.")
+
+    if current_user:
+        users = get_collection("users")
+        await users.update_one(
+            {"email": current_user["email"]},
+            {"$inc": {"token_version": 1}},
+        )
+
     response.delete_cookie(
         key=JWT_COOKIE,
         httponly=True,

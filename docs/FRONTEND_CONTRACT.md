@@ -25,8 +25,8 @@ itself.
 
 | Route | Access |
 |---|---|
-| `POST /auth/register`, `POST /auth/login`, `POST /auth/google` | Public |
-| `POST /auth/logout`, `GET /auth/me` | Authenticated |
+| `POST /auth/register`, `POST /auth/login`, `POST /auth/google`, `POST /auth/logout` | Public |
+| `GET /auth/me` | Authenticated |
 | `POST /trips`, `GET /trips` | Authenticated |
 | `GET /trips/by-invite/{code}` | Public |
 | `POST /trips/{id}/join` | Authenticated with matching invite code |
@@ -37,8 +37,10 @@ itself.
 | `GET /admin/serpapi-usage` | Admin |
 | `GET /calibration/session`, `POST /calibration/labels` | Admin, internal debug tooling only |
 
-`POST /auth/logout` increments the user's session version and revokes every outstanding token for
-that account. Tokens otherwise expire after 24 hours.
+`POST /auth/logout` always returns 200 and clears the cookie, even with a missing, expired or
+revoked cookie, so the frontend can treat logout as always succeeding. When the cookie is valid it
+also increments the user's session version and revokes every outstanding token for that account.
+Tokens otherwise expire after 24 hours.
 
 ## The flow
 

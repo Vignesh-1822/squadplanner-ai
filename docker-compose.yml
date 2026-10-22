@@ -1,0 +1,37 @@
+# SquadPlanner: backend (FastAPI) + frontend (nginx serving the Vite build).
+#
+#   cp backend/.env_example backend/.env   # fill in YOUR OWN values — never commit it
+#   docker compose up --build
+#   open http://localhost:5173
+#
+# No secrets live in this file or in the images; they come from backend/.env at runtime.
+# Full guide: docs/DOCKER.md
+
+services:
+  backend:
+    build: ./backend
+    image: ${DOCKERHUB_USER:-squadplanner}/squadplanner-backend:${TAG:-latest}
+    env_file: backend/.env
+    environment:
+      # Trust nginx's X-Forwarded-For so rate limits are per real client, not per proxy.
+      # Safe only because the backend port below is bound to localhost.
+      FORWARDED_ALLOW_IPS: "*"
+    ports:
+      # /docs and /debug on this machine only; the app itself goes through the frontend proxy.
+      - "127.0.0.1:8000:8000"
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: .
+      dockerfile: docker/frontend.Dockerfile
+      args:
+        # Public OAuth client ID (not a secret). Leave unset to disable Google sign-in.
+        VITE_GOOGLE_CLIENT_ID: ${VITE_GOOGLE_CLIENT_ID:-}
+    image: ${DOCKERHUB_USER:-squadplanner}/squadplanner-frontend:${TAG:-latest}
+    ports:
+      - "5173:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
