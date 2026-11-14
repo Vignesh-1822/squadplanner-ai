@@ -169,11 +169,14 @@ MongoDB Atlas cluster.
 ### 2. Get the code
 
 ```bash
-git clone https://github.com/Shubham10jain/squadplanner-ai.git
+git clone https://github.com/Vignesh-1822/squadplanner-ai.git
 cd squadplanner-ai
 ```
 
 ### 3. Create your environment file
+
+> **On the SquadPlanner team?** Skip steps 3 and 4. Your secrets come from Infisical; see
+> [docs/DOCKER.md](docs/DOCKER.md#for-the-team-secrets-from-infisical).
 
 ```bash
 cp backend/.env_example backend/.env
@@ -209,6 +212,9 @@ Make sure nothing else is using ports `5173` or `8000`. For example, stop any lo
 docker compose up --build
 ```
 
+Team members using Infisical start it with `infisical run --env=dev -- docker compose up --build`
+after `export COMPOSE_FILE=docker-compose.yml:docker-compose.infisical.yml`.
+
 The first build takes a few minutes. It's ready when the backend logs
 `Application startup complete`.
 
@@ -230,15 +236,17 @@ docker compose up -d --build      # rebuild after pulling new code or editing fi
 Run the backend tests inside the container:
 
 ```bash
-docker compose run --rm backend python -m pytest tests/ -q --ignore=tests/test_integration.py
+docker compose run --rm backend python -m pytest tests/ -q
 ```
+
+The suite needs no secrets and takes a few seconds. The live integration test is skipped unless
+`RUN_LIVE_INTEGRATION=true` is passed on the command line, because it spends real API quota.
 
 ### Troubleshooting
 
 | Problem | Fix |
 |---|---|
-| `env file backend/.env not found` | Do step 3 |
-| Backend exits with an error about `MONGODB_URI` or `JWT_SECRET` | Both are required. Fill them in `backend/.env` |
+| Backend exits with an error about `MONGODB_URI` or `JWT_SECRET` | No secrets reached it. Do step 3, or use the Infisical command if you're on the team |
 | `/health` shows `"db":"unreachable"` | Check the Atlas URI and do step 4 |
 | `port is already allocated` | Something else is on 5173 or 8000. Stop it, or change the left-hand port in `docker-compose.yml` |
 | Changes to `backend/.env` don't apply | Run `docker compose up -d` again. Env changes need a container restart, not a rebuild |
@@ -271,6 +279,14 @@ Run the backend:
 ```powershell
 python -m uvicorn main:app --reload
 ```
+
+**On the team?** Skip the `.env` file and run through Infisical instead (after `infisical login`):
+
+```bash
+infisical run --env=dev -- python -m uvicorn main:app --reload
+```
+
+Tests never need secrets: `python -m pytest tests/ -q` runs on placeholders in a few seconds.
 
 Useful URLs:
 

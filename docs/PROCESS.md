@@ -38,7 +38,8 @@ Steps 4 and 7 both use the reviewer prompt template in `docs/prompts/REVIEWER.md
 - The spec is `docs/phases/PHASE_N.md`. If the work diverges from it, stop and say so — don't
   silently expand scope.
 - **Never modify `frontend/`.** Vignesh owns it. `docs/FRONTEND_CONTRACT.md` is the contract.
-- **Never read or print `backend/.env`.** Use `backend/.env_example`.
+- **Never read or print a secret value**, from `backend/.env` or from Infisical. Secrets live in
+  Infisical; see AGENTS.md rule 2.
 - Success criteria are commands, not prose. "Done" means the command passes.
 - One branch per phase, one PR per phase.
 
