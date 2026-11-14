@@ -1,0 +1,11 @@
+# Allowlist: the frontend image only ever sees frontend/ and the nginx config.
+*
+!frontend/
+!docker/nginx.conf
+
+# Secrets and local build output never enter the image.
+frontend/.env
+frontend/.env.*
+frontend/node_modules/
+frontend/dist/
+**/.DS_Store

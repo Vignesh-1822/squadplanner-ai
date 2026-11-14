@@ -29,6 +29,7 @@ PUBLIC_ROUTES = frozenset(
         ("POST", "/api/auth/register"),
         ("POST", "/api/auth/login"),
         ("POST", "/api/auth/google"),
+        ("POST", "/api/auth/logout"),
         ("GET", "/api/trips/by-invite/{invite_code}"),
     }
 )
@@ -200,6 +201,8 @@ def test_public_route_allow_list_is_explicit():
         ("POST", "/api/auth/register"),
         ("POST", "/api/auth/login"),
         ("POST", "/api/auth/google"),
+        # Logout must succeed with a stale cookie, otherwise the user cannot clear it.
+        ("POST", "/api/auth/logout"),
         ("GET", "/api/trips/by-invite/{invite_code}"),
     }
 
@@ -334,6 +337,80 @@ def test_stale_token_version_is_rejected(monkeypatch):
     token = create_jwt("leader-id", LEADER["email"], token_version=0)
     response = TestClient(app).get("/api/auth/me", cookies={"access_token": token})
     assert response.status_code == 401
+
+
+class LogoutUsers:
+    """Stores one user document and records token_version bumps."""
+
+    def __init__(self, token_version: int):
+        self.user = {"email": LEADER["email"], "token_version": token_version}
+        self.updates: list[tuple[dict, dict]] = []
+
+    async def find_one(self, query, projection=None):
+        return self.user
+
+    async def update_one(self, query, update, **kwargs):
+        self.updates.append((query, update))
+
+
+def _patch_logout_users(monkeypatch, users: LogoutUsers) -> None:
+    from api.middleware import auth
+    from api.routes import auth as auth_routes
+
+    monkeypatch.setattr(auth, "get_collection", lambda name: users)
+    monkeypatch.setattr(auth_routes, "get_collection", lambda name: users)
+
+
+def _assert_cookie_cleared(response) -> None:
+    set_cookie = response.headers.get("set-cookie", "")
+    assert "access_token=" in set_cookie
+    assert "Max-Age=0" in set_cookie
+
+
+def test_logout_without_cookie_clears_cookie_and_succeeds(monkeypatch):
+    users = LogoutUsers(token_version=0)
+    _patch_logout_users(monkeypatch, users)
+
+    response = TestClient(app).post("/api/auth/logout")
+
+    assert response.status_code == 200
+    _assert_cookie_cleared(response)
+    assert users.updates == []
+
+
+def test_logout_with_garbage_cookie_clears_cookie_and_succeeds(monkeypatch):
+    users = LogoutUsers(token_version=0)
+    _patch_logout_users(monkeypatch, users)
+
+    response = TestClient(app).post("/api/auth/logout", cookies={"access_token": "not-a-jwt"})
+
+    assert response.status_code == 200
+    _assert_cookie_cleared(response)
+    assert users.updates == []
+
+
+def test_logout_with_revoked_cookie_clears_cookie_without_bumping_version(monkeypatch):
+    users = LogoutUsers(token_version=1)
+    _patch_logout_users(monkeypatch, users)
+    token = create_jwt("leader-id", LEADER["email"], token_version=0)
+
+    response = TestClient(app).post("/api/auth/logout", cookies={"access_token": token})
+
+    assert response.status_code == 200
+    _assert_cookie_cleared(response)
+    assert users.updates == []
+
+
+def test_logout_with_valid_cookie_revokes_sessions(monkeypatch):
+    users = LogoutUsers(token_version=0)
+    _patch_logout_users(monkeypatch, users)
+    token = create_jwt("leader-id", LEADER["email"], token_version=0)
+
+    response = TestClient(app).post("/api/auth/logout", cookies={"access_token": token})
+
+    assert response.status_code == 200
+    _assert_cookie_cleared(response)
+    assert users.updates == [({"email": LEADER["email"]}, {"$inc": {"token_version": 1}})]
 
 
 def test_ip_and_user_rate_limits(monkeypatch):

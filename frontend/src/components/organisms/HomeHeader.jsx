@@ -22,12 +22,13 @@ const HomeHeader = () => {
   const handleLogout = async () => {
     try {
       await logout()
-      setUser(null)
       toast.success("Successfully logged out!")
-      navigate("/auth")
     } catch (error) {
-      console.error("Logout failed:", error)
-      toast.error("Logout failed.")
+      // The cookie may already be gone server-side; still log out locally so the user is never stuck.
+      console.error("Logout request failed:", error)
+    } finally {
+      setUser(null)
+      navigate("/auth")
     }
   }
   
