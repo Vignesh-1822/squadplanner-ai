@@ -13,8 +13,11 @@ from langgraph.types import Command
 from config import configure_langsmith
 
 
-load_dotenv()
+# Read the gate before load_dotenv: a RUN_LIVE_INTEGRATION=true sitting in backend/.env used to open
+# it on every `pytest tests/`, spending live quota on runs that never asked for it. Spending money
+# has to be a choice made on the command line, not a value left in a file.
 RUN_LIVE_INTEGRATION = os.getenv("RUN_LIVE_INTEGRATION", "").lower() == "true"
+load_dotenv()
 LIVE_TRIP_INPUT_FILE = os.getenv("LIVE_TRIP_INPUT_FILE")
 LIVE_TRIP_INPUT_JSON = os.getenv("LIVE_TRIP_INPUT_JSON")
 LIVE_DESTINATION_INDEX = os.getenv("LIVE_DESTINATION_INDEX", "0")
