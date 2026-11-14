@@ -3,10 +3,8 @@ import { useNavigate } from "react-router-dom"
 import { Flag } from "lucide-react"
 import SquadInviteInput from "@/molecules/SquadInviteInput"
 import { createTrip } from "@/services/ApiList"
-import { useAuth } from "@/store/authStore"
 
 const NewTrip = () => {
-  const { user } = useAuth()
   const navigate = useNavigate()
   const [tripName, setTripName] = useState("")
   const [members, setMembers] = useState([])
@@ -27,7 +25,6 @@ const NewTrip = () => {
     try {
       const data = await createTrip({
         trip_name: tripName,
-        created_by: user?.email || "", 
         invited_emails: members,
       })
 

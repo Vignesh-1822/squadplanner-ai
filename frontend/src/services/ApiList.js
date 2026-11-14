@@ -8,13 +8,16 @@ export const googleAuth   = (data) => apiFetch("/auth/google",   { method: "POST
 export const logout       = ()     => apiFetch("/auth/logout",   { method: "POST" })
 
 /* trips */
-export const getTrips    = (email) => apiFetch(email ? `/trips?email=${email}` : "/trips")
+// The server scopes the list to whoever the cookie belongs to; there is nothing to pass.
+export const getTrips    = ()      => apiFetch("/trips")
 export const getTripById = (id)    => apiFetch(`/trips/${id}`)
 export const createTrip  = (data)  => apiFetch("/trips", { method: "POST", body: JSON.stringify(data) })
 
 /* squad */
 export const getTripByInvite  = (code)     => apiFetch(`/trips/by-invite/${code}`)
-export const joinTrip         = (id)       => apiFetch(`/trips/${id}/join`, { method: "POST" })
+// The server checks the invite code itself, so knowing a trip id is not enough to join.
+export const joinTrip         = (id, inviteCode) =>
+  apiFetch(`/trips/${id}/join`, { method: "POST", body: JSON.stringify({ invite_code: inviteCode }) })
 export const submitPreferences = (id, data) =>
   apiFetch(`/trips/${id}/preferences`, { method: "POST", body: JSON.stringify(data) })
 export const generateTrip     = (id, data = {}) =>

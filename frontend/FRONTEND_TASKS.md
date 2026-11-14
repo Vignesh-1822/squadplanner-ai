@@ -183,12 +183,18 @@ Marked `TODO(F3)`.
 
 ## Phase 4 — Planning, HITL, itinerary
 
-### F21 · Phase 0 breaking changes — `TODO`
+### F21 · Phase 0 breaking changes — `DONE`
 Backend security work in flight. When it lands: `POST /trips` stops accepting `created_by`
 (remove it from `NewTrip.jsx`), `GET /trips` loses `?email=` and returns only your own trips
 (update `getTrips` and `MyTrips.jsx`), and `joinTrip(id)` becomes `joinTrip(id, inviteCode)`.
 
-### F3 · Three screens don't exist — `TODO`
+**Done 2026-11-14.** Phase 0 landed with the 2026-10-19 merge of `origin/main`, and only the
+third change was breaking: `POST /trips/{id}/join` now requires `{ invite_code }`, so every
+guest join answered 422 until `JoinTrip.jsx` passed the code it already reads from the URL.
+The other two were silently ignored by the server — `created_by` and `?email=` are removed
+anyway, the latter because it put the user's email in every request URL and server log.
+
+### F3 · Three screens don't exist — `DONE`
 No streaming page, no HITL city-selection, no itinerary view.
 
 - `/trips/:tripId/planning` — SSE progress; on `HITL_REQUIRED` render the 5 candidate cards and
@@ -231,8 +237,8 @@ route legs, a stylised route map, day summary, and the refinement box.
   radar does poorly (misleading area, shape depends on axis order). On a dark card because the
   brand volt measures **1.21** contrast on white and **14.77** on slate-900; every bar is
   direct-labelled so the value never depends on reading the fill.
-- *A stylised route sketch, not a real map* — the mock itself draws pins and a dashed connector
-  rather than tiles, so this keeps a mapping library out of the bundle.
+- ~~*A stylised route sketch, not a real map*~~ — superseded: the itinerary now has a real
+  Leaflet map on OpenStreetMap tiles with numbered pins and directions links.
 - *Flights / Lodging / Budget tabs are drawn but inert* — hiding them would misrepresent the page.
 - *Squad Upvotes, Est. Steps, Savings Goal and Next Up are omitted* — features that don't exist.
 
@@ -337,6 +343,11 @@ antd may be worth keeping — decide rather than drift.)
 
 ## Changelog
 
+- **2026-11-14** — **F21 done: guest invites work again.** The Phase 0 merge made
+  `POST /trips/{id}/join` require the invite code in the body; the frontend sent no body, so
+  every join from `/join/:code` failed with a 422 the backend suite could not see. `joinTrip`
+  now takes `(id, inviteCode)`. Also dropped `created_by` from trip creation and `?email=` from
+  the trips list — both ignored server-side. F3 marked done; its screens shipped in September.
 - **2026-09-23** — **One `items` array per day; name matching gone.** A day was three parallel
   lists — `schedule` (the clock), `activities` (place records), `meals` (prose) — with no key
   joining them, so the UI re-joined them by matching names. That is what let a meal note reading

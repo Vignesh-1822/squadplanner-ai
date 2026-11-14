@@ -39,7 +39,7 @@ const JoinTrip = () => {
   }, [inviteCode])
 
   const { mutate: join, isPending: isJoining } = useMutation({
-    mutationFn: () => joinTrip(trip.trip_id),
+    mutationFn: () => joinTrip(trip.trip_id, inviteCode),
     onSuccess: () => {
       sessionStorage.removeItem(PENDING_INVITE_KEY)
       toast.success("You're in! Add your preferences next.")

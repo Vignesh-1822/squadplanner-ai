@@ -20,7 +20,7 @@ const MyTrips = () => {
 
   const { data: trips = [], isLoading } = useQuery({
     queryKey: ["trips", user?.email],
-    queryFn: () => getTrips(user?.email || ""),
+    queryFn: () => getTrips(),
     enabled: !!user?.email,
   })
 
