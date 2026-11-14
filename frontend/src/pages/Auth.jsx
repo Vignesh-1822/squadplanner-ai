@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google"
 import { Eye, EyeOff, Zap, Users, Quote } from "lucide-react"
@@ -10,6 +10,7 @@ const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID ?? ""
 
 export default function Auth() {
   const navigate = useNavigate()
+  const { user, loading, setUser } = useAuth()
 
   // A guest who arrived from an invite link is returned to it after signing in, rather than
   // being dropped on the home page with their invite lost.
@@ -17,7 +18,13 @@ export default function Auth() {
     const pending = sessionStorage.getItem(PENDING_INVITE_KEY)
     navigate(pending ? `/join/${pending}` : "/")
   }
-  const { setUser } = useAuth()
+
+  useEffect(() => {
+    if (!loading && user) {
+      afterAuth()
+    }
+  }, [user, loading])
+
   const [mode, setMode] = useState("login") // "login" | "register"
   const [showPw, setShowPw] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
@@ -66,6 +73,8 @@ export default function Auth() {
       formElement.scrollIntoView({ behavior: "smooth" })
     }
   }
+
+  if (loading || user) return null
 
   return (
     <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID}>
