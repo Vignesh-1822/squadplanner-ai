@@ -19,6 +19,13 @@ from api.middleware.authz import (
 )
 from api.middleware.rate_limit import get_user_key, limiter
 from services.email_service import send_trip_invite
+from tools.activity_images import (
+    attach_activity_images,
+    attach_item_images,
+    attach_meal_images,
+)
+from utils.candidates import destination_hero, enrich_candidates
+from utils.itinerary_items import attach_day_items
 from utils.streaming import stream_graph_events
 
 logger = logging.getLogger(__name__)
@@ -64,6 +71,9 @@ class TripDetailsResponse(BaseModel):
     total_count: int
     all_ready: bool
     can_generate: bool
+    # Populated only while the graph is paused for the city choice, so the UI can render the
+    # shortlist immediately instead of showing a progress screen while SSE replays it.
+    candidate_destinations: list[dict] = Field(default_factory=list)
 
 
 def _initial_trip_state(trip_id: str, trip_name: str) -> dict:
@@ -305,6 +315,10 @@ async def get_trip(
     # already implies the leader is ready, so no separate leader check is needed.
     can_generate = all_ready and trip.get("status") in (None, "pending", "collecting")
 
+    candidates: list[dict] = []
+    if trip.get("status") == "city_selection":
+        candidates = await enrich_candidates(trip.get("candidate_destinations") or [])
+
     created_at = trip["created_at"]
     expires_at = _parse_datetime(created_at) + timedelta(hours=24)
     return {
@@ -319,6 +333,7 @@ async def get_trip(
         "total_count": total_count,
         "all_ready": all_ready,
         "can_generate": can_generate,
+        "candidate_destinations": candidates,
     }
 
 
@@ -336,10 +351,35 @@ async def get_trip_result(
         raise HTTPException(status_code=409, detail="Trip has not completed yet")
 
     final_state = trip.get("final_state") or {}
+    itinerary = trip.get("itinerary", {})
+
+    days = itinerary.get("days") or []
+    destination = itinerary.get("selected_destination", "")
+
+    # Collapse each day's three parallel lists into one ordered list with place data inlined,
+    # so nothing downstream has to re-join them by matching names.
+    attach_day_items(days)
+
+    # Venue photography, resolved once per place_id and cached — so a busy destination costs
+    # nothing after the first trip that visits it. Best-effort: cards fall back to their
+    # category wash rather than failing the page.
+    try:
+        if any(day.get("items") for day in days):
+            await attach_item_images(days, destination)
+        else:
+            # Trips generated before route_stops existed have no items to hang photos on.
+            await attach_activity_images(days, destination)
+            await attach_meal_images(days, destination)
+    except Exception as exc:  # noqa: BLE001
+        logger.warning("Activity image lookup failed for %s: %s", trip_id, exc)
+
     return {
         "trip_id": trip_id,
+        "trip_name": trip.get("trip_name", ""),
+        # The hub banner needs a photo of where the squad is going; trips store only the name.
+        "destination_image": await destination_hero(itinerary.get("selected_destination")),
         "trip_pitch": trip.get("trip_pitch") or final_state.get("trip_pitch", ""),
-        "itinerary": trip.get("itinerary", {}),
+        "itinerary": itinerary,
         "preference_constraints": trip.get("preference_constraints", {}),
         "constraint_satisfaction": trip.get("constraint_satisfaction", {}),
         "decision_log": trip.get("decision_log", []),

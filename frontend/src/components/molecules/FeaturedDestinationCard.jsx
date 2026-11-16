@@ -1,4 +1,4 @@
-import { Settings2, MapPin, Users, Star } from "lucide-react"
+import { Settings2, MapPin, Star } from "lucide-react"
 import AvatarStack from "@/atoms/AvatarStack"
 
 const TAGS = ["Montmartre", "Louvre", "Shopping"]

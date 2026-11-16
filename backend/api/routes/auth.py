@@ -23,6 +23,7 @@ logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/auth", tags=["auth"])
 
 JWT_COOKIE = "access_token"
+LOGGED_IN_COOKIE = "logged_in"
 COOKIE_MAX_AGE = 24 * 60 * 60
 
 
@@ -31,6 +32,14 @@ def _set_auth_cookie(response: Response, token: str) -> None:
         key=JWT_COOKIE,
         value=token,
         httponly=True,
+        samesite="lax",
+        secure=settings.cookie_secure,
+        max_age=COOKIE_MAX_AGE,
+    )
+    response.set_cookie(
+        key=LOGGED_IN_COOKIE,
+        value="true",
+        httponly=False,
         samesite="lax",
         secure=settings.cookie_secure,
         max_age=COOKIE_MAX_AGE,
@@ -174,6 +183,12 @@ async def logout(
     response.delete_cookie(
         key=JWT_COOKIE,
         httponly=True,
+        samesite="lax",
+        secure=settings.cookie_secure,
+    )
+    response.delete_cookie(
+        key=LOGGED_IN_COOKIE,
+        httponly=False,
         samesite="lax",
         secure=settings.cookie_secure,
     )

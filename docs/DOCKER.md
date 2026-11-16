@@ -9,9 +9,12 @@ Two containers:
 
 The database is **your own MongoDB Atlas cluster**. No database container is included.
 
-**No secrets are in the images or in `docker-compose.yml`.** Every key comes from your local
-`backend/.env` when the container starts. That file is gitignored and excluded from the Docker
-build.
+**No secrets are in the images or in `docker-compose.yml`.** Every key arrives when the container
+starts, from one of two places:
+
+- **The SquadPlanner team** pulls them from Infisical. See [For the team](#for-the-team-secrets-from-infisical).
+- **Everyone else** keeps their own `backend/.env`. It is gitignored and excluded from the Docker
+  build.
 
 ## What you need
 
@@ -23,10 +26,33 @@ build.
   Google keys enable live flights, hotels, places and routes; without them the app falls back to
   estimates.
 
+## For the team: secrets from Infisical
+
+You need access to the `squadplanner` Infisical project (ask Vignesh) and the CLI:
+
+```bash
+brew install infisical/get-cli/infisical
+infisical login
+```
+
+Then, from the repo root, with no `backend/.env` needed:
+
+```bash
+export COMPOSE_FILE=docker-compose.yml:docker-compose.infisical.yml   # once per shell, or in your profile
+infisical run --env=dev -- docker compose up --build
+```
+
+`infisical run` exports the secrets into the shell that starts Compose, and
+`docker-compose.infisical.yml` forwards each one into the backend container. Google sign-in needs
+nothing extra: the frontend build falls back to the backend's `GOOGLE_CLIENT_ID`.
+
+Every Compose command that creates containers (`up`, `run`) needs the `infisical run --env=dev --`
+prefix. `logs`, `down` and `ps` don't.
+
 ## Option 1: from source
 
 ```bash
-git clone https://github.com/Shubham10jain/squadplanner-ai.git
+git clone https://github.com/Vignesh-1822/squadplanner-ai.git
 cd squadplanner-ai
 cp backend/.env_example backend/.env
 # edit backend/.env: MONGODB_URI, JWT_SECRET (openssl rand -hex 32), API keys
@@ -60,7 +86,9 @@ VITE_GOOGLE_CLIENT_ID=<your-client-id> docker compose up --build
 ```
 
 Also set the same value as `GOOGLE_CLIENT_ID` in `backend/.env`, and add `http://localhost:5173`
-as an authorized JavaScript origin for that client in Google Cloud Console.
+as an authorized JavaScript origin for that client in Google Cloud Console. If you leave
+`VITE_GOOGLE_CLIENT_ID` unset, the build uses `GOOGLE_CLIENT_ID` from your shell, which is how the
+Infisical route gets it.
 
 ## Everyday commands
 
@@ -68,10 +96,12 @@ as an authorized JavaScript origin for that client in Google Cloud Console.
 docker compose up -d --build      # start in background
 docker compose logs -f backend    # follow backend logs
 docker compose down               # stop
-docker compose run --rm backend python -m pytest tests/ -q --ignore=tests/test_integration.py
+docker compose run --rm backend python -m pytest tests/ -q
 ```
 
-Do not run `tests/test_integration.py`. It spends real LLM and API quota.
+The suite needs no secrets and finishes in a few seconds. `tests/test_integration.py` is skipped
+unless you pass `RUN_LIVE_INTEGRATION=true` on the command line. Don't: it spends real LLM and API
+quota. Never store that flag in `backend/.env` or in Infisical.
 
 ## Publishing to Docker Hub (maintainers)
 
@@ -124,9 +154,11 @@ git diff --cached | grep -E "sk-ant-|AIza|gsk_|lsv2_|mongodb\+srv://[^ ]+:[^ ]+@
 
 ## Troubleshooting
 
-- **`env file backend/.env not found`**: run `cp backend/.env_example backend/.env` and fill it in.
-- **Backend exits with a `ValidationError` naming `MONGODB_URI` or `JWT_SECRET`**: those two are
-  required.
+- **Backend exits with a `ValidationError` naming `MONGODB_URI` or `JWT_SECRET`**: no secrets
+  reached the container. Either create `backend/.env` from `backend/.env_example`, or run through
+  `infisical run --env=dev --` with `COMPOSE_FILE` set as in [For the team](#for-the-team-secrets-from-infisical).
+- **A setting seems stuck at its default under Infisical**: it is missing from
+  `docker-compose.infisical.yml`. The backend test suite catches this.
 - **`/health` shows `"db":"unreachable"`**: check the Atlas URI and Atlas Network Access.
 - **Port already in use**: something else is on 5173 or 8000. Stop it, or change the left-hand
   port in `docker-compose.yml`.

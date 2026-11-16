@@ -2,6 +2,7 @@
 
 import asyncio
 import json
+import logging
 import math
 import pathlib
 from datetime import datetime, timezone
@@ -10,6 +11,9 @@ from langchain_core.messages import HumanMessage
 
 from agent.state import DecisionLogEntry, TripState
 from config import get_llm, settings
+from tools.destination_images import attach_images
+
+logger = logging.getLogger(__name__)
 
 
 PREFERENCE_DIMENSIONS = ("outdoor", "food", "nightlife", "urban", "shopping")
@@ -425,8 +429,20 @@ async def select_destination(state: TripState) -> dict:
                 "llm_reasoning": reasons[index],
                 "cost_level": str(destination.get("cost_level", "")),
                 "nearest_airports": destination.get("nearest_airports", []),
+                # Carried through for the destination detail view at the HITL pause — the squad
+                # is choosing here, so they get what the dataset knows, not just the score.
+                "best_for": destination.get("best_for", []),
+                "vibe_tags": destination.get("vibe_tags", {}),
+                "notes": str(destination.get("notes", "")),
             }
         )
+
+    # Photography for the five cards the squad chooses between. Best-effort: a failure here
+    # must not take down destination selection, the cards just fall back to their gradients.
+    try:
+        await attach_images(candidate_destinations)
+    except Exception as exc:  # noqa: BLE001
+        logger.warning("Destination image lookup failed: %s", exc)
 
     selected_name = candidate_destinations[0]["name"] if candidate_destinations else "none"
     selected_id = candidate_destinations[0]["id"] if candidate_destinations else "none"

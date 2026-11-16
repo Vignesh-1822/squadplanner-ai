@@ -14,9 +14,18 @@ export async function apiFetch(endpoint, options = {}) {
     let detail = `${res.status} ${res.statusText}`
     try {
       const body = await res.json()
-      if (body.detail) detail = body.detail
-    } catch {}
-    throw new Error(detail)
+      // Most routes answer with a plain string; a few (refinements) send { message, code }.
+      if (typeof body.detail === "string") detail = body.detail
+      else if (body.detail?.message) detail = body.detail.message
+    } catch {
+      // Body was not JSON — keep the status line we already built.
+    }
+
+    // The status is carried on the error rather than only in its text, so callers can branch
+    // on it without string-matching a message written for humans.
+    const error = new Error(detail)
+    error.status = res.status
+    throw error
   }
 
   return res.json()

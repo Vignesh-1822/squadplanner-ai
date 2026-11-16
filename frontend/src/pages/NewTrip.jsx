@@ -3,10 +3,8 @@ import { useNavigate } from "react-router-dom"
 import { Flag } from "lucide-react"
 import SquadInviteInput from "@/molecules/SquadInviteInput"
 import { createTrip } from "@/services/ApiList"
-import { useAuth } from "@/store/authStore"
 
 const NewTrip = () => {
-  const { user } = useAuth()
   const navigate = useNavigate()
   const [tripName, setTripName] = useState("")
   const [members, setMembers] = useState([])
@@ -27,15 +25,10 @@ const NewTrip = () => {
     try {
       const data = await createTrip({
         trip_name: tripName,
-        created_by: user?.email || "", 
         invited_emails: members,
       })
-      
-      // Store trip_id and invite_code in sessionStorage for use in the preferences page
-      sessionStorage.setItem("currentTripId", data.trip_id)
-      sessionStorage.setItem("inviteCode", data.invite_code)
 
-      navigate("/trips/invites-sent")
+      navigate(`/trips/${data.trip_id}/invites-sent`)
     } catch (error) {
       console.error("Error creating trip:", error)
       alert("Something went wrong creating the trip.")

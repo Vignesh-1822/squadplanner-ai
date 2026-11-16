@@ -1,6 +1,6 @@
-import { useParams, useNavigate } from "react-router-dom"
+import { useParams, useNavigate, Navigate } from "react-router-dom"
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query"
-import { Users, Mail, Copy, PlusCircle, Check, RefreshCw, CheckCircle2, Shield, X, Sparkles } from "lucide-react"
+import { Users, Mail, Copy, PlusCircle, RefreshCw, CheckCircle2, X, Sparkles } from "lucide-react"
 import { getTripById, generateTrip, removeMember } from "@/services/ApiList"
 import { useAuth } from "@/store/authStore"
 import { isPlanning, isComplete, lobbyRefetchInterval, MEMBER_READY, MEMBER_JOINED } from "@/lib/tripStatus"
@@ -66,26 +66,11 @@ const TripLobby = () => {
     )
   }
 
-  // TODO(F3): route to /trips/:tripId/planning and /trips/:tripId/itinerary once those exist.
-  // Until then the lobby reports the run in place rather than sending anyone to a blank page.
+  // Once the run starts, everyone in the lobby follows it — including the members who did not
+  // press the button. The planning screen replays a finished run's completion event, so a trip
+  // that is already complete lands there correctly too.
   if (isPlanning(trip.status) || isComplete(trip.status)) {
-    const done = isComplete(trip.status)
-    return (
-      <main className="flex-1 flex items-center justify-center px-6 min-h-[60vh]">
-        <div className="bg-white/50 backdrop-blur-md rounded-[2rem] border border-white/70 shadow-sm p-12 text-center max-w-lg">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 text-slate-800 text-[10px] font-black uppercase tracking-widest mb-5">
-            {done ? <CheckCircle2 size={12} /> : <RefreshCw size={12} className="animate-spin" />}
-            {done ? "Trip ready" : "Planning in progress"}
-          </div>
-          <h1 className="text-3xl font-black text-slate-900 tracking-tight mb-3">{trip.trip_name}</h1>
-          <p className="text-slate-500 text-sm font-medium">
-            {done
-              ? "Your itinerary is ready. The itinerary screen lands next."
-              : "The agent is scoring destinations and building your itinerary. The live planning screen lands next."}
-          </p>
-        </div>
-      </main>
-    )
+    return <Navigate to={`/trips/${tripId}/planning`} replace />
   }
 
   const members = trip.invited_members || []

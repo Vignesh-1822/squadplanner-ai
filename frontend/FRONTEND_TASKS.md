@@ -23,10 +23,10 @@ When this doc and the contract disagree, the contract wins.
 | **1** | Correct the preference payload shape | F5, F6, F8, F7 | **DONE** |
 | **2** | Wire preferences to the backend | F1 | **DONE** |
 | **3** | Lobby: readiness + leader-gated generation | F19, F2, F15 | **DONE** |
-| **4** | Planning, HITL and itinerary screens | F20 ✓, F21, F3 | **F20 DONE** |
-| **5** | Guest invite flow | F4 | TODO |
-| **6** | Architecture debt (carried along, not deferred) | F9, F10, F11, F12 | TODO |
-| **7** | Placeholders and papercuts | F13–F18 | TODO |
+| **4** | Planning, HITL and itinerary screens | F20 ✓, F3a ✓, F3b ✓, F21 | **DONE** (F21 pending Phase 0) |
+| **5** | Guest invite flow | F4 | **DONE** |
+| **6** | Architecture debt (carried along, not deferred) | F9, F10, F11, F12 | **DONE** |
+| **7** | Placeholders and papercuts | F13–F18 | TODO ← **next** |
 
 Phases 2→5 follow the user's path through the app, so each one is demoable on its own.
 Phase 6 items are picked up inside whichever phase touches those files.
@@ -183,12 +183,18 @@ Marked `TODO(F3)`.
 
 ## Phase 4 — Planning, HITL, itinerary
 
-### F21 · Phase 0 breaking changes — `TODO`
+### F21 · Phase 0 breaking changes — `DONE`
 Backend security work in flight. When it lands: `POST /trips` stops accepting `created_by`
 (remove it from `NewTrip.jsx`), `GET /trips` loses `?email=` and returns only your own trips
 (update `getTrips` and `MyTrips.jsx`), and `joinTrip(id)` becomes `joinTrip(id, inviteCode)`.
 
-### F3 · Three screens don't exist — `TODO`
+**Done 2026-11-14.** Phase 0 landed with the 2026-10-19 merge of `origin/main`, and only the
+third change was breaking: `POST /trips/{id}/join` now requires `{ invite_code }`, so every
+guest join answered 422 until `JoinTrip.jsx` passed the code it already reads from the URL.
+The other two were silently ignored by the server — `created_by` and `?email=` are removed
+anyway, the latter because it put the user's email in every request URL and server log.
+
+### F3 · Three screens don't exist — `DONE`
 No streaming page, no HITL city-selection, no itinerary view.
 
 - `/trips/:tripId/planning` — SSE progress; on `HITL_REQUIRED` render the 5 candidate cards and
@@ -204,11 +210,46 @@ for the SSE handling: `git show wip/solo-frontend-attempt:frontend/src/pages/Pla
 
 **Done when:** a trip runs end to end: submit → generate → stream → pick a city → itinerary.
 
+**F3a done — `/trips/:tripId/planning`.** Built to the Stitch "Generating Your Trip Pitch" screen:
+volt icon, progress bar, and a fixed-height 4-row feed where older steps dissolve into a top mask
+rather than the list growing. `lib/planningSteps.js` mirrors the backend's `NODE_PROGRESS_MAP`;
+progress is **monotonic** because the graph loops back on budget pressure and fairness failure, and
+a bar that runs backwards reads as a bug. On `HITL_REQUIRED` the card is replaced by the Stitch
+"Curated Destinations" grid — no sidebar, no refresh, per Vignesh. Cards carry a match % normalised
+against the top candidate, `llm_reasoning` as the description, cost level, and nearest airport; the
+dataset has no imagery so each destination type gets its own gradient. Selecting posts
+`/confirm-city` and the *same* stream carries on. `TRIP_COMPLETE` shows the pitch; `ERROR` shows the
+backend message with a route back to the lobby. The lobby now redirects everyone into planning when
+the trip status moves, so non-leaders follow the run too.
+
+**F3b done — the trip hub.** Built from the Stitch "Trip Hub Overview" and "Itinerary View
+(Integrated Bento Timeline)" screens. `TripHubLayout` fetches `GET /result` once and shares it with
+every tab through the router outlet, so tab switches re-render rather than refetch. Overview: trip
+pitch, squad with per-member flights, hotel, quick stats, Trip Vibe, and the real
+`constraint_satisfaction` sentences. Itinerary: day pills, day banner, the schedule woven with the
+route legs, a stylised route map, day summary, and the refinement box.
+
+**Deliberate departures from the mock**, all forced by what the payload actually holds:
+- *No per-activity prose or "Why SquadPicked" quotes* — the payload has neither; cards show
+  rating, address and tags instead of invented copy.
+- *`$`/`$$`/`$$$` rather than amounts* — activities carry `price_level` (0–4), not a price.
+- *Ranked bars, not a radar, for Trip Vibe* — the reader's job is comparing magnitudes, which a
+  radar does poorly (misleading area, shape depends on axis order). On a dark card because the
+  brand volt measures **1.21** contrast on white and **14.77** on slate-900; every bar is
+  direct-labelled so the value never depends on reading the fill.
+- ~~*A stylised route sketch, not a real map*~~ — superseded: the itinerary now has a real
+  Leaflet map on OpenStreetMap tiles with numbered pins and directions links.
+- *Flights / Lodging / Budget tabs are drawn but inert* — hiding them would misrepresent the page.
+- *Squad Upvotes, Est. Steps, Savings Goal and Next Up are omitted* — features that don't exist.
+
+**Dropped by decision:** the mock's three footer tiles (Best Price / Squad Match / Dates) — two of
+the three cannot be known until the run is nearly over.
+
 ---
 
 ## Phase 5 — Guest invite flow
 
-### F4 · `/join/:code` doesn't exist — `TODO`
+### F4 · `/join/:code` doesn't exist — `DONE`
 `TripLobby.jsx:43` and `:179` copy `${origin}/join/${invite_code}`. No route, no page — every
 invitee lands on a blank screen.
 
@@ -218,27 +259,36 @@ the route, and a post-auth redirect in `Auth.jsx` — unauthenticated guests sta
 
 **Done when:** an invitee opens the emailed link, signs in, and lands in the lobby as `joined`.
 
+**Done.** `pages/JoinTrip.jsx` at `/join/:inviteCode`, deliberately outside `ProtectedRoute` since
+invitees arrive signed out. Four branches: bad code, signed out (sign-in CTA), signed in and not a
+member (join → preferences), already a member (→ lobby). The code is stashed in `sessionStorage`
+on arrival and consumed by `Auth.jsx` after **both** the email and Google paths — both previously
+hardcoded `navigate("/")`, which would have dropped the invite.
+
+**Known gap (backend):** `POST /join` is permissive — any authenticated user holding the link
+joins, with no check against `invited_emails`. An invite link is effectively a bearer token.
+
 ---
 
 ## Phase 6 — Architecture debt
 
-### F9 · `sessionStorage` carries trip identity — `TODO` · *mostly done*
+### F9 · `sessionStorage` carries trip identity — `DONE`
 Preferences and the lobby now read `:tripId` from the route; the bare `/trips/lobby` route is gone
 since every caller passes an id. Only `NewTrip` → `InvitesSent` still hands off via sessionStorage.
 `NewTrip.jsx:35`, `InvitesSent.jsx:13`, `TripPreferences.jsx:53`, `TripLobby.jsx:17`. Dies in a new
 tab and makes URLs unshareable — fatal for an invite-based app. `/trips/:tripId/lobby` already
 exists; `/trips/preferences` needs a `:tripId` too. Note `pendingInvite` (F4) is a legitimate use.
 
-### F10 · React Query installed, provided, never used — `TODO` · *mostly done*
+### F10 · React Query installed, provided, never used — `DONE`
 `TripPreferences` (mutation) and `TripLobby` (query + two mutations) are converted, including the
 state-keyed `refetchInterval`. `MyTrips`, `InvitesSent` and `authStore` still hand-roll
 `useEffect` + loading flags.
 
-### F11 · Two competing user stores — `TODO`
+### F11 · Two competing user stores — `DONE`
 `UserProvider` is mounted in `main.jsx` and never consumed; `authStore` is real. Delete it, plus
 empty `store/index.js` and `components/templates/index.js`.
 
-### F12 · `RootLayout` and `SideMenu` are orphaned — `TODO`
+### F12 · `RootLayout` and `SideMenu` are orphaned — `DONE`
 No route mounts them. `SideMenu` hardcodes `"Vignesh"` / `"@vignesh"`. Adopt or delete.
 
 ---
@@ -256,9 +306,17 @@ no error boundary.
 ### F15 · Hardcoded readiness — `DONE` · *closed by F2*
 `TripLobby.jsx:68` sets `readiness = 60` while the real counts sit unused two lines above.
 
-### F16 · Registration errors always show the wrong message — `TODO`
+### F16 · Registration errors always show the wrong message — `DONE`
 `Auth.jsx:33` checks `err.message?.includes("409")`, but `apiFetch` throws `body.detail` and never
 the status code — duplicate signups read "Invalid email or password."
+
+**Done.** `apiFetch` now attaches the HTTP status to the thrown error, so callers can branch on it
+without string-matching a message written for humans, and `Auth.jsx` surfaces the backend's
+`detail` verbatim instead of flattening every failure to one guess. Verified live: register returns
+`409 {"detail":"Email already registered"}` and login `401 {"detail":"Invalid email or password"}`.
+
+Also fixed in passing: `apiFetch` assumed `detail` is always a string, but the refinements endpoint
+returns `{message, code}`, which would have rendered as "[object Object]".
 
 ### F17 · Two design systems for one component — `TODO`
 antd + a full `ConfigProvider` override for a single `RangePicker`, while unused shadcn
@@ -285,6 +343,144 @@ antd may be worth keeping — decide rather than drift.)
 
 ## Changelog
 
+- **2026-11-14** — **F21 done: guest invites work again.** The Phase 0 merge made
+  `POST /trips/{id}/join` require the invite code in the body; the frontend sent no body, so
+  every join from `/join/:code` failed with a 422 the backend suite could not see. `joinTrip`
+  now takes `(id, inviteCode)`. Also dropped `created_by` from trip creation and `?email=` from
+  the trips list — both ignored server-side. F3 marked done; its screens shipped in September.
+- **2026-09-23** — **One `items` array per day; name matching gone.** A day was three parallel
+  lists — `schedule` (the clock), `activities` (place records), `meals` (prose) — with no key
+  joining them, so the UI re-joined them by matching names. That is what let a meal note reading
+  "Lunch at California Academy of Sciences" claim the museum.
+  `route_stops` was already the resolved ordered join, carrying `place_id`, coordinates and
+  address for activities, meals and the hotel alike — including places resolved by text lookup
+  that never reached `activities`. `utils/itinerary_items.py` merges the richer fields
+  (category, rating, tags) onto it and attaches each route leg to the stop it departs from.
+  Derived on read, so nothing needs migrating.
+  **Every item carries place data — 233/233 across 35 days.** Meals are now real named
+  restaurants with coordinates ("Doppio Coffee & Brunch") rather than the word "Breakfast", so
+  they get map pins, photos and directions like anything else. Photography moved onto items, so
+  meals key on a real `place_id` instead of a venue name.
+  Trips generated before `route_stops` existed (23 of 58 days) have no `items` and fall through
+  to the old matcher unchanged.
+- **2026-09-21** — **F16 done: auth errors tell the truth.** Registering with an existing email
+  said "Invalid email or password", sending users to reset a password for an account they were
+  trying to create.
+- **2026-09-21** — **Phase 6 done: architecture debt cleared.**
+  **F9** — the last sessionStorage handoff is gone; `NewTrip` navigates to
+  `/trips/:tripId/invites-sent` and the id travels in the URL. The only remaining use is
+  `pendingInvite` in the join flow, which is a legitimate one (it must survive a redirect
+  through login).
+  **F10** — `InvitesSent` converted to React Query, with the countdown extracted into a
+  `useCountdown` hook. No hand-rolled fetching left in the app.
+  **F11** — deleted `UserProvider` (mounted in `main.jsx`, never consumed) and the two empty
+  index files.
+  **F12** — deleted `RootLayout`, `PageLayout`, `SideMenu` and `components/ui/sidebar.jsx`. No
+  route mounted any of them and the chain was entirely self-contained; `sidebar.jsx` is
+  shadcn-generated and can be re-added with `npx shadcn add sidebar` if a sidebar is ever wanted.
+  Also cleared every remaining lint error — unused `React` namespace imports in four shadcn `ui`
+  files (unnecessary under the new JSX transform), an unused icon import, and an empty catch.
+  **Lint is now fully green (0 errors)**, so a new error is visible rather than lost in noise.
+- **2026-09-21** — **F4 done: the guest invite flow.** `/join/:inviteCode` is public, previews the
+  trip before you commit to it, and survives the round trip through login. Phase 5 complete — the
+  multi-user premise now works end to end.
+- **2026-09-11** — **Quick Stats rebuilt around the individual.** Every figure on the card was a
+  group aggregate — "Avg / Person" is a number nobody pays, and the combined-budget bar mixes a
+  $5,000 budget with a $1,355 one into a meaningless denominator. It now leads with *your* cost
+  against *your* budget (matched by `member_id`, derived from the email local part the same way
+  `squad.py` does it), falling back to the group view for anyone not on the trip.
+  **Removed a misleading metric:** the pink tile rendered `mean(fairness_scores) * 100` as
+  "Cost Fairness 17%". Those scores are budget *utilisation* per member, where lower is better —
+  so the label inverted the polarity, and averaging destroyed the only thing fairness measures
+  (the gap between members: three people at 60% is fair, one at 10% and one at 90% averages the
+  same and is not). Replaced with the squad **range** (`8–29% of budget`) plus the backend's own
+  `fairness_passed` verdict. `averageScore()` deleted so nothing reaches for it again.
+  *Latent, not visible — every current trip lands under budget, so that branch never rendered.*
+- **2026-09-08** — **Hub revisions to match the mockups.** Trip Vibe is now the design's radar
+  *plus* ranked bars — the radar carries the shape, the bars carry the numbers, since radar area
+  cannot be read accurately; both are labelled, which is what the brand volt's 1.21 contrast on a
+  white card requires. Squad panel rebuilt to the design (rounded-square avatar, confirmation
+  badge, name + role, right-hand pill — carrying flight cost, since every member of a completed
+  trip is confirmed by definition). Overview is now the design's bento grid and the long pitch
+  paragraph is gone.
+  **Font bug found:** `tailwind.config.js` declares `sans: ["Inter", ...]` and every mockup is
+  drawn in Inter, but only Geist was ever imported — so `font-sans` silently fell back to
+  `system-ui`. Inter is now imported, which is why the app suddenly matches the designs.
+- **2026-09-08** — **F3b done: the trip hub.** New `TripHubLayout` template + `pages/hub/{Overview,
+  Itinerary}`, organisms (`TripHero`, `TripTabs`, `DayTimeline`, `DayRouteMap`, `DaySummary`,
+  `SquadPanel`, `TripStats`, `TripVibe`, `RefinementBox`), molecules (`DayPills`, `TimelineItem`,
+  `TransitConnector`, `StatTile`), `lib/itinerary.js` for the derived numbers and `useTripResult`.
+  Backend: `GET /result` now returns `trip_name` and a `destination_image` resolved by name, so
+  trips completed before photography existed still get a hero banner.
+  Two bugs caught by checking the helpers against a real completed trip rather than assuming:
+  route legs connect consecutive *activities*, not schedule rows (indexing by row attributed a
+  20-minute walk to breakfast), and `constraint_satisfaction` is
+  `{passed, satisfied[], unmet[], warnings[]}`, not a map of booleans.
+- **2026-09-08** — **Image cache TTL bug + the image-finder script.** The destination image cache
+  was in the shared `api_cache`, which carries a collection-wide TTL index (`cached_at`, 86400s)
+  for the Places/SerpAPI caches — so every resolved photo was silently deleted after 24 hours and
+  all 480 were re-resolved daily. Moved to a dedicated `destination_images` collection with no
+  TTL; re-warmed to 467/480. Added `scripts/find_missing_destination_images.py` for the remaining
+  13: Claude with server-side web search, `allowed_domains` limited to reuse-permitting sources,
+  every URL verified as a real image before it is kept, then downloaded (Unsplash excepted — their
+  guidelines require hotlinking, so those are stored as URLs, which the manual override now
+  supports). **Blocked on Anthropic API quota until 2026-10-01** — the pipeline is verified except
+  the model call itself.
+- **2026-09-08** — **Photos on existing trips, and no more loading screen for a shortlist that
+  already exists.** Candidates are frozen into the LangGraph checkpoint at scoring time, so trips
+  scored before photography existed had none — and backfilling the stored copy does not stick,
+  because the checkpoint is rewritten on each resume. Fixed by enriching on the way *out*
+  (`utils/candidates.py`): dataset fields are refilled from `destinations.json` by id and images
+  attached from the Mongo cache, so old and new trips take the same path at no real cost.
+  `GET /trips/{id}` now also returns `candidate_destinations` while a trip is parked on the city
+  choice, so the planning page renders the shortlist immediately rather than showing progress while
+  SSE replays it, and My Trips routes cards straight to `/planning` instead of bouncing through
+  the lobby.
+- **2026-09-07** — **Manual photo overrides for the 13 Wikipedia can't cover.** Drop a file named
+  `<destination id>.jpg` into `backend/data/destination_images/` and it wins over any automatic
+  lookup — no code or config to edit. Served statically by the backend; optional attribution via
+  `_credits.json`. `backend/data/destination_images/README.md` documents the process and carries
+  the generated list of what is still needed.
+  Verified coverage is **467/480 (97.3%)** after re-checking the misses individually — the earlier
+  count included one throttling false-negative (Skaneateles). Of the 13 remaining, none are
+  imaginary: 5 are real regions Wikipedia files under another title (Long Island AVA, Catalina
+  Foothills…), 4 have articles with no lead photo, and 4 have ambiguous titles. A search-based
+  fallback was tried and **rejected** — it returned *Pope John VI* for "St. John" and a
+  UFO-abduction article for "White Mountains". Confidently wrong beats nothing, so those keep
+  their gradients.
+- **2026-09-06** — **Destination photography.** Real photos of each destination, resolved on demand
+  and cached in Mongo's existing `api_cache` so one lookup serves every later squad — the 480
+  destinations are a fixed shared set, so the cache warms fast.
+  **Not Google Places**, despite its coverage: under the Maps Platform terms photos have no caching
+  exception at all (neither bytes nor photo name may be stored, and the name expires), so every
+  render would be billable and the shared-cache design is disallowed. Wikipedia is keyed to the
+  *named place*, so it returns the actual location rather than something that merely matches a
+  search term, and Commons content is CC-licensed for reuse — so it may be cached. Unsplash sits
+  behind it as a fallback (URL cached only, never the file, per their hotlinking rule).
+  **Measured coverage: 466/480 = 97%**, 100% for major cities, national parks, mountain towns and
+  state parks. The 14 misses are mostly invented region names in the dataset ("Long Island Wine
+  Country", "Tucson Foothills") and fall back to the type gradients. Two traps found while
+  measuring: Wikimedia 403s any User-Agent without a contactable identifier, and throttling reads
+  as "no image exists" unless you back off — an early run reported a false 51%.
+- **2026-09-05** — **Fixed "Called get_config outside of a runnable context".** Root cause was
+  **Python 3.10**: LangGraph needs 3.11+ to set the runnable-config contextvar in async code
+  (`_runnable.py` falls back to a bare `await` when `asyncio.create_task(..., context=)` is
+  unavailable), so `interrupt()` could not read its config. `langgraph/config.py` tries to raise a
+  clear "Python 3.11 or later required" and then catches its own error, which is why the message was
+  so opaque. The mandated `backend/venv` did not exist, so the server was running Anaconda's 3.10 —
+  created it on **Python 3.12.6**. Also stopped a failed run's `error` sticking to the trip document.
+- **2026-09-05** — **Trip deletion + destination details.** Leader-only
+  `DELETE /trips/{id}` which also clears the LangGraph checkpoints for that thread (otherwise a
+  paused graph outlives its trip); two-step delete confirm on the My Trips cards; `MyTrips` moved
+  onto React Query. `View Details` opens a destination panel — reasoning, best-for tags, vibe
+  breakdown and every nearby airport with drive times, using `best_for` / `vibe_tags` / `notes` now
+  carried through in the candidate payload. **Not an itinerary:** the graph pauses before flights,
+  hotels and activities are fetched, so building one per candidate would mean five full pipeline
+  runs per trip.
+- **2026-09-05** — **F3a done: the planning + HITL screen.** `pages/Planning.jsx`,
+  `molecules/PlanningFeed`, `molecules/DestinationCard`, `lib/planningSteps.js`, and the
+  `/trips/:tripId/planning` route; the lobby redirects into it once a run starts. Built from the
+  Stitch project's "Generating Your Trip Pitch" and "Curated Destinations" screens.
 - **2026-09-05** — **F20 done.** `useEventStream` hook: `withCredentials` for cookie auth, plus
   `closeOn` so a finished run doesn't get replayed by EventSource's automatic reconnect.
 - **2026-09-04** — **Lobby fixes from testing.** The creator was missing from the squad on trips

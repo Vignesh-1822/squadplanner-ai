@@ -4,14 +4,20 @@
 #   docker compose up --build
 #   open http://localhost:5173
 #
-# No secrets live in this file or in the images; they come from backend/.env at runtime.
+# Team members with Infisical access skip the .env file and add the override instead:
+#   infisical run --env=dev -- docker compose -f docker-compose.yml -f docker-compose.infisical.yml up --build
+#
+# No secrets live in this file or in the images; they arrive at runtime from one of those two.
 # Full guide: docs/DOCKER.md
 
 services:
   backend:
     build: ./backend
     image: ${DOCKERHUB_USER:-squadplanner}/squadplanner-backend:${TAG:-latest}
-    env_file: backend/.env
+    # Optional so the Infisical override can run with no backend/.env at all.
+    env_file:
+      - path: backend/.env
+        required: false
     environment:
       # Trust nginx's X-Forwarded-For so rate limits are per real client, not per proxy.
       # Safe only because the backend port below is bound to localhost.
@@ -27,7 +33,9 @@ services:
       dockerfile: docker/frontend.Dockerfile
       args:
         # Public OAuth client ID (not a secret). Leave unset to disable Google sign-in.
-        VITE_GOOGLE_CLIENT_ID: ${VITE_GOOGLE_CLIENT_ID:-}
+        # Falls back to the backend's GOOGLE_CLIENT_ID, which is what Infisical holds; the two must
+        # match or the backend rejects every Google token.
+        VITE_GOOGLE_CLIENT_ID: ${VITE_GOOGLE_CLIENT_ID:-${GOOGLE_CLIENT_ID:-}}
     image: ${DOCKERHUB_USER:-squadplanner}/squadplanner-frontend:${TAG:-latest}
     ports:
       - "5173:80"

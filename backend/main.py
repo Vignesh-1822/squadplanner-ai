@@ -25,6 +25,16 @@ app.state.limiter = limiter
 app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 app.add_middleware(SlowAPIMiddleware)
 
+# Manually added destination photography, for the handful of places Wikipedia has no image
+# for. See data/destination_images/README.md.
+_DESTINATION_IMAGES = Path(__file__).parent / "data" / "destination_images"
+_DESTINATION_IMAGES.mkdir(parents=True, exist_ok=True)
+app.mount(
+    "/static/destination-images",
+    StaticFiles(directory=_DESTINATION_IMAGES),
+    name="destination-images",
+)
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=settings.cors_origin_list,

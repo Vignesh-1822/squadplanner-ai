@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { Plane, Umbrella, Ship, Calendar, CheckCircle2, Clock, Sparkles, Plus, Filter, Check } from "lucide-react"
-import { getTrips } from "@/services/ApiList"
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query"
+import { Plane, Umbrella, Ship, Calendar, CheckCircle2, Clock, Sparkles, Plus, Filter, Check, Trash2 } from "lucide-react"
+import { getTrips, deleteTrip } from "@/services/ApiList"
 import { isPlanning, isComplete } from "@/lib/tripStatus"
 import { useAuth } from "@/store/authStore"
 import { toast } from "sonner"
@@ -9,30 +10,38 @@ import { toast } from "sonner"
 const MyTrips = () => {
   const { user } = useAuth()
   const navigate = useNavigate()
-  const [trips, setTrips] = useState([])
-  const [loading, setLoading] = useState(true)
+  const queryClient = useQueryClient()
+  const [confirmingId, setConfirmingId] = useState(null)
   
   // Filter States
   const [filterOpen, setFilterOpen] = useState(false)
   const [selectedStatus, setSelectedStatus] = useState([])
   const [tempStatus, setTempStatus] = useState([])
 
-  useEffect(() => {
-    const fetchTrips = async () => {
-      try {
-        const email = user?.email || ""
-        const data = await getTrips(email)
-        setTrips(data)
-      } catch (error) {
-        console.error("Error fetching trips:", error)
-        toast.error("Failed to load trips.")
-      } finally {
-        setLoading(false)
-      }
-    }
+  const { data: trips = [], isLoading } = useQuery({
+    queryKey: ["trips", user?.email],
+    queryFn: () => getTrips(),
+    enabled: !!user?.email,
+  })
 
-    fetchTrips()
-  }, [user])
+  const { mutate: removeTrip, isPending: isDeleting } = useMutation({
+    mutationFn: (tripId) => deleteTrip(tripId),
+    onSuccess: () => {
+      toast.success("Trip deleted.")
+      setConfirmingId(null)
+      queryClient.invalidateQueries({ queryKey: ["trips"] })
+    },
+    onError: (error) => toast.error(error.message),
+  })
+
+  // Send each card where the trip actually is. Routing everything through the lobby meant a
+  // trip already waiting on its city choice loaded the lobby, redirected, then showed a
+  // progress screen — three steps to reach a shortlist that already exists.
+  const routeFor = (trip) => {
+    if (isComplete(trip.status)) return `/trips/${trip.trip_id}/hub/overview`
+    if (isPlanning(trip.status)) return `/trips/${trip.trip_id}/planning`
+    return `/trips/${trip.trip_id}/lobby`
+  }
 
   const formatDateRange = (start, end) => {
     if (!start || !end) return "Dates TBD"
@@ -47,7 +56,7 @@ const MyTrips = () => {
     return `${startStr} — ${endStr}`
   }
 
-  if (loading) {
+  if (isLoading) {
     return (
       <div className="flex-1 flex items-center justify-center min-h-[60vh]">
         <div className="animate-pulse text-slate-500 font-medium">Loading your journeys...</div>
@@ -250,7 +259,17 @@ const MyTrips = () => {
                       {badgeIcon}
                       {badgeText}
                     </span>
-                    {tripIcon}
+                    <div className="flex items-center gap-3">
+                      {tripIcon}
+                      <button
+                        type="button"
+                        onClick={() => setConfirmingId(trip.trip_id)}
+                        title="Delete this trip"
+                        className="p-1.5 rounded-full text-slate-300 hover:text-red-500 hover:bg-red-50 transition-colors cursor-pointer"
+                      >
+                        <Trash2 size={16} />
+                      </button>
+                    </div>
                   </div>
                   <div>
                     <h3 className="text-3xl font-black text-slate-900 leading-tight truncate">{trip.trip_name}</h3>
@@ -292,16 +311,36 @@ const MyTrips = () => {
                     )}
                   </div>
                   
-                  <button
-                    onClick={() => navigate(`/trips/${trip.trip_id}/lobby`)}
-                    className={`${
-                      isAssembling
-                        ? "bg-primary text-slate-900 volt-glow hover:scale-105"
-                        : "bg-slate-900 text-primary hover:scale-105"
-                    } px-6 py-3 rounded-full font-black text-[10px] uppercase tracking-widest active:scale-95 transition-all cursor-pointer`}
-                  >
-                    {isReady ? "Details" : isAssembling ? "Join Plan" : "Manage"}
-                  </button>
+                  {confirmingId === trip.trip_id ? (
+                    <div className="flex items-center gap-2">
+                      <button
+                        type="button"
+                        onClick={() => setConfirmingId(null)}
+                        className="px-4 py-3 rounded-full font-black text-[10px] uppercase tracking-widest text-slate-500 hover:text-slate-900 transition-colors cursor-pointer"
+                      >
+                        Cancel
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => removeTrip(trip.trip_id)}
+                        disabled={isDeleting}
+                        className="bg-red-500 text-white px-6 py-3 rounded-full font-black text-[10px] uppercase tracking-widest hover:scale-105 active:scale-95 transition-all cursor-pointer disabled:opacity-50"
+                      >
+                        {isDeleting ? "Deleting..." : "Delete"}
+                      </button>
+                    </div>
+                  ) : (
+                    <button
+                      onClick={() => navigate(routeFor(trip))}
+                      className={`${
+                        isAssembling
+                          ? "bg-primary text-slate-900 volt-glow hover:scale-105"
+                          : "bg-slate-900 text-primary hover:scale-105"
+                      } px-6 py-3 rounded-full font-black text-[10px] uppercase tracking-widest active:scale-95 transition-all cursor-pointer`}
+                    >
+                      {isReady ? "Details" : isAssembling ? "Join Plan" : "Pick Destination"}
+                    </button>
+                  )}
                 </div>
               </div>
             )

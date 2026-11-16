@@ -10,6 +10,7 @@ from langgraph.types import Command
 from db.client import get_collection
 from evals.telemetry.usage import UsageTracker, telemetry_inc_fields
 from evals.tracing import build_callbacks, member_emails_from_trip
+from utils.candidates import enrich_candidates
 
 NODE_PROGRESS_MAP = {
     "parse_input": "Validating trip details...",
@@ -108,6 +109,9 @@ async def _emit_and_wait_for_city_confirmation(
     trips = get_collection("trips")
     snapshot = await graph.aget_state(config)
     candidates = snapshot.values.get("candidate_destinations", []) if snapshot else []
+    # Trips scored before photography existed still get pictures — the shortlist is enriched on
+    # the way out rather than at generation time, so old checkpoints are covered too.
+    await enrich_candidates(candidates)
 
     update: dict[str, Any] = {
         "$set": {
@@ -138,6 +142,7 @@ async def _emit_and_wait_for_city_confirmation(
                 {
                     "$set": {
                         "status": "generating",
+                        "error": None,
                         "city_resume_consumed_at": datetime.now(timezone.utc).isoformat(),
                         "updated_at": datetime.now(timezone.utc).isoformat(),
                     }
@@ -247,6 +252,8 @@ async def stream_graph_events(
                 {
                     "$set": {
                         "status": "generating",
+                        # A failure from an earlier attempt must not outlive it.
+                        "error": None,
                         "updated_at": datetime.now(timezone.utc).isoformat(),
                     }
                 },

@@ -25,23 +25,33 @@ merge upstream promptly.
    `frontend/src/services/`. It is currently byte-identical to the upstream repo and must stay that
    way. API changes are communicated by editing `docs/FRONTEND_CONTRACT.md` — never the JavaScript.
    `showcase/` and `backend/debug_ui/` are ours and may be edited freely.
-2. **Never read, print, echo or commit `backend/.env`.** Use `backend/.env_example`. If you need a
-   new setting, add it to `.env_example` and to `backend/config.py`.
+2. **Secrets live in Infisical, never in the repo.** Project `squadplanner`, environment `dev`;
+   `.infisical.yaml` links the repo to it. Run anything that needs real keys through
+   `infisical run --env=dev -- <command>`. Never read, print, echo or commit a secret value — that
+   includes `backend/.env`, which contributors without Infisical access still use as a local
+   fallback. A new setting goes in `backend/config.py`, `backend/.env_example` and
+   `docker-compose.infisical.yml` (`tests/test_compose_env.py` fails if the last is missed); ask
+   Vignesh to add its value in Infisical.
 3. **Work to the phase spec.** The current phase lives in `docs/phases/PHASE_<N>.md`. If the work
    diverges from that spec, stop and say so — do not silently expand scope.
 4. **Do not commit generated files**: `__pycache__/`, `*.pyc`, `.pytest_cache/`, `tests/artifacts/`,
    `venv/`, `node_modules/`, `.DS_Store`.
 5. **Do not run the live integration test** (`tests/test_integration.py`) — it is gated behind
-   `RUN_LIVE_INTEGRATION=true` because it spends real Anthropic, SerpAPI and Google quota.
+   `RUN_LIVE_INTEGRATION=true` because it spends real Anthropic, SerpAPI and Google quota. The
+   gate reads the shell only, so the flag must never be stored in `.env` or in Infisical. If the
+   suite takes more than a few seconds, the live test is running: stop and find out why.
 
 ## Commands
 
 ```bash
 # from backend/
-./venv/bin/python -m pytest tests/ -q          # deterministic suite (no network, no DB)
-./venv/bin/python -m uvicorn main:app --reload # dev server on :8000
-./venv/bin/python -c "import main"             # fastest import/wiring smoke check
+./venv/bin/python -m pytest tests/ -q          # deterministic suite: no secrets, no network, ~2s
+infisical run --env=dev -- ./venv/bin/python -m uvicorn main:app --reload   # dev server on :8000
+infisical run --env=dev -- ./venv/bin/python -c "import main"               # import/wiring smoke check
 ```
+
+Run the test suite **without** `infisical run`. `tests/conftest.py` supplies placeholder settings
+so the suite never touches real credentials.
 
 The virtualenv is `backend/venv/`. Use `./venv/bin/python`, not a bare `python`.
 

@@ -1,0 +1,39 @@
+# Override for team members who pull secrets from Infisical instead of keeping backend/.env.
+#
+#   infisical run --env=dev -- docker compose -f docker-compose.yml -f docker-compose.infisical.yml up --build
+#
+# `infisical run` exports the secrets into the shell that starts Compose. A key with no value below
+# tells Compose to copy that variable from the shell into the container. A key Infisical does not
+# hold arrives unset, so config.py falls back to its default.
+#
+# Kept separate from docker-compose.yml on purpose: a pass-through entry overrides env_file even
+# when the shell has no value, so mixing the two would silently blank every backend/.env setting.
+#
+# Must list every setting in backend/config.py; tests/test_compose_env.py fails when one is missing.
+
+services:
+  backend:
+    environment:
+      MONGODB_URI:
+      JWT_SECRET:
+      LLM_PROVIDER:
+      ANTHROPIC_API_KEY:
+      GROQ_API_KEY:
+      SERPAPI_KEY:
+      SERPAPI_MONTHLY_HARD_LIMIT:
+      GOOGLE_PLACES_API_KEY:
+      GOOGLE_ROUTES_API_KEY:
+      GOOGLE_CLIENT_ID:
+      SMTP_USER:
+      SMTP_PASSWORD:
+      UNSPLASH_ACCESS_KEY:
+      LANGCHAIN_API_KEY:
+      LANGCHAIN_TRACING_V2:
+      LANGCHAIN_PROJECT:
+      EVALS_TOOL_MODE:
+      EVALS_LLM_MODE:
+      PUBLIC_BASE_URL:
+      WIKIMEDIA_CONTACT:
+      FRONTEND_URL:
+      COOKIE_SECURE:
+      CORS_ORIGINS:

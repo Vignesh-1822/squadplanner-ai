@@ -1,15 +1,30 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google"
 import { Eye, EyeOff, Zap, Users, Quote } from "lucide-react"
 import { register, login, googleAuth } from "@/services/ApiList"
 import { useAuth } from "@/store/authStore.jsx"
+import { PENDING_INVITE_KEY } from "@/pages/JoinTrip"
 
 const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID ?? ""
 
 export default function Auth() {
   const navigate = useNavigate()
-  const { setUser } = useAuth()
+  const { user, loading, setUser } = useAuth()
+
+  // A guest who arrived from an invite link is returned to it after signing in, rather than
+  // being dropped on the home page with their invite lost.
+  const afterAuth = () => {
+    const pending = sessionStorage.getItem(PENDING_INVITE_KEY)
+    navigate(pending ? `/join/${pending}` : "/")
+  }
+
+  useEffect(() => {
+    if (!loading && user) {
+      afterAuth()
+    }
+  }, [user, loading])
+
   const [mode, setMode] = useState("login") // "login" | "register"
   const [showPw, setShowPw] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
@@ -27,9 +42,11 @@ export default function Auth() {
         ? await register({ name: `${form.firstName} ${form.lastName}`.trim(), email: form.email, password: form.password })
         : await login({ email: form.email, password: form.password })
       setUser(data)
-      navigate("/")
+      afterAuth()
     } catch (err) {
-      setError(err.message?.includes("409") ? "Email already registered." : "Invalid email or password.")
+      // The backend writes these for users — "Email already registered", "Invalid email or
+      // password" — so they are shown as-is rather than flattened to one guess.
+      setError(err.message || "Something went wrong. Please try again.")
     } finally {
       setIsLoading(false)
     }
@@ -41,7 +58,7 @@ export default function Auth() {
     try {
       const data = await googleAuth({ token: credentialResponse.credential })
       setUser(data)
-      navigate("/")
+      afterAuth()
     } catch (err) {
       setError(err.message ?? "Google sign-in failed. Please try again.")
     } finally {
@@ -56,6 +73,8 @@ export default function Auth() {
       formElement.scrollIntoView({ behavior: "smooth" })
     }
   }
+
+  if (loading || user) return null
 
   return (
     <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID}>

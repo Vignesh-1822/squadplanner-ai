@@ -22,6 +22,7 @@ from api.middleware.authz import (
     require_member,
 )
 from api.middleware.rate_limit import get_user_key, limiter
+from db.client import get_database
 
 logger = logging.getLogger(__name__)
 
@@ -177,6 +178,29 @@ async def join_trip(
         {"$set": {"invited_members": members, "updated_at": _now()}},
     )
     return {"trip_id": trip_id, "status": "joined", "invited_members": _summarize_members(members)}
+
+
+@router.delete("/{trip_id}")
+async def delete_trip(
+    trip_id: str,
+    trip: dict = Depends(require_leader),
+    trips: Any = Depends(get_trips_collection),
+):
+    """Leader-only: delete a trip outright.
+
+    Also drops the LangGraph checkpoints for this thread. They key on ``thread_id`` (the trip id)
+    in their own collections, so deleting only the trip document would leave a paused graph
+    parked in Mongo forever. Those two collections are not exposed as dependencies, so this
+    reaches for the database handle directly.
+    """
+    await trips.delete_one({"trip_id": trip_id})
+
+    db = get_database()
+    for collection in ("checkpoints_aio", "checkpoint_writes_aio"):
+        await db[collection].delete_many({"thread_id": trip_id})
+
+    logger.info("Trip %s deleted by %s", trip_id, trip.get("created_by"))
+    return {"trip_id": trip_id, "deleted": True}
 
 
 @router.delete("/{trip_id}/members/{email}")

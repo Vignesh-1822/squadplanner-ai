@@ -9,6 +9,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from api import squad as squad_api
 from api import trips as trips_api
+from api.middleware.authz import require_leader
 
 
 class _AsyncCursor:
@@ -44,6 +45,12 @@ class FakeCollection:
 
     async def update_one(self, query, update):
         self.updated = {"query": query, "update": update}
+
+    async def delete_one(self, query):
+        self.deleted = query
+
+    async def delete_many(self, query):
+        self.deleted_many = query
 
 
 def _trip(**overrides):
@@ -90,6 +97,7 @@ async def test_get_trip_returns_lobby_shape(monkeypatch):
         "total_count": 2,
         "all_ready": False,
         "can_generate": False,
+        "candidate_destinations": [],
     }
 
 
@@ -246,3 +254,39 @@ async def test_remove_member_refuses_to_remove_the_leader(monkeypatch):
         )
 
     assert exc.value.status_code == 422
+
+
+@pytest.mark.asyncio
+async def test_delete_trip_is_leader_only():
+    """Deletion is gated by require_leader, the dependency the route depends on."""
+    collection = FakeCollection(_trip())
+
+    with pytest.raises(HTTPException) as exc:
+        await require_leader(
+            "trip-1",
+            current_user={"email": "guest@example.com"},
+            trips=collection,
+        )
+
+    assert exc.value.status_code == 403
+
+
+@pytest.mark.asyncio
+async def test_delete_trip_also_clears_graph_checkpoints(monkeypatch):
+    """A deleted trip must not leave a paused graph parked in the checkpointer forever."""
+    collection = FakeCollection(_trip())
+    touched = []
+
+    class FakeDb:
+        def __getitem__(self, name):
+            touched.append(name)
+            return collection
+
+    monkeypatch.setattr(squad_api, "get_database", lambda: FakeDb())
+
+    result = await squad_api.delete_trip("trip-1", trip=collection.trip, trips=collection)
+
+    assert result == {"trip_id": "trip-1", "deleted": True}
+    assert collection.deleted == {"trip_id": "trip-1"}
+    assert touched == ["checkpoints_aio", "checkpoint_writes_aio"]
+    assert collection.deleted_many == {"thread_id": "trip-1"}

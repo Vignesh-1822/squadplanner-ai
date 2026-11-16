@@ -42,6 +42,10 @@ revoked cookie, so the frontend can treat logout as always succeeding. When the 
 also increments the user's session version and revokes every outstanding token for that account.
 Tokens otherwise expire after 24 hours.
 
+### Session cookies
+* `access_token`: `httpOnly=True`, `SameSite=Lax`, `Secure` — the cryptographic JWT bearer token used by the backend.
+* `logged_in`: `httpOnly=False`, `SameSite=Lax`, `Secure`, value `"true"` — lightweight companion cookie set on login/register and deleted on logout. Enables client SPAs to check login state synchronously on initial boot before making network calls, avoiding spurious 401s on `/auth/me`.
+
 ## The flow
 
 ```
