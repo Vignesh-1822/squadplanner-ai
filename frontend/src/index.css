@@ -153,6 +153,11 @@
     box-shadow: var(--shadow-volt);
   }
 
+  /* Google renders its sign-in button in an iframe with a fixed width; stretch it to the card. */
+  .google-login-wrapper iframe {
+    width: 100% !important;
+  }
+
   .bg-gradient-halo {
     background: radial-gradient(ellipse at 60% 20%, rgba(209, 249, 77, 0.15) 0%, transparent 60%),
                 radial-gradient(ellipse at 10% 80%, rgba(81, 102, 0, 0.1) 0%, transparent 50%),

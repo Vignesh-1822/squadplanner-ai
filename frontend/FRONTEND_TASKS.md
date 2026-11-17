@@ -324,9 +324,16 @@ antd + a full `ConfigProvider` override for a single `RangePicker`, while unused
 it resolves only transitively through antd. (Note: the contract requires a *range* picker, so
 antd may be worth keeping — decide rather than drift.)
 
-### F18 · Minor — `TODO`
+### F18 · Minor — `DONE`
 `alert()` at `NewTrip.jsx:41` while `sonner` is used everywhere else. Hardcoded
 `googleusercontent.com` avatar and inline `dangerouslySetInnerHTML` CSS in `Auth.jsx`.
+
+**Done 2026-11-16.** `NewTrip.jsx` shows a `sonner` toast carrying the server's `detail`
+instead of a fixed message in a blocking `alert()`. `Auth.jsx`'s inline `<style>` only
+duplicated `glass-card` and `volt-glow` from `index.css` — with light-mode colours hardcoded,
+so the page ignored the dark theme — and is gone; its one unique rule (stretching Google's
+button iframe) moved to `index.css`. The testimonial avatar was a temporary Stitch export URL
+and is now an initials badge.
 
 ---
 
@@ -343,6 +350,8 @@ antd may be worth keeping — decide rather than drift.)
 
 ## Changelog
 
+- **2026-11-16** — **F18 done.** `alert()` in `NewTrip.jsx` replaced by a toast; inline CSS and
+  the hotlinked avatar removed from `Auth.jsx`. Lint (no new warnings) and build clean.
 - **2026-11-14** — **F21 done: guest invites work again.** The Phase 0 merge made
   `POST /trips/{id}/join` require the invite code in the body; the frontend sent no body, so
   every join from `/join/:code` failed with a 422 the backend suite could not see. `joinTrip`
