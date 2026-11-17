@@ -36,4 +36,9 @@ export default [
       ],
     },
   },
+  {
+    // Build-tool configs run in Node, not the browser, so they may use __dirname, process, etc.
+    files: ['*.config.js'],
+    languageOptions: { globals: globals.node },
+  },
 ]
