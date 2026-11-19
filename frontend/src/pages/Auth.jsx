@@ -84,23 +84,6 @@ export default function Auth() {
           background: 'radial-gradient(circle at top left, #f0fff4 0%, #f8f8f5 40%, #fdfcf0 100%)'
         }}
       >
-        <style dangerouslySetInnerHTML={{
-          __html: `
-          .glass-card {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-          }
-          .volt-glow {
-            box-shadow: 0 0 20px rgba(209, 249, 77, 0.2);
-          }
-          /* Custom Google Button styling to ensure full width */
-          .google-login-wrapper iframe {
-            width: 100% !important;
-          }
-        `}} />
-
         {/* TopAppBar */}
         <header className="fixed top-0 left-0 right-0 z-50 bg-white/70 backdrop-blur-xl border-b border-slate-200/50 shadow-sm shadow-[#d1f94d]/5">
           <div className="flex justify-between items-center px-6 py-3.5 w-full max-w-7xl mx-auto">
@@ -138,7 +121,7 @@ export default function Auth() {
 
               <div className="grid grid-cols-1 gap-4">
                 {/* Stat Card 1 */}
-                <div className="glass-card p-6 rounded-xl flex items-center gap-6 group hover:translate-x-2 transition-transform duration-300">
+                <div className="glass-card auth-glass p-6 rounded-xl flex items-center gap-6 group hover:translate-x-2 transition-transform duration-300">
                   <div className="bg-primary p-3 rounded-lg text-on-primary">
                     <Users className="w-8 h-8" />
                   </div>
@@ -149,7 +132,7 @@ export default function Auth() {
                 </div>
 
                 {/* Stat Card 2 */}
-                <div className="glass-card p-6 rounded-xl flex items-center gap-6 group hover:translate-x-2 transition-transform duration-300">
+                <div className="glass-card auth-glass p-6 rounded-xl flex items-center gap-6 group hover:translate-x-2 transition-transform duration-300">
                   <div className="bg-[#334155] p-3 rounded-lg text-primary">
                     <Zap className="w-8 h-8" />
                   </div>
@@ -160,17 +143,19 @@ export default function Auth() {
                 </div>
 
                 {/* Testimonial Small */}
-                <div className="glass-card p-6 rounded-xl relative overflow-hidden">
+                <div className="glass-card auth-glass p-6 rounded-xl relative overflow-hidden">
                   <div className="relative z-10">
                     <p className="text-slate-900 font-bold italic mb-2">
                       &quot;The only platform that understands the pulse of modern digital coordination.&quot;
                     </p>
                     <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-full overflow-hidden bg-slate-200">
-                        <img
-                          alt="Alex Reed"
-                          src="https://lh3.googleusercontent.com/aida/AP1WRLt6mysKmMXMOl24gWg1DjVHcdv28Z0jv1jGY7wqecnxaqDyt06Q8SgkAbLTGY2HMGcy-VI3TQCAqaPDyemp4DUVdS7HvvGQSUzayGelw-YGf0UN2J_oxA8Zsn9125lTb_224AgH6gS6gqfh7Leca_gv8BXEVs_oEJM87JL4rrCnAsqa2jS02tEZiHik0gn5zioKX_iYBOr2BnKnKhI2LrTa2V8o98fXNf30h5Vpp0HZkESQiEweX5hg74Q"
-                        />
+                      {/* Initials rather than a photo: the old image was a temporary Stitch export URL
+                          that would stop loading, and it loaded from Google on every visit. */}
+                      <div
+                        aria-hidden="true"
+                        className="w-8 h-8 rounded-full bg-slate-900 text-primary text-[0.7rem] font-black flex items-center justify-center"
+                      >
+                        AR
                       </div>
                       <span className="text-[0.75rem] font-bold uppercase tracking-widest text-slate-500">
                         Alex Reed, Lead Architect
@@ -186,7 +171,7 @@ export default function Auth() {
 
             {/* Right Column: Authentication Card */}
             <div className="lg:col-span-7 flex justify-center lg:justify-end" id="auth-card">
-              <div className="glass-card w-full max-w-lg p-6 md:p-8 rounded-2xl shadow-xl relative overflow-hidden">
+              <div className="glass-card auth-glass w-full max-w-lg p-6 md:p-8 rounded-2xl shadow-xl relative overflow-hidden">
                 {/* Decor Pulse */}
                 <div className="absolute -top-6 -right-6 w-20 h-20 bg-primary/20 blur-3xl rounded-full animate-pulse"></div>
 

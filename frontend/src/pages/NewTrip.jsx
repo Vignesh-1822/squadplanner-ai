@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { Flag } from "lucide-react"
+import { toast } from "sonner"
 import SquadInviteInput from "@/molecules/SquadInviteInput"
 import { createTrip } from "@/services/ApiList"
 
@@ -31,7 +32,8 @@ const NewTrip = () => {
       navigate(`/trips/${data.trip_id}/invites-sent`)
     } catch (error) {
       console.error("Error creating trip:", error)
-      alert("Something went wrong creating the trip.")
+      // Show the server's reason (e.g. a bad invite email) instead of a generic message.
+      toast.error(error.message || "Something went wrong creating the trip.")
     } finally {
       setIsLoading(false)
     }
