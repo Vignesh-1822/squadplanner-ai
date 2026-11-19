@@ -329,10 +329,12 @@ antd may be worth keeping — decide rather than drift.)
 `googleusercontent.com` avatar and inline `dangerouslySetInnerHTML` CSS in `Auth.jsx`.
 
 **Done 2026-11-16.** `NewTrip.jsx` shows a `sonner` toast carrying the server's `detail`
-instead of a fixed message in a blocking `alert()`. `Auth.jsx`'s inline `<style>` only
-duplicated `glass-card` and `volt-glow` from `index.css` — with light-mode colours hardcoded,
-so the page ignored the dark theme — and is gone; its one unique rule (stretching Google's
-button iframe) moved to `index.css`. The testimonial avatar was a temporary Stitch export URL
+instead of a fixed message in a blocking `alert()`. `Auth.jsx`'s inline `<style>` mostly
+duplicated `glass-card` and `volt-glow` from `index.css` and is gone; its one unique rule
+(stretching Google's button iframe) moved to `index.css`. **Correction 2026-11-18:** the inline
+copy also pinned the cards light, which mattered — the page is light-only, and with a stored
+`theme=dark` the shared tokens turned its cards slate-grey under dark text. The `auth-glass`
+utility now pins them light again. The testimonial avatar was a temporary Stitch export URL
 and is now an initials badge.
 
 ---

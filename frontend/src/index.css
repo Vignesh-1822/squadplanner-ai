@@ -153,6 +153,14 @@
     box-shadow: var(--shadow-volt);
   }
 
+  /* The sign-in page is designed light only: its background and text colours are fixed, so it
+     must not pick up the dark glass tokens. Without this, a stored dark theme turns its cards
+     slate-grey under dark text. Remove once Auth.jsx has a real dark design. */
+  .auth-glass {
+    background: rgba(255, 255, 255, 0.7);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+
   /* Google renders its sign-in button in an iframe with a fixed width; stretch it to the card. */
   .google-login-wrapper iframe {
     width: 100% !important;

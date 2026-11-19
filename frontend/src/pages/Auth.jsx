@@ -121,7 +121,7 @@ export default function Auth() {
 
               <div className="grid grid-cols-1 gap-4">
                 {/* Stat Card 1 */}
-                <div className="glass-card p-6 rounded-xl flex items-center gap-6 group hover:translate-x-2 transition-transform duration-300">
+                <div className="glass-card auth-glass p-6 rounded-xl flex items-center gap-6 group hover:translate-x-2 transition-transform duration-300">
                   <div className="bg-primary p-3 rounded-lg text-on-primary">
                     <Users className="w-8 h-8" />
                   </div>
@@ -132,7 +132,7 @@ export default function Auth() {
                 </div>
 
                 {/* Stat Card 2 */}
-                <div className="glass-card p-6 rounded-xl flex items-center gap-6 group hover:translate-x-2 transition-transform duration-300">
+                <div className="glass-card auth-glass p-6 rounded-xl flex items-center gap-6 group hover:translate-x-2 transition-transform duration-300">
                   <div className="bg-[#334155] p-3 rounded-lg text-primary">
                     <Zap className="w-8 h-8" />
                   </div>
@@ -143,7 +143,7 @@ export default function Auth() {
                 </div>
 
                 {/* Testimonial Small */}
-                <div className="glass-card p-6 rounded-xl relative overflow-hidden">
+                <div className="glass-card auth-glass p-6 rounded-xl relative overflow-hidden">
                   <div className="relative z-10">
                     <p className="text-slate-900 font-bold italic mb-2">
                       &quot;The only platform that understands the pulse of modern digital coordination.&quot;
@@ -171,7 +171,7 @@ export default function Auth() {
 
             {/* Right Column: Authentication Card */}
             <div className="lg:col-span-7 flex justify-center lg:justify-end" id="auth-card">
-              <div className="glass-card w-full max-w-lg p-6 md:p-8 rounded-2xl shadow-xl relative overflow-hidden">
+              <div className="glass-card auth-glass w-full max-w-lg p-6 md:p-8 rounded-2xl shadow-xl relative overflow-hidden">
                 {/* Decor Pulse */}
                 <div className="absolute -top-6 -right-6 w-20 h-20 bg-primary/20 blur-3xl rounded-full animate-pulse"></div>
 
